@@ -11,8 +11,8 @@ interface Props {
   description: string;
   checkerStatus?: CheckerStatus;
   consentMode?: 'gdpr' | 'california';
-  image?: string;
-  imageAlt?: string;
+  image?: string | undefined;
+  imageAlt?: string | undefined;
   noindex?: boolean;
 }
 
@@ -25,6 +25,7 @@ const {
   imageAlt = 'Freetins game codes and daily reward links',
   noindex = false,
 } = Astro.props;
+const hasPrimaryImage = typeof Astro.props.image === 'string';
 const normalizedPathname = Astro.url.pathname === '/index.html'
   ? '/'
   : Astro.url.pathname.replace(/\.html$/, '').replace(/\/+$/, '');
@@ -59,7 +60,7 @@ const schema = {
         'query-input': 'required name=search_term_string',
       },
     },
-    ...(cleanPathname === '/'
+    ...(hasPrimaryImage
       ? [{
           '@type': 'WebPage',
           '@id': `${canonical}#webpage`,
@@ -72,6 +73,7 @@ const schema = {
             url: socialImage,
             width: 1200,
             height: 630,
+            caption: imageAlt,
           },
         }]
       : []),

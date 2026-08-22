@@ -1,7 +1,14 @@
 ---
-import MediaPlaceholder from '../ui/MediaPlaceholder.astro';
+import { Picture } from 'astro:assets';
 import Button from '../ui/Button.astro';
 import { dailyLinkCatalogue, gameCatalogue } from '../../data/home';
+import {
+  authorArtwork,
+  dailyArtwork,
+  gameArtwork,
+  gearArtwork,
+  requireArtwork,
+} from '../../data/site-images';
 import type { RouteDefinition } from '../../data/routes';
 import type { CheckerSnapshot } from '../../lib/checker-status';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -17,6 +24,40 @@ const dailyGame = dailyLinkCatalogue.find((item) => item.slug === definition.slu
 const platform = definition.platform ?? 'roblox';
 const gameRoot = game ? `/${platform}/${game.slug}` : '/roblox/grow-a-garden';
 const isGamePage = ['hub', 'codes', 'values', 'archive'].includes(definition.kind) && Boolean(game);
+const gameArt = game
+  ? requireArtwork(gameArtwork, game.slug, 'game')
+  : undefined;
+const dailyArt = dailyGame
+  ? requireArtwork(dailyArtwork, dailyGame.slug, 'daily reward')
+  : undefined;
+const authorArt = definition.kind === 'author' && definition.slug
+  ? requireArtwork(authorArtwork, definition.slug, 'author')
+  : undefined;
+const productArt = definition.kind === 'gearProduct' && definition.slug
+  ? requireArtwork(gearArtwork, definition.slug, 'gear product')
+  : undefined;
+const categoryGearSlug = definition.kind === 'gearCategory'
+  ? {
+      roblox: 'roblox-gift-card-25-cad',
+      mobile: 'controller-for-mobile-play',
+      'pc-and-console': 'wired-gaming-headset-mid-range',
+    }[definition.slug ?? '']
+  : undefined;
+const collectionArt = definition.kind === 'daily'
+  ? requireArtwork(dailyArtwork, 'monopoly-go', 'daily reward')
+  : definition.kind === 'team'
+    ? requireArtwork(authorArtwork, 'priya-raman', 'author')
+    : definition.kind === 'gearIndex'
+      ? requireArtwork(gearArtwork, 'roblox-gift-card-25-cad', 'gear product')
+      : categoryGearSlug
+        ? requireArtwork(gearArtwork, categoryGearSlug, 'gear product')
+        : undefined;
+const guideArt = definition.kind === 'guide'
+  ? requireArtwork(gameArtwork, 'grow-a-garden', 'game')
+  : undefined;
+const routeArtwork = gameArt ?? dailyArt ?? authorArt ?? productArt ?? collectionArt ?? guideArt;
+const showHeaderArtwork = ['codes', 'values', 'archive', 'dailyGame', 'guide'].includes(definition.kind)
+  && Boolean(routeArtwork);
 
 const stats = (() => {
   switch (definition.kind) {
@@ -158,6 +199,8 @@ const crumbs = isGamePage
   description={definition.description}
   noindex={definition.noindex ?? false}
   checkerStatus={checkerSnapshot?.state ?? 'Live'}
+  image={routeArtwork?.socialImage}
+  imageAlt={routeArtwork?.alt}
 >
   <article class="route-page" data-route-kind={definition.kind}>
     <header class:list={['page-head', 'content-boundary', { 'hub-head': definition.kind === 'hub' }]}>
@@ -179,6 +222,21 @@ const crumbs = isGamePage
       {stats.length > 0 && (
         <div class="stats">
           {stats.map(([label, value]) => <div><span>{label}</span><strong>{value}</strong></div>)}
+        </div>
+      )}
+      {showHeaderArtwork && routeArtwork && (
+        <div class="entity-art">
+          <Picture
+            src={routeArtwork.src}
+            alt={routeArtwork.alt}
+            formats={['avif']}
+            fallbackFormat="webp"
+            widths={[480, 768, 1080, 1440, 1536]}
+            sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), min(100vw - (2 * var(--page-gutter)), 1672px)"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
         </div>
       )}
     </header>
@@ -205,12 +263,26 @@ const crumbs = isGamePage
       <section class="page-section content-boundary">
         <h2>Games we track</h2>
         <div class="card-grid">
-          {dailyLinkCatalogue.map((item) => (
-            <a class="media-card" href={`/daily/${item.slug}`}>
-              <div class="media"><MediaPlaceholder name={item.name} /></div>
-              <div class="card-copy"><h3>{item.name}</h3><p>{item.live} links live · checked {item.age} ago</p></div>
-            </a>
-          ))}
+          {dailyLinkCatalogue.map((item) => {
+            const art = requireArtwork(dailyArtwork, item.slug, 'daily reward');
+            return (
+              <a class="media-card" href={`/daily/${item.slug}`}>
+                <div class="media">
+                  <Picture
+                    src={art.src}
+                    alt={art.alt}
+                    formats={['avif']}
+                    fallbackFormat="webp"
+                    widths={[320, 528, 792, 1056]}
+                    sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), (max-width: 1199px) 50vw, 33vw"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="card-copy"><h3>{item.name}</h3><p>{item.live} links live · checked {item.age} ago</p></div>
+              </a>
+            );
+          })}
         </div>
       </section>
     )}
@@ -235,7 +307,21 @@ const crumbs = isGamePage
     {definition.kind === 'hub' && (
       <>
         <section class="hub-hero content-boundary">
-          <div class="hub-art"><MediaPlaceholder name={`${game?.name} key art`} /></div>
+          {gameArt && (
+            <div class="hub-art">
+              <Picture
+                src={gameArt.src}
+                alt={gameArt.alt}
+                formats={['avif']}
+                fallbackFormat="webp"
+                widths={[480, 768, 1080, 1440, 1536]}
+                sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), min(100vw - (2 * var(--page-gutter)), 1672px)"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </div>
+          )}
           <nav class="hub-tabs" aria-label={`${game?.name} sections`}>
             <a href={gameRoot} aria-current="page">Overview</a>
             <a href={`${gameRoot}-codes`}>Codes</a>
@@ -288,9 +374,12 @@ const crumbs = isGamePage
     {(definition.kind === 'team' || definition.kind === 'author') && (
       <section class="page-section content-boundary">
         {definition.kind === 'team' ? (
-          <div class="profile-grid">{authors.map((person) => <a href={`/team/${person.slug}`}><div class="portrait"><MediaPlaceholder name={`${person.name}, portrait`} /></div><h2>{person.name}</h2><strong>{person.role}</strong><p>{person.owns}</p><small>{person.metric}</small></a>)}</div>
+          <div class="profile-grid">{authors.map((person) => {
+            const art = requireArtwork(authorArtwork, person.slug, 'author');
+            return <a href={`/team/${person.slug}`}><div class="portrait"><Picture src={art.src} alt={art.alt} formats={['avif']} fallbackFormat="webp" widths={[320, 480, 640, 960]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), 33vw" loading="lazy" decoding="async" /></div><h2>{person.name}</h2><strong>{person.role}</strong><p>{person.owns}</p><small>{person.metric}</small></a>;
+          })}</div>
         ) : (
-          <div class="profile-detail"><div class="portrait"><MediaPlaceholder name={`${definition.name}, portrait`} /></div><div><h2>Experience</h2><p>{authors.find((person) => person.slug === definition.slug)?.owns}</p><p>Every page carries a named author and a published verification schedule. Recent work remains linked to the source and check log.</p><a href="/team">Meet the full editorial team</a></div></div>
+          <div class="profile-detail">{authorArt && <div class="portrait"><Picture src={authorArt.src} alt={authorArt.alt} formats={['avif']} fallbackFormat="webp" widths={[320, 480, 640, 960]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), 380px" loading="eager" fetchpriority="high" decoding="async" /></div>}<div><h2>Experience</h2><p>{authors.find((person) => person.slug === definition.slug)?.owns}</p><p>Every page carries a named author and a published verification schedule. Recent work remains linked to the source and check log.</p><a href="/team">Meet the full editorial team</a></div></div>
         )}
       </section>
     )}
@@ -299,12 +388,16 @@ const crumbs = isGamePage
       <section class="page-section content-boundary">
         {definition.kind === 'gearIndex' && <div class="chip-links"><a href="/gear/roblox">Roblox</a><a href="/gear/mobile">Mobile</a><a href="/gear/pc-and-console">PC and console</a></div>}
         <h2>Picked this month</h2>
-        <div class="card-grid">{gear.map(([name, price, href]) => <a class="media-card" href={href}><div class="media"><MediaPlaceholder name={name} /></div><div class="card-copy"><h3>{name}</h3><p>{price}</p></div></a>)}</div>
+        <div class="card-grid">{gear.map(([name, price, href]) => {
+          const slug = href.split('/').at(-1) ?? '';
+          const art = requireArtwork(gearArtwork, slug, 'gear product');
+          return <a class="media-card" href={href}><div class="media"><Picture src={art.src} alt={art.alt} formats={['avif']} fallbackFormat="webp" widths={[320, 528, 792, 1056]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), (max-width: 1199px) 50vw, 33vw" loading="lazy" decoding="async" /></div><div class="card-copy"><h3>{name}</h3><p>{price}</p></div></a>;
+        })}</div>
       </section>
     )}
 
     {definition.kind === 'gearProduct' && (
-      <section class="page-section content-boundary product-layout"><div class="product-media"><MediaPlaceholder name={definition.name ?? 'Product'} /></div><div><p class="eyebrow">Freetins pick</p><h2>Why we picked it</h2><p>It solves a specific gaming problem without adding an account, subscription or unnecessary setup step.</p><dl><div><dt>Delivery</dt><dd>In stock</dd></div><div><dt>Checked</dt><dd>21 August 2026</dd></div><div><dt>Disclosure</dt><dd>Affiliate link</dd></div></dl><Button href="/affiliate-disclosure" variant="secondary">Read the disclosure</Button></div></section>
+      <section class="page-section content-boundary product-layout">{productArt && <div class="product-media"><Picture src={productArt.src} alt={productArt.alt} formats={['avif']} fallbackFormat="webp" widths={[480, 768, 1080, 1536]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), 55vw" loading="eager" fetchpriority="high" decoding="async" /></div>}<div><p class="eyebrow">Freetins pick</p><h2>Why we picked it</h2><p>It solves a specific gaming problem without adding an account, subscription or unnecessary setup step.</p><dl><div><dt>Delivery</dt><dd>In stock</dd></div><div><dt>Checked</dt><dd>21 August 2026</dd></div><div><dt>Disclosure</dt><dd>Affiliate link</dd></div></dl><Button href="/affiliate-disclosure" variant="secondary">Read the disclosure</Button></div></section>
     )}
 
     {definition.kind === 'values' && (
@@ -372,6 +465,7 @@ const crumbs = isGamePage
   .stats > div { min-width: 150px; flex: 1 1 150px; padding: 12px 16px; border-right: 1px solid var(--border-subtle); }
   .stats span, .section-title > span { display: block; color: var(--text-disabled); font: 700 10.5px / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
   .stats strong { display: block; margin-top: 5px; color: var(--text-primary); font: 600 18px / 1.2 var(--font-display); font-variant-numeric: tabular-nums; }
+  .entity-art { position: relative; aspect-ratio: 16 / 7; margin-top: 24px; overflow: hidden; background: var(--surface-card); }
   .page-section { padding: clamp(28px, 4vw, 44px) var(--page-gutter) 0; }
   .page-section > h2, .section-title h2, aside h2 { margin: 0 0 14px; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
   .section-title { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
@@ -403,7 +497,7 @@ const crumbs = isGamePage
   .game-tabs a, .hub-tabs a, .chip-links a { min-height: 42px; padding: 13px 16px; border: 1px solid var(--border-subtle); color: var(--text-secondary); font: 700 11px / 1.4 var(--font-core); letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
   .game-tabs a[aria-current='page'], .hub-tabs a[aria-current='page'] { background: var(--green-600); color: #fff; }
   .hub-hero { padding: 24px var(--page-gutter) 0; }
-  .hub-art { position: relative; aspect-ratio: 16 / 6; min-height: 240px; background: var(--surface-card); }
+  .hub-art { position: relative; aspect-ratio: 16 / 6; min-height: 240px; overflow: hidden; background: var(--surface-card); }
   .module-grid, .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
   .module { display: block; min-height: 170px; padding: 20px; border: 1px solid var(--border-subtle); color: inherit; text-decoration: none; }
   .module:hover { background: var(--white-a08); }
@@ -420,13 +514,15 @@ const crumbs = isGamePage
   .expired-list span, .expired-list time, .data-table span, .data-table small { color: var(--text-tertiary); }
   .profile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 20px; }
   .profile-grid a { color: inherit; text-decoration: none; }
-  .portrait { position: relative; aspect-ratio: 4 / 5; background: var(--surface-card); }
+  .portrait { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--surface-card); }
   .profile-grid h2 { margin: 14px 0 3px; color: var(--text-primary); }
   .profile-grid strong { color: var(--text-brand); }
   .profile-grid p, .profile-detail p { color: var(--text-tertiary); line-height: 1.55; }
   .profile-detail { display: grid; grid-template-columns: minmax(240px, 380px) minmax(0, 1fr); gap: 36px; }
   .product-layout { display: grid; grid-template-columns: minmax(280px, 1.2fr) minmax(280px, .8fr); gap: 36px; }
-  .product-media { position: relative; min-height: 480px; background: var(--surface-card); }
+  .product-media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--surface-card); }
+  .entity-art :global(picture), .hub-art :global(picture), .media :global(picture), .portrait :global(picture), .product-media :global(picture) { display: block; width: 100%; height: 100%; }
+  .entity-art :global(img), .hub-art :global(img), .media :global(img), .portrait :global(img), .product-media :global(img) { display: block; width: 100%; height: 100%; object-fit: cover; }
   dl { border: 1px solid var(--border-subtle); margin: 24px 0; }
   dl div { display: flex; justify-content: space-between; gap: 16px; padding: 11px 14px; border-bottom: 1px solid var(--border-subtle); }
   dt { color: var(--text-tertiary); } dd { margin: 0; color: var(--text-primary); }
@@ -478,11 +574,10 @@ const crumbs = isGamePage
     .card-grid { grid-template-columns: 1fr; }
     .catalogue.columns { columns: auto; }
     .catalogue time { display: none; }
-    .hub-art { aspect-ratio: 4 / 3; }
+    .entity-art, .hub-art { aspect-ratio: 4 / 3; min-height: 0; }
     .code-row { align-items: flex-start; flex-direction: column; }
     .expired-list > div, .data-table > div, .archive-table > div { grid-template-columns: 1fr 1fr; }
     .timeline article { grid-template-columns: 1fr; gap: 6px; }
     .guide-layout aside { position: static; }
-    .product-media { min-height: 360px; }
   }
 </style>
