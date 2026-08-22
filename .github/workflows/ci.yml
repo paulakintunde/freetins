@@ -18,7 +18,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10.34.5
+          version: 11.19.0
 
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -37,3 +37,6 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Crawl internal routes
+        run: pnpm check:routes

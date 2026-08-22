@@ -66,6 +66,15 @@ const formatAge = (minutes: number) => {
   return `${Math.round(minutes / 1440)} d`;
 };
 
+export const gameCatalogue = catalogue.map(([name, live, minutes]) => ({
+  name,
+  live,
+  minutes,
+  age: formatAge(minutes),
+  slug: slugify(name),
+  platform: 'roblox',
+}));
+
 export const pulse = [
   { value: '312', label: 'games watched' },
   { value: '1,847', label: 'links checked today' },
@@ -102,4 +111,12 @@ export const dailyGames = dailyRaw.map(([name, live, minutes]) => ({
   live,
   age: formatAge(minutes),
   href: `/daily/${slugify(name)}`,
+}));
+
+export const dailyLinkCatalogue = dailyRaw.map(([name, live, minutes]) => ({
+  name,
+  live,
+  minutes,
+  age: formatAge(minutes),
+  slug: slugify(name),
 }));

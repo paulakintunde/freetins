@@ -1,0 +1,483 @@
+---
+import MediaPlaceholder from '../ui/MediaPlaceholder.astro';
+import Button from '../ui/Button.astro';
+import { dailyLinkCatalogue, gameCatalogue } from '../../data/home';
+import type { RouteDefinition } from '../../data/routes';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+interface Props {
+  definition: RouteDefinition;
+}
+
+const { definition } = Astro.props;
+const game = gameCatalogue.find((item) => item.slug === definition.slug);
+const dailyGame = dailyLinkCatalogue.find((item) => item.slug === definition.slug);
+const platform = definition.platform ?? 'roblox';
+const gameRoot = game ? `/${platform}/${game.slug}` : '/roblox/grow-a-garden';
+const isGamePage = ['hub', 'codes', 'values', 'archive'].includes(definition.kind) && Boolean(game);
+
+const stats = (() => {
+  switch (definition.kind) {
+    case 'daily': return [['Games tracked', '6'], ['Links live now', '45'], ['Median link age', '38 min'], ['Checked every', '1 to 3 h']];
+    case 'browse': return [['Games tracked', String(gameCatalogue.length)], ['With live codes', '52'], ['Checked this hour', '41'], ['Platform', 'Roblox']];
+    case 'hub': return [['Live codes', String(game?.live ?? 0)], ['Last checked', `${game?.age ?? '3 min'} ago`], ['Guides', '6'], ['Updates', '4']];
+    case 'codes': return [['Last checked', `${game?.age ?? '4 min'} ago`], ['Next check', 'in 56 min'], ['Live now', `${game?.live ?? 6} codes`], ['Verification', '2 sources']];
+    case 'calendar': return [['Added in August', '127'], ['Expired in August', '96'], ['Dated events ahead', '6'], ['Biggest day', '18 Aug']];
+    case 'az': return [['Games listed', String(gameCatalogue.length + dailyLinkCatalogue.length)], ['With live codes', '52'], ['Checked this hour', '41'], ['Cheats confirmed', '362']];
+    case 'status': return [['Checker', 'Live'], ['Last full run', '4 min ago'], ['Pages checked', '312'], ['Median response', '410 ms']];
+    case 'values': return [['Items tracked', '84'], ['Trades, 7 d', '1,240'], ['Updated', '2 h ago'], ['Refresh', 'Daily']];
+    case 'archive': return [['Codes archived', '4,318'], ['Median life', '6 d'], ['Longest lived', '214 d'], ['Oldest entry', 'Jul 2023']];
+    default: return [];
+  }
+})();
+
+const liveCodes = [
+  ['GARDEN500', '500 sheckles', 'Developer X post', '4 min ago'],
+  ['RARESEED', 'Rare seed pack', 'Official Discord', '12 min ago'],
+  ['GROWFAST', '2x growth, 30 min', 'Developer X post', '26 min ago'],
+  ['SHECKLES1000', '1,000 sheckles', 'Official Discord', '48 min ago'],
+  ['WATERINGCAN', 'Watering can skin', 'Update announcement', '1 h ago'],
+  ['COMMUNITY250', '250 sheckles', 'Community submission', '2 h ago'],
+] as const;
+
+const expiredCodes = [
+  ['SPRINGSEED', 'Summer event seed', 'Expired 1 d ago'],
+  ['SHECKLES750', '750 sheckles', 'Expired 2 d ago'],
+  ['GOLDSPRINKLER', 'Golden sprinkler', 'Expired 3 d ago'],
+] as const;
+
+const cheatGames = [
+  ['GTA 5', 'gta-5', '28', 'PS5, Xbox Series, PC'],
+  ['GTA San Andreas', 'gta-san-andreas', '91', 'PS, Xbox, PC'],
+  ['GTA Vice City', 'gta-vice-city', '62', 'PS, Xbox, PC'],
+  ['Red Dead Redemption 2', 'red-dead-redemption-2', '37', 'PS, Xbox, PC'],
+  ['The Sims 4', 'the-sims-4', '40', 'PC, Mac, console'],
+  ['Skyrim', 'skyrim', '45', 'PC only'],
+  ['Fallout 4', 'fallout-4', '33', 'PC only'],
+  ['Minecraft', 'minecraft', '26', 'All platforms'],
+] as const;
+
+const cheatRows = [
+  ['Invincibility, 5 minutes', 'PAINKILLER'],
+  ['Max health and armour', 'TURTLE'],
+  ['Fast run', 'CATCHME'],
+  ['Super jump', 'HOPTOIT'],
+  ['Give weapons and ammo', 'TOOLUP'],
+  ['Raise wanted level', 'FUGITIVE'],
+  ['Change weather', 'MAKEITRAIN'],
+  ['Slow motion', 'SLOWMO'],
+] as const;
+
+const authors = [
+  { slug: 'priya-raman', name: 'Priya Raman', role: 'Roblox codes editor', owns: 'Owns the hourly check schedule for every Roblox game on the site.', metric: '1,412 codes verified' },
+  { slug: 'diego-ferreira', name: 'Diego Ferreira', role: 'Mobile games editor', owns: 'Runs the daily links desk and its link validation queue.', metric: '9,800+ links opened' },
+  { slug: 'marcus-bell', name: 'Marcus Bell', role: 'Verification lead', owns: 'Wrote the two-source rule and signs off every page.', metric: '362 cheats confirmed' },
+] as const;
+
+const gear = [
+  ['Roblox gift card, 25 CAD', '$25.00', '/gear/roblox/roblox-gift-card-25-cad'],
+  ['Wired gaming headset, mid range', '$59.99', '/gear/pc-and-console/wired-gaming-headset-mid-range'],
+  ['Controller for mobile play', '$44.50', '/gear/mobile/controller-for-mobile-play'],
+  ['Phone cooling clip', '$21.99', '/gear/mobile/phone-cooling-clip'],
+  ['Mechanical keypad, 24 key', '$38.00', '/gear/pc-and-console/mechanical-keypad-24-key'],
+  ['Charging dock, two bay', '$32.99', '/gear/pc-and-console/charging-dock-two-bay'],
+] as const;
+
+const values = [
+  ['Golden sprinkler', 'Divine', '2.4m', '+8%', '1,240 trades'],
+  ['Dragonfly pet', 'Divine', '1.9m', '-3%', 'Official trade log'],
+  ['Candy blossom seed', 'Mythic', '740k', '+14%', '860 trades'],
+  ['Beanstalk seed', 'Mythic', '512k', 'Flat', '720 trades'],
+  ['Master sprinkler', 'Legendary', '180k', '-6%', 'Patch market sample'],
+  ['Bee pet', 'Legendary', '96k', '+2%', '544 trades'],
+] as const;
+
+const updates = [
+  ['18 Aug 2026', 'v3.4', 'Harvest event, three new seeds', 'Event runs two weeks. Three limited seeds enter the pool and the shop rotates daily.'],
+  ['11 Aug 2026', 'v3.3', 'Sprinkler rebalance and shop rotation', 'Master sprinkler radius changed; the values table was updated the same evening.'],
+  ['02 Aug 2026', 'v3.2', 'New pet tier and trade window changes', 'Divine tier was added above Mythic and the trade confirmation changed.'],
+  ['24 Jul 2026', 'v3.1', 'Mutation rework', 'Mutation triggers changed and the guide was rewritten with the patch.'],
+] as const;
+
+const legalCopy: Record<string, Array<[string, string]>> = {
+  privacy: [
+    ['What we collect', 'We collect the information you submit, aggregate page counts and the minimum delivery data needed to keep the site secure.'],
+    ['How it is used', 'Submitted codes enter verification. Contact details are used only to answer the request or deliver an alert.'],
+    ['Who we share data with', 'Cloudflare delivers the site, Plausible provides aggregate analytics, and Discord can deliver alerts you request.'],
+    ['Your choices', 'Cookie choices can be reopened from the footer. You can ask us to delete information you submitted.'],
+  ],
+  affiliate: [
+    ['Which links pay us', 'Some Gear links pay Freetins a commission when a purchase is completed. Those links are marked before you click.'],
+    ['What money never buys', 'Payment never changes a code status, verification result, tier position or editorial recommendation.'],
+    ['How a paid thing is labelled', 'Sponsored and affiliate placements carry a visible label in the module that contains them.'],
+    ['How products get picked', 'A product must solve the specific problem named on the page before its commercial terms are considered.'],
+  ],
+  terms: [
+    ['Using the site', 'You may read, link to and share individual Freetins pages. Automated extraction and republication require permission.'],
+    ['Codes and links', 'A game developer controls whether a code or link works. We publish the result of our most recent check.'],
+    ['Corrections', 'Report an error through Contact. Corrections skip the general queue and are actioned the same day.'],
+    ['Governing law', 'These terms are governed by the law of Ontario, Canada, without removing rights you hold where you live.'],
+  ],
+};
+
+const pageLinks: Record<string, Array<[string, string]>> = {
+  verify: [['Submit a code', '/submit'], ['Report a correction', '/contact?topic=Correction'], ['Checker status', '/status']],
+  alerts: [['Manage existing alerts', '/alerts/manage?t=preview'], ['Privacy', '/privacy']],
+  contact: [['Editorial team', '/team'], ['How we verify', '/how-we-verify'], ['Advertise with us', '/advertise']],
+  notTracked: [['Request this game', '/submit'], ['Browse every game', '/games'], ['Search Freetins', '/search']],
+  status: [['How we verify', '/how-we-verify'], ['Expired archive', '/archive']],
+  updates: [['Codes calendar', '/calendar'], ['Checker status', '/status']],
+  adspec: [['Promotion enquiry', '/contact?topic=Promotion'], ['Affiliate disclosure', '/affiliate-disclosure']],
+  queue: [['Browse published games', '/roblox'], ['How we verify', '/how-we-verify']],
+};
+
+const relatedLinks = pageLinks[definition.kind] ?? [];
+const legalSections = legalCopy[definition.kind] ?? [];
+const tierGames = gameCatalogue.slice(0, 5);
+
+const crumbs = isGamePage
+  ? [['Home', '/'], ['Roblox codes', '/roblox'], ...(definition.kind === 'hub' ? [] : [[game?.name ?? 'Game', gameRoot]])]
+  : [['Home', '/']];
+---
+
+<BaseLayout title={definition.title} description={definition.description} noindex={definition.noindex ?? false}>
+  <article class="route-page" data-route-kind={definition.kind}>
+    <header class:list={['page-head', 'content-boundary', { 'hub-head': definition.kind === 'hub' }]}>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        {crumbs.map(([label, href]) => <a href={href}>{label}</a>)}
+        <span aria-current="page">{definition.heading}</span>
+      </nav>
+      {definition.eyebrow && <p class="eyebrow">{definition.eyebrow}</p>}
+      <h1>{definition.heading}</h1>
+      <p class="lede">{definition.description}</p>
+      {isGamePage && definition.kind !== 'hub' && (
+        <nav class="game-tabs" aria-label={`${game?.name} sections`}>
+          <a href={gameRoot}>Hub</a>
+          <a href={`${gameRoot}-codes`} aria-current={definition.kind === 'codes' ? 'page' : undefined}>Codes</a>
+          <a href={`${gameRoot}/values`} aria-current={definition.kind === 'values' ? 'page' : undefined}>Values</a>
+          <a href={`${gameRoot}/archive`} aria-current={definition.kind === 'archive' ? 'page' : undefined}>Archive</a>
+        </nav>
+      )}
+      {stats.length > 0 && (
+        <div class="stats">
+          {stats.map(([label, value]) => <div><span>{label}</span><strong>{value}</strong></div>)}
+        </div>
+      )}
+    </header>
+
+    {(definition.kind === 'browse' || definition.kind === 'az') && (
+      <section class="page-section content-boundary">
+        <div class="section-title">
+          <h2>{definition.kind === 'az' ? 'Every game we track' : 'Freshest first'}</h2>
+          <span>{gameCatalogue.length} games</span>
+        </div>
+        <div class:list={['catalogue', { columns: definition.kind === 'az' }]}>
+          {gameCatalogue.map((item) => (
+            <a href={`/roblox/${item.slug}`}>
+              <span>{item.name}</span>
+              <strong>{item.live} live</strong>
+              <time>{item.age} ago</time>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {definition.kind === 'daily' && (
+      <section class="page-section content-boundary">
+        <h2>Games we track</h2>
+        <div class="card-grid">
+          {dailyLinkCatalogue.map((item) => (
+            <a class="media-card" href={`/daily/${item.slug}`}>
+              <div class="media"><MediaPlaceholder name={item.name} /></div>
+              <div class="card-copy"><h3>{item.name}</h3><p>{item.live} links live · checked {item.age} ago</p></div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {definition.kind === 'dailyGame' && (
+      <section class="page-section content-boundary split-layout">
+        <div>
+          <h2>Working links</h2>
+          <div class="link-list">
+            {Array.from({ length: Math.min(dailyGame?.live ?? 8, 8) }, (_, index) => (
+              <a href={`https://example.com/${dailyGame?.slug}/${index + 1}`} rel="nofollow">
+                <span>{index % 2 === 0 ? 'Free dice and rolls' : 'Daily reward bundle'}</span>
+                <strong>Opened {index * 7 + 6} min ago</strong>
+              </a>
+            ))}
+          </div>
+        </div>
+        <aside><h2>How these links work</h2><p>We open each reward link on the interval shown above. A link moves to the expired list as soon as it fails twice.</p><a href="/daily">All daily link games</a></aside>
+      </section>
+    )}
+
+    {definition.kind === 'hub' && (
+      <>
+        <section class="hub-hero content-boundary">
+          <div class="hub-art"><MediaPlaceholder name={`${game?.name} key art`} /></div>
+          <nav class="hub-tabs" aria-label={`${game?.name} sections`}>
+            <a href={gameRoot} aria-current="page">Overview</a>
+            <a href={`${gameRoot}-codes`}>Codes</a>
+            <a href={`${gameRoot}/values`}>Values</a>
+            <a href={`${gameRoot}/archive`}>Archive</a>
+          </nav>
+        </section>
+        <section class="page-section content-boundary module-grid">
+          <a class="module" href={`${gameRoot}-codes`}><span>Verified {game?.age} ago</span><h2>Newest working codes</h2><strong>{game?.live} live codes</strong></a>
+          <a class="module" href={`${gameRoot}/values`}><span>Updated 2 h ago</span><h2>Item values</h2><strong>84 items tracked</strong></a>
+          <a class="module" href={`${gameRoot}/archive`}><span>Permanent record</span><h2>Expired archive</h2><strong>214 codes kept</strong></a>
+          {game?.slug === 'grow-a-garden' && <a class="module" href="/guides/every-mutation-and-what-triggers-it"><span>8 min read</span><h2>Every mutation</h2><strong>Guide</strong></a>}
+        </section>
+      </>
+    )}
+
+    {definition.kind === 'codes' && (
+      <section class="page-section content-boundary split-layout wide-main">
+        <div>
+          <div class="section-title"><h2>Working codes</h2><span>{game?.live ?? 6} live</span></div>
+          <div class="code-table" aria-label={`Working ${game?.name} codes`}>
+            {liveCodes.slice(0, Math.max(1, Math.min(game?.live ?? 6, liveCodes.length))).map(([code, reward, source, checked]) => (
+              <div class="code-row">
+                <div><code>{code}</code><span>{reward}</span></div>
+                <div><small>{source} · {checked}</small><button type="button" data-copy-code={code}>Copy</button></div>
+              </div>
+            ))}
+          </div>
+          <h2 class="subhead">Expired codes</h2>
+          <div class="expired-list">
+            {expiredCodes.map(([code, reward, checked]) => <div><s>{code}</s><span>{reward}</span><time>{checked}</time></div>)}
+          </div>
+        </div>
+        <aside><h2>Verification</h2><p>Every code is opened against two sources before it appears as live. Expired codes stay visible.</p><a href="/how-we-verify">How we verify</a><a href={`${gameRoot}/archive`}>Full archive</a></aside>
+      </section>
+    )}
+
+    {definition.kind === 'cheats' && (
+      <section class="page-section content-boundary"><h2>Games with cheats</h2><div class="catalogue">{cheatGames.map(([name, slug, count, systems]) => <a href={`/cheats/${slug}`}><span>{name}<small>{systems}</small></span><strong>{count} cheats</strong></a>)}</div></section>
+    )}
+
+    {definition.kind === 'cheat' && (
+      <section class="page-section content-boundary split-layout wide-main">
+        <div><h2>Player and world cheats</h2><div class="code-table">{cheatRows.map(([name, code]) => <div class="code-row"><div><strong>{name}</strong><code>{code}</code></div><button type="button" data-copy-code={code}>Copy</button></div>)}</div></div>
+        <aside><h2>Confirmed build</h2><p>Each sequence was entered on retail hardware and PC against the current patch.</p><a href="/cheats">All cheat games</a></aside>
+      </section>
+    )}
+
+    {(definition.kind === 'team' || definition.kind === 'author') && (
+      <section class="page-section content-boundary">
+        {definition.kind === 'team' ? (
+          <div class="profile-grid">{authors.map((person) => <a href={`/team/${person.slug}`}><div class="portrait"><MediaPlaceholder name={`${person.name}, portrait`} /></div><h2>{person.name}</h2><strong>{person.role}</strong><p>{person.owns}</p><small>{person.metric}</small></a>)}</div>
+        ) : (
+          <div class="profile-detail"><div class="portrait"><MediaPlaceholder name={`${definition.name}, portrait`} /></div><div><h2>Experience</h2><p>{authors.find((person) => person.slug === definition.slug)?.owns}</p><p>Every page carries a named author and a published verification schedule. Recent work remains linked to the source and check log.</p><a href="/team">Meet the full editorial team</a></div></div>
+        )}
+      </section>
+    )}
+
+    {(definition.kind === 'gearIndex' || definition.kind === 'gearCategory') && (
+      <section class="page-section content-boundary">
+        {definition.kind === 'gearIndex' && <div class="chip-links"><a href="/gear/roblox">Roblox</a><a href="/gear/mobile">Mobile</a><a href="/gear/pc-and-console">PC and console</a></div>}
+        <h2>Picked this month</h2>
+        <div class="card-grid">{gear.map(([name, price, href]) => <a class="media-card" href={href}><div class="media"><MediaPlaceholder name={name} /></div><div class="card-copy"><h3>{name}</h3><p>{price}</p></div></a>)}</div>
+      </section>
+    )}
+
+    {definition.kind === 'gearProduct' && (
+      <section class="page-section content-boundary product-layout"><div class="product-media"><MediaPlaceholder name={definition.name ?? 'Product'} /></div><div><p class="eyebrow">Freetins pick</p><h2>Why we picked it</h2><p>It solves a specific gaming problem without adding an account, subscription or unnecessary setup step.</p><dl><div><dt>Delivery</dt><dd>In stock</dd></div><div><dt>Checked</dt><dd>21 August 2026</dd></div><div><dt>Disclosure</dt><dd>Affiliate link</dd></div></dl><Button href="/affiliate-disclosure" variant="secondary">Read the disclosure</Button></div></section>
+    )}
+
+    {definition.kind === 'values' && (
+      <section class="page-section content-boundary"><div class="section-title"><h2>{game?.name}, current trade values</h2><span>Source on every row</span></div><div class="data-table">{values.map(([name, tier, value, trend, source]) => <div><strong>{name}</strong><span>{tier}</span><b>{value}</b><em>{trend}</em><small>{source}</small></div>)}</div></section>
+    )}
+
+    {definition.kind === 'tiers' && (
+      <section class="page-section content-boundary"><div class="tier-list">{tierGames.map((entry, index) => <div><strong>{['S', 'A', 'B', 'C', 'D'][index]}</strong><div><h2>{entry.name}</h2><p>{entry.live} live codes · checked {entry.age} ago</p><small>Source: last three published code drops</small></div></div>)}</div></section>
+    )}
+
+    {definition.kind === 'calendar' && (
+      <section class="page-section content-boundary"><div class="section-title"><h2>August 2026</h2><span>Today: 22 August</span></div><div class="calendar"><div class="weekdays">{['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => <strong>{day}</strong>)}</div><div class="days">{Array.from({ length: 35 }, (_, index) => <div class:list={{ today: index === 25 }}><span>{index < 4 ? '' : index - 3}</span>{index > 14 && index % 3 === 0 && <b style={`--bar:${30 + (index % 5) * 14}%`}></b>}</div>)}</div></div></section>
+    )}
+
+    {(definition.kind === 'privacy' || definition.kind === 'affiliate' || definition.kind === 'terms') && (
+      <section class="page-section content-boundary prose"><p class="updated">Last updated 21 August 2026</p>{legalSections.map(([heading, copy], index) => <section><span>{String(index + 1).padStart(2, '0')}</span><div><h2>{heading}</h2><p>{copy}</p></div></section>)}</section>
+    )}
+
+    {definition.kind === 'verify' && (
+      <section class="page-section content-boundary"><h2>How often we check</h2><div class="process-grid">{[['01', 'Find the source', 'A developer channel or game surface starts the check.'], ['02', 'Open it twice', 'Two sources must agree before a code is marked live.'], ['03', 'Publish the time', 'The page shows the minute of the latest successful check.'], ['04', 'Keep the record', 'Failed codes move to the archive instead of disappearing.']].map(([num, title, copy]) => <div><strong>{num}</strong><h3>{title}</h3><p>{copy}</p></div>)}</div></section>
+    )}
+
+    {definition.kind === 'updates' && (
+      <section class="page-section content-boundary timeline">{updates.map(([date, version, title, copy]) => <article><time>{date}</time><span>{version}</span><div><h2>{title}</h2><p>{copy}</p></div></article>)}</section>
+    )}
+
+    {definition.kind === 'archive' && (
+      <section class="page-section content-boundary"><div class="section-title"><h2>{game ? `${game.name}, every pulled code` : 'Every game, archived counts'}</h2><span>Never deleted</span></div><div class="data-table archive-table">{expiredCodes.concat(expiredCodes).map(([code, reward, checked], index) => <div><s>{code}{index > 2 ? `-${index + 1}` : ''}</s><span>{reward}</span><b>{checked}</b><small>Source retained</small></div>)}</div></section>
+    )}
+
+    {definition.kind === 'guide' && (
+      <section class="page-section content-boundary guide-layout"><aside><strong>On this page</strong><a href="#what-it-is">What it is</a><a href="#full-list">The full list</a><a href="#unconfirmed">What we could not confirm</a></aside><div class="prose-body"><h2 id="what-it-is">What a mutation actually is</h2><p>A mutation changes the sale multiplier of a crop. Weather, pets and limited events can each trigger one, and compatible effects stack.</p><h2 id="full-list">The full list</h2>{values.slice(0, 5).map(([name, tier, value]) => <div class="guide-row"><strong>{name}</strong><span>{tier}</span><b>{value}</b></div>)}<h2 id="unconfirmed">What we could not confirm</h2><p>Community reports without a repeatable trigger remain outside the table until a second source reproduces them.</p></div></section>
+    )}
+
+    {(definition.kind === 'search' || definition.kind === 'submit' || definition.kind === 'alerts' || definition.kind === 'contact' || definition.kind === 'manage') && (
+      <section class="page-section content-boundary form-layout">
+        <form method="get" action={definition.kind === 'search' ? '/search' : undefined}>
+          <label>{definition.kind === 'search' ? 'Game, guide or code' : definition.kind === 'alerts' ? 'Email or Discord handle' : 'Your email'}<input type={definition.kind === 'search' ? 'search' : 'text'} name={definition.kind === 'search' ? 'q' : 'contact'} placeholder={definition.kind === 'search' ? 'Grow a Garden' : 'you@example.com'} /></label>
+          {definition.kind !== 'search' && definition.kind !== 'manage' && <label>Details<textarea name="message" rows={5} placeholder="Tell us what you need"></textarea></label>}
+          <button type="submit">{definition.kind === 'search' ? 'Search' : definition.kind === 'manage' ? 'Pause alerts' : 'Continue'}</button>
+        </form>
+        <aside><h2>What happens next</h2><p>{definition.kind === 'search' ? 'Results include games, guides and daily-link pages.' : 'A person or the verification checker handles the request. Nothing publishes automatically.'}</p></aside>
+      </section>
+    )}
+
+    {(definition.kind === 'status' || definition.kind === 'adspec' || definition.kind === 'queue' || definition.kind === 'notTracked') && (
+      <section class="page-section content-boundary"><div class="notice"><span>{definition.kind === 'status' ? 'Operational' : definition.eyebrow ?? 'Freetins'}</span><h2>{definition.kind === 'status' ? 'All checkers are running normally' : definition.kind === 'queue' ? 'Six candidates await validation' : definition.kind === 'adspec' ? 'Reserved space, zero layout shift' : 'Request the game and it enters validation'}</h2><p>{definition.description}</p></div></section>
+    )}
+
+    {relatedLinks.length > 0 && <nav class="next-links content-boundary" aria-label="Related pages">{relatedLinks.map(([label, href]) => <a href={href}>{label}</a>)}</nav>}
+  </article>
+
+  <script>
+    document.addEventListener('click', async (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-copy-code]');
+      if (!button) return;
+      const code = button.dataset.copyCode ?? '';
+      try {
+        await navigator.clipboard.writeText(code);
+        button.textContent = 'Copied';
+        window.setTimeout(() => { button.textContent = 'Copy'; }, 1600);
+      } catch {
+        button.textContent = 'Select code';
+      }
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .route-page { padding-bottom: clamp(54px, 7vw, 92px); }
+  .page-head { padding: clamp(28px, 4vw, 52px) var(--page-gutter) 0; }
+  .breadcrumbs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; color: var(--text-tertiary); font: 400 13px / 1.4 var(--font-core); }
+  .breadcrumbs a { color: var(--text-tertiary); }
+  .breadcrumbs a::after { margin-left: 6px; content: '/'; color: var(--text-disabled); }
+  .eyebrow { margin: 0 0 12px; color: var(--text-brand); font: 700 12px / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
+  h1 { max-width: 28ch; margin: 0; color: var(--text-primary); font: 600 var(--fs-h1) / var(--lh-h1) var(--font-display); letter-spacing: .02em; text-transform: uppercase; text-wrap: pretty; }
+  .lede { max-width: 66ch; margin: 16px 0 0; color: var(--text-secondary); font: 400 var(--fs-body-lg) / var(--lh-body-lg) var(--font-core); text-wrap: pretty; }
+  .stats { display: flex; flex-wrap: wrap; margin-top: 24px; border: 1px solid var(--border-subtle); background: var(--surface-raised); }
+  .stats > div { min-width: 150px; flex: 1 1 150px; padding: 12px 16px; border-right: 1px solid var(--border-subtle); }
+  .stats span, .section-title > span { display: block; color: var(--text-disabled); font: 700 10.5px / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
+  .stats strong { display: block; margin-top: 5px; color: var(--text-primary); font: 600 18px / 1.2 var(--font-display); font-variant-numeric: tabular-nums; }
+  .page-section { padding: clamp(28px, 4vw, 44px) var(--page-gutter) 0; }
+  .page-section > h2, .section-title h2, aside h2 { margin: 0 0 14px; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
+  .section-title { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+  .section-title h2 { margin: 0; }
+  .catalogue { border: 1px solid var(--border-subtle); }
+  .catalogue.columns { columns: 300px auto; column-gap: 0; }
+  .catalogue a { display: flex; align-items: center; gap: 14px; break-inside: avoid; min-height: 54px; padding: 11px 16px; border-bottom: 1px solid var(--border-subtle); color: inherit; text-decoration: none; }
+  .catalogue a:hover, .link-list a:hover { background: var(--white-a08); }
+  .catalogue a > span { min-width: 0; flex: 1; color: var(--text-primary); }
+  .catalogue small { display: block; margin-top: 3px; color: var(--text-tertiary); }
+  .catalogue strong { color: var(--text-brand); font-size: 13px; }
+  .catalogue time { width: 90px; color: var(--text-tertiary); font-size: 13px; text-align: right; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 26px 20px; }
+  .media-card { display: block; color: inherit; text-decoration: none; }
+  .media { position: relative; aspect-ratio: 528 / 320; overflow: hidden; background: var(--surface-card); transition: transform 250ms var(--ease-standard); }
+  .media-card:hover .media { transform: scale(1.02); }
+  .card-copy { padding: 13px 14px 16px; background: var(--surface-raised); }
+  .card-copy h3 { margin: 0; color: var(--text-primary); font: 600 16px / 1.35 var(--font-core); }
+  .card-copy p { margin: 6px 0 0; color: var(--text-tertiary); font-size: 13px; }
+  .split-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 320px); gap: 30px; align-items: start; }
+  .wide-main { grid-template-columns: minmax(0, 1.7fr) minmax(240px, .7fr); }
+  aside { border: 1px solid var(--border-subtle); background: var(--surface-raised); padding: 20px; }
+  aside p { margin: 0 0 14px; color: var(--text-secondary); line-height: 1.55; }
+  aside a { display: block; margin-top: 10px; color: var(--text-primary); font-weight: 600; }
+  .link-list, .code-table, .expired-list, .data-table { border: 1px solid var(--border-subtle); }
+  .link-list a { display: flex; justify-content: space-between; gap: 14px; padding: var(--rowpad) 16px; border-bottom: 1px solid var(--border-subtle); color: var(--text-primary); text-decoration: none; }
+  .link-list strong { color: var(--text-brand); font-size: 13px; }
+  .game-tabs, .hub-tabs, .chip-links { display: flex; flex-wrap: wrap; gap: 1px; margin-top: 22px; }
+  .game-tabs a, .hub-tabs a, .chip-links a { min-height: 42px; padding: 13px 16px; border: 1px solid var(--border-subtle); color: var(--text-secondary); font: 700 11px / 1.4 var(--font-core); letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+  .game-tabs a[aria-current='page'], .hub-tabs a[aria-current='page'] { background: var(--green-600); color: #fff; }
+  .hub-hero { padding: 24px var(--page-gutter) 0; }
+  .hub-art { position: relative; aspect-ratio: 16 / 6; min-height: 240px; background: var(--surface-card); }
+  .module-grid, .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+  .module { display: block; min-height: 170px; padding: 20px; border: 1px solid var(--border-subtle); color: inherit; text-decoration: none; }
+  .module:hover { background: var(--white-a08); }
+  .module span { color: var(--text-tertiary); font-size: 12px; }
+  .module h2 { margin: 30px 0 7px; color: var(--text-primary); font: 600 18px / 1.3 var(--font-core); }
+  .module strong { color: var(--text-brand); font-size: 13px; }
+  .code-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: var(--rowpad) 16px; border-bottom: 1px solid var(--border-subtle); }
+  .code-row > div { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .code-row code { color: var(--green-neon); font: 600 14px / 1.4 ui-monospace, monospace; }
+  .code-row span, .code-row small { color: var(--text-tertiary); }
+  .code-row button, form button { min-height: 40px; border: 0; background: var(--green-600); color: #fff; padding: 0 14px; cursor: pointer; font: 700 11px / 1 var(--font-core); letter-spacing: .08em; text-transform: uppercase; }
+  .subhead { margin: 30px 0 12px; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
+  .expired-list > div, .data-table > div { display: grid; grid-template-columns: 1.2fr 1.4fr .8fr; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); }
+  .expired-list span, .expired-list time, .data-table span, .data-table small { color: var(--text-tertiary); }
+  .profile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 20px; }
+  .profile-grid a { color: inherit; text-decoration: none; }
+  .portrait { position: relative; aspect-ratio: 4 / 5; background: var(--surface-card); }
+  .profile-grid h2 { margin: 14px 0 3px; color: var(--text-primary); }
+  .profile-grid strong { color: var(--text-brand); }
+  .profile-grid p, .profile-detail p { color: var(--text-tertiary); line-height: 1.55; }
+  .profile-detail { display: grid; grid-template-columns: minmax(240px, 380px) minmax(0, 1fr); gap: 36px; }
+  .product-layout { display: grid; grid-template-columns: minmax(280px, 1.2fr) minmax(280px, .8fr); gap: 36px; }
+  .product-media { position: relative; min-height: 480px; background: var(--surface-card); }
+  dl { border: 1px solid var(--border-subtle); margin: 24px 0; }
+  dl div { display: flex; justify-content: space-between; gap: 16px; padding: 11px 14px; border-bottom: 1px solid var(--border-subtle); }
+  dt { color: var(--text-tertiary); } dd { margin: 0; color: var(--text-primary); }
+  .data-table > div { grid-template-columns: 1.3fr .7fr .6fr .5fr 1fr; }
+  .data-table b { color: var(--text-primary); } .data-table em { color: var(--text-brand); font-style: normal; }
+  .tier-list > div { display: grid; grid-template-columns: 90px 1fr; min-height: 150px; border-bottom: 1px solid var(--border-subtle); }
+  .tier-list > div > strong { display: grid; place-items: center; background: var(--green-600); color: #fff; font: 600 40px / 1 var(--font-display); }
+  .tier-list > div:nth-child(n+3) > strong { background: var(--surface-raised); color: var(--text-primary); }
+  .tier-list > div > div { padding: 22px; } .tier-list h2 { margin: 0; color: var(--text-primary); }
+  .tier-list p, .tier-list small { color: var(--text-tertiary); }
+  .weekdays, .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: var(--border-subtle); }
+  .weekdays strong { padding: 8px; background: var(--surface-sunken); color: var(--text-disabled); text-align: center; font-size: 10px; text-transform: uppercase; }
+  .days > div { position: relative; min-height: 76px; padding: 8px; background: var(--surface-page); }
+  .days > div.today { outline: 1px solid var(--green-neon); outline-offset: -2px; }
+  .days b { position: absolute; right: 8px; bottom: 9px; left: 8px; height: 4px; background: linear-gradient(to right, var(--green-600) var(--bar), var(--surface-raised) var(--bar)); }
+  .prose { max-width: 920px; }
+  .updated { color: var(--text-tertiary); }
+  .prose > section { display: grid; grid-template-columns: 42px 1fr; gap: 12px; padding: 24px 0; border-bottom: 1px solid var(--border-subtle); }
+  .prose > section > span { color: var(--text-disabled); font: 700 11px / 1.4 var(--font-core); }
+  .prose h2 { margin: 0 0 10px; color: var(--text-primary); }
+  .prose p, .timeline p, .notice p { margin: 0; color: var(--text-secondary); line-height: 1.62; }
+  .process-grid > div { min-height: 180px; border: 1px solid var(--border-subtle); padding: 18px; }
+  .process-grid > div > strong { color: var(--green-neon); font: 600 26px / 1 var(--font-display); }
+  .process-grid h3 { margin: 20px 0 8px; color: var(--text-primary); }
+  .process-grid p { margin: 0; color: var(--text-tertiary); }
+  .timeline article { display: grid; grid-template-columns: 130px 70px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border-subtle); }
+  .timeline time, .timeline > article > span { color: var(--text-tertiary); }
+  .timeline h2 { margin: 0 0 7px; color: var(--text-primary); }
+  .archive-table > div { grid-template-columns: 1fr 1.4fr .9fr .8fr; }
+  .guide-layout { display: grid; grid-template-columns: 250px minmax(0, 720px); gap: 36px; }
+  .guide-layout aside { position: sticky; top: 80px; }
+  .prose-body h2 { scroll-margin-top: 90px; margin: 0 0 12px; padding-top: 30px; color: var(--text-primary); }
+  .prose-body h2:first-child { padding-top: 0; }
+  .prose-body p { color: var(--text-secondary); line-height: 1.7; }
+  .guide-row { display: grid; grid-template-columns: 1.4fr .8fr .6fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); }
+  .form-layout { display: grid; grid-template-columns: minmax(0, 620px) minmax(230px, 320px); gap: 30px; }
+  form { display: grid; gap: 16px; }
+  label { display: grid; gap: 7px; color: var(--text-secondary); font-weight: 600; }
+  input, textarea { width: 100%; border: 1px solid var(--border-strong); background: var(--surface-sunken); color: var(--text-primary); padding: 13px 14px; }
+  form button { justify-self: start; min-height: 44px; padding-inline: 20px; }
+  .notice { border: 1px solid var(--border-strong); background: var(--surface-raised); padding: clamp(22px, 3vw, 34px); }
+  .notice > span { color: var(--text-brand); font: 700 11px / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
+  .notice h2 { margin: 12px 0 8px; color: var(--text-primary); }
+  .next-links { display: flex; flex-wrap: wrap; gap: 9px 18px; padding: 30px var(--page-gutter) 0; }
+  .next-links a { color: var(--text-primary); font-weight: 600; }
+  @media (max-width: 767px) {
+    .split-layout, .profile-detail, .product-layout, .guide-layout, .form-layout { grid-template-columns: 1fr; }
+    .profile-grid { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr; }
+    .catalogue.columns { columns: auto; }
+    .catalogue time { display: none; }
+    .hub-art { aspect-ratio: 4 / 3; }
+    .code-row { align-items: flex-start; flex-direction: column; }
+    .expired-list > div, .data-table > div, .archive-table > div { grid-template-columns: 1fr 1fr; }
+    .timeline article { grid-template-columns: 1fr; gap: 6px; }
+    .guide-layout aside { position: static; }
+    .product-media { min-height: 360px; }
+  }
+</style>
