@@ -1,4 +1,5 @@
 import { dailyLinkCatalogue, gameCatalogue } from './home';
+import routeRendering from './route-rendering.json';
 
 export type RouteKind =
   | 'daily'
@@ -303,6 +304,20 @@ export const routeDefinitions: RouteDefinition[] = [
   ...gearCategoryRoutes,
   ...gearProductRoutes,
 ];
+
+export const onDemandRoutePaths = routeRendering.onDemandRoutePaths;
+
+const onDemandRoutePathSet = new Set<string>(onDemandRoutePaths);
+
+export const prerenderedRouteDefinitions = routeDefinitions.filter(
+  (definition) => !onDemandRoutePathSet.has(definition.path),
+);
+
+export const getRouteDefinition = (path: string) => {
+  const definition = routeDefinitions.find((candidate) => candidate.path === path);
+  if (!definition) throw new Error(`Missing route definition for ${path}`);
+  return definition;
+};
 
 export const notFoundDefinition: RouteDefinition = {
   path: '/404',

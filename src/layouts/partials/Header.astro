@@ -8,11 +8,14 @@ interface Props {
 }
 
 const { currentPath } = Astro.props;
+const normalizedCurrentPath = currentPath === '/index.html'
+  ? '/'
+  : currentPath.replace(/\.html$/, '').replace(/\/+$/, '');
 
 const isActive = (href: string) => {
-  if (href === '/') return currentPath === '/';
-  if (href === '/roblox') return currentPath === '/roblox' || currentPath.endsWith('-codes');
-  return currentPath === href || currentPath.startsWith(`${href}/`);
+  if (href === '/') return normalizedCurrentPath === '/';
+  if (href === '/roblox') return normalizedCurrentPath === '/roblox' || normalizedCurrentPath.endsWith('-codes');
+  return normalizedCurrentPath === href || normalizedCurrentPath.startsWith(`${href}/`);
 };
 ---
 

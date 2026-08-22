@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 import ConsentBanner from './partials/ConsentBanner.astro';
 import Footer from './partials/Footer.astro';
 import Header from './partials/Header.astro';
@@ -22,7 +23,10 @@ const {
   image = '/og/home.png',
   noindex = false,
 } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const cleanPathname = Astro.url.pathname === '/index.html'
+  ? '/'
+  : Astro.url.pathname.replace(/\.html$/, '').replace(/\/+$/, '');
+const canonical = new URL(cleanPathname, Astro.site);
 const socialImage = new URL(image, Astro.site);
 const schema = {
   '@context': 'https://schema.org',
@@ -61,6 +65,7 @@ const schema = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
@@ -75,6 +80,7 @@ const schema = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
+    <ClientRouter fallback="swap" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}></script>
     <slot name="head" />
   </head>
@@ -87,6 +93,9 @@ const schema = {
     </main>
     <Footer />
     <ConsentBanner mode={consentMode} />
+    <script>
+      import '../scripts/site';
+    </script>
   </body>
 </html>
 

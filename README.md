@@ -23,6 +23,16 @@ The production-style local preview builds the site and serves the output through
 pnpm preview
 ```
 
+## Rendering and navigation
+
+The project is static-first. Astro prerenders catalogue, game, guide, gear, editorial, and legal routes into HTML at build time. The rendering contract in `src/data/route-rendering.json` opts only `/status` and `/alerts/manage` into Cloudflare on-demand rendering.
+
+Static routes use Astro's file output with extensionless, no-trailing-slash public URLs. This matches Cloudflare Pages route resolution directly and avoids the redirect hop produced by directory-style `page/index.html` output.
+
+Internal navigation uses Astro's `ClientRouter` with hover/focus prefetching. The browser still receives complete HTML for every route, so direct URLs and JavaScript-disabled navigation continue to work. Shared shell behavior lives in `src/scripts/site.ts`, which uses delegated events and Astro navigation lifecycle events instead of attaching listeners to DOM nodes that are replaced during a route swap.
+
+Hashed files under `/_astro/` and `/assets/` are cached immutably. Cloudflare Pages handles normal static document caching, code pages receive a five-minute edge freshness window, `/status` receives a 30-second edge freshness window, and `/alerts/manage` is private and never cached.
+
 ## Validation
 
 ```bash
@@ -41,7 +51,9 @@ Connect the repository in Workers & Pages with these settings:
 - Build output: `dist`
 - Node.js: `24.15.0`
 
-`wrangler.toml` is the source-controlled Pages configuration. D1, KV, and secret bindings will be added when the server routes and hourly checker are implemented.
+`wrangler.toml` is the source-controlled Pages configuration. Resource identifiers for D1, KV, and secret bindings are added after those Cloudflare resources are provisioned.
+
+The `/status` route reads the optional `STATUS` KV binding at the key `checker:current`. Its JSON value must contain `state`, `lastFullRun`, `pagesChecked`, `medianResponseMs`, and `message`. Until the binding is provisioned or when its value is invalid, the page reports status data as unavailable instead of presenting invented operational data.
 
 ## Prototype reference
 

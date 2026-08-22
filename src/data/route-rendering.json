@@ -1,0 +1,6 @@
+{
+  "onDemandRoutePaths": [
+    "/status",
+    "/alerts/manage"
+  ]
+}

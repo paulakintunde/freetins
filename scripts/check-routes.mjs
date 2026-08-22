@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
 const outputRoot = resolve('dist');
+const renderingContractPath = resolve('src/data/route-rendering.json');
 
 if (!existsSync(outputRoot)) {
   throw new Error('dist is missing. Run pnpm build before pnpm check:routes.');
@@ -18,15 +19,33 @@ const walk = (directory) => {
 
 walk(outputRoot);
 
+const renderingContract = JSON.parse(readFileSync(renderingContractPath, 'utf8'));
+const workerManifestPath = join(outputRoot, '_routes.json');
+const workerManifest = existsSync(workerManifestPath)
+  ? JSON.parse(readFileSync(workerManifestPath, 'utf8'))
+  : { include: [], exclude: [] };
+
 const missing = new Map();
 const prototypeLeaks = [];
 let internalLinks = 0;
+let workerLinks = 0;
 
 const resolvesToDocument = (pathname) => {
   if (pathname === '/') return existsSync(join(outputRoot, 'index.html'));
   const cleanPath = decodeURIComponent(pathname).replace(/^\/+|\/+$/g, '');
   return existsSync(join(outputRoot, cleanPath, 'index.html')) || existsSync(join(outputRoot, `${cleanPath}.html`));
 };
+
+const matchesPattern = (pathname, pattern) => {
+  const escaped = pattern
+    .replace(/[.+?^${}()|[\]\\]/g, '\\$&')
+    .replaceAll('*', '.*');
+  return new RegExp(`^${escaped}$`).test(pathname);
+};
+
+const resolvesOnWorker = (pathname) =>
+  workerManifest.include.some((pattern) => matchesPattern(pathname, pattern))
+  && !workerManifest.exclude.some((pattern) => matchesPattern(pathname, pattern));
 
 for (const file of htmlFiles) {
   const html = readFileSync(file, 'utf8');
@@ -43,6 +62,12 @@ for (const file of htmlFiles) {
     if (url.origin !== 'https://freetins.test') continue;
 
     internalLinks += 1;
+    if (resolvesToDocument(url.pathname)) continue;
+    if (resolvesOnWorker(url.pathname)) {
+      workerLinks += 1;
+      continue;
+    }
+
     if (!resolvesToDocument(url.pathname)) {
       const sources = missing.get(url.pathname) ?? [];
       sources.push(file);
@@ -50,6 +75,10 @@ for (const file of htmlFiles) {
     }
   }
 }
+
+const invalidOnDemandRoutes = renderingContract.onDemandRoutePaths.filter(
+  (pathname) => resolvesToDocument(pathname) || !resolvesOnWorker(pathname),
+);
 
 if (prototypeLeaks.length > 0) {
   console.error('Prototype file/hash routes leaked into:');
@@ -63,6 +92,11 @@ if (missing.size > 0) {
   }
 }
 
-if (prototypeLeaks.length > 0 || missing.size > 0) process.exit(1);
+if (invalidOnDemandRoutes.length > 0) {
+  console.error('On-demand routes were not emitted exclusively as Worker routes:');
+  for (const pathname of invalidOnDemandRoutes) console.error(`- ${pathname}`);
+}
 
-console.log(`Route crawl passed: ${htmlFiles.length} documents and ${internalLinks} internal links checked.`);
+if (prototypeLeaks.length > 0 || missing.size > 0 || invalidOnDemandRoutes.length > 0) process.exit(1);
+
+console.log(`Route crawl passed: ${htmlFiles.length} documents, ${internalLinks} internal links and ${workerLinks} Worker links checked.`);

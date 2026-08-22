@@ -55,104 +55,6 @@ import { drawerLinks, hotSearches } from '../../data/site';
   </aside>
 </div>
 
-<script>
-  const overlay = document.querySelector<HTMLElement>('[data-drawer-overlay]');
-  const drawer = document.querySelector<HTMLElement>('#mobile-drawer');
-  const openButton = document.querySelector<HTMLButtonElement>('[data-drawer-open]');
-  const closeButton = document.querySelector<HTMLButtonElement>('[data-drawer-close]');
-
-  if (overlay && drawer && openButton && closeButton) {
-    let returnFocus: HTMLElement | null = null;
-
-    const focusableElements = () =>
-      Array.from(
-        drawer.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])',
-        ),
-      ).filter((element) => !element.hidden);
-
-    const closeDrawer = () => {
-      if (overlay.hidden) return;
-      overlay.hidden = true;
-      overlay.setAttribute('aria-hidden', 'true');
-      openButton.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('drawer-open');
-      returnFocus?.focus();
-    };
-
-    const openDrawer = () => {
-      returnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : openButton;
-      overlay.hidden = false;
-      overlay.setAttribute('aria-hidden', 'false');
-      openButton.setAttribute('aria-expanded', 'true');
-      document.body.classList.add('drawer-open');
-      requestAnimationFrame(() => closeButton.focus());
-    };
-
-    openButton.addEventListener('click', openDrawer);
-    closeButton.addEventListener('click', closeDrawer);
-    overlay.addEventListener('pointerdown', (event) => {
-      if (event.target === overlay) closeDrawer();
-    });
-
-    drawer.querySelectorAll<HTMLElement>('[data-drawer-link]').forEach((link) => {
-      link.addEventListener('click', closeDrawer);
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (overlay.hidden) return;
-
-      if (event.key === 'Escape') {
-        event.preventDefault();
-        closeDrawer();
-        return;
-      }
-
-      if (event.key !== 'Tab') return;
-      const elements = focusableElements();
-      const first = elements[0];
-      const last = elements.at(-1);
-      if (!first || !last) return;
-
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    });
-
-    const pushPrompt = drawer.querySelector<HTMLElement>('[data-push-prompt]');
-    const pushAllowed = drawer.querySelector<HTMLElement>('[data-push-allowed]');
-    const allowPush = drawer.querySelector<HTMLButtonElement>('[data-push-allow]');
-    const dismissPush = drawer.querySelector<HTMLButtonElement>('[data-push-dismiss]');
-
-    const showPushAllowed = () => {
-      if (pushPrompt) pushPrompt.hidden = true;
-      if (pushAllowed) pushAllowed.hidden = false;
-    };
-
-    if ('Notification' in window && Notification.permission === 'granted') {
-      showPushAllowed();
-    }
-
-    allowPush?.addEventListener('click', async () => {
-      if (!('Notification' in window)) {
-        if (pushPrompt) pushPrompt.querySelector('p')!.textContent = 'Notifications are not available in this browser.';
-        return;
-      }
-
-      const permission = await Notification.requestPermission();
-      if (permission === 'granted') showPushAllowed();
-    });
-
-    dismissPush?.addEventListener('click', () => {
-      if (pushPrompt) pushPrompt.hidden = true;
-    });
-  }
-</script>
-
 <style>
   .drawer-overlay {
     position: fixed;
@@ -368,16 +270,6 @@ import { drawerLinks, hotSearches } from '../../data/site';
   .drawer-footer a {
     color: var(--text-tertiary);
     font: 400 12.5px / 1.4 var(--font-core);
-  }
-
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    white-space: nowrap;
   }
 
   @media (min-width: 1084px) {

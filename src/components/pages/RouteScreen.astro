@@ -3,13 +3,15 @@ import MediaPlaceholder from '../ui/MediaPlaceholder.astro';
 import Button from '../ui/Button.astro';
 import { dailyLinkCatalogue, gameCatalogue } from '../../data/home';
 import type { RouteDefinition } from '../../data/routes';
+import type { CheckerSnapshot } from '../../lib/checker-status';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 interface Props {
   definition: RouteDefinition;
+  checkerSnapshot?: CheckerSnapshot;
 }
 
-const { definition } = Astro.props;
+const { definition, checkerSnapshot } = Astro.props;
 const game = gameCatalogue.find((item) => item.slug === definition.slug);
 const dailyGame = dailyLinkCatalogue.find((item) => item.slug === definition.slug);
 const platform = definition.platform ?? 'roblox';
@@ -24,7 +26,12 @@ const stats = (() => {
     case 'codes': return [['Last checked', `${game?.age ?? '4 min'} ago`], ['Next check', 'in 56 min'], ['Live now', `${game?.live ?? 6} codes`], ['Verification', '2 sources']];
     case 'calendar': return [['Added in August', '127'], ['Expired in August', '96'], ['Dated events ahead', '6'], ['Biggest day', '18 Aug']];
     case 'az': return [['Games listed', String(gameCatalogue.length + dailyLinkCatalogue.length)], ['With live codes', '52'], ['Checked this hour', '41'], ['Cheats confirmed', '362']];
-    case 'status': return [['Checker', 'Live'], ['Last full run', '4 min ago'], ['Pages checked', '312'], ['Median response', '410 ms']];
+    case 'status': return [
+      ['Checker', checkerSnapshot?.state ?? 'Unavailable'],
+      ['Last full run', checkerSnapshot?.lastFullRun ?? 'Unavailable'],
+      ['Pages checked', checkerSnapshot ? String(checkerSnapshot.pagesChecked) : 'Unavailable'],
+      ['Median response', checkerSnapshot && checkerSnapshot.medianResponseMs > 0 ? `${checkerSnapshot.medianResponseMs} ms` : 'Unavailable'],
+    ];
     case 'values': return [['Items tracked', '84'], ['Trades, 7 d', '1,240'], ['Updated', '2 h ago'], ['Refresh', 'Daily']];
     case 'archive': return [['Codes archived', '4,318'], ['Median life', '6 d'], ['Longest lived', '214 d'], ['Oldest entry', 'Jul 2023']];
     default: return [];
@@ -39,6 +46,12 @@ const liveCodes = [
   ['WATERINGCAN', 'Watering can skin', 'Update announcement', '1 h ago'],
   ['COMMUNITY250', '250 sheckles', 'Community submission', '2 h ago'],
 ] as const;
+
+const statusHeading = checkerSnapshot?.state === 'Live'
+  ? 'All checkers are running normally'
+  : checkerSnapshot?.state === 'Outage'
+    ? 'Hourly checks are currently unavailable'
+    : 'Checks are running behind';
 
 const expiredCodes = [
   ['SPRINGSEED', 'Summer event seed', 'Expired 1 d ago'],
@@ -140,7 +153,12 @@ const crumbs = isGamePage
   : [['Home', '/']];
 ---
 
-<BaseLayout title={definition.title} description={definition.description} noindex={definition.noindex ?? false}>
+<BaseLayout
+  title={definition.title}
+  description={definition.description}
+  noindex={definition.noindex ?? false}
+  checkerStatus={checkerSnapshot?.state ?? 'Live'}
+>
   <article class="route-page" data-route-kind={definition.kind}>
     <header class:list={['page-head', 'content-boundary', { 'hub-head': definition.kind === 'hub' }]}>
       <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -238,6 +256,7 @@ const crumbs = isGamePage
       <section class="page-section content-boundary split-layout wide-main">
         <div>
           <div class="section-title"><h2>Working codes</h2><span>{game?.live ?? 6} live</span></div>
+          <p class="visually-hidden" aria-live="polite" data-copy-live></p>
           <div class="code-table" aria-label={`Working ${game?.name} codes`}>
             {liveCodes.slice(0, Math.max(1, Math.min(game?.live ?? 6, liveCodes.length))).map(([code, reward, source, checked]) => (
               <div class="code-row">
@@ -332,26 +351,12 @@ const crumbs = isGamePage
     )}
 
     {(definition.kind === 'status' || definition.kind === 'adspec' || definition.kind === 'queue' || definition.kind === 'notTracked') && (
-      <section class="page-section content-boundary"><div class="notice"><span>{definition.kind === 'status' ? 'Operational' : definition.eyebrow ?? 'Freetins'}</span><h2>{definition.kind === 'status' ? 'All checkers are running normally' : definition.kind === 'queue' ? 'Six candidates await validation' : definition.kind === 'adspec' ? 'Reserved space, zero layout shift' : 'Request the game and it enters validation'}</h2><p>{definition.description}</p></div></section>
+      <section class="page-section content-boundary"><div class="notice"><span>{definition.kind === 'status' ? checkerSnapshot?.state ?? 'Unavailable' : definition.eyebrow ?? 'Freetins'}</span><h2>{definition.kind === 'status' ? statusHeading : definition.kind === 'queue' ? 'Six candidates await validation' : definition.kind === 'adspec' ? 'Reserved space, zero layout shift' : 'Request the game and it enters validation'}</h2><p>{definition.kind === 'status' ? checkerSnapshot?.message ?? definition.description : definition.description}</p></div></section>
     )}
 
     {relatedLinks.length > 0 && <nav class="next-links content-boundary" aria-label="Related pages">{relatedLinks.map(([label, href]) => <a href={href}>{label}</a>)}</nav>}
   </article>
 
-  <script>
-    document.addEventListener('click', async (event) => {
-      const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-copy-code]');
-      if (!button) return;
-      const code = button.dataset.copyCode ?? '';
-      try {
-        await navigator.clipboard.writeText(code);
-        button.textContent = 'Copied';
-        window.setTimeout(() => { button.textContent = 'Copy'; }, 1600);
-      } catch {
-        button.textContent = 'Select code';
-      }
-    });
-  </script>
 </BaseLayout>
 
 <style>

@@ -33,18 +33,6 @@ const copy = status === 'Live' ? null : statusCopy[status];
   </aside>
 )}
 
-<script>
-  const statusBanner = document.querySelector<HTMLElement>('[data-outage-banner]');
-  const dismissButton = statusBanner?.querySelector<HTMLButtonElement>('[data-outage-dismiss]');
-  if (statusBanner && sessionStorage.getItem('ft_status_dismissed') === 'true') {
-    statusBanner.hidden = true;
-  }
-  dismissButton?.addEventListener('click', () => {
-    if (statusBanner) statusBanner.hidden = true;
-    sessionStorage.setItem('ft_status_dismissed', 'true');
-  });
-</script>
-
 <style>
   .outage-banner {
     border-bottom: 1px solid var(--amber-500);

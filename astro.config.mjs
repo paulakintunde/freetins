@@ -7,7 +7,15 @@ const excludedFromSitemap = ['/internal/', '/advertise', '/alerts/manage', '/sea
 export default defineConfig({
   site: 'https://freetins.com',
   output: 'static',
+  trailingSlash: 'never',
   adapter: cloudflare({ imageService: 'compile' }),
+  build: {
+    format: 'file',
+  },
+  prefetch: {
+    defaultStrategy: 'hover',
+    prefetchAll: true,
+  },
   session: {
     driver: 'null',
   },

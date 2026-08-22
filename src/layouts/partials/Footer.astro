@@ -34,14 +34,6 @@ import { footerColumns } from '../../data/site';
   </div>
 </footer>
 
-<script>
-  document.querySelectorAll<HTMLButtonElement>('[data-open-consent]').forEach((button) => {
-    button.addEventListener('click', () => {
-      window.dispatchEvent(new CustomEvent('freetins:consent-open'));
-    });
-  });
-</script>
-
 <style>
   .site-footer {
     margin-top: clamp(40px, 5vw, 72px);

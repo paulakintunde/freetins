@@ -1,9 +1,9 @@
 ---
 import RouteScreen from '../components/pages/RouteScreen.astro';
-import { routeDefinitions, type RouteDefinition } from '../data/routes';
+import { prerenderedRouteDefinitions, type RouteDefinition } from '../data/routes';
 
 export function getStaticPaths() {
-  return routeDefinitions.map((definition) => ({
+  return prerenderedRouteDefinitions.map((definition) => ({
     params: { path: definition.path.slice(1) },
     props: { definition },
   }));
