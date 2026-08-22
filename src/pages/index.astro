@@ -1,18 +1,47 @@
 ---
+import { Picture } from 'astro:assets';
 import Button from '../components/ui/Button.astro';
-import MediaPlaceholder from '../components/ui/MediaPlaceholder.astro';
 import SearchField from '../components/ui/SearchField.astro';
 import { dailyGames, homeTiles, pulse, sponsoredGames } from '../data/home';
+import { homeGameArtwork, homeHeroArtwork, partnerArtwork, sponsoredGameArtwork } from '../data/home-images';
 import { hotSearches } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = 'Freetins — free codes, checked hourly';
 const description = 'Working game codes and daily reward links, rechecked every hour. Each code carries the minute it was last verified, and expired codes stay visible.';
+const socialImage = '/og/freetins-home-game-codes.jpg';
+
+function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
+  const artwork = artworks[name];
+
+  if (!artwork) {
+    throw new Error(`Missing homepage artwork for ${name}`);
+  }
+
+  return artwork;
+}
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  image={socialImage}
+  imageAlt="Freetins game code rewards checked every hour"
+>
   <section class="hero">
-    <div class="hero-art"><MediaPlaceholder name="Page hero key art, 1920 x 1080" /></div>
+    <div class="hero-art">
+      <Picture
+        src={homeHeroArtwork.src}
+        alt={homeHeroArtwork.alt}
+        formats={['avif']}
+        fallbackFormat="webp"
+        widths={[480, 768, 1080, 1440, 1672]}
+        sizes="100vw"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </div>
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="hero-boundary content-boundary">
       <div class="hero-copy">
@@ -61,41 +90,71 @@ const description = 'Working game codes and daily reward links, rechecked every 
     </div>
 
     <div class="game-grid">
-      {homeTiles.map((tile) => (
-        <a class="game-tile" href={tile.href}>
-          <div class="game-media">
-            <div class="tile-art"><MediaPlaceholder name={tile.name} /></div>
-            <div class="tile-scrim" aria-hidden="true"></div>
-            <div class="verified-label">
-              <span aria-hidden="true"></span>
-              <strong>Verified {tile.age} ago</strong>
+      {homeTiles.map((tile) => {
+        const artwork = requireArtwork(homeGameArtwork, tile.name);
+
+        return (
+          <a class="game-tile" href={tile.href}>
+            <div class="game-media">
+              <div class="tile-art">
+                <Picture
+                  src={artwork.src}
+                  alt={artwork.alt}
+                  formats={['avif']}
+                  fallbackFormat="webp"
+                  widths={[320, 528, 792, 1056]}
+                  sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1084px) 33vw, 25vw"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="tile-scrim" aria-hidden="true"></div>
+              <div class="verified-label">
+                <span aria-hidden="true"></span>
+                <strong>Verified {tile.age} ago</strong>
+              </div>
             </div>
-          </div>
-          <div class="game-copy">
-            <h3>{tile.name}</h3>
-            <div>
-              <span>{tile.live} live</span>
-              <span>·</span>
-              <span>{tile.rate}% working</span>
+            <div class="game-copy">
+              <h3>{tile.name}</h3>
+              <div>
+                <span>{tile.live} live</span>
+                <span>·</span>
+                <span>{tile.rate}% working</span>
+              </div>
             </div>
-          </div>
-        </a>
-      ))}
+          </a>
+        );
+      })}
     </div>
   </section>
 
   <section class="page-section sponsored-section content-boundary" data-ad-slot="FT-SPONSOR-ROW">
     <h2>Sponsored games</h2>
     <div class="sponsored-grid">
-      {sponsoredGames.map((game) => (
-        <div class="sponsored-card">
-          <div class="sponsored-media"><MediaPlaceholder name={game.name} quiet /></div>
-          <div class="sponsored-copy">
-            <h3>{game.name}</h3>
-            <p>{game.label}</p>
+      {sponsoredGames.map((game) => {
+        const artwork = requireArtwork(sponsoredGameArtwork, game.name);
+
+        return (
+          <div class="sponsored-card">
+            <div class="sponsored-media">
+              <Picture
+                src={artwork.src}
+                alt={artwork.alt}
+                formats={['avif']}
+                fallbackFormat="webp"
+                widths={[320, 528, 792, 1056]}
+                sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1084px) 33vw, 25vw"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="sponsored-copy">
+              <h3>{game.name}</h3>
+              <p>{game.label}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </section>
 
@@ -117,7 +176,18 @@ const description = 'Working game codes and daily reward links, rechecked every 
 
   <section class="page-section native-section content-boundary" data-ad-slot="FT-NATIVE-HOME">
     <div class="native-card">
-      <div class="native-media"><MediaPlaceholder name="Native ad" quiet /></div>
+      <div class="native-media">
+        <Picture
+          src={partnerArtwork}
+          alt=""
+          formats={['avif']}
+          fallbackFormat="webp"
+          widths={[120, 240, 480]}
+          sizes="120px"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
       <div>
         <span>Partner content</span>
         <h2>Native placement, below the fold</h2>
@@ -141,6 +211,30 @@ const description = 'Working game codes and daily reward links, rechecked every 
   .hero-scrim {
     position: absolute;
     inset: 0;
+  }
+
+  .hero-art :global(picture),
+  .hero-art :global(img),
+  .tile-art :global(picture),
+  .tile-art :global(img),
+  .sponsored-media :global(picture),
+  .sponsored-media :global(img),
+  .native-media :global(picture),
+  .native-media :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-art :global(img),
+  .tile-art :global(img),
+  .sponsored-media :global(img),
+  .native-media :global(img) {
+    object-fit: cover;
+  }
+
+  .hero-art :global(img) {
+    object-position: 68% center;
   }
 
   .hero-scrim {
