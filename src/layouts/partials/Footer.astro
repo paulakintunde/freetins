@@ -1,0 +1,137 @@
+---
+import Brand from '../../components/Brand.astro';
+import { footerColumns } from '../../data/site';
+---
+
+<footer class="site-footer">
+  <div class="footer-inner content-boundary">
+    <div class="footer-grid">
+      <div class="brand-block">
+        <Brand compact />
+        <p>Free codes and daily links, checked hourly. Expired entries stay visible.</p>
+      </div>
+
+      {footerColumns.map((column) => (
+        <div class="footer-column">
+          <h2>{column.title}</h2>
+          <div class="footer-links">
+            {column.items.map((item) => (
+              'href' in item ? (
+                <a href={item.href}>{item.label}</a>
+              ) : (
+                <button type="button" data-open-consent>{item.label}</button>
+              )
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="footer-legal">
+      <span>Freetins.com. Game names and trademarks belong to their respective owners. Freetins is not affiliated with Roblox Corporation, Scopely or any game developer listed.</span>
+      <a href="#ft-main">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-open-consent]').forEach((button) => {
+    button.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('freetins:consent-open'));
+    });
+  });
+</script>
+
+<style>
+  .site-footer {
+    margin-top: clamp(40px, 5vw, 72px);
+    border-top: 1px solid var(--border-subtle);
+    background: var(--surface-footer);
+  }
+
+  .footer-inner {
+    padding: clamp(24px, 3vw, 36px) var(--page-gutter);
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 26px 40px;
+  }
+
+  .brand-block {
+    min-width: 0;
+    flex: 1 1 220px;
+  }
+
+  .brand-block p {
+    max-width: 38ch;
+    margin: 12px 0 0;
+    color: var(--text-tertiary);
+    font: 400 13.5px / 1.5 var(--font-core);
+  }
+
+  .footer-column {
+    flex: 0 1 150px;
+  }
+
+  .footer-column h2 {
+    margin: 0 0 11px;
+    color: var(--text-disabled);
+    font: 700 11px / 1.4 var(--font-core);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-links a,
+  .footer-links button {
+    width: fit-content;
+    border: 0;
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 0;
+    font: 400 13.5px / 1.4 var(--font-core);
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .footer-links a:hover,
+  .footer-links button:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+  }
+
+  .footer-legal {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 26px;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 18px;
+  }
+
+  .footer-legal span {
+    min-width: 0;
+    flex: 1 1 300px;
+    color: var(--text-legal);
+    font: 400 12px / 1.6 var(--font-core);
+  }
+
+  .footer-legal a {
+    flex: none;
+    color: var(--text-secondary);
+    font: 700 11px / 1.4 var(--font-core);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+</style>

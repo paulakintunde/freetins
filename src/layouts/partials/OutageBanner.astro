@@ -1,0 +1,104 @@
+---
+export type CheckerStatus = 'Live' | 'Degraded' | 'Outage';
+
+interface Props {
+  status?: CheckerStatus;
+}
+
+const { status = 'Live' } = Astro.props;
+const statusCopy = {
+  Degraded: {
+    title: 'Checks are running behind',
+    body: 'The last sweep finished 26 minutes late. Codes below are still verified, but treat the times as approximate until the backlog clears.',
+  },
+  Outage: {
+    title: 'Hourly checks stopped 41 minutes ago',
+    body: 'The times below are frozen at the last successful check, not live. Nothing here has been reverified since 13:51.',
+  },
+} as const;
+
+const copy = status === 'Live' ? null : statusCopy[status];
+---
+
+{copy && (
+  <aside class:list={['outage-banner', status.toLowerCase()]} data-outage-banner>
+    <div class="outage-inner content-boundary">
+      <div>
+        <h2>{copy.title}</h2>
+        <p>{copy.body}</p>
+      </div>
+      <a href="/status">Checker status</a>
+      <button type="button" aria-label="Dismiss status notice" data-outage-dismiss>&times;</button>
+    </div>
+  </aside>
+)}
+
+<script>
+  const statusBanner = document.querySelector<HTMLElement>('[data-outage-banner]');
+  const dismissButton = statusBanner?.querySelector<HTMLButtonElement>('[data-outage-dismiss]');
+  if (statusBanner && sessionStorage.getItem('ft_status_dismissed') === 'true') {
+    statusBanner.hidden = true;
+  }
+  dismissButton?.addEventListener('click', () => {
+    if (statusBanner) statusBanner.hidden = true;
+    sessionStorage.setItem('ft_status_dismissed', 'true');
+  });
+</script>
+
+<style>
+  .outage-banner {
+    border-bottom: 1px solid var(--amber-500);
+    background: var(--surface-raised);
+  }
+
+  .outage-banner.outage {
+    border-color: var(--red-500);
+  }
+
+  .outage-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px var(--page-gutter);
+  }
+
+  .outage-inner > div {
+    min-width: 0;
+    flex: 1;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font: 600 14px / 1.4 var(--font-core);
+  }
+
+  p {
+    max-width: 76ch;
+    margin: 5px 0 0;
+    color: var(--text-secondary);
+    font: 400 13px / 1.5 var(--font-core);
+  }
+
+  a {
+    min-height: 44px;
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    color: var(--text-primary);
+    font: 600 11px / 1 var(--font-core);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  button {
+    width: 44px;
+    height: 44px;
+    flex: none;
+    border: 1px solid var(--border-subtle);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+</style>

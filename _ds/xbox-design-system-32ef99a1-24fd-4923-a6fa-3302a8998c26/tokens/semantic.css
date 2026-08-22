@@ -1,0 +1,75 @@
+/* Semantic aliases. Dark is the default surface for marketing pages;
+   [data-theme="light"] flips to the light catalog / support treatment. */
+:root{
+  --surface-page:var(--neutral-1000);
+  --surface-raised:var(--neutral-900);
+  --surface-card:var(--neutral-800);
+  --surface-sunken:var(--neutral-950);
+  --surface-inverse:var(--neutral-0);
+  --surface-glass:var(--glass-dark);
+  --surface-nav:var(--neutral-1000);
+  --surface-footer:var(--neutral-950);
+
+  --text-primary:var(--neutral-0);
+  --text-secondary:var(--neutral-200);
+  --text-tertiary:var(--neutral-300);
+  --text-disabled:var(--neutral-400);
+  --text-inverse:var(--neutral-1000);
+  --text-brand:var(--green-400);
+  --text-legal:var(--neutral-300);
+
+  --border-subtle:var(--white-a12);
+  --border-strong:var(--white-a40);
+  --border-focus:var(--neutral-0);
+
+  --action-primary-bg:var(--green-600);
+  --action-primary-bg-hover:var(--green-700);
+  --action-primary-bg-active:var(--green-800);
+  --action-primary-fg:var(--neutral-0);
+  --action-secondary-bg:transparent;
+  --action-secondary-bg-hover:var(--white-a12);
+  --action-secondary-fg:var(--neutral-0);
+  --action-secondary-border:var(--neutral-0);
+  --action-disabled-bg:var(--neutral-700);
+  --action-disabled-fg:var(--neutral-400);
+
+  --status-success:var(--green-500);
+  --status-error:var(--red-500);
+  --status-warning:var(--amber-500);
+  --status-info:var(--blue-500);
+
+  --link-rest:var(--neutral-0);
+  --link-hover:var(--neutral-200);
+  --link-visited:var(--neutral-200);
+}
+
+[data-theme="light"]{
+  --surface-page:var(--neutral-0);
+  --surface-raised:var(--neutral-0);
+  --surface-card:var(--neutral-50);
+  --surface-sunken:var(--neutral-50);
+  --surface-inverse:var(--neutral-1000);
+  --surface-glass:var(--black-a20);
+  --surface-nav:var(--neutral-0);
+  --surface-footer:var(--neutral-50);
+
+  --text-primary:var(--neutral-1000);
+  --text-secondary:var(--neutral-500);
+  --text-tertiary:var(--neutral-400);
+  --text-disabled:var(--neutral-300);
+  --text-inverse:var(--neutral-0);
+  --text-brand:var(--green-600);
+  --text-legal:var(--neutral-400);
+
+  --border-subtle:var(--neutral-100);
+  --border-strong:var(--neutral-300);
+  --border-focus:var(--neutral-1000);
+
+  --action-secondary-fg:var(--neutral-1000);
+  --action-secondary-border:var(--neutral-1000);
+  --action-secondary-bg-hover:var(--black-a20);
+
+  --link-rest:var(--neutral-1000);
+  --link-hover:var(--neutral-500);
+  --link-visited:var(--neutral-500);
+}

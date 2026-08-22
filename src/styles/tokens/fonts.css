@@ -1,0 +1,5 @@
+:root {
+  --font-core: "Segoe UI", "Segoe UI Web (West European)", system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-core);
+  --font-mono: Consolas, "Courier New", ui-monospace, monospace;
+}

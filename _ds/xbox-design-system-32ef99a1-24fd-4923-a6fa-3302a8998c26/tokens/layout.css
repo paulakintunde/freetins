@@ -1,0 +1,32 @@
+/* MWF viewport ladder. vp3 (768) and vp4 (1084) are visible in xbox.com's own
+   asset filenames — e.g. "Page-Hero-1084", "Feature-768" — confirming the system. */
+:root{
+  --vp1:0px; /* @kind other */      /* 0–539    phone */
+  --vp2:540px; /* @kind other */    /* 540–767  large phone */
+  --vp3:768px; /* @kind other */    /* 768–1083 tablet */
+  --vp4:1084px; /* @kind other */   /* 1084–1399 desktop — the primary marketing breakpoint */
+  --vp5:1400px; /* @kind other */
+  --vp6:1779px; /* @kind other */
+
+  --container-max:1600px;
+  --container-pad-sm:16px;
+  --container-pad-md:24px;
+  --container-pad-lg:48px;
+
+  --grid-cols:12; /* @kind other */
+  --grid-gutter:12px;
+
+  /* Authoring aspect ratios, taken from real xbox.com asset dimensions */
+  --ar-page-hero:1920/720; /* @kind other */        /* Page-Hero-1084 */
+  --ar-large-tile:1258/629; /* @kind other */       /* Large-Tile-1084 */
+  --ar-medium-tile:528/534; /* @kind other */       /* Medium-Tile-1084 */
+  --ar-small-tile:528/320; /* @kind other */        /* Small-Tile-1084 */
+  --ar-feature:800/1000; /* @kind other */          /* Feature-768, portrait 4:5 */
+  --ar-content-placement:788/444; /* @kind other */ /* Content-Placement-0, 16:9 */
+  --ar-slider:832/572; /* @kind other */            /* Sneak-Slider-0 */
+  --ar-key-art:1083/1222; /* @kind other */         /* Large-tout key art */
+  --ar-boxart:3/4; /* @kind other */                /* store box art */
+
+  --nav-height:48px;
+  --shellnav-height:56px;
+}

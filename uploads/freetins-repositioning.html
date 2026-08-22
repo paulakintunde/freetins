@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freetins Repositioning: The Daily Refresh Market</title>
+<style>
+:root{
+  --paper:#FFFFFF;--ink:#14171A;--ink-2:#41474D;--ink-3:#6B7280;
+  --rule:#E2E5E9;--rule-2:#EEF0F3;--wash:#F7F8FA;
+  --accent:#1358C6;--accent-wash:#EEF3FC;
+  --live:#0E7A4E;--live-wash:#E9F4EF;
+  --dead:#6B7280;--dead-wash:#F1F2F4;
+  --check:#A03636;--check-wash:#F8EDED;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+ font-size:17px;line-height:1.62;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding:0 22px 120px}
+.masthead{border-bottom:1px solid var(--ink);padding:56px 0 22px;margin-bottom:44px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin:0 0 18px}
+h1{font-size:clamp(30px,5.4vw,46px);line-height:1.1;letter-spacing:-.022em;margin:0 0 16px;font-weight:700}
+.standfirst{font-size:19px;line-height:1.55;color:var(--ink-2);margin:0;max-width:64ch}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+section{margin:0 0 68px}
+h2{font-size:clamp(23px,3.4vw,30px);line-height:1.2;letter-spacing:-.016em;font-weight:700;margin:0 0 6px;padding-top:8px}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;font-weight:600}
+.sec-head{border-top:1px solid var(--ink);padding-top:22px;margin-bottom:26px}
+.dek{color:var(--ink-2);font-size:17.5px;margin:10px 0 0;max-width:68ch}
+h3{font-size:19.5px;line-height:1.3;font-weight:650;margin:38px 0 10px;letter-spacing:-.008em}
+p{margin:0 0 15px;max-width:74ch}
+strong{font-weight:650}
+ul,ol{margin:0 0 16px;padding-left:22px;max-width:74ch}
+li{margin-bottom:8px}
+li::marker{color:var(--ink-3)}
+code{font-family:var(--mono);font-size:.87em;background:var(--wash);border:1px solid var(--rule-2);border-radius:3px;padding:1px 5px}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;
+ text-transform:uppercase;padding:3px 9px;border-radius:99px;border:1px solid;white-space:nowrap;vertical-align:1px}
+.pill.win{color:#FFFFFF;background:var(--live);border-color:var(--live)}
+.pill.hold{color:var(--accent);background:var(--accent-wash);border-color:#C6D8F3}
+.pill.cut{color:var(--dead);background:var(--dead-wash);border-color:var(--rule)}
+.pill.risk{color:var(--check);background:var(--check-wash);border-color:#E6C9C9}
+.tbl-scroll{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--rule);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:560px}
+caption{caption-side:top;text-align:left;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+ text-transform:uppercase;color:var(--ink-3);padding:12px 14px;border-bottom:1px solid var(--rule);background:var(--wash)}
+th{text-align:left;font-weight:650;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2);
+ padding:10px 13px;border-bottom:1px solid var(--rule);background:var(--wash)}
+td{padding:10px 13px;border-bottom:1px solid var(--rule-2);vertical-align:top;line-height:1.5}
+tbody tr:nth-child(even) td{background:#FBFCFD}
+tbody tr:last-child td{border-bottom:none}
+td.n{text-align:right;white-space:nowrap}
+tr.hi td,tr.hi:nth-child(even) td{background:var(--live-wash)}
+tfoot td{font-weight:650;background:var(--wash);border-top:1px solid var(--rule)}
+.box{border:1px solid var(--rule);border-radius:7px;padding:20px 22px;margin:24px 0;background:var(--paper);box-shadow:0 1px 2px rgba(20,23,26,.04)}
+.box.tint{background:var(--wash);box-shadow:none}
+.box.key{background:var(--accent-wash);border-color:#C6D8F3;box-shadow:none}
+.box.warn{background:var(--check-wash);border-color:#E6C9C9;box-shadow:none}
+.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+.box-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:0 0 10px;font-weight:600}
+.thesis{border:1px solid var(--ink);border-radius:7px;padding:28px 26px;margin:30px 0}
+.thesis .box-label{color:var(--accent)}
+.thesis p{font-size:20px;line-height:1.45;letter-spacing:-.01em;margin:0;font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:26px 0}
+.stat{border:1px solid var(--rule);border-radius:7px;padding:18px}
+.stat b{display:block;font-size:30px;line-height:1.05;letter-spacing:-.02em;font-weight:700;margin-bottom:6px}
+.stat span{display:block;font-size:13.5px;color:var(--ink-2);line-height:1.42}
+.stat.hi{background:var(--live-wash);border-color:#BEDFCF}
+.stat.hi b{color:var(--live)}
+.foot{border-top:1px solid var(--ink);margin-top:70px;padding-top:20px;font-family:var(--mono);font-size:12px;color:var(--ink-3);line-height:1.9}
+@media (max-width:640px){body{font-size:16px}.wrap{padding:0 16px 80px}.masthead{padding-top:36px}.thesis p{font-size:17.5px}.stat b{font-size:26px}}
+@media print{.box,.tbl-scroll,.stat{break-inside:avoid;box-shadow:none}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">Freetins.com / Repositioning</p>
+  <h1>Stop competing on monthly codes. Own the daily refresh.</h1>
+  <p class="standfirst">The full eight-site dataset changes the recommendation. Roblox codes are an attrition war against a well-resourced generalist. The category next door delivers six times the traffic per keyword, is 99.7 percent controlled by a single competitor, and can only be won by automation, which is the one thing freetins is actually building.</p>
+  <div class="meta-row">
+    <span>18 August 2026</span>
+    <span>15,945 keywords, 14,080 pages, 8 competitors</span>
+    <span>Prepared for Paul A</span>
+  </div>
+</header>
+
+<!-- 1 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">01 / The market, segmented</span>
+    <h2>One segment is worth six times more per keyword than the rest</h2>
+    <p class="dek">All eight competitors, top 2,000 keywords each, segmented by query type. The right-hand column is the one that matters.</p>
+  </div>
+
+  <div class="tbl-scroll">
+  <table>
+    <caption>Traffic by query segment across all eight competitors</caption>
+    <thead><tr><th>Segment</th><th class="n">Keywords</th><th class="n">Est. visits</th><th class="n">Share</th><th class="n">Median difficulty</th><th class="n">Visits per keyword</th></tr></thead>
+    <tbody>
+      <tr class="hi"><td><strong>Daily freebie links</strong><br><span style="color:var(--ink-3);font-size:13px">Monopoly GO dice, free spins, free rolls</span></td><td class="n">239</td><td class="n">320,351</td><td class="n">13.3%</td><td class="n">44</td><td class="n"><strong>1,340</strong></td></tr>
+      <tr><td>Non-Roblox codes<br><span style="color:var(--ink-3);font-size:13px">Mobile, console, PC game codes</span></td><td class="n">3,165</td><td class="n">1,110,809</td><td class="n">46.3%</td><td class="n">28</td><td class="n">351</td></tr>
+      <tr><td>Roblox codes</td><td class="n">1,977</td><td class="n">402,273</td><td class="n">16.8%</td><td class="n">28</td><td class="n">203</td></tr>
+      <tr><td>Everything else<br><span style="color:var(--ink-3);font-size:13px">News, reviews, guides, cheats</span></td><td class="n">10,564</td><td class="n">566,949</td><td class="n">23.6%</td><td class="n">30</td><td class="n">54</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>239 keywords produce 13.3 percent of all traffic in the sample. That is the highest value density in the dataset by a factor of nearly four over the next segment, and by 6.6 times over Roblox codes.</p>
+
+  <div class="stats">
+    <div class="stat hi"><b>99.7%</b><span>of all daily-freebie traffic in the sample goes to VG247 alone</span></div>
+    <div class="stat hi"><b>1,340</b><span>visits per keyword in the segment, against 203 for Roblox codes</span></div>
+    <div class="stat"><b>4</b><span>best position any competitor holds on Coin Master free spins</span></div>
+    <div class="stat"><b>111</b><span>total monthly visits all eight sites earn from Coin Master, on 22,200 volume</span></div>
+  </div>
+
+  <p>VG247 takes 319,571 of the segment's 320,351 visits. Game Rant gets 440. Pocket Gamer gets 244. Eurogamer 74. Pro Game Guides 11. Dexerto 7. GamerPower 4. This is not a competitive category. It is one page that nobody has contested.</p>
+</section>
+
+<!-- 2 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">02 / Diagnosis</span>
+    <h2>Why the specialists collapsed, and what it proves</h2>
+    <p class="dek">Pro Game Guides was the definitive Roblox codes site. It now earns less search traffic than almost anyone in this sample. The reason is measurable.</p>
+  </div>
+
+  <div class="tbl-scroll">
+  <table>
+    <caption>Code page freshness versus performance</caption>
+    <thead><tr><th>Site</th><th class="n">Code pages</th><th class="n">Carrying current month</th><th class="n">Median staleness</th><th class="n">Code visits</th></tr></thead>
+    <tbody>
+      <tr class="hi"><td><strong>Beebom</strong></td><td class="n">736</td><td class="n">357</td><td class="n">1 month</td><td class="n">1,306,212</td></tr>
+      <tr><td>VG247</td><td class="n">202</td><td class="n">24</td><td class="n">current</td><td class="n">343,174</td></tr>
+      <tr><td>Game Rant</td><td class="n">242</td><td class="n">35</td><td class="n">current</td><td class="n">77,663</td></tr>
+      <tr><td>Eurogamer</td><td class="n">187</td><td class="n">70</td><td class="n">current</td><td class="n">25,550</td></tr>
+      <tr><td>Pocket Gamer</td><td class="n">276</td><td class="n">210</td><td class="n">current</td><td class="n">12,903</td></tr>
+      <tr><td>Dexerto</td><td class="n">217</td><td class="n">121</td><td class="n">current</td><td class="n">4,809</td></tr>
+      <tr><td><strong>Pro Game Guides</strong></td><td class="n">501</td><td class="n">77</td><td class="n"><strong>4 months</strong></td><td class="n">3,153</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>The freshness effect is universal</h3>
+  <p>Split every site's code pages by whether the title carries the current month. On every single site, the current ones earn multiples of the stale ones.</p>
+  <ul>
+    <li>Beebom: 858 average visits on current-month pages, 188 on stale. <strong>4.6 times.</strong></li>
+    <li>Game Rant: 520 against 110. <strong>4.7 times.</strong></li>
+    <li>VG247: 714 against 9. <strong>79 times.</strong></li>
+    <li>Pocket Gamer: 59 against 6. <strong>10 times.</strong></li>
+  </ul>
+  <p>Pro Game Guides has 501 code pages, more than anyone except Beebom, and only 77 of them carry the current month. The median page is four months stale. They did not lose their audience to a better competitor. They stopped updating and the category evicted them.</p>
+
+  <h3>But freshness alone is not enough</h3>
+  <p>Pocket Gamer refreshes properly: 210 of 276 code pages carry the current month, better proportionally than Beebom. It earns 12,903 visits against Beebom's 1,306,212. Its cadence is right and its game selection is wrong.</p>
+
+  <div class="thesis">
+    <p class="box-label">The formula</p>
+    <p>Winning this market takes three things at once: the right games, current-month freshness, and enough pages to matter. Pro Game Guides had the games and the scale but lost freshness. Pocket Gamer has freshness but not the games. Beebom has all three and takes 1.3 million visits. Miss any one and you get nothing.</p>
+  </div>
+
+  <div class="box tint">
+    <p class="box-label">Head to head, same games</p>
+    <p>On the 186 games where both Beebom and Pro Game Guides rank, Beebom averages position 1.9 and Pro Game Guides averages 12.3. Identical games, identical codes, near-identical backlink profiles. The gap is entirely operational.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">03 / The repositioning</span>
+    <h2>Daily freebie links, not monthly codes</h2>
+  </div>
+
+  <p>Roblox codes refresh monthly. That is a cadence a staffed editorial team can hit, and Beebom hits it across 357 pages. Entering that fight means matching a resourced generalist page for page, month after month, with no structural advantage. Freetins can take slices of it. It will not take the category.</p>
+
+  <p>Daily freebie links refresh several times a day. Monopoly GO posts new dice links continuously. Coin Master posts spin links continuously. A page is worth something at 9am and worthless by evening. <strong>No editorial workflow on earth can service that, which is precisely why nobody except VG247 is trying.</strong></p>
+
+  <div class="thesis">
+    <p class="box-label">The position</p>
+    <p>Freetins becomes the site that checks freebies every hour rather than every month. That is a claim no competitor in this dataset can make, and it is a claim that only makes sense for an operator whose publishing runs on a cron job instead of a content calendar.</p>
+  </div>
+
+  <h3>Why this is defensible in a way codes are not</h3>
+  <ul>
+    <li><strong>Cadence is the barrier, and it favours you.</strong> Every advantage a large publisher has, headcount, brand, link profile, is useless against a page that has to change six times a day. Their cost structure makes daily refresh uneconomic. Yours makes it nearly free.</li>
+    <li><strong>The category is empty behind the leader.</strong> Coin Master: 22,200 volume, best position across all eight sites is 4, total earned traffic 111 visits. Dice Dreams: 18,100, best position 5, 225 visits. Bingo Blitz: 8,100, best position 5, 78 visits. These are not defended. They are ignored.</li>
+    <li><strong>You already have the page.</strong> Coin Master free spins shipped in batch 1. It is currently a monthly-refresh article in a daily-refresh category, which is exactly the mismatch this repositioning fixes.</li>
+    <li><strong>Higher difficulty is a feature.</strong> Median difficulty in this segment is 44 against 28 for codes. That difficulty is what has kept casual entrants out and left the category to one incumbent.</li>
+  </ul>
+
+  <div class="box warn">
+    <p class="box-label">Two honest risks</p>
+    <p><strong>Monopoly GO itself is hard.</strong> VG247's page holds position 1 across 133 keyword variants on a 1,195-backlink page, at difficulty 43 to 56. Treat it as a long campaign, not a launch target. The opening is the rest of the genre, where nobody ranks at all.</p>
+    <p><strong>The wider genre is unmeasured here.</strong> Family Island, Jackpot Party, Pop Slots, Slotomania, Board Kings, Pet Master, Crazy Fox and Coin Tales all run the same daily-link mechanic but do not appear in this dataset, because none of these eight sites rank for them. That absence is suggestive but it is not evidence of demand. Validate the genre with a keyword tool before committing the roadmap, and treat that validation as the gate on Phase 1 scope.</p>
+  </div>
+</section>
+
+<!-- 4 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">04 / Portfolio</span>
+    <h2>What to build, hold and cut</h2>
+  </div>
+
+  <div class="tbl-scroll">
+  <table>
+    <caption>Category decisions</caption>
+    <thead><tr><th style="width:200px">Category</th><th class="n">Verdict</th><th>Reasoning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Daily freebie links</strong></td><td class="n"><span class="pill win">Lead</span></td><td>Highest value per keyword in the dataset, one incumbent, cadence barrier that automation defeats. This becomes the site's identity.</td></tr>
+      <tr><td><strong>Roblox codes, Tier 0 only</strong></td><td class="n"><span class="pill hold">Hold</span></td><td>The 37 open-goal pages from the previous analysis are still worth building. They are cheap, they build the catalogue, and they prove the refresh system works. Do not expand beyond them.</td></tr>
+      <tr><td><strong>Existing 61 articles</strong></td><td class="n"><span class="pill hold">Convert</span></td><td>Reformat to short table-first pages. Coin Master moves into the daily system immediately. Shindo Life, Cookie Run Kingdom and King Legacy are the codes pages worth keeping current.</td></tr>
+      <tr><td><strong>Non-Roblox game codes</strong></td><td class="n"><span class="pill hold">Selective</span></td><td>Largest segment at 46.3 percent of traffic but spread across 3,165 keywords at 351 visits each. Pick only where a specific game shows real volume and a weak holder.</td></tr>
+      <tr><td><strong>Gaming gear</strong></td><td class="n"><span class="pill cut">Monetise only</span></td><td>Still absent from all eight competitors' top keywords. Keep the eight pages as affiliate destinations for freebie traffic. Zero further investment as an acquisition channel.</td></tr>
+      <tr><td><strong>News, reviews, walkthroughs</strong></td><td class="n"><span class="pill cut">Cut</span></td><td>54 visits per keyword, the worst density in the dataset, and it is the segment where the newsrooms have every advantage.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- 5 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">05 / Stack</span>
+    <h2>Astro on Cloudflare is unusually well suited to this specific bet</h2>
+    <p class="dek">The repositioning and the replatform reinforce each other, which is fortunate timing.</p>
+  </div>
+
+  <p>A daily-links page is the hardest possible case for a static site and the easiest possible case for the architecture you are moving to.</p>
+  <ul>
+    <li><strong>Workers KV writes propagate to the edge in seconds.</strong> A link found at 14:03 is live worldwide at 14:03. No rebuild, no cache purge, no deploy.</li>
+    <li><strong>Cron Triggers make hourly checks free.</strong> The collection job that services this category is the same job specced for code verification. One system, two categories.</li>
+    <li><strong>SSR from KV keeps the payload crawlable.</strong> The links are in the HTML on every request, always current. This is the decision I flagged earlier and the freebie category is what settles it: static rendering cannot serve a page that changes six times a day.</li>
+    <li><strong>The record schema barely changes.</strong> A freebie link is a code record with a shorter <code>expires_at</code> and a <code>link_url</code> instead of a <code>code</code> string. Same table, same decay job, same API.</li>
+  </ul>
+
+  <div class="box key">
+    <p class="box-label">Revised Phase 1</p>
+    <p>Build the collection and decay system against <strong>daily freebie links</strong> first, not Roblox codes. It is the harder case, so building for it gets codes for free, and it is the category where the payoff is largest and least contested. Codes then plug into infrastructure that has already been proven under a much more demanding cadence.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">06 / Sequence</span>
+    <h2>Revised 90 days</h2>
+  </div>
+  <ol>
+    <li><strong>Week 1. Validate the genre.</strong> Run keyword research on the daily-link games absent from this dataset. This is a gate, not a formality. If the genre is only Monopoly GO and Coin Master, the bet is smaller and Roblox Tier 0 leads instead.</li>
+    <li><strong>Weeks 1 to 5. Build the collection system on Astro and Cloudflare.</strong> D1 for records, KV for reads, Cron Triggers for hourly collection, SSR routes for the pages. Target the freebie schema first.</li>
+    <li><strong>Weeks 3 to 6. Ship the validated freebie set.</strong> Coin Master, Dice Dreams and Bingo Blitz are confirmed by data and uncontested. Add whatever week 1 validates.</li>
+    <li><strong>Weeks 6 to 12. Roblox Tier 0.</strong> All 37 pages, short format, plugged into the same system. Cheap once the infrastructure exists.</li>
+    <li><strong>Week 8 onward. Open the Monopoly GO campaign.</strong> Long game. The differentiator is per-link timestamps and dead-link removal, which VG247's format does not do.</li>
+    <li><strong>Month 4. Reassess.</strong> Re-pull competitor data. This market moves fast enough that a quarterly refresh is a requirement, not good practice.</li>
+  </ol>
+
+  <div class="box">
+    <p class="box-label">The operating metric</p>
+    <p>Percentage of live freebie pages verified within the last two hours. If that number is not above 90, the entire position is fiction and there is no reason for a reader to choose freetins over VG247.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">07 / Caveats</span>
+    <h2>Limits of this analysis</h2>
+  </div>
+  <ul>
+    <li><strong>Still no freetins data.</strong> Every recommendation here is about the market, not about your site's current standing. A Search Console export remains the highest-value missing input and would change the sequencing if the existing 61 pages have more traction than assumed.</li>
+    <li><strong>Segment sizes are bounded by what these eight sites rank for.</strong> The freebie segment is almost certainly larger than 239 keywords in reality. The concentration finding is solid, the absolute size is a floor.</li>
+    <li><strong>Freshness was inferred from title month stamps.</strong> Reliable for the sites that date their titles, which is most of them, but Beebom dates 99.3 percent of code pages while VG247 dates only 12.9 percent, so VG247's freshness is likely understated.</li>
+    <li><strong>Ubersuggest volume runs high on trend-driven queries.</strong> Relative ordering is trustworthy, absolute figures are directional.</li>
+  </ul>
+</section>
+
+<p class="foot">
+  Freetins.com repositioning analysis, 18 August 2026.<br>
+  Built from Ubersuggest exports covering beebom.com, dexerto.com, eurogamer.net, gamerant.com, gamerpower.com, pocketgamer.com, progameguides.com and vg247.com: 15,945 ranking keywords and 14,080 ranking pages. Supersedes the segment prioritisation in the earlier keyword opportunity document. The Tier 0 target list in that document remains valid as a secondary track.
+</p>
+
+</div>
+</body>
+</html>

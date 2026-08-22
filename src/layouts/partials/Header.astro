@@ -1,0 +1,135 @@
+---
+import Brand from '../../components/Brand.astro';
+import { navLinks } from '../../data/site';
+import MobileDrawer from './MobileDrawer.astro';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+const isActive = (href: string) => {
+  if (href === '/') return currentPath === '/';
+  if (href === '/roblox') return currentPath === '/roblox' || currentPath.endsWith('-codes');
+  return currentPath === href || currentPath.startsWith(`${href}/`);
+};
+---
+
+<header class="site-header">
+  <div class="header-inner content-boundary">
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-drawer"
+      data-drawer-open
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <Brand />
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      {navLinks.map((link) => (
+        <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<MobileDrawer />
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--surface-nav);
+  }
+
+  .header-inner {
+    display: flex;
+    min-height: 56px;
+    align-items: center;
+    gap: 6px 14px;
+    padding: 6px var(--page-gutter);
+  }
+
+  .desktop-nav {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 auto;
+    align-items: stretch;
+  }
+
+  .desktop-nav a {
+    position: relative;
+    display: flex;
+    height: 44px;
+    align-items: center;
+    padding: 0 11px;
+    color: var(--text-primary);
+    font: 400 var(--fs-body) / var(--lh-body) var(--font-core);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background var(--dur-fast) var(--ease-standard);
+  }
+
+  .desktop-nav a:hover {
+    background: var(--white-a08);
+    text-decoration: none;
+  }
+
+  .desktop-nav a[aria-current='page']::after {
+    position: absolute;
+    right: 11px;
+    bottom: 3px;
+    left: 11px;
+    height: 2px;
+    background: var(--green-600);
+    content: '';
+  }
+
+  .menu-button {
+    display: none;
+    width: 44px;
+    height: 44px;
+    flex: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-button:hover {
+    background: var(--white-a12);
+  }
+
+  .menu-button span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--text-primary);
+  }
+
+  @media (max-width: 1083px) {
+    .menu-button {
+      display: flex;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+  }
+</style>

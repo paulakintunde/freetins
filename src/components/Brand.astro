@@ -1,0 +1,43 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<a class:list={['brand', { compact }]} href="/" aria-label="Freetins home">
+  <span>Freetins</span>
+  <span class="brand-dot" aria-hidden="true"></span>
+</a>
+
+<style>
+  .brand {
+    display: inline-flex;
+    flex: none;
+    gap: 7px;
+    align-items: baseline;
+    color: var(--text-primary);
+    font: 600 19px / 1 var(--font-display);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .brand.compact {
+    font-size: 17px;
+  }
+
+  .brand:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .brand-dot {
+    display: block;
+    width: 7px;
+    height: 7px;
+    background: var(--green-neon);
+    animation: ftPulse 2.4s var(--ease-standard) infinite;
+  }
+</style>

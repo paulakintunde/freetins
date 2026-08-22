@@ -1,0 +1,25 @@
+:root {
+  --vp1: 0px;
+  --vp2: 540px;
+  --vp3: 768px;
+  --vp4: 1084px;
+  --vp5: 1400px;
+  --vp6: 1779px;
+  --container-max: 1600px;
+  --container-pad-sm: 16px;
+  --container-pad-md: 24px;
+  --container-pad-lg: 48px;
+  --grid-cols: 12;
+  --grid-gutter: 12px;
+  --ar-page-hero: 1920 / 720;
+  --ar-large-tile: 1258 / 629;
+  --ar-medium-tile: 528 / 534;
+  --ar-small-tile: 528 / 320;
+  --ar-feature: 800 / 1000;
+  --ar-content-placement: 788 / 444;
+  --ar-slider: 832 / 572;
+  --ar-key-art: 1083 / 1222;
+  --ar-boxart: 3 / 4;
+  --nav-height: 48px;
+  --shellnav-height: 56px;
+}

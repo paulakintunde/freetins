@@ -1,0 +1,8 @@
+name = "freetins"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-08-22"
+compatibility_flags = ["nodejs_compat"]
+
+# D1 and KV bindings are added after their Cloudflare resources are provisioned.
+# Required production bindings: DB, STATUS, ALERTS, TURNSTILE_SECRET,
+# and ALERT_TOKEN_SECRET.

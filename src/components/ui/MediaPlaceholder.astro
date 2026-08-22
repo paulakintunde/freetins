@@ -1,0 +1,50 @@
+---
+interface Props {
+  name: string;
+  quiet?: boolean;
+}
+
+const { name, quiet = false } = Astro.props;
+---
+
+<div class:list={['media-placeholder', { quiet }]} role="img" aria-label={`${name} artwork placeholder`}>
+  <span class="placeholder-mark" aria-hidden="true"></span>
+  <span>{name}</span>
+</div>
+
+<style>
+  .media-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: #171717;
+    color: var(--neutral-300);
+    padding: 16px;
+    font: 600 11px / 1.4 var(--font-core);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .media-placeholder::after {
+    position: absolute;
+    inset: 12px;
+    border: 1px solid var(--white-a08);
+    content: '';
+  }
+
+  .placeholder-mark {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 32px;
+    height: 6px;
+    background: var(--green-600);
+  }
+
+  .quiet {
+    color: var(--text-disabled);
+    background: var(--surface-card);
+  }
+</style>

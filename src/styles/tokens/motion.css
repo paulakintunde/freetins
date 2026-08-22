@@ -1,0 +1,14 @@
+:root {
+  --dur-instant: 100ms;
+  --dur-fast: 167ms;
+  --dur-base: 250ms;
+  --dur-slow: 367ms;
+  --dur-slower: 500ms;
+  --ease-standard: cubic-bezier(0.1, 0.9, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --hover-lift: translateY(-2px);
+  --press-scale: scale(0.98);
+  --image-hover-zoom: scale(1.04);
+}

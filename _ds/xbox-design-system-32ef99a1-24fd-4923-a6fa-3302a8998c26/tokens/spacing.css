@@ -1,0 +1,17 @@
+/* 4px base step. MWF gutters are 12px; section rhythm is 48/64/96. */
+:root{
+  --space-0:0;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;   /* MWF grid gutter */
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --space-12:48px;  /* section padding, small viewports */
+  --space-16:64px;  /* section padding, desktop */
+  --space-20:80px;
+  --space-24:96px;  /* major section break */
+  --space-32:128px;
+}

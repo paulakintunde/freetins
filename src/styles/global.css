@@ -1,0 +1,103 @@
+@import './tokens/fonts.css';
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/layout.css';
+@import './tokens/effects.css';
+@import './tokens/motion.css';
+@import './tokens/semantic.css';
+
+:root {
+  color-scheme: dark;
+  --page-gutter: clamp(32px, 8vw, 120px);
+  --rowpad: 14px;
+}
+
+html {
+  min-width: 320px;
+  background: #050505;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #050505;
+  color: var(--text-primary);
+  font: 400 var(--fs-body) / var(--lh-body) var(--font-core);
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: var(--link-rest);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid var(--neutral-0);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--neutral-1000);
+}
+
+::selection {
+  background: var(--green-600);
+  color: #fff;
+}
+
+.content-boundary {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+}
+
+body.drawer-open {
+  overflow: hidden;
+}
+
+@keyframes ftPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

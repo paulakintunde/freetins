@@ -1,0 +1,25 @@
+:root {
+  --radius-0: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-round: 50%;
+  --border-hairline: 1px solid var(--white-a12);
+  --border-hairline-light: 1px solid var(--neutral-100);
+  --border-control: 1px solid var(--neutral-0);
+  --border-width-focus: 2px;
+  --shadow-none: none;
+  --shadow-card: 0 1.6px 3.6px rgba(0, 0, 0, 0.13), 0 0.3px 0.9px rgba(0, 0, 0, 0.1);
+  --shadow-raised: 0 6.4px 14.4px rgba(0, 0, 0, 0.13), 0 1.2px 3.6px rgba(0, 0, 0, 0.11);
+  --shadow-flyout: 0 25.6px 57.6px rgba(0, 0, 0, 0.22), 0 4.8px 14.4px rgba(0, 0, 0, 0.18);
+  --shadow-glow-green: 0 0 0 1px var(--green-600), 0 8px 24px rgba(16, 124, 16, 0.35);
+  --scrim-bottom: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.75) 100%);
+  --scrim-left: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.55) 45%, transparent 100%);
+  --scrim-flat: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+  --gradient-green: linear-gradient(135deg, var(--green-600), var(--green-800));
+  --gradient-green-neon: linear-gradient(135deg, var(--green-neon), var(--green-600));
+  --blur-glass: blur(24px);
+  --glass-dark: var(--white-a08);
+  --focus-ring: 0 0 0 2px var(--neutral-1000), 0 0 0 4px var(--neutral-0);
+  --focus-ring-light: 0 0 0 2px var(--neutral-0), 0 0 0 4px var(--neutral-1000);
+}

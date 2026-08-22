@@ -1,0 +1,573 @@
+---
+import Button from '../components/ui/Button.astro';
+import MediaPlaceholder from '../components/ui/MediaPlaceholder.astro';
+import SearchField from '../components/ui/SearchField.astro';
+import { dailyGames, homeTiles, pulse, sponsoredGames } from '../data/home';
+import { hotSearches } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Freetins — free codes, checked hourly';
+const description = 'Working game codes and daily reward links, rechecked every hour. Each code carries the minute it was last verified, and expired codes stay visible.';
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="hero">
+    <div class="hero-art"><MediaPlaceholder name="Page hero key art, 1920 x 1080" /></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-boundary content-boundary">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span aria-hidden="true"></span>
+          <span>Checked every hour · not every month</span>
+        </div>
+        <h1>Free codes<br />while they still work</h1>
+        <p>Every code and daily link on this site carries the minute it was last opened. Nothing here is a list someone republished with a new date on top.</p>
+        <div class="hero-actions">
+          <Button href="/roblox">Find your game</Button>
+          <Button href="/how-we-verify" variant="secondary">How we verify</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section intro-section content-boundary">
+    <h2>Today’s drops</h2>
+    <p class="section-intro">Every game below had a working code or link verified in the last three hours. Expired entries stay on the page, struck through, so you can see what we checked.</p>
+
+    <div class="home-search">
+      <SearchField label="Find your game" placeholder="Grow a Garden, Monopoly GO, Blue Lock Rivals…" />
+      <div class="hot-searches">
+        <span>Most searched</span>
+        {hotSearches.map((term) => (
+          <a href={`/search?q=${encodeURIComponent(term)}`}>{term}</a>
+        ))}
+      </div>
+    </div>
+
+    <div class="pulse-grid">
+      {pulse.map((item) => (
+        <div>
+          <strong>{item.value}</strong>
+          <span>{item.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section content-boundary">
+    <div class="section-heading">
+      <h2>Fresh in the last three hours</h2>
+      <a href="/roblox">All 90 games</a>
+    </div>
+
+    <div class="game-grid">
+      {homeTiles.map((tile) => (
+        <a class="game-tile" href={tile.href}>
+          <div class="game-media">
+            <div class="tile-art"><MediaPlaceholder name={tile.name} /></div>
+            <div class="tile-scrim" aria-hidden="true"></div>
+            <div class="verified-label">
+              <span aria-hidden="true"></span>
+              <strong>Verified {tile.age} ago</strong>
+            </div>
+          </div>
+          <div class="game-copy">
+            <h3>{tile.name}</h3>
+            <div>
+              <span>{tile.live} live</span>
+              <span>·</span>
+              <span>{tile.rate}% working</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section sponsored-section content-boundary" data-ad-slot="FT-SPONSOR-ROW">
+    <h2>Sponsored games</h2>
+    <div class="sponsored-grid">
+      {sponsoredGames.map((game) => (
+        <div class="sponsored-card">
+          <div class="sponsored-media"><MediaPlaceholder name={game.name} quiet /></div>
+          <div class="sponsored-copy">
+            <h3>{game.name}</h3>
+            <p>{game.label}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section content-boundary">
+    <div class="section-heading daily-heading">
+      <h2>Daily link games</h2>
+      <a href="/daily">All daily links</a>
+    </div>
+    <div class="daily-list">
+      {dailyGames.map((game) => (
+        <a href={game.href}>
+          <span>{game.name}</span>
+          <strong>{game.live} live links</strong>
+          <time>{game.age} ago</time>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-section native-section content-boundary" data-ad-slot="FT-NATIVE-HOME">
+    <div class="native-card">
+      <div class="native-media"><MediaPlaceholder name="Native ad" quiet /></div>
+      <div>
+        <span>Partner content</span>
+        <h2>Native placement, below the fold</h2>
+        <p>Sits after the last editorial block so it never pushes a code table down.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--surface-card);
+  }
+
+  .hero-art,
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-scrim {
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.66) 42%, rgba(0, 0, 0, 0.12) 78%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .hero-boundary {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+  }
+
+  .hero-copy {
+    max-width: min(760px, 64%);
+    padding: clamp(38px, 13vw, 190px) var(--page-gutter) clamp(28px, 3.4vw, 48px);
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: clamp(12px, 1.6vw, 20px);
+    color: #fff;
+    font: 700 13px / 1.4 var(--font-core);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow > span:first-child {
+    display: block;
+    width: 7px;
+    height: 7px;
+    flex: none;
+    background: var(--green-neon);
+    animation: ftPulse 2.4s var(--ease-standard) infinite;
+  }
+
+  .hero h1 {
+    margin: 0;
+    color: #fff;
+    font: 600 clamp(34px, 5vw, 76px) / 1.04 var(--font-display);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-wrap: pretty;
+  }
+
+  .hero-copy > p {
+    max-width: 48ch;
+    margin: clamp(14px, 1.6vw, 22px) 0 0;
+    color: #d7dce1;
+    font: 400 var(--fs-body-lg) / var(--lh-body-lg) var(--font-core);
+    text-wrap: pretty;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: clamp(20px, 2.4vw, 30px);
+  }
+
+  .page-section {
+    padding: clamp(30px, 4vw, 48px) var(--page-gutter) 0;
+  }
+
+  .intro-section {
+    padding-top: clamp(28px, 4vw, 52px);
+  }
+
+  .page-section > h2,
+  .section-heading h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font: 600 var(--fs-h3) / var(--lh-h3) var(--font-display);
+  }
+
+  .intro-section > h2 {
+    font: 600 var(--fs-h2) / var(--lh-h2) var(--font-display);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .section-intro {
+    max-width: 62ch;
+    margin: 14px 0 0;
+    color: var(--text-secondary);
+    font: 400 var(--fs-body-lg) / var(--lh-body-lg) var(--font-core);
+    text-wrap: pretty;
+  }
+
+  .home-search {
+    max-width: 620px;
+    margin-top: 26px;
+  }
+
+  .hot-searches {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 12px;
+  }
+
+  .hot-searches > span {
+    color: var(--text-disabled);
+    font: 400 12.5px / 1.4 var(--font-core);
+  }
+
+  .hot-searches a {
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    padding: 8px 11px;
+    font: 400 12.5px / 1 var(--font-core);
+    text-decoration: none;
+    transition: background var(--dur-fast) var(--ease-standard);
+  }
+
+  .hot-searches a:hover {
+    background: var(--white-a12);
+  }
+
+  .pulse-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    border: 1px solid var(--border-subtle);
+    background: var(--surface-raised);
+  }
+
+  .pulse-grid > div {
+    min-width: 150px;
+    flex: 1 1 150px;
+    border-right: 1px solid var(--border-subtle);
+    padding: 14px 18px;
+  }
+
+  .pulse-grid > div:last-child {
+    border-right: 0;
+  }
+
+  .pulse-grid strong {
+    display: block;
+    color: var(--text-primary);
+    font: 600 26px / 1.1 var(--font-display);
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .pulse-grid span {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-tertiary);
+    font: 400 13px / 1.38 var(--font-core);
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .section-heading > a {
+    color: var(--text-primary);
+    font: 600 13px / 1 var(--font-core);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(228px, 1fr));
+    gap: 28px 20px;
+  }
+
+  .game-tile {
+    display: block;
+    background: var(--surface-page);
+    color: inherit;
+    text-decoration: none;
+    transition: background var(--dur-fast) var(--ease-standard);
+  }
+
+  .game-tile:hover {
+    background: var(--surface-raised);
+    text-decoration: none;
+  }
+
+  .game-media {
+    position: relative;
+    aspect-ratio: 528 / 320;
+    overflow: hidden;
+    background: var(--surface-card);
+  }
+
+  .tile-art {
+    position: absolute;
+    inset: 0;
+    transition: transform 250ms var(--ease-standard);
+  }
+
+  .game-tile:hover .tile-art {
+    transform: scale(1.04);
+  }
+
+  .tile-scrim {
+    position: absolute;
+    inset: auto 0 0;
+    height: 62%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.82), transparent);
+    pointer-events: none;
+  }
+
+  .verified-label {
+    position: absolute;
+    right: 12px;
+    bottom: 11px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    pointer-events: none;
+  }
+
+  .verified-label span {
+    width: 6px;
+    height: 6px;
+    flex: none;
+    background: var(--green-neon);
+  }
+
+  .verified-label strong {
+    color: #fff;
+    font: 700 11px / 1.4 var(--font-core);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .game-copy {
+    padding: 13px 14px 16px;
+  }
+
+  .game-copy h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font: 600 16px / 1.35 var(--font-core);
+    text-wrap: pretty;
+  }
+
+  .game-copy > div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 6px;
+    color: var(--text-tertiary);
+    font: 400 13px / 1.38 var(--font-core);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .game-copy > div span:first-child {
+    color: var(--text-brand);
+    font-weight: 600;
+  }
+
+  .sponsored-section {
+    padding-top: clamp(30px, 4vw, 44px);
+  }
+
+  .sponsored-section > h2 {
+    margin-bottom: 10px;
+    color: var(--text-disabled);
+    font: 700 11px / 1.4 var(--font-core);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .sponsored-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 20px;
+  }
+
+  .sponsored-card {
+    background: var(--surface-raised);
+  }
+
+  .sponsored-media {
+    position: relative;
+    aspect-ratio: 528 / 320;
+    background: var(--surface-card);
+  }
+
+  .sponsored-copy {
+    padding: 11px 13px 14px;
+  }
+
+  .sponsored-copy h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font: 600 14px / 1.35 var(--font-core);
+  }
+
+  .sponsored-copy p {
+    margin: 4px 0 0;
+    color: var(--text-disabled);
+    font: 400 12px / 1.4 var(--font-core);
+  }
+
+  .daily-heading {
+    margin-bottom: 16px;
+  }
+
+  .daily-list {
+    border: 1px solid var(--border-subtle);
+  }
+
+  .daily-list a {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: var(--rowpad) 16px;
+    color: inherit;
+    text-decoration: none;
+    transition: background var(--dur-fast) var(--ease-standard);
+  }
+
+  .daily-list a:last-child {
+    border-bottom: 0;
+  }
+
+  .daily-list a:hover {
+    background: var(--white-a08);
+  }
+
+  .daily-list a > span:first-child {
+    min-width: 0;
+    flex: 1 1 130px;
+    color: var(--text-primary);
+  }
+
+  .daily-list strong {
+    flex: none;
+    color: var(--text-brand);
+    font: 600 13px / 1 var(--font-core);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .daily-list time {
+    width: 96px;
+    flex: none;
+    color: var(--text-tertiary);
+    font: 400 13px / 1 var(--font-core);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .native-section {
+    padding-top: clamp(28px, 4vw, 40px);
+  }
+
+  .native-card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    border: 1px solid var(--border-subtle);
+    background: var(--surface-raised);
+    padding: 20px;
+  }
+
+  .native-media {
+    position: relative;
+    width: 120px;
+    height: 88px;
+    flex: none;
+    background: var(--surface-card);
+  }
+
+  .native-card > div:last-child {
+    min-width: 180px;
+    flex: 1;
+  }
+
+  .native-card > div:last-child > span {
+    color: var(--text-disabled);
+    font: 700 11px / 1.4 var(--font-core);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .native-card h2 {
+    margin: 7px 0 0;
+    color: var(--text-primary);
+    font: 600 16px / 1.35 var(--font-core);
+  }
+
+  .native-card p {
+    margin: 5px 0 0;
+    color: var(--text-tertiary);
+    font: 400 13px / 1.42 var(--font-core);
+  }
+
+  @media (max-width: 767px) {
+    .hero {
+      aspect-ratio: auto;
+      min-height: 560px;
+    }
+
+    .hero-copy {
+      max-width: 100%;
+      padding-top: 72px;
+    }
+
+    .page-section {
+      padding-top: 36px;
+    }
+
+    .game-grid,
+    .sponsored-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

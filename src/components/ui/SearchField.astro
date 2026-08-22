@@ -1,0 +1,74 @@
+---
+interface Props {
+  label: string;
+  placeholder: string;
+  name?: string;
+}
+
+const { label, placeholder, name = 'q' } = Astro.props;
+const inputId = `search-${name}`;
+---
+
+<form class="search-field" action="/search" method="get" role="search">
+  <label for={inputId}>{label}</label>
+  <div class="search-control">
+    <input id={inputId} type="search" name={name} placeholder={placeholder} autocomplete="off" />
+    <button type="submit">Search</button>
+  </div>
+</form>
+
+<style>
+  .search-field {
+    width: 100%;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--text-secondary);
+    font: 600 13px / 1.4 var(--font-core);
+  }
+
+  .search-control {
+    display: flex;
+    min-height: 48px;
+  }
+
+  input {
+    min-width: 0;
+    flex: 1;
+    border: 1px solid var(--border-strong);
+    border-radius: 0;
+    background: var(--surface-raised);
+    color: var(--text-primary);
+    padding: 12px 14px;
+    outline: 0;
+  }
+
+  input::placeholder {
+    color: var(--text-disabled);
+    opacity: 1;
+  }
+
+  input:focus-visible {
+    border-color: var(--green-neon);
+    box-shadow: inset 0 0 0 1px var(--green-neon);
+  }
+
+  button {
+    min-width: 88px;
+    border: 0;
+    border-radius: 0;
+    background: var(--green-600);
+    color: #fff;
+    padding: 0 15px;
+    font: 600 11px / 1 var(--font-core);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: var(--green-700);
+  }
+</style>

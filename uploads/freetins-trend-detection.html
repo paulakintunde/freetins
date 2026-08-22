@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freetins: Trend Detection and Refresh Cadence</title>
+<style>
+:root{
+  --paper:#FFFFFF;--ink:#14171A;--ink-2:#41474D;--ink-3:#6B7280;
+  --rule:#E2E5E9;--rule-2:#EEF0F3;--wash:#F7F8FA;
+  --accent:#1358C6;--accent-wash:#EEF3FC;
+  --live:#0E7A4E;--live-wash:#E9F4EF;
+  --dead:#6B7280;--dead-wash:#F1F2F4;
+  --check:#A03636;--check-wash:#F8EDED;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+ font-size:17px;line-height:1.62;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding:0 22px 120px}
+.masthead{border-bottom:1px solid var(--ink);padding:56px 0 22px;margin-bottom:44px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin:0 0 18px}
+h1{font-size:clamp(30px,5.4vw,46px);line-height:1.1;letter-spacing:-.022em;margin:0 0 16px;font-weight:700}
+.standfirst{font-size:19px;line-height:1.55;color:var(--ink-2);margin:0;max-width:64ch}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+section{margin:0 0 68px}
+h2{font-size:clamp(23px,3.4vw,30px);line-height:1.2;letter-spacing:-.016em;font-weight:700;margin:0 0 6px;padding-top:8px}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;font-weight:600}
+.sec-head{border-top:1px solid var(--ink);padding-top:22px;margin-bottom:26px}
+.dek{color:var(--ink-2);font-size:17.5px;margin:10px 0 0;max-width:68ch}
+h3{font-size:19.5px;line-height:1.3;font-weight:650;margin:38px 0 10px;letter-spacing:-.008em}
+h4{font-size:16px;font-weight:650;margin:24px 0 8px}
+p{margin:0 0 15px;max-width:74ch}
+strong{font-weight:650}
+a{color:var(--accent);text-underline-offset:2px}
+ul,ol{margin:0 0 16px;padding-left:22px;max-width:74ch}
+li{margin-bottom:8px}
+li::marker{color:var(--ink-3)}
+code{font-family:var(--mono);font-size:.87em;background:var(--wash);border:1px solid var(--rule-2);border-radius:3px;padding:1px 5px}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;
+ text-transform:uppercase;padding:3px 9px;border-radius:99px;border:1px solid;white-space:nowrap;vertical-align:1px}
+.pill.auto{color:#FFFFFF;background:var(--live);border-color:var(--live)}
+.pill.rev{color:var(--accent);background:var(--accent-wash);border-color:#C6D8F3}
+.pill.no{color:var(--dead);background:var(--dead-wash);border-color:var(--rule)}
+.tbl-scroll{overflow-x:auto;margin:22px 0 26px;border:1px solid var(--rule);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:560px}
+caption{caption-side:top;text-align:left;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+ text-transform:uppercase;color:var(--ink-3);padding:12px 14px;border-bottom:1px solid var(--rule);background:var(--wash)}
+th{text-align:left;font-weight:650;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2);
+ padding:10px 13px;border-bottom:1px solid var(--rule);background:var(--wash)}
+td{padding:10px 13px;border-bottom:1px solid var(--rule-2);vertical-align:top;line-height:1.5}
+tbody tr:nth-child(even) td{background:#FBFCFD}
+tbody tr:last-child td{border-bottom:none}
+td.n{text-align:right;white-space:nowrap}
+tr.hi td,tr.hi:nth-child(even) td{background:var(--live-wash)}
+.box{border:1px solid var(--rule);border-radius:7px;padding:20px 22px;margin:24px 0;background:var(--paper);box-shadow:0 1px 2px rgba(20,23,26,.04)}
+.box.tint{background:var(--wash);box-shadow:none}
+.box.key{background:var(--accent-wash);border-color:#C6D8F3;box-shadow:none}
+.box.warn{background:var(--check-wash);border-color:#E6C9C9;box-shadow:none}
+.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+.box-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:0 0 10px;font-weight:600}
+.thesis{border:1px solid var(--ink);border-radius:7px;padding:28px 26px;margin:30px 0}
+.thesis .box-label{color:var(--accent)}
+.thesis p{font-size:20px;line-height:1.45;letter-spacing:-.01em;margin:0;font-weight:500}
+.schema{border:1px solid var(--rule);border-radius:7px;background:var(--wash);padding:18px 20px;margin:20px 0;
+ font-family:var(--mono);font-size:13px;line-height:1.85;overflow-x:auto;color:var(--ink-2)}
+.schema .f{color:var(--ink);font-weight:600}
+.schema .c{color:var(--ink-3)}
+.window{border:1px solid var(--rule);border-radius:7px;padding:22px;margin:26px 0;background:var(--paper)}
+.window .track{font-family:var(--mono);font-size:12.5px;line-height:2.1;color:var(--ink-2);margin:0;white-space:pre;overflow-x:auto}
+.window .track b{color:var(--accent);font-weight:600}
+.window .track i{color:var(--live);font-style:normal;font-weight:600}
+.foot{border-top:1px solid var(--ink);margin-top:70px;padding-top:20px;font-family:var(--mono);font-size:12px;color:var(--ink-3);line-height:1.9}
+@media (max-width:640px){body{font-size:16px}.wrap{padding:0 16px 80px}.masthead{padding-top:36px}.thesis p{font-size:17.5px}}
+@media print{.box,.tbl-scroll,.window{break-inside:avoid;box-shadow:none}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">Freetins.com / Operations Spec</p>
+  <h1>Finding games before they saturate, and how often to actually check</h1>
+  <p class="standfirst">Two things. First, cadence: you are right that hourly is wrong, but for a different reason than cost, and the fix is to separate collection from review. Second, the detection system: how to find games at 10k, 100k and 1m concurrent players, and why the 10k tier is where an agent operation has an advantage no newsroom can copy.</p>
+  <div class="meta-row">
+    <span>18 August 2026</span>
+    <span>Astro, Cloudflare, agent pipeline</span>
+    <span>Prepared for Paul A</span>
+  </div>
+</header>
+
+<!-- 1 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">01 / Cadence</span>
+    <h2>Separate the collection clock from the review clock</h2>
+  </div>
+
+  <p>You are right that hourly is wrong, and I want to correct my own reasoning rather than just agree. Server cost is not the constraint. Cloudflare Cron Triggers and Workers make a thousand checks a day effectively free, and there is no server to overload. The real constraints are two others:</p>
+  <ul>
+    <li><strong>Source rate limits.</strong> X, Discord, Facebook and the Roblox API will throttle or block aggressive polling. This is the binding constraint and it is a good reason to slow down.</li>
+    <li><strong>Your review capacity.</strong> You are the editor and every item passes through you. Six collection runs a day means six review interruptions, which is a worse job and a slower one.</li>
+  </ul>
+
+  <p>Both constraints are about <em>review</em> frequency and <em>per-source</em> politeness, not about how often the system may look at anything. So split them.</p>
+
+  <div class="thesis">
+    <p class="box-label">The fix</p>
+    <p>Agents collect on the cadence the source demands. You review once a day in a single batch. A code found at 14:03 sits in a queue, not on the site, until you clear it. Nothing publishes without you, and you are never interrupted more than once a day.</p>
+  </div>
+
+  <h3>Cadence as a per-game field, not a global setting</h3>
+  <p>Different games have different code half-lives, so a single site-wide interval is wrong in both directions. Put it in the record.</p>
+
+  <div class="schema">
+    <span class="c">// added to the game entity</span><br>
+    <span class="f">check_interval</span>     enum: 6h | 24h | 72h | weekly | monthly<br>
+    <span class="f">last_checked</span>       datetime<br>
+    <span class="f">code_half_life</span>     integer, days, computed from observed expiries<br>
+    <span class="f">auto_publish</span>       boolean, true only for official verified sources<br>
+    <span class="f">watch_state</span>        enum: candidate | active | declining | archived
+  </div>
+
+  <div class="tbl-scroll">
+  <table>
+    <caption>Recommended intervals</caption>
+    <thead><tr><th>Game type</th><th class="n">Collect</th><th class="n">You review</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr class="hi"><td><strong>Daily freebie links</strong><br>Monopoly GO, Coin Master</td><td class="n">6h</td><td class="n">Daily</td><td>Links post several times a day and expire in 24 to 48 hours. Collecting four times a day and publishing your approved batch each morning still beats a competitor refreshing monthly by an enormous margin.</td></tr>
+      <tr><td><strong>Trending Roblox</strong><br>rising CCU, active updates</td><td class="n">24h</td><td class="n">Daily</td><td>Codes drop on update days, which cluster. Daily catches them within hours.</td></tr>
+      <tr><td><strong>Mature Roblox</strong><br>stable CCU, slow updates</td><td class="n">72h</td><td class="n">Batched</td><td>Codes are rare. Checking more often costs quota and finds nothing.</td></tr>
+      <tr><td><strong>Mobile and console</strong><br>Genshin, EA FC, Pokemon</td><td class="n">Weekly</td><td class="n">Weekly</td><td>Codes tie to patch and event calendars that are published in advance. Schedule around known dates instead of polling.</td></tr>
+      <tr><td><strong>Declining or dead</strong></td><td class="n">Monthly</td><td class="n">On alert</td><td>Keep the page honest, spend nothing on it.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>One caveat on daily freebies, said plainly so you can decide with it: for Monopoly GO specifically, a link found in the morning may be dead by evening, so a once-daily publish leaves some of the page stale for part of the day. The answer is not more review sessions. It is to let the <strong>decay job</strong> run continuously and hide expired links automatically, while <strong>additions</strong> wait for you. Removing a dead link needs no editorial judgement. Adding a new one does.</p>
+
+  <div class="box key">
+    <p class="box-label">Auto-publish rule</p>
+    <p>One narrow exception worth carving out: a link or code posted by the game's <strong>own verified account</strong>, matched against the known handle, with a parseable value, can publish without review. That is a provenance check a machine does reliably. Everything community-sourced, creator-sourced or ambiguous goes to your queue. This is what keeps daily freebies viable without putting you on call.</p>
+  </div>
+</section>
+
+<!-- 2 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">02 / The window</span>
+    <h2>The opportunity is the gap between a game's growth curve and a competitor's publishing curve</h2>
+  </div>
+
+  <p>Beebom does not publish a codes page when a game launches. It publishes when the game is already obviously big, because a writer's time has to be justified. That lag is the entire opening.</p>
+
+  <div class="window">
+    <p class="track">CCU
+1m  ┤                                   ╭───────────  <b>saturated</b>
+    ┤                                ╭──╯
+100k┤                          ╭─────╯
+    ┤                    ╭─────╯
+10k ┤        ╭───────────╯
+    ┤ ╭──────╯
+ 0  ┼─┴──────┬───────────┬───────────┬────────────────
+    week 0   2           4           6
+
+  <i>freetins publishes here</i> ─────────────╮
+  competitors publish here ────────────────────────╮
+                                                   │
+  <b>the window: 2 to 5 weeks of ranking on an aged page</b></p>
+  </div>
+
+  <p>Publishing early is not just about being first in the SERP. It is about page age and accumulated engagement at the moment the search volume arrives. A page that has existed for four weeks and picked up a handful of links and clicks outranks a page published the day the volume spikes, other things equal. You are not racing competitors on the day. You are already there when they arrive.</p>
+</section>
+
+<!-- 3 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">03 / Signals</span>
+    <h2>Four signals, one gate</h2>
+    <p class="dek">Everything below is publicly available and cheap to poll on a daily cron.</p>
+  </div>
+
+  <h3>Signal 1: Concurrency velocity</h3>
+  <p>Roblox exposes concurrency and lifetime visits per universe through its public games API. Concurrency, visits, favourites, creation date and last update date all come back for a batch of universe IDs in one call, which keeps request volume low. Store a daily snapshot and the velocity falls out of the time series.</p>
+  <ul>
+    <li><strong>The metric that matters is rate of change, not level.</strong> A game going 3,000 to 30,000 CCU in seven days is a buy. A game sitting at 250,000 CCU flat for two months is saturated.</li>
+    <li>Compute 7-day and 3-day CCU change, plus visits per day. Sustained acceleration across both is the strong signal. A single-day spike is usually an ad campaign or a YouTube video and often decays.</li>
+    <li>The Roblox Discover sorts, particularly the up-and-coming and trending lists, are a free candidate feed. Poll the sort content daily and diff against yesterday. New entrants are your candidate queue.</li>
+    <li>Third-party trackers are a useful cross-check. RoMonitor Stats is active. Note that Rotrends announced deprecation for 31 August 2026, so do not build a dependency on it.</li>
+  </ul>
+  <p>Roblox endpoint paths have changed more than once and some require an authenticated cookie. Verify current paths against the Roblox creator documentation when you build, and design the collector so a single endpoint change is a config edit rather than a rewrite.</p>
+
+  <h3>Signal 2: Search demand emergence</h3>
+  <p>CCU growth without search demand is worthless to you. Check Google Trends for <code>[game] codes</code> as a rising or breakout query. Trends surfaces emerging terms far earlier than keyword tools, whose volume data lags by weeks, which is exactly the lag you are trying to exploit. Treat a breakout on Trends with flat volume in Ubersuggest as the ideal state: real demand that the tools competitors rely on cannot see yet.</p>
+
+  <h3>Signal 3: SERP saturation</h3>
+  <p>The measure of an unsaturated opportunity is what is actually on page one. Have an agent fetch the SERP for <code>[game] codes</code> and score it:</p>
+  <ul>
+    <li>How many of the top 10 are <strong>dedicated</strong> codes pages, as opposed to a wiki, a Reddit thread, a YouTube video or a general game page?</li>
+    <li>What month do their titles carry? A top 10 full of pages stamped two months ago is wide open, and the freshness data from the competitor analysis says exactly how open.</li>
+    <li>How many distinct domains? Three publishers fighting is very different from ten.</li>
+  </ul>
+  <p>Fewer than four dedicated fresh codes pages in the top 10 is an open door. Eight or more is a fight you should skip.</p>
+
+  <h3>The gate: does the game have a code system at all?</h3>
+  <div class="box warn">
+    <p class="box-label">Check this before anything else</p>
+    <p>Many Roblox experiences have no redemption system. Batch 2 already hit this with Legends of Kingdom Rush, which has no code system whatsoever, and got the Clash Royale premise wrong in the other direction. A page targeting codes for a game with no codes is worthless and reads as low quality to both readers and Google. Verify against the game's own description, its Discord or social announcements, or an in-game screenshot of the redemption box. This gate runs first and rejects candidates cheaply.</p>
+  </div>
+</section>
+
+<!-- 4 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">04 / Scoring</span>
+    <h2>Turning four signals into a ranked queue</h2>
+  </div>
+
+  <div class="schema">
+    <span class="c">// gate first, score second</span><br>
+    if (!has_code_system) reject<br><br>
+    <span class="f">velocity</span>   = min(ccu_7d_pct_change / 100, 5)      <span class="c">// capped, 100% growth = 1.0</span><br>
+    <span class="f">demand</span>     = trends_breakout ? 2.0 : (rising ? 1.2 : 0.4)<br>
+    <span class="f">saturation</span> = 1 + (fresh_dedicated_pages_in_top10 * 0.6)<br>
+    <span class="f">reach</span>      = log10(current_ccu)                    <span class="c">// 10k = 4, 100k = 5, 1m = 6</span><br><br>
+    <span class="f">score</span> = (velocity * demand * reach) / saturation
+  </div>
+
+  <p>Two properties worth noting. Reach uses a log so that a 1m CCU game is worth more than a 10k game but not a hundred times more, which correctly reflects that the big one is also the contested one. Saturation sits in the denominator so a crowded SERP kills an otherwise attractive candidate, which is the behaviour you want.</p>
+
+  <p>Recompute daily, present the top 20 to you, and keep the previous day's scores so you can see what is climbing rather than only what is high.</p>
+</section>
+
+<!-- 5 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">05 / Tiers</span>
+    <h2>10k, 100k and 1m need three different plays</h2>
+  </div>
+
+  <div class="tbl-scroll">
+  <table>
+    <caption>Strategy by concurrency tier</caption>
+    <thead><tr><th style="width:120px">Tier</th><th>Competitive state</th><th>Play</th><th class="n">Expected outcome</th></tr></thead>
+    <tbody>
+      <tr class="hi">
+        <td><strong>10k to 100k CCU</strong></td>
+        <td>Almost nothing on page one except the game's own Roblox page and maybe a wiki. Competitors have not noticed.</td>
+        <td>Publish immediately and broadly. Accept that most of these games will die. This is a portfolio, not a set of individual bets.</td>
+        <td class="n">Highest return, highest failure rate</td>
+      </tr>
+      <tr>
+        <td><strong>100k to 1m CCU</strong></td>
+        <td>24 to 72 hour window before Beebom and Eurogamer publish. After that it is a freshness contest.</td>
+        <td>Publish within 24 hours of detection. Then hold position with a tight check interval, because this is where the freshness multiplier pays.</td>
+        <td class="n">Best risk-adjusted tier</td>
+      </tr>
+      <tr>
+        <td><strong>1m+ CCU</strong></td>
+        <td>Saturated within 48 hours. Everyone has a page. Difficulty climbs into the forties.</td>
+        <td>Do not contest the head term unless you got there early. Instead take the long tail the big sites skip: tier lists, item values, specific unit or pet guides, update patch notes.</td>
+        <td class="n">Head term lost, long tail open</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>The competitor data supports the middle row directly. Beebom sits at position 1 on the giants with pages carrying hundreds of backlinks, and at position 4 to 8 on mid-size games with pages carrying under fifteen. It is spread thin exactly where the 100k tier lives.</p>
+</section>
+
+<!-- 6 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">06 / The real advantage</span>
+    <h2>Cheap pages let you buy options on small games</h2>
+  </div>
+
+  <p>This is the part of the agent setup that is genuinely not copyable, and it is worth being explicit about the logic.</p>
+
+  <p>Beebom will not publish on a 12,000 CCU game, because a writer costs real money and most small games die. Their cost per page forces them to wait for proof. Waiting for proof means arriving after the volume, which is why they hold position 1 on giants and position 6 on everything else.</p>
+
+  <p>Your cost per page is agent tokens plus a few minutes of your review. At that price, publishing on a game that dies costs you almost nothing, and publishing on a game that grows gives you an aged, indexed, already-ranking page on the day the search volume arrives.</p>
+
+  <div class="thesis">
+    <p class="box-label">The economics</p>
+    <p>Publishing early on a small game is buying a cheap option on that game's growth. You do not need a high hit rate. You need a low enough page cost that a low hit rate is still profitable, and that is exactly what the agent pipeline buys you.</p>
+  </div>
+
+  <h4>Do the break-even yourself</h4>
+  <p>I am not going to hand you a hit rate, because any number I invented would be fiction and the real one depends on your selection quality. Measure it. Tag every page with the CCU tier at publication, and after two months you will know what fraction of your 10k-tier bets crossed 100k. From there the maths is simple: publish at that tier whenever <code>hit_rate × value_of_a_winner &gt; cost_per_page</code>. With cost near zero, the threshold is very low, and the number will tell you where to set the CCU floor.</p>
+
+  <div class="box warn">
+    <p class="box-label">The cost that is not zero</p>
+    <p>Fifty pages about dead games with no codes is a thin-content liability, and it is the failure mode this strategy invites. Two controls handle it. First, the code-system gate keeps you from publishing pages with nothing to say. Second, the <code>watch_state</code> field drives automatic pruning: a game whose CCU collapses and whose codes have all expired moves to archived, and archived pages get consolidated into a genre hub or noindexed. Build the pruning before you build the volume, or this becomes the reason the site underperforms.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">07 / Pipeline</span>
+    <h2>Where the agents sit and where you sit</h2>
+  </div>
+
+  <ol>
+    <li><strong>Scout agent, daily cron.</strong> Pulls Roblox discovery sorts and CCU snapshots, diffs against yesterday, applies the code-system gate, scores candidates, writes the ranked queue.</li>
+    <li><strong>Verification agent, per game interval.</strong> Polls each active game's official channels for new codes and links, applies the two-source rule, writes records as <code>pending</code>. Auto-publishes only where provenance is the game's own verified account.</li>
+    <li><strong>Drafting agent, on your approval.</strong> Once you green-light a candidate, generates the short page from the record set and the template. Nothing long, nothing padded.</li>
+    <li><strong>You, once a day.</strong> Clear the queue. Two decisions only: publish this game or not, and approve these pending codes or not.</li>
+    <li><strong>Decay job, continuous, no review.</strong> Expires codes, hides dead links, flips games to declining or archived. Removal never waits for you.</li>
+  </ol>
+
+  <div class="box tint">
+    <p class="box-label">Design your queue for speed, not completeness</p>
+    <p>Your scarce resource is attention, so the review surface should let you decide in seconds. Each candidate should show: the game name, CCU now and 7-day change, the Trends state, a count of fresh competing pages, the evidence that a code system exists, and one link to the source. Approve, reject, or snooze. If clearing twenty candidates takes longer than ten minutes, the queue design is wrong and it will silently become the bottleneck on the whole strategy.</p>
+  </div>
+
+  <div class="box key">
+    <p class="box-label">One thing to keep for yourself</p>
+    <p>Agents are good at detection and drafting. They are unreliable at judging whether a game is a genuine trend or an ad-driven blip, and that judgement is worth more than anything else in this pipeline. Keep the go or no-go call, and let the system do the watching, the checking and the writing.</p>
+  </div>
+</section>
+
+<!-- 8 -->
+<section>
+  <div class="sec-head">
+    <span class="sec-num">08 / Build order</span>
+    <h2>What to build first</h2>
+  </div>
+  <ol>
+    <li><strong>The CCU snapshot table.</strong> Daily cron, Roblox games API, one row per game per day. Worthless on day one and the foundation of everything by day thirty, so start it before you need it.</li>
+    <li><strong>The discovery diff.</strong> Roblox up-and-coming and trending sorts, diffed daily. Immediate candidate feed with no history required.</li>
+    <li><strong>The code-system gate.</strong> Cheapest possible filter, biggest waste reduction.</li>
+    <li><strong>The SERP saturation check.</strong> Needs care on rate limits. Run it only on candidates that already passed the gate and scored well.</li>
+    <li><strong>The review queue.</strong> Build it when you have ten candidates to look at, not before.</li>
+    <li><strong>The pruning job.</strong> Before you scale page count, not after.</li>
+  </ol>
+
+  <p>The snapshot table is the one with a lead time. Every other component works from day one, but velocity needs history, so if you build nothing else this week, build that.</p>
+</section>
+
+<p class="foot">
+  Freetins.com trend detection and cadence spec, 18 August 2026.<br>
+  Roblox API endpoint paths shift periodically and some require authentication; verify current paths against Roblox creator documentation at build time. Rotrends announced deprecation for 31 August 2026, so treat it as unavailable. Cadence recommendations assume the agent-plus-editor model with a single daily review session.
+</p>
+
+</div>
+</body>
+</html>

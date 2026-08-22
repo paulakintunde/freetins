@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /internal/
+Disallow: /alerts/manage
+Disallow: /search
+
+Sitemap: https://freetins.com/sitemap-index.xml

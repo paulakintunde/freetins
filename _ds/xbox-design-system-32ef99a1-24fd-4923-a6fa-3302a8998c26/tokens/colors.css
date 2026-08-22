@@ -1,0 +1,51 @@
+/* ─ Base palette ───────────────────────────────────────────────────────────
+   Xbox green #107C10 is the brand constant (sphere, primary CTAs, on-state).
+   Neutrals run near-black to white; xbox.com marketing is a dark-first surface.
+   Values marked (MS) are canonical Microsoft/Fluent values used across MWF. */
+:root{
+  /* Brand green ramp */
+  --green-100:#E8F6E8;
+  --green-200:#B4E3B4;
+  --green-300:#6FCC6F;
+  --green-400:#3AAB3A;
+  --green-500:#16A116;
+  --green-600:#107C10;  /* Xbox green — brand primary */
+  --green-700:#0E6A0E;  /* hover */
+  --green-800:#0B5A0B;  /* pressed */
+  --green-900:#053B05;
+  --green-neon:#9BF00B; /* high-energy accent: Game Pass / cloud campaign work */
+
+  /* Neutrals */
+  --neutral-0:#FFFFFF;
+  --neutral-50:#F2F2F2;
+  --neutral-100:#E6E6E6;
+  --neutral-200:#C8C8C8;
+  --neutral-300:#A6A6A6;
+  --neutral-400:#767676;  /* (MS) minimum accessible grey on white — 4.54:1 */
+  --neutral-500:#505050;
+  --neutral-600:#3A3A3A;
+  --neutral-700:#2A2A2A;
+  --neutral-800:#1A1A1A;
+  --neutral-900:#101010;
+  --neutral-950:#0B0B0B;
+  --neutral-1000:#000000;
+
+  /* Semantic hues */
+  --red-500:#D13438;      /* (MS) error */
+  --amber-500:#FFB900;    /* (MS) warning */
+  --blue-500:#0078D4;     /* (MS) informational / Microsoft blue */
+  --blue-600:#005A9E;
+
+  /* Alpha scales — used for scrims, glass panels, hairlines over key art */
+  --white-a04:rgba(255,255,255,.04);
+  --white-a08:rgba(255,255,255,.08);
+  --white-a12:rgba(255,255,255,.12);
+  --white-a20:rgba(255,255,255,.20);
+  --white-a40:rgba(255,255,255,.40);
+  --white-a60:rgba(255,255,255,.60);
+  --white-a80:rgba(255,255,255,.80);
+  --black-a20:rgba(0,0,0,.20);
+  --black-a40:rgba(0,0,0,.40);
+  --black-a60:rgba(0,0,0,.60);
+  --black-a80:rgba(0,0,0,.80);
+}

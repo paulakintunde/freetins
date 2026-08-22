@@ -1,0 +1,336 @@
+---
+import { consentPurposes, consentVendors } from '../../data/site';
+
+interface Props {
+  mode?: 'gdpr' | 'california';
+}
+
+const { mode = 'gdpr' } = Astro.props;
+const isGdpr = mode === 'gdpr';
+const copy = isGdpr
+  ? {
+      eyebrow: 'Cookies',
+      title: 'We use cookies to run ads on this site',
+      body: 'Three necessary cookies keep the site working and cannot be turned off. Analytics, advertising and personalisation are off until you allow them, and rejecting everything does not change a single code on the page.',
+    }
+  : {
+      eyebrow: 'Your privacy choices',
+      title: 'Do not sell or share my personal information',
+      body: 'Ads on this site can be personalised using an advertising cookie. You can opt out of the sale or sharing of your information at any time, and we honour Global Privacy Control automatically.',
+    };
+---
+
+<section
+  class="consent-banner"
+  data-consent-banner
+  data-consent-mode={mode}
+  aria-label="Cookie choices"
+>
+  <div class="consent-inner content-boundary">
+    <div class="consent-copy">
+      <div class="consent-eyebrow">{copy.eyebrow}</div>
+      <h2>{copy.title}</h2>
+      <p>{copy.body}</p>
+      <a href="/privacy">Read the privacy page</a>
+    </div>
+
+    <div class="manage-panel" data-consent-manage hidden>
+      <div class="purpose-list">
+        {consentPurposes.map((purpose) => {
+          const enabled = purpose.required || purpose.id === 'analytics';
+          return (
+            <div class="purpose-row">
+              <div>
+                <h3>{purpose.name}</h3>
+                <p>{purpose.description}</p>
+              </div>
+              <button
+                type="button"
+                class:list={['purpose-toggle', { enabled, required: purpose.required }]}
+                role="switch"
+                aria-checked={enabled ? 'true' : 'false'}
+                data-purpose={purpose.id}
+                data-enabled={enabled ? 'true' : 'false'}
+                disabled={purpose.required}
+              >
+                <span data-state>{purpose.required ? 'Always on' : enabled ? 'On' : 'Off'}</span>
+              </button>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class="vendor-list">
+        <h3>Named vendors</h3>
+        {consentVendors.map((vendor) => (
+          <div><span>{vendor.name}</span><span>{vendor.purpose}</span></div>
+        ))}
+      </div>
+    </div>
+
+    <div class="consent-actions">
+      {isGdpr && <button class="ghost-button" type="button" data-consent-reject>Reject all</button>}
+      <button class="ghost-button" type="button" data-consent-toggle>Manage</button>
+      <button class="accept-button" type="button" data-consent-accept>{isGdpr ? 'Accept all' : 'Confirm choices'}</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  type ConsentState = Record<string, boolean>;
+
+  const banner = document.querySelector<HTMLElement>('[data-consent-banner]');
+  const managePanel = banner?.querySelector<HTMLElement>('[data-consent-manage]');
+  const manageButton = banner?.querySelector<HTMLButtonElement>('[data-consent-toggle]');
+  const acceptButton = banner?.querySelector<HTMLButtonElement>('[data-consent-accept]');
+  const rejectButton = banner?.querySelector<HTMLButtonElement>('[data-consent-reject]');
+  const purposeButtons = Array.from(
+    banner?.querySelectorAll<HTMLButtonElement>('[data-purpose]') ?? [],
+  );
+
+  const readCookie = () => {
+    const entry = document.cookie
+      .split('; ')
+      .find((cookie) => cookie.startsWith('ft_consent='));
+    if (!entry) return null;
+
+    try {
+      return JSON.parse(decodeURIComponent(entry.slice('ft_consent='.length))) as ConsentState;
+    } catch {
+      return null;
+    }
+  };
+
+  const setButtonState = (button: HTMLButtonElement, enabled: boolean) => {
+    if (button.disabled) return;
+    button.dataset.enabled = String(enabled);
+    button.setAttribute('aria-checked', String(enabled));
+    button.classList.toggle('enabled', enabled);
+    const state = button.querySelector<HTMLElement>('[data-state]');
+    if (state) state.textContent = enabled ? 'On' : 'Off';
+  };
+
+  const currentChoices = () => {
+    const state: ConsentState = {};
+    purposeButtons.forEach((button) => {
+      const purpose = button.dataset.purpose;
+      if (purpose) state[purpose] = button.disabled || button.dataset.enabled === 'true';
+    });
+    return state;
+  };
+
+  const saveChoices = (state: ConsentState) => {
+    const secure = location.protocol === 'https:' ? '; Secure' : '';
+    document.cookie = `ft_consent=${encodeURIComponent(JSON.stringify(state))}; Max-Age=15552000; Path=/; SameSite=Lax${secure}`;
+    if (banner) banner.hidden = true;
+    window.dispatchEvent(new CustomEvent('freetins:consent-change', { detail: state }));
+  };
+
+  if (banner && managePanel && manageButton && acceptButton) {
+    const savedState = readCookie();
+    if (savedState) {
+      purposeButtons.forEach((button) => {
+        const purpose = button.dataset.purpose;
+        if (purpose && purpose in savedState) setButtonState(button, Boolean(savedState[purpose]));
+      });
+      banner.hidden = true;
+    }
+
+    purposeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        setButtonState(button, button.dataset.enabled !== 'true');
+      });
+    });
+
+    manageButton.addEventListener('click', () => {
+      const expanded = managePanel.hidden;
+      managePanel.hidden = !expanded;
+      manageButton.textContent = expanded ? 'Close choices' : 'Manage';
+      if (banner.dataset.consentMode === 'gdpr') {
+        acceptButton.textContent = expanded ? 'Save choices' : 'Accept all';
+      }
+    });
+
+    acceptButton.addEventListener('click', () => {
+      if (managePanel.hidden && banner.dataset.consentMode === 'gdpr') {
+        purposeButtons.forEach((button) => setButtonState(button, true));
+      }
+      saveChoices(currentChoices());
+    });
+
+    rejectButton?.addEventListener('click', () => {
+      purposeButtons.forEach((button) => setButtonState(button, false));
+      saveChoices(currentChoices());
+    });
+
+    window.addEventListener('freetins:consent-open', () => {
+      banner.hidden = false;
+      managePanel.hidden = false;
+      manageButton.textContent = 'Close choices';
+      if (banner.dataset.consentMode === 'gdpr') acceptButton.textContent = 'Save choices';
+      managePanel.querySelector<HTMLElement>('button:not([disabled])')?.focus();
+    });
+  }
+</script>
+
+<style>
+  .consent-banner {
+    position: sticky;
+    bottom: 0;
+    z-index: 60;
+    border-top: 1px solid var(--border-strong);
+    background: #0a0a0a;
+  }
+
+  .consent-inner {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 16px var(--page-gutter);
+  }
+
+  .consent-copy {
+    min-width: 0;
+    flex: 1 1 300px;
+  }
+
+  .consent-eyebrow {
+    color: var(--text-disabled);
+    font: 700 10.5px / 1.4 var(--font-core);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .consent-copy h2 {
+    margin: 8px 0 0;
+    color: var(--text-primary);
+    font: 600 15px / 1.4 var(--font-core);
+  }
+
+  .consent-copy p {
+    max-width: 72ch;
+    margin: 7px 0 0;
+    color: var(--text-secondary);
+    font: 400 13px / 1.55 var(--font-core);
+  }
+
+  .consent-copy a {
+    display: inline-block;
+    margin-top: 9px;
+    color: var(--text-primary);
+    font: 600 12.5px / 1.4 var(--font-core);
+  }
+
+  .manage-panel {
+    min-width: 0;
+    flex: 1 1 360px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .purpose-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 11px 14px;
+  }
+
+  .purpose-row > div {
+    min-width: 0;
+    flex: 1 1 0;
+  }
+
+  .purpose-row h3,
+  .vendor-list h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font: 600 13px / 1.4 var(--font-core);
+  }
+
+  .purpose-row p {
+    margin: 3px 0 0;
+    color: var(--text-tertiary);
+    font: 400 12px / 1.45 var(--font-core);
+  }
+
+  .purpose-toggle {
+    min-width: 74px;
+    flex: none;
+    border: 1px solid var(--border-strong);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 10px 8px;
+    font: 700 10px / 1 var(--font-core);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .purpose-toggle.enabled:not(.required) {
+    border-color: var(--green-600);
+    background: var(--green-600);
+    color: #fff;
+  }
+
+  .purpose-toggle.required {
+    border-color: var(--border-subtle);
+    color: var(--text-disabled);
+    cursor: default;
+  }
+
+  .vendor-list {
+    padding: 12px 14px;
+  }
+
+  .vendor-list > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 7px;
+    color: var(--text-tertiary);
+    font: 400 12px / 1.4 var(--font-core);
+  }
+
+  .vendor-list > div span:last-child {
+    color: var(--text-disabled);
+  }
+
+  .consent-actions {
+    display: flex;
+    flex: none;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .consent-actions button {
+    min-height: 44px;
+    border-radius: 0;
+    padding: 13px 16px;
+    color: var(--text-primary);
+    font: 600 11px / 1 var(--font-core);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .ghost-button {
+    border: 1px solid var(--border-strong);
+    background: transparent;
+  }
+
+  .ghost-button:hover {
+    background: var(--white-a12);
+  }
+
+  .accept-button {
+    border: 0;
+    background: var(--green-600);
+  }
+
+  .accept-button:hover {
+    background: var(--green-700);
+  }
+</style>

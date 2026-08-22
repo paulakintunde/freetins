@@ -1,0 +1,18 @@
+/* Restrained: short opacity and 2–4px transforms. No bounce, no spring, no
+   parallax. Carousels slide on a single ease; hover states cross-fade. */
+:root{
+  --dur-instant:100ms; /* @kind other */
+  --dur-fast:167ms; /* @kind other */   /* MWF standard */
+  --dur-base:250ms; /* @kind other */
+  --dur-slow:367ms; /* @kind other */
+  --dur-slower:500ms; /* @kind other */
+
+  --ease-standard:cubic-bezier(.1,.9,.2,1); /* @kind other */
+  --ease-out:cubic-bezier(0,0,.2,1); /* @kind other */
+  --ease-in:cubic-bezier(.4,0,1,1); /* @kind other */
+  --ease-in-out:cubic-bezier(.4,0,.2,1); /* @kind other */
+
+  --hover-lift:translateY(-2px); /* @kind other */
+  --press-scale:scale(.98); /* @kind other */
+  --image-hover-zoom:scale(1.04); /* @kind other */
+}

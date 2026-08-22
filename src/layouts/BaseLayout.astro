@@ -1,0 +1,113 @@
+---
+import '../styles/global.css';
+import ConsentBanner from './partials/ConsentBanner.astro';
+import Footer from './partials/Footer.astro';
+import Header from './partials/Header.astro';
+import OutageBanner, { type CheckerStatus } from './partials/OutageBanner.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  checkerStatus?: CheckerStatus;
+  consentMode?: 'gdpr' | 'california';
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  checkerStatus = 'Live',
+  consentMode = 'gdpr',
+  image = '/og/home.png',
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(image, Astro.site);
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://freetins.com/#org',
+      name: 'Freetins',
+      url: 'https://freetins.com',
+      description: 'Game codes and daily reward links, verified on a published check schedule.',
+      publishingPrinciples: 'https://freetins.com/how-we-verify',
+      correctionsPolicy: 'https://freetins.com/how-we-verify',
+      email: 'hello@freetins.com',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://freetins.com/#site',
+      url: 'https://freetins.com',
+      name: 'Freetins',
+      publisher: { '@id': 'https://freetins.com/#org' },
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://freetins.com/search?q={search_term_string}',
+        },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en" data-consent-region={consentMode}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Freetins" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#ft-main">Skip to content</a>
+    <Header currentPath={Astro.url.pathname} />
+    <OutageBanner status={checkerStatus} />
+    <main id="ft-main">
+      <slot />
+    </main>
+    <Footer />
+    <ConsentBanner mode={consentMode} />
+  </body>
+</html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    z-index: 200;
+    background: var(--green-600);
+    color: #fff;
+    padding: 14px 18px;
+    font: 600 13px / 1 var(--font-core);
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .skip-link:focus {
+    top: 8px;
+    left: 8px;
+  }
+
+  main {
+    min-height: 55vh;
+  }
+</style>

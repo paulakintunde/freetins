@@ -1,0 +1,89 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary';
+  size?: 'sm' | 'md';
+  type?: 'button' | 'submit';
+  fullWidth?: boolean;
+  id?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  type = 'button',
+  fullWidth = false,
+  id,
+} = Astro.props;
+const classes = ['button', variant, size, { 'full-width': fullWidth }];
+---
+
+{
+  href ? (
+    <a id={id} class:list={classes} href={href}><slot /></a>
+  ) : (
+    <button id={id} class:list={classes} type={type}><slot /></button>
+  )
+}
+
+<style>
+  .button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 0;
+    padding: 0 20px;
+    color: #fff;
+    font: 600 13px / 1 var(--font-core);
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      background var(--dur-fast) var(--ease-standard),
+      transform var(--dur-fast) var(--ease-standard);
+  }
+
+  .button:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .button:active {
+    transform: scale(0.98);
+  }
+
+  .primary {
+    background: var(--green-600);
+  }
+
+  .primary:hover {
+    background: var(--green-700);
+  }
+
+  .primary:active {
+    background: var(--green-800);
+  }
+
+  .secondary {
+    border-color: var(--action-secondary-border);
+    background: transparent;
+  }
+
+  .secondary:hover {
+    background: var(--white-a12);
+  }
+
+  .sm {
+    padding-inline: 16px;
+    font-size: 11px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+</style>

@@ -1,0 +1,10 @@
+/* xbox.com runs on Microsoft Web Framework (MWF). Its type stack is Segoe UI, which
+   ships with Windows and is NOT redistributable — no @font-face can be shipped here.
+   The tokens stay pointed at the real family; non-Windows machines fall back through
+   the system stack until the licensed web kit (or Microsoft's open-source,
+   metric-compatible Selawik) is uploaded. See readme.md > Typography. */
+:root{
+  --font-core:"Segoe UI","Segoe UI Web (West European)",system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-display:var(--font-core);
+  --font-mono:Consolas,"Courier New",ui-monospace,monospace;
+}
