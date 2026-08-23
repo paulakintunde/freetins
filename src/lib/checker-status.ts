@@ -1,6 +1,7 @@
 import type { CheckerStatus } from '../layouts/partials/OutageBanner.astro';
 
 export interface CheckerSnapshot {
+  available: boolean;
   state: CheckerStatus;
   lastFullRun: string;
   pagesChecked: number;
@@ -13,6 +14,7 @@ interface CheckerStatusStore {
 }
 
 const unavailableSnapshot: CheckerSnapshot = {
+  available: false,
   state: 'Degraded',
   lastFullRun: 'Unavailable',
   pagesChecked: 0,
@@ -35,6 +37,7 @@ const parseSnapshot = (value: unknown): CheckerSnapshot | null => {
   ) return null;
 
   return {
+    available: true,
     state: candidate.state,
     lastFullRun: candidate.lastFullRun,
     pagesChecked: candidate.pagesChecked,

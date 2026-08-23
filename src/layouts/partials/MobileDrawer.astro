@@ -1,6 +1,6 @@
 ---
 import Brand from '../../components/Brand.astro';
-import { drawerLinks, hotSearches } from '../../data/site';
+import { discordInviteUrl, drawerLinks, hotSearches } from '../../data/site';
 ---
 
 <div class="drawer-overlay" data-drawer-overlay hidden aria-hidden="true">
@@ -32,19 +32,11 @@ import { drawerLinks, hotSearches } from '../../data/site';
       ))}
     </nav>
 
-    <section class="push-prompt" data-push-prompt>
-      <h2>Get a ping when a code drops</h2>
-      <p>One notification per drop for the games you pick. No digests, no marketing.</p>
-      <div class="push-actions">
-        <button class="allow-button" type="button" data-push-allow>Allow</button>
-        <button class="not-now-button" type="button" data-push-dismiss>Not now</button>
-      </div>
+    <section class="alert-drawer-note">
+      <h2>Follow verified releases</h2>
+      <p>Join Discord for verified release posts, or choose a weekly email digest. Web push will appear only when its delivery system is ready.</p>
+      <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer">Join the Freetins Discord</a>
     </section>
-
-    <div class="push-allowed" data-push-allowed hidden>
-      <span aria-hidden="true"></span>
-      <p>Notifications on. Pick your games in <a href="/alerts">Alerts</a>.</p>
-    </div>
 
     <div class="drawer-footer">
       <a href="/how-we-verify">How we verify</a>
@@ -179,81 +171,28 @@ import { drawerLinks, hotSearches } from '../../data/site';
     font-variant-numeric: tabular-nums;
   }
 
-  .push-prompt {
+  .alert-drawer-note {
     margin: 14px;
     border: 1px solid var(--border-strong);
     background: var(--surface-raised);
     padding: 15px;
   }
 
-  .push-prompt h2 {
+  .alert-drawer-note h2 {
     margin: 0;
     color: var(--text-primary);
     font: 600 14px / 1.4 var(--font-core);
   }
 
-  .push-prompt p {
+  .alert-drawer-note p {
     margin: 7px 0 0;
     color: var(--text-tertiary);
     font: 400 13px / 1.5 var(--font-core);
   }
 
-  .push-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+  .alert-drawer-note a {
+    display: inline-flex;
     margin-top: 13px;
-  }
-
-  .push-actions button {
-    min-height: 44px;
-    border-radius: 0;
-    padding: 13px 14px;
-    font: 600 11px / 1 var(--font-core);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-
-  .allow-button {
-    flex: 1 1 auto;
-    border: 0;
-    background: var(--green-600);
-    color: #fff;
-  }
-
-  .not-now-button {
-    border: 1px solid var(--border-strong);
-    background: transparent;
-    color: var(--text-secondary);
-  }
-
-  .push-allowed {
-    align-items: center;
-    gap: 10px;
-    margin: 14px;
-    border: 1px solid var(--border-subtle);
-    padding: 14px;
-  }
-
-  .push-allowed:not([hidden]) {
-    display: flex;
-  }
-
-  .push-allowed > span {
-    width: 7px;
-    height: 7px;
-    flex: none;
-    background: var(--green-neon);
-  }
-
-  .push-allowed p {
-    margin: 0;
-    color: var(--text-secondary);
-    font: 400 13px / 1.5 var(--font-core);
-  }
-
-  .push-allowed a {
     color: var(--text-primary);
     font-weight: 600;
   }

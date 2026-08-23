@@ -31,6 +31,8 @@ export const drawerLinks: SiteLink[] = [
 
 export const hotSearches = ['Grow a Garden', 'Monopoly GO', 'Blue Lock Rivals', 'Coin Master', "Sol's RNG"];
 
+export const discordInviteUrl = 'https://discord.gg/mqsVr39kb';
+
 export type FooterItem =
   | { label: string; href: string }
   | { label: string; action: 'consent' };

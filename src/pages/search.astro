@@ -1,0 +1,17 @@
+---
+import RouteScreen from '../components/pages/RouteScreen.astro';
+import { getRouteDefinition } from '../data/routes';
+import { applyOnDemandHeaders } from '../lib/response-headers';
+import { searchSite } from '../lib/search';
+
+export const prerender = false;
+
+applyOnDemandHeaders(Astro.response.headers, 'private, no-store');
+Astro.response.headers.set('X-Robots-Tag', 'noindex, follow');
+
+const definition = getRouteDefinition('/search');
+const searchQuery = (Astro.url.searchParams.get('q') ?? '').trim().slice(0, 100);
+const searchResults = searchQuery.length >= 2 ? searchSite(searchQuery) : [];
+---
+
+<RouteScreen definition={definition} searchQuery={searchQuery} searchResults={searchResults} />

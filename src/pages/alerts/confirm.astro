@@ -1,0 +1,37 @@
+---
+import { env } from 'cloudflare:workers';
+import { confirmAlertSubscriptionRequest, getAlertSubscriptionRequest } from '../../lib/database';
+import { applyOnDemandHeaders } from '../../lib/response-headers';
+import { createOpaqueToken, sha256, verifySignedToken } from '../../lib/security';
+
+export const prerender = false;
+
+applyOnDemandHeaders(Astro.response.headers, 'private, no-store');
+Astro.response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+Astro.response.headers.set('Referrer-Policy', 'no-referrer');
+
+const token = (Astro.url.searchParams.get('t') ?? '').trim();
+
+if (!token || !env.DB || !env.ALERT_CONFIRMATION_SECRET || !env.CONTACT_HASH_SECRET) {
+  return Astro.redirect('/alerts?form=error&message=This+confirmation+link+is+invalid+or+expired.', 303);
+}
+
+const requestId = await verifySignedToken(token, env.ALERT_CONFIRMATION_SECRET);
+if (!requestId) {
+  return Astro.redirect('/alerts?form=error&message=This+confirmation+link+is+invalid+or+expired.', 303);
+}
+
+const signup = await getAlertSubscriptionRequest(env.DB, requestId);
+if (!signup) {
+  return Astro.redirect('/alerts?form=error&message=This+confirmation+link+is+invalid+or+expired.', 303);
+}
+
+const manageToken = createOpaqueToken();
+await confirmAlertSubscriptionRequest(
+  env.DB,
+  signup,
+  await sha256(manageToken),
+  env.CONTACT_HASH_SECRET,
+);
+return Astro.redirect(`/alerts/manage?t=${encodeURIComponent(manageToken)}&form=success&message=Email+digest+confirmed.`, 303);
+---

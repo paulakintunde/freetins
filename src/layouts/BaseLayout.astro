@@ -37,25 +37,25 @@ const schema = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://freetins.com/#org',
+      '@id': 'https://www.freetins.com/#org',
       name: 'Freetins',
-      url: 'https://freetins.com',
+      url: 'https://www.freetins.com',
       description: 'Game codes and daily reward links, verified on a published check schedule.',
-      publishingPrinciples: 'https://freetins.com/how-we-verify',
-      correctionsPolicy: 'https://freetins.com/how-we-verify',
+      publishingPrinciples: 'https://www.freetins.com/how-we-verify',
+      correctionsPolicy: 'https://www.freetins.com/how-we-verify',
       email: 'hello@freetins.com',
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://freetins.com/#site',
-      url: 'https://freetins.com',
+      '@id': 'https://www.freetins.com/#site',
+      url: 'https://www.freetins.com',
       name: 'Freetins',
-      publisher: { '@id': 'https://freetins.com/#org' },
+      publisher: { '@id': 'https://www.freetins.com/#org' },
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://freetins.com/search?q={search_term_string}',
+          urlTemplate: 'https://www.freetins.com/search?q={search_term_string}',
         },
         'query-input': 'required name=search_term_string',
       },
@@ -67,7 +67,7 @@ const schema = {
           url: canonical,
           name: title,
           description,
-          isPartOf: { '@id': 'https://freetins.com/#site' },
+          isPartOf: { '@id': 'https://www.freetins.com/#site' },
           primaryImageOfPage: {
             '@type': 'ImageObject',
             url: socialImage,

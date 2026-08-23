@@ -1,6 +1,12 @@
 {
   "onDemandRoutePaths": [
+    "/search",
     "/status",
-    "/alerts/manage"
+    "/alerts/manage",
+    "/alerts",
+    "/alerts/confirm",
+    "/internal/queue",
+    "/feeds/releases.xml",
+    "/feeds/[game].xml"
   ]
 }

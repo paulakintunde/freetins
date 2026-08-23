@@ -1,0 +1,11 @@
+---
+import { env } from 'cloudflare:workers';
+import RouteScreen from '../../components/pages/RouteScreen.astro';
+import { getRouteDefinition } from '../../data/routes';
+
+export const prerender = false;
+
+const definition = getRouteDefinition('/alerts');
+---
+
+<RouteScreen definition={definition} emailDigestEnabled={env.EMAIL_DIGEST_ENABLED === 'true'} />

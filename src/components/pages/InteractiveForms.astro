@@ -1,0 +1,161 @@
+---
+import { gameCatalogue } from '../../data/home';
+import { discordInviteUrl } from '../../data/site';
+
+interface Props {
+  kind: 'contact' | 'submit' | 'alerts';
+  emailDigestEnabled?: boolean;
+}
+
+const { kind, emailDigestEnabled = false } = Astro.props;
+---
+
+<section class="page-section content-boundary form-layout">
+  {kind === 'contact' && (
+    <form method="post" action="/api/contact" data-async-form>
+      <input type="hidden" name="_return" value="/contact" />
+      <div class="form-trap" aria-hidden="true">
+        <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+      </div>
+      <label>
+        Topic
+        <select name="topic" data-topic-select required>
+          <option value="Correction">Correction</option>
+          <option value="Promotion">Promotion</option>
+          <option value="Partnership">Partnership</option>
+          <option value="General" selected>General</option>
+        </select>
+      </label>
+      <label>
+        Your email
+        <input type="email" name="email" autocomplete="email" maxlength="254" required placeholder="you@example.com" />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="7" minlength="10" maxlength="4000" required placeholder="Include the page address and the change you need."></textarea>
+      </label>
+      <button type="submit">Send message</button>
+      <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
+    </form>
+  )}
+
+  {kind === 'submit' && (
+    <form method="post" action="/api/submissions" data-async-form>
+      <input type="hidden" name="_return" value="/submit" />
+      <div class="form-trap" aria-hidden="true">
+        <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+      </div>
+      <label>
+        Game name
+        <input type="text" name="game" list="tracked-games" minlength="2" maxlength="120" required placeholder="Grow a Garden" />
+        <datalist id="tracked-games">
+          {gameCatalogue.map((game) => <option value={game.name}></option>)}
+        </datalist>
+      </label>
+      <label>
+        Code
+        <input type="text" name="code" minlength="2" maxlength="120" required autocapitalize="characters" autocomplete="off" placeholder="GARDEN500" />
+      </label>
+      <label>
+        Source link <span class="optional">Optional</span>
+        <input type="url" name="source_url" maxlength="2048" inputmode="url" placeholder="https://..." />
+      </label>
+      <label>
+        Your email <span class="optional">Optional</span>
+        <input type="email" name="email" autocomplete="email" maxlength="254" placeholder="you@example.com" />
+      </label>
+      <label>
+        Notes <span class="optional">Optional</span>
+        <textarea name="notes" rows="5" maxlength="2000" placeholder="Where you found it and what it unlocks."></textarea>
+      </label>
+      <button type="submit">Send to verification</button>
+      <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
+    </form>
+  )}
+
+  {kind === 'alerts' && emailDigestEnabled && (
+    <form method="post" action="/api/alerts" data-async-form>
+      <input type="hidden" name="_return" value="/alerts" />
+      <div class="form-trap" aria-hidden="true">
+        <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+      </div>
+      <label>
+        Weekly digest email
+        <input type="email" name="email" autocomplete="email" maxlength="254" required placeholder="you@example.com" />
+      </label>
+      <fieldset>
+        <legend>Games to watch</legend>
+        <label class="filter-label">
+          Filter games
+          <input type="search" data-game-filter placeholder="Start typing a game name" />
+        </label>
+        <div class="game-choices" data-game-choices>
+          {gameCatalogue.map((game) => (
+            <label class="game-choice" data-game-choice data-search-name={game.name.toLowerCase()}>
+              <input type="checkbox" name="games" value={game.slug} />
+              <span>{game.name}</span>
+            </label>
+          ))}
+        </div>
+        <p class="field-help">Choose up to 25 games. Confirm the email we send, then change this list from your private management link.</p>
+      </fieldset>
+      <button type="submit">Send confirmation email</button>
+      <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
+    </form>
+  )}
+
+  {kind === 'alerts' && !emailDigestEnabled && (
+    <section class="digest-unavailable">
+      <h2>Email digest is coming soon</h2>
+      <p>It will open after Freetins has completed its confirmed-email and unsubscribe setup. Discord and RSS are available now.</p>
+    </section>
+  )}
+
+  <aside>
+    <h2>{kind === 'contact' ? 'What happens next' : kind === 'submit' ? 'Verification, not auto-publish' : 'Keep control'}</h2>
+    <p>{kind === 'contact'
+      ? 'Corrections enter the priority queue. Other enquiries receive a reference so they can be tracked.'
+      : kind === 'submit'
+        ? 'A submission enters the review queue. It cannot appear on a code page until it passes the two-source check.'
+        : 'Confirm your address before it is stored as an active subscription. Email is reserved for a weekly digest, never a per-code blast. You can pause, change games, or delete it from the private link in that email.'}</p>
+    {kind === 'alerts' && <p class="channel-note"><strong>Instant updates:</strong> Join Discord for verified release posts. <strong>Quiet tracking:</strong> RSS feeds publish verified release records once they are available.</p>}
+    {kind === 'alerts' && <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer">Join the Freetins Discord</a>}
+    {kind === 'alerts' && <a href="/feeds/releases.xml">Follow every verified release by RSS</a>}
+    {kind === 'alerts' && emailDigestEnabled && <a href="/alerts/manage">Already subscribed? Manage alerts</a>}
+  </aside>
+</section>
+
+<style>
+  .page-section { padding: clamp(28px, 4vw, 44px) var(--page-gutter) 0; }
+  .form-layout { display: grid; grid-template-columns: minmax(0, 680px) minmax(230px, 320px); gap: 30px; align-items: start; }
+  form { display: grid; gap: 17px; }
+  label, fieldset { color: var(--text-secondary); font-weight: 600; }
+  label { display: grid; gap: 7px; }
+  input, textarea, select { width: 100%; border: 1px solid var(--border-strong); border-radius: 0; background: var(--surface-sunken); color: var(--text-primary); padding: 13px 14px; }
+  textarea { resize: vertical; }
+  fieldset { min-width: 0; margin: 0; padding: 16px; border: 1px solid var(--border-strong); }
+  legend { padding-inline: 6px; color: var(--text-primary); }
+  .optional, .field-help { color: var(--text-tertiary); font-size: 12px; font-weight: 400; }
+  .filter-label { margin-top: 4px; }
+  .game-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-height: 330px; margin-top: 12px; overflow: auto; border: 1px solid var(--border-subtle); }
+  .game-choice { grid-template-columns: 18px minmax(0, 1fr); align-items: center; gap: 10px; min-height: 44px; padding: 8px 10px; border-bottom: 1px solid var(--border-subtle); font-size: 13px; }
+  .game-choice[hidden] { display: none; }
+  .game-choice input { width: 18px; height: 18px; margin: 0; padding: 0; accent-color: var(--green-600); }
+  .field-help { margin: 10px 0 0; line-height: 1.5; }
+  button { justify-self: start; min-height: 44px; border: 0; background: var(--green-600); color: #fff; padding: 0 20px; cursor: pointer; font: 700 11px / 1 var(--font-core); letter-spacing: .08em; text-transform: uppercase; }
+  button:disabled { cursor: wait; opacity: .65; }
+  .form-status { margin: 0; border-left: 3px solid var(--green-600); background: var(--surface-raised); color: var(--text-primary); padding: 12px 14px; line-height: 1.5; }
+  .form-status[data-state='error'] { border-color: var(--red-500); }
+  .form-status :global(a) { color: var(--text-brand); font-weight: 700; }
+  .form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .digest-unavailable { border: 1px solid var(--border-strong); background: var(--surface-raised); padding: 24px; }
+  .digest-unavailable h2 { margin: 0 0 10px; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
+  .digest-unavailable p { margin: 0; color: var(--text-secondary); line-height: 1.55; }
+  aside { border: 1px solid var(--border-subtle); background: var(--surface-raised); padding: 20px; }
+  aside h2 { margin: 0 0 14px; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
+  aside p { margin: 0; color: var(--text-secondary); line-height: 1.55; }
+  aside a { display: block; margin-top: 14px; color: var(--text-primary); font-weight: 600; }
+  @media (max-width: 767px) {
+    .form-layout, .game-choices { grid-template-columns: 1fr; }
+  }
+</style>

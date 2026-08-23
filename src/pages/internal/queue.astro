@@ -1,0 +1,88 @@
+---
+import { env } from 'cloudflare:workers';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { hasEditorialAccess } from '../../lib/editor-access';
+import { getEditorialQueue } from '../../lib/database';
+import { applyOnDemandHeaders } from '../../lib/response-headers';
+
+export const prerender = false;
+
+applyOnDemandHeaders(Astro.response.headers, 'private, no-store');
+Astro.response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+Astro.response.headers.set('Referrer-Policy', 'no-referrer');
+
+const unlocked = await hasEditorialAccess(Astro.request, env.EDITOR_ACCESS_SESSION_SECRET);
+const queue = unlocked && env.DB ? await getEditorialQueue(env.DB) : null;
+---
+
+<BaseLayout title="Editorial review | Freetins" description="Private Freetins editorial workflow." noindex={true} image={undefined}>
+  <article class="editorial-page content-boundary">
+    <header>
+      <p class="eyebrow">Internal only</p>
+      <h1>Release desk</h1>
+      <p>Review community submissions, group verified codes by game, then publish one durable Discord release.</p>
+    </header>
+
+    {!unlocked ? (
+      <section class="gate" aria-labelledby="access-title">
+        <h2 id="access-title">Unlock editorial access</h2>
+        <p>This area is private and never indexed. Sessions expire after eight hours.</p>
+        <form method="post" action="/api/internal/session" data-async-form>
+          <input type="hidden" name="_return" value="/internal/queue" />
+          <label>Password<input type="password" name="password" autocomplete="current-password" required /></label>
+          <button type="submit">Unlock review desk</button>
+          <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
+        </form>
+      </section>
+    ) : queue ? (
+      <>
+        <div class="toolbar">
+          <p><strong>{queue.pending.length}</strong> pending · <strong>{queue.verified.length}</strong> ready to release</p>
+          <form method="post" action="/api/internal/logout"><button class="secondary" type="submit">Lock</button></form>
+        </div>
+
+        <section aria-labelledby="pending-title">
+          <div class="section-title"><h2 id="pending-title">Pending verification</h2><span>Review each submission before it can be published</span></div>
+          {queue.pending.length === 0 ? <p class="empty">No submissions await review.</p> : <div class="submission-list">{queue.pending.map((submission) => (
+            <article>
+              <div><h3>{submission.game} <code>{submission.code}</code></h3><p>Submitted {new Date(submission.createdAt).toLocaleString()}</p>{submission.sourceUrl && <a href={submission.sourceUrl} target="_blank" rel="noopener noreferrer">Open source</a>}{submission.notes && <p class="notes">{submission.notes}</p>}</div>
+              <div class="actions">
+                <form method="post" action="/api/internal/review" data-async-form><input type="hidden" name="submission_id" value={submission.id} /><button name="action" value="verified" type="submit">Verify</button><p class="form-status" data-form-status role="status" hidden></p></form>
+                <form method="post" action="/api/internal/review" data-async-form><input type="hidden" name="submission_id" value={submission.id} /><button class="danger" name="action" value="rejected" type="submit">Reject</button><p class="form-status" data-form-status role="status" hidden></p></form>
+              </div>
+            </article>
+          ))}</div>}
+        </section>
+
+        <section aria-labelledby="release-title">
+          <div class="section-title"><h2 id="release-title">Publish a release</h2><span>Choose verified codes for one game only</span></div>
+          {queue.verified.length === 0 ? <p class="empty">Verified codes will appear here when ready.</p> : <form class="release-form" method="post" action="/api/internal/releases" data-async-form>
+            <div class="release-list">{queue.verified.map((submission) => <label><input type="checkbox" name="submission_ids" value={submission.id} /><span><strong>{submission.game}</strong><code>{submission.code}</code><small>Verified {submission.reviewedAt ? new Date(submission.reviewedAt).toLocaleString() : 'now'}</small></span></label>)}</div>
+            <button type="submit">Publish to Discord</button>
+            <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
+          </form>}
+        </section>
+
+        <section aria-labelledby="delivery-title">
+          <div class="section-title"><h2 id="delivery-title">Delivery ledger</h2><span>Discord queue state</span></div>
+          {queue.dispatches.length === 0 ? <p class="empty">No releases have been queued yet.</p> : <div class="delivery-list">{queue.dispatches.map((dispatch) => <article><div><strong>{dispatch.gameSlug}</strong><p>{dispatch.codeIds.length} code{dispatch.codeIds.length === 1 ? '' : 's'} · published {new Date(dispatch.publishedAt).toLocaleString()}</p>{dispatch.lastErrorCode && <p class="error">Last error: {dispatch.lastErrorCode}</p>}</div><div><span class:list={{ state: true, sent: dispatch.status === 'sent', failed: dispatch.status === 'failed' }}>{dispatch.status}</span><small>{dispatch.attempts} attempt{dispatch.attempts === 1 ? '' : 's'}</small>{dispatch.status === 'failed' && <form method="post" action="/api/internal/releases" data-async-form><input type="hidden" name="action" value="retry" /><input type="hidden" name="release_id" value={dispatch.releaseId} /><button type="submit">Retry</button><p class="form-status" data-form-status role="status" hidden></p></form>}</div></article>)}</div>}
+        </section>
+      </>
+    ) : <p class="empty">The editorial database is unavailable.</p>}
+  </article>
+</BaseLayout>
+
+<style>
+  .editorial-page { max-width: 1180px; padding-top: clamp(34px, 5vw, 68px); padding-bottom: 72px; }
+  header { max-width: 760px; } .eyebrow, .section-title span, .state { color: var(--text-brand); font: 700 11px / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
+  h1 { margin: 10px 0; color: var(--text-primary); font: 600 var(--fs-h1) / var(--lh-h1) var(--font-display); text-transform: uppercase; }
+  h2, h3 { color: var(--text-primary); } header > p:not(.eyebrow), .empty, article p { color: var(--text-secondary); line-height: 1.55; }
+  .gate { max-width: 520px; margin-top: 34px; padding: 24px; border: 1px solid var(--border-strong); background: var(--surface-raised); }
+  .gate h2 { margin-top: 0; } form { display: grid; gap: 12px; } label { display: grid; gap: 7px; color: var(--text-secondary); font-weight: 700; } input { border: 1px solid var(--border-strong); background: var(--surface-sunken); color: var(--text-primary); padding: 12px; }
+  button { min-height: 42px; border: 0; background: var(--green-600); color: #fff; padding: 0 14px; cursor: pointer; font: 700 11px / 1 var(--font-core); letter-spacing: .08em; text-transform: uppercase; } button.secondary { background: var(--surface-card); border: 1px solid var(--border-strong); } button.danger { background: #8a2727; }
+  .toolbar, .section-title, .submission-list > article, .delivery-list > article { display: flex; align-items: center; justify-content: space-between; gap: 18px; } .toolbar { margin-top: 38px; padding: 14px 0; border-block: 1px solid var(--border-subtle); }
+  section { margin-top: 36px; } .section-title { align-items: baseline; margin-bottom: 14px; } .section-title h2 { margin: 0; }
+  .submission-list, .release-list, .delivery-list { border: 1px solid var(--border-subtle); } .submission-list > article, .delivery-list > article { padding: 16px; border-bottom: 1px solid var(--border-subtle); } .submission-list > article:last-child, .delivery-list > article:last-child { border-bottom: 0; }
+  h3 { margin: 0 0 6px; } code { margin-left: 8px; color: var(--green-neon); font: 700 14px / 1.4 ui-monospace, monospace; } article p { margin: 3px 0; } article a { color: var(--text-brand); font-weight: 700; } .notes { max-width: 70ch; } .actions { display: flex; gap: 8px; } .actions form { display: block; } .release-form { align-items: start; } .release-list label { grid-template-columns: 20px 1fr; align-items: start; padding: 14px; border-bottom: 1px solid var(--border-subtle); } .release-list label:last-child { border-bottom: 0; } .release-list input { width: 18px; height: 18px; padding: 0; accent-color: var(--green-600); } .release-list span { display: grid; gap: 4px; } .release-list code { margin-left: 0; } small { color: var(--text-tertiary); } .delivery-list > article > div:last-child { display: grid; justify-items: end; gap: 8px; } .state.sent { color: #65d48c; } .state.failed, .error { color: #f28585; } .form-status { margin: 0; color: var(--text-primary); }
+  @media (max-width: 720px) { .toolbar, .submission-list > article, .delivery-list > article { align-items: flex-start; flex-direction: column; } .actions { width: 100%; } .actions form { flex: 1; } .actions button { width: 100%; } .delivery-list > article > div:last-child { justify-items: start; } }
+</style>

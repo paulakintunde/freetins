@@ -1,6 +1,9 @@
 ---
 import { Picture } from 'astro:assets';
 import Button from '../ui/Button.astro';
+import AlertManager from './AlertManager.astro';
+import InteractiveForms from './InteractiveForms.astro';
+import SearchPanel from './SearchPanel.astro';
 import { dailyLinkCatalogue, gameCatalogue } from '../../data/home';
 import {
   authorArtwork,
@@ -11,14 +14,31 @@ import {
 } from '../../data/site-images';
 import type { RouteDefinition } from '../../data/routes';
 import type { CheckerSnapshot } from '../../lib/checker-status';
+import type { AlertSubscription } from '../../lib/database';
+import type { SearchResult } from '../../lib/search';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 interface Props {
   definition: RouteDefinition;
   checkerSnapshot?: CheckerSnapshot;
+  searchQuery?: string;
+  searchResults?: SearchResult[];
+  alertManagement?: {
+    token: string;
+    subscription: AlertSubscription | null;
+    error: string | undefined;
+  };
+  emailDigestEnabled?: boolean;
 }
 
-const { definition, checkerSnapshot } = Astro.props;
+const {
+  definition,
+  checkerSnapshot,
+  searchQuery = '',
+  searchResults = [],
+  alertManagement,
+  emailDigestEnabled = false,
+} = Astro.props;
 const game = gameCatalogue.find((item) => item.slug === definition.slug);
 const dailyGame = dailyLinkCatalogue.find((item) => item.slug === definition.slug);
 const platform = definition.platform ?? 'roblox';
@@ -68,7 +88,7 @@ const stats = (() => {
     case 'calendar': return [['Added in August', '127'], ['Expired in August', '96'], ['Dated events ahead', '6'], ['Biggest day', '18 Aug']];
     case 'az': return [['Games listed', String(gameCatalogue.length + dailyLinkCatalogue.length)], ['With live codes', '52'], ['Checked this hour', '41'], ['Cheats confirmed', '362']];
     case 'status': return [
-      ['Checker', checkerSnapshot?.state ?? 'Unavailable'],
+      ['Checker', checkerSnapshot?.available ? checkerSnapshot.state : 'Unavailable'],
       ['Last full run', checkerSnapshot?.lastFullRun ?? 'Unavailable'],
       ['Pages checked', checkerSnapshot ? String(checkerSnapshot.pagesChecked) : 'Unavailable'],
       ['Median response', checkerSnapshot && checkerSnapshot.medianResponseMs > 0 ? `${checkerSnapshot.medianResponseMs} ms` : 'Unavailable'],
@@ -88,9 +108,11 @@ const liveCodes = [
   ['COMMUNITY250', '250 sheckles', 'Community submission', '2 h ago'],
 ] as const;
 
-const statusHeading = checkerSnapshot?.state === 'Live'
+const statusHeading = !checkerSnapshot?.available
+  ? 'Live checker data is unavailable'
+  : checkerSnapshot.state === 'Live'
   ? 'All checkers are running normally'
-  : checkerSnapshot?.state === 'Outage'
+  : checkerSnapshot.state === 'Outage'
     ? 'Hourly checks are currently unavailable'
     : 'Checks are running behind';
 
@@ -157,7 +179,7 @@ const legalCopy: Record<string, Array<[string, string]>> = {
   privacy: [
     ['What we collect', 'We collect the information you submit, aggregate page counts and the minimum delivery data needed to keep the site secure.'],
     ['How it is used', 'Submitted codes enter verification. Contact details are used only to answer the request or deliver an alert.'],
-    ['Who we share data with', 'Cloudflare delivers the site, Plausible provides aggregate analytics, and Discord can deliver alerts you request.'],
+    ['Who we share data with', 'Cloudflare delivers the site and Plausible provides aggregate analytics. Confirmed email digest messages are delivered through Amazon Simple Email Service.'],
     ['Your choices', 'Cookie choices can be reopened from the footer. You can ask us to delete information you submitted.'],
   ],
   affiliate: [
@@ -176,7 +198,7 @@ const legalCopy: Record<string, Array<[string, string]>> = {
 
 const pageLinks: Record<string, Array<[string, string]>> = {
   verify: [['Submit a code', '/submit'], ['Report a correction', '/contact?topic=Correction'], ['Checker status', '/status']],
-  alerts: [['Manage existing alerts', '/alerts/manage?t=preview'], ['Privacy', '/privacy']],
+  alerts: [['Follow the release RSS feed', '/feeds/releases.xml'], ['Manage existing alerts', '/alerts/manage'], ['Privacy', '/privacy']],
   contact: [['Editorial team', '/team'], ['How we verify', '/how-we-verify'], ['Advertise with us', '/advertise']],
   notTracked: [['Request this game', '/submit'], ['Browse every game', '/games'], ['Search Freetins', '/search']],
   status: [['How we verify', '/how-we-verify'], ['Expired archive', '/archive']],
@@ -198,7 +220,7 @@ const crumbs = isGamePage
   title={definition.title}
   description={definition.description}
   noindex={definition.noindex ?? false}
-  checkerStatus={checkerSnapshot?.state ?? 'Live'}
+  checkerStatus={checkerSnapshot?.available ? checkerSnapshot.state : 'Live'}
   image={routeArtwork?.socialImage}
   imageAlt={routeArtwork?.alt}
 >
@@ -432,19 +454,22 @@ const crumbs = isGamePage
       <section class="page-section content-boundary guide-layout"><aside><strong>On this page</strong><a href="#what-it-is">What it is</a><a href="#full-list">The full list</a><a href="#unconfirmed">What we could not confirm</a></aside><div class="prose-body"><h2 id="what-it-is">What a mutation actually is</h2><p>A mutation changes the sale multiplier of a crop. Weather, pets and limited events can each trigger one, and compatible effects stack.</p><h2 id="full-list">The full list</h2>{values.slice(0, 5).map(([name, tier, value]) => <div class="guide-row"><strong>{name}</strong><span>{tier}</span><b>{value}</b></div>)}<h2 id="unconfirmed">What we could not confirm</h2><p>Community reports without a repeatable trigger remain outside the table until a second source reproduces them.</p></div></section>
     )}
 
-    {(definition.kind === 'search' || definition.kind === 'submit' || definition.kind === 'alerts' || definition.kind === 'contact' || definition.kind === 'manage') && (
-      <section class="page-section content-boundary form-layout">
-        <form method="get" action={definition.kind === 'search' ? '/search' : undefined}>
-          <label>{definition.kind === 'search' ? 'Game, guide or code' : definition.kind === 'alerts' ? 'Email or Discord handle' : 'Your email'}<input type={definition.kind === 'search' ? 'search' : 'text'} name={definition.kind === 'search' ? 'q' : 'contact'} placeholder={definition.kind === 'search' ? 'Grow a Garden' : 'you@example.com'} /></label>
-          {definition.kind !== 'search' && definition.kind !== 'manage' && <label>Details<textarea name="message" rows={5} placeholder="Tell us what you need"></textarea></label>}
-          <button type="submit">{definition.kind === 'search' ? 'Search' : definition.kind === 'manage' ? 'Pause alerts' : 'Continue'}</button>
-        </form>
-        <aside><h2>What happens next</h2><p>{definition.kind === 'search' ? 'Results include games, guides and daily-link pages.' : 'A person or the verification checker handles the request. Nothing publishes automatically.'}</p></aside>
-      </section>
+    {definition.kind === 'search' && <SearchPanel query={searchQuery} results={searchResults} />}
+
+    {(definition.kind === 'submit' || definition.kind === 'alerts' || definition.kind === 'contact') && (
+      <InteractiveForms kind={definition.kind} emailDigestEnabled={emailDigestEnabled} />
+    )}
+
+    {definition.kind === 'manage' && (
+      <AlertManager
+        token={alertManagement?.token ?? ''}
+        subscription={alertManagement?.subscription ?? null}
+        error={alertManagement?.error}
+      />
     )}
 
     {(definition.kind === 'status' || definition.kind === 'adspec' || definition.kind === 'queue' || definition.kind === 'notTracked') && (
-      <section class="page-section content-boundary"><div class="notice"><span>{definition.kind === 'status' ? checkerSnapshot?.state ?? 'Unavailable' : definition.eyebrow ?? 'Freetins'}</span><h2>{definition.kind === 'status' ? statusHeading : definition.kind === 'queue' ? 'Six candidates await validation' : definition.kind === 'adspec' ? 'Reserved space, zero layout shift' : 'Request the game and it enters validation'}</h2><p>{definition.kind === 'status' ? checkerSnapshot?.message ?? definition.description : definition.description}</p></div></section>
+      <section class="page-section content-boundary"><div class="notice"><span>{definition.kind === 'status' ? checkerSnapshot?.available ? checkerSnapshot.state : 'Unavailable' : definition.eyebrow ?? 'Freetins'}</span><h2>{definition.kind === 'status' ? statusHeading : definition.kind === 'queue' ? 'Six candidates await validation' : definition.kind === 'adspec' ? 'Reserved space, zero layout shift' : 'Request the game and it enters validation'}</h2><p>{definition.kind === 'status' ? checkerSnapshot?.message ?? definition.description : definition.description}</p></div></section>
     )}
 
     {relatedLinks.length > 0 && <nav class="next-links content-boundary" aria-label="Related pages">{relatedLinks.map(([label, href]) => <a href={href}>{label}</a>)}</nav>}
@@ -558,18 +583,13 @@ const crumbs = isGamePage
   .prose-body h2:first-child { padding-top: 0; }
   .prose-body p { color: var(--text-secondary); line-height: 1.7; }
   .guide-row { display: grid; grid-template-columns: 1.4fr .8fr .6fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); }
-  .form-layout { display: grid; grid-template-columns: minmax(0, 620px) minmax(230px, 320px); gap: 30px; }
-  form { display: grid; gap: 16px; }
-  label { display: grid; gap: 7px; color: var(--text-secondary); font-weight: 600; }
-  input, textarea { width: 100%; border: 1px solid var(--border-strong); background: var(--surface-sunken); color: var(--text-primary); padding: 13px 14px; }
-  form button { justify-self: start; min-height: 44px; padding-inline: 20px; }
   .notice { border: 1px solid var(--border-strong); background: var(--surface-raised); padding: clamp(22px, 3vw, 34px); }
   .notice > span { color: var(--text-brand); font: 700 11px / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
   .notice h2 { margin: 12px 0 8px; color: var(--text-primary); }
   .next-links { display: flex; flex-wrap: wrap; gap: 9px 18px; padding: 30px var(--page-gutter) 0; }
   .next-links a { color: var(--text-primary); font-weight: 600; }
   @media (max-width: 767px) {
-    .split-layout, .profile-detail, .product-layout, .guide-layout, .form-layout { grid-template-columns: 1fr; }
+    .split-layout, .profile-detail, .product-layout, .guide-layout { grid-template-columns: 1fr; }
     .profile-grid { grid-template-columns: 1fr; }
     .card-grid { grid-template-columns: 1fr; }
     .catalogue.columns { columns: auto; }

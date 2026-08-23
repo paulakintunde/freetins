@@ -80,7 +80,7 @@ const staticRoutes: RouteDefinition[] = [
   },
   {
     path: '/alerts', routeId: 'alerts', kind: 'alerts', title: 'Code alerts | Freetins', heading: 'Know before the code expires',
-    description: 'Choose games and get an alert when a verified code is published.',
+    description: 'Choose games and save email alert preferences before the delivery worker launches.',
   },
   {
     path: '/contact', routeId: 'contact', kind: 'contact', title: 'Contact | Freetins', heading: 'Contact',

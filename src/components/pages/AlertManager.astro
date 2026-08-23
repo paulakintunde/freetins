@@ -1,0 +1,112 @@
+---
+import { gameCatalogue } from '../../data/home';
+import type { AlertSubscription } from '../../lib/database';
+
+interface Props {
+  token: string;
+  subscription: AlertSubscription | null;
+  error: string | undefined;
+}
+
+const { token, subscription, error } = Astro.props;
+const selectedGames = new Set(subscription?.games ?? []);
+const returnPath = token ? `/alerts/manage?t=${encodeURIComponent(token)}` : '/alerts/manage';
+---
+
+<section class="page-section content-boundary manage-layout">
+  <div>
+    {subscription ? (
+      <form method="post" action="/api/alerts/manage" data-async-form data-preserve-form>
+        <input type="hidden" name="token" value={token} />
+        <input type="hidden" name="_return" value={returnPath} />
+        <div class="subscription-meta">
+          <div><span>Delivery</span><strong>{subscription.contact}</strong></div>
+          <div><span>Frequency</span><strong>Weekly digest</strong></div>
+          <div><span>Status</span><strong class:list={{ paused: subscription.status === 'paused' }}>{subscription.status}</strong></div>
+        </div>
+        <fieldset>
+          <legend>Games to watch</legend>
+          <label class="filter-label">
+            Filter games
+            <input type="search" data-game-filter placeholder="Start typing a game name" />
+          </label>
+          <div class="game-choices" data-game-choices>
+            {gameCatalogue.map((game) => (
+              <label class="game-choice" data-game-choice data-search-name={game.name.toLowerCase()}>
+                <input type="checkbox" name="games" value={game.slug} checked={selectedGames.has(game.slug)} />
+                <span>{game.name}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <div class="actions">
+          <button type="submit" name="action" value="update">Update games</button>
+          {subscription.status === 'active'
+            ? <button type="submit" name="action" value="pause" class="secondary">Pause alerts</button>
+            : <button type="submit" name="action" value="resume" class="secondary">Resume alerts</button>}
+          <button type="submit" name="action" value="delete" class="danger" data-confirm="Delete this alert subscription permanently?">Delete subscription</button>
+        </div>
+        <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
+      </form>
+    ) : (
+      <div class="invalid-link">
+        <span>Private access</span>
+        <h2>{error ?? 'Open your private management link'}</h2>
+        <p>{token
+          ? 'The link may have expired after a newer signup or the subscription may have been deleted.'
+          : 'Open the private link from your confirmation email.'}</p>
+        {!token && (
+          <form method="get" action="/alerts/manage" class="token-form">
+            <label>Management token<input type="text" name="t" minlength="43" maxlength="43" required autocomplete="off" /></label>
+            <button type="submit">Open alerts</button>
+          </form>
+        )}
+        <a href="/alerts">Create or replace an alert</a>
+      </div>
+    )}
+  </div>
+  <aside>
+    <h2>Private by design</h2>
+    <p>The token in this page address is the key to this subscription. Freetins stores only its SHA-256 hash and never stores the usable token.</p>
+    <p class="delivery-note">This subscription is confirmed and limited to a weekly digest. It never opts you into per-code messages or marketing.</p>
+  </aside>
+</section>
+
+<style>
+  .page-section { padding: clamp(28px, 4vw, 44px) var(--page-gutter) 0; }
+  .manage-layout { display: grid; grid-template-columns: minmax(0, 680px) minmax(230px, 320px); gap: 30px; align-items: start; }
+  form { display: grid; gap: 17px; }
+  .subscription-meta { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border-subtle); }
+  .subscription-meta > div { min-width: 0; padding: 14px; border-right: 1px solid var(--border-subtle); }
+  .subscription-meta span, .invalid-link > span { display: block; color: var(--text-tertiary); font: 700 10px / 1.4 var(--font-core); letter-spacing: .1em; text-transform: uppercase; }
+  .subscription-meta strong { display: block; overflow-wrap: anywhere; margin-top: 5px; color: var(--text-primary); }
+  .subscription-meta strong.paused { color: var(--amber-500); }
+  label, fieldset { color: var(--text-secondary); font-weight: 600; }
+  label { display: grid; gap: 7px; }
+  input { width: 100%; border: 1px solid var(--border-strong); border-radius: 0; background: var(--surface-sunken); color: var(--text-primary); padding: 13px 14px; }
+  fieldset { min-width: 0; margin: 0; padding: 16px; border: 1px solid var(--border-strong); }
+  legend { padding-inline: 6px; color: var(--text-primary); }
+  .game-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-height: 330px; margin-top: 12px; overflow: auto; border: 1px solid var(--border-subtle); }
+  .game-choice { grid-template-columns: 18px minmax(0, 1fr); align-items: center; gap: 10px; min-height: 44px; padding: 8px 10px; border-bottom: 1px solid var(--border-subtle); font-size: 13px; }
+  .game-choice[hidden] { display: none; }
+  .game-choice input { width: 18px; height: 18px; margin: 0; padding: 0; accent-color: var(--green-600); }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  button { min-height: 44px; border: 0; background: var(--green-600); color: #fff; padding: 0 18px; cursor: pointer; font: 700 11px / 1 var(--font-core); letter-spacing: .07em; text-transform: uppercase; }
+  button.secondary { border: 1px solid var(--border-strong); background: var(--surface-raised); color: var(--text-primary); }
+  button.danger { border: 1px solid var(--red-500); background: transparent; color: var(--text-primary); }
+  button:disabled { cursor: wait; opacity: .65; }
+  .form-status { margin: 0; border-left: 3px solid var(--green-600); background: var(--surface-raised); color: var(--text-primary); padding: 12px 14px; }
+  .form-status[data-state='error'] { border-color: var(--red-500); }
+  .invalid-link { border: 1px solid var(--border-strong); background: var(--surface-raised); padding: clamp(22px, 3vw, 34px); }
+  .invalid-link h2 { margin: 12px 0 8px; color: var(--text-primary); }
+  .invalid-link p { color: var(--text-secondary); line-height: 1.6; }
+  .invalid-link > a { display: inline-block; margin-top: 18px; color: var(--text-primary); font-weight: 700; }
+  .token-form { margin-top: 20px; }
+  aside { border: 1px solid var(--border-subtle); background: var(--surface-raised); padding: 20px; }
+  aside h2 { margin: 0 0 14px; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
+  aside p { margin: 0; color: var(--text-secondary); line-height: 1.55; }
+  aside .delivery-note { margin-top: 14px; color: var(--text-tertiary); }
+  @media (max-width: 767px) {
+    .manage-layout, .game-choices, .subscription-meta { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,9 @@
+# Copy to .dev.vars for local delivery-worker testing. Never commit live credentials.
+SES_REGION="us-east-1"
+SES_FROM_ADDRESS="alerts@example.com"
+SES_CONFIGURATION_SET="freetins-alerts"
+ALERT_CONFIRMATION_SECRET="use-the-same-value-as-Pages"
+AWS_ACCESS_KEY_ID="replace-with-a-least-privilege-SES-key"
+AWS_SECRET_ACCESS_KEY="replace-with-the-matching-secret"
+# Keep the real Discord webhook URL in a Worker secret, never in Pages or source control.
+DISCORD_RELEASE_WEBHOOK_URL="replace-with-a-rotated-Discord-webhook-url"

@@ -1,3 +1,5 @@
 # Copy to .dev.vars for local server-route development. Never commit real values.
-TURNSTILE_SECRET="replace-with-local-turnstile-secret"
-ALERT_TOKEN_SECRET="replace-with-at-least-32-random-bytes"
+# This salt prevents stored rate-limit fingerprints from being reversible.
+RATE_LIMIT_SALT="replace-with-at-least-32-random-bytes"
+# Pages and the delivery Worker must share this value so confirmation links validate.
+ALERT_CONFIRMATION_SECRET="replace-with-at-least-32-random-bytes"

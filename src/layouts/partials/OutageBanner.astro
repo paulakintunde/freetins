@@ -9,29 +9,33 @@ const { status = 'Live' } = Astro.props;
 const statusCopy = {
   Degraded: {
     title: 'Checks are running behind',
-    body: 'The last sweep finished 26 minutes late. Codes below are still verified, but treat the times as approximate until the backlog clears.',
+    body: 'Some verification checks are delayed. Published check times remain visible on every code page.',
   },
   Outage: {
-    title: 'Hourly checks stopped 41 minutes ago',
-    body: 'The times below are frozen at the last successful check, not live. Nothing here has been reverified since 13:51.',
+    title: 'Hourly checks are currently unavailable',
+    body: 'Published check times are frozen at the last successful run until the checker recovers.',
   },
 } as const;
 
 const copy = status === 'Live' ? null : statusCopy[status];
 ---
 
-{copy && (
-  <aside class:list={['outage-banner', status.toLowerCase()]} data-outage-banner>
-    <div class="outage-inner content-boundary">
-      <div>
-        <h2>{copy.title}</h2>
-        <p>{copy.body}</p>
-      </div>
-      <a href="/status">Checker status</a>
-      <button type="button" aria-label="Dismiss status notice" data-outage-dismiss>&times;</button>
+<aside
+  class:list={['outage-banner', status.toLowerCase()]}
+  data-outage-banner
+  data-status-state={status}
+  data-status-fingerprint={status}
+  hidden={status === 'Live'}
+>
+  <div class="outage-inner content-boundary">
+    <div>
+      <h2 data-status-title>{copy?.title ?? 'Checker status'}</h2>
+      <p data-status-message>{copy?.body ?? ''}</p>
     </div>
-  </aside>
-)}
+    <a href="/status">Checker status</a>
+    <button type="button" aria-label="Dismiss status notice" data-outage-dismiss>&times;</button>
+  </div>
+</aside>
 
 <style>
   .outage-banner {

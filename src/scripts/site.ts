@@ -1,8 +1,25 @@
 type ConsentState = Record<string, boolean>;
 
+interface CheckerSnapshot {
+  available: boolean;
+  state: 'Live' | 'Degraded' | 'Outage';
+  lastFullRun: string;
+  pagesChecked: number;
+  medianResponseMs: number;
+  message: string;
+}
+
+interface FormResponse {
+  ok: boolean;
+  message: string;
+  manageUrl?: string;
+  redirectTo?: string;
+}
+
 declare global {
   interface Window {
     __freetinsController?: AbortController;
+    __freetinsStatusCache?: { snapshot: CheckerSnapshot; fetchedAt: number };
   }
 }
 
@@ -16,6 +33,7 @@ window.__freetinsController = controller;
 let drawerReturnFocus: HTMLElement | null = null;
 let copiedButton: HTMLButtonElement | null = null;
 let copyResetTimer: number | undefined;
+let checkerStatusRequest: Promise<CheckerSnapshot | null> | undefined;
 
 const asElement = (target: EventTarget | null) => target instanceof Element ? target : null;
 
@@ -146,14 +164,80 @@ const syncConsent = () => {
   banner.hidden = true;
 };
 
-const syncOutageBanner = () => {
+const isCheckerSnapshot = (value: unknown): value is CheckerSnapshot => {
+  if (!value || typeof value !== 'object') return false;
+  const candidate = value as Partial<CheckerSnapshot>;
+  return typeof candidate.available === 'boolean'
+    && ['Live', 'Degraded', 'Outage'].includes(candidate.state ?? '')
+    && typeof candidate.lastFullRun === 'string'
+    && typeof candidate.pagesChecked === 'number'
+    && typeof candidate.medianResponseMs === 'number'
+    && typeof candidate.message === 'string';
+};
+
+const renderCheckerStatus = (snapshot: CheckerSnapshot) => {
   const banner = document.querySelector<HTMLElement>('[data-outage-banner]');
   if (!banner) return;
 
+  if (!snapshot.available || snapshot.state === 'Live') {
+    banner.hidden = true;
+    banner.dataset.statusState = snapshot.state;
+    return;
+  }
+
+  const fingerprint = `${snapshot.state}:${snapshot.lastFullRun}`;
+  const title = banner.querySelector<HTMLElement>('[data-status-title]');
+  const message = banner.querySelector<HTMLElement>('[data-status-message]');
+  banner.classList.toggle('degraded', snapshot.state === 'Degraded');
+  banner.classList.toggle('outage', snapshot.state === 'Outage');
+  banner.dataset.statusState = snapshot.state;
+  banner.dataset.statusFingerprint = fingerprint;
+  if (title) {
+    title.textContent = snapshot.state === 'Outage'
+      ? 'Hourly checks are currently unavailable'
+      : 'Checks are running behind';
+  }
+  if (message) message.textContent = snapshot.message;
+
   try {
-    banner.hidden = sessionStorage.getItem('ft_status_dismissed') === 'true';
+    banner.hidden = sessionStorage.getItem('ft_status_dismissed') === fingerprint;
   } catch {
     banner.hidden = false;
+  }
+};
+
+const syncCheckerStatus = async () => {
+  const cached = window.__freetinsStatusCache;
+  if (cached && Date.now() - cached.fetchedAt < 30_000) {
+    renderCheckerStatus(cached.snapshot);
+    return;
+  }
+
+  const request = checkerStatusRequest ?? (async () => {
+    try {
+      const response = await fetch('/api/status', {
+        headers: { Accept: 'application/json' },
+        signal: controller.signal,
+      });
+      if (!response.ok) return null;
+      const snapshot: unknown = await response.json();
+      return isCheckerSnapshot(snapshot) ? snapshot : null;
+    } catch (error) {
+      if (!(error instanceof DOMException && error.name === 'AbortError')) {
+        // Keep the server-rendered state when the live status request cannot complete.
+      }
+      return null;
+    }
+  })();
+  checkerStatusRequest = request;
+
+  try {
+    const snapshot = await request;
+    if (!snapshot) return;
+    window.__freetinsStatusCache = { snapshot, fetchedAt: Date.now() };
+    renderCheckerStatus(snapshot);
+  } finally {
+    if (checkerStatusRequest === request) checkerStatusRequest = undefined;
   }
 };
 
@@ -161,33 +245,13 @@ const dismissOutageBanner = () => {
   const banner = document.querySelector<HTMLElement>('[data-outage-banner]');
   if (banner) banner.hidden = true;
   try {
-    sessionStorage.setItem('ft_status_dismissed', 'true');
+    sessionStorage.setItem(
+      'ft_status_dismissed',
+      banner?.dataset.statusFingerprint ?? banner?.dataset.statusState ?? 'dismissed',
+    );
   } catch {
     // Session storage can be unavailable in hardened privacy modes.
   }
-};
-
-const showPushAllowed = () => {
-  const prompt = document.querySelector<HTMLElement>('[data-push-prompt]');
-  const allowed = document.querySelector<HTMLElement>('[data-push-allowed]');
-  if (prompt) prompt.hidden = true;
-  if (allowed) allowed.hidden = false;
-};
-
-const syncPushState = () => {
-  if ('Notification' in window && Notification.permission === 'granted') showPushAllowed();
-};
-
-const requestPushPermission = async () => {
-  const prompt = document.querySelector<HTMLElement>('[data-push-prompt]');
-  if (!('Notification' in window)) {
-    const message = prompt?.querySelector('p');
-    if (message) message.textContent = 'Notifications are not available in this browser.';
-    return;
-  }
-
-  const permission = await Notification.requestPermission();
-  if (permission === 'granted') showPushAllowed();
 };
 
 const writeClipboard = async (text: string) => {
@@ -200,7 +264,7 @@ const writeClipboard = async (text: string) => {
   textarea.value = text;
   textarea.setAttribute('readonly', '');
   textarea.className = 'visually-hidden';
-  document.body.append(textarea);
+  document.body.appendChild(textarea);
   textarea.select();
   const copied = document.execCommand('copy');
   textarea.remove();
@@ -233,12 +297,120 @@ const copyCode = async (button: HTMLButtonElement) => {
   }
 };
 
+const setFormStatus = (
+  form: HTMLFormElement,
+  state: 'pending' | 'success' | 'error',
+  message: string,
+  manageUrl?: string,
+) => {
+  const status = form.querySelector<HTMLElement>('[data-form-status]');
+  if (!status) return;
+  status.hidden = false;
+  status.dataset.state = state;
+  status.replaceChildren(document.createTextNode(message));
+  if (manageUrl) {
+    status.appendChild(document.createTextNode(' '));
+    const link = document.createElement('a');
+    link.href = manageUrl;
+    link.textContent = 'Manage this alert';
+    status.appendChild(link);
+  }
+};
+
+const submitAsyncForm = async (form: HTMLFormElement, submitter: HTMLElement | null) => {
+  const confirmation = submitter?.getAttribute('data-confirm');
+  if (confirmation && !window.confirm(confirmation)) return;
+
+  const controls = Array.from(form.querySelectorAll<HTMLButtonElement>('button[type="submit"]'));
+  const data = new FormData(form);
+  if (submitter instanceof HTMLButtonElement && submitter.name) {
+    data.set(submitter.name, submitter.value);
+  }
+
+  form.setAttribute('aria-busy', 'true');
+  controls.forEach((button) => { button.disabled = true; });
+  setFormStatus(form, 'pending', 'Sending...');
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method || 'post',
+      body: data,
+      headers: {
+        Accept: 'application/json',
+        'X-Freetins-Request': 'form',
+      },
+      signal: controller.signal,
+    });
+    const payload: unknown = await response.json();
+    if (!payload || typeof payload !== 'object') throw new Error('Invalid form response');
+    const result = payload as FormResponse;
+    if (!response.ok || !result.ok) {
+      setFormStatus(form, 'error', result.message || 'The request could not be completed.');
+      return;
+    }
+    if (result.redirectTo) {
+      window.location.assign(result.redirectTo);
+      return;
+    }
+    if (!form.hasAttribute('data-preserve-form')) form.reset();
+    setFormStatus(form, 'success', result.message, result.manageUrl);
+  } catch (error) {
+    if (!(error instanceof DOMException && error.name === 'AbortError')) {
+      setFormStatus(form, 'error', 'The request could not be completed. Check your connection and try again.');
+    }
+  } finally {
+    form.removeAttribute('aria-busy');
+    controls.forEach((button) => { button.disabled = false; });
+  }
+};
+
+const syncFormQueryState = () => {
+  const url = new URL(window.location.href);
+  const topic = url.searchParams.get('topic');
+  // Worker ambient types share this project with browser code, so bridge this DOM-only query explicitly.
+  const topicSelect = document.querySelector('[data-topic-select]') as unknown as HTMLSelectElement | null;
+  if (topicSelect && topic) {
+    const option = Array.from(topicSelect.options).find(
+      (candidate) => candidate.value.toLowerCase() === topic.toLowerCase(),
+    );
+    if (option) topicSelect.value = option.value;
+  }
+
+  const state = url.searchParams.get('form');
+  const message = url.searchParams.get('message');
+  const form = document.querySelector<HTMLFormElement>('[data-async-form]');
+  if (form && message && (state === 'success' || state === 'error')) {
+    setFormStatus(form, state, message);
+  }
+};
+
+const filterGameChoices = (input: HTMLInputElement) => {
+  const container = input.closest('fieldset')?.querySelector<HTMLElement>('[data-game-choices]');
+  if (!container) return;
+  const query = input.value.trim().toLowerCase();
+  container.querySelectorAll<HTMLElement>('[data-game-choice]').forEach((choice) => {
+    choice.hidden = Boolean(query) && !(choice.dataset.searchName ?? '').includes(query);
+  });
+};
+
 const syncPageState = () => {
   closeDrawer(false);
   syncConsent();
-  syncOutageBanner();
-  syncPushState();
+  void syncCheckerStatus();
+  syncFormQueryState();
 };
+
+document.addEventListener('submit', (event) => {
+  const form = event.target instanceof HTMLFormElement ? event.target : null;
+  if (!form?.matches('[data-async-form]')) return;
+  event.preventDefault();
+  void submitAsyncForm(form, event.submitter instanceof HTMLElement ? event.submitter : null);
+}, { signal: controller.signal });
+
+document.addEventListener('input', (event) => {
+  const input = event.target instanceof HTMLInputElement ? event.target : null;
+  if (input?.matches('[data-game-filter]')) filterGameChoices(input);
+}, { signal: controller.signal });
 
 document.addEventListener('click', (event) => {
   const target = asElement(event.target);
@@ -299,16 +471,6 @@ document.addEventListener('click', (event) => {
     dismissOutageBanner();
     return;
   }
-  if (target.closest('[data-push-allow]')) {
-    void requestPushPermission();
-    return;
-  }
-  if (target.closest('[data-push-dismiss]')) {
-    const prompt = document.querySelector<HTMLElement>('[data-push-prompt]');
-    if (prompt) prompt.hidden = true;
-    return;
-  }
-
   const copyButton = target.closest<HTMLButtonElement>('[data-copy-code]');
   if (copyButton) void copyCode(copyButton);
 }, { signal: controller.signal });

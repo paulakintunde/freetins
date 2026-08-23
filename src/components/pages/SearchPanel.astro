@@ -1,0 +1,82 @@
+---
+import type { SearchResult } from '../../lib/search';
+
+interface Props {
+  query: string;
+  results: SearchResult[];
+}
+
+const { query, results } = Astro.props;
+const searched = query.trim().length > 0;
+---
+
+<section class="page-section content-boundary search-layout">
+  <div>
+    <form method="get" action="/search" role="search">
+      <label for="site-search">Game, guide or code page</label>
+      <div class="search-row">
+        <input id="site-search" type="search" name="q" value={query} minlength="2" maxlength="100" required placeholder="Grow a Garden" autofocus />
+        <button type="submit">Search</button>
+      </div>
+    </form>
+
+    {searched && query.trim().length < 2 && (
+      <p class="search-notice">Enter at least two characters to search.</p>
+    )}
+    {query.trim().length >= 2 && (
+      <div class="result-heading">
+        <h2>{results.length > 0 ? `Results for “${query}”` : `No results for “${query}”`}</h2>
+        <span>{results.length} found</span>
+      </div>
+    )}
+    {results.length > 0 && (
+      <div class="search-results">
+        {results.map((result) => (
+          <a href={result.path}>
+            <span>{result.category}</span>
+            <h3>{result.heading}</h3>
+            <p>{result.description}</p>
+          </a>
+        ))}
+      </div>
+    )}
+    {query.trim().length >= 2 && results.length === 0 && (
+      <div class="empty-state">
+        <p>Try a shorter game name, or browse the complete list.</p>
+        <a href="/games">Browse all games</a>
+      </div>
+    )}
+  </div>
+  <aside>
+    <h2>What search covers</h2>
+    <p>Results include tracked games, live-code pages, daily links, guides, cheats, values and editorial pages.</p>
+  </aside>
+</section>
+
+<style>
+  .page-section { padding: clamp(28px, 4vw, 44px) var(--page-gutter) 0; }
+  .search-layout { display: grid; grid-template-columns: minmax(0, 760px) minmax(230px, 320px); gap: 30px; align-items: start; }
+  form { display: grid; gap: 8px; }
+  label { color: var(--text-secondary); font-weight: 600; }
+  .search-row { display: grid; grid-template-columns: 1fr auto; }
+  input { min-width: 0; border: 1px solid var(--border-strong); background: var(--surface-sunken); color: var(--text-primary); padding: 13px 14px; }
+  button { min-height: 48px; border: 0; background: var(--green-600); color: #fff; padding-inline: 22px; cursor: pointer; font: 700 11px / 1 var(--font-core); letter-spacing: .08em; text-transform: uppercase; }
+  .result-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-top: 34px; }
+  .result-heading h2 { margin: 0; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
+  .result-heading span { color: var(--text-tertiary); font-size: 12px; }
+  .search-results { margin-top: 12px; border: 1px solid var(--border-subtle); }
+  .search-results a { display: block; padding: 17px 18px; border-bottom: 1px solid var(--border-subtle); color: inherit; text-decoration: none; }
+  .search-results a:hover { background: var(--white-a08); }
+  .search-results span { color: var(--text-brand); font: 700 10px / 1.4 var(--font-core); letter-spacing: .1em; text-transform: uppercase; }
+  .search-results h3 { margin: 6px 0; color: var(--text-primary); font-size: 17px; }
+  .search-results p, .search-notice, .empty-state p { margin: 0; color: var(--text-tertiary); line-height: 1.55; }
+  .search-notice, .empty-state { margin-top: 20px; border: 1px solid var(--border-subtle); background: var(--surface-raised); padding: 18px; }
+  .empty-state a { display: inline-block; margin-top: 12px; color: var(--text-primary); font-weight: 700; }
+  aside { border: 1px solid var(--border-subtle); background: var(--surface-raised); padding: 20px; }
+  aside h2 { margin: 0 0 14px; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
+  aside p { margin: 0; color: var(--text-secondary); line-height: 1.55; }
+  @media (max-width: 767px) {
+    .search-layout { grid-template-columns: 1fr; }
+    .search-row { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>

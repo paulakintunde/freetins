@@ -1,14 +1,36 @@
 ---
+import { env } from 'cloudflare:workers';
 import RouteScreen from '../../components/pages/RouteScreen.astro';
 import { getRouteDefinition } from '../../data/routes';
+import { getAlertSubscription, type AlertSubscription } from '../../lib/database';
 import { applyOnDemandHeaders } from '../../lib/response-headers';
+import { isOpaqueToken, sha256 } from '../../lib/security';
 
 export const prerender = false;
 
 applyOnDemandHeaders(Astro.response.headers, 'private, no-store');
 Astro.response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+Astro.response.headers.set('Referrer-Policy', 'no-referrer');
 
 const definition = getRouteDefinition('/alerts/manage');
+const token = (Astro.url.searchParams.get('t') ?? '').trim();
+let subscription: AlertSubscription | null = null;
+let error: string | undefined;
+
+if (token) {
+  if (!isOpaqueToken(token)) {
+    error = 'This management link is invalid.';
+  } else if (!env.DB) {
+    error = 'Alert management is temporarily unavailable.';
+  } else {
+    try {
+      subscription = await getAlertSubscription(env.DB, await sha256(token));
+      if (!subscription) error = 'This management link is invalid or expired.';
+    } catch {
+      error = 'Alert management is temporarily unavailable.';
+    }
+  }
+}
 ---
 
-<RouteScreen definition={definition} />
+<RouteScreen definition={definition} alertManagement={{ token, subscription, error }} />

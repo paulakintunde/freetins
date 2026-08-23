@@ -3,6 +3,22 @@ pages_build_output_dir = "dist"
 compatibility_date = "2026-08-22"
 compatibility_flags = ["nodejs_compat"]
 
-# D1 and KV bindings are added after their Cloudflare resources are provisioned.
-# Required production bindings: DB, STATUS, ALERTS, TURNSTILE_SECRET,
-# and ALERT_TOKEN_SECRET.
+[[d1_databases]]
+binding = "DB"
+database_name = "freetins-app"
+database_id = "c32f1ddb-45a5-4057-b42b-14fbd9ca24dc"
+migrations_dir = "migrations"
+
+[[kv_namespaces]]
+binding = "STATUS"
+
+[[queues.producers]]
+binding = "ALERT_EMAIL"
+queue = "freetins-alert-email"
+
+[[queues.producers]]
+binding = "ALERT_RELEASES"
+queue = "freetins-release-delivery"
+
+[observability]
+enabled = true
