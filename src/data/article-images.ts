@@ -22,16 +22,16 @@ const artwork = (slug: string, alt: string): ArticleArtwork => {
 
 export const articleArtwork: Record<string, ArticleArtwork> = {
   clearVision3: artwork('clear-vision-3', 'Mission planning board overlooking a nighttime city target marker'),
-  littleAlchemy: artwork('little-alchemy', 'Air, earth, fire and water combining above an alchemy recipe book'),
+  littleAlchemy: artwork('little-alchemy', 'Bright Little Alchemy workspace showing a collection of discovered element icons'),
   guessEmojiLevels1To10: artwork('guess-emoji-levels-1-10', 'Colorful emoji clues and answer tiles on a puzzle stage'),
   christmasEmoji: artwork('100-pics-christmas-emoji', 'Christmas emoji ornaments, gifts and answer tiles on a cozy puzzle table'),
-  littleAlchemyEnergy: artwork('little-alchemy-2-energy', 'Air and fire recipes producing glowing Energy spheres'),
+  littleAlchemyEnergy: artwork('little-alchemy-2-energy', 'Air and fire combining to make Energy in a bright Little Alchemy workspace'),
   jurassicWorldGame: artwork('jurassic-world-the-game', 'Dinosaur park habitats and a tactical planning board'),
-  gta5RadioStations: artwork('gta-5-radio-stations', 'Illuminated car radio and equalizer on a nighttime city drive'),
-  gta5Demo: artwork('gta-5-demo', 'Verified game download protected from suspicious files and fake mobile apps'),
-  legoJurassicWorld: artwork('lego-jurassic-world', 'Brick-built dinosaurs beside a glowing cheat-code keypad'),
-  guitarHero3: artwork('guitar-hero-3', 'Five colored guitar fret buttons glowing on a concert stage'),
-  pokemonEmerald: artwork('pokemon-emerald', 'Rare candies moving into a retro game storage box'),
+  gta5RadioStations: artwork('gta-5-radio-stations', 'Convertible driving through sunny Los Santos with the GTA V logo'),
+  gta5Demo: artwork('gta-5-demo', 'GTA V game case and controller in a bright room overlooking Los Santos'),
+  legoJurassicWorld: artwork('lego-jurassic-world', 'LEGO adventurers running through a sunny dinosaur park with a brick-built T. rex'),
+  guitarHero3: artwork('guitar-hero-3', 'Five-fret guitar controller and note highway at a daylight rock festival'),
+  pokemonEmerald: artwork('pokemon-emerald', 'Pokemon Emerald pixel-art route beside a storage grid filled with Rare Candy'),
   doubleDownCasino: artwork('doubledown-casino', 'Virtual casino chips connected securely to a verified mobile reward'),
   resources: artwork('resources', 'Codes, answers, cheats, rewards and guides arranged around a verified compass'),
 };
