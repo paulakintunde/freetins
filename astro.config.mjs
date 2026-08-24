@@ -10,7 +10,7 @@ export default defineConfig({
   trailingSlash: 'always',
   adapter: cloudflare({ imageService: 'compile' }),
   build: {
-    format: 'file',
+    format: 'directory',
   },
   prefetch: {
     defaultStrategy: 'hover',
