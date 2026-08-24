@@ -35,7 +35,8 @@ export interface ArticleFaq {
 export interface EditorialArticle {
   path: string;
   routeId: string;
-  section: 'answers' | 'guides' | 'resources';
+  section: 'answers' | 'guides' | 'resources' | 'cheats' | 'daily' | 'legal' | 'about';
+  schemaType?: 'Article' | 'CollectionPage' | 'WebPage';
   title: string;
   heading: string;
   description: string;

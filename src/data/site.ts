@@ -75,6 +75,7 @@ export const footerColumns: FooterColumn[] = [
       { label: 'Privacy', href: '/privacy/' },
       { label: 'Terms and conditions', href: '/terms-and-conditions/' },
       { label: 'Disclosure', href: '/disclosure/' },
+      { label: 'DMCA', href: '/dmca/' },
       { label: 'Cookie choices', action: 'consent' },
     ],
   },

@@ -80,32 +80,12 @@ const staticRoutes: RouteDefinition[] = [
     description: 'Choose games and get an alert when a verified code is published.',
   },
   {
-    path: '/contact/', routeId: 'contact', kind: 'contact', title: 'Contact | Freetins', heading: 'Contact',
-    description: 'Corrections, partnerships, promotion and general enquiries for the Freetins editorial desk.',
-  },
-  {
     path: '/blog/', routeId: 'updates', kind: 'updates', title: 'Blog | Freetins', heading: 'Blog',
     description: 'The verification and change log.',
   },
   {
     path: '/games/', routeId: 'az', kind: 'az', title: 'All games A-Z | Freetins', heading: 'All games A-Z',
     description: 'Every game with a page on Freetins and its current number of live codes or links.',
-  },
-  {
-    path: '/about/', routeId: 'about', kind: 'info', title: 'About | Freetins', heading: 'About',
-    description: 'About the site and its relaunch.',
-  },
-  {
-    path: '/privacy/', routeId: 'privacy', kind: 'privacy', title: 'Privacy | Freetins', heading: 'Privacy',
-    description: 'How Freetins collects, uses and shares data.',
-  },
-  {
-    path: '/disclosure/', routeId: 'affiliate', kind: 'affiliate', title: 'Disclosure | Freetins', heading: 'Disclosure',
-    description: 'Which Freetins links may pay us and what money never buys.',
-  },
-  {
-    path: '/terms-and-conditions/', routeId: 'terms', kind: 'terms', title: 'Terms of use | Freetins', heading: 'Terms of use',
-    description: 'The terms governing use of Freetins.',
   },
 ];
 

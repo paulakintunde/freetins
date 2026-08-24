@@ -11,15 +11,23 @@ const sectionLabels = {
   answers: 'Answers',
   guides: 'Guides',
   resources: 'Resources',
+  cheats: 'Cheats',
+  daily: 'Daily links',
+  legal: 'Legal',
+  about: 'About',
 };
 const sectionPaths = {
   answers: '/answers/',
   guides: '/guides/',
   resources: '/resources/',
+  cheats: '/cheats/',
+  daily: '/daily/',
+  legal: '/about/',
+  about: '/about/',
 };
 const sectionLabel = sectionLabels[article.section];
 const sectionPath = sectionPaths[article.section];
-const crumbs = article.section === 'resources'
+const crumbs = article.section === 'resources' || article.section === 'legal' || article.section === 'about'
   ? [{ label: 'Home', href: '/' }, { label: sectionLabel, href: article.path }]
   : [
       { label: 'Home', href: '/' },
@@ -27,14 +35,16 @@ const crumbs = article.section === 'resources'
       { label: article.heading, href: article.path },
     ];
 const absoluteUrl = new URL(article.path, Astro.site).toString();
-const articleType = article.section === 'resources' ? 'CollectionPage' : 'Article';
+const articleType = article.schemaType ?? (article.section === 'resources' ? 'CollectionPage' : 'Article');
+const isWebPage = articleType === 'WebPage';
+const entityId = `${absoluteUrl}${isWebPage ? '#webpage' : '#article'}`;
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': articleType,
-      '@id': `${absoluteUrl}#article`,
-      headline: article.heading,
+      '@id': entityId,
+      ...(isWebPage ? { name: article.heading } : { headline: article.heading }),
       description: article.description,
       url: absoluteUrl,
       datePublished: article.publishedAt,
@@ -45,8 +55,19 @@ const structuredData = {
         url: new URL(article.authorPath, Astro.site).toString(),
       },
       publisher: { '@id': 'https://freetins.com/#org' },
-      mainEntityOfPage: { '@id': `${absoluteUrl}#webpage` },
+      ...(!isWebPage && { mainEntityOfPage: { '@id': `${absoluteUrl}#webpage` } }),
     },
+    ...(!isWebPage
+      ? [{
+          '@type': 'WebPage',
+          '@id': `${absoluteUrl}#webpage`,
+          url: absoluteUrl,
+          name: article.heading,
+          description: article.description,
+          breadcrumb: { '@id': `${absoluteUrl}#breadcrumb` },
+          mainEntity: { '@id': entityId },
+        }]
+      : []),
     {
       '@type': 'BreadcrumbList',
       '@id': `${absoluteUrl}#breadcrumb`,
@@ -76,7 +97,7 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   : {};
 ---
 
-<BaseLayout title={article.title} description={article.description} theme="light">
+<BaseLayout title={article.title} description={article.description}>
   <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
 
   <article class="editorial-article">
@@ -92,13 +113,15 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
         <span>{article.reviewLabel}</span>
         <span>By <a href={article.authorPath}>{article.author}</a></span>
       </div>
-      <div class="quick-answer">
+    </header>
+
+    <div class="article-reading-surface">
+      <div class="quick-answer content-boundary">
         <strong>Quick answer</strong>
         <p>{article.quickAnswer}</p>
       </div>
-    </header>
 
-    <div class="article-layout content-boundary">
+      <div class="article-layout content-boundary">
       <nav class="jump-nav" aria-label="On this page">
         <strong>On this page</strong>
         {article.sections.map((section) => <a href={`#${section.id}`}>{section.heading}</a>)}
@@ -184,30 +207,32 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
           </section>
         )}
       </div>
-    </div>
-
-    <section class="related content-boundary" aria-labelledby="related-heading">
-      <h2 id="related-heading">Keep going</h2>
-      <div class="link-directory">
-        {article.related.map((link) => (
-          <a href={link.href}>
-            <strong>{link.label}</strong>
-            {link.description && <span>{link.description}</span>}
-          </a>
-        ))}
       </div>
-    </section>
+
+      {article.related.length > 0 && (
+        <section class="related content-boundary" aria-labelledby="related-heading">
+          <h2 id="related-heading">Keep going</h2>
+          <div class="link-directory">
+            {article.related.map((link) => (
+              <a href={link.href}>
+                <strong>{link.label}</strong>
+                {link.description && <span>{link.description}</span>}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
   </article>
 </BaseLayout>
 
 <style>
   .editorial-article {
-    padding-bottom: clamp(64px, 8vw, 112px);
     background: var(--surface-page);
   }
 
   .article-head {
-    padding: clamp(28px, 4vw, 56px) var(--page-gutter) 0;
+    padding: clamp(28px, 4vw, 56px) var(--page-gutter) clamp(36px, 5vw, 64px);
   }
 
   .breadcrumbs {
@@ -270,11 +295,9 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   }
 
   .quick-answer {
-    max-width: 880px;
-    margin-top: 26px;
-    padding: 18px 20px;
-    border: 1px solid var(--green-200);
-    background: var(--green-100);
+    padding: 22px var(--page-gutter);
+    border-bottom: 1px solid #cfd8d2;
+    background: #e9f6ee;
     color: var(--neutral-1000);
   }
 
@@ -286,8 +309,24 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   }
 
   .quick-answer p {
+    max-width: 72ch;
     margin: 0;
     line-height: 1.55;
+  }
+
+  .article-reading-surface {
+    --surface-page: #fff;
+    --surface-raised: #f7f9f7;
+    --surface-sunken: #f2f5f3;
+    --text-primary: #101512;
+    --text-secondary: #3d4942;
+    --text-tertiary: #657169;
+    --text-disabled: #879089;
+    --border-subtle: #dfe5e1;
+    --border-strong: #b9c4bd;
+    background: #fff;
+    color: #101512;
+    color-scheme: light;
   }
 
   .article-layout {
@@ -530,7 +569,7 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   }
 
   .related {
-    padding: clamp(36px, 5vw, 60px) var(--page-gutter) 0;
+    padding: clamp(36px, 5vw, 60px) var(--page-gutter) clamp(64px, 8vw, 112px);
     border-top: 1px solid var(--border-subtle);
   }
 
@@ -541,7 +580,8 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   @media (max-width: 767px) {
     .article-head,
     .article-layout,
-    .related {
+    .related,
+    .quick-answer {
       padding-right: 20px;
       padding-left: 20px;
     }
