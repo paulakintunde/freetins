@@ -14,6 +14,7 @@ interface Props {
   image?: string | undefined;
   imageAlt?: string | undefined;
   noindex?: boolean;
+  theme?: 'light' | 'dark';
 }
 
 const {
@@ -24,6 +25,7 @@ const {
   image = '/og/freetins-home-game-codes.jpg',
   imageAlt = 'Freetins game codes and daily reward links',
   noindex = false,
+  theme = 'dark',
 } = Astro.props;
 const hasPrimaryImage = typeof Astro.props.image === 'string';
 const normalizedPathname = Astro.url.pathname === '/index.html'
@@ -64,14 +66,15 @@ const schema = {
         'query-input': 'required name=search_term_string',
       },
     },
-    ...(hasPrimaryImage
-      ? [{
-          '@type': 'WebPage',
-          '@id': `${canonical}#webpage`,
-          url: canonical,
-          name: title,
-          description,
-          isPartOf: { '@id': 'https://freetins.com/#site' },
+    {
+      '@type': 'WebPage',
+      '@id': `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: { '@id': 'https://freetins.com/#site' },
+      ...(hasPrimaryImage
+        ? {
           primaryImageOfPage: {
             '@type': 'ImageObject',
             url: socialImage,
@@ -79,14 +82,15 @@ const schema = {
             height: 630,
             caption: imageAlt,
           },
-        }]
-      : []),
+        }
+        : {}),
+    },
   ],
 };
 ---
 
 <!doctype html>
-<html lang="en" data-consent-region={consentMode}>
+<html lang="en" data-consent-region={consentMode} data-theme={theme}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -1,6 +1,8 @@
 ---
 import { Picture } from 'astro:assets';
 import Button from '../ui/Button.astro';
+import EditorialArticle from './EditorialArticle.astro';
+import { editorialArticles, getArticleByPath } from '../../data/articles';
 import { dailyLinkCatalogue, gameCatalogue } from '../../data/home';
 import {
   dailyArtwork,
@@ -18,6 +20,12 @@ interface Props {
 }
 
 const { definition, checkerSnapshot } = Astro.props;
+const article = getArticleByPath(definition.path);
+const hubArticles = definition.routeId === 'answers'
+  ? editorialArticles.filter((item) => item.section === 'answers')
+  : definition.routeId === 'guideIndex'
+    ? editorialArticles.filter((item) => item.section === 'guides')
+    : [];
 const game = gameCatalogue.find((item) => item.slug === definition.slug);
 const dailyGame = dailyLinkCatalogue.find((item) => item.slug === definition.slug);
 const gameRoot = game ? `/codes/${game.slug}/` : '/codes/grow-a-garden/';
@@ -194,6 +202,9 @@ const crumbs = isGamePage
   : [['Home', '/']];
 ---
 
+{article ? (
+  <EditorialArticle article={article} />
+) : (
 <BaseLayout
   title={definition.title}
   description={definition.description}
@@ -370,6 +381,20 @@ const crumbs = isGamePage
       <section class="page-section content-boundary prose"><p class="updated">Last updated 21 August 2026</p>{infoSections.map(([heading, copy], index) => <section><span>{String(index + 1).padStart(2, '0')}</span><div><h2>{heading}</h2><p>{copy}</p></div></section>)}</section>
     )}
 
+    {definition.kind === 'info' && hubArticles.length > 0 && (
+      <section class="page-section content-boundary">
+        <h2>Published pages</h2>
+        <div class="catalogue article-catalogue">
+          {hubArticles.map((item) => (
+            <a href={item.path}>
+              <span>{item.heading}<small>{item.description}</small></span>
+              <strong>Read</strong>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
     {definition.kind === 'verify' && (
       <section class="page-section content-boundary"><h2>How often we check</h2><div class="process-grid">{[['01', 'Find the source', 'A developer channel or game surface starts the check.'], ['02', 'Open it twice', 'Two sources must agree before a code is marked live.'], ['03', 'Publish the time', 'The page shows the minute of the latest successful check.'], ['04', 'Keep the record', 'Failed codes move to the archive instead of disappearing.']].map(([num, title, copy]) => <div><strong>{num}</strong><h3>{title}</h3><p>{copy}</p></div>)}</div></section>
     )}
@@ -405,6 +430,7 @@ const crumbs = isGamePage
   </article>
 
 </BaseLayout>
+)}
 
 <style>
   .route-page { padding-bottom: clamp(54px, 7vw, 92px); }

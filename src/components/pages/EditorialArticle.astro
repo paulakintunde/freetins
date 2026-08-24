@@ -1,0 +1,574 @@
+---
+import type { EditorialArticle as EditorialArticleData, ArticleLink } from '../../data/articles';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+interface Props {
+  article: EditorialArticleData;
+}
+
+const { article } = Astro.props;
+const sectionLabels = {
+  answers: 'Answers',
+  guides: 'Guides',
+  resources: 'Resources',
+};
+const sectionPaths = {
+  answers: '/answers/',
+  guides: '/guides/',
+  resources: '/resources/',
+};
+const sectionLabel = sectionLabels[article.section];
+const sectionPath = sectionPaths[article.section];
+const crumbs = article.section === 'resources'
+  ? [{ label: 'Home', href: '/' }, { label: sectionLabel, href: article.path }]
+  : [
+      { label: 'Home', href: '/' },
+      { label: sectionLabel, href: sectionPath },
+      { label: article.heading, href: article.path },
+    ];
+const absoluteUrl = new URL(article.path, Astro.site).toString();
+const articleType = article.section === 'resources' ? 'CollectionPage' : 'Article';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': articleType,
+      '@id': `${absoluteUrl}#article`,
+      headline: article.heading,
+      description: article.description,
+      url: absoluteUrl,
+      datePublished: article.publishedAt,
+      dateModified: article.reviewedAt,
+      author: {
+        '@type': 'Person',
+        name: article.author,
+        url: new URL(article.authorPath, Astro.site).toString(),
+      },
+      publisher: { '@id': 'https://freetins.com/#org' },
+      mainEntityOfPage: { '@id': `${absoluteUrl}#webpage` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${absoluteUrl}#breadcrumb`,
+      itemListElement: crumbs.map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.label,
+        item: new URL(crumb.href, Astro.site).toString(),
+      })),
+    },
+    ...(article.faq?.length
+      ? [{
+          '@type': 'FAQPage',
+          '@id': `${absoluteUrl}#faq`,
+          mainEntity: article.faq.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: { '@type': 'Answer', text: item.answer },
+          })),
+        }]
+      : []),
+  ],
+};
+
+const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
+  ? { target: '_blank', rel: 'noopener noreferrer' }
+  : {};
+---
+
+<BaseLayout title={article.title} description={article.description} theme="light">
+  <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+
+  <article class="editorial-article">
+    <header class="article-head content-boundary">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        {crumbs.slice(0, -1).map((crumb) => <a href={crumb.href}>{crumb.label}</a>)}
+        <span aria-current="page">{crumbs.at(-1)?.label}</span>
+      </nav>
+      <p class="eyebrow">{article.eyebrow}</p>
+      <h1>{article.heading}</h1>
+      <p class="lede">{article.description}</p>
+      <div class="article-meta">
+        <span>{article.reviewLabel}</span>
+        <span>By <a href={article.authorPath}>{article.author}</a></span>
+      </div>
+      <div class="quick-answer">
+        <strong>Quick answer</strong>
+        <p>{article.quickAnswer}</p>
+      </div>
+    </header>
+
+    <div class="article-layout content-boundary">
+      <nav class="jump-nav" aria-label="On this page">
+        <strong>On this page</strong>
+        {article.sections.map((section) => <a href={`#${section.id}`}>{section.heading}</a>)}
+        {article.faq?.length && <a href="#frequently-asked-questions">Frequently asked questions</a>}
+        {article.sources.length > 0 && <a href="#sources">Sources</a>}
+      </nav>
+
+      <div class="article-body">
+        {article.sections.map((section) => (
+          <section id={section.id} class="article-section">
+            <h2>{section.heading}</h2>
+            {section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+
+            {section.groups && (
+              <div class="answer-groups">
+                {section.groups.map((group) => (
+                  <div>
+                    <h3>{group.heading}</h3>
+                    <p>{group.body}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {section.table && (
+              <div class="table-scroll" tabindex="0" role="region" aria-label={section.table.caption}>
+                <table>
+                  <caption>{section.table.caption}</caption>
+                  <thead>
+                    <tr>{section.table.columns.map((column) => <th scope="col">{column}</th>)}</tr>
+                  </thead>
+                  <tbody>
+                    {section.table.rows.map((row) => (
+                      <tr>{row.map((cell, index) => index === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>)}</tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            {section.steps && <ol class="steps">{section.steps.map((step) => <li>{step}</li>)}</ol>}
+            {section.bullets && <ul class="bullets">{section.bullets.map((bullet) => <li>{bullet}</li>)}</ul>}
+
+            {section.links && (
+              <div class="link-directory">
+                {section.links.map((link) => (
+                  <a href={link.href} {...linkAttributes(link)}>
+                    <strong>{link.label}</strong>
+                    {link.description && <span>{link.description}</span>}
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {section.note && <aside class="editor-note"><strong>Good to know</strong><p>{section.note}</p></aside>}
+          </section>
+        ))}
+
+        {article.faq?.length && (
+          <section id="frequently-asked-questions" class="article-section faq-section">
+            <h2>Frequently asked questions</h2>
+            {article.faq.map((item) => (
+              <details>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </section>
+        )}
+
+        {article.sources.length > 0 && (
+          <section id="sources" class="article-section sources-section">
+            <h2>Sources</h2>
+            <p>Primary sources are preferred for current availability and product features. Older walkthrough details are labeled and cross-checked where possible.</p>
+            <div class="source-list">
+              {article.sources.map((source) => (
+                <a href={source.href} {...linkAttributes(source)}>
+                  <strong>{source.label}</strong>
+                  {source.description && <span>{source.description}</span>}
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
+
+    <section class="related content-boundary" aria-labelledby="related-heading">
+      <h2 id="related-heading">Keep going</h2>
+      <div class="link-directory">
+        {article.related.map((link) => (
+          <a href={link.href}>
+            <strong>{link.label}</strong>
+            {link.description && <span>{link.description}</span>}
+          </a>
+        ))}
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .editorial-article {
+    padding-bottom: clamp(64px, 8vw, 112px);
+    background: var(--surface-page);
+  }
+
+  .article-head {
+    padding: clamp(28px, 4vw, 56px) var(--page-gutter) 0;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+    color: var(--text-tertiary);
+    font-size: 13px;
+  }
+
+  .breadcrumbs a {
+    color: var(--text-tertiary);
+  }
+
+  .breadcrumbs a::after {
+    margin-left: 6px;
+    color: var(--text-disabled);
+    content: '/';
+  }
+
+  .eyebrow {
+    margin: 0 0 12px;
+    color: var(--text-brand);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    max-width: 24ch;
+    margin: 0;
+    color: var(--text-primary);
+    font: 650 var(--fs-h1) / 1.04 var(--font-display);
+    letter-spacing: -.025em;
+    text-wrap: balance;
+  }
+
+  .lede {
+    max-width: 68ch;
+    margin: 18px 0 0;
+    color: var(--text-secondary);
+    font-size: var(--fs-body-lg);
+    line-height: 1.55;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-top: 18px;
+    color: var(--text-tertiary);
+    font-size: 13px;
+  }
+
+  .article-meta a {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .quick-answer {
+    max-width: 880px;
+    margin-top: 26px;
+    padding: 18px 20px;
+    border: 1px solid var(--green-200);
+    background: var(--green-100);
+    color: var(--neutral-1000);
+  }
+
+  .quick-answer strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--green-800);
+    font-size: 13px;
+  }
+
+  .quick-answer p {
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(180px, 230px) minmax(0, 780px);
+    gap: clamp(32px, 5vw, 72px);
+    align-items: start;
+    padding: clamp(36px, 5vw, 64px) var(--page-gutter) 0;
+  }
+
+  .jump-nav {
+    position: sticky;
+    top: 84px;
+    display: grid;
+    border-top: 2px solid var(--text-primary);
+  }
+
+  .jump-nav strong {
+    padding: 14px 0 10px;
+    color: var(--text-primary);
+    font-size: 13px;
+  }
+
+  .jump-nav a {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .article-body {
+    min-width: 0;
+  }
+
+  .article-section {
+    scroll-margin-top: 90px;
+    padding: 0 0 clamp(40px, 6vw, 68px);
+  }
+
+  .article-section + .article-section {
+    padding-top: clamp(36px, 5vw, 58px);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .article-section h2,
+  .related h2 {
+    max-width: 28ch;
+    margin: 0 0 16px;
+    color: var(--text-primary);
+    font: 650 var(--fs-h3) / 1.16 var(--font-display);
+    letter-spacing: -.015em;
+    text-wrap: balance;
+  }
+
+  .article-section > p {
+    max-width: 68ch;
+    margin: 0 0 14px;
+    color: var(--text-secondary);
+    line-height: 1.72;
+  }
+
+  .answer-groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 24px;
+    background: var(--border-subtle);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .answer-groups > div {
+    min-height: 132px;
+    padding: 18px;
+    background: var(--surface-page);
+  }
+
+  .answer-groups h3 {
+    margin: 0 0 8px;
+    color: var(--text-primary);
+    font-size: 16px;
+  }
+
+  .answer-groups p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.58;
+  }
+
+  .table-scroll {
+    max-width: 100%;
+    margin-top: 22px;
+    overflow-x: auto;
+    border: 1px solid var(--border-strong);
+  }
+
+  .table-scroll:focus-visible {
+    outline: 2px solid var(--green-700);
+    outline-offset: 3px;
+  }
+
+  table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  caption {
+    padding: 12px 14px;
+    color: var(--text-primary);
+    font-weight: 700;
+    text-align: left;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background: var(--neutral-50);
+    color: var(--text-primary);
+    font-size: 12px;
+    letter-spacing: .03em;
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: 12px 14px;
+    border-top: 1px solid var(--border-subtle);
+    vertical-align: top;
+  }
+
+  tbody th {
+    width: 31%;
+    color: var(--text-primary);
+    font-weight: 650;
+    text-align: left;
+  }
+
+  .steps,
+  .bullets {
+    display: grid;
+    gap: 10px;
+    margin: 22px 0 0;
+    padding-left: 24px;
+    color: var(--text-secondary);
+    line-height: 1.62;
+  }
+
+  .steps li::marker {
+    color: var(--green-700);
+    font-weight: 700;
+  }
+
+  .editor-note {
+    margin-top: 22px;
+    padding: 16px 18px;
+    border: 1px solid var(--border-strong);
+    background: var(--neutral-50);
+  }
+
+  .editor-note strong {
+    color: var(--text-primary);
+    font-size: 13px;
+  }
+
+  .editor-note p {
+    margin: 6px 0 0;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .link-directory {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 22px;
+    border: 1px solid var(--border-subtle);
+    background: var(--border-subtle);
+  }
+
+  .link-directory a {
+    display: grid;
+    align-content: start;
+    min-height: 116px;
+    padding: 18px;
+    background: var(--surface-page);
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .link-directory a:hover {
+    background: var(--neutral-50);
+  }
+
+  .link-directory strong {
+    font-size: 16px;
+  }
+
+  .link-directory span,
+  .source-list span {
+    margin-top: 7px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .faq-section details {
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .faq-section summary {
+    padding: 16px 34px 16px 0;
+    color: var(--text-primary);
+    font-weight: 650;
+    cursor: pointer;
+  }
+
+  .faq-section details p {
+    max-width: 65ch;
+    margin: 0;
+    padding: 0 0 18px;
+    color: var(--text-secondary);
+    line-height: 1.62;
+  }
+
+  .source-list {
+    display: grid;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .source-list a {
+    display: grid;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+  }
+
+  .related {
+    padding: clamp(36px, 5vw, 60px) var(--page-gutter) 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .related .link-directory {
+    max-width: 1010px;
+  }
+
+  @media (max-width: 767px) {
+    .article-head,
+    .article-layout,
+    .related {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    .article-layout {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .jump-nav {
+      position: static;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 16px;
+    }
+
+    .jump-nav strong {
+      grid-column: 1 / -1;
+    }
+
+    .answer-groups,
+    .link-directory {
+      grid-template-columns: 1fr;
+    }
+
+    .answer-groups > div,
+    .link-directory a {
+      min-height: 0;
+    }
+  }
+</style>

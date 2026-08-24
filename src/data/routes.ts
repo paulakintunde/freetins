@@ -1,4 +1,5 @@
 import { dailyLinkCatalogue, gameCatalogue } from './home';
+import { editorialArticles } from './articles';
 
 export type RouteKind =
   | 'daily'
@@ -24,7 +25,8 @@ export type RouteKind =
   | 'updates'
   | 'archive'
   | 'terms'
-  | 'notTracked';
+  | 'notTracked'
+  | 'article';
 
 export interface RouteDefinition {
   path: string;
@@ -88,10 +90,6 @@ const staticRoutes: RouteDefinition[] = [
   {
     path: '/games/', routeId: 'az', kind: 'az', title: 'All games A-Z | Freetins', heading: 'All games A-Z',
     description: 'Every game with a page on Freetins and its current number of live codes or links.',
-  },
-  {
-    path: '/resources/', routeId: 'resources', kind: 'info', title: 'Resources | Freetins', heading: 'Resources',
-    description: 'A human sitemap and launch references.',
   },
   {
     path: '/about/', routeId: 'about', kind: 'info', title: 'About | Freetins', heading: 'About',
@@ -198,6 +196,16 @@ const guideRoutes: RouteDefinition[] = ([
   slug,
 }));
 
+const articleRoutes: RouteDefinition[] = editorialArticles.map((article) => ({
+  path: article.path,
+  routeId: article.routeId,
+  kind: 'article',
+  title: article.title,
+  heading: article.heading,
+  description: article.description,
+  eyebrow: article.eyebrow,
+}));
+
 const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => ({
   path: `/daily/${game.slug}/`,
   routeId: 'freebies',
@@ -266,6 +274,7 @@ export const routeDefinitions: RouteDefinition[] = [
   ...cheatRoutes,
   ...authorRoutes,
   ...guideRoutes,
+  ...articleRoutes,
   ...gearCategoryRoutes,
   ...gearProductRoutes,
 ];

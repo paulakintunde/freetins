@@ -8,21 +8,25 @@
 @import './tokens/semantic.css';
 
 :root {
-  color-scheme: dark;
   --page-gutter: clamp(32px, 8vw, 120px);
   --rowpad: 14px;
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
 }
 
 html {
   min-width: 320px;
-  background: #050505;
+  background: var(--surface-page);
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background: #050505;
+  background: var(--surface-page);
   color: var(--text-primary);
   font: 400 var(--fs-body) / var(--lh-body) var(--font-core);
   -webkit-font-smoothing: antialiased;
