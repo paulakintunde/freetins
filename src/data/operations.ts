@@ -7,6 +7,22 @@ export type VerificationResult = 'accepted' | 'rejected' | 'source-only' | 'unre
 export type VerificationMethod = 'redeemed' | 'opened' | 'entered' | 'official-source' | 'manual-review';
 export type EntryState = 'verified' | 'reported' | 'stale' | 'expired' | 'unverified';
 
+/**
+ * A channel the game's publisher controls and posts codes on. This is the only
+ * class of URL that counts as evidence a code was issued.
+ *
+ * A store or catalogue listing is deliberately not in this union. A Roblox game
+ * page proves the game exists; it never proves a code was announced, so it cannot
+ * be cited as a code source.
+ */
+export type PublisherChannelType = 'website' | 'youtube' | 'discord' | 'twitch' | 'x' | 'twitter';
+
+export interface PublisherChannel {
+  type: PublisherChannelType;
+  url: string;
+  label: string;
+}
+
 export interface OperationalGame {
   slug: string;
   name: string;
@@ -14,7 +30,10 @@ export interface OperationalGame {
   platform: string;
   publicationState: PublicationState;
   verificationWindowHours: number;
+  /** The game's own listing. Used to link the game, never to source a code. */
   officialSourceUrl: string | null;
+  /** Channels the publisher posts codes on. Empty means no code here can be confirmed. */
+  publisherChannels?: PublisherChannel[];
   redeemSteps: string[];
 }
 
@@ -24,6 +43,18 @@ export interface CodeEntry {
   code: string;
   reward: string;
   firstSeenAt: string;
+  /**
+   * The publisher-channel URL where this code was announced. This is the citation
+   * the page shows. Null means nobody has found a publisher post for it yet, which
+   * caps the entry at community-reported no matter how many blogs repeat it.
+   */
+  publisherSourceUrl?: string | null;
+  /**
+   * Where the code was first noticed. Aggregator blogs live here. Kept for the
+   * audit trail and never presented to the reader as evidence, because one
+   * aggregator repeating another is not corroboration.
+   */
+  discoveredVia?: string[];
   sourceUrls: string[];
 }
 
@@ -33,6 +64,10 @@ export interface DailyLinkEntry {
   label: string;
   url: string;
   firstSeenAt: string;
+  /** Publisher-channel URL where this was announced. See CodeEntry. */
+  publisherSourceUrl?: string | null;
+  /** Where it was first noticed. Never shown as evidence. */
+  discoveredVia?: string[];
   sourceUrls: string[];
 }
 
@@ -129,21 +164,61 @@ export interface OperationalData {
   verificationEvents: VerificationEvent[];
 }
 
+/**
+ * How well an entry is sourced. Orthogonal to `EntryState`: state answers "did the
+ * last check pass", tier answers "do we know the publisher ever issued this". A
+ * redeemed code is verified whatever the paper trail, and a code reposted by fifty
+ * blogs is still community-reported.
+ */
+export type EvidenceTier = 'publisher-confirmed' | 'community-reported';
+
 export interface ResolvedEntry<T> {
   entry: T;
   latestEvent: VerificationEvent | null;
   state: EntryState;
+  tier: EvidenceTier;
 }
+
+export const evidenceTierOf = (entry: { publisherSourceUrl?: string | null }): EvidenceTier =>
+  entry.publisherSourceUrl ? 'publisher-confirmed' : 'community-reported';
+
+/**
+ * A code a reader can act on right now: the last check did not reject it and it has
+ * not aged out of its freshness window. Expired, stale and never-checked entries are
+ * all excluded, which is what makes the count on a game page mean something.
+ */
+export const isUsableState = (state: EntryState) => state === 'verified' || state === 'reported';
 
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const isoPattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/;
 
+/**
+ * Hosts that publish anyone's build under a throwaway name. A citation pointing at
+ * one of these is not a publisher, and letting one through is how
+ * `basketball-zero-codes.pages.dev` ended up cited as evidence for a code.
+ */
+const previewHosts = ['pages.dev', 'vercel.app', 'netlify.app', 'netlify.com', 'workers.dev', 'github.io'];
+
+const isPreviewHost = (hostname: string) =>
+  previewHosts.some((host) => hostname === host || hostname.endsWith(`.${host}`));
+
 const isHttpsUrl = (value: string) => {
   try {
     const url = new URL(value);
-    return url.protocol === 'https:' && url.hostname !== 'example.com' && !url.hostname.endsWith('.example.com');
+    return url.protocol === 'https:'
+      && url.hostname !== 'example.com'
+      && !url.hostname.endsWith('.example.com')
+      && !isPreviewHost(url.hostname);
   } catch {
     return false;
+  }
+};
+
+const hostOf = (value: string) => {
+  try {
+    return new URL(value).hostname.replace(/^www\./, '');
+  } catch {
+    return null;
   }
 };
 
@@ -176,6 +251,10 @@ export const validateOperations = (candidate: OperationalData) => {
     if (!['planned', 'published', 'retired'].includes(game.publicationState)) errors.push(`Game ${game.slug} has an invalid publicationState`);
     if (!Number.isFinite(game.verificationWindowHours) || game.verificationWindowHours <= 0) errors.push(`Game ${game.slug} needs a positive verificationWindowHours`);
     if (game.officialSourceUrl !== null && !isHttpsUrl(game.officialSourceUrl)) errors.push(`Game ${game.slug} has an invalid officialSourceUrl`);
+    for (const channel of game.publisherChannels ?? []) {
+      if (!isHttpsUrl(channel.url)) errors.push(`Game ${game.slug} has an invalid publisher channel URL`);
+      if (!channel.label.trim()) errors.push(`Game ${game.slug} has a publisher channel with no label`);
+    }
     if (game.publicationState === 'published') {
       if (!game.officialSourceUrl) errors.push(`Published game ${game.slug} needs an officialSourceUrl`);
       if (game.redeemSteps.length < 2) errors.push(`Published game ${game.slug} needs at least two redeemSteps`);
@@ -188,6 +267,27 @@ export const validateOperations = (candidate: OperationalData) => {
     else if (game.surface !== expectedSurface) errors.push(`Entry ${entry.id} does not match the ${game.surface} surface`);
     if (!isIsoTimestamp(entry.firstSeenAt)) errors.push(`Entry ${entry.id} has an invalid firstSeenAt`);
     if (entry.sourceUrls.length === 0 || entry.sourceUrls.some((url) => !isHttpsUrl(url))) errors.push(`Entry ${entry.id} needs valid HTTPS sourceUrls`);
+    for (const url of entry.discoveredVia ?? []) {
+      if (!isHttpsUrl(url)) errors.push(`Entry ${entry.id} has an invalid discoveredVia URL`);
+    }
+    /*
+     * A citation only counts if it sits on a channel the publisher controls. Checking
+     * it against the game's declared channels means an aggregator URL cannot be
+     * promoted to evidence by relabelling the field.
+     */
+    if (entry.publisherSourceUrl) {
+      if (!isHttpsUrl(entry.publisherSourceUrl)) {
+        errors.push(`Entry ${entry.id} has an invalid publisherSourceUrl`);
+      } else if (game) {
+        const channels = (game.publisherChannels ?? []).map((channel) => hostOf(channel.url));
+        const cited = hostOf(entry.publisherSourceUrl);
+        if (channels.length === 0) {
+          errors.push(`Entry ${entry.id} cites a publisher source but ${game.slug} declares no publisherChannels`);
+        } else if (!cited || !channels.includes(cited)) {
+          errors.push(`Entry ${entry.id} cites ${cited ?? 'an unreadable host'}, which is not a declared publisher channel for ${game.slug}`);
+        }
+      }
+    }
   };
 
   candidate.codes.forEach((entry) => {
@@ -307,7 +407,12 @@ export const resolveEntries = <T extends CodeEntry | DailyLinkEntry | CheatEntry
   now = Date.now(),
 ): ResolvedEntry<T>[] => entries.map((entry) => {
   const latestEvent = latestEventFor(entryType, entry.id);
-  return { entry, latestEvent, state: resolveState(game, latestEvent, now) };
+  return {
+    entry,
+    latestEvent,
+    state: resolveState(game, latestEvent, now),
+    tier: evidenceTierOf(entry as { publisherSourceUrl?: string | null }),
+  };
 });
 
 export const getOperationalGame = (slug: string) => operations.games.find((game) => game.slug === slug);

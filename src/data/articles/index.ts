@@ -5,6 +5,7 @@ import { christmasEmojiArticle, guessEmojiArticle, littleAlchemyArticle, littleA
 import { guitarHero3Article, legoJurassicWorldArticle, pokemonEmeraldArticle } from './traffic-cheats';
 import { doubleDownCasinoArticle } from './traffic-daily';
 import { gta5DemoArticle, jurassicWorldGameArticle } from './traffic-guides';
+import { howWeVerifyArticle } from './how-we-verify';
 import { legalArticles } from './legal-pages';
 import type { EditorialArticle } from './types';
 
@@ -24,6 +25,7 @@ export const editorialArticles: EditorialArticle[] = [
   christmasEmojiArticle,
   littleAlchemyEnergyArticle,
   resourcesArticle,
+  howWeVerifyArticle,
   ...legalArticles,
 ];
 

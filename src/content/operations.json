@@ -15,7 +15,8 @@
         "scroll the settings menu to the Redeem Codes section.",
         "type the code into the 'Type code here...' box.",
         "press the green Claim button."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "basketball-zero",
@@ -30,7 +31,8 @@
         "tap the Codes button on the bottom button bar.",
         "type the code into the box.",
         "press Redeem."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "volleyball-legends",
@@ -46,7 +48,8 @@
         "open the Codes section on the left.",
         "type the code into the 'Type code here' box.",
         "press USE CODE."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "blue-lock-rivals",
@@ -62,7 +65,8 @@
         "click the Codes button on the nav bar.",
         "type the code into the box.",
         "press Redeem."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "99-nights-in-the-forest",
@@ -77,7 +81,8 @@
         "The redeem menu is only available in the lobby.",
         "not during a run.",
         "Enter the code and confirm."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "sols-rng",
@@ -93,7 +98,8 @@
         "switch to the Miscellaneous tab.",
         "use the Redeem Code option.",
         "The same box also accepts gamepass gift codes."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "dandys-world",
@@ -108,7 +114,8 @@
         "press the Use Code button on the left of the screen to open the INPUT A CODE box.",
         "enter the code.",
         "press the green Use button."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "type-soul",
@@ -123,7 +130,8 @@
         "open the Codes option from the main menu.",
         "type the code into the box.",
         "press Redeem."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "anime-card-clash",
@@ -138,7 +146,8 @@
         "click the Codes button on the in game navigation on the left of the screen.",
         "type the code into the Enter code here box.",
         "press Redeem."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "tennis-zero",
@@ -153,7 +162,8 @@
         "select Codes from the bottom menu in the lobby.",
         "type the code into the text box.",
         "press Redeem."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "jujutsu-zero",
@@ -168,7 +178,8 @@
         "work through the tutorial fight.",
         "from the lobby open the Codes tab in the main menu.",
         "type the code into the Enter Code Here box and press Redeem."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "weak-legacy-2",
@@ -184,7 +195,8 @@
         "find the Codes section.",
         "type the code into the ENTER YOUR CODE box.",
         "press Redeem."
-      ]
+      ],
+      "publisherChannels": []
     },
     {
       "slug": "hunty-zombies",
@@ -194,7 +206,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "sailor-piece",
@@ -204,7 +217,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "jujutsu-infinite",
@@ -214,7 +228,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "azure-latch",
@@ -224,7 +239,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "fruit-battlegrounds",
@@ -234,7 +250,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "untitled-boxing-game",
@@ -244,7 +261,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "the-forge",
@@ -254,7 +272,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "kaizen",
@@ -264,7 +283,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "mugen",
@@ -274,7 +294,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "dress-to-impress",
@@ -284,7 +305,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "universal-tower-defense",
@@ -294,7 +316,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "anime-last-stand",
@@ -304,7 +327,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "anime-final-quest",
@@ -314,7 +338,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "flashpoint",
@@ -324,7 +349,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "fisch",
@@ -334,7 +360,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "rivals",
@@ -344,7 +371,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "shindo-life",
@@ -354,7 +382,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "anime-ranger-x",
@@ -364,7 +393,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "racket-rivals",
@@ -374,7 +404,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "pixel-blade",
@@ -384,7 +415,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "bizarre-lineage",
@@ -394,7 +426,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "anime-apocalypse",
@@ -404,7 +437,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "clover-retribution",
@@ -414,7 +448,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "devil-hunters",
@@ -424,7 +459,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "spongebob-tower-defense",
@@ -434,7 +470,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "ninja-time",
@@ -444,7 +481,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "king-legacy",
@@ -454,7 +492,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "anime-guardians",
@@ -464,7 +503,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "dragon-souls",
@@ -474,7 +514,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "soccer-zero",
@@ -484,7 +525,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "playground-basketball",
@@ -494,7 +536,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "anime-eternal",
@@ -504,7 +547,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "jump-star",
@@ -514,7 +558,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "restaurant-tycoon-3",
@@ -524,7 +569,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "slap-battles",
@@ -534,7 +580,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "blade-ball",
@@ -544,7 +591,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "plants-vs-brainrots",
@@ -554,7 +602,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "da-hood",
@@ -564,7 +613,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "anime-vanguards",
@@ -574,7 +624,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "driving-empire",
@@ -584,7 +635,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 24,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "monopoly-go",
@@ -594,7 +646,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 6,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "coin-master",
@@ -604,7 +657,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 6,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "dice-dreams",
@@ -614,7 +668,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 6,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "bingo-blitz",
@@ -624,7 +679,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 6,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "family-island",
@@ -634,7 +690,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 6,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     },
     {
       "slug": "board-kings",
@@ -644,7 +701,8 @@
       "publicationState": "planned",
       "verificationWindowHours": 6,
       "officialSourceUrl": null,
-      "redeemSteps": []
+      "redeemSteps": [],
+      "publisherChannels": []
     }
   ],
   "codes": [
@@ -655,6 +713,11 @@
       "reward": "15 Diamonds",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://www.pockettactics.com/99-nights-in-the-forest-codes",
+        "https://driffle.com/blog/99-nights-in-the-forest-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pockettactics.com/99-nights-in-the-forest-codes",
         "https://driffle.com/blog/99-nights-in-the-forest-codes/"
       ]
@@ -668,6 +731,11 @@
       "sourceUrls": [
         "https://driffle.com/blog/99-nights-in-the-forest-codes/",
         "https://www.pockettactics.com/99-nights-in-the-forest-codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://driffle.com/blog/99-nights-in-the-forest-codes/",
+        "https://www.pockettactics.com/99-nights-in-the-forest-codes"
       ]
     },
     {
@@ -677,6 +745,10 @@
       "reward": "reward not consistently stated",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://driffle.com/blog/99-nights-in-the-forest-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://driffle.com/blog/99-nights-in-the-forest-codes/"
       ]
     },
@@ -689,6 +761,11 @@
       "sourceUrls": [
         "https://www.pcgamer.com/games/roblox/99-nights-in-the-forest-codes/",
         "https://www.pockettactics.com/99-nights-in-the-forest-codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamer.com/games/roblox/99-nights-in-the-forest-codes/",
+        "https://www.pockettactics.com/99-nights-in-the-forest-codes"
       ]
     },
     {
@@ -699,6 +776,10 @@
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
         "https://progameguides.com/roblox/anime-card-clash-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/anime-card-clash-codes/"
       ]
     },
     {
@@ -708,6 +789,10 @@
       "reward": "potions, trait rerolls and instant rolls",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://progameguides.com/roblox/anime-card-clash-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://progameguides.com/roblox/anime-card-clash-codes/"
       ]
     },
@@ -720,6 +805,11 @@
       "sourceUrls": [
         "https://www.pockettactics.com/anime-card-clash-codes",
         "https://www.pcgamesn.com/anime-card-clash/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pockettactics.com/anime-card-clash-codes",
+        "https://www.pcgamesn.com/anime-card-clash/codes"
       ]
     },
     {
@@ -729,6 +819,10 @@
       "reward": "5 Large Luck Potions, 5 Large Roll Speed Potions, 2 Boss Chance Potions, 3 Greater Moon Cycle Reroll Potions, 2 Border Chance Potions and 2 50,000x Instant Rolls",
       "firstSeenAt": "2026-08-03T00:00:00Z",
       "sourceUrls": [
+        "https://beebom.com/anime-card-clash-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://beebom.com/anime-card-clash-codes/"
       ]
     },
@@ -740,6 +834,10 @@
       "firstSeenAt": "2026-08-03T00:00:00Z",
       "sourceUrls": [
         "https://beebom.com/anime-card-clash-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://beebom.com/anime-card-clash-codes/"
       ]
     },
     {
@@ -749,6 +847,10 @@
       "reward": "5 X Large Luck Potions, 5 X Large Roll Speed Potions, 5 Boss Chance Potions, 3 Greater Moon Cycle Reroll Potions, 2 Border Chance Potions and further rewards",
       "firstSeenAt": "2026-08-03T00:00:00Z",
       "sourceUrls": [
+        "https://beebom.com/anime-card-clash-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://beebom.com/anime-card-clash-codes/"
       ]
     },
@@ -761,6 +863,11 @@
       "sourceUrls": [
         "https://www.pcgamesn.com/anime-card-clash/codes",
         "https://www.gadgetbridge.com/anime-card-clash-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamesn.com/anime-card-clash/codes",
+        "https://www.gadgetbridge.com/anime-card-clash-codes/"
       ]
     },
     {
@@ -770,6 +877,10 @@
       "reward": "instant rolls",
       "firstSeenAt": "2026-08-07T00:00:00Z",
       "sourceUrls": [
+        "https://www.gadgetbridge.com/anime-card-clash-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.gadgetbridge.com/anime-card-clash-codes/"
       ]
     },
@@ -781,6 +892,10 @@
       "firstSeenAt": "2026-08-07T00:00:00Z",
       "sourceUrls": [
         "https://www.gadgetbridge.com/anime-card-clash-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gadgetbridge.com/anime-card-clash-codes/"
       ]
     },
     {
@@ -790,6 +905,10 @@
       "reward": "instant rolls",
       "firstSeenAt": "2026-08-07T00:00:00Z",
       "sourceUrls": [
+        "https://www.gadgetbridge.com/anime-card-clash-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.gadgetbridge.com/anime-card-clash-codes/"
       ]
     },
@@ -801,6 +920,10 @@
       "firstSeenAt": "2026-08-07T00:00:00Z",
       "sourceUrls": [
         "https://www.gadgetbridge.com/anime-card-clash-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gadgetbridge.com/anime-card-clash-codes/"
       ]
     },
     {
@@ -810,6 +933,11 @@
       "reward": "25 Lucky Spins and 100,000 Cash",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://rocodes.gg/codes/basketball-zero",
+        "https://www.mrguider.org/roblox/basketball-zero-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://rocodes.gg/codes/basketball-zero",
         "https://www.mrguider.org/roblox/basketball-zero-codes/"
       ]
@@ -823,6 +951,11 @@
       "sourceUrls": [
         "https://rocodes.gg/codes/basketball-zero",
         "https://www.mrguider.org/roblox/basketball-zero-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://rocodes.gg/codes/basketball-zero",
+        "https://www.mrguider.org/roblox/basketball-zero-codes/"
       ]
     },
     {
@@ -832,6 +965,10 @@
       "reward": "spins",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://driffle.com/blog/all-basketball-zero-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://driffle.com/blog/all-basketball-zero-codes/"
       ]
     },
@@ -843,6 +980,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://driffle.com/blog/all-basketball-zero-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://driffle.com/blog/all-basketball-zero-codes/"
       ]
     },
     {
@@ -852,6 +993,10 @@
       "reward": "spins after an hour of playtime",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://driffle.com/blog/all-basketball-zero-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://driffle.com/blog/all-basketball-zero-codes/"
       ]
     },
@@ -863,36 +1008,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://driffle.com/blog/all-basketball-zero-codes/"
-      ]
-    },
-    {
-      "id": "basketball-zero-code-7",
-      "gameSlug": "basketball-zero",
-      "code": "NEWSEASON2TODAY",
-      "reward": "5 Lucky Style Spins and 5 Lucky Zone Spins",
-      "firstSeenAt": "2026-08-23T00:00:00Z",
-      "sourceUrls": [
-        "https://basketball-zero-codes.pages.dev/"
-      ]
-    },
-    {
-      "id": "basketball-zero-code-8",
-      "gameSlug": "basketball-zero",
-      "code": "SEASON2COSMETICS",
-      "reward": "20 Lucky Style Spins and 10 Lucky Zone Spins",
-      "firstSeenAt": "2026-08-23T00:00:00Z",
-      "sourceUrls": [
-        "https://basketball-zero-codes.pages.dev/"
-      ]
-    },
-    {
-      "id": "basketball-zero-code-9",
-      "gameSlug": "basketball-zero",
-      "code": "SORRY4RESTARTAGAIN",
-      "reward": "10 Lucky Style Spins",
-      "firstSeenAt": "2026-08-23T00:00:00Z",
-      "sourceUrls": [
-        "https://basketball-zero-codes.pages.dev/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://driffle.com/blog/all-basketball-zero-codes/"
       ]
     },
     {
@@ -902,6 +1021,11 @@
       "reward": "5 Lucky Flow Spins",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://rocodes.gg/codes/blue-lock-rivals",
+        "https://beebom.com/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://rocodes.gg/codes/blue-lock-rivals",
         "https://beebom.com/blue-lock-rivals-codes/"
       ]
@@ -915,6 +1039,11 @@
       "sourceUrls": [
         "https://rocodes.gg/codes/blue-lock-rivals",
         "https://beebom.com/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://rocodes.gg/codes/blue-lock-rivals",
+        "https://beebom.com/blue-lock-rivals-codes/"
       ]
     },
     {
@@ -924,6 +1053,11 @@
       "reward": "5 Lucky Style Spins and 5 Lucky Flow Spins",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://rocodes.gg/codes/blue-lock-rivals",
+        "https://beebom.com/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://rocodes.gg/codes/blue-lock-rivals",
         "https://beebom.com/blue-lock-rivals-codes/"
       ]
@@ -937,6 +1071,11 @@
       "sourceUrls": [
         "https://rocodes.gg/codes/blue-lock-rivals",
         "https://progameguides.com/roblox/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://rocodes.gg/codes/blue-lock-rivals",
+        "https://progameguides.com/roblox/blue-lock-rivals-codes/"
       ]
     },
     {
@@ -946,6 +1085,10 @@
       "reward": "spins",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://rocodes.gg/codes/blue-lock-rivals"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://rocodes.gg/codes/blue-lock-rivals"
       ]
     },
@@ -957,6 +1100,10 @@
       "firstSeenAt": "2026-08-17T00:00:00Z",
       "sourceUrls": [
         "https://www.gamesradar.com/games/sports/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/sports/blue-lock-rivals-codes/"
       ]
     },
     {
@@ -966,6 +1113,10 @@
       "reward": "spins",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
       ]
     },
@@ -977,6 +1128,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
       ]
     },
     {
@@ -986,6 +1141,10 @@
       "reward": "spins",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
       ]
     },
@@ -997,6 +1156,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
       ]
     },
     {
@@ -1006,6 +1169,10 @@
       "reward": "spins",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
       ]
     },
@@ -1017,6 +1184,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
       ]
     },
     {
@@ -1026,6 +1197,10 @@
       "reward": "spins",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
       ]
     },
@@ -1037,6 +1212,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
       ]
     },
     {
@@ -1046,6 +1225,11 @@
       "reward": "50 Ichor",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://www.theclick.gg/dandys-world-codes-august-2026/",
+        "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.theclick.gg/dandys-world-codes-august-2026/",
         "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
       ]
@@ -1059,6 +1243,11 @@
       "sourceUrls": [
         "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/",
         "https://fossbytes.com/dandys-world-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/",
+        "https://fossbytes.com/dandys-world-codes/"
       ]
     },
     {
@@ -1068,6 +1257,11 @@
       "reward": "event pumpkins, not Ichor",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://www.theclick.gg/dandys-world-codes-august-2026/",
+        "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.theclick.gg/dandys-world-codes-august-2026/",
         "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
       ]
@@ -1080,6 +1274,10 @@
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
         "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
       ]
     },
     {
@@ -1089,6 +1287,10 @@
       "reward": "event reward",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
       ]
     },
@@ -1100,6 +1302,10 @@
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
         "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
       ]
     },
     {
@@ -1109,6 +1315,10 @@
       "reward": "milestone reward",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
       ]
     },
@@ -1120,6 +1330,10 @@
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
         "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"
       ]
     },
     {
@@ -1129,6 +1343,10 @@
       "reward": "150 Ichor",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
       ]
     },
@@ -1140,6 +1358,10 @@
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
         "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
       ]
     },
     {
@@ -1149,6 +1371,10 @@
       "reward": "150 Ichor",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
       ]
     },
@@ -1160,6 +1386,10 @@
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
         "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
       ]
     },
     {
@@ -1169,6 +1399,10 @@
       "reward": "150 Ichor",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
       ]
     },
@@ -1180,6 +1414,10 @@
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
         "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
       ]
     },
     {
@@ -1189,6 +1427,10 @@
       "reward": "50 Ichor",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
       ]
     },
@@ -1200,6 +1442,10 @@
       "firstSeenAt": "2026-08-22T10:53:00Z",
       "sourceUrls": [
         "https://www.pcgamesn.com/grow-a-garden/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamesn.com/grow-a-garden/codes"
       ]
     },
     {
@@ -1209,6 +1455,10 @@
       "reward": "Whispering Torii decoration",
       "firstSeenAt": "2026-08-22T10:53:00Z",
       "sourceUrls": [
+        "https://www.pcgamesn.com/grow-a-garden/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pcgamesn.com/grow-a-garden/codes"
       ]
     },
@@ -1220,6 +1470,10 @@
       "firstSeenAt": "2026-08-22T10:53:00Z",
       "sourceUrls": [
         "https://www.pcgamesn.com/grow-a-garden/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamesn.com/grow-a-garden/codes"
       ]
     },
     {
@@ -1229,6 +1483,11 @@
       "reward": "event reward",
       "firstSeenAt": "2026-08-22T10:53:00Z",
       "sourceUrls": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pcgamesn.com/grow-a-garden/codes",
         "https://urgametips.com/grow-a-garden-codes/"
       ]
@@ -1242,6 +1501,11 @@
       "sourceUrls": [
         "https://www.pcgamesn.com/grow-a-garden/codes",
         "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
       ]
     },
     {
@@ -1251,6 +1515,11 @@
       "reward": "event reward",
       "firstSeenAt": "2026-08-22T10:53:00Z",
       "sourceUrls": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pcgamesn.com/grow-a-garden/codes",
         "https://urgametips.com/grow-a-garden-codes/"
       ]
@@ -1264,6 +1533,11 @@
       "sourceUrls": [
         "https://www.pcgamesn.com/grow-a-garden/codes",
         "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
       ]
     },
     {
@@ -1273,6 +1547,11 @@
       "reward": "event reward",
       "firstSeenAt": "2026-08-22T10:53:00Z",
       "sourceUrls": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pcgamesn.com/grow-a-garden/codes",
         "https://urgametips.com/grow-a-garden-codes/"
       ]
@@ -1286,6 +1565,11 @@
       "sourceUrls": [
         "https://www.pcgamesn.com/grow-a-garden/codes",
         "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
       ]
     },
     {
@@ -1295,6 +1579,11 @@
       "reward": "milestone reward",
       "firstSeenAt": "2026-08-22T10:53:00Z",
       "sourceUrls": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pcgamesn.com/grow-a-garden/codes",
         "https://urgametips.com/grow-a-garden-codes/"
       ]
@@ -1307,6 +1596,10 @@
       "firstSeenAt": "2026-08-22T10:53:00Z",
       "sourceUrls": [
         "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://urgametips.com/grow-a-garden-codes/"
       ]
     },
     {
@@ -1316,6 +1609,10 @@
       "reward": "event reward",
       "firstSeenAt": "2026-08-22T10:53:00Z",
       "sourceUrls": [
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://urgametips.com/grow-a-garden-codes/"
       ]
     },
@@ -1328,6 +1625,11 @@
       "sourceUrls": [
         "https://progameguides.com/roblox/jujutsu-zero-codes/",
         "https://www.destructoid.com/jujutsu-zero-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/jujutsu-zero-codes/",
+        "https://www.destructoid.com/jujutsu-zero-codes/"
       ]
     },
     {
@@ -1337,6 +1639,10 @@
       "reward": "500 Cursed Crystals, 3,500 Lumens and 50 Clan Rolls",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://www.destructoid.com/jujutsu-zero-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.destructoid.com/jujutsu-zero-codes/"
       ]
     },
@@ -1348,6 +1654,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://www.destructoid.com/jujutsu-zero-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.destructoid.com/jujutsu-zero-codes/"
       ]
     },
     {
@@ -1358,6 +1668,10 @@
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
         "https://beebom.com/sols-rng-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://beebom.com/sols-rng-codes/"
       ]
     },
     {
@@ -1367,6 +1681,10 @@
       "reward": "20 Potion Chests and 5 Rare Potion Chests",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://beebom.com/sols-rng-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://beebom.com/sols-rng-codes/"
       ]
     },
@@ -1379,6 +1697,11 @@
       "sourceUrls": [
         "https://www.pocketgamer.com/roblox/sols-rng-codes/",
         "https://bloxguidesgg.com/games/sols-rng/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/sols-rng-codes/",
+        "https://bloxguidesgg.com/games/sols-rng/codes"
       ]
     },
     {
@@ -1388,6 +1711,10 @@
       "reward": "20 Potion Chests and 5 Rare Potion Chests",
       "firstSeenAt": "2026-06-27T00:00:00Z",
       "sourceUrls": [
+        "https://www.pocketgamer.com/roblox/sols-rng-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pocketgamer.com/roblox/sols-rng-codes/"
       ]
     },
@@ -1399,6 +1726,10 @@
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
         "https://beebom.com/sols-rng-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://beebom.com/sols-rng-codes/"
       ]
     },
     {
@@ -1408,6 +1739,10 @@
       "reward": "20 Potion Chests and 5 Rare Potion Chests",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://beebom.com/sols-rng-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://beebom.com/sols-rng-codes/"
       ]
     },
@@ -1420,6 +1755,11 @@
       "sourceUrls": [
         "https://www.pocketgamer.com/roblox/sols-rng-codes/",
         "https://insider-gaming.com/sols-rng-codes-december-2025/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/sols-rng-codes/",
+        "https://insider-gaming.com/sols-rng-codes-december-2025/"
       ]
     },
     {
@@ -1429,6 +1769,10 @@
       "reward": "20 Potion Chests and 5 Rare Potion Chests",
       "firstSeenAt": "2026-02-28T00:00:00Z",
       "sourceUrls": [
+        "https://bloxguidesgg.com/games/sols-rng/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://bloxguidesgg.com/games/sols-rng/codes"
       ]
     },
@@ -1440,6 +1784,10 @@
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
         "https://www.pcgamesn.com/sols-rng/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamesn.com/sols-rng/codes"
       ]
     },
     {
@@ -1449,6 +1797,10 @@
       "reward": "potion chests",
       "firstSeenAt": "2026-01-17T00:00:00Z",
       "sourceUrls": [
+        "https://www.pcgamesn.com/sols-rng/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pcgamesn.com/sols-rng/codes"
       ]
     },
@@ -1460,6 +1812,10 @@
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
         "https://www.pcgamesn.com/sols-rng/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamesn.com/sols-rng/codes"
       ]
     },
     {
@@ -1469,6 +1825,10 @@
       "reward": "potion chests",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://www.pcgamesn.com/sols-rng/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pcgamesn.com/sols-rng/codes"
       ]
     },
@@ -1480,6 +1840,10 @@
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
         "https://www.pcgamesn.com/sols-rng/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamesn.com/sols-rng/codes"
       ]
     },
     {
@@ -1489,6 +1853,10 @@
       "reward": "potion chests",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://www.pcgamesn.com/sols-rng/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pcgamesn.com/sols-rng/codes"
       ]
     },
@@ -1500,6 +1868,10 @@
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
         "https://bloxguidesgg.com/games/sols-rng/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://bloxguidesgg.com/games/sols-rng/codes"
       ]
     },
     {
@@ -1509,6 +1881,11 @@
       "reward": "25 Lucky Style Spins and Lucky Flow Spins",
       "firstSeenAt": "2026-08-21T00:00:00Z",
       "sourceUrls": [
+        "https://driffle.com/blog/all-tennis-zero-codes/",
+        "https://www.hashtechwave.com/tennis-zero-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://driffle.com/blog/all-tennis-zero-codes/",
         "https://www.hashtechwave.com/tennis-zero-codes/"
       ]
@@ -1522,6 +1899,11 @@
       "sourceUrls": [
         "https://progameguides.com/roblox/roblox-type-soul-codes/",
         "https://www.destructoid.com/type-soul-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/roblox-type-soul-codes/",
+        "https://www.destructoid.com/type-soul-codes/"
       ]
     },
     {
@@ -1531,6 +1913,11 @@
       "reward": "rerolls, elixirs and other rewards",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://www.pocketgamer.com/roblox/type-soul-codes/",
+        "https://www.pockettactics.com/type-soul/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pocketgamer.com/roblox/type-soul-codes/",
         "https://www.pockettactics.com/type-soul/codes"
       ]
@@ -1544,6 +1931,11 @@
       "sourceUrls": [
         "https://fossbytes.com/roblox-new-type-soul-codes/",
         "https://www.pockettactics.com/type-soul/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://fossbytes.com/roblox-new-type-soul-codes/",
+        "https://www.pockettactics.com/type-soul/codes"
       ]
     },
     {
@@ -1553,6 +1945,11 @@
       "reward": "rerolls, elixirs, skill boxes",
       "firstSeenAt": "2026-08-08T00:00:00Z",
       "sourceUrls": [
+        "https://fossbytes.com/roblox-new-type-soul-codes/",
+        "https://www.pockettactics.com/type-soul/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://fossbytes.com/roblox-new-type-soul-codes/",
         "https://www.pockettactics.com/type-soul/codes"
       ]
@@ -1566,6 +1963,11 @@
       "sourceUrls": [
         "https://fossbytes.com/roblox-new-type-soul-codes/",
         "https://www.pocketgamer.com/roblox/type-soul-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://fossbytes.com/roblox-new-type-soul-codes/",
+        "https://www.pocketgamer.com/roblox/type-soul-codes/"
       ]
     },
     {
@@ -1575,6 +1977,11 @@
       "reward": "rerolls and elixirs",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://fossbytes.com/roblox-new-type-soul-codes/",
+        "https://www.pocketgamer.com/roblox/type-soul-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://fossbytes.com/roblox-new-type-soul-codes/",
         "https://www.pocketgamer.com/roblox/type-soul-codes/"
       ]
@@ -1587,6 +1994,10 @@
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
         "https://www.pocketgamer.com/roblox/type-soul-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/type-soul-codes/"
       ]
     },
     {
@@ -1596,6 +2007,10 @@
       "reward": "rerolls and elixirs",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://www.pocketgamer.com/roblox/type-soul-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pocketgamer.com/roblox/type-soul-codes/"
       ]
     },
@@ -1607,6 +2022,10 @@
       "firstSeenAt": "2026-08-20T00:00:00Z",
       "sourceUrls": [
         "https://www.pocketgamer.com/roblox/type-soul-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/type-soul-codes/"
       ]
     },
     {
@@ -1616,6 +2035,10 @@
       "reward": "rerolls and elixirs",
       "firstSeenAt": "2026-08-20T00:00:00Z",
       "sourceUrls": [
+        "https://www.pocketgamer.com/roblox/type-soul-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pocketgamer.com/roblox/type-soul-codes/"
       ]
     },
@@ -1627,6 +2050,10 @@
       "firstSeenAt": "2026-08-20T00:00:00Z",
       "sourceUrls": [
         "https://www.pocketgamer.com/roblox/type-soul-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/type-soul-codes/"
       ]
     },
     {
@@ -1636,6 +2063,10 @@
       "reward": "rerolls and elixirs",
       "firstSeenAt": "2026-08-20T00:00:00Z",
       "sourceUrls": [
+        "https://www.pocketgamer.com/roblox/type-soul-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.pocketgamer.com/roblox/type-soul-codes/"
       ]
     },
@@ -1647,6 +2078,10 @@
       "firstSeenAt": "2026-08-20T00:00:00Z",
       "sourceUrls": [
         "https://www.pocketgamer.com/roblox/type-soul-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/type-soul-codes/"
       ]
     },
     {
@@ -1657,6 +2092,10 @@
       "firstSeenAt": "2026-08-20T00:00:00Z",
       "sourceUrls": [
         "https://www.pocketgamer.com/roblox/type-soul-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/type-soul-codes/"
       ]
     },
     {
@@ -1666,6 +2105,11 @@
       "reward": "5 Lucky Ability Spins",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://rocodes.gg/codes/volleyball-legends",
+        "https://progameguides.com/roblox/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://rocodes.gg/codes/volleyball-legends",
         "https://progameguides.com/roblox/haikyuu-legends-codes/"
       ]
@@ -1679,6 +2123,11 @@
       "sourceUrls": [
         "https://rocodes.gg/codes/volleyball-legends",
         "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://rocodes.gg/codes/volleyball-legends",
+        "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
     {
@@ -1688,6 +2137,11 @@
       "reward": "5 Lucky Ability Spins",
       "firstSeenAt": "2026-08-22T00:00:00Z",
       "sourceUrls": [
+        "https://rocodes.gg/codes/volleyball-legends",
+        "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://rocodes.gg/codes/volleyball-legends",
         "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
@@ -1701,6 +2155,11 @@
       "sourceUrls": [
         "https://www.gamesradar.com/games/sports/volleyball-legends-codes/",
         "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/sports/volleyball-legends-codes/",
+        "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
     {
@@ -1710,6 +2169,11 @@
       "reward": "5 Lucky Style Spins",
       "firstSeenAt": "2026-08-17T00:00:00Z",
       "sourceUrls": [
+        "https://www.gamesradar.com/games/sports/volleyball-legends-codes/",
+        "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.gamesradar.com/games/sports/volleyball-legends-codes/",
         "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
@@ -1723,6 +2187,11 @@
       "sourceUrls": [
         "https://www.gamesradar.com/games/sports/volleyball-legends-codes/",
         "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/sports/volleyball-legends-codes/",
+        "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
     {
@@ -1732,6 +2201,10 @@
       "reward": "spins",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
@@ -1743,6 +2216,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
     {
@@ -1752,6 +2229,10 @@
       "reward": "spins",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
@@ -1763,6 +2244,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
     {
@@ -1772,6 +2257,10 @@
       "reward": "spins",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
@@ -1783,6 +2272,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
     {
@@ -1792,6 +2285,10 @@
       "reward": "spins",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
@@ -1803,6 +2300,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
     {
@@ -1812,6 +2313,10 @@
       "reward": "spins",
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
+        "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
@@ -1823,6 +2328,10 @@
       "firstSeenAt": "2026-08-23T00:00:00Z",
       "sourceUrls": [
         "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.destructoid.com/haikyuu-legends-codes/"
       ]
     },
     {
@@ -1832,6 +2341,11 @@
       "reward": "2 Crystal Essence, 25 Spins and 1 Fate Spin",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://beebom.com/weak-legacy-2-codes/",
+        "https://www.gamesradar.com/games/rpg/weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://beebom.com/weak-legacy-2-codes/",
         "https://www.gamesradar.com/games/rpg/weak-legacy-2-codes/"
       ]
@@ -1845,6 +2359,11 @@
       "sourceUrls": [
         "https://beebom.com/weak-legacy-2-codes/",
         "https://insider-gaming.com/weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://beebom.com/weak-legacy-2-codes/",
+        "https://insider-gaming.com/weak-legacy-2-codes/"
       ]
     },
     {
@@ -1854,6 +2373,11 @@
       "reward": "free Breathing Style or Art reset",
       "firstSeenAt": "2026-08-16T00:00:00Z",
       "sourceUrls": [
+        "https://beebom.com/weak-legacy-2-codes/",
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://beebom.com/weak-legacy-2-codes/",
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
@@ -1866,6 +2390,10 @@
       "firstSeenAt": "2026-08-16T00:00:00Z",
       "sourceUrls": [
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     },
     {
@@ -1876,6 +2404,10 @@
       "firstSeenAt": "2026-08-16T00:00:00Z",
       "sourceUrls": [
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     },
     {
@@ -1885,6 +2417,10 @@
       "reward": "compensation reward",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://urgametips.com/weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://urgametips.com/weak-legacy-2-codes/"
       ]
     },
@@ -1897,6 +2433,11 @@
       "sourceUrls": [
         "https://urgametips.com/weak-legacy-2-codes/",
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://urgametips.com/weak-legacy-2-codes/",
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     },
     {
@@ -1906,6 +2447,10 @@
       "reward": "race reset",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     },
@@ -1917,6 +2462,10 @@
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
         "https://urgametips.com/weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://urgametips.com/weak-legacy-2-codes/"
       ]
     },
     {
@@ -1927,6 +2476,10 @@
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
         "https://urgametips.com/weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://urgametips.com/weak-legacy-2-codes/"
       ]
     },
     {
@@ -1936,6 +2489,11 @@
       "reward": "75 Spins",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://urgametips.com/weak-legacy-2-codes/",
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://urgametips.com/weak-legacy-2-codes/",
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
@@ -1949,6 +2507,11 @@
       "sourceUrls": [
         "https://urgametips.com/weak-legacy-2-codes/",
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://urgametips.com/weak-legacy-2-codes/",
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     },
     {
@@ -1958,6 +2521,10 @@
       "reward": "breathing reset",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     },
@@ -1969,6 +2536,10 @@
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     },
     {
@@ -1978,6 +2549,10 @@
       "reward": "breathing or art reset",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     },
@@ -1989,6 +2564,10 @@
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     },
     {
@@ -1998,6 +2577,10 @@
       "reward": "update reward",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     },
@@ -2009,6 +2592,10 @@
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     },
     {
@@ -2018,6 +2605,10 @@
       "reward": "compensation reward",
       "firstSeenAt": "2026-08-15T00:00:00Z",
       "sourceUrls": [
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
     }
@@ -2278,33 +2869,6 @@
       "id": "basketball-zero-code-6-archive-review",
       "entryType": "code",
       "entryId": "basketball-zero-code-6",
-      "checkedAt": "2026-08-23T00:00:00Z",
-      "result": "rejected",
-      "method": "manual-review",
-      "checkedBy": "paul-a"
-    },
-    {
-      "id": "basketball-zero-code-7-archive-review",
-      "entryType": "code",
-      "entryId": "basketball-zero-code-7",
-      "checkedAt": "2026-08-23T00:00:00Z",
-      "result": "rejected",
-      "method": "manual-review",
-      "checkedBy": "paul-a"
-    },
-    {
-      "id": "basketball-zero-code-8-archive-review",
-      "entryType": "code",
-      "entryId": "basketball-zero-code-8",
-      "checkedAt": "2026-08-23T00:00:00Z",
-      "result": "rejected",
-      "method": "manual-review",
-      "checkedBy": "paul-a"
-    },
-    {
-      "id": "basketball-zero-code-9-archive-review",
-      "entryType": "code",
-      "entryId": "basketball-zero-code-9",
       "checkedAt": "2026-08-23T00:00:00Z",
       "result": "rejected",
       "method": "manual-review",

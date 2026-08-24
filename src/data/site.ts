@@ -1,3 +1,5 @@
+import { publishedDailyLinkCatalogue, publishedGameCatalogue } from './home';
+
 export interface SiteLink {
   label: string;
   href: string;
@@ -13,7 +15,6 @@ export const navLinks: SiteLink[] = [
   { label: 'Answers', href: '/answers/', section: 'answers' },
   { label: 'Guides', href: '/guides/', section: 'guides' },
   { label: 'Resources', href: '/resources/', section: 'resources' },
-  { label: 'How we verify', href: '/how-we-verify/', section: 'verify' },
   { label: 'Alerts', href: '/alerts/', section: 'alerts' },
 ];
 
@@ -29,7 +30,21 @@ export const drawerLinks: SiteLink[] = [
   { label: 'Alerts', href: '/alerts/' },
 ];
 
-export const hotSearches = ['Grow a Garden', 'Monopoly GO', 'Blue Lock Rivals', 'Coin Master', "Sol's RNG"];
+const preferredSearches = ['Grow a Garden', 'Monopoly GO', 'Blue Lock Rivals', 'Coin Master', "Sol's RNG"];
+const searchablePageNames = [...publishedGameCatalogue, ...publishedDailyLinkCatalogue]
+  .filter((game) => game.activeCount > 0)
+  .map((game) => game.name);
+
+/**
+ * Only advertise a term that resolves to a published page with something usable on
+ * it. A curated name whose page is not live sends readers to an empty search; a game
+ * whose codes have all expired sends them somewhere worse, because the page loads and
+ * has nothing on it.
+ */
+export const hotSearches = [
+  ...preferredSearches.filter((term) => searchablePageNames.includes(term)),
+  ...searchablePageNames.filter((name) => !preferredSearches.includes(name)),
+].slice(0, 5);
 
 export type FooterItem =
   | { label: string; href: string }

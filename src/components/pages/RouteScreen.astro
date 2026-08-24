@@ -5,6 +5,8 @@ import Button from '../ui/Button.astro';
 import EditorialArticle from './EditorialArticle.astro';
 import { requireArticleArtwork } from '../../data/article-images';
 import { editorialArticles, getArticleByPath } from '../../data/articles';
+import { authors, getAuthorBySlug, getSectionAuthor } from '../../data/authors';
+import { hubIntroFor } from '../../data/hub-intros';
 import {
   dailyLinkCatalogue,
   gameCatalogue,
@@ -19,6 +21,10 @@ import {
   requireArtwork,
 } from '../../data/site-images';
 import type { RouteDefinition } from '../../data/routes';
+import { gameTabsForSlug } from '../../data/game-tabs';
+import { gameRelatedLinks } from '../../data/interlinks';
+import { searchIndex } from '../../data/search';
+import { hotSearches } from '../../data/site';
 import {
   formatAbsoluteTimestamp,
   getCheatOperationalPage,
@@ -28,6 +34,7 @@ import {
   operations,
   type CodeEntry,
   type DailyLinkEntry,
+  isUsableState,
   type EntryState,
   type ResolvedEntry,
 } from '../../data/operations';
@@ -67,10 +74,28 @@ const operationalPage = definition.slug ? getGameOperationalPage(definition.slug
 const cheatPage = definition.slug ? getCheatOperationalPage(definition.slug) : null;
 const product = definition.slug ? getProduct(definition.slug) : undefined;
 const operationalStats = operationalSummary();
+const hubIntro = hubIntroFor(definition.routeId);
+const profileAuthor = definition.kind === 'author' && definition.slug ? getAuthorBySlug(definition.slug) : undefined;
+const profileArticles = profileAuthor
+  ? editorialArticles.filter((item) => getSectionAuthor(item.section).slug === profileAuthor.slug)
+  : [];
+const profileAuthorEvents = definition.slug
+  ? operations.verificationEvents.filter((event) => event.checkedBy === definition.slug).length
+  : 0;
+/*
+ * Only cheat games with a published sheet are listed. Naming a game the site has
+ * nothing for advertises a promise the page cannot keep and sends crawlers into
+ * an empty draft.
+ */
+const publishedCheatGames = operations.cheatGames
+  .map((item) => ({ item, page: getCheatOperationalPage(item.slug) }))
+  .filter((entry): entry is { item: typeof entry.item; page: NonNullable<typeof entry.page> } =>
+    Boolean(entry.page?.isPublished));
 const codeEntries = (operationalPage?.entries ?? []).filter(
   (item): item is ResolvedEntry<CodeEntry> => 'code' in item.entry,
 );
 const activeCodeEntries = codeEntries.filter((item) => item.state !== 'expired');
+const usableCodeCount = codeEntries.filter((item) => isUsableState(item.state)).length;
 const expiredCodeEntries = codeEntries.filter((item) => item.state === 'expired');
 const dailyEntries = (operationalPage?.entries ?? []).filter(
   (item): item is ResolvedEntry<DailyLinkEntry> => 'url' in item.entry,
@@ -84,7 +109,13 @@ const entryStateLabels: Record<EntryState, string> = {
   unverified: 'Not verified',
 };
 const gameRoot = game ? `/codes/${game.slug}/` : '/codes/grow-a-garden/';
-const isGamePage = ['codes', 'values', 'archive', 'updates'].includes(definition.kind) && Boolean(game);
+const isGamePage = ['codes', 'values', 'updates'].includes(definition.kind) && Boolean(game);
+/*
+ * A tab bar with a single entry is just the page you are already on, so it is not
+ * rendered. gameTabsForSlug returns an empty list in that case.
+ */
+const gameTabs = game ? gameTabsForSlug(game.slug) : [];
+const currentTabId = definition.kind;
 const gameArt = game
   ? requireArtwork(gameArtwork, game.slug, 'game')
   : undefined;
@@ -112,7 +143,7 @@ const guideArt = definition.kind === 'guide'
   ? requireArtwork(gameArtwork, 'grow-a-garden', 'game')
   : undefined;
 const routeArtwork = gameArt ?? dailyArt ?? productArt ?? collectionArt ?? guideArt;
-const showHeaderArtwork = ['browse', 'codes', 'values', 'archive', 'dailyGame', 'guide'].includes(definition.kind)
+const showHeaderArtwork = ['browse', 'codes', 'values', 'dailyGame', 'guide'].includes(definition.kind)
   && Boolean(routeArtwork);
 
 const stats = (() => {
@@ -122,7 +153,6 @@ const stats = (() => {
     case 'codes': return [['Publication', operationalPage?.isPublished ? 'Published' : 'Pending'], ['Last check', operationalPage?.latestCheckedAt ? formatAbsoluteTimestamp(operationalPage.latestCheckedAt) : 'Not recorded'], ['Active records', String(operationalPage ? operationalPage.verifiedCount + operationalPage.reportedCount : 0)], ['Needs recheck', String(operationalPage?.staleCount ?? 0)]];
     case 'az': return [['Published games', String(publishedGameCatalogue.length + publishedDailyLinkCatalogue.length)], ['Code pages', String(publishedGameCatalogue.length)], ['Daily-link pages', String(publishedDailyLinkCatalogue.length)], ['Cheat sheets', String(operations.cheatGames.filter((item) => item.publicationState === 'published').length)]];
     case 'values': return [['Items published', String(operationalPage?.values.length ?? 0)], ['Source required', 'Every row'], ['Updated', operationalPage?.values[0] ? formatAbsoluteTimestamp(operationalPage.values[0].observedAt) : 'Not recorded'], ['State', operationalPage?.values.length ? 'Published' : 'Pending']];
-    case 'archive': return [['Codes archived', String(operationalPage?.expiredCount ?? 0)], ['Source retained', operationalPage?.expiredCount ? 'Yes' : 'No records'], ['Last check', operationalPage?.latestCheckedAt ? formatAbsoluteTimestamp(operationalPage.latestCheckedAt) : 'Not recorded'], ['State', operationalPage?.expiredCount ? 'Published' : 'Pending']];
     case 'search': return [['Published pages', String(editorialArticles.length + publishedGameCatalogue.length + publishedDailyLinkCatalogue.length)], ['Code games', String(publishedGameCatalogue.length)], ['Daily links', String(publishedDailyLinkCatalogue.length)], ['Editorial', String(editorialArticles.length)]];
     default: return [];
   }
@@ -160,11 +190,90 @@ const pageLinks: Record<string, Array<[string, string]>> = {
 };
 
 const relatedLinks = pageLinks[definition.kind] ?? [];
+/*
+ * Code pages carried no related links at all, so every game was a dead end apart
+ * from the breadcrumb. Editorial coverage of the game comes first, then published
+ * siblings on the same platform.
+ */
+const gameRelated = definition.kind === 'codes' && game?.slug ? gameRelatedLinks(game.slug) : [];
 const legalSections = legalCopy[definition.kind] ?? [];
 
-const crumbs = isGamePage
+const crumbTrail: Array<[string, string]> = isGamePage
   ? [['Home', '/'], ['Codes', '/codes/'], [game?.name ?? 'Game', gameRoot]]
   : [['Home', '/']];
+
+/*
+ * The template renders definition.heading as the final aria-current crumb, so a
+ * parent crumb carrying the same label would repeat it. On a game's own codes
+ * page the heading is the game name, which produced
+ * "Home / Codes / Grow a Garden / Grow a Garden".
+ */
+const crumbs = crumbTrail.filter(([label], index) =>
+  !(index === crumbTrail.length - 1 && label === definition.heading));
+
+const routeUrl = new URL(definition.path, Astro.site).toString();
+const breadcrumbItems = [...crumbs.map(([label, href]) => ({ label, href })), { label: definition.heading, href: definition.path }];
+
+/*
+ * Game codes are the most freshness-sensitive pages on the site and were the only
+ * ones with no structured freshness signal. dateModified comes from the same
+ * verification record the page renders, so the two can never disagree.
+ */
+const codePageFaq = definition.kind === 'codes' && operationalPage?.game.redeemSteps.length
+  ? [
+      {
+        question: `How do you redeem codes in ${operationalPage.game.name}?`,
+        answer: operationalPage.game.redeemSteps
+          .map((step, index) => `${index + 1}. ${step}`)
+          .join(' '),
+      },
+      {
+        question: `How many ${operationalPage.game.name} codes work right now?`,
+        answer: usableCodeCount > 0
+          ? `${usableCodeCount} of the ${codeEntries.length} recorded codes passed their most recent check and are still inside the freshness window.`
+          : `None of the ${codeEntries.length} recorded codes currently passes a check. Every one has either expired or aged out of its freshness window.`,
+      },
+    ]
+  : [];
+
+const routeSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${routeUrl}#breadcrumb`,
+      itemListElement: breadcrumbItems.map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.label,
+        item: new URL(crumb.href, Astro.site).toString(),
+      })),
+    },
+    ...(operationalPage?.latestCheckedAt && isGamePage
+      ? [{
+          '@type': 'Dataset',
+          '@id': `${routeUrl}#record`,
+          name: `${operationalPage.game.name} verification record`,
+          description: `Recorded verification events for ${operationalPage.game.name}, with the evidence state and check time of every entry.`,
+          url: routeUrl,
+          dateModified: operationalPage.latestCheckedAt,
+          isPartOf: { '@id': 'https://freetins.com/#site' },
+          creator: { '@id': 'https://freetins.com/#org' },
+        }]
+      : []),
+    ...(codePageFaq.length > 0
+      ? [{
+          '@type': 'FAQPage',
+          '@id': `${routeUrl}#faq`,
+          mainEntity: codePageFaq.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: { '@type': 'Answer', text: item.answer },
+          })),
+        }]
+      : []),
+  ],
+};
 ---
 
 {article ? (
@@ -178,6 +287,7 @@ const crumbs = isGamePage
   image={routeArtwork?.socialImage}
   imageAlt={routeArtwork?.alt}
 >
+  <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(routeSchema)}></script>
   <article class="route-page" data-route-kind={definition.kind}>
     <header class="page-head content-boundary">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -187,12 +297,11 @@ const crumbs = isGamePage
       {definition.eyebrow && <p class="eyebrow">{definition.eyebrow}</p>}
       <h1>{definition.heading}</h1>
       <p class="lede">{definition.description}</p>
-      {isGamePage && (
+      {isGamePage && gameTabs.length > 0 && (
         <nav class="game-tabs" aria-label={`${game?.name} sections`}>
-          <a href={gameRoot} aria-current={definition.kind === 'codes' ? 'page' : undefined}>Codes</a>
-          <a href={`${gameRoot}values/`} aria-current={definition.kind === 'values' ? 'page' : undefined}>Values</a>
-          <a href={`${gameRoot}expired/`} aria-current={definition.kind === 'archive' ? 'page' : undefined}>Archive</a>
-          <a href={`${gameRoot}updates/`} aria-current={definition.kind === 'updates' ? 'page' : undefined}>Updates</a>
+          {gameTabs.map((tab) => (
+            <a href={tab.href} aria-current={tab.id === currentTabId ? 'page' : undefined}>{tab.label}</a>
+          ))}
         </nav>
       )}
       {stats.length > 0 && (
@@ -216,6 +325,18 @@ const crumbs = isGamePage
         </div>
       )}
     </header>
+
+    {hubIntro && (
+      <section class="page-section content-boundary hub-intro">
+        <p class="hub-summary">{hubIntro.summary}</p>
+        {hubIntro.paragraphs.map((copy) => <p>{copy}</p>)}
+        <div class="hub-criteria">
+          {hubIntro.criteria.map((item) => (
+            <div><h2>{item.heading}</h2><p>{item.body}</p></div>
+          ))}
+        </div>
+      </section>
+    )}
 
     {definition.kind === 'browse' && (
       <section class="page-section content-boundary">
@@ -286,7 +407,7 @@ const crumbs = isGamePage
               </a>
             );
           })}
-        </div> : <div class="data-empty"><strong>No daily-link page is published yet</strong><p>The configured games remain in the upload model, but no link appears until it has a real destination, source URL and verification event.</p></div>}
+        </div> : <div class="data-empty"><strong>No individual reward link is published right now</strong><p>Reward links rotate within a day or two, so none is listed until it has a destination, a publisher source and a recorded check. The published daily guides below explain how each game reward system works and where its publisher posts, which stays useful between rotations.</p></div>}
         {hubArticles.length > 0 && (
           <div class="published-articles">
             <h2>{publishedHeading}</h2>
@@ -325,12 +446,14 @@ const crumbs = isGamePage
                   <span>{item.entry.label}<small>{entryStateLabels[item.state]}</small></span>
                   {item.latestEvent ? <time datetime={item.latestEvent.checkedAt} data-relative-time={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <strong>Not checked</strong>}
                 </a>
-                <span class="record-sources">Evidence: {item.entry.sourceUrls.map((url, index) => <a href={url} rel="noopener">Source {index + 1}</a>)}</span>
+                <span class="record-sources">{item.entry.publisherSourceUrl
+                    ? <a href={item.entry.publisherSourceUrl} rel="noopener">Publisher post</a>
+                    : <span class="tier-chip">Community reported, no publisher post found</span>}</span>
               </div>
             ))}
           </div> : <div class="data-empty"><strong>No reward link is published</strong><p>This page is configured, but it will not display a claim link until the URL, source and verification event are present in the operational data.</p></div>}
         </div>
-        <aside><h2>Claim and verification</h2><p>{operationalPage?.game.redeemSteps.length ? 'Follow the recorded claim steps for this game. Each link shows its latest evidence state and absolute check time.' : 'Claim instructions have not passed publication validation yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Official source</a>}<a href="/daily/">All daily link games</a></aside>
+        <aside><h2>Claim and verification</h2><p>{operationalPage?.game.redeemSteps.length ? 'Follow the recorded claim steps for this game. Each link shows its latest evidence state and absolute check time.' : 'Claim instructions have not passed publication validation yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Open the game</a>}{(operationalPage?.game.publisherChannels ?? []).map((channel) => <a href={channel.url} rel="noopener">{channel.label}</a>)}<a href="/daily/">All daily link games</a></aside>
       </section>
     )}
 
@@ -345,17 +468,19 @@ const crumbs = isGamePage
                 <div><code>{item.entry.code}</code><span>{item.entry.reward}</span><small>{entryStateLabels[item.state]}</small></div>
                 <div>
                   {item.latestEvent ? <time datetime={item.latestEvent.checkedAt} data-relative-time={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <small>No verification recorded</small>}
-                  <span class="record-sources">{item.entry.sourceUrls.map((url, index) => <a href={url} rel="noopener">Source {index + 1}</a>)}</span>
+                  <span class="record-sources">{item.entry.publisherSourceUrl
+                    ? <a href={item.entry.publisherSourceUrl} rel="noopener">Publisher post</a>
+                    : <span class="tier-chip">Community reported, no publisher post found</span>}</span>
                   <button type="button" data-copy-code={item.entry.code}>Copy</button>
                 </div>
               </div>
             ))}
-          </div> : <div class="data-empty"><strong>No code is published</strong><p>This configured page remains `noindex` until a code, reward, source URL, redemption path and verification event pass validation.</p></div>}
-          {expiredCodeEntries.length > 0 && <><h2 class="subhead">Expired codes</h2><div class="expired-list">
+          </div> : <div class="data-empty"><strong>No code is published</strong><p>This page stays out of the index until a code, reward, publisher source, redemption path and verification event all pass validation.</p></div>}
+          {expiredCodeEntries.length > 0 && <><details class="expired-block"><summary><span class="subhead">Expired codes</span><span>{expiredCodeEntries.length} retired records</span></summary><p class="expired-note">Kept as a maintenance record so a code that stops working can be told apart from one that never existed. Retired codes are not a search destination and carry no claim of being usable.</p><div class="expired-list">
             {expiredCodeEntries.map((item) => <div><s>{item.entry.code}</s><span>{item.entry.reward}</span>{item.latestEvent ? <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <span>Check not recorded</span>}</div>)}
-          </div></>}
+          </div></details></>}
         </div>
-        <aside><h2>Redeem and verify</h2><p>{operationalPage?.game.redeemSteps.length ? 'Use the recorded redemption path below. A successful in-game redemption is labeled verified; current source corroboration without redemption is labeled source-reported.' : 'Redemption instructions have not passed publication validation yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Official game source</a>}<a href="/how-we-verify/">How we verify</a>{expiredCodeEntries.length > 0 && <a href={`${gameRoot}expired/`}>Full archive</a>}</aside>
+        <aside><h2>Redeem and verify</h2><p>{operationalPage?.game.redeemSteps.length ? 'Follow the recorded redemption path. A code redeemed in game is labelled verified; one confirmed only by a publisher post is labelled source-reported; one that no publisher post covers stays community-reported however many sites repeat it.' : 'Redemption instructions have not passed publication validation yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Open the game</a>}{(operationalPage?.game.publisherChannels ?? []).map((channel) => <a href={channel.url} rel="noopener">{channel.label}</a>)}<a href="/how-we-verify/">How we verify</a></aside>
       </section>
     )}
 
@@ -387,11 +512,10 @@ const crumbs = isGamePage
             </a>
           ))}
         </div>
-        <h2 class="secondary-list-heading">More cheat pages</h2>
-        <div class="catalogue">{operations.cheatGames.map((item) => {
-          const page = getCheatOperationalPage(item.slug);
-          return <a href={`/cheats/${item.slug}/`}><span>{item.name}<small>{item.platforms.join(', ')}</small></span><strong>{page?.isPublished ? `${page.verifiedCount + page.reportedCount} published` : 'Verification pending'}</strong></a>;
-        })}</div>
+        {publishedCheatGames.length > 0 && <><h2 class="secondary-list-heading">More cheat pages</h2>
+        <div class="catalogue">{publishedCheatGames.map(({ item, page }) => (
+          <a href={`/cheats/${item.slug}/`}><span>{item.name}<small>{item.platforms.join(', ')}</small></span><strong>{page.verifiedCount + page.reportedCount} published</strong></a>
+        ))}</div></>}
       </section>
     )}
 
@@ -402,9 +526,43 @@ const crumbs = isGamePage
       </section>
     )}
 
-    {definition.kind === 'author' && (
+    {definition.kind === 'author' && profileAuthor && (
       <section class="page-section content-boundary">
-        <div class="profile-detail"><div><h2>Editorial responsibility</h2><p>Paul A owns the review and correction process for published Freetins pages.</p><p>{operations.verificationEvents.filter((event) => event.checkedBy === definition.slug).length} operational verification events are currently attributed to this profile. This number is calculated from the event log rather than entered as biography copy.</p><a href="/about/">About Freetins</a></div></div>
+        <div class="profile-detail">
+          <div>
+            <h2>What {profileAuthor.name} is accountable for</h2>
+            <p>{profileAuthor.remit}</p>
+            <p>{profileAuthor.credential}</p>
+
+            <h2 class="subhead">Verification record</h2>
+            <p>{profileAuthorEvents} operational verification events are attributed to this profile. The number is counted from the event log rather than entered as biography copy, so it cannot be inflated by editing this page.</p>
+            <p>Every check recorded under this name carries a timestamp, a method and a result. The rules those checks follow are set out in <a href="/how-we-verify/">how we verify</a>.</p>
+
+            {profileArticles.length > 0 && <>
+              <h2 class="subhead">Published pages by {profileAuthor.name}</h2>
+              <div class="author-articles">
+                {profileArticles.map((item) => (
+                  <a href={item.path}><span>{item.heading}<small>{item.reviewLabel}</small></span></a>
+                ))}
+              </div>
+            </>}
+
+            <h2 class="subhead">Corrections</h2>
+            <p>If a page in this section is wrong, email <a href="mailto:hello@freetins.com">hello@freetins.com</a> with the page URL. Corrections to {profileAuthor.sections.join(', ')} content route to {profileAuthor.name} and are recorded as verification events like any other check.</p>
+          </div>
+          <aside>
+            <h2>Editorial team</h2>
+            {authors.map((member) => (
+              <p>
+                {member.slug === profileAuthor.slug
+                  ? <strong>{member.name}</strong>
+                  : <a href={member.path}>{member.name}</a>}
+                <br /><small>{member.role}</small>
+              </p>
+            ))}
+            <a href="/about/">About Freetins</a>
+          </aside>
+        </div>
       </section>
     )}
 
@@ -463,21 +621,61 @@ const crumbs = isGamePage
       <section class="page-section content-boundary">{timelineEntries.length ? <div class="timeline">{timelineEntries.map((item) => <article><time datetime={item.publishedAt}>{formatAbsoluteTimestamp(item.publishedAt)}</time><span>{item.version}</span><div><h2>{item.title}</h2><p>{item.summary}</p><a href={item.sourceUrl} rel="noopener">Source</a></div></article>)}</div> : <div class="data-empty"><strong>No timeline entry is published</strong><p>The timeline remains configured. An entry appears only with a version, summary, absolute publication time and source URL.</p></div>}</section>
     )}
 
-    {definition.kind === 'archive' && (
-      <section class="page-section content-boundary"><div class="section-title"><h2>{game ? `${game.name}, expired code records` : 'Expired code records'}</h2><span>{expiredCodeEntries.length} archived</span></div>{expiredCodeEntries.length ? <div class="data-table archive-table">{expiredCodeEntries.map((item) => <div><s>{item.entry.code}</s><span>{item.entry.reward}</span>{item.latestEvent ? <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <span>No removal check</span>}<small>{item.entry.sourceUrls.map((url, index) => <a href={url} rel="noopener">Source {index + 1}</a>)}</small></div>)}</div> : <div class="data-empty"><strong>No expired code is recorded</strong><p>The archive route remains configured, but it does not clone sample rows or invent a historical count.</p></div>}</section>
-    )}
-
     {definition.kind === 'guide' && (
-      <section class="page-section content-boundary"><div class="data-empty"><strong>This guide is configured but not published</strong><p>The route is preserved for editorial work and remains `noindex`. It will move into the published Guides index only after the full article and its sources are added to the editorial data.</p></div></section>
+      <section class="page-section content-boundary"><div class="data-empty"><strong>This guide is configured but not published</strong><p>The route is preserved for editorial work and stays out of the index. It moves into the published Guides index only after the full article and its sources are added to the editorial data.</p></div></section>
     )}
 
     {definition.kind === 'search' && (
-      <section class="page-section content-boundary form-layout">
-        <form method="get" action="/search/">
-          <label>Game, guide or code<input type="search" name="q" placeholder="Grow a Garden" /></label>
-          <button type="submit">Search</button>
-        </form>
-        <aside><h2>Published content only</h2><p>Search results should point to published editorial pages and evidence-backed operational pages, not configured drafts.</p></aside>
+      <section class="page-section content-boundary search-page" data-search-app>
+        <div class="form-layout">
+          <div class="search-panel">
+            <form method="get" action="/search/" role="search" data-search-form>
+              <label for="site-query">Game, guide or code</label>
+              <div class="search-row">
+                <input
+                  id="site-query"
+                  type="search"
+                  name="q"
+                  placeholder="Grow a Garden"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  data-search-input
+                />
+                <button type="submit">Search</button>
+              </div>
+            </form>
+
+            <p class="search-status" role="status" aria-live="polite" data-search-status></p>
+
+            <div class="search-results" data-search-results>
+              <div class="data-empty">
+                <strong>Type a game, guide or code</strong>
+                <p>Search covers every published code page, daily-link page, cheat sheet, answer sheet and guide on Freetins.</p>
+              </div>
+            </div>
+
+            <noscript>
+              <div class="data-empty">
+                <strong>Search needs JavaScript</strong>
+                <p>Browse <a href="/games/">all games A-Z</a>, <a href="/codes/">all codes</a>, <a href="/daily/">daily links</a>, <a href="/cheats/">cheats</a>, <a href="/answers/">answers</a> or <a href="/guides/">guides</a> instead.</p>
+              </div>
+            </noscript>
+
+            <div class="search-shortcuts">
+              <span>Most searched</span>
+              {hotSearches.map((term) => (
+                <a href={`/search/?q=${encodeURIComponent(term)}`}>{term}</a>
+              ))}
+            </div>
+          </div>
+
+          <aside>
+            <h2>Published content only</h2>
+            <p>Results point to published editorial pages and evidence-backed operational pages. Configured drafts are excluded until their sources and verification records pass validation.</p>
+            <p>{searchIndex.length} pages are indexed.</p>
+          </aside>
+        </div>
       </section>
     )}
 
@@ -493,24 +691,41 @@ const crumbs = isGamePage
       <section class="page-section content-boundary"><div class="notice"><span>{definition.eyebrow ?? 'Freetins'}</span><h2>Request the game and it enters validation</h2><p>{definition.description}</p></div></section>
     )}
 
+    {gameRelated.length > 0 && (
+      <section class="page-section content-boundary related-games">
+        <h2 class="subhead">More {game?.platform} code pages</h2>
+        <div class="related-grid">
+          {gameRelated.map((link) => (
+            <a href={link.href}>
+              <strong>{link.label}</strong>
+              {link.description && <span>{link.description}</span>}
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
     {relatedLinks.length > 0 && <nav class="next-links content-boundary" aria-label="Related pages">{relatedLinks.map(([label, href]) => <a href={href}>{label}</a>)}</nav>}
   </article>
 
+  <script>
+    import '../../scripts/search';
+  </script>
 </BaseLayout>
 )}
 
 <style>
   .route-page { padding-bottom: clamp(54px, 7vw, 92px); }
   .page-head { padding: clamp(28px, 4vw, 52px) var(--page-gutter) 0; }
-  .breadcrumbs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; color: var(--text-tertiary); font: 400 13px / 1.4 var(--font-core); }
-  .breadcrumbs a { color: var(--text-tertiary); }
-  .breadcrumbs a::after { margin-left: 6px; content: '/'; color: var(--text-disabled); }
+  .breadcrumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; margin-bottom: 14px; color: var(--text-tertiary); font: 400 13px / 1.4 var(--font-core); }
+  .breadcrumbs a { display: inline-flex; align-items: center; min-height: 32px; color: var(--text-tertiary); }
+  .breadcrumbs a::after { margin-left: 6px; content: '/'; color: var(--text-caption); }
   .eyebrow { margin: 0 0 12px; color: var(--text-brand); font: 700 12px / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
   h1 { max-width: 28ch; margin: 0; color: var(--text-primary); font: 600 var(--fs-h1) / var(--lh-h1) var(--font-display); letter-spacing: .02em; text-transform: uppercase; text-wrap: pretty; }
   .lede { max-width: 66ch; margin: 16px 0 0; color: var(--text-secondary); font: 400 var(--fs-body-lg) / var(--lh-body-lg) var(--font-core); text-wrap: pretty; }
   .stats { display: flex; flex-wrap: wrap; margin-top: 24px; border: 1px solid var(--border-subtle); background: var(--surface-raised); }
   .stats > div { min-width: 150px; flex: 1 1 150px; padding: 12px 16px; border-right: 1px solid var(--border-subtle); }
-  .stats span, .section-title > span { display: block; color: var(--text-disabled); font: 700 10.5px / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
+  .stats span, .section-title > span { display: block; color: var(--text-caption); font: 700 var(--fs-caption) / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
   .stats strong { display: block; margin-top: 5px; color: var(--text-primary); font: 600 18px / 1.2 var(--font-display); font-variant-numeric: tabular-nums; }
   .entity-art { position: relative; aspect-ratio: 16 / 7; margin-top: 24px; overflow: hidden; background: var(--surface-card); }
   .page-section { padding: clamp(28px, 4vw, 44px) var(--page-gutter) 0; }
@@ -540,18 +755,23 @@ const crumbs = isGamePage
   .wide-main { grid-template-columns: minmax(0, 1.7fr) minmax(240px, .7fr); }
   aside { border: 1px solid var(--border-subtle); background: var(--surface-raised); padding: 20px; }
   aside p { margin: 0 0 14px; color: var(--text-secondary); line-height: 1.55; }
-  aside a { display: block; margin-top: 10px; color: var(--text-primary); font-weight: 600; }
+  aside a { display: inline-flex; min-height: 24px; align-items: center; margin-top: 10px; color: var(--text-primary); font-weight: 600; }
   .link-list, .code-table, .expired-list, .data-table { border: 1px solid var(--border-subtle); }
   .link-list a { display: flex; justify-content: space-between; gap: 14px; padding: var(--rowpad) 16px; border-bottom: 1px solid var(--border-subtle); color: var(--text-primary); text-decoration: none; }
   .link-list strong { color: var(--text-brand); font-size: 13px; }
   .game-tabs, .hub-tabs, .chip-links { display: flex; flex-wrap: wrap; gap: 1px; margin-top: 22px; }
-  .game-tabs a, .hub-tabs a, .chip-links a { min-height: 42px; padding: 13px 16px; border: 1px solid var(--border-subtle); color: var(--text-secondary); font: 700 11px / 1.4 var(--font-core); letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+  .game-tabs a, .hub-tabs a, .chip-links a { display: flex; align-items: center; min-height: 44px; padding: 13px 16px; border: 1px solid var(--border-subtle); color: var(--text-secondary); font: 700 var(--fs-caption) / 1.4 var(--font-core); letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
   .game-tabs a[aria-current='page'], .hub-tabs a[aria-current='page'] { background: var(--green-600); color: #fff; }
   .hub-hero { padding: 24px var(--page-gutter) 0; }
   .hub-art { position: relative; aspect-ratio: 16 / 6; min-height: 240px; overflow: hidden; background: var(--surface-card); }
   .module-grid, .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
   .module { display: block; min-height: 170px; padding: 20px; border: 1px solid var(--border-subtle); color: inherit; text-decoration: none; }
   .module:hover { background: var(--white-a08); }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+  .related-grid a { display: grid; align-content: start; gap: 6px; min-height: 44px; padding: 16px; border: 1px solid var(--border-subtle); color: inherit; text-decoration: none; }
+  .related-grid a:hover, .related-grid a:focus-visible { background: var(--white-a08); border-color: var(--green-neon); text-decoration: none; }
+  .related-grid strong { color: var(--text-primary); font: 600 16px / 1.3 var(--font-core); }
+  .related-grid span { color: var(--text-caption); font: 400 var(--fs-caption) / 1.5 var(--font-core); }
   .module span { color: var(--text-tertiary); font-size: 12px; }
   .module h2 { margin: 30px 0 7px; color: var(--text-primary); font: 600 18px / 1.3 var(--font-core); }
   .module strong { color: var(--text-brand); font-size: 13px; }
@@ -559,10 +779,11 @@ const crumbs = isGamePage
   .code-row > div { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
   .code-row code { color: var(--green-neon); font: 600 14px / 1.4 ui-monospace, monospace; }
   .code-row span, .code-row small { color: var(--text-tertiary); }
-  .code-row button, form button { min-height: 40px; border: 0; background: var(--green-600); color: #fff; padding: 0 14px; cursor: pointer; font: 700 11px / 1 var(--font-core); letter-spacing: .08em; text-transform: uppercase; }
+  .code-row button, form button { min-width: 92px; min-height: 44px; border: 0; background: var(--green-600); color: #fff; padding: 0 14px; cursor: pointer; font: 700 var(--fs-caption) / 1 var(--font-core); letter-spacing: .08em; text-transform: uppercase; }
   .subhead { margin: 30px 0 12px; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
   .expired-list > div, .data-table > div { display: grid; grid-template-columns: 1.2fr 1.4fr .8fr; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); }
   .expired-list span, .expired-list time, .data-table span, .data-table small { color: var(--text-tertiary); }
+  .expired-list small a, .data-table small a, .archive-table small a { display: inline-flex; min-height: 24px; align-items: center; }
   .profile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 20px; }
   .profile-grid a { color: inherit; text-decoration: none; }
   .portrait { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--surface-card); }
@@ -585,16 +806,19 @@ const crumbs = isGamePage
   .tier-list > div > div { padding: 22px; } .tier-list h2 { margin: 0; color: var(--text-primary); }
   .tier-list p, .tier-list small { color: var(--text-tertiary); }
   .weekdays, .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: var(--border-subtle); }
-  .weekdays strong { padding: 8px; background: var(--surface-sunken); color: var(--text-disabled); text-align: center; font-size: 10px; text-transform: uppercase; }
+  .weekdays strong { padding: 8px; background: var(--surface-sunken); color: var(--text-caption); text-align: center; font-size: var(--fs-caption); text-transform: uppercase; }
   .days > div { position: relative; min-height: 76px; padding: 8px; background: var(--surface-page); }
   .days > div.today { outline: 1px solid var(--green-neon); outline-offset: -2px; }
   .days b { position: absolute; right: 8px; bottom: 9px; left: 8px; height: 4px; background: linear-gradient(to right, var(--green-600) var(--bar), var(--surface-raised) var(--bar)); }
   .prose { max-width: 920px; }
   .updated { color: var(--text-tertiary); }
   .prose > section { display: grid; grid-template-columns: 42px 1fr; gap: 12px; padding: 24px 0; border-bottom: 1px solid var(--border-subtle); }
-  .prose > section > span { color: var(--text-disabled); font: 700 11px / 1.4 var(--font-core); }
+  .prose > section > span { color: var(--text-caption); font: 700 var(--fs-caption) / 1.4 var(--font-core); }
   .prose h2 { margin: 0 0 10px; color: var(--text-primary); }
-  .prose p, .timeline p, .notice p { margin: 0; color: var(--text-secondary); line-height: 1.62; }
+  .timeline p, .notice p { margin: 0; color: var(--text-secondary); line-height: 1.62; }
+  /* Redemption steps are instructional text read while switching between two
+     apps, so they match the editorial reading tier rather than the 15px body. */
+  .prose p { margin: 0; color: var(--text-secondary); font-size: var(--fs-body-lg); line-height: 1.6; }
   .process-grid > div { min-height: 180px; border: 1px solid var(--border-subtle); padding: 18px; }
   .process-grid > div > strong { color: var(--green-neon); font: 600 26px / 1 var(--font-display); }
   .process-grid h3 { margin: 20px 0 8px; color: var(--text-primary); }
@@ -633,13 +857,13 @@ const crumbs = isGamePage
   .verification-queue h2 { margin: 0 0 8px; color: var(--text-primary); }
   .verification-queue p { max-width: 76ch; margin: 0; color: var(--text-secondary); line-height: 1.6; }
   .record-sources { display: flex; flex-wrap: wrap; gap: 6px 12px; }
-  .record-sources a { color: var(--text-secondary); font-size: 12px; }
+  .record-sources a { display: inline-flex; min-height: 24px; align-items: center; color: var(--text-secondary); font-size: var(--fs-caption); }
   .daily-records { display: grid; gap: 12px; }
   .daily-record { display: grid; gap: 6px; }
-  .notice > span { color: var(--text-brand); font: 700 11px / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
+  .notice > span { color: var(--text-brand); font: 700 var(--fs-caption) / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
   .notice h2 { margin: 12px 0 8px; color: var(--text-primary); }
   .next-links { display: flex; flex-wrap: wrap; gap: 9px 18px; padding: 30px var(--page-gutter) 0; }
-  .next-links a { color: var(--text-primary); font-weight: 600; }
+  .next-links a { display: inline-flex; min-height: 32px; align-items: center; color: var(--text-primary); font-weight: 600; }
   @media (max-width: 767px) {
     .split-layout, .profile-detail, .product-layout, .guide-layout, .form-layout { grid-template-columns: 1fr; }
     .profile-grid { grid-template-columns: 1fr; }
@@ -651,5 +875,26 @@ const crumbs = isGamePage
     .expired-list > div, .data-table > div, .archive-table > div { grid-template-columns: 1fr 1fr; }
     .timeline article { grid-template-columns: 1fr; gap: 6px; }
     .guide-layout aside { position: static; }
+    .search-row { grid-template-columns: 1fr; }
   }
+  .search-panel { display: grid; gap: 18px; }
+  .search-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
+  .search-row input { min-width: 0; }
+  .search-row button { min-height: 46px; padding-inline: 22px; border: 0; background: var(--green-600); color: #fff; font: 600 var(--fs-caption) / 1 var(--font-core); letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+  .search-row button:hover { background: var(--green-700); }
+  .search-status { min-height: 20px; margin: 0; color: var(--text-secondary); font-size: 13px; }
+  .search-status:empty { display: none; }
+  .search-results :global(.search-results-list) { display: grid; gap: 10px; }
+  .search-results :global(.search-result) { display: grid; gap: 5px; border: 1px solid var(--border-subtle); background: var(--surface-raised); padding: 14px 16px; text-decoration: none; }
+  .search-results :global(.search-result:hover), .search-results :global(.search-result:focus-visible) { border-color: var(--green-neon); }
+  .search-results :global(.search-result-group) { color: var(--text-brand); font: 700 var(--fs-caption) / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
+  .search-results :global(.search-result strong) { color: var(--text-primary); font-size: 16px; }
+  .search-results :global(.search-result p) { max-width: 74ch; margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.55; }
+  .search-results :global(.search-result small) { color: var(--text-caption); font-size: var(--fs-caption); }
+  .search-results :global(.data-empty) { border: 1px dashed var(--border-strong); background: var(--surface-raised); padding: clamp(20px, 3vw, 30px); }
+  .search-results :global(.data-empty strong) { color: var(--text-primary); }
+  .search-results :global(.data-empty p) { max-width: 72ch; margin: 8px 0 0; color: var(--text-secondary); line-height: 1.6; }
+  .search-shortcuts { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; }
+  .search-shortcuts span { color: var(--text-secondary); font: 700 var(--fs-caption) / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
+  .search-shortcuts a { display: inline-flex; min-height: 32px; align-items: center; color: var(--text-primary); font-size: 14px; font-weight: 600; }
 </style>

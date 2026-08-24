@@ -5,6 +5,7 @@ import {
   publishedGameCatalogue,
 } from './home';
 import { editorialArticles } from './articles';
+import { authors } from './authors';
 import { getCheatOperationalPage, getProduct, operations } from './operations';
 
 export type RouteKind =
@@ -29,7 +30,6 @@ export type RouteKind =
   | 'affiliate'
   | 'values'
   | 'updates'
-  | 'archive'
   | 'terms'
   | 'notTracked'
   | 'article';
@@ -52,7 +52,7 @@ const staticRoutes: RouteDefinition[] = [
   {
     path: '/daily/', routeId: 'daily', kind: 'daily', title: 'Daily links | Freetins', heading: 'Daily links',
     description: 'Source-linked daily rewards with absolute check times and clear verification states.',
-    noindex: publishedDailyLinkCatalogue.length === 0,
+    noindex: publishedDailyLinkCatalogue.length + editorialArticles.filter((article) => article.section === 'daily').length === 0,
   },
   {
     path: '/codes/', routeId: 'browse', kind: 'browse', title: 'Game codes | Freetins', heading: 'All codes',
@@ -62,6 +62,9 @@ const staticRoutes: RouteDefinition[] = [
   {
     path: '/search/', routeId: 'search', kind: 'search', title: 'Search | Freetins', heading: 'Search',
     description: 'Search games, guides and daily-link pages on Freetins.',
+    // Internal result pages stay out of the index. The directive has to be
+    // crawlable to be obeyed, so robots.txt must not also block this path.
+    noindex: true,
   },
   {
     path: '/cheats/', routeId: 'cheats', kind: 'cheats', title: 'Game cheats | Freetins', heading: 'Cheats',
@@ -69,15 +72,11 @@ const staticRoutes: RouteDefinition[] = [
   },
   {
     path: '/answers/', routeId: 'answers', kind: 'info', title: 'Answers | Freetins', heading: 'Answers',
-    description: 'Puzzle and level answer sheets with direct navigation.', noindex: false,
+    description: 'Level answers, element recipes and puzzle solutions, checked against the current build of the game so the numbering still matches what you see.',
   },
   {
     path: '/guides/', routeId: 'guideIndex', kind: 'info', title: 'Guides | Freetins', heading: 'Guides',
-    description: 'Process and explainer pages that are not one game’s codes.',
-  },
-  {
-    path: '/how-we-verify/', routeId: 'verify', kind: 'verify', title: 'How we verify | Freetins', heading: 'How we verify',
-    description: 'The evidence states, source requirements, freshness windows and removal rules used by Freetins.',
+    description: 'Explainer and process pages: how a feature works, what is actually available, and what to do when the method everyone repeats does not work.',
   },
   {
     path: '/submit/', routeId: 'submit', kind: 'submit', title: 'Submit a code | Freetins', heading: 'Submit a code',
@@ -93,23 +92,21 @@ const staticRoutes: RouteDefinition[] = [
   },
   {
     path: '/games/', routeId: 'az', kind: 'az', title: 'All games A-Z | Freetins', heading: 'All games A-Z',
-    description: 'Every published game page backed by operational content records.',
+    description: 'Every game with a published Freetins page, listed A to Z with the number of codes that currently pass a check.',
     noindex: publishedGameCatalogue.length + publishedDailyLinkCatalogue.length === 0,
   },
 ];
 
-const authorRoutes: RouteDefinition[] = ([
-  ['paul-a', 'Paul A', 'Editor'],
-] as const).map(([slug, name, role]) => ({
-  path: `/author/${slug}/`,
+const authorRoutes: RouteDefinition[] = authors.map((author) => ({
+  path: author.path,
   routeId: 'author',
   kind: 'author',
-  title: `${name}, ${role} | Freetins`,
-  heading: name,
-  description: `${name} is the ${role} at Freetins.`,
-  eyebrow: role,
-  name,
-  slug,
+  title: `${author.name}, ${author.role} | Freetins`,
+  heading: author.name,
+  description: author.credential,
+  eyebrow: author.role,
+  name: author.name,
+  slug: author.slug,
 }));
 
 const cheatRoutes: RouteDefinition[] = operations.cheatGames.map((game) => {
@@ -211,10 +208,18 @@ const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => ({
   noindex: !game.isPublished,
 }));
 
+/*
+ * Only sections with published content get a route. Generating a values, archive
+ * or updates page for a game that has none put 147 placeholder URLs in front of
+ * crawlers, every one of them linked from the game tab bar.
+ */
 const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
   const root = `/codes/${game.slug}`;
-  return [
+  const shared = { name: game.name, slug: game.slug, platform: game.platform };
+
+  const routes: RouteDefinition[] = [
     {
+      ...shared,
       path: `${root}/`,
       routeId: 'codes',
       kind: 'codes' as const,
@@ -223,54 +228,35 @@ const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
       description: game.isPublished
         ? `${game.name} codes with source URLs, redemption steps and recorded verification events.`
         : `${game.name} is configured for verification, but no code is published yet.`,
-      name: game.name,
-      slug: game.slug,
-      platform: game.platform,
       noindex: !game.isPublished,
     },
-    {
+  ];
+
+  if (game.valueCount > 0) {
+    routes.push({
+      ...shared,
       path: `${root}/values/`,
       routeId: 'values',
       kind: 'values' as const,
       title: `${game.name} item values | Freetins`,
       heading: 'Item values',
-      description: game.valueCount > 0
-        ? `${game.name} item values with a source and observation time on every row.`
-        : `${game.name} item values are configured, but no sourced value row is published yet.`,
-      name: game.name,
-      slug: game.slug,
-      platform: game.platform,
-      noindex: game.valueCount === 0,
-    },
-    {
-      path: `${root}/expired/`,
-      routeId: 'archive',
-      kind: 'archive' as const,
-      title: `${game.name} expired code archive | Freetins`,
-      heading: 'Expired code archive',
-      description: game.expiredCount > 0
-        ? `Expired ${game.name} code records with retained sources and removal check times.`
-        : `${game.name} has no expired code record in the published archive yet.`,
-      name: game.name,
-      slug: game.slug,
-      platform: game.platform,
-      noindex: game.expiredCount === 0,
-    },
-    {
+      description: `${game.name} item values with a source and observation time on every row.`,
+    });
+  }
+
+  if (game.updateCount > 0) {
+    routes.push({
+      ...shared,
       path: `${root}/updates/`,
       routeId: 'updates',
       kind: 'updates' as const,
       title: `${game.name} updates | Freetins`,
       heading: 'Updates',
-      description: game.updateCount > 0
-        ? `Source-linked update history for ${game.name}.`
-        : `${game.name} updates are configured, but no source-linked timeline entry is published yet.`,
-      name: game.name,
-      slug: game.slug,
-      platform: game.platform,
-      noindex: game.updateCount === 0,
-    },
-  ];
+      description: `Source-linked update history for ${game.name}.`,
+    });
+  }
+
+  return routes;
 });
 
 export const routeDefinitions: RouteDefinition[] = [

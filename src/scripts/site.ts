@@ -174,12 +174,15 @@ const syncCheckerStatus = async () => {
   }
 };
 
+const STATUS_DISMISSED_KEY = 'ft_status_dismissed';
+
 const syncOutageBanner = () => {
   const banner = document.querySelector<HTMLElement>('[data-outage-banner]');
   if (!banner) return;
 
   try {
-    banner.hidden = sessionStorage.getItem('ft_status_dismissed') === 'true';
+    banner.hidden = localStorage.getItem(STATUS_DISMISSED_KEY) === 'true'
+      || sessionStorage.getItem(STATUS_DISMISSED_KEY) === 'true';
   } catch {
     banner.hidden = false;
   }
@@ -189,9 +192,14 @@ const dismissOutageBanner = () => {
   const banner = document.querySelector<HTMLElement>('[data-outage-banner]');
   if (banner) banner.hidden = true;
   try {
-    sessionStorage.setItem('ft_status_dismissed', 'true');
+    localStorage.setItem(STATUS_DISMISSED_KEY, 'true');
   } catch {
-    // Session storage can be unavailable in hardened privacy modes.
+    // Hardened privacy modes can refuse persistent storage; keep it for the session.
+    try {
+      sessionStorage.setItem(STATUS_DISMISSED_KEY, 'true');
+    } catch {
+      // Nothing further to do: the notice simply returns on the next load.
+    }
   }
 };
 

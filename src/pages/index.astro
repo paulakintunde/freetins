@@ -349,15 +349,18 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   }
 
   .hot-searches > span {
-    color: var(--text-disabled);
+    color: var(--text-caption);
     font: 400 12.5px / 1.4 var(--font-core);
   }
 
   .hot-searches a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
-    padding: 8px 11px;
-    font: 400 12.5px / 1 var(--font-core);
+    padding: 0 13px;
+    font: 400 13px / 1 var(--font-core);
     text-decoration: none;
     transition: background var(--dur-fast) var(--ease-standard);
   }
@@ -410,6 +413,9 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   }
 
   .section-heading > a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
     color: var(--text-primary);
     font: 600 13px / 1 var(--font-core);
     letter-spacing: 0.06em;
@@ -480,7 +486,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
 
   .verified-label strong {
     color: #fff;
-    font: 700 11px / 1.4 var(--font-core);
+    font: 700 var(--fs-caption) / 1.4 var(--font-core);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     font-variant-numeric: tabular-nums;
@@ -518,8 +524,8 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
 
   .sponsored-section > h2 {
     margin-bottom: 10px;
-    color: var(--text-disabled);
-    font: 700 11px / 1.4 var(--font-core);
+    color: var(--text-caption);
+    font: 700 var(--fs-caption) / 1.4 var(--font-core);
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
@@ -552,7 +558,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
 
   .sponsored-copy p {
     margin: 4px 0 0;
-    color: var(--text-disabled);
+    color: var(--text-caption);
     font: 400 12px / 1.4 var(--font-core);
   }
 
@@ -634,8 +640,8 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   }
 
   .native-card > div:last-child > span {
-    color: var(--text-disabled);
-    font: 700 11px / 1.4 var(--font-core);
+    color: var(--text-caption);
+    font: 700 var(--fs-caption) / 1.4 var(--font-core);
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }

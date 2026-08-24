@@ -3,12 +3,25 @@ import { Picture } from 'astro:assets';
 import { articleArtwork } from '../../data/article-images';
 import type { EditorialArticle as EditorialArticleData, ArticleLink } from '../../data/articles';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getSectionAuthor } from '../../data/authors';
+import { gamePageForArticle, siblingArticlesFor } from '../../data/interlinks';
 
 interface Props {
   article: EditorialArticleData;
 }
 
 const { article } = Astro.props;
+// The byline follows the section, so a page cannot ship crediting the wrong desk.
+const author = getSectionAuthor(article.section);
+/*
+ * Curated links first, then the game page this article covers, then other pages
+ * in the same section. siblingArticlesFor skips anything already linked above.
+ */
+const relatedLinks = [
+  ...article.related,
+  ...gamePageForArticle(article),
+  ...siblingArticlesFor(article),
+];
 const articleArt = articleArtwork[article.routeId];
 const sectionLabels = {
   answers: 'Answers',
@@ -45,18 +58,6 @@ const elementSlug = (name: string) => name.toLowerCase()
   .replace(/[^a-z0-9]+/g, '-')
   .replace(/^-|-$/g, '');
 const elementLetter = (name: string) => name.charAt(0).toUpperCase();
-const elementEmojiRules: Array<[RegExp, string]> = [
-  [/air|wind|storm|hurricane|tornado/i, '🌬️'], [/water|rain|sea|ocean|river|lake|pond|wave/i, '💧'],
-  [/fire|lava|volcano|heat|ash/i, '🔥'], [/earth|mud|stone|rock|mountain|sand/i, '🌍'],
-  [/tree|plant|flower|grass|forest|leaf|wood/i, '🌿'], [/sun|light|star|moon|space|planet/i, '✨'],
-  [/bird|eagle|owl|duck|chicken/i, '🐦'], [/fish|shark|whale|ocean/i, '🐟'],
-  [/dog|wolf|fox/i, '🐕'], [/cat|lion|tiger/i, '🐈'], [/horse|unicorn|pegasus/i, '🐎'],
-  [/human|doctor|farmer|engineer|sailor|pilot/i, '🧑'], [/house|castle|village|city|building/i, '🏠'],
-  [/car|bus|train|bicycle|motorcycle|airplane|boat/i, '🚗'], [/food|bread|cake|cheese|milk|fruit|meat/i, '🍽️'],
-  [/electric|energy|lightning|battery/i, '⚡'], [/time|clock|watch|hourglass/i, '⏱️'],
-  [/tool|metal|steel|blade|sword|gun/i, '🛠️'], [/music|sound|flute|drum/i, '🎵'],
-];
-const elementEmoji = (name: string) => elementEmojiRules.find(([pattern]) => pattern.test(name))?.[1] ?? '🧪';
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -71,8 +72,10 @@ const structuredData = {
       dateModified: article.reviewedAt,
       author: {
         '@type': 'Person',
-        name: article.author,
-        url: new URL(article.authorPath, Astro.site).toString(),
+        name: author.name,
+        url: new URL(author.path, Astro.site).toString(),
+        jobTitle: author.role,
+        description: author.credential,
       },
       publisher: { '@id': 'https://freetins.com/#org' },
       ...(!isWebPage && { mainEntityOfPage: { '@id': `${absoluteUrl}#webpage` } }),
@@ -136,7 +139,11 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
       <p class="lede">{article.description}</p>
       <div class="article-meta">
         <span>{article.reviewLabel}</span>
-        <span>By <a href={article.authorPath}>{article.author}</a></span>
+        <span class="byline">
+          By <a href={author.path}>{author.name}</a>
+          <span class="byline-role">{author.role}</span>
+          <span class="byline-bio">{author.credential}</span>
+        </span>
       </div>
       {articleArt && (
         <div class="article-art">
@@ -245,7 +252,6 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
                               data-search={`${element.name} ${element.recipes.join(' ')}`.toLowerCase()}
                             >
                               <div class="element-title">
-                                <span aria-hidden="true">{elementEmoji(element.name)}</span>
                                 <h4><a href={`#element-${elementSlug(element.name)}`}>{element.name}</a></h4>
                               </div>
                               <ul>
@@ -294,11 +300,11 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
       </div>
       </div>
 
-      {article.related.length > 0 && (
+      {relatedLinks.length > 0 && (
         <section class="related content-boundary" aria-labelledby="related-heading">
           <h2 id="related-heading">Keep going</h2>
           <div class="link-directory">
-            {article.related.map((link) => (
+            {relatedLinks.map((link) => (
               <a href={link.href}>
                 <strong>{link.label}</strong>
                 {link.description && <span>{link.description}</span>}
@@ -330,12 +336,15 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   }
 
   .breadcrumbs a {
+    display: inline-flex;
+    min-height: 32px;
+    align-items: center;
     color: var(--text-tertiary);
   }
 
   .breadcrumbs a::after {
     margin-left: 6px;
-    color: var(--text-disabled);
+    color: var(--text-caption);
     content: '/';
   }
 
@@ -377,6 +386,44 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   .article-meta a {
     color: var(--text-primary);
     font-weight: 600;
+  }
+
+  .byline a {
+    display: inline-flex;
+    min-height: 24px;
+    align-items: center;
+  }
+
+  .byline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 8px;
+    max-width: 62ch;
+  }
+
+  .byline-role {
+    border: 1px solid var(--border-subtle);
+    padding: 2px 7px;
+    color: var(--text-caption);
+    font: 700 var(--fs-caption) / 1.4 var(--font-core);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .byline-bio {
+    flex: 1 1 100%;
+    color: var(--text-tertiary);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 620px) {
+    /* Beside the name once there is room; wrapped underneath on narrow screens. */
+    .byline-bio {
+      flex: 1 1 auto;
+      min-width: 24ch;
+    }
   }
 
   .article-art {
@@ -426,6 +473,7 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
     --text-primary: #101512;
     --text-secondary: #3d4942;
     --text-tertiary: #657169;
+    --text-caption: #5c6760;
     --text-disabled: #879089;
     --border-subtle: #dfe5e1;
     --border-strong: #b9c4bd;
@@ -694,9 +742,11 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   }
 
   .alphabet-nav a {
+    /* 26 letters, so 44px would wrap to four rows on a phone. 40px clears the
+       24px WCAG floor with room to spare and still fits three rows at 360px. */
     display: grid;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     place-items: center;
     border: 1px solid var(--border-strong);
     color: var(--text-primary);
@@ -741,11 +791,6 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
     align-items: center;
   }
 
-  .element-title > span {
-    font-size: 21px;
-    line-height: 1;
-  }
-
   .element-card h4 {
     margin: 0;
     font: 700 15px / 1.25 var(--font-display);
@@ -753,6 +798,10 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   }
 
   .element-card h4 a {
+    display: inline-flex;
+    min-width: 24px;
+    min-height: 32px;
+    align-items: center;
     color: var(--text-primary);
     text-decoration: none;
   }

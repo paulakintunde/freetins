@@ -52,7 +52,8 @@ const inputId = `search-${name}`;
 
   input:focus-visible {
     border-color: var(--green-neon);
-    box-shadow: inset 0 0 0 1px var(--green-neon);
+    outline: 2px solid var(--green-neon);
+    outline-offset: -2px;
   }
 
   button {
@@ -62,7 +63,7 @@ const inputId = `search-${name}`;
     background: var(--green-600);
     color: #fff;
     padding: 0 15px;
-    font: 600 11px / 1 var(--font-core);
+    font: 600 var(--fs-caption) / 1 var(--font-core);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     cursor: pointer;

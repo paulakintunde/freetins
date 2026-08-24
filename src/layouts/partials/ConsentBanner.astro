@@ -10,16 +10,13 @@ const isGdpr = mode === 'gdpr';
 const hasOptionalPurposes = consentPurposes.some((purpose) => !purpose.required);
 const copy = isGdpr
   ? hasOptionalPurposes ? {
-      eyebrow: 'Cookies',
       title: 'We use cookies to run ads on this site',
       body: 'Necessary storage keeps the site working. Configured advertising remains off until you allow it, and rejecting it does not change content.',
     } : {
-      eyebrow: 'Site storage',
       title: 'Only necessary storage is active',
       body: 'Freetins stores your privacy choice and temporary interface preferences. No analytics, advertising or personalisation vendor is configured.',
     }
   : {
-      eyebrow: 'Your privacy choices',
       title: hasOptionalPurposes ? 'Do not sell or share my personal information' : 'Optional tracking is not active',
       body: hasOptionalPurposes ? 'Configured advertising remains subject to your privacy choices and Global Privacy Control.' : 'No analytics, advertising or personalisation vendor is configured.',
     };
@@ -34,10 +31,8 @@ const copy = isGdpr
 >
   <div class="consent-inner content-boundary">
     <div class="consent-copy">
-      <div class="consent-eyebrow">{copy.eyebrow}</div>
       <h2>{copy.title}</h2>
-      <p>{copy.body}</p>
-      <a href="/privacy/">Read the privacy page</a>
+      <p>{copy.body} <a href="/privacy/">Read the privacy page</a>.</p>
     </div>
 
     <div class="manage-panel" data-consent-manage hidden>
@@ -95,8 +90,8 @@ const copy = isGdpr
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 16px var(--page-gutter);
+    gap: 10px 20px;
+    padding: 10px var(--page-gutter);
   }
 
   .consent-copy {
@@ -104,31 +99,23 @@ const copy = isGdpr
     flex: 1 1 300px;
   }
 
-  .consent-eyebrow {
-    color: var(--text-disabled);
-    font: 700 10.5px / 1.4 var(--font-core);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
   .consent-copy h2 {
-    margin: 8px 0 0;
+    margin: 0;
     color: var(--text-primary);
     font: 600 15px / 1.4 var(--font-core);
   }
 
   .consent-copy p {
     max-width: 72ch;
-    margin: 7px 0 0;
+    margin: 5px 0 0;
     color: var(--text-secondary);
     font: 400 13px / 1.55 var(--font-core);
   }
 
   .consent-copy a {
-    display: inline-block;
-    margin-top: 9px;
     color: var(--text-primary);
-    font: 600 12.5px / 1.4 var(--font-core);
+    font-weight: 600;
+    text-decoration: underline;
   }
 
   .manage-panel {
@@ -171,7 +158,7 @@ const copy = isGdpr
     background: transparent;
     color: var(--text-secondary);
     padding: 10px 8px;
-    font: 700 10px / 1 var(--font-core);
+    font: 700 var(--fs-caption) / 1 var(--font-core);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
@@ -203,7 +190,7 @@ const copy = isGdpr
   }
 
   .vendor-list > div span:last-child {
-    color: var(--text-disabled);
+    color: var(--text-caption);
   }
 
   .consent-actions {
@@ -219,7 +206,7 @@ const copy = isGdpr
     border-radius: 0;
     padding: 13px 16px;
     color: var(--text-primary);
-    font: 600 11px / 1 var(--font-core);
+    font: 600 var(--fs-caption) / 1 var(--font-core);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     cursor: pointer;

@@ -70,8 +70,8 @@ import { footerColumns } from '../../data/site';
 
   .footer-column h2 {
     margin: 0 0 11px;
-    color: var(--text-disabled);
-    font: 700 11px / 1.4 var(--font-core);
+    color: var(--text-caption);
+    font: 700 var(--fs-caption) / 1.4 var(--font-core);
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
@@ -84,6 +84,11 @@ import { footerColumns } from '../../data/site';
 
   .footer-links a,
   .footer-links button {
+    /* 19px tall rows cleared SC 2.5.8 only on spacing. 32px gives a real hit
+       area without stretching a 17-link column off the screen. */
+    display: inline-flex;
+    min-height: 32px;
+    align-items: center;
     width: fit-content;
     border: 0;
     background: transparent;
@@ -120,9 +125,12 @@ import { footerColumns } from '../../data/site';
   }
 
   .footer-legal a {
+    display: inline-flex;
+    min-height: 32px;
+    align-items: center;
     flex: none;
     color: var(--text-secondary);
-    font: 700 11px / 1.4 var(--font-core);
+    font: 700 var(--fs-caption) / 1.4 var(--font-core);
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }

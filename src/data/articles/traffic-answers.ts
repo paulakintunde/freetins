@@ -6,19 +6,6 @@ const checked = {
 } as const;
 
 const rows = (value: string) => value.trim().split('\n').map((row) => row.split('|'));
-const emojiRules: Array<[RegExp, string]> = [
-  [/santa|saint nick|rudolph|christmas/i, '🎅'], [/snow|sleet|winter/i, '❄️'],
-  [/star/i, '⭐'], [/love|heart|kiss/i, '💖'], [/family|grandparent|mother|child|baby/i, '👪'],
-  [/dog|wolf/i, '🐕'], [/cat/i, '🐈'], [/bird|hen|dove/i, '🐦'], [/fish/i, '🐟'],
-  [/horse|camel/i, '🐎'], [/bee/i, '🐝'], [/rat/i, '🐀'], [/turkey/i, '🦃'],
-  [/coffee|chocolate/i, '☕'], [/candy/i, '🍬'], [/cookie/i, '🍪'], [/cake/i, '🍰'],
-  [/burger|food|popcorn/i, '🍽️'], [/apple/i, '🍎'], [/ice cream/i, '🍨'],
-  [/gift|present|package/i, '🎁'], [/tree|pear/i, '🎄'], [/bell/i, '🔔'], [/fire/i, '🔥'],
-  [/moon|night/i, '🌙'], [/sun/i, '☀️'], [/rain|storm|thunder/i, '⛈️'], [/peace|angel|holy|heaven/i, '🕊️'],
-  [/party|celebration|cheer|firework/i, '🎉'], [/home|house/i, '🏠'], [/letter|post|list/i, '💌'],
-  [/ski|snowboard/i, '⛷️'], [/dance/i, '💃'], [/shopping/i, '🛍️'], [/tv|movie|dvd/i, '📺'],
-];
-const answerEmoji = (answer: string) => emojiRules.find(([pattern]) => pattern.test(answer))?.[1] ?? '🧩';
 
 export const littleAlchemyArticle: EditorialArticle = {
   ...checked,
@@ -170,7 +157,7 @@ const guessEmojiAnswers = rows(`
 97|Shower Cap
 98|Time Flies
 99|Lance Armstrong
-100|Family Photo`).map(([puzzle = '', answer = '']) => [puzzle, answerEmoji(answer), answer]);
+100|Family Photo`).map(([puzzle = '', answer = '']) => [puzzle, answer]);
 
 export const guessEmojiArticle: EditorialArticle = {
   ...checked,
@@ -181,7 +168,7 @@ export const guessEmojiArticle: EditorialArticle = {
   eyebrow: 'Answer sheet',
   quickAnswer: 'Levels 1 to 10 contain 100 puzzles. The table numbers them continuously: 1 to 10 are Level 1, 11 to 20 are Level 2, and so on. Use Find in page to jump to a clue or answer.',
   sections: [
-    { id: 'answers', heading: 'All 100 answers', paragraphs: ['The puzzle column runs continuously to make the sheet easier to scan. Divide by ten to locate the in-game level: puzzle 37 is Level 4, puzzle 7. The clue icon is a scanning aid, not a reproduction of the app artwork.'], table: { caption: 'Guess the Emoji levels 1 to 10 answer list', columns: ['Puzzle', 'Clue icon', 'Answer'], rows: guessEmojiAnswers } },
+    { id: 'answers', heading: 'All 100 answers', paragraphs: ['The puzzle column runs continuously to make the sheet easier to scan. Divide by ten to locate the in-game level: puzzle 37 is Level 4, puzzle 7.'], table: { caption: 'Guess the Emoji levels 1 to 10 answer list', columns: ['Puzzle', 'Answer'], rows: guessEmojiAnswers } },
     { id: 'corrections', heading: 'Common spelling corrections', bullets: ['Level 2 begins with Shellfish, not Seashell.', 'Use Angry Birds in the plural.', 'Some game builds display compounds as two words even though the letter bank omits spaces.', 'Match the exact letter count when two phrases describe the same emoji clue.'] },
     { id: 'not-accepted', heading: 'Why an answer may be rejected', steps: ['Check that the app is on the same level and puzzle position.', 'Count the available letter slots.', 'Remove spaces and punctuation if the game does not provide them.', 'Try the capitalization-independent spelling shown in the table.', 'If the clue order differs, search the visible idea rather than relying only on the level number.'] },
   ],
@@ -299,7 +286,7 @@ const christmasAnswers = rows(`
 97|Cornucopia
 98|Wenceslas
 99|Annunciation
-100|Naughty or Nice`).map(([order = '', answer = '']) => [order, answerEmoji(answer), answer]);
+100|Naughty or Nice`).map(([order = '', answer = '']) => [order, answer]);
 
 export const christmasEmojiArticle: EditorialArticle = {
   ...checked,
@@ -310,7 +297,7 @@ export const christmasEmojiArticle: EditorialArticle = {
   eyebrow: 'Answer sheet',
   quickAnswer: 'The Christmas Emoji pack can shuffle its order between installs. Search this complete answer list by a word suggested by the clue, then match the number of letter boxes instead of relying only on the displayed level number.',
   sections: [
-    { id: 'answers', heading: 'All 100 Christmas Emoji answers', paragraphs: ['The clue icon makes the long list easier to scan but may not match the exact artwork in your app version. Confirm the answer against the visible objects and letter slots.'], table: { caption: '100 Pics Christmas Emoji answer list', columns: ['Reference order', 'Clue icon', 'Answer'], rows: christmasAnswers } },
+    { id: 'answers', heading: 'All 100 Christmas Emoji answers', paragraphs: ['Search this list by a word the clue suggests, then confirm the answer against the visible objects and the number of letter slots in your app version.'], table: { caption: '100 Pics Christmas Emoji answer list', columns: ['Reference order', 'Answer'], rows: christmasAnswers } },
     { id: 'shuffled-order', heading: 'Why your level order may differ', paragraphs: ['Different installs can present the same answer pool in a different order. Use the browser Find in page command and search for the likely subject, then confirm the phrase against the letter slots in your puzzle.'] },
     { id: 'alternate-answers', heading: 'Common alternate wording', table: { caption: 'Answer variants reported by different pack versions', columns: ['One version', 'Another version'], rows: [['Star', 'Stars'], ['O Christmas Tree', 'O Tannenbaum'], ['Cold Turkey', 'Turkey'], ['Santas House', 'Santas Grotto'], ['Jingle Bells', 'Bells'], ['Holy Spirit', 'Holy Ghost'], ['Star in the Night', 'Star of Wonder']] } },
     { id: 'not-accepted', heading: 'If an answer is not accepted', bullets: ['Match the number of letter boxes, excluding spaces.', 'Try the alternate wording above.', 'Ignore apostrophes if they are not available in the letter bank.', 'Search this page by a visible object rather than by level number.', 'Confirm you opened the Christmas Emoji pack, not another holiday pack.'] },

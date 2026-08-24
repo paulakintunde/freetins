@@ -6,7 +6,7 @@ export const resourcesArticle: EditorialArticle = {
   section: 'resources',
   title: 'Game Codes, Cheats and Answer Resources | Freetins',
   heading: 'Freetins resources',
-  description: 'Use the Freetins resource directory to find published cheats, answer sheets, guides, editorial policies and any source-backed code or reward pages currently available.',
+  description: 'The Freetins directory: published codes, daily links, cheats, answer sheets, guides and the editorial policies behind them.',
   eyebrow: 'Site directory',
   author: 'Paul A',
   authorPath: '/author/paul-a/',
@@ -25,6 +25,8 @@ export const resourcesArticle: EditorialArticle = {
         { label: 'Answer sheets', href: '/answers/', description: 'Mission, puzzle and level answers organized for fast scanning.' },
         { label: 'Game guides', href: '/guides/', description: 'Explanations, setup help and walkthroughs that need more context.' },
         { label: 'All games A-Z', href: '/games/', description: 'Every game with a published Freetins route.' },
+        { label: 'How we verify', href: '/how-we-verify/', description: 'The evidence rules: what counts as a source, the four evidence states, and when a code is usable.' },
+        { label: 'Editorial team', href: '/author/paul-a/', description: 'Who owns each section and what they are accountable for.' },
       ],
     },
     {

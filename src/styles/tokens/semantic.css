@@ -10,6 +10,13 @@
   --text-primary: var(--neutral-0);
   --text-secondary: var(--neutral-200);
   --text-tertiary: var(--neutral-300);
+  /*
+   * Small uppercase labels, eyebrows and stat captions. Kept separate from
+   * --text-disabled: that token is #767676, which only reaches 4.19:1 on
+   * --surface-raised and fails WCAG 1.4.3 AA at caption sizes. Reserve
+   * --text-disabled for genuinely inert text such as input placeholders.
+   */
+  --text-caption: var(--neutral-300);
   --text-disabled: var(--neutral-400);
   --text-inverse: var(--neutral-1000);
   --text-brand: var(--green-400);
@@ -48,6 +55,7 @@
   --text-primary: var(--neutral-1000);
   --text-secondary: var(--neutral-500);
   --text-tertiary: var(--neutral-400);
+  --text-caption: var(--neutral-500);
   --text-disabled: var(--neutral-300);
   --text-inverse: var(--neutral-0);
   --text-brand: var(--green-600);
