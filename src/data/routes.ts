@@ -1,5 +1,11 @@
-import { dailyLinkCatalogue, gameCatalogue } from './home';
+import {
+  dailyLinkCatalogue,
+  gameCatalogue,
+  publishedDailyLinkCatalogue,
+  publishedGameCatalogue,
+} from './home';
 import { editorialArticles } from './articles';
+import { getCheatOperationalPage, getProduct, operations } from './operations';
 
 export type RouteKind =
   | 'daily'
@@ -45,11 +51,13 @@ export interface RouteDefinition {
 const staticRoutes: RouteDefinition[] = [
   {
     path: '/daily/', routeId: 'daily', kind: 'daily', title: 'Daily links | Freetins', heading: 'Daily links',
-    description: 'Free dice, spins, rolls and energy links, opened on a published check schedule.',
+    description: 'Source-linked daily rewards with absolute check times and clear verification states.',
+    noindex: publishedDailyLinkCatalogue.length === 0,
   },
   {
     path: '/codes/', routeId: 'browse', kind: 'browse', title: 'Game codes | Freetins', heading: 'All codes',
-    description: 'Every game we track, ordered by the time its codes were last checked.',
+    description: 'Published code pages backed by source URLs, redemption steps and recorded verification events.',
+    noindex: publishedGameCatalogue.length === 0,
   },
   {
     path: '/search/', routeId: 'search', kind: 'search', title: 'Search | Freetins', heading: 'Search',
@@ -57,7 +65,7 @@ const staticRoutes: RouteDefinition[] = [
   },
   {
     path: '/cheats/', routeId: 'cheats', kind: 'cheats', title: 'Game cheats | Freetins', heading: 'Cheats',
-    description: 'Game cheats entered by hand and confirmed against the current patch.',
+    description: 'Published cheat sheets with platform distinctions, warnings and cited sources.',
   },
   {
     path: '/answers/', routeId: 'answers', kind: 'info', title: 'Answers | Freetins', heading: 'Answers',
@@ -69,23 +77,24 @@ const staticRoutes: RouteDefinition[] = [
   },
   {
     path: '/how-we-verify/', routeId: 'verify', kind: 'verify', title: 'How we verify | Freetins', heading: 'How we verify',
-    description: 'The source, check schedule and removal rules behind every code on Freetins.',
+    description: 'The evidence states, source requirements, freshness windows and removal rules used by Freetins.',
   },
   {
     path: '/submit/', routeId: 'submit', kind: 'submit', title: 'Submit a code | Freetins', heading: 'Submit a code',
-    description: 'Send a code to the Freetins verification queue.', eyebrow: 'Community',
+    description: 'Submission intake is not active yet. Use the published contact address for corrections.', eyebrow: 'Community', noindex: true,
   },
   {
     path: '/alerts/', routeId: 'alerts', kind: 'alerts', title: 'Code alerts | Freetins', heading: 'Know before the code expires',
-    description: 'Choose games and get an alert when a verified code is published.',
+    description: 'Alert delivery is not active yet. This page explains the launch requirement.', noindex: true,
   },
   {
     path: '/blog/', routeId: 'updates', kind: 'updates', title: 'Blog | Freetins', heading: 'Blog',
-    description: 'The verification and change log.',
+    description: 'A publication log appears here when source-backed operational changes are recorded.', noindex: true,
   },
   {
     path: '/games/', routeId: 'az', kind: 'az', title: 'All games A-Z | Freetins', heading: 'All games A-Z',
-    description: 'Every game with a page on Freetins and its current number of live codes or links.',
+    description: 'Every published game page backed by operational content records.',
+    noindex: publishedGameCatalogue.length + publishedDailyLinkCatalogue.length === 0,
   },
 ];
 
@@ -103,25 +112,22 @@ const authorRoutes: RouteDefinition[] = ([
   slug,
 }));
 
-const cheatRoutes: RouteDefinition[] = ([
-  ['gta-5', 'GTA 5', 'GTA 5 cheats for PS5, Xbox and PC'],
-  ['gta-san-andreas', 'GTA San Andreas', 'GTA San Andreas cheats'],
-  ['gta-vice-city', 'GTA Vice City', 'GTA Vice City cheats'],
-  ['red-dead-redemption-2', 'Red Dead Redemption 2', 'Red Dead Redemption 2 cheats'],
-  ['the-sims-4', 'The Sims 4', 'The Sims 4 cheats'],
-  ['skyrim', 'Skyrim', 'Skyrim console commands'],
-  ['fallout-4', 'Fallout 4', 'Fallout 4 console commands'],
-  ['minecraft', 'Minecraft', 'Minecraft commands'],
-] as const).map(([slug, name, heading]) => ({
-  path: `/cheats/${slug}/`,
-  routeId: 'cheat',
-  kind: 'cheat',
-  title: `${heading} | Freetins`,
-  heading,
-  description: `${name} cheats confirmed by hand against the current game build.`,
-  name,
-  slug,
-}));
+const cheatRoutes: RouteDefinition[] = operations.cheatGames.map((game) => {
+  const page = getCheatOperationalPage(game.slug);
+  return {
+    path: `/cheats/${game.slug}/`,
+    routeId: 'cheat',
+    kind: 'cheat',
+    title: `${game.heading} | Freetins`,
+    heading: game.heading,
+    description: page?.isPublished
+      ? `${game.name} cheats with platform scope, source URLs and recorded verification events.`
+      : `${game.name} is configured for cheat verification, but no cheat sheet is published yet.`,
+    name: game.name,
+    slug: game.slug,
+    noindex: !page?.isPublished,
+  };
+});
 
 const gearCategories = [
   ['roblox', 'Roblox gear'],
@@ -135,9 +141,10 @@ const gearCategoryRoutes: RouteDefinition[] = gearCategories.map(([slug, name]) 
   kind: 'gearCategory',
   title: `${name} | Freetins`,
   heading: name,
-  description: `Freetins picks for ${name.toLowerCase()}, with prices and affiliate relationships shown clearly.`,
+  description: `Source-linked ${name.toLowerCase()} research appears here when a checked product record is published.`,
   name,
   slug,
+  noindex: !operations.products.some((product) => product.category === slug),
 }));
 
 const gearProductRoutes: RouteDefinition[] = ([
@@ -150,12 +157,15 @@ const gearProductRoutes: RouteDefinition[] = ([
 ] as const).map(([category, slug, name]) => ({
   path: `/gear/${category}/${slug}/`,
   routeId: 'gearItem',
-  kind: 'gearProduct',
+  kind: 'gearProduct' as const,
   title: `${name} | Freetins`,
   heading: name,
-  description: `Price, specifications and the Freetins rationale for ${name.toLowerCase()}.`,
+  description: getProduct(slug)
+    ? `Checked price, merchant source and editorial rationale for ${name.toLowerCase()}.`
+    : `${name} is configured for product research, but no checked listing is published yet.`,
   name,
   slug,
+  noindex: !getProduct(slug),
 }));
 
 const guideRoutes: RouteDefinition[] = ([
@@ -168,12 +178,13 @@ const guideRoutes: RouteDefinition[] = ([
 ] as const).map(([slug, heading]) => ({
   path: `/guides/${slug}/`,
   routeId: 'guide',
-  kind: 'guide',
+  kind: 'guide' as const,
   title: `${heading} | Freetins`,
   heading,
-  description: `${heading}, checked against the current Grow a Garden patch.`,
+  description: `${heading} is configured for editorial review but is not published yet.`,
   name: 'Grow a Garden',
   slug,
+  noindex: true,
 }));
 
 const articleRoutes: RouteDefinition[] = editorialArticles.map((article) => ({
@@ -190,11 +201,14 @@ const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => ({
   path: `/daily/${game.slug}/`,
   routeId: 'freebies',
   kind: 'dailyGame',
-  title: `Free ${game.name} links - August 2026 | Freetins`,
-  heading: `Free ${game.name} links - August 2026`,
-  description: `Working ${game.name} reward links, each carrying the minute it was last opened.`,
+  title: `${game.name} reward links and claim guide | Freetins`,
+  heading: `${game.name} reward links`,
+  description: game.isPublished
+    ? `${game.name} reward links with source URLs and recorded check times.`
+    : `${game.name} is configured for verification, but no reward link is published yet.`,
   name: game.name,
   slug: game.slug,
+  noindex: !game.isPublished,
 }));
 
 const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
@@ -204,12 +218,15 @@ const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
       path: `${root}/`,
       routeId: 'codes',
       kind: 'codes' as const,
-      title: `${game.name} codes | Freetins`,
+      title: `${game.name} codes and redemption guide | Freetins`,
       heading: game.name,
-      description: `Working ${game.name} codes, with expired codes, values and updates kept under the same intent.`,
+      description: game.isPublished
+        ? `${game.name} codes with source URLs, redemption steps and recorded verification events.`
+        : `${game.name} is configured for verification, but no code is published yet.`,
       name: game.name,
       slug: game.slug,
       platform: game.platform,
+      noindex: !game.isPublished,
     },
     {
       path: `${root}/values/`,
@@ -217,10 +234,13 @@ const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
       kind: 'values' as const,
       title: `${game.name} item values | Freetins`,
       heading: 'Item values',
-      description: `${game.name} item values with a source and update time on every row.`,
+      description: game.valueCount > 0
+        ? `${game.name} item values with a source and observation time on every row.`
+        : `${game.name} item values are configured, but no sourced value row is published yet.`,
       name: game.name,
       slug: game.slug,
       platform: game.platform,
+      noindex: game.valueCount === 0,
     },
     {
       path: `${root}/expired/`,
@@ -228,10 +248,13 @@ const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
       kind: 'archive' as const,
       title: `${game.name} expired code archive | Freetins`,
       heading: 'Expired code archive',
-      description: `Every pulled ${game.name} code, with first-seen and removal dates.`,
+      description: game.expiredCount > 0
+        ? `Expired ${game.name} code records with retained sources and removal check times.`
+        : `${game.name} has no expired code record in the published archive yet.`,
       name: game.name,
       slug: game.slug,
       platform: game.platform,
+      noindex: game.expiredCount === 0,
     },
     {
       path: `${root}/updates/`,
@@ -239,10 +262,13 @@ const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
       kind: 'updates' as const,
       title: `${game.name} updates | Freetins`,
       heading: 'Updates',
-      description: `Documented update cadence and change history for ${game.name}.`,
+      description: game.updateCount > 0
+        ? `Source-linked update history for ${game.name}.`
+        : `${game.name} updates are configured, but no source-linked timeline entry is published yet.`,
       name: game.name,
       slug: game.slug,
       platform: game.platform,
+      noindex: game.updateCount === 0,
     },
   ];
 });

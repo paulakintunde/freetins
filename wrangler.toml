@@ -3,6 +3,6 @@ pages_build_output_dir = "dist"
 compatibility_date = "2026-08-22"
 compatibility_flags = ["nodejs_compat"]
 
-# D1 and KV bindings are added after their Cloudflare resources are provisioned.
-# Required production bindings: DB, STATUS, ALERTS, TURNSTILE_SECRET,
-# and ALERT_TOKEN_SECRET.
+# Optional checker activation requires a STATUS KV binding containing
+# `checker:current`. Alert intake is configured as an HTTPS endpoint in
+# src/content/operations.json after that service is deployed.

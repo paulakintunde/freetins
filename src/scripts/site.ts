@@ -146,6 +146,34 @@ const syncConsent = () => {
   banner.hidden = true;
 };
 
+const syncCheckerStatus = async () => {
+  const banner = document.querySelector<HTMLElement>('[data-checker-status-url]');
+  const url = banner?.dataset.checkerStatusUrl;
+  if (!banner || !url) return;
+
+  try {
+    const response = await fetch(url, { cache: 'no-store', headers: { Accept: 'application/json' } });
+    if (!response.ok) return;
+    const snapshot = await response.json() as { state?: string; message?: string };
+    if (!['Unconfigured', 'Live', 'Degraded', 'Outage'].includes(snapshot.state ?? '')) return;
+    const state = snapshot.state ?? 'Unconfigured';
+    const title = banner.querySelector<HTMLElement>('[data-checker-title]');
+    const message = banner.querySelector<HTMLElement>('[data-checker-message]');
+    const titles: Record<string, string> = {
+      Unconfigured: 'Automated checking is not active',
+      Live: 'Automated checks are live',
+      Degraded: 'Checks are running behind',
+      Outage: 'Automated checks are unavailable',
+    };
+    banner.className = `outage-banner ${state.toLowerCase()}`;
+    banner.hidden = state === 'Live';
+    if (title) title.textContent = titles[state] ?? titles.Unconfigured ?? 'Automated checking is not active';
+    if (message && snapshot.message) message.textContent = snapshot.message;
+  } catch {
+    // Keep the server-rendered fallback when the status endpoint cannot be reached.
+  }
+};
+
 const syncOutageBanner = () => {
   const banner = document.querySelector<HTMLElement>('[data-outage-banner]');
   if (!banner) return;
@@ -165,29 +193,6 @@ const dismissOutageBanner = () => {
   } catch {
     // Session storage can be unavailable in hardened privacy modes.
   }
-};
-
-const showPushAllowed = () => {
-  const prompt = document.querySelector<HTMLElement>('[data-push-prompt]');
-  const allowed = document.querySelector<HTMLElement>('[data-push-allowed]');
-  if (prompt) prompt.hidden = true;
-  if (allowed) allowed.hidden = false;
-};
-
-const syncPushState = () => {
-  if ('Notification' in window && Notification.permission === 'granted') showPushAllowed();
-};
-
-const requestPushPermission = async () => {
-  const prompt = document.querySelector<HTMLElement>('[data-push-prompt]');
-  if (!('Notification' in window)) {
-    const message = prompt?.querySelector('p');
-    if (message) message.textContent = 'Notifications are not available in this browser.';
-    return;
-  }
-
-  const permission = await Notification.requestPermission();
-  if (permission === 'granted') showPushAllowed();
 };
 
 const writeClipboard = async (text: string) => {
@@ -233,11 +238,11 @@ const copyCode = async (button: HTMLButtonElement) => {
   }
 };
 
-const syncPageState = () => {
+const syncPageState = async () => {
   closeDrawer(false);
   syncConsent();
+  await syncCheckerStatus();
   syncOutageBanner();
-  syncPushState();
 };
 
 document.addEventListener('click', (event) => {
@@ -275,7 +280,9 @@ document.addEventListener('click', (event) => {
     managePanel.hidden = !expanded;
     manageButton.textContent = expanded ? 'Close choices' : 'Manage';
     if (banner.dataset.consentMode === 'gdpr') {
-      acceptButton.textContent = expanded ? 'Save choices' : 'Accept all';
+      acceptButton.textContent = expanded
+        ? 'Save choices'
+        : banner.dataset.consentOptional === 'true' ? 'Accept all' : 'Continue';
     }
     return;
   }
@@ -299,16 +306,6 @@ document.addEventListener('click', (event) => {
     dismissOutageBanner();
     return;
   }
-  if (target.closest('[data-push-allow]')) {
-    void requestPushPermission();
-    return;
-  }
-  if (target.closest('[data-push-dismiss]')) {
-    const prompt = document.querySelector<HTMLElement>('[data-push-prompt]');
-    if (prompt) prompt.hidden = true;
-    return;
-  }
-
   const copyButton = target.closest<HTMLButtonElement>('[data-copy-code]');
   if (copyButton) void copyCode(copyButton);
 }, { signal: controller.signal });

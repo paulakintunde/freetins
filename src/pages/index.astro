@@ -2,14 +2,17 @@
 import { Picture } from 'astro:assets';
 import Button from '../components/ui/Button.astro';
 import SearchField from '../components/ui/SearchField.astro';
-import { dailyGames, homeTiles, pulse, sponsoredGames } from '../data/home';
-import { homeGameArtwork, homeHeroArtwork, partnerArtwork, sponsoredGameArtwork } from '../data/home-images';
+import { dailyGames, homeTiles, pulse, publishedGameCatalogue } from '../data/home';
+import { homeHeroArtwork, partnerArtwork } from '../data/home-images';
+import { getActiveSponsorships, operations } from '../data/operations';
+import { gameArtwork } from '../data/site-images';
 import { hotSearches } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = 'Freetins — free codes, checked hourly';
-const description = 'Working game codes and daily reward links, rechecked every hour. Each code carries the minute it was last verified, and expired codes stay visible.';
+const title = 'Freetins - source-backed game codes and guides';
+const description = 'Game codes, reward links, cheats, answers and guides with clear publication states, source records and absolute review times where operational checks exist.';
 const socialImage = '/og/freetins-home-game-codes.jpg';
+const activeSponsorships = getActiveSponsorships();
 
 function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   const artwork = artworks[name];
@@ -26,7 +29,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   title={title}
   description={description}
   image={socialImage}
-  imageAlt="Freetins game code rewards checked every hour"
+  imageAlt="Freetins source-backed game codes and reward records"
 >
   <section class="hero">
     <div class="hero-art">
@@ -47,10 +50,10 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
       <div class="hero-copy">
         <div class="eyebrow">
           <span aria-hidden="true"></span>
-          <span>Checked every hour · not every month</span>
+          <span>Evidence before freshness claims</span>
         </div>
-        <h1>Free codes<br />while they still work</h1>
-        <p>Every code and daily link on this site carries the minute it was last opened. Nothing here is a list someone republished with a new date on top.</p>
+        <h1>Game codes<br />with a record behind them</h1>
+        <p>Operational pages publish from source URLs, redemption paths and recorded verification events. Configured drafts stay clearly labeled until that evidence exists.</p>
         <div class="hero-actions">
           <Button href="/codes/">Find your game</Button>
           <Button href="/how-we-verify/" variant="secondary">How we verify</Button>
@@ -60,8 +63,8 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   </section>
 
   <section class="page-section intro-section content-boundary">
-    <h2>Today’s drops</h2>
-    <p class="section-intro">Every game below had a working code or link verified in the last three hours. Expired entries stay on the page, struck through, so you can see what we checked.</p>
+    <h2>Publication status</h2>
+    <p class="section-intro">These figures are calculated from the operational record file. When no verification event exists, the site says so instead of manufacturing freshness.</p>
 
         <div class="home-search">
       <SearchField label="Find your game" placeholder="Grow a Garden, Monopoly GO, Blue Lock Rivals…" />
@@ -85,13 +88,13 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
 
   <section class="page-section content-boundary">
     <div class="section-heading">
-      <h2>Fresh in the last three hours</h2>
-      <a href="/codes/">All 90 games</a>
+      <h2>Recently verified code pages</h2>
+      <a href="/codes/">{publishedGameCatalogue.length} published games</a>
     </div>
 
-    <div class="game-grid">
+    {homeTiles.length > 0 ? <div class="game-grid">
       {homeTiles.map((tile) => {
-        const artwork = requireArtwork(homeGameArtwork, tile.name);
+        const artwork = requireArtwork(gameArtwork, tile.slug);
 
         return (
           <a class="game-tile" href={tile.href}>
@@ -111,35 +114,32 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
               <div class="tile-scrim" aria-hidden="true"></div>
               <div class="verified-label">
                 <span aria-hidden="true"></span>
-                <strong>Verified {tile.age} ago</strong>
+                <strong>{tile.checkedLabel}</strong>
               </div>
             </div>
             <div class="game-copy">
               <h3>{tile.name}</h3>
               <div>
-                <span>{tile.live} live</span>
+                <span>{tile.activeCount} active records</span>
                 <span>·</span>
-                <span>{tile.rate}% working</span>
+                <span>{tile.staleCount} need recheck</span>
               </div>
             </div>
           </a>
         );
       })}
-    </div>
+    </div> : <div class="data-empty"><strong>No operational code page is published yet</strong><p>The component is active and will populate automatically when a configured game has valid entries and verification events.</p></div>}
   </section>
 
   <section class="page-section sponsored-section content-boundary" data-ad-slot="FT-SPONSOR-ROW">
-    <h2>Sponsored games</h2>
-    <div class="sponsored-grid">
-      {sponsoredGames.map((game) => {
-        const artwork = requireArtwork(sponsoredGameArtwork, game.name);
-
-        return (
-          <div class="sponsored-card">
+    <h2>Sponsorship</h2>
+    {activeSponsorships.length > 0 ? <div class="sponsored-grid">
+      {activeSponsorships.map((entry) => (
+          <a class="sponsored-card" href={entry.targetUrl} rel="sponsored noopener">
             <div class="sponsored-media">
               <Picture
-                src={artwork.src}
-                alt={artwork.alt}
+                src={partnerArtwork}
+                alt=""
                 formats={['avif']}
                 fallbackFormat="webp"
                 widths={[320, 528, 792, 1056]}
@@ -149,13 +149,12 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
               />
             </div>
             <div class="sponsored-copy">
-              <h3>{game.name}</h3>
-              <p>{game.label}</p>
+              <h3>{entry.title}</h3>
+              <p>{entry.label} · {entry.disclosure}</p>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          </a>
+      ))}
+    </div> : <div class="data-empty"><strong>No paid placement is active</strong><p>This module is preserved, but it renders a promotion only when a dated sponsorship record, destination and disclosure are configured.</p></div>}
   </section>
 
   <section class="page-section content-boundary">
@@ -163,18 +162,18 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
       <h2>Daily link games</h2>
       <a href="/daily/">All daily links</a>
     </div>
-    <div class="daily-list">
+    {dailyGames.length > 0 ? <div class="daily-list">
       {dailyGames.map((game) => (
         <a href={game.href}>
           <span>{game.name}</span>
-          <strong>{game.live} live links</strong>
-          <time>{game.age} ago</time>
+          <strong>{game.activeCount} active links</strong>
+          <time datetime={game.latestCheckedAt ?? undefined}>{game.checkedLabel}</time>
         </a>
       ))}
-    </div>
+    </div> : <div class="data-empty"><strong>No daily-link page is published yet</strong><p>The section will populate from validated link and verification records.</p></div>}
   </section>
 
-  <section class="page-section native-section content-boundary" data-ad-slot="FT-NATIVE-HOME">
+  <section class="page-section native-section content-boundary" data-ad-slot={operations.services.advertising.enabled ? 'FT-NATIVE-HOME' : undefined}>
     <div class="native-card">
       <div class="native-media">
         <Picture
@@ -189,15 +188,24 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
         />
       </div>
       <div>
-        <span>Partner content</span>
-        <h2>Native placement, below the fold</h2>
-        <p>Sits after the last editorial block so it never pushes a code table down.</p>
+        <span>Advertising status</span>
+        <h2>{operations.services.advertising.enabled ? 'Advertising is configured' : 'Advertising is not active'}</h2>
+        <p>{operations.services.advertising.enabled ? `${operations.services.advertising.provider} is configured for ${operations.services.advertising.placementIds.length} named placements.` : 'The placement remains in the architecture, but no vendor script, targeting claim or paid creative is active.'}</p>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
+  .data-empty {
+    border: 1px dashed var(--border-strong);
+    background: var(--surface-raised);
+    padding: clamp(20px, 3vw, 30px);
+  }
+
+  .data-empty strong { color: var(--text-primary); }
+  .data-empty p { max-width: 72ch; margin: 8px 0 0; color: var(--text-secondary); line-height: 1.6; }
+
   .hero {
     position: relative;
     width: 100%;

@@ -7,16 +7,21 @@ interface Props {
 
 const { mode = 'gdpr' } = Astro.props;
 const isGdpr = mode === 'gdpr';
+const hasOptionalPurposes = consentPurposes.some((purpose) => !purpose.required);
 const copy = isGdpr
-  ? {
+  ? hasOptionalPurposes ? {
       eyebrow: 'Cookies',
       title: 'We use cookies to run ads on this site',
-      body: 'Three necessary cookies keep the site working and cannot be turned off. Analytics, advertising and personalisation are off until you allow them, and rejecting everything does not change a single code on the page.',
+      body: 'Necessary storage keeps the site working. Configured advertising remains off until you allow it, and rejecting it does not change content.',
+    } : {
+      eyebrow: 'Site storage',
+      title: 'Only necessary storage is active',
+      body: 'Freetins stores your privacy choice and temporary interface preferences. No analytics, advertising or personalisation vendor is configured.',
     }
   : {
       eyebrow: 'Your privacy choices',
-      title: 'Do not sell or share my personal information',
-      body: 'Ads on this site can be personalised using an advertising cookie. You can opt out of the sale or sharing of your information at any time, and we honour Global Privacy Control automatically.',
+      title: hasOptionalPurposes ? 'Do not sell or share my personal information' : 'Optional tracking is not active',
+      body: hasOptionalPurposes ? 'Configured advertising remains subject to your privacy choices and Global Privacy Control.' : 'No analytics, advertising or personalisation vendor is configured.',
     };
 ---
 
@@ -24,6 +29,7 @@ const copy = isGdpr
   class="consent-banner"
   data-consent-banner
   data-consent-mode={mode}
+  data-consent-optional={hasOptionalPurposes ? 'true' : 'false'}
   aria-label="Cookie choices"
 >
   <div class="consent-inner content-boundary">
@@ -69,9 +75,9 @@ const copy = isGdpr
     </div>
 
     <div class="consent-actions">
-      {isGdpr && <button class="ghost-button" type="button" data-consent-reject>Reject all</button>}
+      {isGdpr && hasOptionalPurposes && <button class="ghost-button" type="button" data-consent-reject>Reject all</button>}
       <button class="ghost-button" type="button" data-consent-toggle>Manage</button>
-      <button class="accept-button" type="button" data-consent-accept>{isGdpr ? 'Accept all' : 'Confirm choices'}</button>
+      <button class="accept-button" type="button" data-consent-accept>{isGdpr ? hasOptionalPurposes ? 'Accept all' : 'Continue' : 'Confirm choices'}</button>
     </div>
   </div>
 </section>

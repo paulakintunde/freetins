@@ -5,6 +5,7 @@ import ConsentBanner from './partials/ConsentBanner.astro';
 import Footer from './partials/Footer.astro';
 import Header from './partials/Header.astro';
 import OutageBanner, { type CheckerStatus } from './partials/OutageBanner.astro';
+import { operations } from '../data/operations';
 
 interface Props {
   title: string;
@@ -20,7 +21,7 @@ interface Props {
 const {
   title,
   description,
-  checkerStatus = 'Live',
+  checkerStatus = operations.services.checker.enabled ? 'Degraded' : 'Unconfigured',
   consentMode = 'gdpr',
   image = '/og/freetins-home-game-codes.jpg',
   imageAlt = 'Freetins game codes and daily reward links',
@@ -46,7 +47,7 @@ const schema = {
       '@id': 'https://freetins.com/#org',
       name: 'Freetins',
       url: 'https://freetins.com',
-      description: 'Game codes and daily reward links, verified on a published check schedule.',
+      description: 'Source-backed game codes, daily reward links, cheats, answers and guides with explicit publication states.',
       publishingPrinciples: 'https://freetins.com/how-we-verify/',
       correctionsPolicy: 'https://freetins.com/how-we-verify/',
       email: 'hello@freetins.com',
@@ -121,7 +122,7 @@ const schema = {
   <body>
     <a class="skip-link" href="#ft-main">Skip to content</a>
     <Header currentPath={Astro.url.pathname} />
-    <OutageBanner status={checkerStatus} />
+    <OutageBanner status={checkerStatus} statusUrl={operations.services.checker.enabled ? '/api/checker-status.json' : undefined} />
     <main id="ft-main">
       <slot />
     </main>

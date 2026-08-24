@@ -1,8 +1,12 @@
 import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
+import { routeDefinitions } from './src/data/routes.ts';
 
-const excludedFromSitemap = ['/internal/', '/search/'];
+const excludedFromSitemap = new Set([
+  '/internal/',
+  ...routeDefinitions.filter((route) => route.noindex).map((route) => route.path),
+]);
 
 export default defineConfig({
   site: 'https://freetins.com',
@@ -21,7 +25,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !excludedFromSitemap.some((path) => page.includes(path)),
+      filter: (page) => !excludedFromSitemap.has(new URL(page).pathname),
     }),
   ],
   compressHTML: true,

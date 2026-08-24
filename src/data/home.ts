@@ -1,122 +1,64 @@
-const catalogue = [
-  ['Grow a Garden', 8, 3],
-  ['Basketball Zero', 5, 11],
-  ['Volleyball Legends', 6, 18],
-  ['Blue Lock Rivals', 4, 26],
-  ['99 Nights in the Forest', 7, 34],
-  ["Sol's RNG", 3, 41],
-  ["Dandy's World", 5, 52],
-  ['Type Soul', 2, 64],
-  ['Anime Card Clash', 6, 71],
-  ['Tennis Zero', 4, 96],
-  ['Jujutsu Zero', 3, 118],
-  ['Weak Legacy 2', 5, 132],
-  ['Hunty Zombies', 4, 148],
-  ['Sailor Piece', 3, 166],
-  ['Jujutsu Infinite', 5, 184],
-  ['Azure Latch', 2, 205],
-  ['Fruit Battlegrounds', 6, 228],
-  ['Untitled Boxing Game', 3, 246],
-  ['The Forge', 4, 268],
-  ['Kaizen', 2, 289],
-  ['Mugen', 3, 310],
-  ['Dress to Impress', 5, 336],
-  ['Universal Tower Defense', 2, 358],
-  ['Anime Last Stand', 4, 384],
-  ['Anime Final Quest', 3, 410],
-  ['Flashpoint', 2, 438],
-  ['Fisch', 5, 466],
-  ['Rivals', 3, 492],
-  ['Shindo Life', 4, 520],
-  ['Anime Ranger X', 2, 552],
-  ['Racket Rivals', 3, 584],
-  ['Pixel Blade', 2, 618],
-  ['Bizarre Lineage', 3, 652],
-  ['Anime Apocalypse', 2, 688],
-  ['Clover Retribution', 4, 724],
-  ['Devil Hunters', 3, 762],
-  ['SpongeBob Tower Defense', 2, 800],
-  ['Ninja Time', 3, 840],
-  ['King Legacy', 4, 882],
-  ['Anime Guardians', 2, 925],
-  ['Dragon Souls', 3, 970],
-  ['Soccer Zero', 2, 1016],
-  ['Playground Basketball', 3, 1064],
-  ['Anime Eternal', 2, 1114],
-  ['Jump Star', 3, 1165],
-  ['Restaurant Tycoon 3', 2, 1218],
-  ['Slap Battles', 4, 1272],
-  ['Blade Ball', 3, 1328],
-  ['Plants vs Brainrots', 5, 1386],
-  ['Da Hood', 2, 1445],
-  ['Anime Vanguards', 4, 1506],
-  ['Driving Empire', 2, 1568],
-] as const;
+import {
+  formatAbsoluteTimestamp,
+  getGameOperationalPage,
+  operationalSummary,
+  operations,
+} from './operations';
 
-const slugify = (value: string) =>
-  value
-    .toLowerCase()
-    .replace(/['’]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
+const codeGames = operations.games.filter((game) => game.surface === 'codes');
+const dailyLinkGames = operations.games.filter((game) => game.surface === 'daily');
 
-const formatAge = (minutes: number) => {
-  if (minutes < 60) return `${minutes} min`;
-  if (minutes < 1440) return `${Math.round(minutes / 60)} h`;
-  return `${Math.round(minutes / 1440)} d`;
+const toCatalogueEntry = (game: (typeof operations.games)[number]) => {
+  const page = getGameOperationalPage(game.slug);
+  if (!page) throw new Error(`Missing operational page for ${game.slug}`);
+
+  return {
+    name: game.name,
+    slug: game.slug,
+    platform: game.platform,
+    publicationState: game.publicationState,
+    isPublished: page.isPublished,
+    verifiedCount: page.verifiedCount,
+    reportedCount: page.reportedCount,
+    activeCount: page.verifiedCount + page.reportedCount,
+    staleCount: page.staleCount,
+    expiredCount: page.expiredCount,
+    valueCount: page.values.length,
+    updateCount: page.updates.length,
+    latestCheckedAt: page.latestCheckedAt,
+    checkedLabel: page.latestCheckedAt ? formatAbsoluteTimestamp(page.latestCheckedAt) : 'No verification recorded',
+  };
 };
 
-export const gameCatalogue = catalogue.map(([name, live, minutes]) => ({
-  name,
-  live,
-  minutes,
-  age: formatAge(minutes),
-  slug: slugify(name),
-  platform: 'roblox',
-}));
+export const gameCatalogue = codeGames.map(toCatalogueEntry);
+export const publishedGameCatalogue = gameCatalogue.filter((game) => game.isPublished);
+export const plannedGameCatalogue = gameCatalogue.filter((game) => !game.isPublished);
+
+export const dailyLinkCatalogue = dailyLinkGames.map(toCatalogueEntry);
+export const publishedDailyLinkCatalogue = dailyLinkCatalogue.filter((game) => game.isPublished);
+
+const summary = operationalSummary();
+const formatMedianAge = (milliseconds: number | null) => {
+  if (milliseconds === null) return 'Not available';
+  const minutes = Math.max(0, Math.round(milliseconds / 60_000));
+  if (minutes < 60) return `${minutes} min`;
+  return `${Math.round(minutes / 60)} h`;
+};
 
 export const pulse = [
-  { value: '312', label: 'games watched' },
-  { value: '1,847', label: 'links checked today' },
-  { value: '41 min', label: 'median code age' },
-  { value: '94%', label: 'verified in the last hour' },
+  { value: String(summary.publishedGames), label: 'operational game pages published' },
+  { value: String(summary.checksToday), label: 'checks recorded today' },
+  { value: formatMedianAge(summary.medianAgeMs), label: 'median verification age' },
+  { value: summary.recentlyCheckedPercent === null ? 'Not available' : `${summary.recentlyCheckedPercent}%`, label: 'checked in the last hour' },
 ] as const;
 
-export const homeTiles = catalogue.slice(0, 12).map(([name, live, minutes], index) => ({
-  name,
-  live,
-  age: formatAge(minutes),
-  rate: 92 + (index % 7),
-  href: `/codes/${slugify(name)}/`,
-}));
+export const homeTiles = publishedGameCatalogue
+  .filter((game) => game.latestCheckedAt)
+  .sort((left, right) => Date.parse(right.latestCheckedAt ?? '') - Date.parse(left.latestCheckedAt ?? ''))
+  .slice(0, 12)
+  .map((game) => ({ ...game, href: `/codes/${game.slug}/` }));
 
-export const sponsoredGames = [
-  { name: 'Fisch', label: 'Sponsored by the developer' },
-  { name: 'Anime Vanguards', label: 'Promoted placement' },
-  { name: 'Driving Empire', label: 'Sponsored by the developer' },
-  { name: 'Plants vs Brainrots', label: 'Promoted placement' },
-] as const;
-
-const dailyRaw = [
-  ['Monopoly GO', 14, 6],
-  ['Coin Master', 9, 12],
-  ['Dice Dreams', 7, 21],
-  ['Bingo Blitz', 5, 38],
-  ['Family Island', 6, 44],
-  ['Board Kings', 4, 58],
-] as const;
-
-export const dailyGames = dailyRaw.map(([name, live, minutes]) => ({
-  name,
-  live,
-  age: formatAge(minutes),
-  href: `/daily/${slugify(name)}/`,
-}));
-
-export const dailyLinkCatalogue = dailyRaw.map(([name, live, minutes]) => ({
-  name,
-  live,
-  minutes,
-  age: formatAge(minutes),
-  slug: slugify(name),
+export const dailyGames = publishedDailyLinkCatalogue.map((game) => ({
+  ...game,
+  href: `/daily/${game.slug}/`,
 }));

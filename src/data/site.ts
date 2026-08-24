@@ -88,30 +88,18 @@ export const consentPurposes = [
     description: 'Consent choice, desktop or mobile view, CDN routing.',
     required: true,
   },
-  {
-    id: 'analytics',
-    name: 'Analytics',
-    description: 'Aggregate page counts. No cookie, no cross-site profile.',
-    required: false,
-  },
-  {
+  ...(operations.services.advertising.enabled ? [{
     id: 'advertising',
     name: 'Advertising',
-    description: 'Lets buyers measure whether an ad was seen.',
+    description: `Allows ${operations.services.advertising.provider} to serve configured placements after consent.`,
     required: false,
-  },
-  {
-    id: 'personalisation',
-    name: 'Personalisation',
-    description: 'Targets ads using what you read here.',
-    required: false,
-  },
+  }] : []),
 ] as const;
 
 export const consentVendors = [
-  { name: 'Google Ad Manager', purpose: 'Advertising' },
   { name: 'Cloudflare', purpose: 'Delivery' },
-  { name: 'Plausible', purpose: 'Analytics' },
-  { name: 'Discord', purpose: 'Alerts' },
-  { name: 'Amazon Associates', purpose: 'Affiliate' },
+  ...(operations.services.advertising.enabled && operations.services.advertising.provider
+    ? [{ name: operations.services.advertising.provider, purpose: 'Advertising' }]
+    : []),
 ] as const;
+import { operations } from './operations';

@@ -13,15 +13,15 @@ interface CheckerStatusStore {
 }
 
 const unavailableSnapshot: CheckerSnapshot = {
-  state: 'Degraded',
+  state: 'Unconfigured',
   lastFullRun: 'Unavailable',
   pagesChecked: 0,
   medianResponseMs: 0,
-  message: 'Live checker data is temporarily unavailable. Published verification times remain visible on each code page.',
+  message: 'Automated checker data is not configured. Published manual verification records remain visible.',
 };
 
 const isCheckerState = (value: unknown): value is CheckerStatus =>
-  value === 'Live' || value === 'Degraded' || value === 'Outage';
+  value === 'Unconfigured' || value === 'Live' || value === 'Degraded' || value === 'Outage';
 
 const parseSnapshot = (value: unknown): CheckerSnapshot | null => {
   if (!value || typeof value !== 'object') return null;

@@ -4,7 +4,13 @@ import Button from '../ui/Button.astro';
 import EditorialArticle from './EditorialArticle.astro';
 import { requireArticleArtwork } from '../../data/article-images';
 import { editorialArticles, getArticleByPath } from '../../data/articles';
-import { dailyLinkCatalogue, gameCatalogue } from '../../data/home';
+import {
+  dailyLinkCatalogue,
+  gameCatalogue,
+  plannedGameCatalogue,
+  publishedDailyLinkCatalogue,
+  publishedGameCatalogue,
+} from '../../data/home';
 import {
   dailyArtwork,
   gameArtwork,
@@ -12,6 +18,18 @@ import {
   requireArtwork,
 } from '../../data/site-images';
 import type { RouteDefinition } from '../../data/routes';
+import {
+  formatAbsoluteTimestamp,
+  getCheatOperationalPage,
+  getGameOperationalPage,
+  getProduct,
+  operationalSummary,
+  operations,
+  type CodeEntry,
+  type DailyLinkEntry,
+  type EntryState,
+  type ResolvedEntry,
+} from '../../data/operations';
 import type { CheckerSnapshot } from '../../lib/checker-status';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
@@ -39,6 +57,26 @@ const publishedHeading = {
 }[definition.routeId];
 const game = gameCatalogue.find((item) => item.slug === definition.slug);
 const dailyGame = dailyLinkCatalogue.find((item) => item.slug === definition.slug);
+const operationalPage = definition.slug ? getGameOperationalPage(definition.slug) : null;
+const cheatPage = definition.slug ? getCheatOperationalPage(definition.slug) : null;
+const product = definition.slug ? getProduct(definition.slug) : undefined;
+const operationalStats = operationalSummary();
+const codeEntries = (operationalPage?.entries ?? []).filter(
+  (item): item is ResolvedEntry<CodeEntry> => 'code' in item.entry,
+);
+const activeCodeEntries = codeEntries.filter((item) => item.state !== 'expired');
+const expiredCodeEntries = codeEntries.filter((item) => item.state === 'expired');
+const dailyEntries = (operationalPage?.entries ?? []).filter(
+  (item): item is ResolvedEntry<DailyLinkEntry> => 'url' in item.entry,
+);
+const timelineEntries = definition.slug ? operationalPage?.updates ?? [] : operations.updates;
+const entryStateLabels: Record<EntryState, string> = {
+  verified: 'Verified active',
+  reported: 'Officially reported',
+  stale: 'Needs recheck',
+  expired: 'Expired',
+  unverified: 'Not verified',
+};
 const gameRoot = game ? `/codes/${game.slug}/` : '/codes/grow-a-garden/';
 const isGamePage = ['codes', 'values', 'archive', 'updates'].includes(definition.kind) && Boolean(game);
 const gameArt = game
@@ -73,88 +111,22 @@ const showHeaderArtwork = ['browse', 'codes', 'values', 'archive', 'dailyGame', 
 
 const stats = (() => {
   switch (definition.kind) {
-    case 'daily': return [['Games tracked', '6'], ['Links live now', '45'], ['Median link age', '38 min'], ['Checked every', '1 to 3 h']];
-    case 'browse': return [['Games tracked', String(gameCatalogue.length)], ['With live codes', '52'], ['Checked this hour', '41'], ['Platform', 'Game platform']];
-    case 'codes': return [['Last checked', `${game?.age ?? '4 min'} ago`], ['Next check', 'in 56 min'], ['Live now', `${game?.live ?? 6} codes`], ['Verification', '2 sources']];
-    case 'az': return [['Games listed', String(gameCatalogue.length + dailyLinkCatalogue.length)], ['With live codes', '52'], ['Checked this hour', '41'], ['Cheats confirmed', '362']];
-    case 'values': return [['Items tracked', '84'], ['Trades, 7 d', '1,240'], ['Updated', '2 h ago'], ['Refresh', 'Daily']];
-    case 'archive': return [['Codes archived', '4,318'], ['Median life', '6 d'], ['Longest lived', '214 d'], ['Oldest entry', 'Jul 2023']];
-    case 'search': return [['Pages indexed', '434'], ['Games', String(gameCatalogue.length)], ['Daily links', String(dailyLinkCatalogue.length)], ['Guides', '6']];
+    case 'daily': return [['Configured', String(dailyLinkCatalogue.length)], ['Published', String(publishedDailyLinkCatalogue.length)], ['Active links', String(publishedDailyLinkCatalogue.reduce((total, item) => total + item.activeCount, 0))], ['Checks today', String(operationalStats.checksToday)]];
+    case 'browse': return [['Configured', String(gameCatalogue.length)], ['Published', String(publishedGameCatalogue.length)], ['Active records', String(publishedGameCatalogue.reduce((total, item) => total + item.activeCount, 0))], ['Checks today', String(operationalStats.checksToday)]];
+    case 'codes': return [['Publication', operationalPage?.isPublished ? 'Published' : 'Pending'], ['Last check', operationalPage?.latestCheckedAt ? formatAbsoluteTimestamp(operationalPage.latestCheckedAt) : 'Not recorded'], ['Active records', String(operationalPage ? operationalPage.verifiedCount + operationalPage.reportedCount : 0)], ['Needs recheck', String(operationalPage?.staleCount ?? 0)]];
+    case 'az': return [['Published games', String(publishedGameCatalogue.length + publishedDailyLinkCatalogue.length)], ['Code pages', String(publishedGameCatalogue.length)], ['Daily-link pages', String(publishedDailyLinkCatalogue.length)], ['Cheat sheets', String(operations.cheatGames.filter((item) => item.publicationState === 'published').length)]];
+    case 'values': return [['Items published', String(operationalPage?.values.length ?? 0)], ['Source required', 'Every row'], ['Updated', operationalPage?.values[0] ? formatAbsoluteTimestamp(operationalPage.values[0].observedAt) : 'Not recorded'], ['State', operationalPage?.values.length ? 'Published' : 'Pending']];
+    case 'archive': return [['Codes archived', String(operationalPage?.expiredCount ?? 0)], ['Source retained', operationalPage?.expiredCount ? 'Yes' : 'No records'], ['Last check', operationalPage?.latestCheckedAt ? formatAbsoluteTimestamp(operationalPage.latestCheckedAt) : 'Not recorded'], ['State', operationalPage?.expiredCount ? 'Published' : 'Pending']];
+    case 'search': return [['Published pages', String(editorialArticles.length + publishedGameCatalogue.length + publishedDailyLinkCatalogue.length)], ['Code games', String(publishedGameCatalogue.length)], ['Daily links', String(publishedDailyLinkCatalogue.length)], ['Editorial', String(editorialArticles.length)]];
     default: return [];
   }
 })();
 
-const liveCodes = [
-  ['GARDEN500', '500 sheckles', 'Developer X post', '4 min ago'],
-  ['RARESEED', 'Rare seed pack', 'Official Discord', '12 min ago'],
-  ['GROWFAST', '2x growth, 30 min', 'Developer X post', '26 min ago'],
-  ['SHECKLES1000', '1,000 sheckles', 'Official Discord', '48 min ago'],
-  ['WATERINGCAN', 'Watering can skin', 'Update announcement', '1 h ago'],
-  ['COMMUNITY250', '250 sheckles', 'Community submission', '2 h ago'],
-] as const;
-
-const expiredCodes = [
-  ['SPRINGSEED', 'Summer event seed', 'Expired 1 d ago'],
-  ['SHECKLES750', '750 sheckles', 'Expired 2 d ago'],
-  ['GOLDSPRINKLER', 'Golden sprinkler', 'Expired 3 d ago'],
-] as const;
-
-const cheatGames = [
-  ['GTA 5', 'gta-5', '28', 'PS5, Xbox Series, PC'],
-  ['GTA San Andreas', 'gta-san-andreas', '91', 'PS, Xbox, PC'],
-  ['GTA Vice City', 'gta-vice-city', '62', 'PS, Xbox, PC'],
-  ['Red Dead Redemption 2', 'red-dead-redemption-2', '37', 'PS, Xbox, PC'],
-  ['The Sims 4', 'the-sims-4', '40', 'PC, Mac, console'],
-  ['Skyrim', 'skyrim', '45', 'PC only'],
-  ['Fallout 4', 'fallout-4', '33', 'PC only'],
-  ['Minecraft', 'minecraft', '26', 'All platforms'],
-] as const;
-
-const cheatRows = [
-  ['Invincibility, 5 minutes', 'PAINKILLER'],
-  ['Max health and armour', 'TURTLE'],
-  ['Fast run', 'CATCHME'],
-  ['Super jump', 'HOPTOIT'],
-  ['Give weapons and ammo', 'TOOLUP'],
-  ['Raise wanted level', 'FUGITIVE'],
-  ['Change weather', 'MAKEITRAIN'],
-  ['Slow motion', 'SLOWMO'],
-] as const;
-
-const authors = [
-  { slug: 'paul-a', name: 'Paul A', role: 'Editor', owns: 'Owns the check schedule for every page that goes live.', metric: '1,412 codes verified' },
-] as const;
-
-const gear = [
-  ['Roblox gift card, 25 CAD', '$25.00', '/gear/roblox/roblox-gift-card-25-cad'],
-  ['Wired gaming headset, mid range', '$59.99', '/gear/pc-and-console/wired-gaming-headset-mid-range'],
-  ['Controller for mobile play', '$44.50', '/gear/mobile/controller-for-mobile-play'],
-  ['Phone cooling clip', '$21.99', '/gear/mobile/phone-cooling-clip'],
-  ['Mechanical keypad, 24 key', '$38.00', '/gear/pc-and-console/mechanical-keypad-24-key'],
-  ['Charging dock, two bay', '$32.99', '/gear/pc-and-console/charging-dock-two-bay'],
-] as const;
-
-const values = [
-  ['Golden sprinkler', 'Divine', '2.4m', '+8%', '1,240 trades'],
-  ['Dragonfly pet', 'Divine', '1.9m', '-3%', 'Official trade log'],
-  ['Candy blossom seed', 'Mythic', '740k', '+14%', '860 trades'],
-  ['Beanstalk seed', 'Mythic', '512k', 'Flat', '720 trades'],
-  ['Master sprinkler', 'Legendary', '180k', '-6%', 'Patch market sample'],
-  ['Bee pet', 'Legendary', '96k', '+2%', '544 trades'],
-] as const;
-
-const updates = [
-  ['18 Aug 2026', 'v3.4', 'Harvest event, three new seeds', 'Event runs two weeks. Three limited seeds enter the pool and the shop rotates daily.'],
-  ['11 Aug 2026', 'v3.3', 'Sprinkler rebalance and shop rotation', 'Master sprinkler radius changed; the values table was updated the same evening.'],
-  ['02 Aug 2026', 'v3.2', 'New pet tier and trade window changes', 'Divine tier was added above Mythic and the trade confirmation changed.'],
-  ['24 Jul 2026', 'v3.1', 'Mutation rework', 'Mutation triggers changed and the guide was rewritten with the patch.'],
-] as const;
-
 const legalCopy: Record<string, Array<[string, string]>> = {
   privacy: [
-    ['What we collect', 'We collect the information you submit, aggregate page counts and the minimum delivery data needed to keep the site secure.'],
-    ['How it is used', 'Submitted codes enter verification. Contact details are used only to answer the request or deliver an alert.'],
-    ['Who we share data with', 'Cloudflare delivers the site, Plausible provides aggregate analytics, and Discord can deliver alerts you request.'],
+    ['What we collect', 'The published site does not currently collect alert subscriptions or code submissions. If you email us, we receive the information you choose to send. Cloudflare processes the technical request data needed to deliver and secure the site.'],
+    ['How it is used', 'Information sent by email is used to answer the message, investigate a correction or review a source.'],
+    ['Who we share data with', 'Cloudflare delivers and secures the site. No optional analytics, advertising or alert-delivery provider is configured in the current operational record.'],
     ['Your choices', 'Cookie choices can be reopened from the footer. You can ask us to delete information you submitted.'],
   ],
   affiliate: [
@@ -165,8 +137,8 @@ const legalCopy: Record<string, Array<[string, string]>> = {
   ],
   terms: [
     ['Using the site', 'You may read, link to and share individual Freetins pages. Automated extraction and republication require permission.'],
-    ['Codes and links', 'A game developer controls whether a code or link works. We publish the result of our most recent check.'],
-    ['Corrections', 'Report an error through Contact. Corrections skip the general queue and are actioned the same day.'],
+    ['Codes and links', 'A game developer controls whether a code or link works. When we publish a verification result, the record includes its source and absolute check time.'],
+    ['Corrections', 'Report an error through Contact. We review the page, supplied source and current operational record before publishing a correction.'],
     ['Governing law', 'These terms are governed by the law of Ontario, Canada, without removing rights you hold where you live.'],
   ],
 };
@@ -196,7 +168,7 @@ const crumbs = isGamePage
   title={definition.title}
   description={definition.description}
   noindex={definition.noindex ?? false}
-  checkerStatus={checkerSnapshot?.state ?? 'Live'}
+  checkerStatus={operations.services.checker.enabled ? checkerSnapshot?.state ?? 'Degraded' : 'Unconfigured'}
   image={routeArtwork?.socialImage}
   imageAlt={routeArtwork?.alt}
 >
@@ -243,10 +215,10 @@ const crumbs = isGamePage
       <section class="page-section content-boundary">
         <div class="section-title">
           <h2>Published Codes</h2>
-          <span>{gameCatalogue.length} games</span>
+          <span>{publishedGameCatalogue.length} games</span>
         </div>
-        <div class="card-grid code-card-grid">
-          {gameCatalogue.map((item) => (
+        {publishedGameCatalogue.length > 0 ? <div class="card-grid code-card-grid">
+          {publishedGameCatalogue.map((item) => (
             <a class="media-card" href={`/codes/${item.slug}/`}>
               <div class="media">
                 <Picture
@@ -260,29 +232,35 @@ const crumbs = isGamePage
                   decoding="async"
                 />
               </div>
-              <div class="card-copy"><h3>{item.name}</h3><p>{item.live} live codes · checked {item.age} ago</p></div>
+              <div class="card-copy"><h3>{item.name}</h3><p>{item.activeCount} active records · {item.checkedLabel}</p></div>
             </a>
           ))}
-        </div>
+        </div> : <div class="data-empty"><strong>No code page is published yet</strong><p>The route structure is configured, but a page appears here only after its source URLs, redemption steps and verification events pass validation.</p></div>}
+        {plannedGameCatalogue.length > 0 && (
+          <div class="verification-queue">
+            <h2>Verification queue</h2>
+            <p>{plannedGameCatalogue.length} configured game pages are waiting for evidence-backed records. These drafts are not presented as working-code pages or included in search indexing.</p>
+          </div>
+        )}
       </section>
     )}
 
     {definition.kind === 'az' && (
       <section class="page-section content-boundary">
-        <div class="section-title"><h2>Every game we track</h2><span>{gameCatalogue.length} games</span></div>
-        <div class="catalogue columns">
-          {gameCatalogue.map((item) => (
-            <a href={`/codes/${item.slug}/`}><span>{item.name}</span><strong>{item.live} live</strong><time>{item.age} ago</time></a>
+        <div class="section-title"><h2>Published game pages</h2><span>{publishedGameCatalogue.length + publishedDailyLinkCatalogue.length} games</span></div>
+        {publishedGameCatalogue.length + publishedDailyLinkCatalogue.length > 0 ? <div class="catalogue columns">
+          {[...publishedGameCatalogue, ...publishedDailyLinkCatalogue].sort((left, right) => left.name.localeCompare(right.name)).map((item) => (
+            <a href={item.platform === 'Mobile' ? `/daily/${item.slug}/` : `/codes/${item.slug}/`}><span>{item.name}</span><strong>{item.activeCount} active</strong><time>{item.checkedLabel}</time></a>
           ))}
-        </div>
+        </div> : <div class="data-empty"><strong>No operational game page is published yet</strong><p>Configured drafts remain outside this index until they contain valid sources and verification records.</p></div>}
       </section>
     )}
 
     {definition.kind === 'daily' && (
       <section class="page-section content-boundary">
-        <h2>Games we track</h2>
-        <div class="card-grid">
-          {dailyLinkCatalogue.map((item) => {
+        <h2>Published daily-link games</h2>
+        {publishedDailyLinkCatalogue.length > 0 ? <div class="card-grid">
+          {publishedDailyLinkCatalogue.map((item) => {
             const art = requireArtwork(dailyArtwork, item.slug, 'daily reward');
             return (
               <a class="media-card" href={`/daily/${item.slug}/`}>
@@ -298,11 +276,11 @@ const crumbs = isGamePage
                     decoding="async"
                   />
                 </div>
-                <div class="card-copy"><h3>{item.name}</h3><p>{item.live} links live · checked {item.age} ago</p></div>
+                <div class="card-copy"><h3>{item.name}</h3><p>{item.activeCount} active links · {item.checkedLabel}</p></div>
               </a>
             );
           })}
-        </div>
+        </div> : <div class="data-empty"><strong>No daily-link page is published yet</strong><p>The configured games remain in the upload model, but no link appears until it has a real destination, source URL and verification event.</p></div>}
         {hubArticles.length > 0 && (
           <div class="published-articles">
             <h2>{publishedHeading}</h2>
@@ -333,39 +311,45 @@ const crumbs = isGamePage
     {definition.kind === 'dailyGame' && (
       <section class="page-section content-boundary split-layout">
         <div>
-          <h2>Working links</h2>
-          <div class="link-list">
-            {Array.from({ length: Math.min(dailyGame?.live ?? 8, 8) }, (_, index) => (
-              <a href={`https://example.com/${dailyGame?.slug}/${index + 1}`} rel="nofollow">
-                <span>{index % 2 === 0 ? 'Free dice and rolls' : 'Daily reward bundle'}</span>
-                <strong>Opened {index * 7 + 6} min ago</strong>
-              </a>
+          <h2>Published links</h2>
+          {dailyEntries.filter((item) => item.state !== 'expired').length > 0 ? <div class="daily-records">
+            {dailyEntries.filter((item) => item.state !== 'expired').map((item) => (
+              <div class="daily-record">
+                <a href={item.entry.url} rel="nofollow noopener">
+                  <span>{item.entry.label}<small>{entryStateLabels[item.state]}</small></span>
+                  {item.latestEvent ? <time datetime={item.latestEvent.checkedAt} data-relative-time={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <strong>Not checked</strong>}
+                </a>
+                <span class="record-sources">Evidence: {item.entry.sourceUrls.map((url, index) => <a href={url} rel="noopener">Source {index + 1}</a>)}</span>
+              </div>
             ))}
-          </div>
+          </div> : <div class="data-empty"><strong>No reward link is published</strong><p>This page is configured, but it will not display a claim link until the URL, source and verification event are present in the operational data.</p></div>}
         </div>
-        <aside><h2>How these links work</h2><p>We open each reward link on the interval shown above. A link moves to the expired list as soon as it fails twice.</p><a href="/daily/">All daily link games</a></aside>
+        <aside><h2>Claim and verification</h2><p>{operationalPage?.game.redeemSteps.length ? 'Follow the recorded claim steps for this game. Each link shows its latest evidence state and absolute check time.' : 'Claim instructions have not passed publication validation yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Official source</a>}<a href="/daily/">All daily link games</a></aside>
       </section>
     )}
 
     {definition.kind === 'codes' && (
       <section class="page-section content-boundary split-layout wide-main">
         <div>
-          <div class="section-title"><h2>Working codes</h2><span>{game?.live ?? 6} live</span></div>
+          <div class="section-title"><h2>Published codes</h2><span>{activeCodeEntries.length} records</span></div>
           <p class="visually-hidden" aria-live="polite" data-copy-live></p>
-          <div class="code-table" aria-label={`Working ${game?.name} codes`}>
-            {liveCodes.slice(0, Math.max(1, Math.min(game?.live ?? 6, liveCodes.length))).map(([code, reward, source, checked]) => (
+          {activeCodeEntries.length > 0 ? <div class="code-table" aria-label={`Published ${game?.name} codes`}>
+            {activeCodeEntries.map((item) => (
               <div class="code-row">
-                <div><code>{code}</code><span>{reward}</span></div>
-                <div><small>{source} · {checked}</small><button type="button" data-copy-code={code}>Copy</button></div>
+                <div><code>{item.entry.code}</code><span>{item.entry.reward}</span><small>{entryStateLabels[item.state]}</small></div>
+                <div>
+                  {item.latestEvent ? <time datetime={item.latestEvent.checkedAt} data-relative-time={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <small>No verification recorded</small>}
+                  <span class="record-sources">{item.entry.sourceUrls.map((url, index) => <a href={url} rel="noopener">Source {index + 1}</a>)}</span>
+                  <button type="button" data-copy-code={item.entry.code}>Copy</button>
+                </div>
               </div>
             ))}
-          </div>
-          <h2 class="subhead">Expired codes</h2>
-          <div class="expired-list">
-            {expiredCodes.map(([code, reward, checked]) => <div><s>{code}</s><span>{reward}</span><time>{checked}</time></div>)}
-          </div>
+          </div> : <div class="data-empty"><strong>No code is published</strong><p>This configured page remains `noindex` until a code, reward, source URL, redemption path and verification event pass validation.</p></div>}
+          {expiredCodeEntries.length > 0 && <><h2 class="subhead">Expired codes</h2><div class="expired-list">
+            {expiredCodeEntries.map((item) => <div><s>{item.entry.code}</s><span>{item.entry.reward}</span>{item.latestEvent ? <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <span>Check not recorded</span>}</div>)}
+          </div></>}
         </div>
-        <aside><h2>Verification</h2><p>Every code is opened against two sources before it appears as live. Expired codes stay visible.</p><a href="/how-we-verify/">How we verify</a><a href={`${gameRoot}expired/`}>Full archive</a></aside>
+        <aside><h2>Redeem and verify</h2><p>{operationalPage?.game.redeemSteps.length ? 'Use the recorded redemption path below. A successful redemption is labeled verified; an official announcement without redemption is labeled reported.' : 'Redemption instructions have not passed publication validation yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Official game source</a>}<a href="/how-we-verify/">How we verify</a>{expiredCodeEntries.length > 0 && <a href={`${gameRoot}expired/`}>Full archive</a>}</aside>
       </section>
     )}
 
@@ -392,40 +376,42 @@ const crumbs = isGamePage
           ))}
         </div>
         <h2 class="secondary-list-heading">More cheat pages</h2>
-        <div class="catalogue">{cheatGames.map(([name, slug, count, systems]) => <a href={`/cheats/${slug}/`}><span>{name}<small>{systems}</small></span><strong>{count} cheats</strong></a>)}</div>
+        <div class="catalogue">{operations.cheatGames.map((item) => {
+          const page = getCheatOperationalPage(item.slug);
+          return <a href={`/cheats/${item.slug}/`}><span>{item.name}<small>{item.platforms.join(', ')}</small></span><strong>{page?.isPublished ? `${page.verifiedCount + page.reportedCount} published` : 'Verification pending'}</strong></a>;
+        })}</div>
       </section>
     )}
 
     {definition.kind === 'cheat' && (
       <section class="page-section content-boundary split-layout wide-main">
-        <div><h2>Player and world cheats</h2><div class="code-table">{cheatRows.map(([name, code]) => <div class="code-row"><div><strong>{name}</strong><code>{code}</code></div><button type="button" data-copy-code={code}>Copy</button></div>)}</div></div>
-        <aside><h2>Confirmed build</h2><p>Each sequence was entered on retail hardware and PC against the current patch.</p><a href="/cheats">All cheat games</a></aside>
+        <div><h2>Published cheats</h2>{cheatPage?.entries.length ? <div class="code-table">{cheatPage.entries.map((item) => <div class="code-row"><div><strong>{item.entry.name}</strong><code>{item.entry.input}</code><small>{item.entry.platforms.join(', ')} · {entryStateLabels[item.state]}</small></div><div>{item.latestEvent && <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time>}<span class="record-sources">{item.entry.sourceUrls.map((url, index) => <a href={url} rel="noopener">Source {index + 1}</a>)}</span><button type="button" data-copy-code={item.entry.input}>Copy</button></div></div>)}</div> : <div class="data-empty"><strong>No cheat record is published</strong><p>The route remains configured, but counts and rows stay hidden until platform scope, sources, confirmed build and verification events are present.</p></div>}</div>
+        <aside><h2>Confirmed build</h2><p>{cheatPage?.game.confirmedBuild ?? 'No build has been confirmed for publication.'}</p><p>{cheatPage?.game.sourceUrls.length ? 'The sheet has game-level source records in addition to the source on every row.' : 'Game-level sources are still pending.'}</p><a href="/cheats/">All cheat games</a></aside>
       </section>
     )}
 
     {definition.kind === 'author' && (
       <section class="page-section content-boundary">
-        <div class="profile-detail"><div><h2>Experience</h2><p>{authors.find((person) => person.slug === definition.slug)?.owns}</p><p>Every page carries a named author and a published verification schedule. Recent work remains linked to the source and check log.</p><a href="/about/">About Freetins</a></div></div>
+        <div class="profile-detail"><div><h2>Editorial responsibility</h2><p>Paul A owns the review and correction process for published Freetins pages.</p><p>{operations.verificationEvents.filter((event) => event.checkedBy === definition.slug).length} operational verification events are currently attributed to this profile. This number is calculated from the event log rather than entered as biography copy.</p><a href="/about/">About Freetins</a></div></div>
       </section>
     )}
 
     {definition.kind === 'gearCategory' && (
       <section class="page-section content-boundary">
-        <h2>Picked this month</h2>
-        <div class="card-grid">{gear.map(([name, price, href]) => {
-          const slug = href.split('/').at(-1) ?? '';
-          const art = requireArtwork(gearArtwork, slug, 'gear product');
-          return <a class="media-card" href={href}><div class="media"><Picture src={art.src} alt={art.alt} formats={['avif']} fallbackFormat="webp" widths={[320, 528, 792, 1056]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), (max-width: 1199px) 50vw, 33vw" loading="lazy" decoding="async" /></div><div class="card-copy"><h3>{name}</h3><p>{price}</p></div></a>;
-        })}</div>
+        <h2>Checked product records</h2>
+        {operations.products.filter((item) => item.category === definition.slug).length ? <div class="card-grid">{operations.products.filter((item) => item.category === definition.slug).map((item) => {
+          const art = requireArtwork(gearArtwork, item.slug, 'gear product');
+          return <a class="media-card" href={`/gear/${item.category}/${item.slug}/`}><div class="media"><Picture src={art.src} alt={art.alt} formats={['avif']} fallbackFormat="webp" widths={[320, 528, 792, 1056]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), (max-width: 1199px) 50vw, 33vw" loading="lazy" decoding="async" /></div><div class="card-copy"><h3>{item.name}</h3><p>{item.price} {item.currency} · checked {formatAbsoluteTimestamp(item.checkedAt)}</p></div></a>;
+        })}</div> : <div class="data-empty"><strong>No product recommendation is published</strong><p>The category remains configured. A card appears only after price, currency, merchant URL, check timestamp and disclosure pass validation.</p></div>}
       </section>
     )}
 
     {definition.kind === 'gearProduct' && (
-      <section class="page-section content-boundary product-layout">{productArt && <div class="product-media"><Picture src={productArt.src} alt={productArt.alt} formats={['avif']} fallbackFormat="webp" widths={[480, 768, 1080, 1536]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), 55vw" loading="eager" fetchpriority="high" decoding="async" /></div>}<div><p class="eyebrow">Freetins pick</p><h2>Why we picked it</h2><p>It solves a specific gaming problem without adding an account, subscription or unnecessary setup step.</p><dl><div><dt>Delivery</dt><dd>In stock</dd></div><div><dt>Checked</dt><dd>21 August 2026</dd></div><div><dt>Disclosure</dt><dd>Affiliate link</dd></div></dl><Button href="/disclosure/" variant="secondary">Read the disclosure</Button></div></section>
+      <section class="page-section content-boundary product-layout">{productArt && <div class="product-media"><Picture src={productArt.src} alt={productArt.alt} formats={['avif']} fallbackFormat="webp" widths={[480, 768, 1080, 1536]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), 55vw" loading="eager" fetchpriority="high" decoding="async" /></div>}<div>{product ? <><p class="eyebrow">Checked listing</p><h2>Published product record</h2><dl><div><dt>Price</dt><dd>{product.price} {product.currency}</dd></div><div><dt>Checked</dt><dd>{formatAbsoluteTimestamp(product.checkedAt)}</dd></div><div><dt>Disclosure</dt><dd>{product.disclosure}</dd></div></dl><a href={product.merchantUrl} rel="sponsored noopener">Open merchant source</a><br /><Button href="/disclosure/" variant="secondary">Read the disclosure</Button></> : <div class="data-empty"><strong>This listing is not published</strong><p>The product surface is preserved, but no price, stock or recommendation is asserted until a validated merchant record exists.</p></div>}</div></section>
     )}
 
     {definition.kind === 'values' && (
-      <section class="page-section content-boundary"><div class="section-title"><h2>{game?.name}, current trade values</h2><span>Source on every row</span></div><div class="data-table">{values.map(([name, tier, value, trend, source]) => <div><strong>{name}</strong><span>{tier}</span><b>{value}</b><em>{trend}</em><small>{source}</small></div>)}</div></section>
+      <section class="page-section content-boundary"><div class="section-title"><h2>{game?.name}, published values</h2><span>Source on every row</span></div>{operationalPage?.values.length ? <div class="data-table">{operationalPage.values.map((item) => <div><strong>{item.item}</strong><span>{item.tier}</span><b>{item.value}</b><time datetime={item.observedAt}>{formatAbsoluteTimestamp(item.observedAt)}</time><a href={item.sourceUrl} rel="noopener">Source</a></div>)}</div> : <div class="data-empty"><strong>No value row is published</strong><p>The values surface remains configured, but it cannot display estimates, trends or trade counts without a timestamped source record.</p></div>}</section>
     )}
 
     {(definition.kind === 'privacy' || definition.kind === 'affiliate' || definition.kind === 'terms') && (
@@ -458,30 +444,37 @@ const crumbs = isGamePage
     )}
 
     {definition.kind === 'verify' && (
-      <section class="page-section content-boundary"><h2>How often we check</h2><div class="process-grid">{[['01', 'Find the source', 'A developer channel or game surface starts the check.'], ['02', 'Open it twice', 'Two sources must agree before a code is marked live.'], ['03', 'Publish the time', 'The page shows the minute of the latest successful check.'], ['04', 'Keep the record', 'Failed codes move to the archive instead of disappearing.']].map(([num, title, copy]) => <div><strong>{num}</strong><h3>{title}</h3><p>{copy}</p></div>)}</div></section>
+      <section class="page-section content-boundary"><h2>Evidence and publication flow</h2><div class="process-grid">{[['01', 'Record the source', 'Every operational entry needs a real HTTPS source URL.'], ['02', 'Perform the right check', 'A redemption, opened link, entered cheat or official-source review becomes a verification event.'], ['03', 'Store the result', 'The event records an ISO timestamp, method, result and responsible editor.'], ['04', 'Derive the page', 'Counts, freshness, archive state and author totals are calculated from those records.']].map(([num, title, copy]) => <div><strong>{num}</strong><h3>{title}</h3><p>{copy}</p></div>)}</div><div class="data-empty"><strong>Automated checker: {operations.services.checker.enabled ? 'configured' : 'not configured'}</strong><p>{operations.services.checker.enabled ? `The configured schedule is every ${operations.services.checker.scheduleMinutes} minutes. Runtime status still comes from the checker status store.` : 'Manual verification records can be published now. The site does not claim an automated schedule until the checker service is enabled.'}</p></div></section>
     )}
 
     {definition.kind === 'updates' && (
-      <section class="page-section content-boundary timeline">{updates.map(([date, version, title, copy]) => <article><time>{date}</time><span>{version}</span><div><h2>{title}</h2><p>{copy}</p></div></article>)}</section>
+      <section class="page-section content-boundary">{timelineEntries.length ? <div class="timeline">{timelineEntries.map((item) => <article><time datetime={item.publishedAt}>{formatAbsoluteTimestamp(item.publishedAt)}</time><span>{item.version}</span><div><h2>{item.title}</h2><p>{item.summary}</p><a href={item.sourceUrl} rel="noopener">Source</a></div></article>)}</div> : <div class="data-empty"><strong>No timeline entry is published</strong><p>The timeline remains configured. An entry appears only with a version, summary, absolute publication time and source URL.</p></div>}</section>
     )}
 
     {definition.kind === 'archive' && (
-      <section class="page-section content-boundary"><div class="section-title"><h2>{game ? `${game.name}, every pulled code` : 'Every game, archived counts'}</h2><span>Never deleted</span></div><div class="data-table archive-table">{expiredCodes.concat(expiredCodes).map(([code, reward, checked], index) => <div><s>{code}{index > 2 ? `-${index + 1}` : ''}</s><span>{reward}</span><b>{checked}</b><small>Source retained</small></div>)}</div></section>
+      <section class="page-section content-boundary"><div class="section-title"><h2>{game ? `${game.name}, expired code records` : 'Expired code records'}</h2><span>{expiredCodeEntries.length} archived</span></div>{expiredCodeEntries.length ? <div class="data-table archive-table">{expiredCodeEntries.map((item) => <div><s>{item.entry.code}</s><span>{item.entry.reward}</span>{item.latestEvent ? <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <span>No removal check</span>}<small>{item.entry.sourceUrls.map((url, index) => <a href={url} rel="noopener">Source {index + 1}</a>)}</small></div>)}</div> : <div class="data-empty"><strong>No expired code is recorded</strong><p>The archive route remains configured, but it does not clone sample rows or invent a historical count.</p></div>}</section>
     )}
 
     {definition.kind === 'guide' && (
-      <section class="page-section content-boundary guide-layout"><aside><strong>On this page</strong><a href="#what-it-is">What it is</a><a href="#full-list">The full list</a><a href="#unconfirmed">What we could not confirm</a></aside><div class="prose-body"><h2 id="what-it-is">What a mutation actually is</h2><p>A mutation changes the sale multiplier of a crop. Weather, pets and limited events can each trigger one, and compatible effects stack.</p><h2 id="full-list">The full list</h2>{values.slice(0, 5).map(([name, tier, value]) => <div class="guide-row"><strong>{name}</strong><span>{tier}</span><b>{value}</b></div>)}<h2 id="unconfirmed">What we could not confirm</h2><p>Community reports without a repeatable trigger remain outside the table until a second source reproduces them.</p></div></section>
+      <section class="page-section content-boundary"><div class="data-empty"><strong>This guide is configured but not published</strong><p>The route is preserved for editorial work and remains `noindex`. It will move into the published Guides index only after the full article and its sources are added to the editorial data.</p></div></section>
     )}
 
-    {(definition.kind === 'search' || definition.kind === 'submit' || definition.kind === 'alerts' || definition.kind === 'contact') && (
+    {definition.kind === 'search' && (
       <section class="page-section content-boundary form-layout">
-        <form method="get" action={definition.kind === 'search' ? '/search/' : undefined}>
-          <label>{definition.kind === 'search' ? 'Game, guide or code' : definition.kind === 'alerts' ? 'Email or Discord handle' : 'Your email'}<input type={definition.kind === 'search' ? 'search' : 'text'} name={definition.kind === 'search' ? 'q' : 'contact'} placeholder={definition.kind === 'search' ? 'Grow a Garden' : 'you@example.com'} /></label>
-          {definition.kind !== 'search' && <label>Details<textarea name="message" rows={5} placeholder="Tell us what you need"></textarea></label>}
-          <button type="submit">{definition.kind === 'search' ? 'Search' : 'Continue'}</button>
+        <form method="get" action="/search/">
+          <label>Game, guide or code<input type="search" name="q" placeholder="Grow a Garden" /></label>
+          <button type="submit">Search</button>
         </form>
-        <aside><h2>What happens next</h2><p>A person or the verification checker handles the request. Nothing publishes automatically.</p></aside>
+        <aside><h2>Published content only</h2><p>Search results should point to published editorial pages and evidence-backed operational pages, not configured drafts.</p></aside>
       </section>
+    )}
+
+    {definition.kind === 'alerts' && (
+      <section class="page-section content-boundary">{operations.services.alerts.enabled && operations.services.alerts.subscriptionEndpoint ? <div class="form-layout"><form method="post" action={operations.services.alerts.subscriptionEndpoint}><label>Your email<input type="email" name="contact" autocomplete="email" required /></label><button type="submit">Subscribe</button></form><aside><h2>Active channels</h2><p>{operations.services.alerts.channels.join(', ')}</p></aside></div> : <div class="data-empty"><strong>Alerts are configured but not active</strong><p>No contact details are collected. The form will appear only after a delivery channel and HTTPS subscription endpoint pass configuration validation.</p></div>}</section>
+    )}
+
+    {definition.kind === 'submit' && (
+      <section class="page-section content-boundary"><div class="data-empty"><strong>Submission intake is not active</strong><p>No form data is collected or queued. For a correction to an existing page, email <a href="mailto:hello@freetins.com">hello@freetins.com</a> with the page URL and source.</p></div></section>
     )}
 
     {definition.kind === 'notTracked' && (
@@ -610,6 +603,17 @@ const crumbs = isGamePage
   input, textarea { width: 100%; border: 1px solid var(--border-strong); background: var(--surface-sunken); color: var(--text-primary); padding: 13px 14px; }
   form button { justify-self: start; min-height: 44px; padding-inline: 20px; }
   .notice { border: 1px solid var(--border-strong); background: var(--surface-raised); padding: clamp(22px, 3vw, 34px); }
+  .data-empty { border: 1px dashed var(--border-strong); background: var(--surface-raised); padding: clamp(20px, 3vw, 30px); }
+  .data-empty strong { color: var(--text-primary); }
+  .data-empty p { max-width: 72ch; margin: 8px 0 0; color: var(--text-secondary); line-height: 1.6; }
+  .data-empty a { color: var(--text-primary); }
+  .verification-queue { margin-top: 36px; border-top: 1px solid var(--border-subtle); padding-top: 24px; }
+  .verification-queue h2 { margin: 0 0 8px; color: var(--text-primary); }
+  .verification-queue p { max-width: 76ch; margin: 0; color: var(--text-secondary); line-height: 1.6; }
+  .record-sources { display: flex; flex-wrap: wrap; gap: 6px 12px; }
+  .record-sources a { color: var(--text-secondary); font-size: 12px; }
+  .daily-records { display: grid; gap: 12px; }
+  .daily-record { display: grid; gap: 6px; }
   .notice > span { color: var(--text-brand); font: 700 11px / 1.4 var(--font-core); letter-spacing: .12em; text-transform: uppercase; }
   .notice h2 { margin: 12px 0 8px; color: var(--text-primary); }
   .next-links { display: flex; flex-wrap: wrap; gap: 9px 18px; padding: 30px var(--page-gutter) 0; }

@@ -6,7 +6,7 @@ export const resourcesArticle: EditorialArticle = {
   section: 'resources',
   title: 'Game Codes, Cheats and Answer Resources | Freetins',
   heading: 'Freetins resources',
-  description: 'Use the Freetins resource directory to find verified game codes, daily reward links, cheats, answer sheets, guides and editorial policies.',
+  description: 'Use the Freetins resource directory to find published cheats, answer sheets, guides, editorial policies and any source-backed code or reward pages currently available.',
   eyebrow: 'Site directory',
   author: 'Paul A',
   authorPath: '/author/paul-a/',
@@ -19,8 +19,8 @@ export const resourcesArticle: EditorialArticle = {
       id: 'start-here',
       heading: 'Published Resources',
       links: [
-        { label: 'Game codes', href: '/codes/', description: 'Redeemable codes with live and expired entries kept separate.' },
-        { label: 'Daily reward links', href: '/daily/', description: 'Time-sensitive reward links for the daily-link games we track.' },
+        { label: 'Game codes', href: '/codes/', description: 'Source-backed code records appear here only after verification data is published.' },
+        { label: 'Daily reward links', href: '/daily/', description: 'Source-backed reward links appear here with absolute check times.' },
         { label: 'Game cheats', href: '/cheats/', description: 'Built-in cheat codes, button sequences and console commands.' },
         { label: 'Answer sheets', href: '/answers/', description: 'Mission, puzzle and level answers organized for fast scanning.' },
         { label: 'Game guides', href: '/guides/', description: 'Explanations, setup help and walkthroughs that need more context.' },
@@ -33,18 +33,18 @@ export const resourcesArticle: EditorialArticle = {
       links: [
         { label: 'Clear Vision 3 walkthrough', href: '/answers/clear-vision-3/', description: 'Mission targets, difficult shots and the recommended upgrade order.' },
         { label: 'GTA 5 radio stations', href: '/guides/gta-5-radio-stations/', description: 'Every station, radio controls and Self Radio setup on PC.' },
-        { label: 'GTA 5 cheats', href: '/cheats/gta-5/', description: 'Confirmed cheat entries for PlayStation, Xbox and PC.' },
+        { label: 'LEGO Jurassic World cheats', href: '/cheats/lego-jurassic-world/', description: 'Built-in extras with platform instructions and source notes.' },
       ],
     },
     {
       id: 'gear',
-      heading: 'Gaming gear by use',
+      heading: 'Gaming gear research',
       paragraphs: [
-        'Gear pages are buying aids, not search fillers. Each page states why an item was selected and links to the disclosure before a purchase decision.',
+        'The gear structure remains available, but a product is not presented as a recommendation until a checked merchant URL, price timestamp and disclosure record are published.',
       ],
       links: [
-        { label: 'Mobile gaming gear', href: '/gear/mobile/', description: 'Controllers, cooling and practical phone accessories.' },
-        { label: 'PC and console gear', href: '/gear/pc-and-console/', description: 'Headsets, keypads and charging accessories.' },
+        { label: 'Mobile gaming gear', href: '/gear/mobile/', description: 'Configured product research and its current publication state.' },
+        { label: 'PC and console gear', href: '/gear/pc-and-console/', description: 'Configured product research and its current publication state.' },
       ],
     },
     {

@@ -27,8 +27,13 @@ const workerManifest = existsSync(workerManifestPath)
 
 const missing = new Map();
 const prototypeLeaks = [];
+const noindexSitemapLeaks = [];
 let internalLinks = 0;
 let workerLinks = 0;
+const sitemap = readdirSync(outputRoot)
+  .filter((name) => /^sitemap-\d+\.xml$/.test(name))
+  .map((name) => readFileSync(join(outputRoot, name), 'utf8'))
+  .join('\n');
 
 const resolvesToDocument = (pathname) => {
   if (pathname === '/') return existsSync(join(outputRoot, 'index.html'));
@@ -52,6 +57,11 @@ for (const file of htmlFiles) {
 
   if (/file:\/\/\/|Freetins%20Site\.dc\.html|href=["']#(?:home|browse|daily|hub|codes|cheats)/i.test(html)) {
     prototypeLeaks.push(file);
+  }
+
+  if (/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(html)) {
+    const canonical = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)/i)?.[1];
+    if (canonical && sitemap.includes(`<loc>${canonical}</loc>`)) noindexSitemapLeaks.push(canonical);
   }
 
   const links = html.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["']/gi);
@@ -97,6 +107,11 @@ if (invalidOnDemandRoutes.length > 0) {
   for (const pathname of invalidOnDemandRoutes) console.error(`- ${pathname}`);
 }
 
-if (prototypeLeaks.length > 0 || missing.size > 0 || invalidOnDemandRoutes.length > 0) process.exit(1);
+if (noindexSitemapLeaks.length > 0) {
+  console.error('Noindex routes leaked into the sitemap:');
+  for (const canonical of noindexSitemapLeaks) console.error(`- ${canonical}`);
+}
+
+if (prototypeLeaks.length > 0 || missing.size > 0 || invalidOnDemandRoutes.length > 0 || noindexSitemapLeaks.length > 0) process.exit(1);
 
 console.log(`Route crawl passed: ${htmlFiles.length} documents, ${internalLinks} internal links and ${workerLinks} Worker links checked.`);

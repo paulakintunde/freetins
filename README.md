@@ -56,7 +56,7 @@ Earned child routes live under the game namespace:
 
 ## Rendering
 
-Astro prerenders the site at build time. The app no longer uses the legacy redirect layer or legacy on-demand route gating. The current build is meant to be served as direct HTML with matching canonical URLs.
+Astro prerenders every content route as direct HTML with a matching canonical URL. The only on-demand route is `/api/checker-status.json`, a noindex JSON endpoint used when the optional checker service is enabled.
 
 Shared shell behavior lives in `src/scripts/site.ts`, which uses delegated events and Astro navigation lifecycle events.
 
@@ -65,9 +65,22 @@ Shared shell behavior lives in `src/scripts/site.ts`, which uses delegated event
 ```bash
 pnpm typecheck
 pnpm lint
+pnpm check:data
 pnpm build
 pnpm check:routes
 ```
+
+## Operational Content
+
+`src/content/operations.json` is the source of truth for code pages, daily links, generic cheat sheets, value rows, update timelines, products, sponsorships, and service activation.
+
+- Keep a game in `planned` while preparing records. Its configured routes remain available but are `noindex` and show a pending state.
+- Change a game or cheat sheet to `published` only after its source URLs, instructions, entries, and verification events are present.
+- Store timestamps as UTC ISO strings such as `2026-08-24T09:42:00Z`. Never upload display text such as `3 min ago`.
+- Use a verification result of `accepted` for a successful redemption/open/entry, `source-only` for an authoritative announcement that was not redeemed, `rejected` for an expired record, and `unreachable` when the check could not complete.
+- Enable checker, alerts, or advertising only after their required schedule, endpoint, channel, provider, privacy URL, and placement records are configured.
+
+Every aggregate shown by the site is derived from this file. `pnpm check:data` rejects duplicate identifiers, prototype domains, typed relative ages, broken references, and unsupported `published` states.
 
 ## Cloudflare Pages
 
@@ -78,7 +91,7 @@ Recommended project settings:
 - Build output: `dist`
 - Node.js: `24.15.0`
 
-`wrangler.toml` is the source-controlled Pages configuration. Resource identifiers for D1, KV, and secret bindings are added after those Cloudflare resources are provisioned.
+`wrangler.toml` is the source-controlled Pages configuration. Add the optional `STATUS` KV binding when the checker is provisioned; alert delivery remains inactive until `services.alerts.subscriptionEndpoint` points to a deployed HTTPS intake service.
 
 ## Prototype Reference
 

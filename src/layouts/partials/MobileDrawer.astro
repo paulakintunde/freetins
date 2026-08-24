@@ -1,6 +1,9 @@
 ---
 import Brand from '../../components/Brand.astro';
+import { operations } from '../../data/operations';
 import { drawerLinks, hotSearches } from '../../data/site';
+
+const alertsActive = operations.services.alerts.enabled;
 ---
 
 <div class="drawer-overlay" data-drawer-overlay hidden aria-hidden="true">
@@ -33,18 +36,14 @@ import { drawerLinks, hotSearches } from '../../data/site';
     </nav>
 
     <section class="push-prompt" data-push-prompt>
-      <h2>Get a ping when a code drops</h2>
-      <p>One notification per drop for the games you pick. No digests, no marketing.</p>
+      <h2>{alertsActive ? 'Code alerts are active' : 'Code alerts are not active yet'}</h2>
+      <p>{alertsActive
+        ? `Available channels: ${operations.services.alerts.channels.join(', ')}. Choose games and provide delivery details on the Alerts page.`
+        : 'The alert pathway is preserved, but no permission or contact detail is requested until a delivery service is configured.'}</p>
       <div class="push-actions">
-        <button class="allow-button" type="button" data-push-allow>Allow</button>
-        <button class="not-now-button" type="button" data-push-dismiss>Not now</button>
+        <a class="allow-button" href="/alerts/">{alertsActive ? 'Manage alerts' : 'See alert status'}</a>
       </div>
     </section>
-
-    <div class="push-allowed" data-push-allowed hidden>
-      <span aria-hidden="true"></span>
-      <p>Notifications on. Pick your games in <a href="/alerts">Alerts</a>.</p>
-    </div>
 
     <div class="drawer-footer">
       <a href="/how-we-verify/">How we verify</a>
@@ -205,14 +204,15 @@ import { drawerLinks, hotSearches } from '../../data/site';
     margin-top: 13px;
   }
 
-  .push-actions button {
+  .push-actions a {
     min-height: 44px;
     border-radius: 0;
     padding: 13px 14px;
     font: 600 11px / 1 var(--font-core);
     letter-spacing: 0.06em;
+    text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
-    cursor: pointer;
   }
 
   .allow-button {
@@ -220,42 +220,6 @@ import { drawerLinks, hotSearches } from '../../data/site';
     border: 0;
     background: var(--green-600);
     color: #fff;
-  }
-
-  .not-now-button {
-    border: 1px solid var(--border-strong);
-    background: transparent;
-    color: var(--text-secondary);
-  }
-
-  .push-allowed {
-    align-items: center;
-    gap: 10px;
-    margin: 14px;
-    border: 1px solid var(--border-subtle);
-    padding: 14px;
-  }
-
-  .push-allowed:not([hidden]) {
-    display: flex;
-  }
-
-  .push-allowed > span {
-    width: 7px;
-    height: 7px;
-    flex: none;
-    background: var(--green-neon);
-  }
-
-  .push-allowed p {
-    margin: 0;
-    color: var(--text-secondary);
-    font: 400 13px / 1.5 var(--font-core);
-  }
-
-  .push-allowed a {
-    color: var(--text-primary);
-    font-weight: 600;
   }
 
   .drawer-footer {
