@@ -1,0 +1,238 @@
+{
+  "game": "Grow a Garden",
+  "slug": "grow-a-garden",
+  "developer": "The Garden Game (Splitting Point Studios)",
+  "code_system": true,
+  "disambiguation": "This page covers the original Grow a Garden experience. Grow a Garden 2 is a separate Roblox experience with its own code list, and codes are not interchangeable between them.",
+  "redeem_path": "Launch Grow a Garden, tap the Settings cog in the top left corner, scroll the settings menu to the Redeem Codes section, type the code into the 'Type code here...' box, then press the green Claim button.",
+  "redeem_requirements": "none. No level gate and no group join required.",
+  "checked_at": "2026-08-24T09:00:00Z",
+  "content_changed_at": "2026-08-24T09:00:00Z",
+  "official_sources": [
+    {
+      "type": "discord",
+      "url": "https://discord.gg/growagarden",
+      "note": "announcement channel, unconfirmed invite, verify before publish"
+    },
+    {
+      "type": "roblox_page",
+      "url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
+      "note": "place ID to be confirmed by the human loop"
+    }
+  ],
+  "codes": [
+    {
+      "code": "RDCAward",
+      "reward": "RDC decoration",
+      "status": "unverified",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://www.pcgamesn.com/grow-a-garden/codes"
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Mixed case as printed. Single tier 2 source at time of writing, needs a second independent confirmation before it renders as Active. Downgraded to Unverified by the build validator: single tier 2 source only."
+    },
+    {
+      "code": "torigate",
+      "reward": "Whispering Torii decoration",
+      "status": "unverified",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://www.pcgamesn.com/grow-a-garden/codes"
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Lowercase as printed. Competitor lists frequently uppercase this one. Downgraded to Unverified by the build validator: single tier 2 source only."
+    },
+    {
+      "code": "BEANORLEAVE10",
+      "reward": "Green Bean Chamber decoration",
+      "status": "unverified",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://www.pcgamesn.com/grow-a-garden/codes"
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Do not confuse with TEAMGREENBEAN, which belongs to Grow a Garden 2. Downgraded to Unverified by the build validator: single tier 2 source only."
+    },
+    {
+      "code": "LUNARGLOW10",
+      "reward": "event reward",
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "code": "BIZZY25",
+      "reward": "event reward",
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "code": "BIZZYBEES25",
+      "reward": "event reward",
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "code": "BEES10",
+      "reward": "event reward",
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "code": "BUZZINGEVENT20",
+      "reward": "event reward",
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "code": "3BILLION",
+      "reward": "milestone reward",
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Marked the game passing 3 billion visits."
+    },
+    {
+      "code": "2BILLION",
+      "reward": "milestone reward",
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "code": "22MCCU",
+      "reward": "event reward",
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Reported as a 22 million concurrent user milestone code. Single source."
+    },
+    {
+      "code": "COOKINGEVENTEXPANSION5",
+      "reward": "event reward",
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-22T10:53:00Z",
+      "expired_at": null,
+      "evidence": [
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    }
+  ],
+  "next_drop": {
+    "pattern": "Codes now arrive with admin abuse events and major update legs rather than social milestones. The Harvest Moon event has been running in legs through August 2026, with the fourth leg live at the last check.",
+    "watch": [
+      "official Grow a Garden Discord announcement channel",
+      "developer X accounts",
+      "the Roblox experience page description"
+    ]
+  },
+  "routes": {
+    "codes": "ship",
+    "values": "hold",
+    "updates": "ship",
+    "archive": "hold"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "game": "Tennis Zero",
+  "slug": "tennis-zero",
+  "developer": "Chrollo, published under Current x Blackstar",
+  "code_system": true,
+  "disambiguation": "Tennis Zero is from the same developer as Basketball Zero and shares its Styles and Flows structure. It is not Neo Tennis or Racket Rivals, which have separate code lists.",
+  "redeem_path": "Launch Tennis Zero, select Codes from the bottom menu in the lobby, type the code into the text box, then press Redeem.",
+  "redeem_requirements": "Join the Current x Blackstar Roblox community first. No code will redeem until you have.",
+  "checked_at": "2026-08-24T09:00:00Z",
+  "content_changed_at": "2026-08-24T09:00:00Z",
+  "official_sources": [
+    {"type": "discord", "url": "https://discord.gg/tenniszero", "note": "no dedicated codes channel at the last check, so announcements are the route, invite to be confirmed"}
+  ],
+  "codes": [
+    {"code": "MAKEOVER", "reward": "25 Lucky Style Spins and Lucky Flow Spins", "status": "active", "case_sensitive": true, "requirements": "Current x Blackstar community membership", "added_at": null, "last_verified_at": "2026-08-21T00:00:00Z", "expired_at": null, "evidence": ["https://driffle.com/blog/all-tennis-zero-codes/", "https://www.hashtechwave.com/tennis-zero-codes/"], "confidence": "confirmed", "needs_human": true, "notes": "Reported as the only working code and as the last one the developer released. Sources word the reward slightly differently, as 25 Lucky Style and Flow Spins in one case, so confirm whether that is 25 of each or 25 in total."}
+  ],
+  "next_drop": {
+    "pattern": "This is a newer release from a developer whose other games issue codes every couple of days, but Tennis Zero itself has been quiet since its last code. The Discord has no dedicated codes channel, so drops land in announcements and in the developer's social posts. Expect a code with the next substantial update rather than on a schedule.",
+    "watch": ["Tennis Zero Discord announcements", "Current x Blackstar Roblox community", "the developer's posts for Basketball Zero, which usually signal the update cadence across their titles"]
+  },
+  "known_disagreement": "Published counts range from one active code to eleven. The larger counts come from sites tracking a wider historical list without confirming current status. Freetins lists what has evidence and archives the rest.",
+  "routes": {"codes": "ship", "values": "drop", "updates": "hold", "archive": "hold"}
+}

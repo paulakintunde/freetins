@@ -1,0 +1,25 @@
+{
+  "game": "99 Nights in the Forest",
+  "slug": "99-nights-in-the-forest",
+  "developer": "Grandma's Favourite Games",
+  "code_system": true,
+  "disambiguation": "Codes are entered in lowercase exactly as the developer publishes them. Lists that capitalise them are transcribing, not quoting.",
+  "redeem_path": "Open 99 Nights in the Forest and stay in the lobby. The redeem menu is only available in the lobby, not during a run. Enter the code and confirm.",
+  "redeem_requirements": "none, but you must be in the lobby rather than mid run.",
+  "checked_at": "2026-08-24T09:00:00Z",
+  "content_changed_at": "2026-08-24T09:00:00Z",
+  "official_sources": [
+    {"type": "discord", "url": "https://discord.gg/99nightsintheforest", "note": "announcements only, there is no dedicated codes channel, invite to be confirmed"}
+  ],
+  "codes": [
+    {"code": "afterparty", "reward": "15 Diamonds", "status": "active", "case_sensitive": true, "requirements": "redeem from the lobby", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.pockettactics.com/99-nights-in-the-forest-codes", "https://driffle.com/blog/99-nights-in-the-forest-codes/"], "confidence": "confirmed", "needs_human": true, "notes": "Lowercase. One tracker reported zero active codes in the same window, so an in game check settles it."},
+    {"code": "forestwakesup26", "reward": "15 Diamonds and 3 flames", "status": "active", "case_sensitive": true, "requirements": "redeem from the lobby", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://driffle.com/blog/99-nights-in-the-forest-codes/", "https://www.pockettactics.com/99-nights-in-the-forest-codes"], "confidence": "confirmed", "needs_human": true, "notes": "Lowercase."},
+    {"code": "happyhalloween", "reward": "reward not consistently stated", "status": "unverified", "case_sensitive": true, "requirements": "redeem from the lobby", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://driffle.com/blog/99-nights-in-the-forest-codes/"], "confidence": "conflicting", "needs_human": true, "notes": "Seasonal code listed as active by one source with no reward stated. Renders as Unverified."},
+    {"code": "yay fishing", "reward": "2 Diamonds", "status": "active", "case_sensitive": true, "requirements": "This is not a redeem-menu code. Type it into the Roblox experience chat while fishing during a run.", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.pcgamer.com/games/roblox/99-nights-in-the-forest-codes/", "https://www.pockettactics.com/99-nights-in-the-forest-codes"], "confidence": "confirmed", "needs_human": true, "notes": "Contains a space and is entered in chat, not the code box. This is the single most misreported entry on competitor pages, which list it in the code table where it will always fail."}
+  ],
+  "next_drop": {
+    "pattern": "This game issues codes rarely. The most recent major update, the first of the biome refresh releases in late August 2026, shipped with no code at all. Expect codes at milestone moments and seasonal events rather than at every patch.",
+    "watch": ["official Discord announcements channel"]
+  },
+  "routes": {"codes": "ship", "values": "drop", "updates": "hold", "archive": "hold"}
+}

@@ -1,0 +1,25 @@
+{
+  "game": "Jujutsu Zero",
+  "slug": "jujutsu-zero",
+  "developer": "Studio Resonance",
+  "code_system": true,
+  "disambiguation": "Jujutsu Zero is a separate experience from Jujutsu Infinite, Jujutsu Shenanigans and Kaizen. All four are Jujutsu Kaisen inspired and their codes are frequently mixed up on competitor pages.",
+  "redeem_path": "Launch Jujutsu Zero, work through the tutorial fight, then from the lobby open the Codes tab in the main menu, type the code into the Enter Code Here box and press Redeem.",
+  "redeem_requirements": "The tutorial must be completed before the Codes option appears. New players who cannot find the button have almost always skipped this.",
+  "checked_at": "2026-08-24T09:00:00Z",
+  "content_changed_at": "2026-08-24T09:00:00Z",
+  "official_sources": [
+    {"type": "discord", "url": "https://discord.gg/jujutsuzero", "note": "the only real code channel, invite to be confirmed"}
+  ],
+  "codes": [
+    {"code": "CALAMITY", "reward": "1,000 Cursed Crystals, 10,000 Lumens and 50 Clan Rolls", "status": "active", "case_sensitive": true, "requirements": "tutorial completed", "added_at": "2026-08-22T00:00:00Z", "last_verified_at": "2026-08-23T00:00:00Z", "expired_at": null, "evidence": ["https://progameguides.com/roblox/jujutsu-zero-codes/", "https://www.destructoid.com/jujutsu-zero-codes/"], "confidence": "confirmed", "needs_human": true, "notes": "Shipped with the Buffs and Balances update. Three independent trackers agree on the exact reward split."},
+    {"code": "200KLIKES", "reward": "500 Cursed Crystals, 3,500 Lumens and 50 Clan Rolls", "status": "unverified", "case_sensitive": true, "requirements": "tutorial completed", "added_at": null, "last_verified_at": "2026-08-23T00:00:00Z", "expired_at": null, "evidence": ["https://www.destructoid.com/jujutsu-zero-codes/"], "confidence": "reported", "needs_human": true, "notes": "Milestone codes in this game have tended to stay live, unlike its update codes. Worth checking rather than assuming dead."},
+    {"code": "190KLIKES", "reward": "3,500 Lumens, 250 Cursed Crystals and 35 Clan Rolls", "status": "unverified", "case_sensitive": true, "requirements": "tutorial completed", "added_at": null, "last_verified_at": "2026-08-23T00:00:00Z", "expired_at": null, "evidence": ["https://www.destructoid.com/jujutsu-zero-codes/"], "confidence": "reported", "needs_human": true, "notes": ""}
+  ],
+  "next_drop": {
+    "pattern": "The game is in beta and the developer is still adding techniques, raids and rewards, so codes track both update releases and like milestones. Like milestones arrive in 10,000 increments, which makes the next milestone code name predictable even when the timing is not.",
+    "watch": ["Jujutsu Zero Discord", "the Roblox experience page like count, which telegraphs the next milestone code"]
+  },
+  "content_gap": "Jujutsu Zero has no Trello board and no wiki, which is unusual for a game of its size and is confirmed by at least one major tracker. Everything a player needs about clans, cursed techniques and weapons currently lives in scattered Discord messages. A clans and techniques reference on this hub is the highest value non-codes page available for this game.",
+  "routes": {"codes": "ship", "values": "drop", "updates": "hold", "archive": "hold"}
+}

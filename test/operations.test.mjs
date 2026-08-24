@@ -38,6 +38,8 @@ test('a published game without evidence is rejected', () => {
   const game = data.games.find((item) => item.slug === 'grow-a-garden');
   assert.ok(game);
   game.publicationState = 'published';
+  game.officialSourceUrl = null;
+  game.redeemSteps = [];
 
   assert.throws(() => validateOperations(data), /needs an officialSourceUrl/);
 });

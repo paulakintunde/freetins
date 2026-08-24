@@ -1,5 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
 import Button from '../ui/Button.astro';
 import EditorialArticle from './EditorialArticle.astro';
 import { requireArticleArtwork } from '../../data/article-images';
@@ -39,6 +40,11 @@ interface Props {
 }
 
 const { definition, checkerSnapshot } = Astro.props;
+const codeCopyEntry = definition.kind === 'codes'
+  ? (await getCollection('codes')).find((entry) => entry.id === definition.slug)
+  : undefined;
+const renderedCodeCopy = codeCopyEntry ? await render(codeCopyEntry) : null;
+const CodeCopy = renderedCodeCopy?.Content;
 const article = getArticleByPath(definition.path);
 const hubArticles = definition.routeId === 'answers'
   ? editorialArticles.filter((item) => item.section === 'answers')
@@ -72,7 +78,7 @@ const dailyEntries = (operationalPage?.entries ?? []).filter(
 const timelineEntries = definition.slug ? operationalPage?.updates ?? [] : operations.updates;
 const entryStateLabels: Record<EntryState, string> = {
   verified: 'Verified active',
-  reported: 'Officially reported',
+  reported: 'Source-reported',
   stale: 'Needs recheck',
   expired: 'Expired',
   unverified: 'Not verified',
@@ -349,7 +355,13 @@ const crumbs = isGamePage
             {expiredCodeEntries.map((item) => <div><s>{item.entry.code}</s><span>{item.entry.reward}</span>{item.latestEvent ? <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <span>Check not recorded</span>}</div>)}
           </div></>}
         </div>
-        <aside><h2>Redeem and verify</h2><p>{operationalPage?.game.redeemSteps.length ? 'Use the recorded redemption path below. A successful redemption is labeled verified; an official announcement without redemption is labeled reported.' : 'Redemption instructions have not passed publication validation yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Official game source</a>}<a href="/how-we-verify/">How we verify</a>{expiredCodeEntries.length > 0 && <a href={`${gameRoot}expired/`}>Full archive</a>}</aside>
+        <aside><h2>Redeem and verify</h2><p>{operationalPage?.game.redeemSteps.length ? 'Use the recorded redemption path below. A successful in-game redemption is labeled verified; current source corroboration without redemption is labeled source-reported.' : 'Redemption instructions have not passed publication validation yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Official game source</a>}<a href="/how-we-verify/">How we verify</a>{expiredCodeEntries.length > 0 && <a href={`${gameRoot}expired/`}>Full archive</a>}</aside>
+      </section>
+    )}
+
+    {definition.kind === 'codes' && CodeCopy && (
+      <section class="page-section content-boundary route-editorial">
+        <CodeCopy />
       </section>
     )}
 
@@ -596,6 +608,16 @@ const crumbs = isGamePage
   .prose-body h2 { scroll-margin-top: 90px; margin: 0 0 12px; padding-top: 30px; color: var(--text-primary); }
   .prose-body h2:first-child { padding-top: 0; }
   .prose-body p { color: var(--text-secondary); line-height: 1.7; }
+  .route-editorial { max-width: 920px; }
+  .route-editorial :global(h2) { scroll-margin-top: 90px; margin: 0; padding-top: 34px; color: var(--text-primary); font: 600 var(--fs-h3) / var(--lh-h3) var(--font-core); }
+  .route-editorial :global(h2:first-child) { padding-top: 0; }
+  .route-editorial :global(h3) { scroll-margin-top: 90px; margin: 0; padding-top: 22px; color: var(--text-primary); font: 650 var(--fs-body-lg) / 1.35 var(--font-core); }
+  .route-editorial :global(p), .route-editorial :global(li) { color: var(--text-secondary); line-height: 1.72; }
+  .route-editorial :global(p) { max-width: 76ch; }
+  .route-editorial :global(ol), .route-editorial :global(ul) { max-width: 74ch; padding-left: 22px; }
+  .route-editorial :global(li + li) { margin-top: 8px; }
+  .route-editorial :global(strong) { color: var(--text-primary); }
+  .route-editorial :global(a) { color: var(--green-neon); }
   .guide-row { display: grid; grid-template-columns: 1.4fr .8fr .6fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); }
   .form-layout { display: grid; grid-template-columns: minmax(0, 620px) minmax(230px, 320px); gap: 30px; }
   form { display: grid; gap: 16px; }

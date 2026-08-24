@@ -1,0 +1,37 @@
+{
+  "game": "Dandy's World",
+  "slug": "dandys-world",
+  "developer": "BlushCrunch Studio",
+  "code_system": true,
+  "disambiguation": "Sources disagree on where the redeem button sits. Most describe a Use Code button on the left of the lobby screen, one describes a settings cog in the bottom right. The lobby button is the more widely reported path.",
+  "redeem_path": "Launch Dandy's World and connect to the lobby, press the Use Code button on the left of the screen to open the INPUT A CODE box, enter the code, then press the green Use button.",
+  "redeem_requirements": "none.",
+  "checked_at": "2026-08-24T09:00:00Z",
+  "content_changed_at": "2026-08-24T09:00:00Z",
+  "official_sources": [
+    {"type": "discord", "url": "https://discord.gg/blushcrunch", "note": "main code drop channel, invite to be confirmed"},
+    {"type": "x", "url": "https://www.youtube.com/@Qwel", "note": "developer Qwel's YouTube channel, handle to be confirmed"}
+  ],
+  "codes": [
+    {"code": "ICHOR", "reward": "50 Ichor", "status": "active", "case_sensitive": false, "requirements": "one redemption per account", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.theclick.gg/dandys-world-codes-august-2026/", "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"], "confidence": "confirmed", "needs_human": true, "notes": "Reported as a permanent code rather than a timed one, and reported as not case sensitive, which is unusual for Roblox. Both claims need the in game check."},
+    {"code": "RESEARCHMOBILE", "reward": "Rodger skin", "status": "unverified", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/", "https://fossbytes.com/dandys-world-codes/"], "confidence": "conflicting", "needs_human": true, "notes": "Two sources list it active, one states plainly that it has expired. This is the disagreement to resolve first, because it is the only cosmetic reward on the list."},
+    {"code": "SPOOKYSEASON", "reward": "event pumpkins, not Ichor", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.theclick.gg/dandys-world-codes-august-2026/", "https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"], "confidence": "confirmed", "needs_human": false, "notes": "Awarded event currency rather than Ichor, so it would not have helped even while live."},
+    {"code": "HAPPYHALLOWEEN", "reward": "event reward", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"], "confidence": "reported", "needs_human": false, "notes": ""},
+    {"code": "EASTER2025", "reward": "event reward", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"], "confidence": "reported", "needs_human": false, "notes": ""},
+    {"code": "FESTIVEGIFT", "reward": "event reward", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"], "confidence": "reported", "needs_human": false, "notes": ""},
+    {"code": "1BILLION", "reward": "milestone reward", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"], "confidence": "reported", "needs_human": false, "notes": ""},
+    {"code": "APRIL1", "reward": "event reward", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.g2a.com/news/features/dandys-world-codes-free-ichor-how-to-redeem-updates/"], "confidence": "reported", "needs_human": false, "notes": ""},
+    {"code": "300K", "reward": "150 Ichor", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.sportskeeda.com/roblox-news/dandys-world-codes"], "confidence": "reported", "needs_human": false, "notes": ""},
+    {"code": "SKINTICKET", "reward": "150 Ichor", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.sportskeeda.com/roblox-news/dandys-world-codes"], "confidence": "reported", "needs_human": false, "notes": ""},
+    {"code": "2HUNDREDMILLION", "reward": "150 Ichor", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.sportskeeda.com/roblox-news/dandys-world-codes"], "confidence": "reported", "needs_human": false, "notes": ""},
+    {"code": "HUNDREDMILLION", "reward": "150 Ichor", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.sportskeeda.com/roblox-news/dandys-world-codes"], "confidence": "reported", "needs_human": false, "notes": ""},
+    {"code": "FIFTYMILLION", "reward": "150 Ichor", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.sportskeeda.com/roblox-news/dandys-world-codes"], "confidence": "reported", "needs_human": false, "notes": ""},
+    {"code": "TENMILLION", "reward": "150 Ichor", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.sportskeeda.com/roblox-news/dandys-world-codes"], "confidence": "reported", "needs_human": false, "notes": ""},
+    {"code": "ONETHOUSAND", "reward": "50 Ichor", "status": "expired", "case_sensitive": false, "requirements": "none", "added_at": null, "last_verified_at": "2026-08-22T00:00:00Z", "expired_at": null, "evidence": ["https://www.sportskeeda.com/roblox-news/dandys-world-codes"], "confidence": "reported", "needs_human": false, "notes": ""}
+  ],
+  "next_drop": {
+    "pattern": "This game issues codes far less often than other games of its size. Historic codes cluster around visit milestones and seasonal events rather than patches, and recent updates including the Tisha update in late July 2026 shipped with no code. Treat the absence of new codes as normal for this title rather than as a page that has gone stale.",
+    "watch": ["BlushCrunch Studio Discord", "the developer's YouTube channel", "the BlushCrunch Studio Roblox community"]
+  },
+  "routes": {"codes": "ship", "values": "drop", "updates": "hold", "archive": "hold"}
+}
