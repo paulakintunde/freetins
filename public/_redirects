@@ -37,3 +37,54 @@
 /ddc-codes-best-double-casino-codes/                               /daily/doubledown-casino/          301
 /doubledown-casino-promo-codes-coupons-free-chips/                 /daily/doubledown-casino/          301
 /redeem-codes/doubledown-casino/                                   /daily/doubledown-casino/          301
+
+# --- Legal and policy renames -----------------------------------------------
+# Highest link-equity risk on the old site: these return 200 today.
+/privacy-policy/                                                   /privacy/                          301
+/terms-of-use/                                                     /terms-and-conditions/             301
+/dcma/                                                             /dmca/                             301
+
+# --- Content with intent, not yet rebuilt -----------------------------------
+# Flagged "rewrite and publish later" in remaining-live-content.csv. Sent to the
+# nearest live hub rather than 404, so the inbound link still lands somewhere
+# topical. Replace each with a direct 301 when the page is published.
+/close-up-pics-answers-and-cheats-for-all-levels/                  /answers/                          301
+/adventure-capitalist-cheats-for-android-pc-and-ios/               /cheats/                           301
+/adventure-capitalist-support-code/                                /cheats/                           301
+/best-gba-games-emulator-pokemon-roms-time/                        /guides/                           301
+/nintendo-switch-2-features-games-cost-and-more/                   /guides/                           301
+
+# --- WordPress category archives --------------------------------------------
+# Archive pages, not content. Mapped to the closest equivalent surface.
+/code/                                                             /codes/                            301
+/featured/                                                         /                                  301
+/news-updates/                                                     /                                  301
+/uncategorized/                                                    /                                  301
+
+# --- Deliberate removals: DO NOT redirect these -----------------------------
+# 15 URLs with no relationship to game help. They are removed on purpose and must
+# keep returning a genuine 404. Redirecting them to a hub would be a soft-404
+# pattern: sending Rainmeter-skin or APK-sideloading traffic to a game-codes page
+# helps nobody and dilutes the site's topical focus.
+#
+# MIGRATION-READINESS-2026-08-24.md asks for 410 Gone so crawlers drop them
+# faster. Cloudflare Pages `_redirects` cannot express 410 — it only supports
+# 301/302/303/307/308 and 200 rewrites — so that needs a Worker route and is
+# tracked separately. Cloudflare already serves a hard 404 (not a soft 404) for
+# these, so they do de-index; 410 only makes it quicker.
+#
+#   /amd-ryzen-rainmeter-skin-setup/
+#   /cowan-clock-for-rainmeter/
+#   /jarvis-iron-man-a-blue-rainmeter-skin-theme-inspiration/
+#   /jarvis-shield-interface-rainmeter-skin-installation/
+#   /kurugin-rainmeter-skin/
+#   /monstercat-visualizer-rainmeter-realtime-audio-visualizer/
+#   /visbubble-round-visualizer-for-rainmeter-skin/
+#   /blackmart-alpha-apk-latest-version-blackmarket-apk/
+#   /tech-guides/ios-emulators-windows/
+#   /tech-guides/iphone-secret-codes/
+#   /alternative-websites-like-craigslist-jobs-furniture-apartments-cars/
+#   /ambigram-generator-examples/
+#   /download-jw-player-videos-high-quality/
+#   /adblock-vs-adblock-plus-chrome-android-firefox-safari/
+#   /what-is-coding-learn-computing-programming/
