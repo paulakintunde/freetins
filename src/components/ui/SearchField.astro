@@ -9,7 +9,7 @@ const { label, placeholder, name = 'q' } = Astro.props;
 const inputId = `search-${name}`;
 ---
 
-<form class="search-field" action="/search" method="get" role="search">
+<form class="search-field" action="/search/" method="get" role="search">
   <label for={inputId}>{label}</label>
   <div class="search-control">
     <input id={inputId} type="search" name={name} placeholder={placeholder} autocomplete="off" />

@@ -14,7 +14,6 @@ const normalizedCurrentPath = currentPath === '/index.html'
 
 const isActive = (href: string) => {
   if (href === '/') return normalizedCurrentPath === '/';
-  if (href === '/roblox') return normalizedCurrentPath === '/roblox' || normalizedCurrentPath.endsWith('-codes');
   return normalizedCurrentPath === href || normalizedCurrentPath.startsWith(`${href}/`);
 };
 ---

@@ -2,12 +2,12 @@ import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
-const excludedFromSitemap = ['/internal/', '/advertise', '/alerts/manage', '/search'];
+const excludedFromSitemap = ['/internal/', '/search/'];
 
 export default defineConfig({
   site: 'https://freetins.com',
   output: 'static',
-  trailingSlash: 'never',
+  trailingSlash: 'always',
   adapter: cloudflare({ imageService: 'compile' }),
   build: {
     format: 'file',

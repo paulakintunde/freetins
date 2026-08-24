@@ -52,8 +52,8 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
         <h1>Free codes<br />while they still work</h1>
         <p>Every code and daily link on this site carries the minute it was last opened. Nothing here is a list someone republished with a new date on top.</p>
         <div class="hero-actions">
-          <Button href="/roblox">Find your game</Button>
-          <Button href="/how-we-verify" variant="secondary">How we verify</Button>
+          <Button href="/codes/">Find your game</Button>
+          <Button href="/how-we-verify/" variant="secondary">How we verify</Button>
         </div>
       </div>
     </div>
@@ -63,12 +63,12 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
     <h2>Today’s drops</h2>
     <p class="section-intro">Every game below had a working code or link verified in the last three hours. Expired entries stay on the page, struck through, so you can see what we checked.</p>
 
-    <div class="home-search">
+        <div class="home-search">
       <SearchField label="Find your game" placeholder="Grow a Garden, Monopoly GO, Blue Lock Rivals…" />
       <div class="hot-searches">
         <span>Most searched</span>
         {hotSearches.map((term) => (
-          <a href={`/search?q=${encodeURIComponent(term)}`}>{term}</a>
+          <a href={`/search/?q=${encodeURIComponent(term)}`}>{term}</a>
         ))}
       </div>
     </div>
@@ -86,7 +86,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   <section class="page-section content-boundary">
     <div class="section-heading">
       <h2>Fresh in the last three hours</h2>
-      <a href="/roblox">All 90 games</a>
+      <a href="/codes/">All 90 games</a>
     </div>
 
     <div class="game-grid">
@@ -161,7 +161,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   <section class="page-section content-boundary">
     <div class="section-heading daily-heading">
       <h2>Daily link games</h2>
-      <a href="/daily">All daily links</a>
+      <a href="/daily/">All daily links</a>
     </div>
     <div class="daily-list">
       {dailyGames.map((game) => (

@@ -1,37 +1,64 @@
 # Freetins
 
-Production Astro 5 port of the 33-screen Freetins prototype, targeting Cloudflare Pages.
+Static-first Astro 5 site for Cloudflare Pages.
 
 ## Requirements
 
 - Node.js 24.15.0 (`.nvmrc`)
 - pnpm 11.19.0
-- A Cloudflare Pages project for production deployment
+- A Cloudflare Pages project for deployment
 
-## Local development
+## Local Development
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Open the URL printed by Astro, normally `http://localhost:4321`. Do not open the prototype HTML files directly: `file://` URLs cannot provide production routing.
+Open the URL printed by Astro, usually `http://localhost:4321`.
 
-The production-style local preview builds the site and serves the output through Wrangler:
+Preview the production build locally with Wrangler:
 
 ```bash
 pnpm preview
 ```
 
-## Rendering and navigation
+## Route Model
 
-The project is static-first. Astro prerenders catalogue, game, guide, gear, editorial, and legal routes into HTML at build time. The rendering contract in `src/data/route-rendering.json` opts only `/status` and `/alerts/manage` into Cloudflare on-demand rendering.
+The current build uses direct, slash-canonical routes and does not rely on redirect middleware or route gating.
 
-Static routes use Astro's file output with extensionless, no-trailing-slash public URLs. This matches Cloudflare Pages route resolution directly and avoids the redirect hop produced by directory-style `page/index.html` output.
+Live public namespaces:
 
-Internal navigation uses Astro's `ClientRouter` with hover/focus prefetching. The browser still receives complete HTML for every route, so direct URLs and JavaScript-disabled navigation continue to work. Shared shell behavior lives in `src/scripts/site.ts`, which uses delegated events and Astro navigation lifecycle events instead of attaching listeners to DOM nodes that are replaced during a route swap.
+- `/`
+- `/codes/`
+- `/daily/`
+- `/cheats/`
+- `/answers/`
+- `/guides/`
+- `/games/`
+- `/gear/`
+- `/how-we-verify/`
+- `/submit/`
+- `/alerts/`
+- `/contact/`
+- `/blog/`
+- `/privacy/`
+- `/disclosure/`
+- `/terms-and-conditions/`
+- `/author/paul-a/`
 
-Hashed files under `/_astro/` and `/assets/` are cached immutably. Cloudflare Pages handles normal static document caching, code pages receive a five-minute edge freshness window, `/status` receives a 30-second edge freshness window, and `/alerts/manage` is private and never cached.
+Earned child routes live under the game namespace:
+
+- `/codes/<slug>/`
+- `/codes/<slug>/values/`
+- `/codes/<slug>/expired/`
+- `/codes/<slug>/updates/`
+
+## Rendering
+
+Astro prerenders the site at build time. The app no longer uses the legacy redirect layer or legacy on-demand route gating. The current build is meant to be served as direct HTML with matching canonical URLs.
+
+Shared shell behavior lives in `src/scripts/site.ts`, which uses delegated events and Astro navigation lifecycle events.
 
 ## Validation
 
@@ -44,7 +71,7 @@ pnpm check:routes
 
 ## Cloudflare Pages
 
-Connect the repository in Workers & Pages with these settings:
+Recommended project settings:
 
 - Production branch: `main`
 - Build command: `pnpm build`
@@ -53,12 +80,10 @@ Connect the repository in Workers & Pages with these settings:
 
 `wrangler.toml` is the source-controlled Pages configuration. Resource identifiers for D1, KV, and secret bindings are added after those Cloudflare resources are provisioned.
 
-The `/status` route reads the optional `STATUS` KV binding at the key `checker:current`. Its JSON value must contain `state`, `lastFullRun`, `pagesChecked`, `medianResponseMs`, and `message`. Until the binding is provisioned or when its value is invalid, the page reports status data as unavailable instead of presenting invented operational data.
-
-## Prototype reference
+## Prototype Reference
 
 `Freetins Site.dc.html`, `support.js`, `image-slot.js`, and `_ds/` are source references only. They are not imported by the Astro application and are not copied into `dist`.
 
-## Project status
+## Project Status
 
-The current stage establishes the Astro/Pages foundation, shared product shell, production Home route, and generated documents for the complete public route map. The route crawl verifies that every internal link resolves and that no prototype hash routes leak into the build. Content collections, D1/KV endpoints, SEO builders, and full screen-by-screen visual QA follow in the order defined by the attached handoff brief.
+The current stage is a direct-route launch build with the new information architecture, canonical slugs, and deleted legacy shells. The remaining work is content verification and production rollout, not route migration.

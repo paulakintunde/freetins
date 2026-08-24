@@ -87,7 +87,7 @@ export const homeTiles = catalogue.slice(0, 12).map(([name, live, minutes], inde
   live,
   age: formatAge(minutes),
   rate: 92 + (index % 7),
-  href: `/roblox/${slugify(name)}`,
+  href: `/codes/${slugify(name)}/`,
 }));
 
 export const sponsoredGames = [
@@ -110,7 +110,7 @@ export const dailyGames = dailyRaw.map(([name, live, minutes]) => ({
   name,
   live,
   age: formatAge(minutes),
-  href: `/daily/${slugify(name)}`,
+  href: `/daily/${slugify(name)}/`,
 }));
 
 export const dailyLinkCatalogue = dailyRaw.map(([name, live, minutes]) => ({

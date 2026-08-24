@@ -1,16 +1,13 @@
 import { dailyLinkCatalogue, gameCatalogue } from './home';
-import routeRendering from './route-rendering.json';
 
 export type RouteKind =
   | 'daily'
   | 'dailyGame'
-  | 'codes'
   | 'browse'
-  | 'hub'
+  | 'codes'
   | 'cheats'
   | 'cheat'
   | 'search'
-  | 'queue'
   | 'gearCategory'
   | 'gearProduct'
   | 'verify'
@@ -19,21 +16,15 @@ export type RouteKind =
   | 'author'
   | 'contact'
   | 'guide'
-  | 'calendar'
+  | 'info'
   | 'az'
-  | 'status'
   | 'privacy'
   | 'affiliate'
-  | 'notTracked'
   | 'values'
-  | 'tiers'
-  | 'team'
-  | 'adspec'
   | 'updates'
-  | 'gearIndex'
-  | 'manage'
   | 'archive'
-  | 'terms';
+  | 'terms'
+  | 'notTracked';
 
 export interface RouteDefinition {
   path: string;
@@ -51,105 +42,79 @@ export interface RouteDefinition {
 
 const staticRoutes: RouteDefinition[] = [
   {
-    path: '/daily', routeId: 'daily', kind: 'daily', title: 'Daily links | Freetins', heading: 'Daily links',
+    path: '/daily/', routeId: 'daily', kind: 'daily', title: 'Daily links | Freetins', heading: 'Daily links',
     description: 'Free dice, spins, rolls and energy links, opened on a published check schedule.',
   },
   {
-    path: '/roblox', routeId: 'browse', kind: 'browse', title: 'Roblox codes | Freetins', heading: 'All games',
-    description: 'Every Roblox game we track, ordered by the time its codes were last checked.',
+    path: '/codes/', routeId: 'browse', kind: 'browse', title: 'Game codes | Freetins', heading: 'All codes',
+    description: 'Every game we track, ordered by the time its codes were last checked.',
   },
   {
-    path: '/cheats', routeId: 'cheats', kind: 'cheats', title: 'Game cheats | Freetins', heading: 'Cheats',
+    path: '/search/', routeId: 'search', kind: 'search', title: 'Search | Freetins', heading: 'Search',
+    description: 'Search games, guides and daily-link pages on Freetins.',
+  },
+  {
+    path: '/cheats/', routeId: 'cheats', kind: 'cheats', title: 'Game cheats | Freetins', heading: 'Cheats',
     description: 'Game cheats entered by hand and confirmed against the current patch.',
   },
   {
-    path: '/search', routeId: 'search', kind: 'search', title: 'Search | Freetins', heading: 'Find your game',
-    description: 'Search every game, daily link page and guide tracked by Freetins.', noindex: true,
+    path: '/answers/', routeId: 'answers', kind: 'info', title: 'Answers | Freetins', heading: 'Answers',
+    description: 'Puzzle and level answer sheets with direct navigation.', noindex: false,
   },
   {
-    path: '/internal/queue', routeId: 'queue', kind: 'queue', title: 'Review queue | Freetins', heading: 'Review queue',
-    description: 'Internal validation queue for candidate games.', eyebrow: 'Internal', noindex: true,
+    path: '/guides/', routeId: 'guideIndex', kind: 'info', title: 'Guides | Freetins', heading: 'Guides',
+    description: 'Process and explainer pages that are not one game’s codes.',
   },
   {
-    path: '/how-we-verify', routeId: 'verify', kind: 'verify', title: 'How we verify | Freetins', heading: 'How we verify',
+    path: '/how-we-verify/', routeId: 'verify', kind: 'verify', title: 'How we verify | Freetins', heading: 'How we verify',
     description: 'The source, check schedule and removal rules behind every code on Freetins.',
   },
   {
-    path: '/submit', routeId: 'submit', kind: 'submit', title: 'Submit a code | Freetins', heading: 'Submit a code',
+    path: '/submit/', routeId: 'submit', kind: 'submit', title: 'Submit a code | Freetins', heading: 'Submit a code',
     description: 'Send a code to the Freetins verification queue.', eyebrow: 'Community',
   },
   {
-    path: '/alerts', routeId: 'alerts', kind: 'alerts', title: 'Code alerts | Freetins', heading: 'Know before the code expires',
+    path: '/alerts/', routeId: 'alerts', kind: 'alerts', title: 'Code alerts | Freetins', heading: 'Know before the code expires',
     description: 'Choose games and get an alert when a verified code is published.',
   },
   {
-    path: '/contact', routeId: 'contact', kind: 'contact', title: 'Contact | Freetins', heading: 'Contact',
-    description: 'Corrections, partnerships, promotion and general enquiries for the Freetins team.',
+    path: '/contact/', routeId: 'contact', kind: 'contact', title: 'Contact | Freetins', heading: 'Contact',
+    description: 'Corrections, partnerships, promotion and general enquiries for the Freetins editorial desk.',
   },
   {
-    path: '/calendar', routeId: 'calendar', kind: 'calendar', title: 'Codes calendar | Freetins', heading: 'Codes calendar',
-    description: 'What dropped, what expired and what is coming next.',
+    path: '/blog/', routeId: 'updates', kind: 'updates', title: 'Blog | Freetins', heading: 'Blog',
+    description: 'The verification and change log.',
   },
   {
-    path: '/games', routeId: 'az', kind: 'az', title: 'All games A-Z | Freetins', heading: 'All games A-Z',
+    path: '/games/', routeId: 'az', kind: 'az', title: 'All games A-Z | Freetins', heading: 'All games A-Z',
     description: 'Every game with a page on Freetins and its current number of live codes or links.',
   },
   {
-    path: '/status', routeId: 'status', kind: 'status', title: 'Checker status | Freetins', heading: 'Checker status',
-    description: 'Current health and recent incidents for the Freetins verification system.',
+    path: '/resources/', routeId: 'resources', kind: 'info', title: 'Resources | Freetins', heading: 'Resources',
+    description: 'A human sitemap and launch references.',
   },
   {
-    path: '/privacy', routeId: 'privacy', kind: 'privacy', title: 'Privacy | Freetins', heading: 'Privacy',
+    path: '/about/', routeId: 'about', kind: 'info', title: 'About | Freetins', heading: 'About',
+    description: 'About the site and its relaunch.',
+  },
+  {
+    path: '/privacy/', routeId: 'privacy', kind: 'privacy', title: 'Privacy | Freetins', heading: 'Privacy',
     description: 'How Freetins collects, uses and shares data.',
   },
   {
-    path: '/affiliate-disclosure', routeId: 'affiliate', kind: 'affiliate', title: 'Affiliate disclosure | Freetins', heading: 'Affiliate disclosure',
+    path: '/disclosure/', routeId: 'affiliate', kind: 'affiliate', title: 'Disclosure | Freetins', heading: 'Disclosure',
     description: 'Which Freetins links may pay us and what money never buys.',
   },
   {
-    path: '/not-tracked', routeId: 'notfound', kind: 'notTracked', title: 'Game not tracked | Freetins', heading: 'We do not cover Anime Card Clash 2',
-    description: 'This game has not cleared the Freetins validation gate.',
-  },
-  {
-    path: '/tier-list', routeId: 'tiers', kind: 'tiers', title: 'Roblox code tier list | Freetins', heading: 'Roblox code tier list',
-    description: 'Roblox games ranked by code generosity, with recent codes shown as evidence.',
-  },
-  {
-    path: '/team', routeId: 'team', kind: 'team', title: 'Editorial team | Freetins', heading: 'Editorial team',
-    description: 'The three people who write, check and sign off every Freetins page.',
-  },
-  {
-    path: '/advertise', routeId: 'adspec', kind: 'adspec', title: 'Ad slot inventory | Freetins', heading: 'Ad slot inventory',
-    description: 'Freetins advertising placements, dimensions and delivery rules.', eyebrow: 'Commercial specification', noindex: true,
-  },
-  {
-    path: '/updates', routeId: 'updates', kind: 'updates', title: 'Update history | Freetins', heading: 'Update history',
-    description: 'A dated record of product, checker and editorial policy changes.',
-  },
-  {
-    path: '/gear', routeId: 'gearIndex', kind: 'gearIndex', title: 'Gaming gear | Freetins', heading: 'Gear',
-    description: 'Products picked for a specific gaming problem, with the commercial relationship disclosed.',
-  },
-  {
-    path: '/alerts/manage', routeId: 'manage', kind: 'manage', title: 'Manage alerts | Freetins', heading: 'Manage alerts',
-    description: 'Pause, remove or delete code alerts from a signed management link.', noindex: true,
-  },
-  {
-    path: '/archive', routeId: 'archive', kind: 'archive', title: 'Expired code archive | Freetins', heading: 'Expired code archive',
-    description: 'Every expired code remains visible with its first-seen and removal dates.',
-  },
-  {
-    path: '/terms', routeId: 'terms', kind: 'terms', title: 'Terms of use | Freetins', heading: 'Terms of use',
+    path: '/terms-and-conditions/', routeId: 'terms', kind: 'terms', title: 'Terms of use | Freetins', heading: 'Terms of use',
     description: 'The terms governing use of Freetins.',
   },
 ];
 
 const authorRoutes: RouteDefinition[] = ([
-  ['priya-raman', 'Priya Raman', 'Roblox codes editor'],
-  ['diego-ferreira', 'Diego Ferreira', 'Mobile games editor'],
-  ['marcus-bell', 'Marcus Bell', 'Verification lead'],
+  ['paul-a', 'Paul A', 'Editor'],
 ] as const).map(([slug, name, role]) => ({
-  path: `/team/${slug}`,
+  path: `/author/${slug}/`,
   routeId: 'author',
   kind: 'author',
   title: `${name}, ${role} | Freetins`,
@@ -170,7 +135,7 @@ const cheatRoutes: RouteDefinition[] = ([
   ['fallout-4', 'Fallout 4', 'Fallout 4 console commands'],
   ['minecraft', 'Minecraft', 'Minecraft commands'],
 ] as const).map(([slug, name, heading]) => ({
-  path: `/cheats/${slug}`,
+  path: `/cheats/${slug}/`,
   routeId: 'cheat',
   kind: 'cheat',
   title: `${heading} | Freetins`,
@@ -187,7 +152,7 @@ const gearCategories = [
 ] as const;
 
 const gearCategoryRoutes: RouteDefinition[] = gearCategories.map(([slug, name]) => ({
-  path: `/gear/${slug}`,
+  path: `/gear/${slug}/`,
   routeId: 'gear',
   kind: 'gearCategory',
   title: `${name} | Freetins`,
@@ -205,7 +170,7 @@ const gearProductRoutes: RouteDefinition[] = ([
   ['pc-and-console', 'mechanical-keypad-24-key', 'Mechanical keypad, 24 key'],
   ['pc-and-console', 'charging-dock-two-bay', 'Charging dock, two bay'],
 ] as const).map(([category, slug, name]) => ({
-  path: `/gear/${category}/${slug}`,
+  path: `/gear/${category}/${slug}/`,
   routeId: 'gearItem',
   kind: 'gearProduct',
   title: `${name} | Freetins`,
@@ -223,7 +188,7 @@ const guideRoutes: RouteDefinition[] = ([
   ['what-to-buy-first-from-the-gear-shop', 'What to buy first from the gear shop'],
   ['pet-setup-for-passive-income', 'Pet setup for passive income'],
 ] as const).map(([slug, heading]) => ({
-  path: `/guides/${slug}`,
+  path: `/guides/${slug}/`,
   routeId: 'guide',
   kind: 'guide',
   title: `${heading} | Freetins`,
@@ -234,7 +199,7 @@ const guideRoutes: RouteDefinition[] = ([
 }));
 
 const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => ({
-  path: `/daily/${game.slug}`,
+  path: `/daily/${game.slug}/`,
   routeId: 'freebies',
   kind: 'dailyGame',
   title: `Free ${game.name} links - August 2026 | Freetins`,
@@ -245,32 +210,21 @@ const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => ({
 }));
 
 const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
-  const root = `/${game.platform}/${game.slug}`;
+  const root = `/codes/${game.slug}`;
   return [
     {
-      path: root,
-      routeId: 'hub',
-      kind: 'hub' as const,
-      title: `${game.name} codes, guides and values | Freetins`,
-      heading: game.name,
-      description: `Working ${game.name} codes, guides, item values and update history.`,
-      name: game.name,
-      slug: game.slug,
-      platform: game.platform,
-    },
-    {
-      path: `${root}-codes`,
+      path: `${root}/`,
       routeId: 'codes',
       kind: 'codes' as const,
-      title: `${game.name} codes (August 2026) | Freetins`,
-      heading: `${game.name} codes (August 2026)`,
-      description: `All working ${game.name} codes, each with the time it was last verified. Expired codes stay visible.`,
+      title: `${game.name} codes | Freetins`,
+      heading: game.name,
+      description: `Working ${game.name} codes, with expired codes, values and updates kept under the same intent.`,
       name: game.name,
       slug: game.slug,
       platform: game.platform,
     },
     {
-      path: `${root}/values`,
+      path: `${root}/values/`,
       routeId: 'values',
       kind: 'values' as const,
       title: `${game.name} item values | Freetins`,
@@ -281,12 +235,23 @@ const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
       platform: game.platform,
     },
     {
-      path: `${root}/archive`,
+      path: `${root}/expired/`,
       routeId: 'archive',
       kind: 'archive' as const,
       title: `${game.name} expired code archive | Freetins`,
       heading: 'Expired code archive',
       description: `Every pulled ${game.name} code, with first-seen and removal dates.`,
+      name: game.name,
+      slug: game.slug,
+      platform: game.platform,
+    },
+    {
+      path: `${root}/updates/`,
+      routeId: 'updates',
+      kind: 'updates' as const,
+      title: `${game.name} updates | Freetins`,
+      heading: 'Updates',
+      description: `Documented update cadence and change history for ${game.name}.`,
       name: game.name,
       slug: game.slug,
       platform: game.platform,
@@ -305,13 +270,7 @@ export const routeDefinitions: RouteDefinition[] = [
   ...gearProductRoutes,
 ];
 
-export const onDemandRoutePaths = routeRendering.onDemandRoutePaths;
-
-const onDemandRoutePathSet = new Set<string>(onDemandRoutePaths);
-
-export const prerenderedRouteDefinitions = routeDefinitions.filter(
-  (definition) => !onDemandRoutePathSet.has(definition.path),
-);
+export const prerenderedRouteDefinitions = routeDefinitions;
 
 export const getRouteDefinition = (path: string) => {
   const definition = routeDefinitions.find((candidate) => candidate.path === path);

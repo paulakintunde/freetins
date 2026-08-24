@@ -3,7 +3,6 @@ import { Picture } from 'astro:assets';
 import Button from '../ui/Button.astro';
 import { dailyLinkCatalogue, gameCatalogue } from '../../data/home';
 import {
-  authorArtwork,
   dailyArtwork,
   gameArtwork,
   gearArtwork,
@@ -21,17 +20,13 @@ interface Props {
 const { definition, checkerSnapshot } = Astro.props;
 const game = gameCatalogue.find((item) => item.slug === definition.slug);
 const dailyGame = dailyLinkCatalogue.find((item) => item.slug === definition.slug);
-const platform = definition.platform ?? 'roblox';
-const gameRoot = game ? `/${platform}/${game.slug}` : '/roblox/grow-a-garden';
-const isGamePage = ['hub', 'codes', 'values', 'archive'].includes(definition.kind) && Boolean(game);
+const gameRoot = game ? `/codes/${game.slug}/` : '/codes/grow-a-garden/';
+const isGamePage = ['codes', 'values', 'archive', 'updates'].includes(definition.kind) && Boolean(game);
 const gameArt = game
   ? requireArtwork(gameArtwork, game.slug, 'game')
   : undefined;
 const dailyArt = dailyGame
   ? requireArtwork(dailyArtwork, dailyGame.slug, 'daily reward')
-  : undefined;
-const authorArt = definition.kind === 'author' && definition.slug
-  ? requireArtwork(authorArtwork, definition.slug, 'author')
   : undefined;
 const productArt = definition.kind === 'gearProduct' && definition.slug
   ? requireArtwork(gearArtwork, definition.slug, 'gear product')
@@ -45,36 +40,27 @@ const categoryGearSlug = definition.kind === 'gearCategory'
   : undefined;
 const collectionArt = definition.kind === 'daily'
   ? requireArtwork(dailyArtwork, 'monopoly-go', 'daily reward')
-  : definition.kind === 'team'
-    ? requireArtwork(authorArtwork, 'priya-raman', 'author')
-    : definition.kind === 'gearIndex'
-      ? requireArtwork(gearArtwork, 'roblox-gift-card-25-cad', 'gear product')
-      : categoryGearSlug
-        ? requireArtwork(gearArtwork, categoryGearSlug, 'gear product')
-        : undefined;
+  : definition.kind === 'gearCategory'
+    ? categoryGearSlug
+      ? requireArtwork(gearArtwork, categoryGearSlug, 'gear product')
+      : undefined
+    : undefined;
 const guideArt = definition.kind === 'guide'
   ? requireArtwork(gameArtwork, 'grow-a-garden', 'game')
   : undefined;
-const routeArtwork = gameArt ?? dailyArt ?? authorArt ?? productArt ?? collectionArt ?? guideArt;
-const showHeaderArtwork = ['codes', 'values', 'archive', 'dailyGame', 'guide'].includes(definition.kind)
+const routeArtwork = gameArt ?? dailyArt ?? productArt ?? collectionArt ?? guideArt;
+const showHeaderArtwork = ['browse', 'codes', 'values', 'archive', 'dailyGame', 'guide'].includes(definition.kind)
   && Boolean(routeArtwork);
 
 const stats = (() => {
   switch (definition.kind) {
     case 'daily': return [['Games tracked', '6'], ['Links live now', '45'], ['Median link age', '38 min'], ['Checked every', '1 to 3 h']];
-    case 'browse': return [['Games tracked', String(gameCatalogue.length)], ['With live codes', '52'], ['Checked this hour', '41'], ['Platform', 'Roblox']];
-    case 'hub': return [['Live codes', String(game?.live ?? 0)], ['Last checked', `${game?.age ?? '3 min'} ago`], ['Guides', '6'], ['Updates', '4']];
+    case 'browse': return [['Games tracked', String(gameCatalogue.length)], ['With live codes', '52'], ['Checked this hour', '41'], ['Platform', 'Game platform']];
     case 'codes': return [['Last checked', `${game?.age ?? '4 min'} ago`], ['Next check', 'in 56 min'], ['Live now', `${game?.live ?? 6} codes`], ['Verification', '2 sources']];
-    case 'calendar': return [['Added in August', '127'], ['Expired in August', '96'], ['Dated events ahead', '6'], ['Biggest day', '18 Aug']];
     case 'az': return [['Games listed', String(gameCatalogue.length + dailyLinkCatalogue.length)], ['With live codes', '52'], ['Checked this hour', '41'], ['Cheats confirmed', '362']];
-    case 'status': return [
-      ['Checker', checkerSnapshot?.state ?? 'Unavailable'],
-      ['Last full run', checkerSnapshot?.lastFullRun ?? 'Unavailable'],
-      ['Pages checked', checkerSnapshot ? String(checkerSnapshot.pagesChecked) : 'Unavailable'],
-      ['Median response', checkerSnapshot && checkerSnapshot.medianResponseMs > 0 ? `${checkerSnapshot.medianResponseMs} ms` : 'Unavailable'],
-    ];
     case 'values': return [['Items tracked', '84'], ['Trades, 7 d', '1,240'], ['Updated', '2 h ago'], ['Refresh', 'Daily']];
     case 'archive': return [['Codes archived', '4,318'], ['Median life', '6 d'], ['Longest lived', '214 d'], ['Oldest entry', 'Jul 2023']];
+    case 'search': return [['Pages indexed', '434'], ['Games', String(gameCatalogue.length)], ['Daily links', String(dailyLinkCatalogue.length)], ['Guides', '6']];
     default: return [];
   }
 })();
@@ -87,12 +73,6 @@ const liveCodes = [
   ['WATERINGCAN', 'Watering can skin', 'Update announcement', '1 h ago'],
   ['COMMUNITY250', '250 sheckles', 'Community submission', '2 h ago'],
 ] as const;
-
-const statusHeading = checkerSnapshot?.state === 'Live'
-  ? 'All checkers are running normally'
-  : checkerSnapshot?.state === 'Outage'
-    ? 'Hourly checks are currently unavailable'
-    : 'Checks are running behind';
 
 const expiredCodes = [
   ['SPRINGSEED', 'Summer event seed', 'Expired 1 d ago'],
@@ -123,9 +103,7 @@ const cheatRows = [
 ] as const;
 
 const authors = [
-  { slug: 'priya-raman', name: 'Priya Raman', role: 'Roblox codes editor', owns: 'Owns the hourly check schedule for every Roblox game on the site.', metric: '1,412 codes verified' },
-  { slug: 'diego-ferreira', name: 'Diego Ferreira', role: 'Mobile games editor', owns: 'Runs the daily links desk and its link validation queue.', metric: '9,800+ links opened' },
-  { slug: 'marcus-bell', name: 'Marcus Bell', role: 'Verification lead', owns: 'Wrote the two-source rule and signs off every page.', metric: '362 cheats confirmed' },
+  { slug: 'paul-a', name: 'Paul A', role: 'Editor', owns: 'Owns the check schedule for every page that goes live.', metric: '1,412 codes verified' },
 ] as const;
 
 const gear = [
@@ -162,7 +140,7 @@ const legalCopy: Record<string, Array<[string, string]>> = {
   ],
   affiliate: [
     ['Which links pay us', 'Some Gear links pay Freetins a commission when a purchase is completed. Those links are marked before you click.'],
-    ['What money never buys', 'Payment never changes a code status, verification result, tier position or editorial recommendation.'],
+    ['What money never buys', 'Payment never changes a code result, verification result, tier position or editorial recommendation.'],
     ['How a paid thing is labelled', 'Sponsored and affiliate placements carry a visible label in the module that contains them.'],
     ['How products get picked', 'A product must solve the specific problem named on the page before its commercial terms are considered.'],
   ],
@@ -174,23 +152,45 @@ const legalCopy: Record<string, Array<[string, string]>> = {
   ],
 };
 
+const infoCopy: Record<string, Array<[string, string]>> = {
+  answers: [
+    ['What this page is', 'A compact answer hub for levels, puzzles and short-form questions that need a direct destination.'],
+    ['How entries are ordered', 'The most recent verified answer sits first, and older calls remain visible for comparison.'],
+    ['How we source them', 'We only publish an answer after we can cross-check the result against the current game state.'],
+  ],
+  guideIndex: [
+    ['What lives here', 'Long-form explainers, patch notes and process pages that are not one game’s code table.'],
+    ['What stays out', 'We do not mix in retired pages, monitoring pages or legacy archive shells.'],
+    ['How to use it', 'Jump from the guide index to the specific walkthrough or reference you need.'],
+  ],
+  resources: [
+    ['For editors', 'Launch notes, routing references and the internal map of the new information architecture.'],
+    ['For readers', 'A direct path into codes, daily links, cheats, guides and verification.'],
+    ['What changed', 'The new structure favors the shortest route to a useful page instead of a redirect chain.'],
+  ],
+  about: [
+    ['Why the site exists', 'Freetins is built to help players find working codes and daily links quickly.'],
+    ['What changed in the relaunch', 'We narrowed the surface area so the pages that remain are the ones that earn their place.'],
+    ['What we will not do', 'We will not keep dead-end routes or legacy shells just to preserve old navigation.'],
+  ],
+};
+
 const pageLinks: Record<string, Array<[string, string]>> = {
-  verify: [['Submit a code', '/submit'], ['Report a correction', '/contact?topic=Correction'], ['Checker status', '/status']],
-  alerts: [['Manage existing alerts', '/alerts/manage?t=preview'], ['Privacy', '/privacy']],
-  contact: [['Editorial team', '/team'], ['How we verify', '/how-we-verify'], ['Advertise with us', '/advertise']],
-  notTracked: [['Request this game', '/submit'], ['Browse every game', '/games'], ['Search Freetins', '/search']],
-  status: [['How we verify', '/how-we-verify'], ['Expired archive', '/archive']],
-  updates: [['Codes calendar', '/calendar'], ['Checker status', '/status']],
-  adspec: [['Promotion enquiry', '/contact?topic=Promotion'], ['Affiliate disclosure', '/affiliate-disclosure']],
-  queue: [['Browse published games', '/roblox'], ['How we verify', '/how-we-verify']],
+  verify: [['Submit a code', '/submit/'], ['Report a correction', '/contact/?topic=Correction'], ['Blog', '/blog/']],
+  alerts: [['Manage alerts', '/alerts/'], ['Privacy', '/privacy/']],
+  contact: [['How we verify', '/how-we-verify/'], ['Disclosure', '/disclosure/'], ['Blog', '/blog/']],
+  search: [['Browse all codes', '/codes/'], ['All games A-Z', '/games/'], ['How we verify', '/how-we-verify/']],
+  updates: [['How we verify', '/how-we-verify/'], ['Resources', '/resources/']],
+  notTracked: [['Request this game', '/submit/'], ['Browse every game', '/games/'], ['Search Freetins', '/search/']],
+  guide: [['Guides', '/guides/'], ['Resources', '/resources/'], ['How we verify', '/how-we-verify/']],
 };
 
 const relatedLinks = pageLinks[definition.kind] ?? [];
 const legalSections = legalCopy[definition.kind] ?? [];
-const tierGames = gameCatalogue.slice(0, 5);
+const infoSections = infoCopy[definition.routeId] ?? [];
 
 const crumbs = isGamePage
-  ? [['Home', '/'], ['Roblox codes', '/roblox'], ...(definition.kind === 'hub' ? [] : [[game?.name ?? 'Game', gameRoot]])]
+  ? [['Home', '/'], ['Codes', '/codes/'], [game?.name ?? 'Game', gameRoot]]
   : [['Home', '/']];
 ---
 
@@ -203,7 +203,7 @@ const crumbs = isGamePage
   imageAlt={routeArtwork?.alt}
 >
   <article class="route-page" data-route-kind={definition.kind}>
-    <header class:list={['page-head', 'content-boundary', { 'hub-head': definition.kind === 'hub' }]}>
+    <header class="page-head content-boundary">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         {crumbs.map(([label, href]) => <a href={href}>{label}</a>)}
         <span aria-current="page">{definition.heading}</span>
@@ -211,12 +211,12 @@ const crumbs = isGamePage
       {definition.eyebrow && <p class="eyebrow">{definition.eyebrow}</p>}
       <h1>{definition.heading}</h1>
       <p class="lede">{definition.description}</p>
-      {isGamePage && definition.kind !== 'hub' && (
+      {isGamePage && (
         <nav class="game-tabs" aria-label={`${game?.name} sections`}>
-          <a href={gameRoot}>Hub</a>
-          <a href={`${gameRoot}-codes`} aria-current={definition.kind === 'codes' ? 'page' : undefined}>Codes</a>
-          <a href={`${gameRoot}/values`} aria-current={definition.kind === 'values' ? 'page' : undefined}>Values</a>
-          <a href={`${gameRoot}/archive`} aria-current={definition.kind === 'archive' ? 'page' : undefined}>Archive</a>
+          <a href={gameRoot} aria-current={definition.kind === 'codes' ? 'page' : undefined}>Codes</a>
+          <a href={`${gameRoot}values/`} aria-current={definition.kind === 'values' ? 'page' : undefined}>Values</a>
+          <a href={`${gameRoot}expired/`} aria-current={definition.kind === 'archive' ? 'page' : undefined}>Archive</a>
+          <a href={`${gameRoot}updates/`} aria-current={definition.kind === 'updates' ? 'page' : undefined}>Updates</a>
         </nav>
       )}
       {stats.length > 0 && (
@@ -249,7 +249,7 @@ const crumbs = isGamePage
         </div>
         <div class:list={['catalogue', { columns: definition.kind === 'az' }]}>
           {gameCatalogue.map((item) => (
-            <a href={`/roblox/${item.slug}`}>
+            <a href={`/codes/${item.slug}/`}>
               <span>{item.name}</span>
               <strong>{item.live} live</strong>
               <time>{item.age} ago</time>
@@ -266,7 +266,7 @@ const crumbs = isGamePage
           {dailyLinkCatalogue.map((item) => {
             const art = requireArtwork(dailyArtwork, item.slug, 'daily reward');
             return (
-              <a class="media-card" href={`/daily/${item.slug}`}>
+              <a class="media-card" href={`/daily/${item.slug}/`}>
                 <div class="media">
                   <Picture
                     src={art.src}
@@ -300,42 +300,8 @@ const crumbs = isGamePage
             ))}
           </div>
         </div>
-        <aside><h2>How these links work</h2><p>We open each reward link on the interval shown above. A link moves to the expired list as soon as it fails twice.</p><a href="/daily">All daily link games</a></aside>
+        <aside><h2>How these links work</h2><p>We open each reward link on the interval shown above. A link moves to the expired list as soon as it fails twice.</p><a href="/daily/">All daily link games</a></aside>
       </section>
-    )}
-
-    {definition.kind === 'hub' && (
-      <>
-        <section class="hub-hero content-boundary">
-          {gameArt && (
-            <div class="hub-art">
-              <Picture
-                src={gameArt.src}
-                alt={gameArt.alt}
-                formats={['avif']}
-                fallbackFormat="webp"
-                widths={[480, 768, 1080, 1440, 1536]}
-                sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), min(100vw - (2 * var(--page-gutter)), 1672px)"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </div>
-          )}
-          <nav class="hub-tabs" aria-label={`${game?.name} sections`}>
-            <a href={gameRoot} aria-current="page">Overview</a>
-            <a href={`${gameRoot}-codes`}>Codes</a>
-            <a href={`${gameRoot}/values`}>Values</a>
-            <a href={`${gameRoot}/archive`}>Archive</a>
-          </nav>
-        </section>
-        <section class="page-section content-boundary module-grid">
-          <a class="module" href={`${gameRoot}-codes`}><span>Verified {game?.age} ago</span><h2>Newest working codes</h2><strong>{game?.live} live codes</strong></a>
-          <a class="module" href={`${gameRoot}/values`}><span>Updated 2 h ago</span><h2>Item values</h2><strong>84 items tracked</strong></a>
-          <a class="module" href={`${gameRoot}/archive`}><span>Permanent record</span><h2>Expired archive</h2><strong>214 codes kept</strong></a>
-          {game?.slug === 'grow-a-garden' && <a class="module" href="/guides/every-mutation-and-what-triggers-it"><span>8 min read</span><h2>Every mutation</h2><strong>Guide</strong></a>}
-        </section>
-      </>
     )}
 
     {definition.kind === 'codes' && (
@@ -356,7 +322,7 @@ const crumbs = isGamePage
             {expiredCodes.map(([code, reward, checked]) => <div><s>{code}</s><span>{reward}</span><time>{checked}</time></div>)}
           </div>
         </div>
-        <aside><h2>Verification</h2><p>Every code is opened against two sources before it appears as live. Expired codes stay visible.</p><a href="/how-we-verify">How we verify</a><a href={`${gameRoot}/archive`}>Full archive</a></aside>
+        <aside><h2>Verification</h2><p>Every code is opened against two sources before it appears as live. Expired codes stay visible.</p><a href="/how-we-verify/">How we verify</a><a href={`${gameRoot}expired/`}>Full archive</a></aside>
       </section>
     )}
 
@@ -371,22 +337,14 @@ const crumbs = isGamePage
       </section>
     )}
 
-    {(definition.kind === 'team' || definition.kind === 'author') && (
+    {definition.kind === 'author' && (
       <section class="page-section content-boundary">
-        {definition.kind === 'team' ? (
-          <div class="profile-grid">{authors.map((person) => {
-            const art = requireArtwork(authorArtwork, person.slug, 'author');
-            return <a href={`/team/${person.slug}`}><div class="portrait"><Picture src={art.src} alt={art.alt} formats={['avif']} fallbackFormat="webp" widths={[320, 480, 640, 960]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), 33vw" loading="lazy" decoding="async" /></div><h2>{person.name}</h2><strong>{person.role}</strong><p>{person.owns}</p><small>{person.metric}</small></a>;
-          })}</div>
-        ) : (
-          <div class="profile-detail">{authorArt && <div class="portrait"><Picture src={authorArt.src} alt={authorArt.alt} formats={['avif']} fallbackFormat="webp" widths={[320, 480, 640, 960]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), 380px" loading="eager" fetchpriority="high" decoding="async" /></div>}<div><h2>Experience</h2><p>{authors.find((person) => person.slug === definition.slug)?.owns}</p><p>Every page carries a named author and a published verification schedule. Recent work remains linked to the source and check log.</p><a href="/team">Meet the full editorial team</a></div></div>
-        )}
+        <div class="profile-detail"><div><h2>Experience</h2><p>{authors.find((person) => person.slug === definition.slug)?.owns}</p><p>Every page carries a named author and a published verification schedule. Recent work remains linked to the source and check log.</p><a href="/about/">About Freetins</a></div></div>
       </section>
     )}
 
-    {(definition.kind === 'gearIndex' || definition.kind === 'gearCategory') && (
+    {definition.kind === 'gearCategory' && (
       <section class="page-section content-boundary">
-        {definition.kind === 'gearIndex' && <div class="chip-links"><a href="/gear/roblox">Roblox</a><a href="/gear/mobile">Mobile</a><a href="/gear/pc-and-console">PC and console</a></div>}
         <h2>Picked this month</h2>
         <div class="card-grid">{gear.map(([name, price, href]) => {
           const slug = href.split('/').at(-1) ?? '';
@@ -397,23 +355,19 @@ const crumbs = isGamePage
     )}
 
     {definition.kind === 'gearProduct' && (
-      <section class="page-section content-boundary product-layout">{productArt && <div class="product-media"><Picture src={productArt.src} alt={productArt.alt} formats={['avif']} fallbackFormat="webp" widths={[480, 768, 1080, 1536]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), 55vw" loading="eager" fetchpriority="high" decoding="async" /></div>}<div><p class="eyebrow">Freetins pick</p><h2>Why we picked it</h2><p>It solves a specific gaming problem without adding an account, subscription or unnecessary setup step.</p><dl><div><dt>Delivery</dt><dd>In stock</dd></div><div><dt>Checked</dt><dd>21 August 2026</dd></div><div><dt>Disclosure</dt><dd>Affiliate link</dd></div></dl><Button href="/affiliate-disclosure" variant="secondary">Read the disclosure</Button></div></section>
+      <section class="page-section content-boundary product-layout">{productArt && <div class="product-media"><Picture src={productArt.src} alt={productArt.alt} formats={['avif']} fallbackFormat="webp" widths={[480, 768, 1080, 1536]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), 55vw" loading="eager" fetchpriority="high" decoding="async" /></div>}<div><p class="eyebrow">Freetins pick</p><h2>Why we picked it</h2><p>It solves a specific gaming problem without adding an account, subscription or unnecessary setup step.</p><dl><div><dt>Delivery</dt><dd>In stock</dd></div><div><dt>Checked</dt><dd>21 August 2026</dd></div><div><dt>Disclosure</dt><dd>Affiliate link</dd></div></dl><Button href="/disclosure/" variant="secondary">Read the disclosure</Button></div></section>
     )}
 
     {definition.kind === 'values' && (
       <section class="page-section content-boundary"><div class="section-title"><h2>{game?.name}, current trade values</h2><span>Source on every row</span></div><div class="data-table">{values.map(([name, tier, value, trend, source]) => <div><strong>{name}</strong><span>{tier}</span><b>{value}</b><em>{trend}</em><small>{source}</small></div>)}</div></section>
     )}
 
-    {definition.kind === 'tiers' && (
-      <section class="page-section content-boundary"><div class="tier-list">{tierGames.map((entry, index) => <div><strong>{['S', 'A', 'B', 'C', 'D'][index]}</strong><div><h2>{entry.name}</h2><p>{entry.live} live codes · checked {entry.age} ago</p><small>Source: last three published code drops</small></div></div>)}</div></section>
-    )}
-
-    {definition.kind === 'calendar' && (
-      <section class="page-section content-boundary"><div class="section-title"><h2>August 2026</h2><span>Today: 22 August</span></div><div class="calendar"><div class="weekdays">{['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => <strong>{day}</strong>)}</div><div class="days">{Array.from({ length: 35 }, (_, index) => <div class:list={{ today: index === 25 }}><span>{index < 4 ? '' : index - 3}</span>{index > 14 && index % 3 === 0 && <b style={`--bar:${30 + (index % 5) * 14}%`}></b>}</div>)}</div></div></section>
-    )}
-
     {(definition.kind === 'privacy' || definition.kind === 'affiliate' || definition.kind === 'terms') && (
       <section class="page-section content-boundary prose"><p class="updated">Last updated 21 August 2026</p>{legalSections.map(([heading, copy], index) => <section><span>{String(index + 1).padStart(2, '0')}</span><div><h2>{heading}</h2><p>{copy}</p></div></section>)}</section>
+    )}
+
+    {definition.kind === 'info' && infoSections.length > 0 && (
+      <section class="page-section content-boundary prose"><p class="updated">Last updated 21 August 2026</p>{infoSections.map(([heading, copy], index) => <section><span>{String(index + 1).padStart(2, '0')}</span><div><h2>{heading}</h2><p>{copy}</p></div></section>)}</section>
     )}
 
     {definition.kind === 'verify' && (
@@ -432,19 +386,19 @@ const crumbs = isGamePage
       <section class="page-section content-boundary guide-layout"><aside><strong>On this page</strong><a href="#what-it-is">What it is</a><a href="#full-list">The full list</a><a href="#unconfirmed">What we could not confirm</a></aside><div class="prose-body"><h2 id="what-it-is">What a mutation actually is</h2><p>A mutation changes the sale multiplier of a crop. Weather, pets and limited events can each trigger one, and compatible effects stack.</p><h2 id="full-list">The full list</h2>{values.slice(0, 5).map(([name, tier, value]) => <div class="guide-row"><strong>{name}</strong><span>{tier}</span><b>{value}</b></div>)}<h2 id="unconfirmed">What we could not confirm</h2><p>Community reports without a repeatable trigger remain outside the table until a second source reproduces them.</p></div></section>
     )}
 
-    {(definition.kind === 'search' || definition.kind === 'submit' || definition.kind === 'alerts' || definition.kind === 'contact' || definition.kind === 'manage') && (
+    {(definition.kind === 'search' || definition.kind === 'submit' || definition.kind === 'alerts' || definition.kind === 'contact') && (
       <section class="page-section content-boundary form-layout">
-        <form method="get" action={definition.kind === 'search' ? '/search' : undefined}>
+        <form method="get" action={definition.kind === 'search' ? '/search/' : undefined}>
           <label>{definition.kind === 'search' ? 'Game, guide or code' : definition.kind === 'alerts' ? 'Email or Discord handle' : 'Your email'}<input type={definition.kind === 'search' ? 'search' : 'text'} name={definition.kind === 'search' ? 'q' : 'contact'} placeholder={definition.kind === 'search' ? 'Grow a Garden' : 'you@example.com'} /></label>
-          {definition.kind !== 'search' && definition.kind !== 'manage' && <label>Details<textarea name="message" rows={5} placeholder="Tell us what you need"></textarea></label>}
-          <button type="submit">{definition.kind === 'search' ? 'Search' : definition.kind === 'manage' ? 'Pause alerts' : 'Continue'}</button>
+          {definition.kind !== 'search' && <label>Details<textarea name="message" rows={5} placeholder="Tell us what you need"></textarea></label>}
+          <button type="submit">{definition.kind === 'search' ? 'Search' : 'Continue'}</button>
         </form>
         <aside><h2>What happens next</h2><p>{definition.kind === 'search' ? 'Results include games, guides and daily-link pages.' : 'A person or the verification checker handles the request. Nothing publishes automatically.'}</p></aside>
       </section>
     )}
 
-    {(definition.kind === 'status' || definition.kind === 'adspec' || definition.kind === 'queue' || definition.kind === 'notTracked') && (
-      <section class="page-section content-boundary"><div class="notice"><span>{definition.kind === 'status' ? checkerSnapshot?.state ?? 'Unavailable' : definition.eyebrow ?? 'Freetins'}</span><h2>{definition.kind === 'status' ? statusHeading : definition.kind === 'queue' ? 'Six candidates await validation' : definition.kind === 'adspec' ? 'Reserved space, zero layout shift' : 'Request the game and it enters validation'}</h2><p>{definition.kind === 'status' ? checkerSnapshot?.message ?? definition.description : definition.description}</p></div></section>
+    {definition.kind === 'notTracked' && (
+      <section class="page-section content-boundary"><div class="notice"><span>{definition.eyebrow ?? 'Freetins'}</span><h2>Request the game and it enters validation</h2><p>{definition.description}</p></div></section>
     )}
 
     {relatedLinks.length > 0 && <nav class="next-links content-boundary" aria-label="Related pages">{relatedLinks.map(([label, href]) => <a href={href}>{label}</a>)}</nav>}

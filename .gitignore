@@ -10,3 +10,11 @@ dist/
 !.dev.vars.example
 *.log
 .thumbnail
+
+# Planning and migration notes
+CONTENT-ALIGNMENT-PLAN.md
+INVENTORY.md
+MIGRATION.md
+TAXONOMY.md
+content-rewrite-map.md
+site-content-match-audit.md

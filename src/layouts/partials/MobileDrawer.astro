@@ -11,14 +11,14 @@ import { drawerLinks, hotSearches } from '../../data/site';
     </div>
 
     <div class="drawer-search">
-      <form action="/search" method="get" role="search">
+      <form action="/search/" method="get" role="search">
         <label class="visually-hidden" for="drawer-query">Search a game</label>
         <input id="drawer-query" name="q" type="search" placeholder="Search a game" />
         <button type="submit">Go</button>
       </form>
       <div class="search-chips" aria-label="Most searched games">
         {hotSearches.map((term) => (
-          <a href={`/search?q=${encodeURIComponent(term)}`}>{term}</a>
+          <a href={`/search/?q=${encodeURIComponent(term)}`}>{term}</a>
         ))}
       </div>
     </div>
@@ -47,10 +47,10 @@ import { drawerLinks, hotSearches } from '../../data/site';
     </div>
 
     <div class="drawer-footer">
-      <a href="/how-we-verify">How we verify</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/affiliate-disclosure">Affiliate disclosure</a>
-      <a href="/contact">Contact</a>
+      <a href="/how-we-verify/">How we verify</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/disclosure/">Affiliate disclosure</a>
+      <a href="/contact/">Contact</a>
     </div>
   </aside>
 </div>
