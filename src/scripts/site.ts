@@ -1,3 +1,5 @@
+import './element-index';
+
 type ConsentState = Record<string, boolean>;
 
 declare global {

@@ -23,7 +23,7 @@ const copy = isGdpr
 ---
 
 <section
-  class="consent-banner"
+  class:list={['consent-banner', { compact: !hasOptionalPurposes }]}
   data-consent-banner
   data-consent-mode={mode}
   data-consent-optional={hasOptionalPurposes ? 'true' : 'false'}
@@ -35,7 +35,7 @@ const copy = isGdpr
       <p>{copy.body} <a href="/privacy/">Read the privacy page</a>.</p>
     </div>
 
-    <div class="manage-panel" data-consent-manage hidden>
+    <div class="manage-panel" data-consent-manage hidden={true}>
       <div class="purpose-list">
         {consentPurposes.map((purpose) => {
           const enabled = purpose.required || purpose.id === 'analytics';
@@ -70,9 +70,9 @@ const copy = isGdpr
     </div>
 
     <div class="consent-actions">
-      {isGdpr && hasOptionalPurposes && <button class="ghost-button" type="button" data-consent-reject>Reject all</button>}
-      <button class="ghost-button" type="button" data-consent-toggle>Manage</button>
-      <button class="accept-button" type="button" data-consent-accept>{isGdpr ? hasOptionalPurposes ? 'Accept all' : 'Continue' : 'Confirm choices'}</button>
+      {hasOptionalPurposes && isGdpr && <button class="ghost-button" type="button" data-consent-reject>Reject all</button>}
+      {hasOptionalPurposes && <button class="ghost-button" type="button" data-consent-toggle>Manage</button>}
+      <button class="accept-button" type="button" data-consent-accept>{hasOptionalPurposes ? (isGdpr ? 'Accept all' : 'Confirm choices') : 'Got it'}</button>
     </div>
   </div>
 </section>
@@ -92,6 +92,30 @@ const copy = isGdpr
     flex-wrap: wrap;
     gap: 10px 20px;
     padding: 10px var(--page-gutter);
+  }
+
+  /* No optional processing: one line of copy and one dismiss control. */
+  .compact .consent-inner {
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding-block: 8px;
+  }
+
+  .compact .consent-copy h2 {
+    display: inline;
+    font-size: var(--fs-body);
+  }
+
+  .compact .consent-copy p {
+    display: inline;
+    margin: 0;
+  }
+
+  .compact .consent-copy p::before { content: ' '; }
+
+  @media (max-width: 560px) {
+    .compact .consent-inner { flex-wrap: wrap; }
   }
 
   .consent-copy {

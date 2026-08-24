@@ -16,7 +16,7 @@ export const howWeVerifyArticle: EditorialArticle = {
   title: 'How Freetins verifies codes, links and cheats | Freetins',
   heading: 'How we verify',
   description:
-    'The evidence rules behind every Freetins page: what counts as a source, the four evidence states, what makes a code usable, when a game has an active record, and what we remove.',
+    'The evidence rules behind every Freetins page: what counts as a source, the four evidence states, and when a code is actually usable.',
   eyebrow: 'Editorial policy',
   author: 'Paul A',
   authorPath: '/author/paul-a/',
@@ -81,6 +81,25 @@ export const howWeVerifyArticle: EditorialArticle = {
         'The state above answers "did the last check pass". The tier answers "do we know the publisher ever issued this". A code an editor redeemed successfully is verified whatever its paper trail, because redemption is direct evidence. A code repeated by fifty blogs with no publisher post is community-reported, because repetition is not evidence.',
         'Both are shown. A row that says community-reported is telling you the code may well work, and that nobody at Freetins can point to the publisher issuing it.',
       ],
+    },
+    {
+      id: 'reader-reports',
+      heading: 'Reader reports, and why they are not verification',
+      paragraphs: [
+        'Code rows carry a thumbs up and a thumbs down so you can say whether a code worked for you. These are reader reports. They are counted, they are shown, and they never change a code published state.',
+        'That separation is deliberate. If enough thumbs could turn a code green, the site would be publishing unverified consensus as fact, which is the practice this whole method exists to avoid. What the reports actually do is drive the re-check queue: a code collecting failure reports is moved to the front of the list for an editor to check properly, and it is the editor check that changes the label.',
+        'Reports are de-duplicated per network address, which stops the same person clicking repeatedly. It is not fraud resistance and we do not present it as such: carrier networks put thousands of genuine readers behind a single address, so real reports get absorbed, and anyone switching networks can report more than once. Treat the numbers as a rough signal of how a code is behaving in the wild, not as a count of distinct people.',
+        'No IP address is stored. The de-duplication key is a one-way hash of the address combined with a server-side secret and a daily-rotating value, and it expires by itself. There is no way to recover an address from what is kept, and no way to follow one reader between codes beyond the rotation window.',
+      ],
+      table: {
+        caption: 'What each signal is allowed to do',
+        columns: ['Signal', 'Set by', 'Can change the published label'],
+        rows: [
+          ['Evidence state', 'An editor recording a check', 'Yes'],
+          ['Evidence tier', 'Presence of a publisher-channel citation', 'Yes'],
+          ['Reader reports', 'Anyone using the site', 'No, it only reorders the re-check queue'],
+        ],
+      },
     },
     {
       id: 'usable-code',
@@ -182,7 +201,7 @@ export const howWeVerifyArticle: EditorialArticle = {
       id: 'corrections',
       heading: 'Corrections',
       paragraphs: [
-        'If a code on this site does not work, that is a defect and we want to know. Corrections go to hello@freetins.com with the page URL and, if you have it, what happened when you tried to redeem it.',
+        'If a code on this site does not work, that is a defect and we want to know. Corrections go to support@freetins.com with the page URL and, if you have it, what happened when you tried to redeem it.',
         'Section owners are accountable for their own surfaces: Guides, Answers and Cheats each have a named editor, and anything else routes to the site editor. A correction that changes a published state is recorded as a verification event like any other check, so the page history stays consistent with the page.',
       ],
       links: [
@@ -211,6 +230,11 @@ export const howWeVerifyArticle: EditorialArticle = {
       question: 'Why do you not cite other code sites?',
       answer:
         'Aggregators mostly cite each other, so agreement between them is not corroboration. A citation only counts here if it points at a channel the publisher controls.',
+    },
+    {
+      question: 'Do the thumbs up and down change whether a code is verified?',
+      answer:
+        'No. Reader reports are counted and shown, but only an editor check can change a published state. A code collecting failure reports is moved up the re-check queue so an editor looks at it sooner.',
     },
     {
       question: 'Is any of this checked automatically?',

@@ -1,0 +1,39 @@
+# Legacy URL map for the freetins.com cutover.
+#
+# TAXONOMY.md says legacy shells are deleted rather than preserved behind
+# redirects. That rule is about internal route architecture: it stops the site
+# carrying dead structure forward. It is not a reason to 404 an inbound link that
+# already has traffic and links pointing at it.
+#
+# These 18 legacy paths carry roughly 249 monthly visits between them and map onto
+# the 12 protected pages listed in CONTENT-ALIGNMENT-PLAN.md. Without this file
+# every one of them returns 404 the moment the apex domain serves this build.
+#
+# 301 is deliberate: these moves are permanent. Cloudflare Pages evaluates this
+# file top-down, first match wins.
+
+# --- Cheats -----------------------------------------------------------------
+/lego-jurassic-world-cheats-list-unlockables-and-codes/            /cheats/lego-jurassic-world/       301
+/game-cheats/guitar-hero-3/                                        /cheats/guitar-hero-3/             301
+/guitar-hero-3-cheats-for-ps2-ps3-wii-and-xbox-360-controller/     /cheats/guitar-hero-3/             301
+/pokemon-emerald-rare-candy-cheat-code/                            /cheats/pokemon-emerald/           301
+/game-cheats/pokemon-emerald-cheats/                               /cheats/pokemon-emerald/           301
+
+# --- Answers ----------------------------------------------------------------
+/clear-vision-3-cheats-and-walkthrough-for-all-missions/           /answers/clear-vision-3/           301
+/little-alchemy-cheats-list-540-element-combination-guide/         /answers/little-alchemy/           301
+/walkthroughs/little-alchemy-2/                                    /answers/little-alchemy/           301
+/make-energy-little-alchemy/                                       /answers/little-alchemy-2-energy/  301
+/guess-emoji-level-12345678910-cheats-answers/                     /answers/guess-emoji-levels-1-10/  301
+/walkthroughs/guess-the-emoji/                                     /answers/guess-emoji-levels-1-10/  301
+/100-pics-christmas-emoji-answers-for-all-levels/                  /answers/100-pics-christmas-emoji/ 301
+
+# --- Guides -----------------------------------------------------------------
+/jurassic-world-cheats-and-tricks-for-android-ios/                 /guides/jurassic-world-the-game/   301
+/gta-5-v-soundtrack-music-radio-stations-full-tracklist/           /guides/gta-5-radio-stations/      301
+/gta-5-demo-download-free-pc-ps3-ps4/                              /guides/gta-5-demo/                301
+
+# --- Daily ------------------------------------------------------------------
+/ddc-codes-best-double-casino-codes/                               /daily/doubledown-casino/          301
+/doubledown-casino-promo-codes-coupons-free-chips/                 /daily/doubledown-casino/          301
+/redeem-codes/doubledown-casino/                                   /daily/doubledown-casino/          301

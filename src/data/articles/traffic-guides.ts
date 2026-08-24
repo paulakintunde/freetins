@@ -42,7 +42,7 @@ export const jurassicWorldGameArticle: EditorialArticle = {
 export const gta5DemoArticle: EditorialArticle = {
   ...checked,
   path: '/guides/gta-5-demo/', routeId: 'gta5Demo', section: 'guides',
-  title: 'GTA 5 Demo Download: Official Options and Scam Check | Freetins',
+  title: 'GTA 5 Demo Download: What Is Actually Available | Freetins',
   heading: 'GTA 5 demo download: what is actually available',
   description: 'There is no official GTA 5 demo. Check the legitimate stores, avoid fake mobile and compressed downloads, and choose the correct edition for your platform.',
   eyebrow: 'Download safety guide',
@@ -67,6 +67,6 @@ export const gta5DemoArticle: EditorialArticle = {
   ],
   related: [
     { label: 'GTA 5 radio stations', href: '/guides/gta-5-radio-stations/', description: 'Station list, controls and Self Radio setup.' },
-    { label: 'GTA 5 cheats', href: '/cheats/gta-5/', description: 'Built-in player and world cheats by platform.' },
+    { label: 'Published cheat sheets', href: '/cheats/', description: 'Cheat pages with platform scope and confirmed builds.' },
   ],
 };

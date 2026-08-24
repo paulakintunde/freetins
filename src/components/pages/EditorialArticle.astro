@@ -137,14 +137,6 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
       <p class="eyebrow">{article.eyebrow}</p>
       <h1>{article.heading}</h1>
       <p class="lede">{article.description}</p>
-      <div class="article-meta">
-        <span>{article.reviewLabel}</span>
-        <span class="byline">
-          By <a href={author.path}>{author.name}</a>
-          <span class="byline-role">{author.role}</span>
-          <span class="byline-bio">{author.credential}</span>
-        </span>
-      </div>
       {articleArt && (
         <div class="article-art">
           <Picture
@@ -160,6 +152,14 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
           />
         </div>
       )}
+      <div class="article-meta">
+        <span>{article.reviewLabel}</span>
+        <span class="byline">
+          By <a href={author.path}>{author.name}</a>
+          <span class="byline-role">{author.role}</span>
+          <span class="byline-bio">{author.credential}</span>
+        </span>
+      </div>
     </header>
 
     <div class="article-reading-surface">
@@ -315,6 +315,7 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
       )}
     </div>
   </article>
+
 </BaseLayout>
 
 <style>
@@ -742,11 +743,14 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   }
 
   .alphabet-nav a {
-    /* 26 letters, so 44px would wrap to four rows on a phone. 40px clears the
-       24px WCAG floor with room to spare and still fits three rows at 360px. */
+    /* 44px is the comfort target, and this is a primary control on the site's
+       largest page. Letting the chips flex rather than fixing their width keeps
+       the row count down at 360px: they grow to share the row instead of leaving
+       a ragged gap, so raising the height costs no extra wrapping. */
     display: grid;
-    width: 40px;
-    height: 40px;
+    min-width: 44px;
+    height: 44px;
+    flex: 1 1 44px;
     place-items: center;
     border: 1px solid var(--border-strong);
     color: var(--text-primary);
@@ -776,6 +780,11 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
+  }
+
+  .element-letter {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 480px;
   }
 
   .element-card {
@@ -925,29 +934,3 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
     }
   }
 </style>
-
-<script>
-  document.querySelectorAll<HTMLElement>('[data-element-index]').forEach((index) => {
-    const input = index.querySelector<HTMLInputElement>('[data-element-search]');
-    const count = index.querySelector<HTMLOutputElement>('[data-element-count]');
-    const empty = index.querySelector<HTMLElement>('[data-element-empty]');
-    const cards = [...index.querySelectorAll<HTMLElement>('[data-element-card]')];
-    const groups = [...index.querySelectorAll<HTMLElement>('[data-element-group]')];
-    if (!input || !count || !empty) return;
-
-    input.addEventListener('input', () => {
-      const query = input.value.trim().toLowerCase();
-      let visible = 0;
-      cards.forEach((card) => {
-        const matches = !query || card.dataset.search?.includes(query) === true;
-        card.hidden = !matches;
-        if (matches) visible += 1;
-      });
-      groups.forEach((group) => {
-        group.hidden = !group.querySelector('[data-element-card]:not([hidden])');
-      });
-      count.textContent = `${visible} ${visible === 1 ? 'element' : 'elements'}`;
-      empty.hidden = visible !== 0;
-    });
-  });
-</script>

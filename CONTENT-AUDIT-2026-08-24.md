@@ -1,5 +1,11 @@
 # Freetins Content Audit
 
+> **Status: remediated 24 August 2026.** Every structural and template finding below has
+> been fixed; see *Remediation status* at the foot of this document for the measured
+> result. The two editorial findings (P0.1 redemption checks, P0.2 publisher-channel
+> sourcing) are enforced in code and data but still require editorial work to satisfy.
+> The findings are preserved as written so the before/after remains auditable.
+
 Audit date: 24 August 2026
 Snapshot: local `dist/` build from the current `main` working tree (123 documents)
 Method: every measurement below is computed from the built HTML and from `src/content/operations.json`. Nothing is estimated or sampled.
@@ -272,3 +278,48 @@ Ordered by value per unit of effort.
 | 13 | Write 300–500 words of orientation for each of the five section hubs | Medium | Writing |
 
 Items 1–7 are roughly a day of engineering and remove most of the structural drag. Items 10–12 decide whether the site's positioning is true. No amount of 1–7 substitutes for them.
+
+
+---
+
+## Remediation status
+
+Applied 24 August 2026, measured with `node scripts/content-audit.mjs` against a fresh build.
+
+| Measure | Audit | After | Change |
+|---|---:|---:|---|
+| Documents built | 123 | 117 | −6 |
+| Indexable pages | 48 | 43 | −9 thin archives, +3 authors, +1 daily hub |
+| Total indexable words | 30,194 | 34,087 | +13% |
+| Indexable pages under 300 words | 16 | 4 | −75% (the 4 are author profiles) |
+| Pages with `BreadcrumbList` | 19 | 42 | +121% |
+| Pages with `FAQPage` | 12 | 25 | +108% |
+| Pages with `dateModified` | 19 | 32 | +68% |
+| Links leaking into noindex drafts | 18 | 0 | eliminated |
+| Orphaned indexable pages | 1 | 0 | eliminated |
+| Metadata defects | 8 | 0 | eliminated |
+
+### Finding by finding
+
+| # | Finding | Status |
+|---|---|---|
+| P0.1 | No code verified by redemption | **Open — editorial.** The distinction is now defined, enforced and rendered: `verified` requires an `accepted` result. No redemption checks exist yet. |
+| P0.2 | Codes sourced only to aggregators | **Enforced in code.** `publisherSourceUrl` must sit on a declared `publisherChannel`; aggregator URLs moved to `discoveredVia` and are no longer shown as evidence. All 130 codes now render as community-reported, which is accurate. Populating channels is editorial work. |
+| P0.3 | Preview domain cited as evidence | **Fixed.** Preview hosts rejected at validation. The 3 codes whose only citation was `basketball-zero-codes.pages.dev` were removed, with their events. |
+| P0.4 | Flagship games with zero usable codes | **Fixed structurally.** "Most searched" now filters on `activeCount > 0`, so a game with nothing usable is never promoted. Refreshing those codes remains editorial work. |
+| P1.1 | No schema on code pages | **Fixed.** `BreadcrumbList` sitewide; `Dataset` with `dateModified` from the verification record and `FAQPage` from the redemption steps on game pages. |
+| P2.1 | `/how-we-verify/` 114 words, promises undelivered | **Fixed.** Rewritten as a full editorial article: 2,151 words, all four evidence states defined, plus usable-code and active-record definitions, constraints and an automation assessment. Now carries `Article`, `FAQPage`, `BreadcrumbList` and a byline. |
+| P2.2 | Author page 50 words | **Fixed.** Four section-owner profiles (241–276 words) with remit, credential, accountability, live verification counts and an auto-generated list of pages authored. Bylines resolve from section, so they cannot drift. |
+| P3.1 | Traffic-protected page orphaned | **Fixed.** `/daily/` is indexable when it holds editorial content; `/daily/doubledown-casino/` is no longer orphaned. |
+| P3.2 | `noindex, nofollow` | **Fixed.** Now `noindex, follow`. |
+| P3.3 | `/cheats/` advertising 8 empty pages | **Fixed.** The hub lists only published cheat sheets. |
+| P4.1 | 9 thin expired archives | **Fixed.** Routes removed; expired codes render inside the parent game page as a collapsed retired-records block. |
+| P4.2 | Section hubs with no content | **Fixed.** Every hub now carries orientation copy and selection criteria: 302–486 words. |
+| P5 | Minor defects | **Fixed.** Markdown backticks removed from prose; all title/description lengths in range. The reported missing `alt` was a false positive — a decorative image correctly marked — and the audit script was corrected. |
+
+### Still outstanding
+
+Two things decide whether the positioning is true, and neither can be closed by code:
+
+1. **Record redemption-backed checks.** Until an `accepted` result exists, no entry on the site can reach `verified`.
+2. **Populate `publisherChannels` per game.** Until a game declares its publisher's website, YouTube, Discord, Twitch or X account, every code on it stays community-reported — which is now stated plainly on the page rather than dressed up with aggregator links.

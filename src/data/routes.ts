@@ -223,7 +223,7 @@ const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
       path: `${root}/`,
       routeId: 'codes',
       kind: 'codes' as const,
-      title: `${game.name} codes and redemption guide | Freetins`,
+      title: `${game.name} codes and how to redeem | Freetins`,
       heading: game.name,
       description: game.isPublished
         ? `${game.name} codes with source URLs, redemption steps and recorded verification events.`

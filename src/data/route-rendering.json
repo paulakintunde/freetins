@@ -1,3 +1,3 @@
 {
-  "onDemandRoutePaths": ["/api/checker-status.json"]
+  "onDemandRoutePaths": ["/api/checker-status.json", "/api/code-report.json"]
 }

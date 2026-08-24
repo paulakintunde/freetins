@@ -45,8 +45,6 @@ export const resourcesArticle: EditorialArticle = {
         'The gear structure remains available, but a product is not presented as a recommendation until a checked merchant URL, price timestamp and disclosure record are published.',
       ],
       links: [
-        { label: 'Mobile gaming gear', href: '/gear/mobile/', description: 'Configured product research and its current publication state.' },
-        { label: 'PC and console gear', href: '/gear/pc-and-console/', description: 'Configured product research and its current publication state.' },
       ],
     },
     {
@@ -54,7 +52,6 @@ export const resourcesArticle: EditorialArticle = {
       heading: 'Editorial and site policies',
       links: [
         { label: 'How we verify', href: '/how-we-verify/', description: 'Source standards, review intervals and correction rules.' },
-        { label: 'Blog and change log', href: '/blog/', description: 'Published verification and content changes.' },
         { label: 'About Freetins', href: '/about/', description: 'What the site covers and why the relaunch is narrower.' },
         { label: 'Disclosure', href: '/disclosure/', description: 'How affiliate links work and what payment cannot influence.' },
         { label: 'Contact', href: '/contact/', description: 'Report an error or reach the editorial desk.' },

@@ -7,6 +7,7 @@ import { requireArticleArtwork } from '../../data/article-images';
 import { editorialArticles, getArticleByPath } from '../../data/articles';
 import { authors, getAuthorBySlug, getSectionAuthor } from '../../data/authors';
 import { hubIntroFor } from '../../data/hub-intros';
+import { contactEmail } from '../../data/site';
 import {
   dailyLinkCatalogue,
   gameCatalogue,
@@ -143,7 +144,7 @@ const guideArt = definition.kind === 'guide'
   ? requireArtwork(gameArtwork, 'grow-a-garden', 'game')
   : undefined;
 const routeArtwork = gameArt ?? dailyArt ?? productArt ?? collectionArt ?? guideArt;
-const showHeaderArtwork = ['browse', 'codes', 'values', 'dailyGame', 'guide'].includes(definition.kind)
+const showHeaderArtwork = ['browse', 'codes', 'values', 'dailyGame', 'daily', 'guide'].includes(definition.kind)
   && Boolean(routeArtwork);
 
 const stats = (() => {
@@ -297,18 +298,6 @@ const routeSchema = {
       {definition.eyebrow && <p class="eyebrow">{definition.eyebrow}</p>}
       <h1>{definition.heading}</h1>
       <p class="lede">{definition.description}</p>
-      {isGamePage && gameTabs.length > 0 && (
-        <nav class="game-tabs" aria-label={`${game?.name} sections`}>
-          {gameTabs.map((tab) => (
-            <a href={tab.href} aria-current={tab.id === currentTabId ? 'page' : undefined}>{tab.label}</a>
-          ))}
-        </nav>
-      )}
-      {stats.length > 0 && (
-        <div class="stats">
-          {stats.map(([label, value]) => <div><span>{label}</span><strong>{value}</strong></div>)}
-        </div>
-      )}
       {showHeaderArtwork && routeArtwork && (
         <div class="entity-art">
           <Picture
@@ -322,6 +311,18 @@ const routeSchema = {
             fetchpriority="high"
             decoding="async"
           />
+        </div>
+      )}
+      {isGamePage && gameTabs.length > 0 && (
+        <nav class="game-tabs" aria-label={`${game?.name} sections`}>
+          {gameTabs.map((tab) => (
+            <a href={tab.href} aria-current={tab.id === currentTabId ? 'page' : undefined}>{tab.label}</a>
+          ))}
+        </nav>
+      )}
+      {stats.length > 0 && (
+        <div class="stats">
+          {stats.map(([label, value]) => <div><span>{label}</span><strong>{value}</strong></div>)}
         </div>
       )}
     </header>
@@ -472,10 +473,21 @@ const routeSchema = {
                     ? <a href={item.entry.publisherSourceUrl} rel="noopener">Publisher post</a>
                     : <span class="tier-chip">Community reported, no publisher post found</span>}</span>
                   <button type="button" data-copy-code={item.entry.code}>Copy</button>
+                  <span class="code-reports" data-code-report={item.entry.id} hidden>
+                    <button type="button" class="thumb up" data-report-verdict="worked" aria-label={`Report that ${item.entry.code} worked`}>
+                      <svg viewBox="0 0 16 16" aria-hidden="true" width="13" height="13"><path fill="currentColor" d="M6.2 14H4V6.6h2.2L9.4 2c.8 0 1.4.7 1.3 1.5l-.4 2.4h3.1c.9 0 1.5.8 1.3 1.6l-1.1 5A1.4 1.4 0 0 1 12.2 14H6.2ZM1 6.6h1.8V14H1a.6.6 0 0 1-.6-.6V7.2A.6.6 0 0 1 1 6.6Z"/></svg>
+                      <b data-report-count="worked">0</b>
+                    </button>
+                    <button type="button" class="thumb down" data-report-verdict="failed" aria-label={`Report that ${item.entry.code} did not work`}>
+                      <svg viewBox="0 0 16 16" aria-hidden="true" width="13" height="13"><path fill="currentColor" d="M9.8 2H12v7.4H9.8L6.6 14c-.8 0-1.4-.7-1.3-1.5l.4-2.4H2.6a1.4 1.4 0 0 1-1.3-1.6l1.1-5A1.4 1.4 0 0 1 3.8 2h6ZM15 9.4h-1.8V2H15c.3 0 .6.3.6.6v6.2a.6.6 0 0 1-.6.6Z"/></svg>
+                      <b data-report-count="failed">0</b>
+                    </button>
+                  </span>
                 </div>
               </div>
             ))}
           </div> : <div class="data-empty"><strong>No code is published</strong><p>This page stays out of the index until a code, reward, publisher source, redemption path and verification event all pass validation.</p></div>}
+          <p class="report-note" data-report-note hidden>Thumbs are reader reports, not verification. They are de-duplicated per address, which stops repeat clicks but cannot separate people sharing a network. A code collecting failure reports is moved up the re-check queue; it is never relabelled by vote. See <a href="/how-we-verify/">how we verify</a>.</p>
           {expiredCodeEntries.length > 0 && <><details class="expired-block"><summary><span class="subhead">Expired codes</span><span>{expiredCodeEntries.length} retired records</span></summary><p class="expired-note">Kept as a maintenance record so a code that stops working can be told apart from one that never existed. Retired codes are not a search destination and carry no claim of being usable.</p><div class="expired-list">
             {expiredCodeEntries.map((item) => <div><s>{item.entry.code}</s><span>{item.entry.reward}</span>{item.latestEvent ? <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <span>Check not recorded</span>}</div>)}
           </div></details></>}
@@ -532,10 +544,11 @@ const routeSchema = {
           <div>
             <h2>What {profileAuthor.name} is accountable for</h2>
             <p>{profileAuthor.remit}</p>
-            <p>{profileAuthor.credential}</p>
 
             <h2 class="subhead">Verification record</h2>
-            <p>{profileAuthorEvents} operational verification events are attributed to this profile. The number is counted from the event log rather than entered as biography copy, so it cannot be inflated by editing this page.</p>
+            <p>{profileAuthorEvents > 0
+              ? `${profileAuthorEvents} operational verification events are attributed to this profile. The number is counted from the event log rather than entered as biography copy, so it cannot be inflated by editing this page.`
+              : 'No operational verification events are attributed to this profile yet. Operational checks on codes and reward links are currently recorded under the site editor; editorial pages in this section are reviewed on the cadence shown against each one.'}</p>
             <p>Every check recorded under this name carries a timestamp, a method and a result. The rules those checks follow are set out in <a href="/how-we-verify/">how we verify</a>.</p>
 
             {profileArticles.length > 0 && <>
@@ -548,7 +561,7 @@ const routeSchema = {
             </>}
 
             <h2 class="subhead">Corrections</h2>
-            <p>If a page in this section is wrong, email <a href="mailto:hello@freetins.com">hello@freetins.com</a> with the page URL. Corrections to {profileAuthor.sections.join(', ')} content route to {profileAuthor.name} and are recorded as verification events like any other check.</p>
+            <p>If a page in this section is wrong, email <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with the page URL. Corrections to {profileAuthor.sections.join(', ')} content route to {profileAuthor.name} and are recorded as verification events like any other check.</p>
           </div>
           <aside>
             <h2>Editorial team</h2>
@@ -684,7 +697,7 @@ const routeSchema = {
     )}
 
     {definition.kind === 'submit' && (
-      <section class="page-section content-boundary"><div class="data-empty"><strong>Submission intake is not active</strong><p>No form data is collected or queued. For a correction to an existing page, email <a href="mailto:hello@freetins.com">hello@freetins.com</a> with the page URL and source.</p></div></section>
+      <section class="page-section content-boundary"><div class="data-empty"><strong>Submission intake is not active</strong><p>No form data is collected or queued. For a correction to an existing page, email <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with the page URL and source.</p></div></section>
     )}
 
     {definition.kind === 'notTracked' && (
@@ -710,6 +723,7 @@ const routeSchema = {
 
   <script>
     import '../../scripts/search';
+    import '../../scripts/code-reports';
   </script>
 </BaseLayout>
 )}

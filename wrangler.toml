@@ -6,3 +6,8 @@ compatibility_flags = ["nodejs_compat"]
 # Optional checker activation requires a STATUS KV binding containing
 # `checker:current`. Alert intake is configured as an HTTPS endpoint in
 # src/content/operations.json after that service is deployed.
+
+# Reader reports ("did this code work") require a REPORTS KV binding and a
+# REPORT_SECRET value. The secret makes the per-address dedup fingerprint one-way;
+# without it the endpoint refuses reports rather than storing a reversible hash.
+# No IP address is ever written to storage.

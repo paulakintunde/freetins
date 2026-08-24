@@ -1,5 +1,12 @@
 import { publishedDailyLinkCatalogue, publishedGameCatalogue } from './home';
 
+/**
+ * The published contact address. Previously the site used support@ on the legal and
+ * contact pages and hello@ in the Organization JSON-LD and the submit page, so the
+ * address a reader was told to use depended on which page they landed on.
+ */
+export const contactEmail = 'support@freetins.com';
+
 export interface SiteLink {
   label: string;
   href: string;
@@ -10,12 +17,10 @@ export interface SiteLink {
 export const navLinks: SiteLink[] = [
   { label: 'Today', href: '/', section: 'today' },
   { label: 'Codes', href: '/codes/', section: 'codes' },
-  { label: 'Daily links', href: '/daily/', section: 'daily' },
   { label: 'Cheats', href: '/cheats/', section: 'cheats' },
   { label: 'Answers', href: '/answers/', section: 'answers' },
   { label: 'Guides', href: '/guides/', section: 'guides' },
   { label: 'Resources', href: '/resources/', section: 'resources' },
-  { label: 'Alerts', href: '/alerts/', section: 'alerts' },
 ];
 
 export const drawerLinks: SiteLink[] = [

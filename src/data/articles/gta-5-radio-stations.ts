@@ -132,7 +132,7 @@ export const gta5RadioStationsArticle: EditorialArticle = {
   ],
   related: [
     { label: 'Browse all game guides', href: '/guides/', description: 'Explainers and walkthroughs for specific game questions.' },
-    { label: 'Open the GTA 5 cheats page', href: '/cheats/gta-5/', description: 'Player, vehicle and world cheats by platform.' },
+    { label: 'Published cheat sheets', href: '/cheats/', description: 'Cheat pages with platform scope and confirmed builds.' },
     { label: 'Use the Freetins resources page', href: '/resources/', description: 'Direct links to every main section.' },
   ],
 };

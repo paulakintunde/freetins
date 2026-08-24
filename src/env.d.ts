@@ -11,7 +11,17 @@ interface ImportMeta {
 declare namespace Cloudflare {
   interface Env {
     STATUS?: FreetinsStatusStore;
+    /** KV namespace holding reader report counts and dedup fingerprints. */
+    REPORTS?: FreetinsReportStore;
+    /** Secret used to make the reader-report dedup fingerprint one-way. */
+    REPORT_SECRET?: string;
   }
+}
+
+interface FreetinsReportStore {
+  get(key: string, type: 'json'): Promise<unknown>;
+  get(key: string): Promise<string | null>;
+  put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
 }
 
 interface FreetinsStatusStore {

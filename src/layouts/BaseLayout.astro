@@ -6,6 +6,7 @@ import Footer from './partials/Footer.astro';
 import Header from './partials/Header.astro';
 import OutageBanner, { type CheckerStatus } from './partials/OutageBanner.astro';
 import { operations } from '../data/operations';
+import { contactEmail } from '../data/site';
 
 interface Props {
   title: string;
@@ -50,7 +51,7 @@ const schema = {
       description: 'Source-backed game codes, daily reward links, cheats, answers and guides with explicit publication states.',
       publishingPrinciples: 'https://freetins.com/how-we-verify/',
       correctionsPolicy: 'https://freetins.com/how-we-verify/',
-      email: 'hello@freetins.com',
+      email: contactEmail,
     },
     {
       '@type': 'WebSite',

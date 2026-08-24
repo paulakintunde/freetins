@@ -65,7 +65,8 @@ for (const file of files) {
 
   // images
   const imgs = [...body.matchAll(/<img\b[^>]*>/gi)].map((m) => m[0]);
-  const imgsNoAlt = imgs.filter((i) => !/\salt="[^"]+"/i.test(i)).length;
+  // A bare `alt` and `alt=""` both mean "decorative"; only a wholly absent attribute is a defect.
+  const imgsNoAlt = imgs.filter((i) => !/\salt(?:=|[\s>])/i.test(i)).length;
 
   // schema
   const ld = [...head.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)]
