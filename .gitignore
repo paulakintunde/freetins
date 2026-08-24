@@ -10,6 +10,7 @@ dist/
 !.dev.vars.example
 *.log
 .thumbnail
+output/
 
 # Planning and migration notes
 CONTENT-ALIGNMENT-PLAN.md

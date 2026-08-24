@@ -14,6 +14,7 @@
     "preview": "pnpm build && wrangler pages dev dist",
     "typecheck": "astro check",
     "lint": "astro check --minimumFailingSeverity warning",
+    "audit:live": "node scripts/audit-live-site.mjs",
     "check:data": "node scripts/check-operational-data.mjs",
     "check:routes": "node scripts/check-routes.mjs",
     "test": "node --test"
