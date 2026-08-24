@@ -2,6 +2,7 @@
 import { Picture } from 'astro:assets';
 import Button from '../ui/Button.astro';
 import EditorialArticle from './EditorialArticle.astro';
+import { requireArticleArtwork } from '../../data/article-images';
 import { editorialArticles, getArticleByPath } from '../../data/articles';
 import { dailyLinkCatalogue, gameCatalogue } from '../../data/home';
 import {
@@ -30,6 +31,12 @@ const hubArticles = definition.routeId === 'answers'
       : definition.routeId === 'daily'
         ? editorialArticles.filter((item) => item.section === 'daily')
     : [];
+const publishedHeading = {
+  answers: 'Published Answers',
+  guideIndex: 'Published Guides',
+  cheats: 'Published Cheats',
+  daily: 'Published Daily Guides',
+}[definition.routeId];
 const game = gameCatalogue.find((item) => item.slug === definition.slug);
 const dailyGame = dailyLinkCatalogue.find((item) => item.slug === definition.slug);
 const gameRoot = game ? `/codes/${game.slug}/` : '/codes/grow-a-garden/';
@@ -164,29 +171,6 @@ const legalCopy: Record<string, Array<[string, string]>> = {
   ],
 };
 
-const infoCopy: Record<string, Array<[string, string]>> = {
-  answers: [
-    ['What this page is', 'A compact answer hub for levels, puzzles and short-form questions that need a direct destination.'],
-    ['How entries are ordered', 'The most recent verified answer sits first, and older calls remain visible for comparison.'],
-    ['How we source them', 'We only publish an answer after we can cross-check the result against the current game state.'],
-  ],
-  guideIndex: [
-    ['What lives here', 'Long-form explainers, patch notes and process pages that are not one game’s code table.'],
-    ['What stays out', 'We do not mix in retired pages, monitoring pages or legacy archive shells.'],
-    ['How to use it', 'Jump from the guide index to the specific walkthrough or reference you need.'],
-  ],
-  resources: [
-    ['For editors', 'Launch notes, routing references and the internal map of the new information architecture.'],
-    ['For readers', 'A direct path into codes, daily links, cheats, guides and verification.'],
-    ['What changed', 'The new structure favors the shortest route to a useful page instead of a redirect chain.'],
-  ],
-  about: [
-    ['Why the site exists', 'Freetins is built to help players find working codes and daily links quickly.'],
-    ['What changed in the relaunch', 'We narrowed the surface area so the pages that remain are the ones that earn their place.'],
-    ['What we will not do', 'We will not keep dead-end routes or legacy shells just to preserve old navigation.'],
-  ],
-};
-
 const pageLinks: Record<string, Array<[string, string]>> = {
   verify: [['Submit a code', '/submit/'], ['Report a correction', '/contact/?topic=Correction'], ['Blog', '/blog/']],
   alerts: [['Manage alerts', '/alerts/'], ['Privacy', '/privacy/']],
@@ -199,7 +183,6 @@ const pageLinks: Record<string, Array<[string, string]>> = {
 
 const relatedLinks = pageLinks[definition.kind] ?? [];
 const legalSections = legalCopy[definition.kind] ?? [];
-const infoSections = infoCopy[definition.routeId] ?? [];
 
 const crumbs = isGamePage
   ? [['Home', '/'], ['Codes', '/codes/'], [game?.name ?? 'Game', gameRoot]]
@@ -256,19 +239,40 @@ const crumbs = isGamePage
       )}
     </header>
 
-    {(definition.kind === 'browse' || definition.kind === 'az') && (
+    {definition.kind === 'browse' && (
       <section class="page-section content-boundary">
         <div class="section-title">
-          <h2>{definition.kind === 'az' ? 'Every game we track' : 'Freshest first'}</h2>
+          <h2>Published Codes</h2>
           <span>{gameCatalogue.length} games</span>
         </div>
-        <div class:list={['catalogue', { columns: definition.kind === 'az' }]}>
+        <div class="card-grid code-card-grid">
           {gameCatalogue.map((item) => (
-            <a href={`/codes/${item.slug}/`}>
-              <span>{item.name}</span>
-              <strong>{item.live} live</strong>
-              <time>{item.age} ago</time>
+            <a class="media-card" href={`/codes/${item.slug}/`}>
+              <div class="media">
+                <Picture
+                  src={requireArtwork(gameArtwork, item.slug, 'game').src}
+                  alt={requireArtwork(gameArtwork, item.slug, 'game').alt}
+                  formats={['avif']}
+                  fallbackFormat="webp"
+                  widths={[320, 528, 792, 1056]}
+                  sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 50vw, 25vw"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-copy"><h3>{item.name}</h3><p>{item.live} live codes · checked {item.age} ago</p></div>
             </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {definition.kind === 'az' && (
+      <section class="page-section content-boundary">
+        <div class="section-title"><h2>Every game we track</h2><span>{gameCatalogue.length} games</span></div>
+        <div class="catalogue columns">
+          {gameCatalogue.map((item) => (
+            <a href={`/codes/${item.slug}/`}><span>{item.name}</span><strong>{item.live} live</strong><time>{item.age} ago</time></a>
           ))}
         </div>
       </section>
@@ -300,13 +304,27 @@ const crumbs = isGamePage
           })}
         </div>
         {hubArticles.length > 0 && (
-          <div class="catalogue article-catalogue daily-editorial">
+          <div class="published-articles">
+            <h2>{publishedHeading}</h2>
+            <div class="card-grid article-card-grid">
             {hubArticles.map((item) => (
-              <a href={item.path}>
-                <span>{item.heading}<small>{item.description}</small></span>
-                <strong>Read</strong>
+              <a class="media-card" href={item.path}>
+                <div class="media">
+                  <Picture
+                    src={requireArticleArtwork(item.routeId).src}
+                    alt={requireArticleArtwork(item.routeId).alt}
+                    formats={['avif']}
+                    fallbackFormat="webp"
+                    widths={[320, 528, 792, 1056]}
+                    sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 50vw, 33vw"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="card-copy"><h3>{item.heading}</h3><p>{item.description}</p></div>
               </a>
             ))}
+            </div>
           </div>
         )}
       </section>
@@ -352,7 +370,30 @@ const crumbs = isGamePage
     )}
 
     {definition.kind === 'cheats' && (
-      <section class="page-section content-boundary"><h2>Games with cheats</h2><div class="catalogue">{hubArticles.map((item) => <a href={item.path}><span>{item.heading}<small>{item.description}</small></span><strong>Read</strong></a>)}{cheatGames.map(([name, slug, count, systems]) => <a href={`/cheats/${slug}`}><span>{name}<small>{systems}</small></span><strong>{count} cheats</strong></a>)}</div></section>
+      <section class="page-section content-boundary">
+        <h2>{publishedHeading}</h2>
+        <div class="card-grid article-card-grid">
+          {hubArticles.map((item) => (
+            <a class="media-card" href={item.path}>
+              <div class="media">
+                <Picture
+                  src={requireArticleArtwork(item.routeId).src}
+                  alt={requireArticleArtwork(item.routeId).alt}
+                  formats={['avif']}
+                  fallbackFormat="webp"
+                  widths={[320, 528, 792, 1056]}
+                  sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 50vw, 33vw"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-copy"><h3>{item.heading}</h3><p>{item.description}</p></div>
+            </a>
+          ))}
+        </div>
+        <h2 class="secondary-list-heading">More cheat pages</h2>
+        <div class="catalogue">{cheatGames.map(([name, slug, count, systems]) => <a href={`/cheats/${slug}/`}><span>{name}<small>{systems}</small></span><strong>{count} cheats</strong></a>)}</div>
+      </section>
     )}
 
     {definition.kind === 'cheat' && (
@@ -391,18 +432,25 @@ const crumbs = isGamePage
       <section class="page-section content-boundary prose"><p class="updated">Last updated 21 August 2026</p>{legalSections.map(([heading, copy], index) => <section><span>{String(index + 1).padStart(2, '0')}</span><div><h2>{heading}</h2><p>{copy}</p></div></section>)}</section>
     )}
 
-    {definition.kind === 'info' && infoSections.length > 0 && (
-      <section class="page-section content-boundary prose"><p class="updated">Last updated 21 August 2026</p>{infoSections.map(([heading, copy], index) => <section><span>{String(index + 1).padStart(2, '0')}</span><div><h2>{heading}</h2><p>{copy}</p></div></section>)}</section>
-    )}
-
     {definition.kind === 'info' && hubArticles.length > 0 && (
       <section class="page-section content-boundary">
-        <h2>Published pages</h2>
-        <div class="catalogue article-catalogue">
+        <h2>{publishedHeading}</h2>
+        <div class="card-grid article-card-grid">
           {hubArticles.map((item) => (
-            <a href={item.path}>
-              <span>{item.heading}<small>{item.description}</small></span>
-              <strong>Read</strong>
+            <a class="media-card" href={item.path}>
+              <div class="media">
+                <Picture
+                  src={requireArticleArtwork(item.routeId).src}
+                  alt={requireArticleArtwork(item.routeId).alt}
+                  formats={['avif']}
+                  fallbackFormat="webp"
+                  widths={[320, 528, 792, 1056]}
+                  sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 50vw, 33vw"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-copy"><h3>{item.heading}</h3><p>{item.description}</p></div>
             </a>
           ))}
         </div>
@@ -432,7 +480,7 @@ const crumbs = isGamePage
           {definition.kind !== 'search' && <label>Details<textarea name="message" rows={5} placeholder="Tell us what you need"></textarea></label>}
           <button type="submit">{definition.kind === 'search' ? 'Search' : 'Continue'}</button>
         </form>
-        <aside><h2>What happens next</h2><p>{definition.kind === 'search' ? 'Results include games, guides and daily-link pages.' : 'A person or the verification checker handles the request. Nothing publishes automatically.'}</p></aside>
+        <aside><h2>What happens next</h2><p>A person or the verification checker handles the request. Nothing publishes automatically.</p></aside>
       </section>
     )}
 
@@ -473,11 +521,14 @@ const crumbs = isGamePage
   .catalogue strong { color: var(--text-brand); font-size: 13px; }
   .catalogue time { width: 90px; color: var(--text-tertiary); font-size: 13px; text-align: right; }
   .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 26px 20px; }
-  .daily-editorial { margin-top: 30px; }
+  .published-articles { margin-top: clamp(34px, 5vw, 56px); }
+  .published-articles > h2 { margin: 0 0 14px; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
+  .secondary-list-heading { margin-top: clamp(38px, 5vw, 58px) !important; }
   .media-card { display: block; color: inherit; text-decoration: none; }
   .media { position: relative; aspect-ratio: 528 / 320; overflow: hidden; background: var(--surface-card); transition: transform 250ms var(--ease-standard); }
   .media-card:hover .media { transform: scale(1.02); }
-  .card-copy { padding: 13px 14px 16px; background: var(--surface-raised); }
+  .article-card-grid .media { aspect-ratio: 3 / 2; }
+  .card-copy { min-height: 94px; padding: 13px 14px 16px; background: var(--surface-raised); }
   .card-copy h3 { margin: 0; color: var(--text-primary); font: 600 16px / 1.35 var(--font-core); }
   .card-copy p { margin: 6px 0 0; color: var(--text-tertiary); font-size: 13px; }
   .split-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 320px); gap: 30px; align-items: start; }

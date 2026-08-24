@@ -15,6 +15,11 @@ export interface ArticleGroup {
   body: string;
 }
 
+export interface ArticleElement {
+  name: string;
+  recipes: string[];
+}
+
 export interface ArticleSection {
   id: string;
   heading: string;
@@ -24,6 +29,7 @@ export interface ArticleSection {
   steps?: string[];
   bullets?: string[];
   links?: ArticleLink[];
+  elementIndex?: ArticleElement[];
   note?: string;
 }
 

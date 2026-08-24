@@ -1,4 +1,6 @@
 ---
+import { Picture } from 'astro:assets';
+import { articleArtwork } from '../../data/article-images';
 import type { EditorialArticle as EditorialArticleData, ArticleLink } from '../../data/articles';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
@@ -7,6 +9,7 @@ interface Props {
 }
 
 const { article } = Astro.props;
+const articleArt = articleArtwork[article.routeId];
 const sectionLabels = {
   answers: 'Answers',
   guides: 'Guides',
@@ -38,6 +41,22 @@ const absoluteUrl = new URL(article.path, Astro.site).toString();
 const articleType = article.schemaType ?? (article.section === 'resources' ? 'CollectionPage' : 'Article');
 const isWebPage = articleType === 'WebPage';
 const entityId = `${absoluteUrl}${isWebPage ? '#webpage' : '#article'}`;
+const elementSlug = (name: string) => name.toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/^-|-$/g, '');
+const elementLetter = (name: string) => name.charAt(0).toUpperCase();
+const elementEmojiRules: Array<[RegExp, string]> = [
+  [/air|wind|storm|hurricane|tornado/i, '🌬️'], [/water|rain|sea|ocean|river|lake|pond|wave/i, '💧'],
+  [/fire|lava|volcano|heat|ash/i, '🔥'], [/earth|mud|stone|rock|mountain|sand/i, '🌍'],
+  [/tree|plant|flower|grass|forest|leaf|wood/i, '🌿'], [/sun|light|star|moon|space|planet/i, '✨'],
+  [/bird|eagle|owl|duck|chicken/i, '🐦'], [/fish|shark|whale|ocean/i, '🐟'],
+  [/dog|wolf|fox/i, '🐕'], [/cat|lion|tiger/i, '🐈'], [/horse|unicorn|pegasus/i, '🐎'],
+  [/human|doctor|farmer|engineer|sailor|pilot/i, '🧑'], [/house|castle|village|city|building/i, '🏠'],
+  [/car|bus|train|bicycle|motorcycle|airplane|boat/i, '🚗'], [/food|bread|cake|cheese|milk|fruit|meat/i, '🍽️'],
+  [/electric|energy|lightning|battery/i, '⚡'], [/time|clock|watch|hourglass/i, '⏱️'],
+  [/tool|metal|steel|blade|sword|gun/i, '🛠️'], [/music|sound|flute|drum/i, '🎵'],
+];
+const elementEmoji = (name: string) => elementEmojiRules.find(([pattern]) => pattern.test(name))?.[1] ?? '🧪';
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -47,6 +66,7 @@ const structuredData = {
       ...(isWebPage ? { name: article.heading } : { headline: article.heading }),
       description: article.description,
       url: absoluteUrl,
+      ...(articleArt && { image: new URL(articleArt.socialImage, Astro.site).toString() }),
       datePublished: article.publishedAt,
       dateModified: article.reviewedAt,
       author: {
@@ -97,7 +117,12 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   : {};
 ---
 
-<BaseLayout title={article.title} description={article.description}>
+<BaseLayout
+  title={article.title}
+  description={article.description}
+  image={articleArt?.socialImage}
+  imageAlt={articleArt?.alt}
+>
   <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
 
   <article class="editorial-article">
@@ -113,11 +138,26 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
         <span>{article.reviewLabel}</span>
         <span>By <a href={article.authorPath}>{article.author}</a></span>
       </div>
+      {articleArt && (
+        <div class="article-art">
+          <Picture
+            src={articleArt.src}
+            alt={articleArt.alt}
+            formats={['avif']}
+            fallbackFormat="webp"
+            widths={[480, 768, 1080, 1440, 1536]}
+            sizes="(max-width: 767px) calc(100vw - 40px), min(100vw - (2 * var(--page-gutter)), 1200px)"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+      )}
     </header>
 
     <div class="article-reading-surface">
       <div class="quick-answer content-boundary">
-        <strong>Quick answer</strong>
+        <strong>What to know</strong>
         <p>{article.quickAnswer}</p>
       </div>
 
@@ -173,6 +213,51 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
                     {link.description && <span>{link.description}</span>}
                   </a>
                 ))}
+              </div>
+            )}
+
+            {section.elementIndex && (
+              <div class="element-index" data-element-index>
+                <div class="element-tools">
+                  <label>
+                    <span>Find an element or ingredient</span>
+                    <input type="search" placeholder="Try life, metal or rain" data-element-search />
+                  </label>
+                  <output data-element-count aria-live="polite">{(section.elementIndex ?? []).length} elements</output>
+                </div>
+                <nav class="alphabet-nav" aria-label="Little Alchemy elements by letter">
+                  {[...new Set((section.elementIndex ?? []).map((element) => elementLetter(element.name)))].map((letter) => (
+                    <a href={`#elements-${letter.toLowerCase()}`}>{letter}</a>
+                  ))}
+                </nav>
+                <div class="element-groups">
+                  {[...new Set((section.elementIndex ?? []).map((element) => elementLetter(element.name)))].map((letter) => (
+                    <section id={`elements-${letter.toLowerCase()}`} class="element-letter" data-element-group>
+                      <h3>{letter}</h3>
+                      <div class="element-grid">
+                        {(section.elementIndex ?? [])
+                          .filter((element) => elementLetter(element.name) === letter)
+                          .map((element) => (
+                            <article
+                              id={`element-${elementSlug(element.name)}`}
+                              class="element-card"
+                              data-element-card
+                              data-search={`${element.name} ${element.recipes.join(' ')}`.toLowerCase()}
+                            >
+                              <div class="element-title">
+                                <span aria-hidden="true">{elementEmoji(element.name)}</span>
+                                <h4><a href={`#element-${elementSlug(element.name)}`}>{element.name}</a></h4>
+                              </div>
+                              <ul>
+                                {element.recipes.map((recipe) => <li>{recipe}</li>)}
+                              </ul>
+                            </article>
+                          ))}
+                      </div>
+                    </section>
+                  ))}
+                </div>
+                <p class="element-empty" data-element-empty hidden>No matching element or recipe was found.</p>
               </div>
             )}
 
@@ -292,6 +377,26 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   .article-meta a {
     color: var(--text-primary);
     font-weight: 600;
+  }
+
+  .article-art {
+    max-width: 1200px;
+    margin-top: clamp(26px, 4vw, 44px);
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    background: var(--surface-raised);
+    aspect-ratio: 3 / 2;
+  }
+
+  .article-art :global(picture),
+  .article-art :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .article-art :global(img) {
+    object-fit: cover;
   }
 
   .quick-answer {
@@ -536,6 +641,156 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
     line-height: 1.5;
   }
 
+  .element-index {
+    margin-top: 26px;
+  }
+
+  .element-tools {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 16px;
+    align-items: end;
+    padding: 18px;
+    border: 1px solid var(--border-strong);
+    background: var(--surface-raised);
+  }
+
+  .element-tools label {
+    display: grid;
+    gap: 8px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .element-tools input {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 13px;
+    border: 1px solid var(--border-strong);
+    border-radius: 0;
+    background: #fff;
+    color: var(--text-primary);
+    font: inherit;
+  }
+
+  .element-tools input:focus-visible {
+    outline: 2px solid var(--green-700);
+    outline-offset: 2px;
+  }
+
+  .element-tools output {
+    padding-bottom: 13px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .alphabet-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 16px 0 20px;
+  }
+
+  .alphabet-nav a {
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    border: 1px solid var(--border-strong);
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .alphabet-nav a:hover {
+    border-color: var(--green-700);
+    background: var(--green-100);
+  }
+
+  .element-letter {
+    scroll-margin-top: 90px;
+    padding: 28px 0 8px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .element-letter > h3 {
+    margin: 0 0 14px;
+    color: var(--green-800);
+    font: 700 24px / 1 var(--font-display);
+  }
+
+  .element-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .element-card {
+    scroll-margin-top: 90px;
+    padding: 14px;
+    border: 1px solid var(--border-subtle);
+    background: #fff;
+  }
+
+  .element-title {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+  }
+
+  .element-title > span {
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .element-card h4 {
+    margin: 0;
+    font: 700 15px / 1.25 var(--font-display);
+    text-transform: capitalize;
+  }
+
+  .element-card h4 a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .element-card h4 a:hover {
+    color: var(--green-800);
+  }
+
+  .element-card ul {
+    display: grid;
+    gap: 5px;
+    margin: 11px 0 0;
+    padding: 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.4;
+    list-style: none;
+  }
+
+  .element-card li::before {
+    margin-right: 6px;
+    color: var(--green-700);
+    content: '=';
+  }
+
+  .element-card[hidden],
+  .element-letter[hidden],
+  .element-empty[hidden] {
+    display: none;
+  }
+
+  .element-empty {
+    padding: 24px;
+    border: 1px solid var(--border-strong);
+    color: var(--text-secondary);
+    text-align: center;
+  }
+
   .faq-section details {
     border-bottom: 1px solid var(--border-subtle);
   }
@@ -602,8 +857,17 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
     }
 
     .answer-groups,
-    .link-directory {
+    .link-directory,
+    .element-grid {
       grid-template-columns: 1fr;
+    }
+
+    .element-tools {
+      grid-template-columns: 1fr;
+    }
+
+    .element-tools output {
+      padding-bottom: 0;
     }
 
     .answer-groups > div,
@@ -612,3 +876,29 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
     }
   }
 </style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-element-index]').forEach((index) => {
+    const input = index.querySelector<HTMLInputElement>('[data-element-search]');
+    const count = index.querySelector<HTMLOutputElement>('[data-element-count]');
+    const empty = index.querySelector<HTMLElement>('[data-element-empty]');
+    const cards = [...index.querySelectorAll<HTMLElement>('[data-element-card]')];
+    const groups = [...index.querySelectorAll<HTMLElement>('[data-element-group]')];
+    if (!input || !count || !empty) return;
+
+    input.addEventListener('input', () => {
+      const query = input.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach((card) => {
+        const matches = !query || card.dataset.search?.includes(query) === true;
+        card.hidden = !matches;
+        if (matches) visible += 1;
+      });
+      groups.forEach((group) => {
+        group.hidden = !group.querySelector('[data-element-card]:not([hidden])');
+      });
+      count.textContent = `${visible} ${visible === 1 ? 'element' : 'elements'}`;
+      empty.hidden = visible !== 0;
+    });
+  });
+</script>

@@ -1,49 +1,46 @@
 import type { EditorialArticle } from './types';
+import { littleAlchemyElements } from '../little-alchemy-elements';
 
 const checked = {
   author: 'Paul A', authorPath: '/author/paul-a/', publishedAt: '2026-08-23', reviewedAt: '2026-08-23', reviewLabel: 'Reviewed 23 August 2026',
 } as const;
 
 const rows = (value: string) => value.trim().split('\n').map((row) => row.split('|'));
-
-const littleAlchemyCore = rows(`
-1|Energy|air + fire
-2|Lava|earth + fire
-3|Steam|water + fire
-4|Mud|water + earth
-5|Rain|water + air
-6|Plant|rain + earth
-7|Swamp|mud + plant
-8|Life|swamp + energy
-9|Human|earth + life
-10|Stone|air + lava
-11|Metal|fire + stone
-12|Sand|air + stone
-13|Glass|fire + sand
-14|Time|sand + glass
-15|Tool|metal + human
-16|Tree|plant + time
-17|Wood|tool + tree
-18|Cloud|air + steam
-19|Sky|air + cloud
-20|Sun|fire + sky`);
+const emojiRules: Array<[RegExp, string]> = [
+  [/santa|saint nick|rudolph|christmas/i, '🎅'], [/snow|sleet|winter/i, '❄️'],
+  [/star/i, '⭐'], [/love|heart|kiss/i, '💖'], [/family|grandparent|mother|child|baby/i, '👪'],
+  [/dog|wolf/i, '🐕'], [/cat/i, '🐈'], [/bird|hen|dove/i, '🐦'], [/fish/i, '🐟'],
+  [/horse|camel/i, '🐎'], [/bee/i, '🐝'], [/rat/i, '🐀'], [/turkey/i, '🦃'],
+  [/coffee|chocolate/i, '☕'], [/candy/i, '🍬'], [/cookie/i, '🍪'], [/cake/i, '🍰'],
+  [/burger|food|popcorn/i, '🍽️'], [/apple/i, '🍎'], [/ice cream/i, '🍨'],
+  [/gift|present|package/i, '🎁'], [/tree|pear/i, '🎄'], [/bell/i, '🔔'], [/fire/i, '🔥'],
+  [/moon|night/i, '🌙'], [/sun/i, '☀️'], [/rain|storm|thunder/i, '⛈️'], [/peace|angel|holy|heaven/i, '🕊️'],
+  [/party|celebration|cheer|firework/i, '🎉'], [/home|house/i, '🏠'], [/letter|post|list/i, '💌'],
+  [/ski|snowboard/i, '⛷️'], [/dance/i, '💃'], [/shopping/i, '🛍️'], [/tv|movie|dvd/i, '📺'],
+];
+const answerEmoji = (answer: string) => emojiRules.find(([pattern]) => pattern.test(answer))?.[1] ?? '🧩';
 
 export const littleAlchemyArticle: EditorialArticle = {
   ...checked,
   path: '/answers/little-alchemy/', routeId: 'littleAlchemy', section: 'answers',
   title: 'Little Alchemy Combinations: 580 Elements Guide | Freetins',
   heading: 'Little Alchemy combinations and 580-element guide',
-  description: 'The 20 essential Little Alchemy combinations, direct paths to life, human, time and wood, plus hidden gems and fixes for recipes that fail.',
+  description: 'All 580 standard Little Alchemy elements and their recipes in a searchable A-to-Z guide, plus direct paths to Life, Human, Time and Wood.',
   eyebrow: 'Combination guide',
-  quickAnswer: 'The original Little Alchemy has 580 standard elements. Start with energy, lava, mud, rain and plant, then make swamp + energy = life and earth + life = human. The old 540 total was an earlier update milestone, not the final count.',
+  quickAnswer: 'The original Little Alchemy has 580 standard elements. Use the searchable A-to-Z list below for every recipe, or jump directly to an element such as Life, Human, Time or Wood. The nine hidden gems and Pokki desktop extras are listed separately from the standard counter.',
   sections: [
     { id: 'element-count', heading: 'How many elements are in Little Alchemy?', paragraphs: ['The final original-game library contains 580 standard elements. The old live URL says 540 because it was written during an earlier version. This canonical page corrects the count without repeating the obsolete number in the route.'], table: { caption: 'Little Alchemy completion count', columns: ['Count', 'Meaning'], rows: [['4', 'Starting elements: air, earth, fire and water'], ['580', 'Standard library completion'], ['9', 'Hidden bonus elements outside the standard counter']] } },
-    { id: 'first-20', heading: 'The first 20 combinations to make', table: { caption: 'Little Alchemy opening combination order', columns: ['Step', 'Element', 'Recipe'], rows: littleAlchemyCore } },
+    { id: 'all-elements', heading: 'All 580 Little Alchemy elements and recipes', paragraphs: ['Search by element or ingredient, use the A-to-Z shortcuts, or link directly to any element. Every standard element is present in the page source so browser Find and search engines can read the complete answer sheet.'], elementIndex: littleAlchemyElements },
     { id: 'popular-chains', heading: 'Fast paths to the most useful elements', groups: [
       { heading: 'Life', body: 'water + earth = mud; water + air = rain; rain + earth = plant; mud + plant = swamp; air + fire = energy; swamp + energy = life.' },
       { heading: 'Human', body: 'Complete the life chain, then combine earth + life.' },
       { heading: 'Time', body: 'earth + fire = lava; air + lava = stone; air + stone = sand; fire + sand = glass; sand + glass = time.' },
       { heading: 'Wood', body: 'metal + human = tool; plant + time = tree; tool + tree = wood.' },
+    ], links: [
+      { label: 'Jump to Life', href: '#element-life', description: 'See every recipe for Life.' },
+      { label: 'Jump to Human', href: '#element-human', description: 'Open the Human recipe card.' },
+      { label: 'Jump to Time', href: '#element-time', description: 'Open the Time recipe card.' },
+      { label: 'Jump to Wood', href: '#element-wood', description: 'Open the Wood recipe card.' },
     ] },
     { id: 'hidden-gems', heading: 'All nine hidden gems', table: { caption: 'Little Alchemy hidden elements', columns: ['Hidden element', 'Recipe'], rows: rows(`
 Astronaut Ice Cream|astronaut + ice cream
@@ -65,6 +62,7 @@ Yeti|story + mountain or mountain range`) } },
   sources: [
     { label: 'Little Alchemy official site', href: 'https://littlealchemy.com/', description: 'Official browser game and platform links.' },
     { label: 'Little Alchemy official hints', href: 'https://littlealchemy.com/hints/', description: 'Developer-provided recipe hints.' },
+    { label: 'GambleDude complete combinations', href: 'https://www.gambledude.com/little-alchemy-all-combinations.html', description: 'A-to-Z cross-check for the complete original-game recipe inventory.' },
   ],
   related: [
     { label: 'How to make Energy', href: '/answers/little-alchemy-2-energy/', description: 'The one-step recipes in Little Alchemy 1 and 2.' },
@@ -172,7 +170,7 @@ const guessEmojiAnswers = rows(`
 97|Shower Cap
 98|Time Flies
 99|Lance Armstrong
-100|Family Photo`);
+100|Family Photo`).map(([puzzle = '', answer = '']) => [puzzle, answerEmoji(answer), answer]);
 
 export const guessEmojiArticle: EditorialArticle = {
   ...checked,
@@ -183,7 +181,7 @@ export const guessEmojiArticle: EditorialArticle = {
   eyebrow: 'Answer sheet',
   quickAnswer: 'Levels 1 to 10 contain 100 puzzles. The table numbers them continuously: 1 to 10 are Level 1, 11 to 20 are Level 2, and so on. Use Find in page to jump to a clue or answer.',
   sections: [
-    { id: 'answers', heading: 'All 100 answers', paragraphs: ['The puzzle column runs continuously to make the sheet easier to scan. Divide by ten to locate the in-game level: puzzle 37 is Level 4, puzzle 7.'], table: { caption: 'Guess the Emoji levels 1 to 10 answer list', columns: ['Puzzle', 'Answer'], rows: guessEmojiAnswers } },
+    { id: 'answers', heading: 'All 100 answers', paragraphs: ['The puzzle column runs continuously to make the sheet easier to scan. Divide by ten to locate the in-game level: puzzle 37 is Level 4, puzzle 7. The clue icon is a scanning aid, not a reproduction of the app artwork.'], table: { caption: 'Guess the Emoji levels 1 to 10 answer list', columns: ['Puzzle', 'Clue icon', 'Answer'], rows: guessEmojiAnswers } },
     { id: 'corrections', heading: 'Common spelling corrections', bullets: ['Level 2 begins with Shellfish, not Seashell.', 'Use Angry Birds in the plural.', 'Some game builds display compounds as two words even though the letter bank omits spaces.', 'Match the exact letter count when two phrases describe the same emoji clue.'] },
     { id: 'not-accepted', heading: 'Why an answer may be rejected', steps: ['Check that the app is on the same level and puzzle position.', 'Count the available letter slots.', 'Remove spaces and punctuation if the game does not provide them.', 'Try the capitalization-independent spelling shown in the table.', 'If the clue order differs, search the visible idea rather than relying only on the level number.'] },
   ],
@@ -301,7 +299,7 @@ const christmasAnswers = rows(`
 97|Cornucopia
 98|Wenceslas
 99|Annunciation
-100|Naughty or Nice`);
+100|Naughty or Nice`).map(([order = '', answer = '']) => [order, answerEmoji(answer), answer]);
 
 export const christmasEmojiArticle: EditorialArticle = {
   ...checked,
@@ -312,7 +310,7 @@ export const christmasEmojiArticle: EditorialArticle = {
   eyebrow: 'Answer sheet',
   quickAnswer: 'The Christmas Emoji pack can shuffle its order between installs. Search this complete answer list by a word suggested by the clue, then match the number of letter boxes instead of relying only on the displayed level number.',
   sections: [
-    { id: 'answers', heading: 'All 100 Christmas Emoji answers', table: { caption: '100 Pics Christmas Emoji answer list', columns: ['Reference order', 'Answer'], rows: christmasAnswers } },
+    { id: 'answers', heading: 'All 100 Christmas Emoji answers', paragraphs: ['The clue icon makes the long list easier to scan but may not match the exact artwork in your app version. Confirm the answer against the visible objects and letter slots.'], table: { caption: '100 Pics Christmas Emoji answer list', columns: ['Reference order', 'Clue icon', 'Answer'], rows: christmasAnswers } },
     { id: 'shuffled-order', heading: 'Why your level order may differ', paragraphs: ['Different installs can present the same answer pool in a different order. Use the browser Find in page command and search for the likely subject, then confirm the phrase against the letter slots in your puzzle.'] },
     { id: 'alternate-answers', heading: 'Common alternate wording', table: { caption: 'Answer variants reported by different pack versions', columns: ['One version', 'Another version'], rows: [['Star', 'Stars'], ['O Christmas Tree', 'O Tannenbaum'], ['Cold Turkey', 'Turkey'], ['Santas House', 'Santas Grotto'], ['Jingle Bells', 'Bells'], ['Holy Spirit', 'Holy Ghost'], ['Star in the Night', 'Star of Wonder']] } },
     { id: 'not-accepted', heading: 'If an answer is not accepted', bullets: ['Match the number of letter boxes, excluding spaces.', 'Try the alternate wording above.', 'Ignore apostrophes if they are not available in the letter bank.', 'Search this page by a visible object rather than by level number.', 'Confirm you opened the Christmas Emoji pack, not another holiday pack.'] },
@@ -363,7 +361,7 @@ export const littleAlchemyEnergyArticle: EditorialArticle = {
     { label: 'Little Alchemy official site', href: 'https://littlealchemy.com/', description: 'Official original game.' },
   ],
   related: [
-    { label: 'Little Alchemy 580-element guide', href: '/answers/little-alchemy/', description: 'Opening combinations and popular chains.' },
+    { label: 'Little Alchemy 580-element guide', href: '/answers/little-alchemy/#element-energy', description: 'Open Energy inside the complete searchable recipe list.' },
     { label: 'Browse answer sheets', href: '/answers/', description: 'More direct puzzle help.' },
   ],
 };

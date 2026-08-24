@@ -17,7 +17,7 @@ export const resourcesArticle: EditorialArticle = {
   sections: [
     {
       id: 'start-here',
-      heading: 'Start with the right section',
+      heading: 'Published Resources',
       links: [
         { label: 'Game codes', href: '/codes/', description: 'Redeemable codes with live and expired entries kept separate.' },
         { label: 'Daily reward links', href: '/daily/', description: 'Time-sensitive reward links for the daily-link games we track.' },
@@ -29,7 +29,7 @@ export const resourcesArticle: EditorialArticle = {
     },
     {
       id: 'featured-answers',
-      heading: 'Published answers and guides',
+      heading: 'Featured answers and guides',
       links: [
         { label: 'Clear Vision 3 walkthrough', href: '/answers/clear-vision-3/', description: 'Mission targets, difficult shots and the recommended upgrade order.' },
         { label: 'GTA 5 radio stations', href: '/guides/gta-5-radio-stations/', description: 'Every station, radio controls and Self Radio setup on PC.' },
