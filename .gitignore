@@ -19,3 +19,6 @@ MIGRATION.md
 TAXONOMY.md
 content-rewrite-map.md
 site-content-match-audit.md
+
+# Playwright MCP scratch output
+.playwright-mcp/
