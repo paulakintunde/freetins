@@ -68,6 +68,10 @@ The mid-season patch pulled one entry from the crate pool. It stays in the table
 
 ## Related pages
 
-- [How Freetins verifies every page](/how-we-verify/)
-- [Grow a Garden codes and current rewards](/codes/grow-a-garden/)
-- [Dandy's World codes and Ichor rewards](/codes/dandys-world/)
+<!-- Anchor text below is a placeholder. Write your own wording. Two writers
+     copying the same anchor for the same target is a batch failure, and the
+     checker reports it across pages. -->
+
+- [REPLACE THIS with your own words for the verification page](/how-we-verify/)
+- [REPLACE THIS with your own words for the first target](/codes/grow-a-garden/)
+- [REPLACE THIS with your own words for the second target](/codes/dandys-world/)

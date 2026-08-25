@@ -116,11 +116,30 @@ These are checks, not advice. Each one fails the build with a named error.
 - No shorteners or placeholder hosts in evidence: `example.com`, `freetins.local`, `ceesty`, `clkmein`, `bit.ly`, `tinyurl`, `cutt.ly`, `shorte.st`, `adf.ly`.
 - The dataset must contain at least one `expired` or `removed` row, **or** `unverified_summary` must explain why no archive exists (say "no expired", "no removed" or "no superseded" in it).
 
-### The staleness rule
+### What a row is allowed to display
 
-Any row with `"status": "active"` whose `last_verified_at` is more than 14 days old
-is automatically downgraded to `unverified` at build. Do not inflate a timestamp to
-avoid this. If you cannot verify a row inside the window, it is not active.
+Your `status` field states an intent. The build decides what the reader is shown,
+and it applies two demotions that no data file can opt out of.
+
+**Only a `confirmed` row may display as Active.** A row backed by two outlets with
+no publisher confirmation is `reported`, and reported is not verified. It displays
+as Unverified until a human upgrades it. Set `needs_human: true` on those rows.
+
+**An active row goes stale after 14 days.** If `last_verified_at` is older than
+that, it displays as Unverified. Do not inflate a timestamp to avoid this.
+
+Rows marked `expired` or `removed` are never touched by either rule.
+
+The practical consequence, and it catches people out: if nothing on your page
+reaches `confirmed`, `{{activeCount}}` renders 0. That is a correct result, not a
+bug. **Do not respond by hiding those rows.** An unconfirmed row must stay visible
+with its Unverified status, because showing it and labelling it honestly is the
+whole differentiator. Select it with `{{table:<id>|status=active,unverified}}` and
+say in the prose why nothing is publisher-confirmed. A page that explains why it
+cannot confirm its own rows beats a page wearing a fake Active pill.
+
+Write your Answer Block so it still reads correctly at zero. Lead with what is
+recorded and what each row carries, not with a live count you may not get.
 
 ---
 
@@ -241,6 +260,12 @@ Live and linkable today:
 If a target in your assignment is not on the live list and is not shipping
 alongside you, omit the link. Never stub.
 
+**Write your own anchor text.** Do not copy the wording from the template or
+from another page in the batch. Two pages using the same words for the same
+link is a batch failure, and the checker reports it across pages whenever more
+than one page is in scope. Describe what the reader gets from *your* page's
+angle.
+
 ---
 
 ## 6. The verification checklist
@@ -267,14 +292,24 @@ section owner. This is deliberate: a page cannot ship crediting the wrong desk.
 
 ## 8. Before you submit
 
-Run the build. It is the QA gate.
+Run the content checker. It is the QA gate.
 
 ```
-npx astro build
+node scripts/check-content.mjs guides/your-slug     one page
+node scripts/check-content.mjs guides               one section
+node scripts/check-content.mjs                      everything
 ```
 
-Every rule in sections 2 and 4 is checked there and reports with your file name and
-the specific problem. A clean build means the mechanical contract is satisfied. It
-does not mean the research is good, which is still on you.
+It runs exactly the rules in sections 2 and 4, reports each problem against your
+file name, and confirms your VERIFY.md exists. Iterate until it prints PASS.
+
+**Do not run `npx astro build` while other writers are working.** Concurrent Astro
+builds collide on a shared data store and fail with an `EPERM` rename error that
+reads like a content problem and is not one. The checker is read-only, safe to run
+alongside other writers, and finishes in under a second rather than a minute. The
+build runs once at the end of a batch, by the vetter.
+
+A PASS means the mechanical contract is satisfied. It does not mean the research is
+good, which is still on you.
 
 Then reply with the five-line receipt from the brief. Do not paste file contents.

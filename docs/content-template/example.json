@@ -1,15 +1,16 @@
 {
+  "_placeholder_warning": "entity_id, entity_url and every evidence URL here are placeholders. Replace all of them with the real experience identifier and real sources. example.invalid is a banned source, so the checker will fail if any of these survive into a real page.",
   "subject": "Pipeline Check",
   "slug": "pipeline-check",
-  "entity_id": "126884695634066",
-  "entity_url": "https://www.roblox.com/games/126884695634066/",
+  "entity_id": "000000000000000",
+  "entity_url": "https://example.invalid/placeholder-experience",
   "developer": "Freetins Engineering",
   "permalink": "/guides/pipeline-check/",
   "checked_at": "2026-08-25T08:00:00Z",
   "content_changed_at": "2026-08-25T08:00:00Z",
   "recheck_cadence": "Re-verified with every game update, and at least every 48 hours while entries are live.",
   "official_sources": [
-    { "type": "official_page", "url": "https://www.roblox.com/games/126884695634066/", "note": "Official experience page" },
+    { "type": "official_page", "url": "https://example.invalid/placeholder-experience", "note": "Official experience page" },
     { "type": "discord", "url": "https://discord.gg/freetins", "note": "Developer announcement channel" }
   ],
   "tables": {
@@ -37,7 +38,7 @@
       "last_verified_at": "2026-08-24T00:00:00Z",
       "ended_at": null,
       "evidence": [
-        { "tier": 1, "url": "https://www.roblox.com/games/126884695634066/" },
+        { "tier": 1, "url": "https://example.invalid/placeholder-experience" },
         { "tier": 2, "url": "https://www.pcgamesn.com/pipeline-check" }
       ],
       "confidence": "confirmed",
