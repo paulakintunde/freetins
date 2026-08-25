@@ -20,6 +20,9 @@ export interface RelatedLink {
   description?: string;
 }
 
+/* Matching lives in lib so it is testable without the site data graph. */
+export { datasetLinksForGame } from '../lib/datasetLinks';
+
 const SIBLING_LIMIT = 4;
 
 const byMostRecentlyChecked = (

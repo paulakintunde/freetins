@@ -21,6 +21,15 @@ export interface DatasetPageSummary {
   focusKeyword: string;
   secondaryKeywords: string[];
   checkedAt: string;
+  /**
+   * The subject's own identifier, as the dataset states it: a numeric listing id
+   * for a game, or a URL for a platform-wide mechanism that belongs to no single
+   * game. Interlinking matches on this rather than on a similar-looking slug, so
+   * a link between two pages is a fact about the subject and not a guess.
+   */
+  entityId: string;
+  activeCount: number;
+  totalCount: number;
 }
 
 /**
@@ -42,7 +51,13 @@ export const listDatasetPages = async (section: DatasetSection): Promise<Dataset
     return {
       path: data.permalink ?? `/${section}/${entry.id}/`,
       slug: entry.id,
-      heading: dataset.subject ?? data.title ?? entry.id,
+      /*
+       * The page's own title, not the dataset subject. The subject names the
+       * entity, so three Steal a Brainrot pages all reduced to "Steal a
+       * Brainrot" and appeared as indistinguishable cards on the hub and as
+       * three identical search results.
+       */
+      heading: data.title ?? dataset.subject ?? entry.id,
       // The unverified summary is the most honest one-line description
       // available: it says what the page does and does not stand behind.
       description: dataset.unverifiedSummary ?? data.title ?? '',
@@ -50,6 +65,9 @@ export const listDatasetPages = async (section: DatasetSection): Promise<Dataset
       focusKeyword: data.focusKeyword ?? '',
       secondaryKeywords: data.secondaryKeywords ?? [],
       checkedAt: dataset.checkedAt ?? '',
+      entityId: String(dataset.entityId ?? ''),
+      activeCount: data.counts?.activeCount ?? 0,
+      totalCount: data.counts?.totalCount ?? 0,
     };
   });
 };

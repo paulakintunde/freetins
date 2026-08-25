@@ -5,7 +5,7 @@ import Button from '../ui/Button.astro';
 import EditorialArticle from './EditorialArticle.astro';
 import { articleArtwork, requireArticleArtwork } from '../../data/article-images';
 import { editorialArticles, getArticleByPath } from '../../data/articles';
-import { listDatasetPages, type DatasetSection } from '../../lib/datasetPages';
+import { listAllDatasetPages, listDatasetPages, type DatasetSection } from '../../lib/datasetPages';
 import { authors, getAuthorBySlug, getSectionAuthor } from '../../data/authors';
 import { hubIntroFor } from '../../data/hub-intros';
 import { contactEmail, organizationId, websiteId } from '../../data/site';
@@ -25,7 +25,7 @@ import {
 } from '../../data/site-images';
 import type { RouteDefinition } from '../../data/routes';
 import { gameTabsForSlug } from '../../data/game-tabs';
-import { gameRelatedLinks } from '../../data/interlinks';
+import { datasetLinksForGame, gameRelatedLinks } from '../../data/interlinks';
 import { searchIndex } from '../../data/search';
 import { hotSearches } from '../../data/site';
 import {
@@ -212,6 +212,15 @@ const relatedLinks = pageLinks[definition.kind] ?? [];
  * siblings on the same platform.
  */
 const gameRelated = definition.kind === 'codes' && game?.slug ? gameRelatedLinks(game.slug) : [];
+
+/*
+ * Dataset pages were reachable only from their section hub and site search, so a
+ * reader on a code page had no route to the guide covering the same game. The
+ * match is on the game's own listing id, never on a similar slug.
+ */
+const datasetRelated = definition.kind === 'codes' && game
+  ? datasetLinksForGame(game, await listAllDatasetPages())
+  : [];
 const legalSections = legalCopy[definition.kind] ?? [];
 
 const crumbTrail: Array<[string, string]> = isGamePage
@@ -745,6 +754,20 @@ const routeSchema = {
 
     {definition.kind === 'notTracked' && (
       <section class="page-section content-boundary"><div class="notice"><span>{definition.eyebrow ?? 'Freetins'}</span><h2>Request the game and it enters validation</h2><p>{definition.description}</p></div></section>
+    )}
+
+    {datasetRelated.length > 0 && (
+      <section class="page-section content-boundary related-games">
+        <h2 class="subhead">Guides and explainers</h2>
+        <div class="related-grid">
+          {datasetRelated.map((link) => (
+            <a href={link.href}>
+              <strong>{link.label}</strong>
+              {link.description && <span>{link.description}</span>}
+            </a>
+          ))}
+        </div>
+      </section>
     )}
 
     {gameRelated.length > 0 && (

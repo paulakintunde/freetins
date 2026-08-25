@@ -16,6 +16,8 @@ const toCatalogueEntry = (game: (typeof operations.games)[number]) => {
     name: game.name,
     slug: game.slug,
     platform: game.platform,
+    /* Carries the game's own listing id, which is how a dataset page is matched to it. */
+    officialSourceUrl: game.officialSourceUrl,
     publicationState: game.publicationState,
     isPublished: page.isPublished,
     verifiedCount: page.verifiedCount,
