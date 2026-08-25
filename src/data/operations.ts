@@ -182,12 +182,78 @@ export interface ResolvedEntry<T> {
 export const evidenceTierOf = (entry: { publisherSourceUrl?: string | null }): EvidenceTier =>
   entry.publisherSourceUrl ? 'publisher-confirmed' : 'community-reported';
 
+export interface EntryCitation {
+  url: string;
+  label: string;
+  tier: EvidenceTier;
+}
+
+/**
+ * The citation a row shows the reader.
+ *
+ * `publisherSourceUrl` is the strong form and remains the only thing that reads as
+ * publisher-confirmed. When there is none the entry still carries the outlet that
+ * reported it in `sourceUrls`, and the page used to discard that and print
+ * "no publisher post found" instead. That told the reader less than the data holds:
+ * a row that is merely uncorroborated read as one nobody could find a source for.
+ * Naming the outlet keeps the tier distinction intact and stops the page disclaiming
+ * evidence it is holding.
+ *
+ * `discoveredVia` is deliberately not consulted. An aggregator repeating another
+ * aggregator is not corroboration, and surfacing it here would launder it into one.
+ */
+export const citationFor = (
+  entry: { publisherSourceUrl?: string | null; sourceUrls?: string[] },
+): EntryCitation | null => {
+  if (entry.publisherSourceUrl) {
+    return { url: entry.publisherSourceUrl, label: 'Publisher post', tier: 'publisher-confirmed' };
+  }
+  const reported = (entry.sourceUrls ?? []).find((url) => isHttpsUrl(url));
+  if (!reported) return null;
+  const host = hostOf(reported);
+  return {
+    url: reported,
+    label: host ? `Reported by ${host}` : 'Reported by one outlet',
+    tier: 'community-reported',
+  };
+};
+
 /**
  * A code a reader can act on right now: the last check did not reject it and it has
  * not aged out of its freshness window. Expired, stale and never-checked entries are
  * all excluded, which is what makes the count on a game page mean something.
  */
 export const isUsableState = (state: EntryState) => state === 'verified' || state === 'reported';
+
+/**
+ * Whether a game's page holds enough live, checked content to deserve an index entry.
+ *
+ * `publicationState` used to decide this on its own, which made indexing a flag
+ * somebody had to remember to flip. The three highest-intent daily-link pages —
+ * Monopoly GO, Coin Master, Dice Dreams — sat `planned` and therefore noindexed
+ * with no defect anywhere in the data: nothing was wrong, nobody had thrown the
+ * switch. That is the wrong failure mode for the most valuable pages on the site.
+ *
+ * So `planned` now means "waiting on data" rather than "switched off", and the page
+ * indexes itself the moment the data arrives. It cannot index empty: readiness needs
+ * a link a reader can act on right now, which means a verification event inside the
+ * game's own window, plus the furniture that makes the page answer its query.
+ *
+ * `published` is left exactly as it was. Deriving it for those pages too would mean
+ * a game whose codes all aged out overnight silently dropped out of the index, and
+ * a 14-page deindex is not a change to make as a side effect of this one. `retired`
+ * stays out regardless, which is the whole point of retiring something.
+ */
+export const isIndexable = (
+  game: Pick<OperationalGame, 'publicationState' | 'officialSourceUrl' | 'redeemSteps'>,
+  entries: ResolvedEntry<CodeEntry | DailyLinkEntry | CheatEntry>[],
+): boolean => {
+  if (game.publicationState === 'retired') return false;
+  if (game.publicationState === 'published') return true;
+  return Boolean(game.officialSourceUrl)
+    && game.redeemSteps.length >= 2
+    && entries.some((item) => isUsableState(item.state));
+};
 
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const isoPattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/;
@@ -468,7 +534,7 @@ export const getGameOperationalPage = (slug: string, now = Date.now()) => {
     reportedCount: entries.filter((item) => item.state === 'reported').length,
     staleCount: entries.filter((item) => item.state === 'stale').length,
     expiredCount: entries.filter((item) => item.state === 'expired').length,
-    isPublished: game.publicationState === 'published',
+    isPublished: isIndexable(game, entries),
     values: operations.values.filter((entry) => entry.gameSlug === slug),
     updates: operations.updates.filter((entry) => entry.gameSlug === slug),
   };

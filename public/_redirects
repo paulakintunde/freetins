@@ -5,9 +5,13 @@
 # carrying dead structure forward. It is not a reason to 404 an inbound link that
 # already has traffic and links pointing at it.
 #
-# These 18 legacy paths carry roughly 249 monthly visits between them and map onto
+# The first 18 of these carry roughly 249 monthly visits between them and map onto
 # the 12 protected pages listed in CONTENT-ALIGNMENT-PLAN.md. Without this file
 # every one of them returns 404 the moment the apex domain serves this build.
+#
+# Nine rules below point at a section hub rather than a specific page. That is a
+# soft-404 shape and it is on loan, not settled: each one is marked at its section
+# and should become a direct 301 as its page ships.
 #
 # 301 is deliberate: these moves are permanent. Cloudflare Pages evaluates this
 # file top-down, first match wins.
@@ -60,6 +64,23 @@
 /featured/                                                         /                                  301
 /news-updates/                                                     /                                  301
 /uncategorized/                                                    /                                  301
+
+# --- WordPress archive surfaces: DO NOT redirect these -----------------------
+# /category/*, /tag/*, /feed/ and paginated /page/<n>/ are crawl artefacts from the
+# old software: listings generated from content that has already moved, never pages
+# anybody wrote. Google still has them indexed and they 404 today.
+#
+# They cannot be enumerated — there is no fixed list of tag slugs or page numbers —
+# so each prefix is a catch-all route under `src/pages/` returning 410, the same
+# treatment and the same reasoning as the removed topics below. Dumping a whole
+# archive onto /codes/ would be the soft-404 pattern this file already refuses.
+#
+# A named 301 for one path beneath a prefix still works and still wins, because
+# first match wins here. That is the intended escape hatch when an archive path
+# does turn out to have a real successor.
+#
+# The prefixes and their rationale live in `src/data/gone.ts`; `test/gone.test.mjs`
+# asserts each has a catch-all and that none is redirected wholesale.
 
 # --- Deliberate removals: DO NOT redirect these -----------------------------
 # 15 URLs with no relationship to game help. They are removed on purpose and must

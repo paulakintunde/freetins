@@ -3,11 +3,13 @@ import { Picture } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import Button from '../ui/Button.astro';
 import EditorialArticle from './EditorialArticle.astro';
-import { requireArticleArtwork } from '../../data/article-images';
+import { articleArtwork, requireArticleArtwork } from '../../data/article-images';
 import { editorialArticles, getArticleByPath } from '../../data/articles';
+import { listDatasetPages, type DatasetSection } from '../../lib/datasetPages';
 import { authors, getAuthorBySlug, getSectionAuthor } from '../../data/authors';
 import { hubIntroFor } from '../../data/hub-intros';
 import { contactEmail, organizationId, websiteId } from '../../data/site';
+import EntrySource from '../ui/EntrySource.astro';
 import {
   dailyLinkCatalogue,
   gameCatalogue,
@@ -63,6 +65,19 @@ const hubArticles = definition.routeId === 'answers'
       : definition.routeId === 'daily'
         ? editorialArticles.filter((item) => item.section === 'daily')
     : [];
+/*
+ * Dataset-backed pages live in their own collections and are not part of
+ * editorialArticles, so the hubs list them separately or they ship as orphans.
+ */
+const hubDatasetSection: DatasetSection | null = definition.routeId === 'guideIndex'
+  ? 'guides'
+  : definition.routeId === 'daily'
+    ? 'daily'
+    : definition.routeId === 'updates'
+      ? 'blog'
+      : null;
+const hubDatasetPages = hubDatasetSection ? await listDatasetPages(hubDatasetSection) : [];
+
 const publishedHeading = {
   answers: 'Published Answers',
   guideIndex: 'Published Guides',
@@ -107,7 +122,7 @@ const entryStateLabels: Record<EntryState, string> = {
   reported: 'Source-reported',
   stale: 'Needs recheck',
   expired: 'Expired',
-  unverified: 'Not verified',
+  unverified: 'Unconfirmed',
 };
 const gameRoot = game ? `/codes/${game.slug}/` : '/codes/grow-a-garden/';
 const isGamePage = ['codes', 'values', 'updates'].includes(definition.kind) && Boolean(game);
@@ -447,9 +462,7 @@ const routeSchema = {
                   <span>{item.entry.label}<small>{entryStateLabels[item.state]}</small></span>
                   {item.latestEvent ? <time datetime={item.latestEvent.checkedAt} data-relative-time={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <strong>Not checked</strong>}
                 </a>
-                <span class="record-sources">{item.entry.publisherSourceUrl
-                    ? <a href={item.entry.publisherSourceUrl} rel="noopener">Publisher post</a>
-                    : <span class="tier-chip">Community reported, no publisher post found</span>}</span>
+                <span class="record-sources"><EntrySource entry={item.entry} /></span>
               </div>
             ))}
           </div> : <div class="data-empty"><strong>No reward link is published</strong><p>This page is configured, but it will not display a claim link until the URL, source and verification event are present in the operational data.</p></div>}
@@ -469,9 +482,7 @@ const routeSchema = {
                 <div><code>{item.entry.code}</code><span>{item.entry.reward}</span><small>{entryStateLabels[item.state]}</small></div>
                 <div>
                   {item.latestEvent ? <time datetime={item.latestEvent.checkedAt} data-relative-time={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <small>No verification recorded</small>}
-                  <span class="record-sources">{item.entry.publisherSourceUrl
-                    ? <a href={item.entry.publisherSourceUrl} rel="noopener">Publisher post</a>
-                    : <span class="tier-chip">Community reported, no publisher post found</span>}</span>
+                  <span class="record-sources"><EntrySource entry={item.entry} /></span>
                   <button type="button" data-copy-code={item.entry.code}>Copy</button>
                   <span class="code-reports" data-code-report={item.entry.id} hidden>
                     <button type="button" class="thumb up" data-report-verdict="worked" aria-label={`Report that ${item.entry.code} worked`}>
@@ -622,6 +633,38 @@ const routeSchema = {
               <div class="card-copy"><h3>{item.heading}</h3><p>{item.description}</p></div>
             </a>
           ))}
+        </div>
+      </section>
+    )}
+
+    {hubDatasetPages.length > 0 && (
+      <section class="page-section content-boundary">
+        <h2>{publishedHeading ?? 'Published pages'}</h2>
+        <div class="card-grid article-card-grid">
+          {hubDatasetPages.map((item) => {
+            // Artwork is optional here: a dataset page ships on its data, and a
+            // missing image must not keep it off its own hub.
+            const art = articleArtwork[item.slug];
+            return (
+              <a class="media-card" href={item.path}>
+                {art && (
+                  <div class="media">
+                    <Picture
+                      src={art.src}
+                      alt={art.alt}
+                      formats={['avif']}
+                      fallbackFormat="webp"
+                      widths={[320, 528, 792, 1056]}
+                      sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 50vw, 33vw"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                )}
+                <div class="card-copy"><h3>{item.heading}</h3><p>{item.description}</p></div>
+              </a>
+            );
+          })}
         </div>
       </section>
     )}

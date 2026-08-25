@@ -22,6 +22,38 @@
  * Every entry here has a matching `src/pages/<path>/index.astro`; `test/gone.test.ts`
  * asserts the two stay in step.
  */
+/**
+ * WordPress archive prefixes that are gone as a shape, not as a list of URLs.
+ *
+ * The old site emitted `/category/<slug>/`, `/tag/<slug>/`, `/feed/` and paginated
+ * `/page/<n>/` indexes. These are crawl artefacts: a listing generated from content
+ * that has already moved, never a page anybody wrote. Google still has them indexed
+ * and they 404 today.
+ *
+ * They are not enumerable — there is no fixed list of tag slugs or page numbers to
+ * put in `goneRoutes` — so each prefix gets one catch-all route instead. A bare
+ * catch-all would shadow every real single-segment page on the site, which is why
+ * `goneRoutes` uses one file per path; these are safe because they are *prefixed*
+ * and no real section lives at `/category/`, `/tag/`, `/feed/` or `/page/`.
+ *
+ * 410 rather than a redirect to a hub, for the same reason as `goneRoutes`: an
+ * archive of posts that moved has no single successor, and dumping the whole
+ * archive surface onto `/codes/` is the soft-404 pattern `public/_redirects`
+ * already refuses for the removed topics. Nine rules in that file currently point
+ * at generic hubs and are marked there as temporary; these prefixes are not
+ * joining them.
+ *
+ * Anything under these prefixes that DOES have a successor belongs in
+ * `public/_redirects` as an explicit 301. First match wins there, so a named rule
+ * outranks this catch-all — which is the intended escape hatch.
+ */
+export const goneRoutePrefixes: string[] = [
+  '/category/',
+  '/tag/',
+  '/feed/',
+  '/page/',
+];
+
 export const goneRoutes: string[] = [
   '/amd-ryzen-rainmeter-skin-setup/',
   '/cowan-clock-for-rainmeter/',

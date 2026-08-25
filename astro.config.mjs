@@ -1,7 +1,7 @@
 import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
-import { goneRoutes } from './src/data/gone.ts';
+import { goneRoutePrefixes, goneRoutes } from './src/data/gone.ts';
 import { routeDefinitions } from './src/data/routes.ts';
 
 /**
@@ -34,7 +34,17 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !excludedFromSitemap.has(new URL(page).pathname),
+      /*
+       * The prefix check is belt-and-braces. A catch-all route has no concrete URL
+       * for the integration to enumerate, so `/category/*` and friends should never
+       * reach the sitemap anyway — but a sitemap that advertises a 410 is expensive
+       * to notice and cheap to prevent.
+       */
+      filter: (page) => {
+        const { pathname } = new URL(page);
+        if (excludedFromSitemap.has(pathname)) return false;
+        return !goneRoutePrefixes.some((prefix) => pathname.startsWith(prefix));
+      },
     }),
   ],
   compressHTML: true,
