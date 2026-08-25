@@ -15,6 +15,7 @@
     "typecheck": "astro check",
     "lint": "astro check --minimumFailingSeverity warning",
     "audit:live": "node scripts/audit-live-site.mjs",
+    "check:content": "node scripts/check-content.mjs",
     "check:data": "node scripts/check-operational-data.mjs",
     "check:routes": "node scripts/check-routes.mjs",
     "test": "node --test"

@@ -1,0 +1,18 @@
+{
+  "note": "Permalinks commissioned for the current batch but not yet written. The content checker treats these as linkable so pages that ship together can link each other without depending on which writer finishes first. Run the checker with --strict to ignore this file: every route must then exist for real. The vetter does that before publication, which is what stops a commissioned page that never landed from leaving a dead link behind.",
+  "batch": "batch-4",
+  "inFlight": [
+    "/guides/roblox-song-ids/",
+    "/guides/steal-a-brainrot-all-brainrots/",
+    "/guides/steal-a-brainrot-admin-abuse/",
+    "/guides/grow-a-garden-recipes/",
+    "/guides/grow-a-garden-plant-types/",
+    "/guides/dandys-world-all-toons/",
+    "/guides/fisch-rods-and-enchants/",
+    "/blog/steal-a-brainrot-codes/",
+    "/blog/roblox-promo-codes/",
+    "/blog/how-to-redeem-game-codes/",
+    "/blog/coin-master-free-spins-and-coins/",
+    "/blog/fisch-codes/"
+  ]
+}
