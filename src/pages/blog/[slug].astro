@@ -1,0 +1,18 @@
+---
+/*
+ * Static routes for the dataset-backed blog collection. Paths not returned here
+ * fall through to the catch-all route, so the existing editorial pages in this
+ * section keep rendering from their own definitions.
+ */
+import { getCollection } from 'astro:content';
+import DatasetArticle from '../../components/pages/DatasetArticle.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('blog');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+---
+
+<DatasetArticle entry={entry} />

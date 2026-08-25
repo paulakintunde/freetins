@@ -1,5 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
+import { goneRoutes } from '../src/data/gone.ts';
 
 const outputRoot = resolve('dist');
 const renderingContractPath = resolve('src/data/route-rendering.json');
@@ -34,6 +35,14 @@ const sitemap = readdirSync(outputRoot)
   .filter((name) => /^sitemap-\d+\.xml$/.test(name))
   .map((name) => readFileSync(join(outputRoot, name), 'utf8'))
   .join('\n');
+
+/**
+ * The `noindexSitemapLeaks` check below walks emitted HTML, so it can only see
+ * prerendered pages. The 410 routes are server-rendered and emit no HTML, which is
+ * exactly how 15 of them reached the sitemap unnoticed. Check them against the
+ * sitemap text directly instead.
+ */
+const goneSitemapLeaks = goneRoutes.filter((route) => sitemap.includes(`${route}</loc>`));
 
 const resolvesToDocument = (pathname) => {
   if (pathname === '/') return existsSync(join(outputRoot, 'index.html'));
@@ -112,6 +121,19 @@ if (noindexSitemapLeaks.length > 0) {
   for (const canonical of noindexSitemapLeaks) console.error(`- ${canonical}`);
 }
 
-if (prototypeLeaks.length > 0 || missing.size > 0 || invalidOnDemandRoutes.length > 0 || noindexSitemapLeaks.length > 0) process.exit(1);
+if (goneSitemapLeaks.length > 0) {
+  console.error('Removed (410) routes leaked into the sitemap:');
+  for (const route of goneSitemapLeaks) console.error(`- ${route}`);
+  console.error('Add them to excludedFromSitemap in astro.config.mjs.');
+}
 
-console.log(`Route crawl passed: ${htmlFiles.length} documents, ${internalLinks} internal links and ${workerLinks} Worker links checked.`);
+if (
+  prototypeLeaks.length > 0
+  || missing.size > 0
+  || invalidOnDemandRoutes.length > 0
+  || noindexSitemapLeaks.length > 0
+  || goneSitemapLeaks.length > 0
+) process.exit(1);
+
+const sitemapEntries = (sitemap.match(/<loc>/g) ?? []).length;
+console.log(`Route crawl passed: ${htmlFiles.length} documents, ${internalLinks} internal links, ${workerLinks} Worker links and ${sitemapEntries} sitemap entries checked.`);

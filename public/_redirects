@@ -67,11 +67,11 @@
 # pattern: sending Rainmeter-skin or APK-sideloading traffic to a game-codes page
 # helps nobody and dilutes the site's topical focus.
 #
-# MIGRATION-READINESS-2026-08-24.md asks for 410 Gone so crawlers drop them
-# faster. Cloudflare Pages `_redirects` cannot express 410 — it only supports
-# 301/302/303/307/308 and 200 rewrites — so that needs a Worker route and is
-# tracked separately. Cloudflare already serves a hard 404 (not a soft 404) for
-# these, so they do de-index; 410 only makes it quicker.
+# They return 410 Gone, not 404, so crawlers drop them immediately instead of
+# retrying a 404 for months. `_redirects` cannot express 410 — Cloudflare Pages
+# only supports 301/302/303/307/308 and 200 rewrites here — so each path is a
+# server-rendered route under `src/pages/`. The list and its rationale live in
+# `src/data/gone.ts`; `test/gone.test.mjs` asserts none of them is also redirected.
 #
 #   /amd-ryzen-rainmeter-skin-setup/
 #   /cowan-clock-for-rainmeter/

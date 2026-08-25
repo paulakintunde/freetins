@@ -7,6 +7,67 @@ import { publishedDailyLinkCatalogue, publishedGameCatalogue } from './home';
  */
 export const contactEmail = 'support@freetins.com';
 
+/**
+ * The canonical origin. The indexed site, every backlink and the Search Console
+ * property are all on `www`, so the cutover keeps `www` and lets the platform swap
+ * be the only variable that changes. Apex 301s to www at the edge, as it does today.
+ *
+ * Everything that needs an absolute URL derives it from here or from `Astro.site`
+ * (which `astro.config.mjs` sets to the same value). Previously the JSON-LD carried
+ * 12 hardcoded literals that `site:` did not control, so a host change could leave
+ * the graph identifying a different site than the canonical tag.
+ */
+export const siteOrigin = 'https://www.freetins.com';
+
+/**
+ * Google Search Console site verification token, without the `google-site-verification=`
+ * prefix — just the token itself.
+ *
+ * Set `PUBLIC_GOOGLE_SITE_VERIFICATION` in the Cloudflare Pages build environment and
+ * the tag renders on every page. Leave it unset and no tag renders at all, which is
+ * the correct failure mode: an empty or invented token is worse than a missing one,
+ * because Search Console reports it as a *failed* verification against the property
+ * rather than an unattempted one.
+ *
+ * The HTML tag is used rather than the DNS TXT record because the property that matters
+ * is the `https://www.freetins.com/` URL-prefix property, and because a build-time value
+ * moves with the repo — a DNS record set during cutover is invisible to anyone reading
+ * this codebase later. Both can coexist; verifying twice is harmless.
+ */
+export const googleSiteVerification: string =
+  import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION ?? '';
+
+/**
+ * Cloudflare Web Analytics is enabled on the zone, so Cloudflare injects `beacon.min.js`
+ * into every HTML response at the edge. It is not in this repository and cannot be
+ * conditionally loaded from here, which has two consequences the rest of the site has to
+ * respect rather than contradict:
+ *
+ *  1. `public/_headers` must allow `static.cloudflareinsights.com` in `script-src` and
+ *     `cloudflareinsights.com` in `connect-src`, or the beacon is blocked and no
+ *     measurement happens at all. That was the state until this constant was added.
+ *  2. It is a real audience-measurement vendor, so the consent panel and the privacy
+ *     page must name it. They previously said no analytics vendor was configured.
+ *
+ * It is listed as necessary rather than optional because the site genuinely cannot gate
+ * it — the injection happens after this build's HTML is written. Offering a toggle that
+ * does nothing would be a worse disclosure than naming it plainly. The measurement is
+ * cookieless: no cookie, no `localStorage`, no cross-site identifier, and no per-visitor
+ * profile, which is why it sits outside the consent gate rather than inside a broken one.
+ *
+ * Set this to `false` if Web Analytics is ever turned off on the zone, and drop the two
+ * origins from the CSP at the same time.
+ */
+export const edgeAnalytics = {
+  enabled: true,
+  vendor: 'Cloudflare Web Analytics',
+  purpose: 'Audience measurement (cookieless)',
+} as const;
+
+/** Stable JSON-LD node identifiers, referenced by `@id` across every page graph. */
+export const organizationId = `${siteOrigin}/#org`;
+export const websiteId = `${siteOrigin}/#site`;
+
 export interface SiteLink {
   label: string;
   href: string;
@@ -118,6 +179,9 @@ export const consentPurposes = [
 
 export const consentVendors = [
   { name: 'Cloudflare', purpose: 'Delivery' },
+  ...(edgeAnalytics.enabled
+    ? [{ name: edgeAnalytics.vendor, purpose: edgeAnalytics.purpose }]
+    : []),
   ...(operations.services.advertising.enabled && operations.services.advertising.provider
     ? [{ name: operations.services.advertising.provider, purpose: 'Advertising' }]
     : []),

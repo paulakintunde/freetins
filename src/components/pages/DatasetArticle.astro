@@ -1,0 +1,214 @@
+---
+/*
+ * Renderer for the dataset-backed collections.
+ *
+ * The body arrives already interpolated from the collection loader, so tables
+ * and counts in the HTML are the dataset's, not the writer's. This component
+ * supplies the frame: breadcrumbs, byline, jump navigation, FAQ, sources and
+ * structured data whose dateModified comes from the dataset rather than the
+ * build clock.
+ */
+import { render } from 'astro:content';
+import { Picture } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { articleArtwork } from '../../data/article-images';
+import { getSectionAuthor } from '../../data/authors';
+import { organizationId } from '../../data/site';
+import type { Dataset, DatasetCounts } from '../../lib/dataset';
+
+interface EntryData {
+  title: string;
+  slug: string;
+  permalink: string;
+  category: string;
+  categorySlug: string;
+  focusKeyword: string;
+  secondaryKeywords: string[];
+  author: string;
+  featuredImage?: string;
+  faq: { q: string; a: string }[];
+  section: 'guides' | 'daily' | 'blog';
+  dataset: Dataset;
+  counts: DatasetCounts;
+}
+
+interface Props {
+  entry: { id: string; data: EntryData };
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { dataset } = data;
+
+const { Content, headings } = await render(entry as never);
+const jumpHeadings = headings.filter((heading) => heading.depth === 2);
+
+const author = getSectionAuthor(data.section);
+const artwork = articleArtwork[data.slug];
+
+const sectionLabels = { guides: 'Guides', daily: 'Daily links', blog: 'Blog' };
+const sectionPaths = { guides: '/guides/', daily: '/daily/', blog: '/blog/' };
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: sectionLabels[data.section], href: sectionPaths[data.section] },
+  { label: dataset.subject, href: data.permalink },
+];
+
+const absoluteUrl = new URL(data.permalink, Astro.site).toString();
+const entityId = `${absoluteUrl}#article`;
+
+/*
+ * The earliest recorded change is the publication date and the dataset's own
+ * content_changed_at is the modification date, so a redeploy with no recheck
+ * cannot roll either of them forward.
+ */
+const publishedAt = [...dataset.changes]
+  .map((change) => change.at)
+  .sort()[0] ?? dataset.contentChangedAt;
+
+const reviewFormatter = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',
+});
+const reviewLabel = `Last verified ${reviewFormatter.format(Date.parse(dataset.checkedAt))}`;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      '@id': entityId,
+      headline: dataset.subject,
+      description: data.title,
+      url: absoluteUrl,
+      ...(artwork && { image: new URL(artwork.socialImage, Astro.site).toString() }),
+      datePublished: publishedAt,
+      dateModified: dataset.contentChangedAt,
+      author: {
+        '@type': 'Person',
+        name: author.name,
+        url: new URL(author.path, Astro.site).toString(),
+        jobTitle: author.role,
+        description: author.credential,
+      },
+      publisher: { '@id': organizationId },
+      mainEntityOfPage: { '@id': `${absoluteUrl}#webpage` },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${absoluteUrl}#webpage`,
+      url: absoluteUrl,
+      name: dataset.subject,
+      breadcrumb: { '@id': `${absoluteUrl}#breadcrumb` },
+      mainEntity: { '@id': entityId },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${absoluteUrl}#breadcrumb`,
+      itemListElement: crumbs.map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.label,
+        item: new URL(crumb.href, Astro.site).toString(),
+      })),
+    },
+    ...(data.faq.length
+      ? [{
+          '@type': 'FAQPage',
+          '@id': `${absoluteUrl}#faq`,
+          mainEntity: data.faq.map((pair) => ({
+            '@type': 'Question',
+            name: pair.q,
+            acceptedAnswer: { '@type': 'Answer', text: pair.a },
+          })),
+        }]
+      : []),
+  ],
+};
+---
+
+<BaseLayout
+  title={data.title}
+  description={dataset.unverifiedSummary}
+  image={artwork?.socialImage}
+  imageAlt={artwork?.alt}
+>
+  <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+
+  <article class="editorial-article">
+    <header class="article-head content-boundary">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        {crumbs.slice(0, -1).map((crumb) => <a href={crumb.href}>{crumb.label}</a>)}
+        <span aria-current="page">{crumbs.at(-1)?.label}</span>
+      </nav>
+      <p class="eyebrow">{data.category}</p>
+      <h1>{dataset.subject}</h1>
+      {artwork && (
+        <div class="article-art">
+          <Picture
+            src={artwork.src}
+            alt={artwork.alt}
+            formats={['avif']}
+            fallbackFormat="webp"
+            widths={[480, 768, 1080, 1440, 1536]}
+            sizes="(max-width: 767px) calc(100vw - 40px), min(100vw - (2 * var(--page-gutter)), 1200px)"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+      )}
+      <div class="article-meta">
+        <span>{reviewLabel}</span>
+        <span class="byline">
+          By <a href={author.path}>{author.name}</a>
+          <span class="byline-role">{author.role}</span>
+          <span class="byline-bio">{author.credential}</span>
+        </span>
+      </div>
+    </header>
+
+    <div class="article-reading-surface">
+      <div class="article-layout content-boundary">
+        <nav class="jump-nav" aria-label="On this page">
+          <strong>On this page</strong>
+          {jumpHeadings.map((heading) => <a href={`#${heading.slug}`}>{heading.text}</a>)}
+          {data.faq.length > 0 && <a href="#frequently-asked-questions">Frequently asked questions</a>}
+          <a href="#sources">Sources</a>
+        </nav>
+
+        <div class="article-body">
+          <div class="markdown-body"><Content /></div>
+
+          {data.faq.length > 0 && (
+            <section id="frequently-asked-questions" class="article-section">
+              <h2>Frequently asked questions</h2>
+              {data.faq.map((pair) => (
+                <div class="faq-item">
+                  <h3>{pair.q}</h3>
+                  <p>{pair.a}</p>
+                </div>
+              ))}
+            </section>
+          )}
+
+          <section id="sources" class="article-section">
+            <h2>Sources</h2>
+            <p>
+              Cross-checked against the publisher's own channels and independent
+              reporting. {dataset.recheckCadence}
+            </p>
+            <div class="link-directory">
+              {dataset.officialSources.map((source) => (
+                <a href={source.url} target="_blank" rel="noopener noreferrer">
+                  <strong>{source.note ?? source.type}</strong>
+                  <span>Official channel</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

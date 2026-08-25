@@ -43,7 +43,7 @@ export interface EditorialArticle {
   contentSlug?: string;
   path: string;
   routeId: string;
-  section: 'answers' | 'guides' | 'resources' | 'cheats' | 'daily' | 'legal' | 'about';
+  section: 'answers' | 'guides' | 'resources' | 'cheats' | 'daily' | 'legal' | 'about' | 'blog';
   /**
    * Links an editorial page to a game in the operational catalogue. Set it on an
    * answers article to surface an Answers tab on that game's code page.

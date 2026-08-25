@@ -181,6 +181,29 @@ const isActive = (href: string) => {
     background: var(--text-primary);
   }
 
+  /*
+   * Desktop lays the header out as three columns rather than a flex row. With the
+   * brand and the search flexing equally either side, the nav sits in the true
+   * centre of the header instead of being centred in whatever space those two
+   * happen to leave over.
+   */
+  @media (min-width: 1084px) {
+    .header-inner {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 14px;
+    }
+
+    .desktop-nav {
+      justify-content: center;
+    }
+
+    .header-search {
+      margin-left: 0;
+      justify-self: end;
+    }
+  }
+
   @media (max-width: 1083px) {
     .menu-button {
       display: flex;

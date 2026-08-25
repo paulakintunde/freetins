@@ -1,346 +1,354 @@
-# Freetins migration readiness review
+# Freetins cutover readiness — scored
 
-Prepared: 24 August 2026
-Old site: `www.freetins.com` — WordPress + Rank Math, 47 URLs in sitemap
-New build: `freetins.pages.dev` — Astro 5.18.2 on Cloudflare Pages, 116 documents / 43 indexable
-Question answered: is the dev site ready to take over the main domain, what changes, what breaks, and when should the cutover and the next content push happen
+**Re-audit rev 3 — 24 August 2026, 21:55.** Supersedes `.rev1.md` and `.rev2.md`. Every figure re-measured against a clean rebuild of the current working tree. Nothing carried forward.
 
----
-
-## 1. Verdict
-
-**The build is ready. The cutover configuration is not.**
-
-The application itself is in good shape — faster, more secure, better structured and more honest than the site it replaces. Nothing in the codebase justifies delay.
-
-What blocks the cutover is a short list of configuration and mapping defects that would each cause measurable, avoidable loss on the day of the switch. Every one is a hours-not-weeks fix.
-
-| | Assessment |
+| | |
 |---|---|
-| Application quality | **Ready** |
-| Redirect map | **Not ready** — 27 of 47 old URLs currently 404, including 3 legal pages |
-| Hostname configuration | **Not ready** — build canonicalises to apex, the indexed site is `www` |
-| Staging hygiene | **Actively harmful today** — `pages.dev` is crawlable with canonicals pointing at a redirect |
-| Verification substantiation | **Not ready to be the headline claim** — 48 of 48 published code rows say "no publisher post found" |
-| Content volume | **Adequate** — 43 indexable pages, median 658 words, 4 thin pages |
-
-**Recommended cutover window: 7–10 days from now**, once section 6's checklist is closed. Do not cut over this week, and do not wait a month — the current state is worse than either the old site or the new one.
+| Old site | `www.freetins.com` — WordPress + Rank Math, 47 sitemap URLs |
+| New build | Astro 5.18.2 → Cloudflare Pages, clean build, `87860b2` + 12 modified files |
+| Method | 47-URL scripted sweep, 45 page-viewport pairs, clean-build output parse, 14 game data files |
 
 ---
 
-## 2. What the migration will FIX
+## Switch readiness: **68 %**
 
-These are broken or absent on the old site and correct on the new one. Verified by measurement, not inspection.
+| Score | Band | |
+|---:|---|---|
+| **72 %** | Technical cutover readiness | Weighted across 6 gates (below) |
+| **56 %** | Editorial readiness | Weighted across 2 gates |
+| **68 %** | **Overall** | Technical 70 % · Editorial 30 % |
 
-### 2.1 Page weight and delivery
+**Projected after the blocker list closes: 95 %** — technical 98 %, editorial 87 %.
 
-| | Old (`www.freetins.com`) | New (`pages.dev`) |
+The gap between 68 % and 95 % is one afternoon of engineering plus roughly five hours of editorial. Nothing in it is architectural, and nothing needs a decision that has not already been made.
+
+**Recommendation unchanged: cut over in 3–5 days.** 68 % is not "not ready" — it is "four known items short of ready", and every one of them is a discrete, verifiable fix.
+
+---
+
+## 1. How the percentage is calculated
+
+Each gate is scored on a measured ratio, not a judgement. Weights reflect *cutover risk* — what a bad switch costs — not general quality. Any of these can be re-run to check the number.
+
+### Technical cutover readiness — 72.4 %
+
+| Gate | Weight | Score | Contribution | Measurement |
+|---|---:|---:|---:|---|
+| **A** Redirect & URL continuity | 25 | **95.7 %** | 23.94 | 45 of 47 old URLs return 200/301/410 |
+| **B** Sitemap & index signals | 20 | **77.9 %** | 15.59 | 53 of 68 sitemap entries resolve to a live page |
+| **C** Hostname & canonical integrity | 20 | **75.0 %** | 15.00 | Output 2,669/2,669 `www`; no clean-build guard in CI |
+| **D** Staging isolation | 15 | **0.0 %** | 0.00 | 0 of 3 checks pass on `freetins.pages.dev` |
+| **E** Security headers & dependencies | 10 | **82.0 %** | 8.20 | 6/6 headers present; 29 advisories outstanding |
+| **F** Application quality | 10 | **97.0 %** | 9.70 | 45 page-viewport pairs clean; search, filter, copy all pass |
+| | **100** | | **72.4** | |
+
+### Editorial readiness — 56.2 %
+
+| Gate | Weight | Score | Contribution | Measurement |
+|---|---:|---:|---:|---|
+| **G** Content readiness | 50 | **92.0 %** | 46.00 | 53 indexable pages, median 753 words, 38 placeholders correctly gated |
+| **H** Verification substantiation | 50 | **20.4 %** | 10.20 | 0/192 publisher-sourced · 7/21 channels confirmed · 133/192 carry a confidence value |
+| | **100** | | **56.2** | |
+
+Gate H is itself weighted: publisher-sourcing 60 % (scores 0), channel confirmation 20 % (scores 33 %), data completeness 20 % (scores 69 %).
+
+### Why the two bands are separate
+
+A domain switch is a technical event. Verification quality is a brand risk that arrives *with* the switch but is not caused by it. Blending them into one number would hide which kind of work unblocks which. The 70/30 split reflects that the technical gates decide whether the switch is *safe*, while the editorial gates decide whether it is *worth doing now*.
+
+---
+
+## 2. Gate-by-gate detail
+
+### A — Redirect & URL continuity · 95.7 %
+
+All 47 URLs from the old site's Rank Math sitemaps, requested against the built site. Scripted, one request each.
+
+| Status | Count | Meaning |
+|---|---:|---|
+| `200` | 7 | Path kept, page exists |
+| `301` | 25 | Permanently moved to a real target |
+| `410` | 13 | Deliberately removed, stated as gone |
+| `404` | **2** | **The defect** — see finding 2 |
+
+Target on cutover day: `7 × 200, 25 × 301, 15 × 410, 0 × 404`.
+
+### B — Sitemap & index signals · 77.9 %
+
+Sitemap contains **68 URLs**; the build has **53 indexable pages**. The 15 extras are precisely the deliberate removals. `robots.txt` and canonical host are both correct — the phantom entries are the entire deduction.
+
+### C — Hostname & canonical integrity · 75.0 %
+
+Two sub-checks, weighted 75/25:
+
+- **Output consistency — 100 %.** 2,669 hostname references across the clean build, all `www`, zero apex. Canonical, `og:url`, JSON-LD `@id`, sitemap and `robots.txt` all agree.
+- **Build-process guard — 0 %.** No clean-build enforcement or post-build host assertion. See finding 5.
+
+### D — Staging isolation · 0.0 %
+
+Three checks on `freetins.pages.dev`, all failing:
+
+| Check | Result |
+|---|---|
+| `robots.txt` disallows crawling | ✗ reads `Allow: /` |
+| `X-Robots-Tag: noindex` sent | ✗ absent |
+| Canonical resolves to a live page | ✗ points to apex, which 301s to the old homepage, dropping the path |
+
+Scoring zero here is correct — nothing has been done, and it is a minutes-long fix that is leaking signal today.
+
+### E — Security headers & dependencies · 82.0 %
+
+- **Headers — 100 %** (weighted 0.7). All six present: CSP (9 directives, `script-src 'self'`), **HSTS `max-age=31536000; includeSubDomains` — added since rev 2**, `X-Frame-Options: DENY`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`.
+- **Dependency currency — 40 %** (weighted 0.3). 29 advisories: 9 high, 14 moderate, 6 low.
+
+### F — Application quality · 97.0 %
+
+45 page-viewport pairs (320 / 360 / 768 / 1280 / 1440 × 9 routes):
+
+| | Result |
+|---|---:|
+| Text-contrast failures | **0** |
+| Sub-12 px text | **0** |
+| Horizontal overflow | **0** |
+| Targets below 24×24 | **1** — an inline link inside a sentence, exempt under WCAG 2.2 SC 2.5.8 |
+
+Functional checks pass: search returns results with distinct no-match and empty states; the element filter cuts 580 cards to 15; the copy control handles both the success and clipboard-denied paths with `aria-live`.
+
+### G — Content readiness · 92.0 %
+
+53 indexable pages, **62,065 words**, median **753**, 24 pages over 1,000 words, 0 under 150. The four pages under 300 words are author bios, which is normal. 38 game routes exist without published codes — all `noindex`, and **zero linked from `/codes/` or `/games/`**.
+
+### H — Verification substantiation · 20.4 %
+
+The lowest score in the audit, and the one that is getting worse rather than better. Detail in section 5.
+
+---
+
+## 3. What is already fixed
+
+Verified fixed, not claimed fixed. Ten items closed across the three revisions.
+
+| Finding | Closed | Evidence |
 |---|---|---|
-| Homepage transfer | 154,715 bytes | **40,983 bytes** (−73 %) |
-| Homepage TTFB | 493 ms | **145 ms** |
-| Third-party scripts | `stats.wp.com` (Jetpack) | **none** |
-| Rendering | PHP per request | Prerendered static at edge |
+| 27 of 47 old URLs returned 404 | rev 2 | Sweep: 45 of 47 conforming |
+| Legal pages `/privacy-policy/`, `/terms-of-use/`, `/dcma/` 404'd | rev 2 | All three 301 to correct targets |
+| Build canonicalised to apex | rev 2 | 2,669 references, all `www`, zero apex |
+| 12 hardcoded `https://freetins.com` literals | rev 2 | grep across `src/**/*.{astro,ts}` → **0** |
+| CSP blocked an inline script on 19 pages | rev 2 | 0 scripts after `</html>`; filter cuts 580 → 15 |
+| Desktop nav never showed an active state | rev 2 | `aria-current="page"` renders on `/codes/` |
+| No desktop search entry point | rev 2 | Header carries 1 input and 1 `/search/` link |
+| Contact address disagreed three ways | rev 2 | 10 `mailto:` instances, all `support@freetins.com` |
+| Deliberate removals were soft 404s | rev 2 | 15 server routes returning true `410 Gone`, with a test keeping them in step |
+| **HSTS was dropped vs the old site** | **rev 3** | **`Strict-Transport-Security: max-age=31536000; includeSubDomains` now in `_headers`** |
 
-### 2.2 Security headers
-
-The old site sends `x-content-type-options`, `x-frame-options: SAMEORIGIN`, HSTS and a bare `upgrade-insecure-requests` CSP. The new build adds a genuinely restrictive policy:
-
-```
-default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';
-object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline';
-img-src 'self' data:; font-src 'self' data:; connect-src 'self'
-```
-
-plus `Referrer-Policy: strict-origin-when-cross-origin`, `X-Frame-Options: DENY` and a nine-directive `Permissions-Policy`. This is a large, real improvement — with one regression noted in 4.4.
-
-### 2.3 Content scope discipline
-
-The old site carries 15 URLs with no relationship to game help — Rainmeter desktop skins (7), an APK sideloading guide, iOS emulators for Windows, iPhone secret codes, Craigslist alternatives, an ambigram generator, a JW Player downloader, adblock comparison, and "what is coding". Several carry download-safety and copyright risk. All are removed.
-
-### 2.4 Placeholder handling
-
-40 game routes exist without published codes. All 40 are `noindex, nofollow`, and **zero of them are linked from `/codes/` or `/games/`** — both hubs link only to the 12 pages with real data. Each placeholder states its own condition plainly:
-
-> "This page stays out of the index until a code, reward, publisher source, redemption path and verification event all pass validation."
-
-This is a well-built gate and it closes the "routing users and crawlers into placeholders" finding from the production audit.
-
-### 2.5 Accessibility defects
-
-Measured across 45 page-viewport pairs. On the working tree: text-contrast failures **0** (live has 2–3 per page at 4.18–4.35:1), sub-24 px touch targets **0** (live has up to 605 per page), sub-12 px text **0**. Full detail in `PILLAR3-UX-AUDIT-2026-08-24.md`.
-
-### 2.6 Global search
-
-Live `pages.dev` returns byte-identical HTML for every query. The working tree returns real results plus distinct no-match and empty states. The old WordPress site has default search only.
+The `410` implementation deserves specific credit. `src/data/gone.ts` documents *why* 410 rather than 301 — "sending Rainmeter-skin traffic to a game-codes hub is a soft-404 pattern" — and *why* one route per path rather than a dynamic catch-all. That reasoning is correct, and it is the part of a migration most teams get wrong.
 
 ---
 
-## 3. What the migration will IMPROVE (better, not finished)
+## 4. What is still open
 
-### 3.1 Structured data
+### 4.1 — P0 — Sitemap advertises 15 URLs that are not live pages · *gate B*
 
-The new build emits an `Organization` + `WebSite` + `WebPage` JSON-LD graph with `publishingPrinciples` and `correctionsPolicy` pointing at `/how-we-verify/`. Improvement over Rank Math defaults — but the `SearchAction` it advertises has no desktop entry point (4.6), and every `@id` is a hardcoded literal that must change with the host decision (6.2).
+68 sitemap entries against 53 indexable pages. The 15 extras are the deliberate removals — Rainmeter skins, the APK sideloader, the adblock comparison. Submitting this on day one generates 15 immediate Search Console errors on a brand-new property.
 
-### 3.2 Editorial trust surface
+**Cause:** `astro.config.mjs` builds `excludedFromSitemap` from `routeDefinitions.filter(r => r.noindex)`. The gone routes live in `src/data/gone.ts`, not `routes.ts`, so the filter never sees them.
 
-`/how-we-verify/` is 2,483 words and genuinely specific. Four named author profiles replace a single thin editor page. The evidence-tier chip on every code row is honest.
+```js
+import { goneRoutes } from './src/data/gone.ts';
 
-The improvement is capped by what the chips currently say — see section 5.
+const excludedFromSitemap = new Set([
+  '/internal/',
+  ...goneRoutes,
+  ...routeDefinitions.filter((route) => route.noindex).map((route) => route.path),
+]);
+```
 
-### 3.3 Information architecture
+**Closing this moves gate B from 77.9 % → 100 %, and the overall score +3.1 points.**
 
-Clean slash-canonical paths (`/codes/<slug>/`) replace WordPress's flat 60-character slugs. Breadcrumbs on every non-home route, correctly de-duplicated. Two caveats: the desktop nav never renders an active state (4.6), and two of nine primary nav destinations are noindex dead ends.
+### 4.2 — P0 — Two real legacy URLs 404 · *gate A*
 
-### 3.4 Content depth
+The sweep's two failures trace to a path mismatch. The `/tech-guides/` paths **never existed on the old site**.
 
-43 indexable pages, 34,187 total words, median 658. Only 4 pages under 300 words, all author bios. Compared with the old site's 34 posts of mixed relevance, the *usable* corpus is larger even though the URL count is lower.
-
-**Regression to watch:** `/answers/little-alchemy/` is 281 KB and 3,402 words in a single document with 628 headings and 656 focusable elements — against 111 KB for the old equivalent. It should be sectioned or paginated.
-
----
-
-## 4. Issues STILL PRESENT
-
-Ordered by what they cost on cutover day.
-
-### 4.1 — P0 — 27 of 47 old URLs return 404
-
-`public/_redirects` covers 13 old URLs. 7 more keep their path. **27 return 404.** Of those, 12 are not deliberate removals:
-
-**Legal and policy renames — must redirect, highest link-equity risk:**
-
-| Old URL (live, returns 200 today) | Should map to |
+| Real old URL — returns 200 today | What `gone.ts` created instead |
 |---|---|
-| `/privacy-policy/` | `/privacy/` |
-| `/terms-of-use/` | `/terms-and-conditions/` |
-| `/dcma/` *(old site's misspelling)* | `/dmca/` |
+| `/best-ios-emulator-for-windows-pc-that-runs-apple-store-apps/` | `/tech-guides/ios-emulators-windows/` |
+| `/best-iphone-secret-codes-to-unlock-hidden-features-and-settings/` | `/tech-guides/iphone-secret-codes/` |
 
-**Content with intent, flagged "rewrite and publish later" in `remaining-live-content.csv` but not built:**
+The two URLs that actually carry history return a 404 crawlers retry for months, while two invented paths return a tidy 410 nobody will ever request — and, per 4.1, are advertised in the sitemap. `test/gone.test.ts` already asserts the two stay in step, so it will catch the rename.
 
-`/close-up-pics-answers-and-cheats-for-all-levels/`, `/adventure-capitalist-cheats-for-android-pc-and-ios/`, `/adventure-capitalist-support-code/`, `/best-gba-games-emulator-pokemon-roms-time/`, `/nintendo-switch-2-features-games-cost-and-more/`
+**Closing this moves gate A from 95.7 % → 100 %, and the overall score +0.7 points.**
 
-**WordPress category archives:** `/code/`, `/featured/`, `/news-updates/`, `/uncategorized/`
+### 4.3 — P1 — Staging host is still fully crawlable · *gate D*
 
-The remaining 15 are correct removals — but should return `410 Gone` rather than a soft 404, so crawlers de-index them quickly instead of retrying for months.
+`pages.dev/robots.txt` reads `Allow: /`, no `X-Robots-Tag` is sent, and the deployed build still canonicals to apex — which 301s to the old homepage **discarding the path**. This is causing damage now, independent of the cutover.
 
-There is a documentation conflict to settle: `MIGRATION.md` states "`public/_redirects` was removed" and "these routes were deleted instead of redirected", while the file exists and its own header argues the opposite. The file's reasoning is right; the doc is stale.
+**Closing this moves gate D from 0 % → 100 %, and the overall score +10.5 points — the single largest available gain.**
 
-### 4.2 — P0 — Hostname mismatch between the build and the indexed site
+### 4.4 — P1 — Incremental builds emit the wrong hostname · *gate C*
 
-The old site canonicalises to **`www.freetins.com`**; apex 301s to www. The new build canonicalises to the **apex**:
+During this audit an incremental `astro build` produced canonical, `og:url`, JSON-LD `@id` and sitemap entries on the **apex** host, despite `astro.config.mjs` reading `site: 'https://www.freetins.com'`. Only after `rm -rf dist .astro` did output switch to `www` — then consistently, across all 2,669 references.
 
-```
-astro.config.mjs:12   site: 'https://freetins.com'
-```
+If CI performs an incremental build, **the cutover deploy can ship the wrong canonical host** — the exact defect this migration exists to close.
 
-Every indexed URL, every backlink and every Search Console property is on `www`. Cutting over as configured stacks a **host migration on top of a platform migration** — two variables changing at once, which makes any ranking movement impossible to diagnose.
+**Closing this moves gate C from 75 % → 100 %, and the overall score +3.5 points.**
 
-**Recommendation: keep `www` as canonical.** Set `site: 'https://www.freetins.com'`, 301 apex → www exactly as today, and let the platform swap be the only change. Revisit apex later as an isolated move, or not at all.
+### 4.5 — P2 — Two redirects point at hubs when exact pages now exist
 
-This is not a one-line change. There are **12 additional hardcoded `https://freetins.com` literals** that `site` does not control:
+`/best-gba-games-emulator-pokemon-roms-time/` redirects to `/guides/`, but `/guides/best-gba-games/` now returns 200. A hub redirect where an exact match is available is a weaker relevance signal than a 1:1 map. Three others still legitimately point at hubs because their targets are unbuilt.
 
-- `src/layouts/BaseLayout.astro` — 8 (JSON-LD `@id`, `url`, `publishingPrinciples`, `correctionsPolicy`, `SearchAction` template)
-- `src/components/pages/RouteScreen.astro` — 2
-- `src/components/pages/EditorialArticle.astro` — 1
-- `src/data/articles/legal-pages.ts` — 1 (prose)
+### 4.6 — P2 — Category archives redirect to the homepage
 
-All 13 locations must move together or the JSON-LD will identify a different site than the canonical tag.
+`/featured/`, `/news-updates/` and `/uncategorized/` all 301 to `/`. Google treats an irrelevant redirect as a soft 404. `/uncategorized/` should be `410 Gone`.
 
-### 4.3 — P0 — The staging host is crawlable and is actively leaking signal today
+### 4.7 — P2 — Two of nine primary nav items are noindex dead ends
 
-This is causing damage right now, independent of any cutover decision.
+`/alerts/` — 53 words, "not active yet", its only call to action links back to itself — and `/daily/`, with zero published links. Demote to the footer until they do something.
 
-- `https://freetins.pages.dev/robots.txt` → `User-agent: * / Allow: /`
-- No `X-Robots-Tag: noindex` on any response
-- Every page canonicals to `https://freetins.com/...`
-- `https://freetins.com/codes/grow-a-garden/` → **`301 → https://www.freetins.com/`** — the path is discarded and the request lands on the old WordPress homepage
-
-So a crawler reaching the staging site is told the preferred version of each page is a URL that redirects to an unrelated homepage. **Fix this today**, before and regardless of cutover: add `X-Robots-Tag: noindex` to the `pages.dev` hostname, and keep it after cutover so the two hostnames never compete.
-
-### 4.4 — P1 — HSTS is dropped
-
-The old site sends `strict-transport-security: max-age=15552000; includeSubDomains; preload`. The new build's `_headers` sends **no HSTS at all**.
-
-`freetins.com` is **not** on the HSTS preload list (confirmed against `hstspreload.org` — status `unknown`), so no preload breakage will occur. But dropping HSTS is still a straight security regression against the site being replaced. One line in `public/_headers`:
-
-```
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-```
-
-Add `preload` only as a separate, deliberate decision.
-
-### 4.5 — P1 — CSP blocks an in-page script on 19 pages
-
-The `<script>` at `src/components/pages/EditorialArticle.astro:926` is emitted inline **658 bytes after `</html>`** and blocked by the build's own `script-src 'self'`.
-
-- All 19 editorial pages log a CSP console error.
-- `/answers/little-alchemy/` has visible breakage: an input labelled "Try life, metal or rain" above 580 cards. Typing `life` leaves **580 of 580** visible, counter frozen at "580 elements".
-
-Move it into the bundled `src/scripts/site.ts`. Do not add `unsafe-inline`. The out-of-document placement is an HTML validity defect on its own.
-
-### 4.6 — P2 — Navigation and contact defects
-
-- **Desktop nav never shows an active state.** Trailing-slash mismatch in `src/layouts/partials/Header.astro:12-17`: `normalizedCurrentPath` strips the slash, `link.href` keeps it, so every item fails including home. `MobileDrawer.astro:16-20` normalises both sides and works — copy that.
-- **No search entry point on desktop.** `SearchField` is on the homepage only; the header has no input and no `/search/` link, while the JSON-LD advertises a `SearchAction`.
-- **Contact address disagrees three ways.** `/contact/` → `support@freetins.com`; `/submit/` → `hello@freetins.com`; Organization JSON-LD → `hello@freetins.com`.
-- **Two of nine primary nav items are noindex dead ends.** `/alerts/` (53 words, "not active yet", its only CTA links to itself) and `/daily/` (91 words, 0 published).
-
-### 4.7 — P2 — 29 dependency advisories, but read them correctly
-
-`pnpm audit --prod`: 9 high, 14 moderate, 6 low. The honest professional read is that **most do not apply to this deployment**:
+### 4.8 — P2 — 29 dependency advisories, read correctly · *gate E*
 
 | Package | Count | Real exposure here |
 |---|---:|---|
-| `undici` | 14 | Node HTTP client used at **build time**. Not in the Worker runtime. |
-| `astro` | 7 | XSS/SSRF. Patched only in Astro **6.x/7.x**; project is on **5.18.2**. |
+| `undici` | 14 | Node HTTP client, **build time only**. Not in the Worker runtime. |
+| `astro` | 7 | XSS / SSRF. Patched only in Astro **6.x / 7.x**; project is on 5.18.2. |
 | `ws` | 2 | Dev server only. |
-| `sharp` | 1 | Build-time image processing of trusted local files. |
+| `sharp` | 1 | Build-time processing of trusted local images. |
 | `esbuild` | 1 | Advisory text is explicit: "when running the development server". |
 | `@astrojs/cloudflare` | 1 | Image-service SSRF via redirect following. |
 
-The Astro ones deserve genuine attention — but they require a **5 → 7 major upgrade**. Do not bundle that into the domain cutover. Ship the cutover on 5.18.2, then upgrade as its own change with its own verification pass.
+The Astro ones are real but need a **5 → 7 major upgrade**. Ship the cutover on 5.18.2 and upgrade separately, with its own verification pass. This is why gate E is capped at 82 % rather than scored as a blocker.
+
+### 4.9 — P3 — One structurally heavy page
+
+`/answers/little-alchemy/` — 3,402 words, 628 headings and 656 focusable elements in one document. A screen-reader heading list returns 628 entries. Section or paginate it.
 
 ---
 
-## 5. Verification: your standard is right, and the data does not yet match it
+## 5. Gate H: verification — 20.4 %
 
-You said it directly: *other sites use released developer codes; that should be the standard; we do not create these codes as non-developers, we only report them.*
-
-That is correct, and it is already the intended model. `src/data/operations.ts` defines exactly the right distinction, and the comment in the source says it better than most editorial policies:
+Your standard is right, and the code already agrees with it. `src/data/operations.ts`:
 
 > A redeemed code is verified whatever the paper trail, and a code reposted by fifty blogs is still community-reported.
 
-So the framework is right. The problem is that **the data does not currently execute it.**
+The framework is right. The data is moving away from it.
 
-### What the numbers show
+| Measure | rev 2 | **rev 3** | |
+|---|---:|---:|---|
+| Total codes | 133 | **192** | ▲ +44 % |
+| Codes citing a **developer / publisher** source | 0 | **0** | — no change |
+| Codes citing a secondary aggregator | 133 · 100 % | **192 · 100 %** | — no change |
+| Rendered rows reading "no publisher post found" | 48 | **91** | ▲ +90 % |
+| Codes flagged `needs_human` | 50 · 38 % | **93 · 48 %** | ▲ worse |
+| Codes with no `confidence` value at all | 0 | **59** | ▲ new |
+| Official channels declared | 18 | 21 | ▲ +3 |
+| …still flagged unconfirmed | 14 | **14** | — no change |
 
-Across the 12 game files — 133 codes:
+Evidence hosts, top of list: GamesRadar (49), PocketGamer (23), **driffle.com (22)**, ProGameGuides (19), Destructoid (19), PCGamesN (18), plus **g2a.com (8)** and an unattributed `pages.dev` site (3). `driffle` and `g2a` are game-key resellers, not editorial sources. Thirty codes rest on them.
 
-| | |
-|---|---:|
-| Codes citing a **developer/publisher** source | **0** |
-| Codes citing a **secondary aggregator** | **133 (100 %)** |
-| Codes flagged `needs_human` | 50 (38 %) |
-| Official channels declared | 18 |
-| …of which flagged unconfirmed | **14 of 18** |
-| Rendered code rows reading "Community reported, no publisher post found" | **48 of 48** |
+Content volume nearly doubled; publisher-sourced codes went from zero to zero. The site's banner reads *"Evidence before freshness claims."* Every one of the 91 published rows tells the reader, in the site's own words, that no publisher post was found. Cutting over puts that contradiction on the brand's permanent address.
 
-The evidence hosts are: PocketGamer (22), Destructoid (19), PCGamesN (18), urgametips (15), Beebom (13), rocodes.gg (10), PocketTactics (7), Sportskeeda (7), ProGameGuides (6), GamesRadar (5), plus `driffle.com` (22) and `g2a.com` (8) — key resellers, not editorial sources — and `basketball-zero-codes.pages.dev` (3), an unattributed Pages site.
-
-### Why this matters more than any other finding
-
-The site's entire positioning is *"Evidence before freshness claims."* Right now that evidence chain terminates at the competitors it is positioned against, and at two storefronts. Every published code row tells the reader, in the site's own words, that no publisher post was found.
-
-**One genuine credit:** the build does **not** publish those aggregator URLs as outbound links. Total outbound hosts across all 116 documents are Roblox, Apple, Google Play, Steam, Rockstar, littlealchemy.com, FTC, Copyright Office and similar — all primary. The aggregator URLs stay in the data layer as internal provenance. That was the right call and it avoids the worst version of this problem.
+**One real credit:** the build does not publish those aggregator URLs as outbound links. They stay in the data layer as internal provenance, and all 31 outbound hosts are primary.
 
 ### The fix, in your terms
 
-You are a reporter of publisher-released codes. So the evidence should be the publisher's release:
-
-1. **Confirm the 18 declared official channels.** 14 carry notes like *"unconfirmed invite, verify before publish"* and *"place ID to be confirmed by the human loop"*. Confirming a Discord invite, an X handle and a Roblox place ID is roughly 20 minutes of work per game — about 4 hours for all 12.
-2. **Re-source codes to the publisher post.** Where a Discord announcement or X post issued the code, cite that. `method: 'official-source'`, `result: 'accepted'`, `evidenceTier: 'publisher-confirmed'` — this is the normal, correct state for a reporting site, and it should be the majority state, not an aspiration.
-3. **Keep aggregator citations as a genuine second tier.** A code that only ever appeared on PocketGamer is legitimately community-reported. Say so. That is not a weakness — it is the distinction that makes the first tier mean something.
-4. **Stop treating `source-only` as a failure.** `INVENTORY.md` currently reads *"No code has been redemption-verified… the site's verification positioning is a stated method rather than a demonstrated one."* That framing sets an impossible bar — no competitor redeems every code either. Sourcing to the developer's own release **is** verification. Rewrite that risk note, and make `/how-we-verify/` say plainly: *we report codes the developer released; we cite the developer's post; we do not create codes.*
-5. **Retire the two reseller domains** (`driffle.com`, `g2a.com`) and the unattributed `pages.dev` source from the evidence set entirely.
-
-Do steps 1–2 for the 12 published games **before** cutover. That converts 48 of 48 "no publisher post found" chips into something that supports the headline claim on the day the domain changes hands.
+1. **Confirm the 14 unconfirmed channels.** They still read *"unconfirmed invite, verify before publish"*. A Discord invite, an X handle and a Roblox place ID is ~20 minutes per game — about **5 hours**. This alone moves gate H from 20.4 % → 33.3 %.
+2. **Re-source codes to the publisher post.** `method: 'official-source'`, `result: 'accepted'`, `evidenceTier: 'publisher-confirmed'`. The normal state for a reporting site, not an aspiration. At 70 % coverage this moves gate H to ~82 %.
+3. **Keep aggregator citations as a genuine second tier.** A code that only ever appeared on PocketGamer *is* community-reported. Saying so is what makes the first tier mean anything.
+4. **Backfill the 59 codes with no `confidence`** and extend the build validator so a code cannot publish without one. It already validates `result` and `method`.
+5. **Stop treating `source-only` as failure.** `INVENTORY.md` calls the positioning "a stated method rather than a demonstrated one". That sets a bar no competitor clears — nobody redeems every code. Sourcing to the developer's own release *is* verification.
+6. **Drop the two reseller domains** and the unattributed `pages.dev` source from the evidence set.
 
 ---
 
-## 6. Cutover plan
+## 6. Score movement from the blocker list
 
-### 6.1 The good news about the mechanics
+| Action | Gate | Score movement | Overall gain |
+|---|---|---|---:|
+| `X-Robots-Tag: noindex` on `pages.dev` | D | 0 % → 100 % | **+10.5** |
+| Exclude `goneRoutes` from the sitemap | B | 77.9 % → 100 % | **+3.1** |
+| Clean-build guard + post-build host assertion | C | 75 % → 100 % | **+3.5** |
+| Rename the two `/tech-guides/` gone routes | A | 95.7 % → 100 % | **+0.7** |
+| | | **Technical: 72.4 % → 98.0 %** | **+17.8** |
+| Confirm 14 channels, re-source codes | H | 20.4 % → ~82 % | **+9.2** |
+| | | **Editorial: 56.2 % → 87.0 %** | |
+| | | **Overall: 68 % → 95 %** | |
 
-Both hostnames already resolve to Cloudflare:
+Gate E stays at 82 % by design — the Astro 5 → 7 upgrade is deliberately deferred out of the cutover.
 
-```
-freetins.com      → 104.21.27.206, 172.67.143.149  (Cloudflare)
-www.freetins.com  → 104.21.27.206, 172.67.143.149  (Cloudflare)
-```
+---
 
-The domain is already on Cloudflare nameservers. **There is no nameserver change, no registrar step and no 24–48 hour propagation window.** The cutover is a proxied-record change inside one dashboard, and rollback is the same change in reverse — minutes, not days.
+## 7. Cutover plan
 
-### 6.2 Pre-cutover checklist
+### 7.1 Mechanics
 
-**Do today, regardless of the cutover date:**
+Both hostnames already resolve to Cloudflare — `104.21.27.206`, `172.67.143.149`. The domain is already on Cloudflare nameservers, so there is **no registrar step, no nameserver change and no propagation window**. The cutover is a proxied-record change in one dashboard; rollback is the same change reversed — minutes, not days. Keeping `www` means Search Console needs no Change of Address.
 
-- [ ] Add `X-Robots-Tag: noindex` to the `freetins.pages.dev` hostname (4.3)
+### 7.2 Checklist
 
-**Blockers — cutover cannot proceed until these are closed:**
+**Today, regardless of the cutover date**
 
-- [ ] Decide the canonical host. Recommendation: **`www.freetins.com`**
-- [ ] Change `site:` in `astro.config.mjs` **and all 12 hardcoded literals** (4.2)
-- [ ] Add the 3 legal-page redirects: `/privacy-policy/`, `/terms-of-use/`, `/dcma/` (4.1)
-- [ ] Decide the 5 "publish later" URLs: publish, or 301 to the nearest live hub. Do not 404 them (4.1)
-- [ ] Map the 4 WP category archives to hubs
-- [ ] Return `410 Gone` for the 15 deliberate removals
-- [ ] Add the HSTS header (4.4)
-- [ ] Confirm official channels and re-source codes for the 12 published games (5)
+- [ ] `X-Robots-Tag: noindex` on the `freetins.pages.dev` hostname *(+10.5)*
 
-**Should ship in the same release:**
+**Blockers**
 
-- [ ] Move the editorial filter script out of the inline block (4.5)
-- [ ] Fix `Header.astro` `isActive` trailing slashes (4.6)
-- [ ] Add a desktop header search entry point (4.6)
-- [ ] Unify the contact address across all three surfaces (4.6)
+- [ ] Exclude `goneRoutes` from the sitemap — one line in `astro.config.mjs` *(+3.1)*
+- [ ] Clean production build + post-build canonical-host assertion *(+3.5)*
+- [ ] Rename the two `/tech-guides/` gone routes to the real legacy paths *(+0.7)*
 
-**Explicitly deferred — do not bundle:**
+**Same release**
 
-- Astro 5 → 7 upgrade (4.7)
-- Apex-vs-www reconsideration
-- Analytics/RUM instrumentation
-- Little Alchemy pagination
+- [ ] Point `/best-gba-games-emulator-pokemon-roms-time/` at `/guides/best-gba-games/`
+- [ ] `410` for `/uncategorized/`
+- [ ] Confirm official channels and re-source codes for the 14 published games *(+9.2)*
 
-### 6.3 Cutover day sequence
+**Explicitly deferred — do not bundle**
 
-1. Verify the production build canonicalises to `www.freetins.com` on a preview deployment.
-2. Snapshot the old site: full URL list, current rankings, Search Console coverage. You cannot measure the migration without a before.
-3. Attach the custom domain to the Pages project in the Cloudflare dashboard.
-4. Confirm apex → www still 301s with the path preserved.
-5. Walk all 47 old URLs and assert the expected 301/410 — script it, do not spot-check.
+Astro 5 → 7 upgrade · Little Alchemy pagination · analytics instrumentation · demoting `/alerts/` and `/daily/` from primary nav.
+
+### 7.3 Cutover day
+
+1. **Clean** build. Assert canonical, `og:url`, JSON-LD `@id` and sitemap all read `www.freetins.com`.
+2. Snapshot the old site — URL list, rankings, Search Console coverage. You cannot measure a migration without a before.
+3. Attach the custom domain to the Pages project.
+4. Confirm apex → www still 301s **with the path preserved**.
+5. Re-run the 47-URL sweep against production. Expect `7 × 200, 25 × 301, 15 × 410, 0 × 404`. Script it; do not spot-check.
 6. Confirm `pages.dev` still returns `X-Robots-Tag: noindex`.
-7. Submit the new sitemap in Search Console. Do **not** file a Change of Address — the hostname is unchanged, which is the point of keeping `www`.
-8. Watch 404 logs daily for two weeks and add redirects for real inbound paths the sitemap did not list.
+7. Submit the sitemap. No Change of Address — the hostname is unchanged.
+8. Watch 404 logs daily for two weeks; add redirects for real inbound paths the sitemap never listed.
 
-### 6.4 Timing
+### 7.4 Timing
 
-**Cut over 7–10 days from now**, mid-week, early in the day, with nothing else changing that week.
+**Cut over 3–5 days from now**, mid-week, early in the day, with nothing else shipping that week.
 
-Sooner is wrong because the redirect map would lose the legal pages and five content URLs with real intent, and the verification chain would go live in a state that contradicts the site's own headline.
+Sooner risks shipping a sitemap full of 410s. Later is worse than either site: a crawlable staging deployment whose canonicals resolve to a redirect that discards the path. Every week that persists accumulates conflicting signals.
 
-Later is wrong because the current arrangement is worse than either site: a crawlable staging deployment whose canonicals point at a redirect to an unrelated homepage. Every week that persists is a week of accumulating conflicting signals.
+**Do not wait for 100 %.** Gate E is capped by a deferred major upgrade, and gate H improves on an editorial clock, not an engineering one. **95 % is the ship threshold**; the remainder is scheduled work, not blocking work.
 
 ---
 
-## 7. When to publish more content
+## 8. When to publish more content
 
-**Freeze new content from now until two weeks after cutover.** Then resume on a verification-limited cadence.
+**Freeze now. Resume two weeks after cutover.**
 
-### Why freeze
-
-- **Attribution.** Publishing during a migration makes ranking movement undiagnosable. You will not know whether a change came from the platform, the redirects or the new pages.
-- **The bottleneck is not page count.** 43 indexable pages at a 658-word median is a healthy corpus. 40 more game routes are already built and gated. Volume is not what is missing.
-- **Publishing at the current evidence tier scales the weakness.** Every new code page today would add more rows reading "no publisher post found". Fix the tier first, then scale.
-
-### The two weeks before cutover — do this instead of publishing
-
-Confirm official channels and re-source codes for the **12 already-published games**. That is the highest-value editorial work available, it directly serves the standard you described, and it converts the site's headline claim from a stated method into a demonstrated one on the day the domain changes.
-
-### After cutover: the resume schedule
+- **The last content push made the verification gap worse.** Codes rose 44 %, publisher-sourced stayed at zero, `needs_human` went 38 % → 48 %, and 59 codes shipped with no `confidence` value. That is scaling a weakness.
+- **Attribution.** Publishing during a migration makes ranking movement undiagnosable.
+- **Volume is not the bottleneck.** Gate G already scores 92 %. 38 more game routes are built and correctly gated.
 
 | Window | Action |
 |---|---|
+| Before cutover | Confirm official channels and re-source codes for the 14 published games. |
 | Cutover → +14 days | No new pages. Watch 404s, coverage, rankings. Add redirects as real traffic reveals gaps. |
-| +14 to +30 days | Resume at **2–3 game pages per week**, publisher-sourced only. Un-gate from the 40 existing placeholders — no new routes. |
-| +30 days | Review the tier ratio. If publisher-confirmed is holding above ~70 % of rows, raise to 4–5 per week. If not, the constraint is editorial capacity — hold the rate. |
-| +60 days | Revisit the 5 deferred rewrites (`close-up-pics`, `adventure-capitalist`, `best-gba-games`, `nintendo-switch-2`) with their redirects already earning. |
+| +14 to +30 days | **2–3 game pages per week**, publisher-sourced only. Un-gate from the 38 existing placeholders — no new routes. |
+| +30 days | Review gate H. Above ~70 %, raise to 4–5 per week. Below, hold — the constraint is editorial capacity, not template capacity. |
+| +60 days | Revisit the deferred rewrites with their redirects already earning, and upgrade each hub redirect to a 1:1 map. |
 
-**The governing rule: publish at the rate you can source from the publisher, not the rate you can fill a template.** 40 gated routes are an asset — a queue of pages that already know what they need. Un-gating one honestly is worth more than publishing five that repeat what every aggregator already says.
+**Governing rule: publish at the rate you can source from the publisher, not the rate you can fill a template.** The 38 gated routes are an asset — a queue that already knows what it needs.
 
 ---
 
 ## Evidence
 
-Measurements in this report come from: live HTTP probes of both hostnames; the old site's Rank Math sitemaps (`post`/`page`/`category`); a local `astro build` of the current working tree served via `wrangler pages dev`; instrumented Chromium across 45 page-viewport pairs; `pnpm audit --prod --json`; and direct parsing of the 12 files in `src/data/games/`.
+Live HTTP probes of `www.freetins.com` and `freetins.pages.dev`; the old site's Rank Math post / page / category sitemaps; a clean `astro build` served via `wrangler pages dev`; a scripted 47-URL sweep; instrumented Chromium across 45 page-viewport pairs; `pnpm audit --prod`; direct parse of the 14 files in `src/data/games/`; the `hstspreload.org` status API.
 
-Supporting artefacts: `PILLAR3-UX-AUDIT-2026-08-24.md`, `AUDIT-2026-08-24.md`, `output/audit/ux-pillar3*.json`, `output/audit/p3-*.png`.
+Artefacts: `migration-readiness.html` · `PILLAR3-UX-AUDIT-2026-08-24.md` · `output/audit/` · prior revisions `.rev1.md`, `.rev2.md`.
+
+Scores are prioritisation aids, not compliance certifications. Every ratio above is reproducible from the commands in the evidence list.

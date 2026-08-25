@@ -15,6 +15,7 @@ const articleGroups: Record<(typeof editorialArticles)[number]['section'], Searc
   resources: 'Resources',
   cheats: 'Cheats',
   daily: 'Daily links',
+  blog: 'Blog',
   legal: 'Site',
   about: 'Site',
 };

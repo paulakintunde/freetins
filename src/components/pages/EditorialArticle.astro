@@ -6,6 +6,7 @@ import type { EditorialArticle as EditorialArticleData, ArticleLink } from '../.
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getSectionAuthor } from '../../data/authors';
 import { gamePageForArticle, siblingArticlesFor } from '../../data/interlinks';
+import { organizationId } from '../../data/site';
 
 interface Props {
   article: EditorialArticleData;
@@ -39,6 +40,7 @@ const sectionLabels = {
   resources: 'Resources',
   cheats: 'Cheats',
   daily: 'Daily links',
+  blog: 'Blog',
   legal: 'Legal',
   about: 'About',
 };
@@ -48,6 +50,7 @@ const sectionPaths = {
   resources: '/resources/',
   cheats: '/cheats/',
   daily: '/daily/',
+  blog: '/blog/',
   legal: '/about/',
   about: '/about/',
 };
@@ -87,7 +90,7 @@ const structuredData = {
         jobTitle: author.role,
         description: author.credential,
       },
-      publisher: { '@id': 'https://freetins.com/#org' },
+      publisher: { '@id': organizationId },
       ...(!isWebPage && { mainEntityOfPage: { '@id': `${absoluteUrl}#webpage` } }),
     },
     ...(!isWebPage
@@ -285,7 +288,7 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
           </section>
         ))}
 
-        {Boolean(article.faq?.length) && (
+        {article.faq && article.faq.length > 0 && (
           <section id="frequently-asked-questions" class="article-section faq-section">
             <h2>Frequently asked questions</h2>
             {article.faq.map((item) => (

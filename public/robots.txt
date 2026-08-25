@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /internal/
 
-Sitemap: https://freetins.com/sitemap-index.xml
+Sitemap: https://www.freetins.com/sitemap-index.xml

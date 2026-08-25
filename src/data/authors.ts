@@ -35,7 +35,7 @@ export const authors: Author[] = [
       'Runs the verification and corrections process behind every published Freetins page, and owns the evidence standard the site is held to.',
     remit:
       'Paul sets the evidence standard, signs off publication states, and owns every page that does not belong to a section specialist: game codes, daily reward links, resources and the site policy pages. Corrections that cross sections come to him.',
-    sections: ['resources', 'daily', 'legal', 'about'],
+    sections: ['resources', 'daily', 'legal', 'about', 'blog'],
     path: '/author/paul-a/',
   },
   {

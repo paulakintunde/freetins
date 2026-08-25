@@ -1,9 +1,26 @@
 /*
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; upgrade-insecure-requests
+  # Cloudflare Web Analytics is injected at the edge, after this build's HTML is
+  # written, so the beacon is a third-party script as far as the browser is concerned.
+  # `script-src 'self'` blocked it on every page load, which meant the site's only
+  # measurement collected nothing at all. Two origins are needed and no more:
+  #   script-src   static.cloudflareinsights.com  — serves `beacon.min.js`
+  #   connect-src  cloudflareinsights.com         — receives the `/cdn-cgi/rum` POST
+  # `'unsafe-inline'` is deliberately NOT added. The beacon is injected as an external
+  # `<script src>` with a `data-cf-beacon` attribute, so allowing the origin is enough,
+  # and an inline allowance would reopen the whole class of injection this header exists
+  # to close. If a future analytics vendor needs inline execution, it needs a nonce.
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Permissions-Policy: accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+  # The old WordPress site sent `max-age=15552000; includeSubDomains; preload`.
+  # Shipping the replacement without HSTS would be a straight security regression
+  # against the site it replaces. `preload` is deliberately omitted: freetins.com is
+  # not on the preload list today (hstspreload.org status `unknown`), and submitting
+  # it is a separate, effectively irreversible decision that should be taken on its
+  # own rather than smuggled into a domain cutover.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
 
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
@@ -16,3 +33,21 @@
 
 /api/*
   Cache-Control: no-store
+
+# --- Staging hostnames: never indexable ------------------------------------
+# `robots.txt` is one file served on every hostname, so it cannot say "index the
+# custom domain, ignore the build host". The header can, because these rules match
+# on hostname and the custom domain does not match either pattern.
+#
+# Without this, `freetins.pages.dev` is crawlable while every page on it canonicals
+# to the custom domain — pointing crawlers at a URL that, until cutover, 301s to the
+# old WordPress homepage. This stays in place after cutover so the build host and the
+# live host never compete for the same queries.
+#
+# First pattern: the project host (`freetins.pages.dev`).
+# Second: per-deployment preview hosts (`<branch-or-hash>.freetins.pages.dev`).
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+
+https://:preview.:project.pages.dev/*
+  X-Robots-Tag: noindex, nofollow

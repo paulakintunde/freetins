@@ -1,0 +1,60 @@
+---
+/**
+ * The body served with a `410 Gone` for the deliberately removed legacy URLs listed
+ * in `src/data/gone.ts`.
+ *
+ * The status is what search engines act on; this markup is for the person who
+ * followed an old link. It says plainly that the page was removed and why, then
+ * offers the surfaces the site actually covers — rather than pretending a redirect
+ * to a game hub answered their question.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+Astro.response.status = 410;
+Astro.response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+// A removal is permanent, so it is safe to cache at the edge. Kept short enough that
+// restoring a path stays a deploy rather than a cache-purge exercise.
+Astro.response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=3600');
+---
+
+<BaseLayout
+  title="Page removed | Freetins"
+  description="This page has been permanently removed. Freetins now covers game codes, cheats, answers and guides only."
+  noindex
+>
+  <article class="route-page" data-route-kind="gone">
+    <header class="page-head content-boundary">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Freetins</a>
+        <span aria-current="page">Page removed</span>
+      </nav>
+      <p class="eyebrow">Permanently removed</p>
+      <h1>This page has been removed</h1>
+      <p class="lede">
+        It covered a topic outside what Freetins publishes. The site is now game codes,
+        cheats, answers and guides only, so the page was retired rather than rewritten
+        or redirected somewhere unrelated.
+      </p>
+    </header>
+
+    <section class="page-section content-boundary">
+      <div class="notice">
+        <span>Why there is no redirect</span>
+        <h2>Nothing here replaced it</h2>
+        <p>
+          Sending you to a game page you did not ask for would waste your time. If you
+          are looking for something Freetins does cover, start from the search box or a
+          hub below.
+        </p>
+      </div>
+    </section>
+
+    <nav class="next-links content-boundary" aria-label="Related pages">
+      <a href="/search/">Search Freetins</a>
+      <a href="/codes/">Game codes</a>
+      <a href="/cheats/">Cheats</a>
+      <a href="/answers/">Answers</a>
+      <a href="/guides/">Guides</a>
+    </nav>
+  </article>
+</BaseLayout>

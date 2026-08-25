@@ -27,7 +27,7 @@ for (const route of publishedPaths) {
     continue;
   }
 
-  const expectedCanonical = `https://freetins.com${route}`;
+  const expectedCanonical = `https://www.freetins.com${route}`;
   const h1Count = (html.match(/<h1(?:\s|>)/g) ?? []).length;
   if (h1Count !== 1) errors.push(`${route} has ${h1Count} H1 elements`);
   if (!html.includes(`<link rel="canonical" href="${expectedCanonical}">`)) errors.push(`${route} has the wrong canonical`);

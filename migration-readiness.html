@@ -1,0 +1,733 @@
+<title>Freetins Cutover Readiness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<style>
+  :root {
+    --paper:#f7f8fa; --surface:#ffffff; --sunken:#eef0f4;
+    --line:#dfe3ea; --line-firm:#c3cad6;
+    --ink:#12161d; --ink-soft:#3d4653; --slate:#5a6472; --slate-dim:#7b8593;
+    --accent:#1f6b78; --accent-lo:#e3f0f2; --accent-hi:#14505a;
+    --clear:#2f7a4d; --clear-lo:#e4f1e9;
+    --caution:#a4670f; --caution-lo:#faeedb;
+    --stop:#ac3535; --stop-lo:#f8e6e6;
+    --shadow:0 1px 2px rgba(18,22,29,.05), 0 8px 24px -12px rgba(18,22,29,.18);
+    --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+    --prose:'Source Serif 4',Georgia,'Times New Roman',serif;
+    --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:#0f1319; --surface:#161b23; --sunken:#1c222c;
+      --line:#272e39; --line-firm:#3a4351;
+      --ink:#e9edf3; --ink-soft:#bcc5d1; --slate:#97a1b0; --slate-dim:#737e8d;
+      --accent:#5fb3c2; --accent-lo:#143036; --accent-hi:#8fd0dc;
+      --clear:#63b785; --clear-lo:#16301f;
+      --caution:#d69a45; --caution-lo:#33260f;
+      --stop:#dd7272; --stop-lo:#331a1a;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:#0f1319; --surface:#161b23; --sunken:#1c222c;
+    --line:#272e39; --line-firm:#3a4351;
+    --ink:#e9edf3; --ink-soft:#bcc5d1; --slate:#97a1b0; --slate-dim:#737e8d;
+    --accent:#5fb3c2; --accent-lo:#143036; --accent-hi:#8fd0dc;
+    --clear:#63b785; --clear-lo:#16301f;
+    --caution:#d69a45; --caution-lo:#33260f;
+    --stop:#dd7272; --stop-lo:#331a1a;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+  }
+
+  * { box-sizing:border-box; }
+
+  body {
+    margin:0; background:var(--paper); color:var(--ink);
+    font:400 17px/1.62 var(--prose); -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap { max-width:1080px; margin-inline:auto; padding:0 24px 96px; }
+  .col { max-width:68ch; }
+
+  h1,h2,h3 { font-family:var(--display); text-wrap:balance; margin:0; }
+  h1 { font-weight:700; font-size:clamp(2rem,5vw,3.1rem); line-height:1.05; letter-spacing:-.022em; }
+  h2 { font-weight:700; font-size:clamp(1.32rem,2.8vw,1.78rem); line-height:1.18; letter-spacing:-.012em; }
+  h3 { font-weight:600; font-size:1.1rem; line-height:1.3; letter-spacing:-.006em; }
+  p { margin:0; }
+
+  a { color:var(--accent); text-underline-offset:3px; }
+  a:focus-visible, summary:focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
+
+  code,.mono { font-family:var(--mono); font-size:.87em; font-variant-numeric:tabular-nums; }
+  code { background:var(--sunken); padding:.12em .38em; border-radius:3px; }
+
+  .eyebrow {
+    font-family:var(--display); font-weight:600; font-size:.715rem;
+    letter-spacing:.15em; text-transform:uppercase; color:var(--slate);
+  }
+
+  .rule-row { display:flex; align-items:center; gap:14px; }
+  .rule-row::after { content:""; flex:1; height:1px; background:var(--line-firm); }
+
+  /* masthead */
+  .masthead { border-bottom:1px solid var(--line); background:var(--surface); margin-bottom:48px; }
+  .masthead-in { max-width:1080px; margin-inline:auto; padding:42px 24px 38px; display:flex; flex-direction:column; gap:20px; }
+  .lede { font-size:1.14rem; line-height:1.55; color:var(--ink-soft); max-width:62ch; }
+
+  /* headline score */
+  .score-hero {
+    display:grid; grid-template-columns:minmax(0,320px) 1fr; gap:0;
+    border:1px solid var(--line-firm); background:var(--surface);
+    box-shadow:var(--shadow); margin-bottom:20px;
+  }
+
+  .score-main {
+    padding:32px; display:flex; flex-direction:column; gap:6px;
+    border-right:1px solid var(--line); background:var(--sunken);
+  }
+
+  .score-pct {
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(4.2rem,13vw,6.4rem); line-height:.88;
+    letter-spacing:-.045em; color:var(--caution);
+    font-variant-numeric:tabular-nums;
+  }
+  .score-pct sup { font-size:.34em; vertical-align:super; letter-spacing:0; margin-left:.06em; }
+
+  .score-label { font-family:var(--display); font-weight:600; font-size:1rem; letter-spacing:-.005em; }
+  .score-sub { font-size:.9rem; line-height:1.45; color:var(--slate); margin-top:8px; }
+
+  .score-split { padding:28px 30px; display:flex; flex-direction:column; gap:18px; justify-content:center; }
+  .split-row { display:grid; grid-template-columns:150px 1fr 58px; gap:14px; align-items:center; }
+  .split-name { font-family:var(--display); font-weight:600; font-size:.85rem; }
+  .split-track { height:12px; background:var(--sunken); border:1px solid var(--line); }
+  .split-fill { height:100%; }
+  .split-num { font-family:var(--mono); font-weight:700; font-size:.95rem; text-align:right; font-variant-numeric:tabular-nums; }
+
+  .projection {
+    border:1px solid var(--line-firm); border-left:5px solid var(--clear);
+    background:var(--clear-lo); padding:22px 26px; margin-bottom:56px;
+    display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px;
+  }
+  .projection b { font-family:var(--display); font-size:1.6rem; font-weight:700; color:var(--clear); letter-spacing:-.02em; }
+  .projection span { font-size:.98rem; line-height:1.5; color:var(--ink-soft); flex:1 1 320px; }
+
+  section { margin-bottom:64px; }
+  .sec-head { display:flex; flex-direction:column; gap:10px; margin-bottom:24px; }
+  .stack { display:flex; flex-direction:column; gap:18px; }
+
+  /* weighted gate chart */
+  .instrument {
+    border:1px solid var(--line-firm); background:var(--surface);
+    padding:26px 28px 22px; display:flex; flex-direction:column; gap:22px;
+  }
+
+  .gatechart { display:flex; gap:6px; align-items:flex-end; height:210px; }
+  .gate { display:flex; flex-direction:column; gap:8px; min-width:0; height:100%; }
+  .gate-track {
+    flex:1; background:var(--sunken); border:1px solid var(--line);
+    display:flex; flex-direction:column; justify-content:flex-end; position:relative;
+  }
+  .gate-fill { width:100%; display:flex; align-items:flex-start; justify-content:center; padding-top:5px; }
+  .gate-fill span {
+    font-family:var(--mono); font-weight:700; font-size:.72rem; color:#fff;
+    font-variant-numeric:tabular-nums;
+  }
+  .gate-fill.dark span { color:var(--ink); position:absolute; top:-19px; left:0; right:0; text-align:center; }
+  .gate-foot { display:flex; flex-direction:column; gap:2px; text-align:center; }
+  .gate-key { font-family:var(--display); font-weight:700; font-size:.82rem; }
+  .gate-w { font-family:var(--mono); font-size:.66rem; color:var(--slate-dim); }
+
+  .chart-note {
+    font-size:.88rem; line-height:1.55; color:var(--slate);
+    border-top:1px solid var(--line); padding-top:16px;
+  }
+
+  /* tables */
+  .tablewrap { overflow-x:auto; border:1px solid var(--line); background:var(--surface); }
+  table { border-collapse:collapse; width:100%; font-size:.89rem; }
+  th,td { text-align:left; padding:11px 15px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.45; }
+  thead th {
+    font-family:var(--display); font-weight:600; font-size:.69rem; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--slate-dim); background:var(--sunken); white-space:nowrap;
+  }
+  tbody tr:last-child td { border-bottom:0; }
+  tfoot td { border-top:2px solid var(--line-firm); font-weight:600; background:var(--sunken); }
+  .num { font-family:var(--mono); font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap; }
+  .tick { color:var(--clear); font-weight:700; }
+  .gain { font-family:var(--mono); font-weight:700; color:var(--clear); }
+  .dir { font-family:var(--mono); font-weight:700; white-space:nowrap; }
+  .dir.bad { color:var(--stop); } .dir.flat { color:var(--slate-dim); } .dir.good { color:var(--clear); }
+
+  .sc { font-family:var(--mono); font-weight:700; font-variant-numeric:tabular-nums; }
+  .sc.hi { color:var(--clear); } .sc.mid { color:var(--caution); } .sc.lo { color:var(--stop); }
+
+  /* sweep */
+  .sweep-bar { display:flex; height:44px; border:1px solid var(--line-firm); overflow:hidden; }
+  .seg { display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:700; font-size:.78rem; color:#fff; min-width:0; }
+  .seg-200 { background:var(--accent); } .seg-301 { background:var(--clear); }
+  .seg-410 { background:var(--slate); } .seg-404 { background:var(--stop); }
+  .sweep-key { display:grid; grid-template-columns:repeat(auto-fit,minmax(158px,1fr)); gap:14px; }
+  .key { display:flex; gap:10px; align-items:flex-start; font-size:.85rem; line-height:1.4; color:var(--slate); }
+  .swatch { flex:none; width:12px; height:12px; margin-top:3px; border-radius:2px; }
+  .key b { font-family:var(--mono); font-size:.86rem; color:var(--ink); display:block; }
+  .flagged { color:var(--stop); }
+
+  /* findings */
+  .finding {
+    border:1px solid var(--line); border-left:4px solid var(--slate-dim);
+    background:var(--surface); padding:20px 22px; display:flex; flex-direction:column; gap:12px;
+  }
+  .finding.p0 { border-left-color:var(--stop); }
+  .finding.p1 { border-left-color:var(--caution); }
+  .finding.p2 { border-left-color:var(--accent); }
+  .finding.p3 { border-left-color:var(--slate-dim); }
+
+  .f-head { display:flex; align-items:baseline; gap:11px; flex-wrap:wrap; }
+  .sev { font-family:var(--mono); font-weight:700; font-size:.7rem; letter-spacing:.06em; padding:3px 8px; border-radius:3px; flex:none; }
+  .sev.p0 { background:var(--stop-lo); color:var(--stop); }
+  .sev.p1 { background:var(--caution-lo); color:var(--caution); }
+  .sev.p2 { background:var(--accent-lo); color:var(--accent-hi); }
+  .sev.p3 { background:var(--sunken); color:var(--slate); }
+  .gtag { font-family:var(--mono); font-size:.7rem; color:var(--slate-dim); margin-left:auto; }
+
+  .f-body { font-size:.94rem; line-height:1.58; color:var(--ink-soft); }
+  .f-body p + p { margin-top:10px; }
+  .worth { font-family:var(--mono); font-size:.82rem; font-weight:700; color:var(--clear); background:var(--clear-lo); border:1px solid var(--line); padding:8px 12px; }
+
+  pre {
+    margin:0; background:var(--sunken); border:1px solid var(--line);
+    padding:13px 15px; overflow-x:auto; font-family:var(--mono);
+    font-size:.79rem; line-height:1.62; color:var(--ink-soft);
+  }
+
+  .callout {
+    border:1px solid var(--line-firm); border-left:4px solid var(--accent);
+    background:var(--accent-lo); padding:18px 20px; font-size:.94rem; line-height:1.58;
+  }
+
+  blockquote { margin:0; padding-left:18px; border-left:3px solid var(--line-firm); font-style:italic; color:var(--ink-soft); }
+
+  .phases { display:flex; flex-direction:column; border:1px solid var(--line); background:var(--surface); }
+  .phase { display:grid; grid-template-columns:168px 1fr; gap:20px; padding:15px 18px; border-bottom:1px solid var(--line); }
+  .phase:last-child { border-bottom:0; }
+  .phase-when { font-family:var(--mono); font-size:.79rem; font-weight:500; color:var(--accent); line-height:1.5; }
+  .phase-what { font-size:.91rem; line-height:1.55; color:var(--ink-soft); }
+
+  .checkgroup { display:flex; flex-direction:column; gap:10px; }
+  .check { display:grid; grid-template-columns:22px 1fr auto; gap:12px; align-items:start; font-size:.92rem; line-height:1.5; padding:11px 14px; border:1px solid var(--line); background:var(--surface); }
+  .box { width:15px; height:15px; border:1.5px solid var(--line-firm); border-radius:2px; margin-top:3px; }
+  .check.now .box { border-color:var(--stop); background:var(--stop-lo); }
+  .check.block .box { border-color:var(--caution); background:var(--caution-lo); }
+
+  ul.plain { margin:0; padding-left:20px; display:flex; flex-direction:column; gap:7px; font-size:.92rem; line-height:1.5; }
+
+  footer { border-top:1px solid var(--line); padding-top:24px; font-size:.83rem; line-height:1.6; color:var(--slate); }
+
+  @media (max-width:760px) {
+    .score-hero { grid-template-columns:1fr; }
+    .score-main { border-right:0; border-bottom:1px solid var(--line); }
+  }
+  @media (max-width:640px) {
+    body { font-size:16px; }
+    .phase { grid-template-columns:1fr; gap:6px; }
+    .split-row { grid-template-columns:104px 1fr 50px; }
+    .gatechart { height:172px; }
+    .instrument { padding:20px 16px; }
+  }
+  @media (prefers-reduced-motion:reduce) { * { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
+</style>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <div class="rule-row"><span class="eyebrow">Re-audit rev 3 · 24 August 2026 · 21:55</span></div>
+    <h1>Freetins cutover readiness</h1>
+    <p class="lede">
+      Can the Pages build take over <span class="mono">www.freetins.com</span>? Scored across eight measured
+      gates. Every figure re-measured against a clean rebuild — nothing carried forward from rev 1 or rev 2.
+    </p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="score-hero">
+    <div class="score-main">
+      <span class="eyebrow">Switch readiness</span>
+      <div class="score-pct">68<sup>%</sup></div>
+      <p class="score-label">Four known items short of ready</p>
+      <p class="score-sub">Not “not ready”. Every open item is a discrete, verifiable fix — none architectural, none awaiting a decision.</p>
+    </div>
+    <div class="score-split">
+      <div class="split-row">
+        <span class="split-name">Technical cutover</span>
+        <div class="split-track"><div class="split-fill" style="width:72.4%;background:var(--caution)"></div></div>
+        <span class="split-num" style="color:var(--caution)">72%</span>
+      </div>
+      <div class="split-row">
+        <span class="split-name">Editorial</span>
+        <div class="split-track"><div class="split-fill" style="width:56.2%;background:var(--stop)"></div></div>
+        <span class="split-num" style="color:var(--stop)">56%</span>
+      </div>
+      <div class="split-row" style="border-top:1px solid var(--line);padding-top:16px">
+        <span class="split-name">Overall <span style="font-weight:400;color:var(--slate-dim);font-size:.76rem">70 / 30</span></span>
+        <div class="split-track" style="height:16px"><div class="split-fill" style="width:67.6%;background:var(--accent)"></div></div>
+        <span class="split-num" style="font-size:1.05rem">68%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="projection">
+    <b>→ 95 %</b>
+    <span>after the blocker list closes — technical 98 %, editorial 87 %. The gap is one afternoon of
+    engineering plus about five hours of editorial. <b style="font-size:1rem;color:var(--ink)">Recommendation
+    unchanged: cut over in 3–5 days.</b></span>
+  </div>
+
+  <!-- HOW SCORED -->
+  <section>
+    <div class="sec-head">
+      <div class="rule-row"><span class="eyebrow">Method</span></div>
+      <h2>How the percentage is calculated</h2>
+      <p class="col" style="color:var(--slate)">
+        Each gate scores on a measured ratio, not a judgement. Weights reflect <em>cutover risk</em> — what a bad
+        switch costs — not general quality. Bar width is the weight; fill height is the score. The filled area
+        <em>is</em> the 72.4 %.
+      </p>
+    </div>
+
+    <div class="instrument">
+      <div class="gatechart" role="img" aria-label="Six weighted technical gates. A redirect continuity, weight 25, scores 95.7 percent. B sitemap signals, weight 20, scores 77.9 percent. C hostname integrity, weight 20, scores 75 percent. D staging isolation, weight 15, scores 0 percent. E security headers, weight 10, scores 82 percent. F application quality, weight 10, scores 97 percent.">
+        <div class="gate" style="flex:25">
+          <div class="gate-track"><div class="gate-fill" style="height:95.7%;background:var(--clear)"><span>95.7</span></div></div>
+          <div class="gate-foot"><span class="gate-key">A</span><span class="gate-w">w 25</span></div>
+        </div>
+        <div class="gate" style="flex:20">
+          <div class="gate-track"><div class="gate-fill" style="height:77.9%;background:var(--caution)"><span>77.9</span></div></div>
+          <div class="gate-foot"><span class="gate-key">B</span><span class="gate-w">w 20</span></div>
+        </div>
+        <div class="gate" style="flex:20">
+          <div class="gate-track"><div class="gate-fill" style="height:75%;background:var(--caution)"><span>75.0</span></div></div>
+          <div class="gate-foot"><span class="gate-key">C</span><span class="gate-w">w 20</span></div>
+        </div>
+        <div class="gate" style="flex:15">
+          <div class="gate-track"><div class="gate-fill dark" style="height:0;background:var(--stop)"><span>0.0</span></div></div>
+          <div class="gate-foot"><span class="gate-key">D</span><span class="gate-w">w 15</span></div>
+        </div>
+        <div class="gate" style="flex:10">
+          <div class="gate-track"><div class="gate-fill" style="height:82%;background:var(--caution)"><span>82</span></div></div>
+          <div class="gate-foot"><span class="gate-key">E</span><span class="gate-w">w 10</span></div>
+        </div>
+        <div class="gate" style="flex:10">
+          <div class="gate-track"><div class="gate-fill" style="height:97%;background:var(--clear)"><span>97</span></div></div>
+          <div class="gate-foot"><span class="gate-key">F</span><span class="gate-w">w 10</span></div>
+        </div>
+      </div>
+      <p class="chart-note">
+        Gate <b style="color:var(--ink)">D</b> is the empty column — staging isolation scores zero because nothing
+        has been done. It carries weight 15, so it alone accounts for <b style="color:var(--ink)">10.5 of the 27.6
+        missing points</b>, and it is a minutes-long fix.
+      </p>
+    </div>
+
+    <h3 style="margin:32px 0 14px">Technical cutover readiness — 72.4 %</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th style="width:30px"></th><th>Gate</th><th class="num">Weight</th><th class="num">Score</th><th class="num">Contribution</th><th>Measurement</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">A</td><td>Redirect &amp; URL continuity</td><td class="num">25</td><td class="num sc hi">95.7 %</td><td class="num">23.94</td><td>45 of 47 old URLs return 200/301/410</td></tr>
+          <tr><td class="mono">B</td><td>Sitemap &amp; index signals</td><td class="num">20</td><td class="num sc mid">77.9 %</td><td class="num">15.59</td><td>53 of 68 sitemap entries resolve to a live page</td></tr>
+          <tr><td class="mono">C</td><td>Hostname &amp; canonical integrity</td><td class="num">20</td><td class="num sc mid">75.0 %</td><td class="num">15.00</td><td>Output 2,669/2,669 <span class="mono">www</span>; no clean-build guard</td></tr>
+          <tr><td class="mono">D</td><td>Staging isolation</td><td class="num">15</td><td class="num sc lo">0.0 %</td><td class="num">0.00</td><td>0 of 3 checks pass on <span class="mono">pages.dev</span></td></tr>
+          <tr><td class="mono">E</td><td>Security headers &amp; dependencies</td><td class="num">10</td><td class="num sc mid">82.0 %</td><td class="num">8.20</td><td>6/6 headers present; 29 advisories outstanding</td></tr>
+          <tr><td class="mono">F</td><td>Application quality</td><td class="num">10</td><td class="num sc hi">97.0 %</td><td class="num">9.70</td><td>45 page-viewport pairs clean; search, filter, copy pass</td></tr>
+        </tbody>
+        <tfoot><tr><td></td><td>Technical total</td><td class="num">100</td><td class="num sc mid">72.4 %</td><td class="num">72.43</td><td></td></tr></tfoot>
+      </table>
+    </div>
+
+    <h3 style="margin:32px 0 14px">Editorial readiness — 56.2 %</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th style="width:30px"></th><th>Gate</th><th class="num">Weight</th><th class="num">Score</th><th class="num">Contribution</th><th>Measurement</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">G</td><td>Content readiness</td><td class="num">50</td><td class="num sc hi">92.0 %</td><td class="num">46.00</td><td>53 indexable pages, median 753 words, 38 placeholders gated</td></tr>
+          <tr><td class="mono">H</td><td>Verification substantiation</td><td class="num">50</td><td class="num sc lo">20.4 %</td><td class="num">10.20</td><td>0/192 publisher-sourced · 7/21 channels confirmed · 133/192 carry confidence</td></tr>
+        </tbody>
+        <tfoot><tr><td></td><td>Editorial total</td><td class="num">100</td><td class="num sc lo">56.2 %</td><td class="num">56.20</td><td></td></tr></tfoot>
+      </table>
+    </div>
+
+    <div class="callout" style="margin-top:20px">
+      <b>Why the bands are separate.</b> A domain switch is a technical event. Verification quality is a brand risk
+      that arrives <em>with</em> the switch but is not caused by it. Blending them into one number would hide which
+      kind of work unblocks which. The technical gates decide whether the switch is <em>safe</em>; the editorial
+      gates decide whether it is <em>worth doing now</em>.
+    </div>
+  </section>
+
+  <!-- SWEEP -->
+  <section>
+    <div class="sec-head">
+      <div class="rule-row"><span class="eyebrow">Gate A · the measurement that decides it</span></div>
+      <h2>Every old URL, swept against the new build</h2>
+    </div>
+
+    <div class="instrument">
+      <div class="sweep-bar" role="img" aria-label="47 old URLs: 7 return 200, 25 return 301, 13 return 410, and 2 return 404.">
+        <div class="seg seg-200" style="flex:7">7</div>
+        <div class="seg seg-301" style="flex:25">25</div>
+        <div class="seg seg-410" style="flex:13">13</div>
+        <div class="seg seg-404" style="flex:2">2</div>
+      </div>
+      <div class="sweep-key">
+        <div class="key"><span class="swatch" style="background:var(--accent)"></span><span><b>200 · 7</b>Path kept, page exists.</span></div>
+        <div class="key"><span class="swatch" style="background:var(--clear)"></span><span><b>301 · 25</b>Permanently moved to a real target.</span></div>
+        <div class="key"><span class="swatch" style="background:var(--slate)"></span><span><b>410 · 13</b>Deliberately removed, stated as gone.</span></div>
+        <div class="key"><span class="swatch" style="background:var(--stop)"></span><span><b class="flagged">404 · 2</b>The defect. See finding 2.</span></div>
+      </div>
+      <p class="chart-note">Target on cutover day: <span class="mono">7 × 200, 25 × 301, 15 × 410, 0 × 404</span>. Two URLs are two fixes away.</p>
+    </div>
+  </section>
+
+  <!-- FIXED -->
+  <section>
+    <div class="sec-head">
+      <div class="rule-row"><span class="eyebrow">Closed across three revisions</span></div>
+      <h2>What the team already fixed</h2>
+      <p class="col" style="color:var(--slate)">Verified fixed, not claimed fixed.</p>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th style="width:30px"></th><th>Finding</th><th class="num">Closed</th><th>Evidence</th></tr></thead>
+        <tbody>
+          <tr><td class="tick">✓</td><td>27 of 47 old URLs returned 404</td><td class="num">rev 2</td><td>Sweep: 45 of 47 conforming</td></tr>
+          <tr><td class="tick">✓</td><td>Legal pages <code>/privacy-policy/</code>, <code>/terms-of-use/</code>, <code>/dcma/</code> 404’d</td><td class="num">rev 2</td><td>All three 301 to correct targets</td></tr>
+          <tr><td class="tick">✓</td><td>Build canonicalised to apex</td><td class="num">rev 2</td><td>2,669 references, all <span class="mono">www</span>, zero apex</td></tr>
+          <tr><td class="tick">✓</td><td>12 hardcoded <code>https://freetins.com</code> literals</td><td class="num">rev 2</td><td>grep across <code>src</code> → <b>0</b></td></tr>
+          <tr><td class="tick">✓</td><td>CSP blocked an inline script on 19 pages</td><td class="num">rev 2</td><td>0 scripts after <code>&lt;/html&gt;</code>; filter cuts 580 → 15</td></tr>
+          <tr><td class="tick">✓</td><td>Desktop nav never showed an active state</td><td class="num">rev 2</td><td><code>aria-current="page"</code> renders on <code>/codes/</code></td></tr>
+          <tr><td class="tick">✓</td><td>No desktop search entry point</td><td class="num">rev 2</td><td>Header carries 1 input and 1 <code>/search/</code> link</td></tr>
+          <tr><td class="tick">✓</td><td>Contact address disagreed three ways</td><td class="num">rev 2</td><td>10 <code>mailto:</code>, all <span class="mono">support@freetins.com</span></td></tr>
+          <tr><td class="tick">✓</td><td>Deliberate removals were soft 404s</td><td class="num">rev 2</td><td>15 routes returning true <span class="mono">410 Gone</span>, with a test</td></tr>
+          <tr style="background:var(--clear-lo)"><td class="tick">✓</td><td><b>HSTS was dropped vs the old site</b></td><td class="num"><b>rev 3</b></td><td><span class="mono">max-age=31536000; includeSubDomains</span> now in <code>_headers</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout" style="margin-top:20px">
+      The <span class="mono">410</span> implementation deserves specific credit. <code>src/data/gone.ts</code>
+      documents <em>why</em> 410 rather than 301 — “sending Rainmeter-skin traffic to a game-codes hub is a
+      soft-404 pattern” — and <em>why</em> one route per path rather than a dynamic catch-all. That reasoning is
+      correct, and it is the part of a migration most teams get wrong.
+    </div>
+  </section>
+
+  <!-- OPEN -->
+  <section>
+    <div class="sec-head">
+      <div class="rule-row"><span class="eyebrow">Still open · 9 findings</span></div>
+      <h2>What is left, and what each is worth</h2>
+    </div>
+
+    <div class="stack">
+
+      <article class="finding p0">
+        <div class="f-head"><span class="sev p0">P0 · 1</span><h3>Sitemap advertises 15 URLs that are not live pages</h3><span class="gtag">gate B</span></div>
+        <div class="f-body">
+          <p>68 sitemap entries against 53 indexable pages. The 15 extras are the deliberate removals.
+          Submitting this on day one generates 15 immediate Search Console errors on a brand-new property.</p>
+          <p><b>Cause:</b> <code>astro.config.mjs</code> builds <code>excludedFromSitemap</code> from
+          <code>routeDefinitions.filter(r =&gt; r.noindex)</code>. The gone routes live in
+          <code>src/data/gone.ts</code>, so the filter never sees them.</p>
+          <pre>import { goneRoutes } from './src/data/gone.ts';
+
+const excludedFromSitemap = new Set([
+  '/internal/',
+  ...goneRoutes,
+  ...routeDefinitions.filter((route) =&gt; route.noindex).map((route) =&gt; route.path),
+]);</pre>
+        </div>
+        <p class="worth">Gate B 77.9 % → 100 % · overall +3.1 points</p>
+      </article>
+
+      <article class="finding p0">
+        <div class="f-head"><span class="sev p0">P0 · 2</span><h3>Two real legacy URLs 404 — the gone routes use invented paths</h3><span class="gtag">gate A</span></div>
+        <div class="f-body">
+          <p>The sweep’s two failures trace to a path mismatch. The <code>/tech-guides/</code> paths
+          <b>never existed on the old site</b>.</p>
+          <div class="tablewrap" style="margin:4px 0">
+            <table>
+              <thead><tr><th>Real old URL — returns 200 today</th><th>What <code>gone.ts</code> created</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">/best-ios-emulator-for-windows-pc-that-runs-apple-store-apps/</td><td class="mono">/tech-guides/ios-emulators-windows/</td></tr>
+                <tr><td class="mono">/best-iphone-secret-codes-to-unlock-hidden-features-and-settings/</td><td class="mono">/tech-guides/iphone-secret-codes/</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The two URLs that carry history return a 404 crawlers retry for months, while two invented paths
+          return a tidy 410 nobody will ever request. <code>test/gone.test.ts</code> already asserts the two stay
+          in step, so it will catch the rename.</p>
+        </div>
+        <p class="worth">Gate A 95.7 % → 100 % · overall +0.7 points</p>
+      </article>
+
+      <article class="finding p1">
+        <div class="f-head"><span class="sev p1">P1 · 3</span><h3>Staging host is still fully crawlable</h3><span class="gtag">gate D</span></div>
+        <div class="f-body">
+          <div class="tablewrap" style="margin:4px 0">
+            <table>
+              <thead><tr><th>Check on <span class="mono">freetins.pages.dev</span></th><th>Result</th></tr></thead>
+              <tbody>
+                <tr><td><code>robots.txt</code> disallows crawling</td><td class="flagged">✗ reads <span class="mono">Allow: /</span></td></tr>
+                <tr><td><span class="mono">X-Robots-Tag: noindex</span> sent</td><td class="flagged">✗ absent</td></tr>
+                <tr><td>Canonical resolves to a live page</td><td class="flagged">✗ points to apex, which 301s to the old homepage, dropping the path</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>This is causing damage now, independent of the cutover. Scoring zero is correct — nothing has been
+          done, and it is a minutes-long fix.</p>
+        </div>
+        <p class="worth">Gate D 0 % → 100 % · overall +10.5 points — the largest single gain available</p>
+      </article>
+
+      <article class="finding p1">
+        <div class="f-head"><span class="sev p1">P1 · 4</span><h3>Incremental builds emit the wrong hostname</h3><span class="gtag">gate C</span></div>
+        <div class="f-body">
+          <p>During this audit an incremental <code>astro build</code> produced canonical, <code>og:url</code>,
+          JSON-LD <code>@id</code> and sitemap entries on the <b>apex</b> host, despite the config reading
+          <span class="mono">site: 'https://www.freetins.com'</span>. Only after <code>rm -rf dist .astro</code> did
+          output switch to <span class="mono">www</span> — then consistently, across all 2,669 references.</p>
+          <p>If CI performs an incremental build, <b>the cutover deploy can ship the wrong canonical host</b> —
+          the exact defect this migration exists to close.</p>
+        </div>
+        <p class="worth">Gate C 75 % → 100 % · overall +3.5 points</p>
+      </article>
+
+      <article class="finding p2">
+        <div class="f-head"><span class="sev p2">P2 · 5</span><h3>Two redirects point at hubs when exact pages now exist</h3></div>
+        <div class="f-body"><p><code>/best-gba-games-emulator-pokemon-roms-time/</code> redirects to <code>/guides/</code>, but <code>/guides/best-gba-games/</code> now returns 200. A hub redirect where an exact match exists is a weaker relevance signal than a 1:1 map.</p></div>
+      </article>
+
+      <article class="finding p2">
+        <div class="f-head"><span class="sev p2">P2 · 6</span><h3>Category archives redirect to the homepage</h3></div>
+        <div class="f-body"><p><code>/featured/</code>, <code>/news-updates/</code> and <code>/uncategorized/</code> all 301 to <code>/</code>. Google treats an irrelevant redirect as a soft 404. <code>/uncategorized/</code> should be <span class="mono">410 Gone</span>.</p></div>
+      </article>
+
+      <article class="finding p2">
+        <div class="f-head"><span class="sev p2">P2 · 7</span><h3>Two of nine primary nav items are noindex dead ends</h3></div>
+        <div class="f-body"><p><code>/alerts/</code> — 53 words, “not active yet”, its only call to action links back to itself — and <code>/daily/</code>, with zero published links. Demote to the footer until they do something.</p></div>
+      </article>
+
+      <article class="finding p2">
+        <div class="f-head"><span class="sev p2">P2 · 8</span><h3>29 dependency advisories — read correctly</h3><span class="gtag">gate E</span></div>
+        <div class="f-body">
+          <div class="tablewrap" style="margin:4px 0">
+            <table>
+              <thead><tr><th>Package</th><th class="num">Count</th><th>Real exposure here</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">undici</td><td class="num">14</td><td>Node HTTP client, <b>build time only</b>. Not in the Worker runtime.</td></tr>
+                <tr><td class="mono">astro</td><td class="num">7</td><td>XSS / SSRF. Patched only in Astro <b>6.x / 7.x</b>; project is on 5.18.2.</td></tr>
+                <tr><td class="mono">ws</td><td class="num">2</td><td>Dev server only.</td></tr>
+                <tr><td class="mono">sharp</td><td class="num">1</td><td>Build-time processing of trusted local images.</td></tr>
+                <tr><td class="mono">esbuild</td><td class="num">1</td><td>Advisory is explicit: “when running the development server”.</td></tr>
+                <tr><td class="mono">@astrojs/cloudflare</td><td class="num">1</td><td>Image-service SSRF via redirect following.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The Astro ones are real but need a <b>5 → 7 major upgrade</b>. Ship the cutover on 5.18.2 and upgrade
+          separately. This is why gate E is capped at 82 % rather than scored as a blocker.</p>
+        </div>
+      </article>
+
+      <article class="finding p3">
+        <div class="f-head"><span class="sev p3">P3 · 9</span><h3>One structurally heavy page</h3></div>
+        <div class="f-body"><p><code>/answers/little-alchemy/</code> — 3,402 words, 628 headings and 656 focusable elements in one document. A screen-reader heading list returns 628 entries. Section or paginate it.</p></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- GATE H -->
+  <section>
+    <div class="sec-head">
+      <div class="rule-row"><span class="eyebrow">Gate H · 20.4 % · the lowest score in the audit</span></div>
+      <h2>Your standard is right. The data is moving away from it.</h2>
+    </div>
+
+    <div class="col stack" style="margin-bottom:24px">
+      <p>You report publisher-released codes. You do not create them. The code already agrees —
+      <code>src/data/operations.ts</code>:</p>
+      <blockquote>A redeemed code is verified whatever the paper trail, and a code reposted by fifty blogs is
+      still community-reported.</blockquote>
+      <p>The framework is right. The measurements are not.</p>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Measure</th><th class="num">rev 2</th><th class="num">rev 3</th><th class="num">Direction</th></tr></thead>
+        <tbody>
+          <tr><td>Total codes</td><td class="num">133</td><td class="num"><b>192</b></td><td class="num dir bad">▲ +44 %</td></tr>
+          <tr><td>Codes citing a <b>developer / publisher</b> source</td><td class="num">0</td><td class="num"><b>0</b></td><td class="num dir flat">— no change</td></tr>
+          <tr><td>Codes citing a secondary aggregator</td><td class="num">133 · 100 %</td><td class="num"><b>192 · 100 %</b></td><td class="num dir flat">— no change</td></tr>
+          <tr><td>Rendered rows reading “no publisher post found”</td><td class="num">48</td><td class="num"><b>91</b></td><td class="num dir bad">▲ +90 %</td></tr>
+          <tr><td>Codes flagged <span class="mono">needs_human</span></td><td class="num">50 · 38 %</td><td class="num"><b>93 · 48 %</b></td><td class="num dir bad">▲ worse</td></tr>
+          <tr><td>Codes with no <span class="mono">confidence</span> value at all</td><td class="num">0</td><td class="num"><b>59</b></td><td class="num dir bad">▲ new</td></tr>
+          <tr><td>Official channels declared</td><td class="num">18</td><td class="num">21</td><td class="num dir good">▲ +3</td></tr>
+          <tr><td>…still flagged unconfirmed</td><td class="num">14</td><td class="num"><b>14</b></td><td class="num dir flat">— no change</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col stack" style="margin-top:24px">
+      <p>Evidence hosts, top of list: GamesRadar (49), PocketGamer (23), <b>driffle.com (22)</b>,
+      ProGameGuides (19), Destructoid (19), PCGamesN (18), plus <b>g2a.com (8)</b> and an unattributed
+      <span class="mono">pages.dev</span> site (3). <span class="mono">driffle</span> and <span class="mono">g2a</span>
+      are game-key resellers, not editorial sources. Thirty codes rest on them.</p>
+      <p>Content volume nearly doubled; publisher-sourced codes went from zero to zero. The site’s banner reads
+      <em>“Evidence before freshness claims.”</em> Every one of the 91 published rows tells the reader, in the
+      site’s own words, that no publisher post was found. Cutting over puts that contradiction on the brand’s
+      permanent address.</p>
+    </div>
+
+    <div class="callout" style="margin-top:20px">
+      <b>One real credit:</b> the build does not publish those aggregator URLs as outbound links. They stay in the
+      data layer as internal provenance, and all 31 outbound hosts are primary.
+    </div>
+
+    <h3 style="margin:30px 0 14px">The fix, in your terms</h3>
+    <ul class="plain col">
+      <li><b>Confirm the 14 unconfirmed channels.</b> A Discord invite, an X handle and a Roblox place ID is ~20 minutes per game — about <b>5 hours</b>. Alone this moves gate H to 33 %.</li>
+      <li><b>Re-source codes to the publisher post.</b> <span class="mono">method: 'official-source'</span>, <span class="mono">evidenceTier: 'publisher-confirmed'</span>. At 70 % coverage, gate H reaches ~82 %.</li>
+      <li><b>Keep aggregator citations as a genuine second tier.</b> A code that only ever appeared on PocketGamer <em>is</em> community-reported. Saying so is what makes the first tier mean anything.</li>
+      <li><b>Backfill the 59 codes with no <span class="mono">confidence</span></b> and extend the build validator so a code cannot publish without one.</li>
+      <li><b>Stop treating <span class="mono">source-only</span> as failure.</b> <code>INVENTORY.md</code> calls the positioning “a stated method rather than a demonstrated one”. That sets a bar no competitor clears — nobody redeems every code.</li>
+      <li><b>Drop the two reseller domains</b> and the unattributed <span class="mono">pages.dev</span> source.</li>
+    </ul>
+  </section>
+
+  <!-- MOVEMENT -->
+  <section>
+    <div class="sec-head">
+      <div class="rule-row"><span class="eyebrow">Score movement</span></div>
+      <h2>What closing the blocker list buys</h2>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Action</th><th class="num">Gate</th><th>Movement</th><th class="num">Overall gain</th></tr></thead>
+        <tbody>
+          <tr><td><span class="mono">X-Robots-Tag: noindex</span> on <span class="mono">pages.dev</span></td><td class="num">D</td><td>0 % → 100 %</td><td class="num gain">+10.5</td></tr>
+          <tr><td>Exclude <span class="mono">goneRoutes</span> from the sitemap</td><td class="num">B</td><td>77.9 % → 100 %</td><td class="num gain">+3.1</td></tr>
+          <tr><td>Clean-build guard + post-build host assertion</td><td class="num">C</td><td>75 % → 100 %</td><td class="num gain">+3.5</td></tr>
+          <tr><td>Rename the two <span class="mono">/tech-guides/</span> gone routes</td><td class="num">A</td><td>95.7 % → 100 %</td><td class="num gain">+0.7</td></tr>
+          <tr><td>Confirm 14 channels, re-source codes</td><td class="num">H</td><td>20.4 % → ~82 %</td><td class="num gain">+9.2</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td>Technical 72 % → <b>98 %</b> · Editorial 56 % → <b>87 %</b></td><td class="num"></td><td><b>Overall 68 % → 95 %</b></td><td class="num gain">+27</td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <p class="col" style="margin-top:18px;color:var(--slate);font-size:.93rem">
+      Gate E stays at 82 % by design — the Astro 5 → 7 upgrade is deliberately deferred out of the cutover.
+      <b style="color:var(--ink)">Do not wait for 100 %.</b> 95 % is the ship threshold; the remainder is
+      scheduled work, not blocking work.
+    </p>
+  </section>
+
+  <!-- CUTOVER -->
+  <section>
+    <div class="sec-head">
+      <div class="rule-row"><span class="eyebrow">Cutover</span></div>
+      <h2>Mechanics, checklist and timing</h2>
+    </div>
+
+    <div class="callout" style="margin-bottom:24px">
+      Both hostnames already resolve to Cloudflare — <span class="mono">104.21.27.206</span>,
+      <span class="mono">172.67.143.149</span>. Already on Cloudflare nameservers, so there is <b>no registrar
+      step, no nameserver change and no propagation window</b>. The cutover is a proxied-record change in one
+      dashboard; rollback is the same change reversed — minutes, not days. Keeping <span class="mono">www</span>
+      means Search Console needs no Change of Address.
+    </div>
+
+    <h3 style="margin-bottom:13px">Today, regardless of the cutover date</h3>
+    <div class="checkgroup" style="margin-bottom:24px">
+      <label class="check now"><span class="box"></span><span><span class="mono">X-Robots-Tag: noindex</span> on the <span class="mono">freetins.pages.dev</span> hostname — leaking signal right now</span><span class="gain">+10.5</span></label>
+    </div>
+
+    <h3 style="margin-bottom:13px">Blockers</h3>
+    <div class="checkgroup" style="margin-bottom:24px">
+      <label class="check block"><span class="box"></span><span>Exclude <span class="mono">goneRoutes</span> from the sitemap — one line in <code>astro.config.mjs</code></span><span class="gain">+3.1</span></label>
+      <label class="check block"><span class="box"></span><span>Clean production build + post-build canonical-host assertion</span><span class="gain">+3.5</span></label>
+      <label class="check block"><span class="box"></span><span>Rename the two <span class="mono">/tech-guides/</span> gone routes to the real legacy paths</span><span class="gain">+0.7</span></label>
+    </div>
+
+    <h3 style="margin-bottom:13px">Same release</h3>
+    <div class="checkgroup" style="margin-bottom:24px">
+      <label class="check"><span class="box"></span><span>Point <code>/best-gba-games-emulator-pokemon-roms-time/</code> at <code>/guides/best-gba-games/</code></span><span class="gain"></span></label>
+      <label class="check"><span class="box"></span><span><span class="mono">410</span> for <code>/uncategorized/</code></span><span class="gain"></span></label>
+      <label class="check"><span class="box"></span><span>Confirm official channels and re-source codes for the 14 published games</span><span class="gain">+9.2</span></label>
+    </div>
+
+    <h3 style="margin-bottom:13px">Explicitly deferred — do not bundle</h3>
+    <p class="col" style="color:var(--slate);font-size:.92rem;margin-bottom:30px">
+      Astro 5 → 7 upgrade · Little Alchemy pagination · analytics instrumentation ·
+      demoting <code>/alerts/</code> and <code>/daily/</code> from primary nav.
+    </p>
+
+    <h3 style="margin-bottom:13px">Cutover day</h3>
+    <div class="phases">
+      <div class="phase"><span class="phase-when">1 · Build</span><span class="phase-what"><b>Clean</b> build. Assert canonical, <span class="mono">og:url</span>, JSON-LD <span class="mono">@id</span> and sitemap all read <span class="mono">www.freetins.com</span>.</span></div>
+      <div class="phase"><span class="phase-when">2 · Baseline</span><span class="phase-what">Snapshot the old site — URL list, rankings, Search Console coverage. You cannot measure a migration without a before.</span></div>
+      <div class="phase"><span class="phase-when">3 · Switch</span><span class="phase-what">Attach the custom domain to the Pages project.</span></div>
+      <div class="phase"><span class="phase-when">4 · Confirm apex</span><span class="phase-what">Apex → www still 301s <b>with the path preserved</b>.</span></div>
+      <div class="phase"><span class="phase-when">5 · Sweep</span><span class="phase-what">Re-run the 47-URL sweep against production. Expect <span class="mono">7×200, 25×301, 15×410, 0×404</span>. Script it; do not spot-check.</span></div>
+      <div class="phase"><span class="phase-when">6 · Staging</span><span class="phase-what">Confirm <span class="mono">pages.dev</span> still returns <span class="mono">X-Robots-Tag: noindex</span>.</span></div>
+      <div class="phase"><span class="phase-when">7 · Submit</span><span class="phase-what">Submit the sitemap. No Change of Address — the hostname is unchanged.</span></div>
+      <div class="phase"><span class="phase-when">8 · Watch</span><span class="phase-what">404 logs daily for two weeks; add redirects for real inbound paths the sitemap never listed.</span></div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section>
+    <div class="sec-head">
+      <div class="rule-row"><span class="eyebrow">Publishing cadence</span></div>
+      <h2>Freeze now. Resume two weeks after cutover.</h2>
+    </div>
+
+    <ul class="plain col" style="margin-bottom:24px">
+      <li><b>The last content push made gate H worse.</b> Codes rose 44 %, publisher-sourced stayed at zero, <span class="mono">needs_human</span> went 38 % → 48 %, and 59 codes shipped with no <span class="mono">confidence</span> value. That is scaling a weakness.</li>
+      <li><b>Attribution.</b> Publishing during a migration makes ranking movement undiagnosable.</li>
+      <li><b>Volume is not the bottleneck.</b> Gate G already scores 92 %. 38 more game routes are built and correctly gated.</li>
+    </ul>
+
+    <div class="phases">
+      <div class="phase"><span class="phase-when">Before cutover</span><span class="phase-what">Confirm official channels and re-source codes for the 14 published games.</span></div>
+      <div class="phase"><span class="phase-when">Cutover → +14 days</span><span class="phase-what">No new pages. Watch 404s, coverage, rankings. Add redirects as real traffic reveals gaps.</span></div>
+      <div class="phase"><span class="phase-when">+14 to +30 days</span><span class="phase-what"><b>2–3 game pages per week</b>, publisher-sourced only. Un-gate from the 38 existing placeholders — no new routes.</span></div>
+      <div class="phase"><span class="phase-when">+30 days</span><span class="phase-what">Review gate H. Above ~70 %, raise to 4–5 per week. Below, hold — the constraint is editorial capacity, not template capacity.</span></div>
+      <div class="phase"><span class="phase-when">+60 days</span><span class="phase-what">Revisit the deferred rewrites with their redirects already earning, and upgrade each hub redirect to a 1:1 map.</span></div>
+    </div>
+
+    <div class="callout" style="margin-top:24px">
+      <b>Governing rule:</b> publish at the rate you can source from the publisher, not the rate you can fill a
+      template. The 38 gated routes are an asset — a queue that already knows what it needs.
+    </div>
+  </section>
+
+  <footer>
+    <p><b style="font-family:var(--display)">Evidence.</b> Live HTTP probes of <span class="mono">www.freetins.com</span>
+    and <span class="mono">freetins.pages.dev</span>; the old site’s Rank Math post / page / category sitemaps; a clean
+    <span class="mono">astro build</span> served via <span class="mono">wrangler pages dev</span>; a scripted 47-URL
+    sweep; instrumented Chromium across 45 page-viewport pairs; <span class="mono">pnpm audit --prod</span>; direct
+    parse of the 14 files in <span class="mono">src/data/games/</span>; the <span class="mono">hstspreload.org</span> status API.</p>
+    <p style="margin-top:12px">Every ratio above is reproducible from those commands. Scores are prioritisation
+    aids, not compliance certifications. Companion document: <span class="mono">MIGRATION-READINESS-2026-08-24.md</span>.</p>
+  </footer>
+
+</div>

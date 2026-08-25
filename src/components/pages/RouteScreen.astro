@@ -7,7 +7,7 @@ import { requireArticleArtwork } from '../../data/article-images';
 import { editorialArticles, getArticleByPath } from '../../data/articles';
 import { authors, getAuthorBySlug, getSectionAuthor } from '../../data/authors';
 import { hubIntroFor } from '../../data/hub-intros';
-import { contactEmail } from '../../data/site';
+import { contactEmail, organizationId, websiteId } from '../../data/site';
 import {
   dailyLinkCatalogue,
   gameCatalogue,
@@ -258,8 +258,8 @@ const routeSchema = {
           description: `Recorded verification events for ${operationalPage.game.name}, with the evidence state and check time of every entry.`,
           url: routeUrl,
           dateModified: operationalPage.latestCheckedAt,
-          isPartOf: { '@id': 'https://freetins.com/#site' },
-          creator: { '@id': 'https://freetins.com/#org' },
+          isPartOf: { '@id': websiteId },
+          creator: { '@id': organizationId },
         }]
       : []),
     ...(codePageFaq.length > 0

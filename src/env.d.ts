@@ -2,6 +2,12 @@
 
 interface ImportMetaEnv {
   readonly SITE?: string;
+  /**
+   * Google Search Console verification token, token only — no `google-site-verification=`
+   * prefix and no surrounding `<meta>` tag. Read once in `src/data/site.ts`; unset means
+   * no verification tag is emitted, which is deliberate. See the comment there.
+   */
+  readonly PUBLIC_GOOGLE_SITE_VERIFICATION?: string;
 }
 
 interface ImportMeta {

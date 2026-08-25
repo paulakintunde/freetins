@@ -6,7 +6,7 @@ import Footer from './partials/Footer.astro';
 import Header from './partials/Header.astro';
 import OutageBanner, { type CheckerStatus } from './partials/OutageBanner.astro';
 import { operations } from '../data/operations';
-import { contactEmail } from '../data/site';
+import { contactEmail, googleSiteVerification, organizationId, siteOrigin, websiteId } from '../data/site';
 
 interface Props {
   title: string;
@@ -45,25 +45,25 @@ const schema = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://freetins.com/#org',
+      '@id': organizationId,
       name: 'Freetins',
-      url: 'https://freetins.com',
+      url: siteOrigin,
       description: 'Source-backed game codes, daily reward links, cheats, answers and guides with explicit publication states.',
-      publishingPrinciples: 'https://freetins.com/how-we-verify/',
-      correctionsPolicy: 'https://freetins.com/how-we-verify/',
+      publishingPrinciples: `${siteOrigin}/how-we-verify/`,
+      correctionsPolicy: `${siteOrigin}/how-we-verify/`,
       email: contactEmail,
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://freetins.com/#site',
-      url: 'https://freetins.com',
+      '@id': websiteId,
+      url: siteOrigin,
       name: 'Freetins',
-      publisher: { '@id': 'https://freetins.com/#org' },
+      publisher: { '@id': organizationId },
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://freetins.com/search/?q={search_term_string}',
+          urlTemplate: `${siteOrigin}/search/?q={search_term_string}`,
         },
         'query-input': 'required name=search_term_string',
       },
@@ -74,7 +74,7 @@ const schema = {
       url: canonical,
       name: title,
       description,
-      isPartOf: { '@id': 'https://freetins.com/#site' },
+      isPartOf: { '@id': websiteId },
       ...(hasPrimaryImage
         ? {
           primaryImageOfPage: {
@@ -100,6 +100,7 @@ const schema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    {googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />}
     <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

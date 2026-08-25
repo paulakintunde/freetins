@@ -1,5 +1,5 @@
 ---
-import { consentPurposes, consentVendors } from '../../data/site';
+import { consentPurposes, consentVendors, edgeAnalytics } from '../../data/site';
 
 interface Props {
   mode?: 'gdpr' | 'california';
@@ -8,17 +8,35 @@ interface Props {
 const { mode = 'gdpr' } = Astro.props;
 const isGdpr = mode === 'gdpr';
 const hasOptionalPurposes = consentPurposes.some((purpose) => !purpose.required);
+
+/**
+ * This panel used to state flatly that no analytics vendor was configured. That was true
+ * only because the site's own CSP was blocking the beacon Cloudflare injects at the edge.
+ * Unblocking it makes the old sentence false, so the sentence is derived from
+ * `edgeAnalytics` now instead of being asserted — turn the vendor off and the original
+ * wording comes back on its own.
+ *
+ * It is described, not offered as a toggle: the injection happens after this build's HTML
+ * is written, so a switch here could not actually stop it. See `edgeAnalytics`.
+ */
+const measurementClause = edgeAnalytics.enabled
+  ? 'Page views are counted without cookies or cross-site identifiers.'
+  : 'No analytics vendor is configured.';
+const otherVendorClause = 'No advertising or personalisation vendor is configured.';
+
 const copy = isGdpr
   ? hasOptionalPurposes ? {
       title: 'We use cookies to run ads on this site',
       body: 'Necessary storage keeps the site working. Configured advertising remains off until you allow it, and rejecting it does not change content.',
     } : {
       title: 'Only necessary storage is active',
-      body: 'Freetins stores your privacy choice and temporary interface preferences. No analytics, advertising or personalisation vendor is configured.',
+      body: `Freetins stores your privacy choice and temporary interface preferences. ${measurementClause} ${otherVendorClause}`,
     }
   : {
       title: hasOptionalPurposes ? 'Do not sell or share my personal information' : 'Optional tracking is not active',
-      body: hasOptionalPurposes ? 'Configured advertising remains subject to your privacy choices and Global Privacy Control.' : 'No analytics, advertising or personalisation vendor is configured.',
+      body: hasOptionalPurposes
+        ? 'Configured advertising remains subject to your privacy choices and Global Privacy Control.'
+        : `${measurementClause} ${otherVendorClause}`,
     };
 ---
 

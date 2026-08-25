@@ -12,6 +12,7 @@ export type SearchGroup =
   | 'Answers'
   | 'Guides'
   | 'Resources'
+  | 'Blog'
   | 'Site';
 
 export interface SearchRecord {

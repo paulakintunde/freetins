@@ -3,7 +3,8 @@
   "compilerOptions": {
     "exactOptionalPropertyTypes": true,
     "noUncheckedIndexedAccess": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true
   },
   "include": [".astro/types.d.ts", "src/**/*.ts", "src/**/*.astro", "astro.config.mjs"],
   "exclude": ["dist", "node_modules", "_ds", "uploads", "support.js", "image-slot.js", "*.dc.html", "freetins-handoff.html"]
