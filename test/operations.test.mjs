@@ -127,7 +127,8 @@ test('a publisher post outranks a reported source', () => {
     publisherSourceUrl: 'https://www.monopolygo.com/news/',
     sourceUrls: ['https://www.pcgamesn.com/whatever'],
   });
-  assert.equal(citation.tier, 'publisher-confirmed');
+  assert.equal(citation.evidenceLabel, 'publisher-confirmed');
+  assert.equal(citation.tier, 0);
   assert.equal(citation.label, 'Publisher post');
 });
 
@@ -136,7 +137,8 @@ test('a reported source is named rather than disclaimed', () => {
     publisherSourceUrl: null,
     sourceUrls: ['https://www.pcgamesn.com/grow-a-garden/codes'],
   });
-  assert.equal(citation.tier, 'community-reported');
+  assert.equal(citation.evidenceLabel, 'community-reported');
+  assert.equal(citation.tier, 3);
   assert.equal(citation.label, 'Reported by pcgamesn.com');
 });
 
@@ -149,4 +151,126 @@ test('an aggregator in discoveredVia is never promoted to a citation', () => {
 test('a citation never points at a preview host or a placeholder', () => {
   assert.equal(citationFor({ publisherSourceUrl: null, sourceUrls: ['https://basketball-zero-codes.pages.dev/'] }), null);
   assert.equal(citationFor({ publisherSourceUrl: null, sourceUrls: ['http://www.pcgamesn.com/x'] }), null);
+});
+
+/* ---------------- evidence ladder and pipeline methods ---------------- */
+
+const seedCode = (data, overrides = {}) => {
+  const game = data.games.find((item) => item.slug === 'grow-a-garden');
+  const entry = {
+    id: 'grow-a-garden-ladder-code',
+    gameSlug: game.slug,
+    code: 'LADDER',
+    reward: 'Test reward',
+    firstSeenAt: '2026-08-24T10:00:00Z',
+    sourceUrls: ['https://www.pcgamesn.com/grow-a-garden'],
+    ...overrides,
+  };
+  data.codes.push(entry);
+  return { game, entry };
+};
+
+test('the reader-facing label collapses the ladder to the published vocabulary', () => {
+  assert.equal(citationFor({ publisherSourceUrl: 'https://discord.gg/growagarden' }).evidenceLabel, 'publisher-confirmed');
+  assert.equal(citationFor({ publisherSourceUrl: 'https://discord.gg/x', publisherTier: 1 }).evidenceLabel, 'publisher-confirmed');
+  assert.equal(citationFor({ sourceUrls: ['https://www.pcgamesn.com/x'] }).evidenceLabel, 'community-reported');
+});
+
+test('a delegated release is labelled as released via a creator', () => {
+  const citation = citationFor({ publisherSourceUrl: 'https://youtube.com/@creator', publisherTier: 1 });
+  assert.equal(citation.label, 'Publisher-released via creator');
+  assert.equal(citation.tier, 1);
+});
+
+test('an entry with no publisher source sits at the bottom of the ladder', () => {
+  const citation = citationFor({ sourceUrls: ['https://www.pcgamesn.com/x'] });
+  assert.equal(citation.tier, 3);
+});
+
+test('a reader-corroborated check cannot record an acceptance', () => {
+  const data = freshData();
+  seedCode(data);
+  data.verificationEvents.push({
+    id: 'grow-a-garden-reader-check',
+    entryType: 'code',
+    entryId: 'grow-a-garden-ladder-code',
+    checkedAt: '2026-08-24T10:05:00Z',
+    result: 'accepted',
+    method: 'reader-corroborated',
+    checkedBy: 'checker-bot',
+  });
+  assert.throws(() => validateOperations(data), /cannot record an accepted result/);
+});
+
+test('a reader-corroborated check is accepted as a source-only report', () => {
+  const data = freshData();
+  seedCode(data);
+  data.verificationEvents.push({
+    id: 'grow-a-garden-reader-check',
+    entryType: 'code',
+    entryId: 'grow-a-garden-ladder-code',
+    checkedAt: '2026-08-24T10:05:00Z',
+    result: 'source-only',
+    method: 'reader-corroborated',
+    checkedBy: 'checker-bot',
+  });
+  assert.doesNotThrow(() => validateOperations(data));
+});
+
+test('an automated fetch is a valid method for the worker', () => {
+  const data = freshData();
+  seedCode(data);
+  data.verificationEvents.push({
+    id: 'grow-a-garden-auto-check',
+    entryType: 'code',
+    entryId: 'grow-a-garden-ladder-code',
+    checkedAt: '2026-08-24T10:05:00Z',
+    result: 'source-only',
+    method: 'automated-fetch',
+    checkedBy: 'checker-bot',
+    sourceId: 'grow-a-garden:discord',
+  });
+  assert.doesNotThrow(() => validateOperations(data));
+});
+
+test('confirmed confidence requires a tier 0 or 1 publisher source', () => {
+  const data = freshData();
+  seedCode(data, { confidence: 'confirmed' });
+  assert.throws(() => validateOperations(data), /no tier 0 or 1 publisher source/);
+});
+
+test('confirmed confidence passes with a declared publisher channel behind it', () => {
+  const data = freshData();
+  seedCode(data, {
+    confidence: 'confirmed',
+    publisherSourceUrl: 'https://discord.gg/growagarden',
+    publisherTier: 0,
+  });
+  assert.doesNotThrow(() => validateOperations(data));
+});
+
+test('a publisher source on an undeclared host is still rejected', () => {
+  const data = freshData();
+  seedCode(data, { publisherSourceUrl: 'https://driffle.com/blog/grow-a-garden' });
+  assert.throws(() => validateOperations(data), /not a declared publisher channel/);
+});
+
+test('an out-of-range publisher tier is rejected', () => {
+  const data = freshData();
+  seedCode(data, { publisherSourceUrl: 'https://discord.gg/growagarden', publisherTier: 7 });
+  assert.throws(() => validateOperations(data), /out-of-range publisherTier/);
+});
+
+test('a daily link carries an expiry so an outage cannot present a dead link as current', () => {
+  const data = freshData();
+  data.dailyLinks.push({
+    id: 'monopoly-go-test-link',
+    gameSlug: 'monopoly-go',
+    label: 'Free dice',
+    url: 'https://mply.io/test',
+    firstSeenAt: '2026-08-25T08:00:00Z',
+    expiresAt: 'not-a-timestamp',
+    sourceUrls: ['https://discord.gg/officialmonopolygo'],
+  });
+  assert.throws(() => validateOperations(data), /invalid expiresAt/);
 });

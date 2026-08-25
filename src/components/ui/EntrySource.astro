@@ -11,10 +11,10 @@
  * Reported links carry `nofollow`: these are aggregators the site is citing, not
  * endorsing, and several of them republish each other.
  */
-import { citationFor } from '../../data/operations';
+import { citationFor, type EvidenceTier } from '../../data/operations';
 
 interface Props {
-  entry: { publisherSourceUrl?: string | null; sourceUrls?: string[] };
+  entry: { publisherSourceUrl?: string | null; publisherTier?: EvidenceTier; sourceUrls?: string[] };
 }
 
 const { entry } = Astro.props;
@@ -24,7 +24,8 @@ const citation = citationFor(entry);
 {citation
   ? <a
       href={citation.url}
-      rel={citation.tier === 'publisher-confirmed' ? 'noopener' : 'nofollow noopener'}
-      data-evidence-tier={citation.tier}
+      rel={citation.evidenceLabel === 'publisher-confirmed' ? 'noopener' : 'nofollow noopener'}
+      data-evidence-tier={citation.evidenceLabel}
+      data-evidence-rung={citation.tier}
     >{citation.label}</a>
   : <span class="tier-chip">No source recorded</span>}

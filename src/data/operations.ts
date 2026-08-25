@@ -4,7 +4,30 @@ export type OperationalSurface = 'codes' | 'daily';
 export type PublicationState = 'planned' | 'published' | 'retired';
 export type EntryType = 'code' | 'dailyLink' | 'cheat';
 export type VerificationResult = 'accepted' | 'rejected' | 'source-only' | 'unreachable';
-export type VerificationMethod = 'redeemed' | 'opened' | 'entered' | 'official-source' | 'manual-review';
+/**
+ * How a check was performed.
+ *
+ * `reader-corroborated` and `automated-fetch` are additions for the ingestion
+ * pipeline, and both exist to keep claims distinguishable rather than to add
+ * capability:
+ *
+ * - `reader-corroborated` records that independent readers reported an entry
+ *   working. It is deliberately NOT `redeemed`. src/lib/code-reports.ts argues at
+ *   length that letting a vote count produce the verified label would recreate the
+ *   unverified-consensus problem this site exists to avoid, and that argument still
+ *   holds. Naming reader signal separately is what lets it be reported honestly
+ *   without being laundered into verification.
+ * - `automated-fetch` records that a worker resolved a reward URL, not that a human
+ *   checked it. Cheap to preserve now, impossible to reconstruct later.
+ */
+export type VerificationMethod =
+  | 'redeemed'
+  | 'opened'
+  | 'entered'
+  | 'official-source'
+  | 'reader-corroborated'
+  | 'automated-fetch'
+  | 'manual-review';
 export type EntryState = 'verified' | 'reported' | 'stale' | 'expired' | 'unverified';
 
 /**
@@ -56,6 +79,11 @@ export interface CodeEntry {
    */
   discoveredVia?: string[];
   sourceUrls: string[];
+  /** Where on the ladder `publisherSourceUrl` sits. Absent means tier 0. */
+  publisherTier?: EvidenceTier;
+  confidence?: EntryConfidence;
+  /** Set by the pipeline when sources disagree and an editor has to decide. */
+  needsHuman?: boolean;
 }
 
 export interface DailyLinkEntry {
@@ -69,6 +97,16 @@ export interface DailyLinkEntry {
   /** Where it was first noticed. Never shown as evidence. */
   discoveredVia?: string[];
   sourceUrls: string[];
+  /** Where on the ladder `publisherSourceUrl` sits. Absent means tier 0. */
+  publisherTier?: EvidenceTier;
+  confidence?: EntryConfidence;
+  needsHuman?: boolean;
+  /**
+   * Reward links die on a schedule the publisher controls. Recorded so an entry can
+   * expire on its own TTL even when no check runs, which stops a pipeline outage
+   * leaving a dead link presented as current.
+   */
+  expiresAt?: string | null;
 }
 
 export interface CheatGame {
@@ -146,7 +184,14 @@ export interface VerificationEvent {
   checkedAt: string;
   result: VerificationResult;
   method: VerificationMethod;
+  /** A person's handle, or a worker id such as `checker-bot`. */
   checkedBy: string;
+  /**
+   * Which source in src/content/source-register.json produced this check. Lets a
+   * source's reliability be measured from its own record of hits and misses rather
+   * than asserted, which is what makes adaptive poll cadence possible.
+   */
+  sourceId?: string;
 }
 
 export interface OperationalData {
@@ -169,23 +214,70 @@ export interface OperationalData {
  * last check pass", tier answers "do we know the publisher ever issued this". A
  * redeemed code is verified whatever the paper trail, and a code reposted by fifty
  * blogs is still community-reported.
+ *
+ * ## Why this is a four-rung ladder and not a boolean
+ *
+ * The binary this replaced could not describe how codes are actually distributed.
+ * Roblox studios routinely hand codes to named creators to release, so "the
+ * studio's own Discord" and "a creator the studio delegated to" are both genuine
+ * publisher evidence while being materially different claims. Collapsing them lost
+ * the distinction; treating the delegated case as community-reported understated
+ * evidence the site actually holds.
+ *
+ *   0  First-party release   the studio's own channel. The code is issued here.
+ *   1  First-party delegated a creator or CM the studio explicitly releases through.
+ *   2  Community primary     a player-run Discord or forum. Circulation, not release.
+ *   3  Aggregator            an outlet repeating a claim. Never evidence.
+ *
+ * The ladder matches `DatasetEvidence` in src/lib/dataset.ts, which already used
+ * 0-3. The two models disagreed on the same concept; this is the side that moved.
  */
-export type EvidenceTier = 'publisher-confirmed' | 'community-reported';
+export type EvidenceTier = 0 | 1 | 2 | 3;
+
+/**
+ * What the reader is told. Deliberately coarser than the internal ladder.
+ *
+ * The published vocabulary on /how-we-verify/ is publisher-confirmed versus
+ * community-reported, and readers have that contract. A richer internal model must
+ * not silently redefine it, so tiers 0 and 1 both render as publisher-confirmed and
+ * 2 and 3 as community-reported. The extra resolution serves the pipeline, which
+ * needs to know whether a code came from the studio or from someone the studio
+ * delegated to; it does not need to reach the page to be worth recording.
+ */
+export type EvidenceLabel = 'publisher-confirmed' | 'community-reported';
+
+export const evidenceLabelOf = (tier: EvidenceTier): EvidenceLabel =>
+  tier <= 1 ? 'publisher-confirmed' : 'community-reported';
+
+/** How confident we are in the entry itself, independent of who reported it. */
+export type EntryConfidence = 'confirmed' | 'reported' | 'conflicting';
 
 export interface ResolvedEntry<T> {
   entry: T;
   latestEvent: VerificationEvent | null;
   state: EntryState;
   tier: EvidenceTier;
+  label: EvidenceLabel;
 }
 
-export const evidenceTierOf = (entry: { publisherSourceUrl?: string | null }): EvidenceTier =>
-  entry.publisherSourceUrl ? 'publisher-confirmed' : 'community-reported';
+/**
+ * `publisherTier` lets the pipeline record that a code came from a delegated
+ * creator rather than the studio's own channel. Absent, a publisher URL is assumed
+ * to be tier 0, which is how every hand-authored entry behaved before the ladder
+ * existed and keeps existing data meaning exactly what it meant.
+ */
+export const evidenceTierOf = (
+  entry: { publisherSourceUrl?: string | null; publisherTier?: EvidenceTier },
+): EvidenceTier => {
+  if (!entry.publisherSourceUrl) return 3;
+  return entry.publisherTier ?? 0;
+};
 
 export interface EntryCitation {
   url: string;
   label: string;
   tier: EvidenceTier;
+  evidenceLabel: EvidenceLabel;
 }
 
 /**
@@ -203,10 +295,16 @@ export interface EntryCitation {
  * aggregator is not corroboration, and surfacing it here would launder it into one.
  */
 export const citationFor = (
-  entry: { publisherSourceUrl?: string | null; sourceUrls?: string[] },
+  entry: { publisherSourceUrl?: string | null; publisherTier?: EvidenceTier; sourceUrls?: string[] },
 ): EntryCitation | null => {
   if (entry.publisherSourceUrl) {
-    return { url: entry.publisherSourceUrl, label: 'Publisher post', tier: 'publisher-confirmed' };
+    const tier = evidenceTierOf(entry);
+    return {
+      url: entry.publisherSourceUrl,
+      label: tier === 1 ? 'Publisher-released via creator' : 'Publisher post',
+      tier,
+      evidenceLabel: evidenceLabelOf(tier),
+    };
   }
   const reported = (entry.sourceUrls ?? []).find((url) => isHttpsUrl(url));
   if (!reported) return null;
@@ -214,7 +312,8 @@ export const citationFor = (
   return {
     url: reported,
     label: host ? `Reported by ${host}` : 'Reported by one outlet',
-    tier: 'community-reported',
+    tier: 3,
+    evidenceLabel: 'community-reported',
   };
 };
 
@@ -341,6 +440,31 @@ export const validateOperations = (candidate: OperationalData) => {
      * it against the game's declared channels means an aggregator URL cannot be
      * promoted to evidence by relabelling the field.
      */
+    if (entry.publisherTier !== undefined && ![0, 1, 2, 3].includes(entry.publisherTier)) {
+      errors.push(`Entry ${entry.id} has an out-of-range publisherTier`);
+    }
+    if (entry.confidence !== undefined && !['confirmed', 'reported', 'conflicting'].includes(entry.confidence)) {
+      errors.push(`Entry ${entry.id} has an invalid confidence`);
+    }
+    /*
+     * The corroboration rule, carried over from the dataset model where it already
+     * applied to guide rows: nothing is confirmed on a single source, and at least
+     * one of those sources has to be the publisher's own or one they released
+     * through. Without this, `confirmed` degrades into a synonym for "we are fairly
+     * sure", which is what `reported` already says honestly.
+     */
+    if (entry.confidence === 'confirmed') {
+      const tier = evidenceTierOf(entry);
+      if (!entry.publisherSourceUrl || tier > 1) {
+        errors.push(`Entry ${entry.id} is confirmed but has no tier 0 or 1 publisher source`);
+      }
+      if (entry.sourceUrls.length < 1) {
+        errors.push(`Entry ${entry.id} is confirmed but carries no corroborating source`);
+      }
+    }
+    if ('expiresAt' in entry && entry.expiresAt && !isIsoTimestamp(entry.expiresAt)) {
+      errors.push(`Entry ${entry.id} has an invalid expiresAt`);
+    }
     if (entry.publisherSourceUrl) {
       if (!isHttpsUrl(entry.publisherSourceUrl)) {
         errors.push(`Entry ${entry.id} has an invalid publisherSourceUrl`);
@@ -422,8 +546,17 @@ export const validateOperations = (candidate: OperationalData) => {
     if (!entryIds.has(`${event.entryType}:${event.entryId}`)) errors.push(`Verification ${event.id} references an unknown entry`);
     if (!isIsoTimestamp(event.checkedAt)) errors.push(`Verification ${event.id} has an invalid checkedAt`);
     if (!['accepted', 'rejected', 'source-only', 'unreachable'].includes(event.result)) errors.push(`Verification ${event.id} has an invalid result`);
-    if (!['redeemed', 'opened', 'entered', 'official-source', 'manual-review'].includes(event.method)) errors.push(`Verification ${event.id} has an invalid method`);
+    if (!['redeemed', 'opened', 'entered', 'official-source', 'reader-corroborated', 'automated-fetch', 'manual-review'].includes(event.method)) errors.push(`Verification ${event.id} has an invalid method`);
     if (!event.checkedBy.trim()) errors.push(`Verification ${event.id} needs checkedBy`);
+    /*
+     * Reader signal must never arrive as an acceptance. `accepted` is what produces
+     * the verified label, and a vote count producing that label is precisely the
+     * failure this site exists to avoid. The rule is enforced here rather than left
+     * to the writer's discipline, because it is the one that matters most.
+     */
+    if (event.method === 'reader-corroborated' && event.result === 'accepted') {
+      errors.push(`Verification ${event.id} is reader-corroborated and cannot record an accepted result`);
+    }
   }
 
   for (const game of candidate.games.filter((item) => item.publicationState === 'published')) {
@@ -473,11 +606,13 @@ export const resolveEntries = <T extends CodeEntry | DailyLinkEntry | CheatEntry
   now = Date.now(),
 ): ResolvedEntry<T>[] => entries.map((entry) => {
   const latestEvent = latestEventFor(entryType, entry.id);
+  const tier = evidenceTierOf(entry as { publisherSourceUrl?: string | null; publisherTier?: EvidenceTier });
   return {
     entry,
     latestEvent,
     state: resolveState(game, latestEvent, now),
-    tier: evidenceTierOf(entry as { publisherSourceUrl?: string | null }),
+    tier,
+    label: evidenceLabelOf(tier),
   };
 });
 

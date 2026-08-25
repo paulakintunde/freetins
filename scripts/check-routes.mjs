@@ -64,7 +64,13 @@ const resolvesOnWorker = (pathname) =>
 for (const file of htmlFiles) {
   const html = readFileSync(file, 'utf8');
 
-  if (/file:\/\/\/|Freetins%20Site\.dc\.html|href=["']#(?:home|browse|daily|hub|codes|cheats)/i.test(html)) {
+  /*
+   * The anchor list targets the prototype's nav, whose links were exactly `#codes`,
+   * `#daily` and so on. It must close on the quote: without the boundary it also
+   * matched `#codes-that-are-circulating-falsely`, a real table-of-contents anchor
+   * generated from a real heading, and failed the build on legitimate content.
+   */
+  if (/file:\/\/\/|Freetins%20Site\.dc\.html|href=["']#(?:home|browse|daily|hub|codes|cheats)["']/i.test(html)) {
     prototypeLeaks.push(file);
   }
 

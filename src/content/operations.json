@@ -16,7 +16,13 @@
         "type the code into the 'Type code here...' box.",
         "press the green Claim button."
       ],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/growagarden",
+          "label": "Grow a Garden Discord"
+        }
+      ]
     },
     {
       "slug": "basketball-zero",
@@ -32,7 +38,13 @@
         "type the code into the box.",
         "press Redeem."
       ],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/basketballzero",
+          "label": "Basketball: Zero Discord"
+        }
+      ]
     },
     {
       "slug": "volleyball-legends",
@@ -49,7 +61,13 @@
         "type the code into the 'Type code here' box.",
         "press USE CODE."
       ],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/JK8bFRb5KR",
+          "label": "Volleyball Legends Discord"
+        }
+      ]
     },
     {
       "slug": "blue-lock-rivals",
@@ -66,7 +84,13 @@
         "type the code into the box.",
         "press Redeem."
       ],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/bluelockrivals",
+          "label": "Blue Lock: Rivals Unofficial Fans Discord"
+        }
+      ]
     },
     {
       "slug": "99-nights-in-the-forest",
@@ -82,7 +106,13 @@
         "not during a run.",
         "Enter the code and confirm."
       ],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/JyKTaU42ap",
+          "label": "99 Nights in the Forest Discord"
+        }
+      ]
     },
     {
       "slug": "sols-rng",
@@ -99,7 +129,13 @@
         "use the Redeem Code option.",
         "The same box also accepts gamepass gift codes."
       ],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/solsrng",
+          "label": "Sol's RNG Discord"
+        }
+      ]
     },
     {
       "slug": "dandys-world",
@@ -115,7 +151,13 @@
         "enter the code.",
         "press the green Use button."
       ],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/W5t424NwAc",
+          "label": "BlushCrunch Studio Discord"
+        }
+      ]
     },
     {
       "slug": "type-soul",
@@ -131,7 +173,13 @@
         "type the code into the box.",
         "press Redeem."
       ],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/typesoul",
+          "label": "TYPE://SOUL Discord"
+        }
+      ]
     },
     {
       "slug": "anime-card-clash",
@@ -147,7 +195,13 @@
         "type the code into the Enter code here box.",
         "press Redeem."
       ],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/M3jGqKBSZu",
+          "label": "Anime Card Clash (BETA) Discord"
+        }
+      ]
     },
     {
       "slug": "tennis-zero",
@@ -179,7 +233,13 @@
         "from the lobby open the Codes tab in the main menu.",
         "type the code into the Enter Code Here box and press Redeem."
       ],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/2qVWbwvu7e",
+          "label": "Jujutsu: Zero Discord"
+        }
+      ]
     },
     {
       "slug": "weak-legacy-2",
@@ -196,7 +256,13 @@
         "type the code into the ENTER YOUR CODE box.",
         "press Redeem."
       ],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/Axu4GbnPhf",
+          "label": "Weak Games Corp. Discord"
+        }
+      ]
     },
     {
       "slug": "hunty-zombies",
@@ -660,7 +726,13 @@
       "verificationWindowHours": 6,
       "officialSourceUrl": null,
       "redeemSteps": [],
-      "publisherChannels": []
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/officialmonopolygo",
+          "label": "MONOPOLY GO! Discord"
+        }
+      ]
     },
     {
       "slug": "coin-master",
