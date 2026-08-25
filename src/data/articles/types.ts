@@ -39,6 +39,8 @@ export interface ArticleFaq {
 }
 
 export interface EditorialArticle {
+  /** Markdown body stored in the `articles` content collection. */
+  contentSlug?: string;
   path: string;
   routeId: string;
   section: 'answers' | 'guides' | 'resources' | 'cheats' | 'daily' | 'legal' | 'about';

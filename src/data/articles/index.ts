@@ -7,6 +7,7 @@ import { doubleDownCasinoArticle } from './traffic-daily';
 import { gta5DemoArticle, jurassicWorldGameArticle } from './traffic-guides';
 import { howWeVerifyArticle } from './how-we-verify';
 import { legalArticles } from './legal-pages';
+import { importedEditorialArticles } from './imported';
 import type { EditorialArticle } from './types';
 
 export type { ArticleLink, EditorialArticle } from './types';
@@ -26,6 +27,7 @@ export const editorialArticles: EditorialArticle[] = [
   littleAlchemyEnergyArticle,
   resourcesArticle,
   howWeVerifyArticle,
+  ...importedEditorialArticles,
   ...legalArticles,
 ];
 

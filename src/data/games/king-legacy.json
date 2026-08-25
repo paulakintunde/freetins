@@ -1,0 +1,38 @@
+{
+  "game": "King Legacy",
+  "slug": "king-legacy",
+  "developer": "Sea King Games",
+  "code_system": true,
+  "disambiguation": "This page covers King Legacy by Sea King Games on Roblox.",
+  "redeem_path": "Launch King Legacy from the official Roblox page, select Menu below the health bar, open the shop or settings panel shown by your current client, scroll to the Enter Code field, paste the case-sensitive code, then select Use.",
+  "redeem_requirements": "Access to the main menu. DragonColorRefund only applies to eligible accounts with the original dragon color purchase.",
+  "checked_at": "2026-08-24T16:00:00Z",
+  "content_changed_at": "2026-08-24T16:00:00Z",
+  "official_sources": [
+    {
+      "type": "roblox_page",
+      "url": "https://www.roblox.com/games/4520749081/King-Legacy",
+      "note": "Official experience page."
+    },
+    {
+      "type": "roblox_group",
+      "url": "https://www.roblox.com/communities/5348890/Sea-King-Games",
+      "note": "Official publisher community."
+    }
+  ],
+  "codes": [
+    { "code": "<3LEEPUNGG", "reward": "30 minutes of 2x EXP", "status": "active", "evidence": ["https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/", "https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": true },
+    { "code": "DragonColorRefund", "reward": "50 Gems for eligible accounts", "status": "active", "evidence": ["https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/", "https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": true },
+    { "code": "WELCOMETOKINGLEGACY", "reward": "30 minutes of 2x EXP", "status": "active", "evidence": ["https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/", "https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": true },
+    { "code": "FREESTATSRESET", "reward": "Stat reset", "status": "active", "evidence": ["https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/", "https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": true },
+    { "code": "2MFAV", "reward": "Stat reset", "status": "active", "evidence": ["https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/", "https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": true },
+    { "code": "SKGames", "reward": "Former reward", "status": "expired", "last_verified_at": "2026-08-24T16:00:00Z", "evidence": ["https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": false },
+    { "code": "RainbowDragon", "reward": "Former dragon color reward", "status": "expired", "last_verified_at": "2026-08-24T16:00:00Z", "evidence": ["https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": false },
+    { "code": "FIXEDDROPBOOST", "reward": "Former drop boost", "status": "expired", "last_verified_at": "2026-08-24T16:00:00Z", "evidence": ["https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": false },
+    { "code": "FreePterSpin", "reward": "Former spin reward", "status": "expired", "last_verified_at": "2026-08-24T16:00:00Z", "evidence": ["https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": false },
+    { "code": "FIXEDBUG1003", "reward": "Former compensation reward", "status": "expired", "last_verified_at": "2026-08-24T16:00:00Z", "evidence": ["https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": false },
+    { "code": "Peodiz", "reward": "Former currency reward", "status": "expired", "last_verified_at": "2026-08-24T16:00:00Z", "evidence": ["https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": false },
+    { "code": "DinoxLive", "reward": "Former currency reward", "status": "expired", "last_verified_at": "2026-08-24T16:00:00Z", "evidence": ["https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": false },
+    { "code": "Update10Release", "reward": "Former update reward", "status": "expired", "last_verified_at": "2026-08-24T16:00:00Z", "evidence": ["https://progameguides.com/roblox/roblox-king-legacy-codes/"], "needs_human": false }
+  ]
+}

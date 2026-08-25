@@ -379,10 +379,16 @@
       "name": "Shindo Life",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "verificationWindowHours": 24,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/4616652839/Shindo-Life",
+      "redeemSteps": [
+        "Launch Shindo Life from the official Roblox page.",
+        "open the character Edit screen.",
+        "find the Enter-Code or YouTube Code field.",
+        "paste the complete case-sensitive code including its exclamation mark.",
+        "press Enter."
+      ],
       "publisherChannels": []
     },
     {
@@ -489,10 +495,17 @@
       "name": "King Legacy",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "verificationWindowHours": 24,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/4520749081/King-Legacy",
+      "redeemSteps": [
+        "Launch King Legacy from the official Roblox page.",
+        "select Menu below the health bar.",
+        "open the shop or settings panel shown by your current client.",
+        "scroll to the Enter Code field.",
+        "paste the case-sensitive code.",
+        "select Use."
+      ],
       "publisherChannels": []
     },
     {
@@ -2611,6 +2624,842 @@
       "discoveredVia": [
         "https://driffle.com/blog/all-weak-legacy-2-codes/"
       ]
+    },
+    {
+      "id": "king-legacy-code-1",
+      "gameSlug": "king-legacy",
+      "code": "<3LEEPUNGG",
+      "reward": "30 minutes of 2x EXP",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/",
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/",
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-2",
+      "gameSlug": "king-legacy",
+      "code": "DragonColorRefund",
+      "reward": "50 Gems for eligible accounts",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/",
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/",
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-3",
+      "gameSlug": "king-legacy",
+      "code": "WELCOMETOKINGLEGACY",
+      "reward": "30 minutes of 2x EXP",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/",
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/",
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-4",
+      "gameSlug": "king-legacy",
+      "code": "FREESTATSRESET",
+      "reward": "Stat reset",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/",
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/",
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-5",
+      "gameSlug": "king-legacy",
+      "code": "2MFAV",
+      "reward": "Stat reset",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/",
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://twinfinite.net/guides/roblox-king-legacy-codes-get-free-cash-gems/",
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-6",
+      "gameSlug": "king-legacy",
+      "code": "SKGames",
+      "reward": "Former reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-7",
+      "gameSlug": "king-legacy",
+      "code": "RainbowDragon",
+      "reward": "Former dragon color reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-8",
+      "gameSlug": "king-legacy",
+      "code": "FIXEDDROPBOOST",
+      "reward": "Former drop boost",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-9",
+      "gameSlug": "king-legacy",
+      "code": "FreePterSpin",
+      "reward": "Former spin reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-10",
+      "gameSlug": "king-legacy",
+      "code": "FIXEDBUG1003",
+      "reward": "Former compensation reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-11",
+      "gameSlug": "king-legacy",
+      "code": "Peodiz",
+      "reward": "Former currency reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-12",
+      "gameSlug": "king-legacy",
+      "code": "DinoxLive",
+      "reward": "Former currency reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "king-legacy-code-13",
+      "gameSlug": "king-legacy",
+      "code": "Update10Release",
+      "reward": "Former update reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/roblox-king-legacy-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-1",
+      "gameSlug": "shindo-life",
+      "code": "NewFREEFALLings2026!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-2",
+      "gameSlug": "shindo-life",
+      "code": "NewBugPatchandFixes250!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-3",
+      "gameSlug": "shindo-life",
+      "code": "FixUpdateIsOutEarly!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-4",
+      "gameSlug": "shindo-life",
+      "code": "20NewCloaksAdded!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-5",
+      "gameSlug": "shindo-life",
+      "code": "FixingShindoBuggyTimes!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-6",
+      "gameSlug": "shindo-life",
+      "code": "TickDamageBugs!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-7",
+      "gameSlug": "shindo-life",
+      "code": "LetsGOOOO40k!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-8",
+      "gameSlug": "shindo-life",
+      "code": "PatchUpdate249point5!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-9",
+      "gameSlug": "shindo-life",
+      "code": "ThankYouForPatience249Patch!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-10",
+      "gameSlug": "shindo-life",
+      "code": "FACEIDFIXUPD!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-11",
+      "gameSlug": "shindo-life",
+      "code": "6YearsofShindoSoon!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-12",
+      "gameSlug": "shindo-life",
+      "code": "Shindo4Life2026!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-13",
+      "gameSlug": "shindo-life",
+      "code": "ShindoLife2026Peak!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-14",
+      "gameSlug": "shindo-life",
+      "code": "WalkingOnTheWalls!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-15",
+      "gameSlug": "shindo-life",
+      "code": "2mLikesC0d3d!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-16",
+      "gameSlug": "shindo-life",
+      "code": "RELLGIFTsc!",
+      "reward": "Private server creator",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-17",
+      "gameSlug": "shindo-life",
+      "code": "RELLGIFTbag!",
+      "reward": "Bloodline bag",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-18",
+      "gameSlug": "shindo-life",
+      "code": "ThankYouAllTruly!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-19",
+      "gameSlug": "shindo-life",
+      "code": "TimeFliesForFiveYears!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-20",
+      "gameSlug": "shindo-life",
+      "code": "ItrulyDOMissTheseTimes!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-21",
+      "gameSlug": "shindo-life",
+      "code": "ButWelooktowardThe!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-22",
+      "gameSlug": "shindo-life",
+      "code": "FutureAndRELLSeas!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-23",
+      "gameSlug": "shindo-life",
+      "code": "IsTheNextinLine!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-24",
+      "gameSlug": "shindo-life",
+      "code": "ItsTrulyLegendary!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-25",
+      "gameSlug": "shindo-life",
+      "code": "OneOfaKind!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-26",
+      "gameSlug": "shindo-life",
+      "code": "ThisPlatformaintReady!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-27",
+      "gameSlug": "shindo-life",
+      "code": "TheCommunitygonnaEat!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-28",
+      "gameSlug": "shindo-life",
+      "code": "BoredomWillBeRescued!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-29",
+      "gameSlug": "shindo-life",
+      "code": "WePerfectedRELLSeas!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-30",
+      "gameSlug": "shindo-life",
+      "code": "forTheFuture!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-31",
+      "gameSlug": "shindo-life",
+      "code": "ofOurGames!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-32",
+      "gameSlug": "shindo-life",
+      "code": "WeGotaLotofTestingtoDo!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-33",
+      "gameSlug": "shindo-life",
+      "code": "beforeWerecord!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-34",
+      "gameSlug": "shindo-life",
+      "code": "RELLSeasMovie3!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-35",
+      "gameSlug": "shindo-life",
+      "code": "theWorkloadSeems!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-36",
+      "gameSlug": "shindo-life",
+      "code": "neverENDING!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-37",
+      "gameSlug": "shindo-life",
+      "code": "ThankYouForPatience250Patch!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.beebom.com/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.beebom.com/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-38",
+      "gameSlug": "shindo-life",
+      "code": "RELLGems!",
+      "reward": "RELLcoins and spins",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.pocketgamer.com/roblox/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pocketgamer.com/roblox/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-39",
+      "gameSlug": "shindo-life",
+      "code": "ShindoDownAGAIN2x!",
+      "reward": "Former RELLcoins and spins reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-40",
+      "gameSlug": "shindo-life",
+      "code": "ShindoLifeTakenDown!",
+      "reward": "Former RELLcoins and spins reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-41",
+      "gameSlug": "shindo-life",
+      "code": "Year5ShindoLife!",
+      "reward": "Former RELLcoins and spins reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-42",
+      "gameSlug": "shindo-life",
+      "code": "5YearsReleased!",
+      "reward": "Former RELLcoins and spins reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-43",
+      "gameSlug": "shindo-life",
+      "code": "5YearsOfShindoLife!",
+      "reward": "Former RELLcoins and spins reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-44",
+      "gameSlug": "shindo-life",
+      "code": "5YearSL2!",
+      "reward": "Former RELLcoins and spins reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-45",
+      "gameSlug": "shindo-life",
+      "code": "ShindoLife5YearCodes!",
+      "reward": "Former RELLcoins and spins reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
+    },
+    {
+      "id": "shindo-life-code-46",
+      "gameSlug": "shindo-life",
+      "code": "ITSBeen5Years!",
+      "reward": "Former RELLcoins and spins reward",
+      "firstSeenAt": "2026-08-24T16:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ]
     }
   ],
   "dailyLinks": [],
@@ -3698,6 +4547,519 @@
       "entryType": "code",
       "entryId": "weak-legacy-2-code-19",
       "checkedAt": "2026-08-15T00:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-1-source-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-1",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-2-source-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-2",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-3-source-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-3",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-4-source-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-4",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-5-source-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-5",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-6-archive-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-6",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-7-archive-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-7",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-8-archive-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-8",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-9-archive-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-9",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-10-archive-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-10",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-11-archive-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-11",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-12-archive-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-12",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "king-legacy-code-13-archive-review",
+      "entryType": "code",
+      "entryId": "king-legacy-code-13",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-1-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-1",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-2-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-2",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-3-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-3",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-4-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-4",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-5-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-5",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-6-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-6",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-7-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-7",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-8-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-8",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-9-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-9",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-10-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-10",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-11-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-11",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-12-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-12",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-13-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-13",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-14-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-14",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-15-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-15",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-16-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-16",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-17-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-17",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-18-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-18",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-19-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-19",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-20-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-20",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-21-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-21",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-22-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-22",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-23-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-23",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-24-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-24",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-25-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-25",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-26-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-26",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-27-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-27",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-28-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-28",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-29-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-29",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-30-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-30",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-31-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-31",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-32-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-32",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-33-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-33",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-34-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-34",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-35-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-35",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-36-source-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-36",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "source-only",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-39-archive-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-39",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-40-archive-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-40",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-41-archive-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-41",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-42-archive-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-42",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-43-archive-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-43",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-44-archive-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-44",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-45-archive-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-45",
+      "checkedAt": "2026-08-24T16:00:00Z",
+      "result": "rejected",
+      "method": "manual-review",
+      "checkedBy": "paul-a"
+    },
+    {
+      "id": "shindo-life-code-46-archive-review",
+      "entryType": "code",
+      "entryId": "shindo-life-code-46",
+      "checkedAt": "2026-08-24T16:00:00Z",
       "result": "rejected",
       "method": "manual-review",
       "checkedBy": "paul-a"

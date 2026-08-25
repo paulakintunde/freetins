@@ -4,7 +4,7 @@ import {
   publishedDailyLinkCatalogue,
   publishedGameCatalogue,
 } from './home';
-import { editorialArticles } from './articles';
+import { editorialArticles, getArticleByPath } from './articles';
 import { authors } from './authors';
 import { getCheatOperationalPage, getProduct, operations } from './operations';
 
@@ -111,18 +111,20 @@ const authorRoutes: RouteDefinition[] = authors.map((author) => ({
 
 const cheatRoutes: RouteDefinition[] = operations.cheatGames.map((game) => {
   const page = getCheatOperationalPage(game.slug);
+  const path = `/cheats/${game.slug}/`;
+  const article = getArticleByPath(path);
   return {
-    path: `/cheats/${game.slug}/`,
+    path,
     routeId: 'cheat',
     kind: 'cheat',
     title: `${game.heading} | Freetins`,
     heading: game.heading,
-    description: page?.isPublished
+    description: article?.description ?? (page?.isPublished
       ? `${game.name} cheats with platform scope, source URLs and recorded verification events.`
-      : `${game.name} is configured for cheat verification, but no cheat sheet is published yet.`,
+      : `${game.name} is configured for cheat verification, but no cheat sheet is published yet.`),
     name: game.name,
     slug: game.slug,
-    noindex: !page?.isPublished,
+    noindex: !page?.isPublished && !article,
   };
 });
 
@@ -184,7 +186,10 @@ const guideRoutes: RouteDefinition[] = ([
   noindex: true,
 }));
 
-const articleRoutes: RouteDefinition[] = editorialArticles.map((article) => ({
+const generatedCheatPaths = new Set(cheatRoutes.map((route) => route.path));
+const articleRoutes: RouteDefinition[] = editorialArticles
+  .filter((article) => !generatedCheatPaths.has(article.path))
+  .map((article) => ({
   path: article.path,
   routeId: article.routeId,
   kind: 'article',
@@ -192,7 +197,7 @@ const articleRoutes: RouteDefinition[] = editorialArticles.map((article) => ({
   heading: article.heading,
   description: article.description,
   eyebrow: article.eyebrow,
-}));
+  }));
 
 const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => ({
   path: `/daily/${game.slug}/`,

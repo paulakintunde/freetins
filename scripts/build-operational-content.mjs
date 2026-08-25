@@ -18,6 +18,8 @@ const officialGameUrls = {
   'tennis-zero': 'https://www.roblox.com/games/81072337989394/Tennis-Zero',
   'jujutsu-zero': 'https://www.roblox.com/games/128451689942376/Jujutsu-Zero',
   'weak-legacy-2': 'https://www.roblox.com/games/18337464872/Weak-Legacy-2',
+  'shindo-life': 'https://www.roblox.com/games/4616652839/Shindo-Life',
+  'king-legacy': 'https://www.roblox.com/games/4520749081/King-Legacy',
 };
 
 const splitRedeemPath = (value) => value
@@ -33,7 +35,29 @@ const records = await Promise.all(files.map(async (filename) => (
   JSON.parse(await readFile(path.join(recordsDirectory, filename), 'utf8'))
 )));
 const operations = JSON.parse(await readFile(operationsPath, 'utf8'));
+const existingGameOrder = new Map();
+for (const entry of operations.codes) {
+  if (!existingGameOrder.has(entry.gameSlug)) existingGameOrder.set(entry.gameSlug, existingGameOrder.size);
+}
+records.sort((left, right) => {
+  const leftOrder = existingGameOrder.get(left.slug) ?? Number.MAX_SAFE_INTEGER;
+  const rightOrder = existingGameOrder.get(right.slug) ?? Number.MAX_SAFE_INTEGER;
+  return leftOrder - rightOrder;
+});
 const batchSlugs = new Set(records.map((record) => record.slug));
+const previewHosts = ['pages.dev', 'vercel.app', 'netlify.app', 'netlify.com', 'workers.dev', 'github.io'];
+const isEvidenceUrl = (value) => {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:'
+      && !previewHosts.some((host) => url.hostname === host || url.hostname.endsWith(`.${host}`));
+  } catch {
+    return false;
+  }
+};
+const existingCodesByKey = new Map(
+  operations.codes.map((entry) => [`${entry.gameSlug}:${entry.code}`, entry]),
+);
 
 for (const slug of batchSlugs) {
   if (!officialGameUrls[slug]) throw new Error(`Missing official game URL for ${slug}`);
@@ -64,14 +88,20 @@ for (const record of records) {
       throw new Error(`Unsupported status ${candidate.status} for ${record.slug}: ${candidate.code}`);
     }
 
+    const sourceUrls = [...new Set(candidate.evidence)].filter(isEvidenceUrl);
+    if (sourceUrls.length === 0) return;
+
     const id = `${record.slug}-code-${index + 1}`;
+    const existing = existingCodesByKey.get(`${record.slug}:${candidate.code}`);
     importedCodes.push({
       id,
       gameSlug: record.slug,
       code: candidate.code,
       reward: candidate.reward,
       firstSeenAt: candidate.added_at ?? candidate.last_verified_at ?? record.checked_at,
-      sourceUrls: [...new Set(candidate.evidence)],
+      sourceUrls,
+      publisherSourceUrl: existing?.publisherSourceUrl ?? null,
+      discoveredVia: existing?.discoveredVia?.length ? existing.discoveredVia : sourceUrls,
     });
 
     if (candidate.status === 'active') {

@@ -25,7 +25,7 @@ const codeRecords: SearchRecord[] = publishedGameCatalogue.map((game) => ({
   path: `/codes/${game.slug}/`,
   title: `${game.name} codes`,
   group: 'Codes',
-  description: `Working ${game.name} codes with source URLs, redemption steps and recorded checks. ${game.checkedLabel}.`,
+  description: `Current ${game.name} code reports with source URLs, redemption steps and recorded evidence states. ${game.checkedLabel}.`,
   keywords: [game.name, game.platform, ...slugWords(game.slug), 'codes', 'promo codes', 'redeem', 'free rewards'],
 }));
 
