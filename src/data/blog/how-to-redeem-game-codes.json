@@ -1,0 +1,787 @@
+{
+  "subject": "How to Redeem Game Codes",
+  "slug": "how-to-redeem-game-codes",
+  "entity_id": "https://www.roblox.com/redeem",
+  "entity_url": "https://www.roblox.com/redeem",
+  "developer": "Multiple publishers",
+  "permalink": "/blog/how-to-redeem-game-codes/",
+  "checked_at": "2026-08-25T09:00:00Z",
+  "content_changed_at": "2026-08-25T09:00:00Z",
+  "recheck_cadence": "Every path here is reopened against the publisher's own support page at least every 14 days, and immediately whenever a platform ships a store or launcher redesign.",
+  "official_sources": [
+    { "type": "official_page", "url": "https://www.roblox.com/redeem", "note": "Roblox code redemption page" },
+    { "type": "support_doc", "url": "https://en.help.roblox.com/hc/en-us/articles/115005566223-How-to-redeem-and-spend-your-Gift-Card", "note": "Roblox Support on gift cards and codes" },
+    { "type": "support_doc", "url": "https://support.xbox.com/en-GB/help/subscriptions-billing/redeem-codes-gifting/redeem-prepaid-codes", "note": "Xbox Support on redeeming codes and offers" },
+    { "type": "support_doc", "url": "https://www.playstation.com/en-gb/support/store/redeem-ps-store-voucher-code/", "note": "PlayStation Support on voucher codes" },
+    { "type": "support_doc", "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22429/~/how-to-redeem-a-download-code-on-nintendo-eshop", "note": "Nintendo Support on eShop download codes" },
+    { "type": "support_doc", "url": "https://www.epicgames.com/help/c-202300000001639/c-202300000001735/how-do-i-redeem-a-code-to-my-epic-games-account-a202300000012762", "note": "Epic Games Store Support on code redemption" },
+    { "type": "official_page", "url": "https://genshin.hoyoverse.com/en/gift", "note": "HoYoverse code redemption page for Genshin Impact" }
+  ],
+  "tables": {
+    "paths": {
+      "caption": "Where every code is entered, by platform and by game",
+      "columns": ["Game or platform", "Where to enter the code", "Exact steps", "Gates"]
+    },
+    "failures": {
+      "caption": "Why a code fails, ordered by how often it actually happens",
+      "columns": ["Cause", "What you see", "What to do"]
+    }
+  },
+  "rows": [
+    {
+      "table": "paths",
+      "name": "Roblox in a web browser",
+      "cells": {
+        "Game or platform": "Roblox in a web browser",
+        "Where to enter the code": "roblox.com/redeem",
+        "Exact steps": "Log in to the account you want the reward on, type the code into the text box, click Redeem, then wait for the confirmation message.",
+        "Gates": "You must be signed in to the receiving account. Codes are entered one at a time."
+      },
+      "status": "active",
+      "case_sensitive": true,
+      "requirements": "Signed in Roblox account",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/115005566223-How-to-redeem-and-spend-your-Gift-Card" },
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360029650831-How-Do-I-Redeem-a-Promo-Code" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "One page now handles gift cards, promo codes and toy codes."
+    },
+    {
+      "table": "paths",
+      "name": "Roblox app on iPhone and Android",
+      "cells": {
+        "Game or platform": "Roblox app on iPhone and Android",
+        "Where to enter the code": "Nowhere. The standard mobile app has no redemption screen.",
+        "Exact steps": "Open a browser instead, go to roblox.com/redeem, sign in there and enter the code. Roblox states that redemption is not available in the standard mobile app or on consoles.",
+        "Gates": "Browser required. Consoles carry the same restriction."
+      },
+      "status": "active",
+      "case_sensitive": true,
+      "requirements": "A web browser",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/115005566223-How-to-redeem-and-spend-your-Gift-Card" },
+        { "tier": 0, "url": "https://www.roblox.com/redeem" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Guides that describe an in-app Redeem button for iPhone or Android are describing the Samsung Galaxy build."
+    },
+    {
+      "table": "paths",
+      "name": "Roblox app on Samsung Galaxy",
+      "cells": {
+        "Game or platform": "Roblox app on Samsung Galaxy",
+        "Where to enter the code": "More page, Redeem tile",
+        "Exact steps": "Open the Roblox mobile app on the Samsung device, go to the More page, tap the Redeem tile, then enter the code in the app.",
+        "Gates": "Samsung Galaxy devices only. No other mobile build carries this tile."
+      },
+      "status": "active",
+      "case_sensitive": true,
+      "requirements": "Samsung Galaxy device",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/115005566223-How-to-redeem-and-spend-your-Gift-Card" },
+        { "tier": 0, "url": "https://www.roblox.com/redeem" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The only documented in-app redemption route on Roblox."
+    },
+    {
+      "table": "paths",
+      "name": "Roblox toy and virtual item codes",
+      "cells": {
+        "Game or platform": "Roblox toy and virtual item codes",
+        "Where to enter the code": "roblox.com/redeem",
+        "Exact steps": "Scratch off the covering if the code is hidden, log in to the receiving account, open the code redemption page, enter the code, click Redeem, then open the matching Inventory category to find the item.",
+        "Gates": "One redemption per account. The item cannot be traded or sold afterwards."
+      },
+      "status": "active",
+      "case_sensitive": true,
+      "requirements": "Signed in Roblox account",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360000316606-How-to-Redeem-Toy-Virtual-Item-Codes" },
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/115005566223-How-to-redeem-and-spend-your-Gift-Card" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Prime Gaming and carrier promotion items use this same page."
+    },
+    {
+      "table": "paths",
+      "name": "Codes issued by a single Roblox experience",
+      "cells": {
+        "Game or platform": "Codes issued by a single Roblox experience",
+        "Where to enter the code": "A button the developer built, inside that experience only",
+        "Exact steps": "Open the experience, find the codes button that experience provides, paste the code there and press its own confirm button. Roblox runs no platform wide box for these.",
+        "Gates": "The path differs per experience. The platform redemption page will not accept them."
+      },
+      "status": "active",
+      "case_sensitive": true,
+      "requirements": "Varies by experience",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360029650831-How-Do-I-Redeem-a-Promo-Code" },
+        { "tier": 1, "url": "https://support.xbox.com/en-GB/help/subscriptions-billing/redeem-codes-gifting/redeem-prepaid-codes" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Microsoft states the same rule for publisher issued in game content codes on its own platform."
+    },
+    {
+      "table": "paths",
+      "name": "Grow a Garden",
+      "cells": {
+        "Game or platform": "Grow a Garden",
+        "Where to enter the code": "Settings panel inside the experience",
+        "Exact steps": "Launch the experience, open the Settings cog at the top left, scroll the settings panel to the Redeem Codes section, type the code into the box reading Type code here, then press the green Claim button.",
+        "Gates": "None recorded. Codes are case sensitive as printed."
+      },
+      "status": "unverified",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/grow-a-garden/codes" },
+        { "tier": 2, "url": "https://www.pocketgamer.com/roblox/grow-a-garden-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Two independent outlets agree on the panel and the button labels. The studio publishes no support documentation, so this cannot reach Confirmed without an in game check."
+    },
+    {
+      "table": "paths",
+      "name": "Dandy's World",
+      "cells": {
+        "Game or platform": "Dandy's World",
+        "Where to enter the code": "Disputed between the lobby and the settings panel",
+        "Exact steps": "Most sources describe a Use Code button on the left of the lobby screen that opens an INPUT A CODE box, then a green Use button. One describes a settings cog at the bottom right with a Redeem Code button at the foot of the panel.",
+        "Gates": "You must be in the lobby rather than inside a run."
+      },
+      "status": "unverified",
+      "case_sensitive": true,
+      "requirements": "Lobby only",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://www.gamesradar.com/games/survival/dandys-world-codes/" },
+        { "tier": 2, "url": "https://www.pcgamer.com/games/roblox/dandys-world-codes/" }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "The two described paths cannot both be current. Recorded as a disagreement rather than resolved in favour of the louder source."
+    },
+    {
+      "table": "paths",
+      "name": "Xbox console",
+      "cells": {
+        "Game or platform": "Xbox console",
+        "Where to enter the code": "Store side menu, Redeem",
+        "Exact steps": "Press the Xbox button to open the guide, select Store, press the View button to open the side menu, select Redeem, enter the 25 character code, select Next and follow the prompts.",
+        "Gates": "Correct Microsoft account. Account region must match the code region. A payment option may be requested."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Microsoft account, matching region",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://support.xbox.com/en-GB/help/subscriptions-billing/redeem-codes-gifting/redeem-prepaid-codes" },
+        { "tier": 1, "url": "https://www.xbox.com/en-GB/redeem" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Codes are five blocks of five characters."
+    },
+    {
+      "table": "paths",
+      "name": "Xbox app for Windows",
+      "cells": {
+        "Game or platform": "Xbox app for Windows",
+        "Where to enter the code": "Settings, Redeem a code",
+        "Exact steps": "Press Start, search for Xbox, open the Xbox app, select your gamerpic, select Settings, select Redeem under Redeem a code, enter the 25 character code and select Next.",
+        "Gates": "Correct Microsoft account. Offers cannot be redeemed through the app, only codes."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Microsoft account",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://support.xbox.com/en-GB/help/subscriptions-billing/redeem-codes-gifting/redeem-prepaid-codes" },
+        { "tier": 1, "url": "https://www.xbox.com/en-GB/redeem" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Microsoft's current article documents the Xbox app rather than the Microsoft Store app. Guides still describing a Microsoft Store path are behind."
+    },
+    {
+      "table": "paths",
+      "name": "Xbox app on iPhone and Android",
+      "cells": {
+        "Game or platform": "Xbox app on iPhone and Android",
+        "Where to enter the code": "Profile, gear icon, Redeem code",
+        "Exact steps": "Select your profile picture to open your profile, select the gear icon to open settings, select Redeem code, enter the 25 character code and select Next.",
+        "Gates": "Codes only. Microsoft states that redeeming an offer through the app is not available."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Microsoft account",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://support.xbox.com/en-GB/help/subscriptions-billing/redeem-codes-gifting/redeem-prepaid-codes" },
+        { "tier": 1, "url": "https://www.xbox.com/en-GB/redeem" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "paths",
+      "name": "PlayStation 5 console",
+      "cells": {
+        "Game or platform": "PlayStation 5 console",
+        "Where to enter the code": "PlayStation Store, More menu, Redeem Code",
+        "Exact steps": "Open PlayStation Store, press the triangle button to open the menu, select the More option, select Redeem Code, enter the 12 digit code and select Redeem.",
+        "Gates": "Code region must match account region. Single use. Wallet top up codes must go on the family manager account for a child."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Matching region",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://www.playstation.com/en-gb/support/store/redeem-ps-store-voucher-code/" },
+        { "tier": 1, "url": "https://www.playstation.com/en-us/support/store/ps-store-voucher-code-problems/" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "A code can also be applied at checkout through Redeem Codes and Gift Cards in the payment method menu."
+    },
+    {
+      "table": "paths",
+      "name": "PlayStation 4 console",
+      "cells": {
+        "Game or platform": "PlayStation 4 console",
+        "Where to enter the code": "PlayStation Store sidebar, Redeem Codes",
+        "Exact steps": "Open PlayStation Store, scroll to the bottom of the sidebar, select Redeem Codes, enter the 12 digit code, then select Continue followed by Confirm.",
+        "Gates": "Code region must match account region. Single use."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Matching region",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://www.playstation.com/en-gb/support/store/redeem-ps-store-voucher-code/" },
+        { "tier": 1, "url": "https://www.playstation.com/en-us/support/store/ps-store-voucher-code-problems/" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The sidebar path differs from the PS5 triangle menu path."
+    },
+    {
+      "table": "paths",
+      "name": "PlayStation Store in a browser",
+      "cells": {
+        "Game or platform": "PlayStation Store in a browser",
+        "Where to enter the code": "Profile menu, Redeem Code",
+        "Exact steps": "Open PlayStation Store, select your profile at the top of the screen, select Redeem Code from the drop down menu, enter the 12 digit code and select Continue.",
+        "Gates": "Code region must match account region. A 10 digit discount code goes in the basket instead."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Matching region",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://www.playstation.com/en-gb/support/store/redeem-ps-store-voucher-code/" },
+        { "tier": 1, "url": "https://www.playstation.com/en-us/support/store/ps-store-voucher-code-problems/" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Discount codes are 10 digits and are entered through Enter Discount Code in the basket."
+    },
+    {
+      "table": "paths",
+      "name": "PlayStation App on mobile",
+      "cells": {
+        "Game or platform": "PlayStation App on mobile",
+        "Where to enter the code": "PS Store icon, menu icon, Redeem Code",
+        "Exact steps": "Select the PS Store icon, select the menu icon on the right of the screen, select Redeem Code, enter the 12 digit code and select Continue.",
+        "Gates": "Code region must match account region."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Matching region",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://www.playstation.com/en-gb/support/store/redeem-ps-store-voucher-code/" },
+        { "tier": 1, "url": "https://www.playstation.com/en-us/support/store/ps-store-voucher-code-problems/" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "paths",
+      "name": "Nintendo Switch and Switch 2 console",
+      "cells": {
+        "Game or platform": "Nintendo Switch and Switch 2 console",
+        "Where to enter the code": "Nintendo eShop, Enter Code",
+        "Exact steps": "Connect the console to the internet, select Nintendo eShop on the HOME Menu, select the account you want to use, select Enter Code on the left of the screen, enter the 16 character download code and select OK.",
+        "Gates": "Nintendo Account set to a country where the eShop is available. The keyboard disables the letters O, I and Z because codes never contain them."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Nintendo Account in a supported country",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22429/~/how-to-redeem-a-download-code-on-nintendo-eshop" },
+        { "tier": 2, "url": "https://www.engadget.com/gaming/nintendo/how-to-redeem-game-codes-on-the-nintendo-switch-2-130059847.html" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Nintendo's own article says Enter Code. Outlet coverage says Redeem Code. The publisher wording is what is recorded here."
+    },
+    {
+      "table": "paths",
+      "name": "Nintendo eShop in a browser",
+      "cells": {
+        "Game or platform": "Nintendo eShop in a browser",
+        "Where to enter the code": "ec.nintendo.com/redeem",
+        "Exact steps": "Open the redemption page in a browser, select Sign in and enter your Nintendo Account details, check the user name in the top right corner, enter the 16 digit download code, select Next, re-enter your password and select Redeem.",
+        "Gates": "You must have opened the eShop on the console with that Nintendo Account at least once before this works."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Prior eShop sign in on console",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/16906/~/how-to-redeem-a-nintendo-eshop-download-code-online" },
+        { "tier": 0, "url": "https://ec.nintendo.com/redeem/" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The prior console sign in requirement is the step most guides omit."
+    },
+    {
+      "table": "paths",
+      "name": "Epic Games launcher",
+      "cells": {
+        "Game or platform": "Epic Games launcher",
+        "Where to enter the code": "Account name menu, Redeem Code",
+        "Exact steps": "Open the Epic Games Launcher, log in, click your name in the upper right corner, click Redeem Code, enter the code and click Redeem.",
+        "Gates": "The code lands on whichever Epic account is logged in."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Epic Games account",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://www.epicgames.com/help/c-202300000001639/c-202300000001735/how-do-i-redeem-a-code-to-my-epic-games-account-a202300000012762" },
+        { "tier": 0, "url": "https://store.epicgames.com/redeem" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "paths",
+      "name": "Epic Games Store in a browser",
+      "cells": {
+        "Game or platform": "Epic Games Store in a browser",
+        "Where to enter the code": "store.epicgames.com/redeem",
+        "Exact steps": "Open the code redemption page in a browser, log in to the Epic account you want the code on, enter the code and click Redeem. The game then appears in the launcher library.",
+        "Gates": "The older epicgames.com store path now lands on the store subdomain."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Epic Games account",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://www.epicgames.com/help/c-202300000001639/c-202300000001735/how-do-i-redeem-a-code-to-my-epic-games-account-a202300000012762" },
+        { "tier": 0, "url": "https://store.epicgames.com/redeem" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Redirect followed and recorded during this check."
+    },
+    {
+      "table": "paths",
+      "name": "Genshin Impact",
+      "cells": {
+        "Game or platform": "Genshin Impact",
+        "Where to enter the code": "genshin.hoyoverse.com/en/gift",
+        "Exact steps": "Log in on the gift page, pick your server, confirm the character nickname it shows, paste the code into the Redemption Code field, press Redeem, then open in game mail to claim the reward.",
+        "Gates": "A HoYoverse account linked in the User Center and a character already created. Rewards arrive by mail and the mail expires."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Linked HoYoverse account and an existing character",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://genshin.hoyoverse.com/en/gift" },
+        { "tier": 2, "url": "https://www.gamesradar.com/genshin-impact-codes-redeem/" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The in game menu route and the Adventure Rank gate are widely reported and are not stated on the redemption page, so neither is recorded as confirmed here."
+    },
+    {
+      "table": "paths",
+      "name": "GOG and GOG GALAXY",
+      "cells": {
+        "Game or platform": "GOG and GOG GALAXY",
+        "Where to enter the code": "gog.com/redeem, or Add games and Friends in GALAXY",
+        "Exact steps": "In a browser open the redeem page, enter the code and continue. In GOG GALAXY click Add games and Friends, click Redeem GOG code, then follow the prompts.",
+        "Gates": "If the client redemption stalls, GOG advises aborting and retrying in a browser."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "GOG account",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://support.gog.com/hc/en-us/articles/212802105-How-do-I-redeem-a-code" },
+        { "tier": 1, "url": "https://www.gog.com/redeem" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "GOG warns that some codes contain zeroes where readers type the letter O."
+    },
+    {
+      "table": "paths",
+      "name": "Fortnite V-Bucks gift card",
+      "cells": {
+        "Game or platform": "Fortnite V-Bucks gift card",
+        "Where to enter the code": "Not confirmed in this check",
+        "Exact steps": "Microsoft states that a publisher card of this kind is redeemed in the game's own store or on the publisher's website rather than through the platform redemption box. The publisher page would not open for this check, so no path is recorded.",
+        "Gates": "Unknown. Do not assume the console redemption box will take it."
+      },
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "Unknown",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://support.xbox.com/en-GB/help/subscriptions-billing/redeem-codes-gifting/redeem-prepaid-codes" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Left blank rather than guessed. A wrong path here would send readers to a box that rejects the code."
+    },
+    {
+      "table": "paths",
+      "name": "Roblox promo code page",
+      "cells": {
+        "Game or platform": "Roblox promo code page",
+        "Where to enter the code": "Gone. The request now lands on roblox.com/redeem.",
+        "Exact steps": "The standalone promo code page no longer exists as its own destination. Anything sent to it resolves to the single redemption page.",
+        "Gates": "Guides still naming this as a separate page are describing a route that no longer exists."
+      },
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 0, "url": "https://www.roblox.com/redeem" },
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360029650831-How-Do-I-Redeem-a-Promo-Code" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Redirect followed during this check. Roblox Support now links only the single redemption page."
+    },
+    {
+      "table": "paths",
+      "name": "Roblox toy code page",
+      "cells": {
+        "Game or platform": "Roblox toy code page",
+        "Where to enter the code": "Gone. The request now lands on roblox.com/redeem.",
+        "Exact steps": "The separate toy redemption destination has been folded into the single redemption page, so toy codes and gift card codes now share one box.",
+        "Gates": "None. The redemption itself still works, only the old address is retired."
+      },
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 0, "url": "https://www.roblox.com/redeem" },
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360000316606-How-to-Redeem-Toy-Virtual-Item-Codes" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Redirect followed during this check."
+    },
+    {
+      "table": "failures",
+      "name": "The code has expired",
+      "cells": {
+        "Cause": "The code has expired",
+        "What you see": "A generic invalid code message. Almost no platform tells you the code once worked.",
+        "What to do": "Stop trying. An expired code cannot be revived by retyping it. Roblox states plainly that a promo code past its window cannot be redeemed. Go back to the publisher channel and take a current one."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360029650831-How-Do-I-Redeem-a-Promo-Code" },
+        { "tier": 1, "url": "https://help.starstable.com/hc/en-us/articles/360001374060-Redeem-codes-How-do-I-redeem-a-code" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The single most common cause across every support page read for this check."
+    },
+    {
+      "table": "failures",
+      "name": "Wrong case or a mistyped character",
+      "cells": {
+        "Cause": "Wrong case or a mistyped character",
+        "What you see": "Invalid code, on a code that looks correct on screen.",
+        "What to do": "Paste rather than type, and delete any space before or after. Roblox lists the usual confusions as zero for the letter O, one for capital I, two for Z, five for S, six for G or Q, and eight for B. Nintendo download codes never contain O, I or Z at all."
+      },
+      "status": "active",
+      "case_sensitive": true,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/115005566223-How-to-redeem-and-spend-your-Gift-Card" },
+        { "tier": 1, "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22429/~/how-to-redeem-a-download-code-on-nintendo-eshop" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Star Stable names trailing spaces from copy and paste as its own recurring cause."
+    },
+    {
+      "table": "failures",
+      "name": "Already redeemed on this account",
+      "cells": {
+        "Cause": "Already redeemed on this account",
+        "What you see": "A used code message, or a success message with nothing new to show for it.",
+        "What to do": "Check the inventory category or the in game mail before assuming failure. Roblox virtual item codes redeem once per account and PlayStation voucher codes are single use across all accounts."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360000316606-How-to-Redeem-Toy-Virtual-Item-Codes" },
+        { "tier": 1, "url": "https://www.playstation.com/en-gb/support/store/redeem-ps-store-voucher-code/" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox allows an already owned virtual item code to be passed to another user."
+    },
+    {
+      "table": "failures",
+      "name": "Signed in to the wrong account",
+      "cells": {
+        "Cause": "Signed in to the wrong account",
+        "What you see": "A success message, and no reward on the account you actually play.",
+        "What to do": "Sign out, sign in to the receiving account, and redeem again if the code is still unused. Xbox Support cannot move a redeemed code to another Microsoft account, and PlayStation cannot transfer content between accounts."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://support.xbox.com/en-GB/help/subscriptions-billing/redeem-codes-gifting/redeem-prepaid-codes" },
+        { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360029650831-How-Do-I-Redeem-a-Promo-Code" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "This is unrecoverable on most platforms, which is why every support page opens by telling you to check the account."
+    },
+    {
+      "table": "failures",
+      "name": "A level or progress gate",
+      "cells": {
+        "Cause": "A level or progress gate",
+        "What you see": "The box accepts the code and then refuses it as not eligible.",
+        "What to do": "Play on and try again once the account has progressed. Genshin Impact is widely reported to require Adventure Rank 10 for most codes, with a small set of exceptions. That gate is not stated on the redemption page itself."
+      },
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "Varies by game",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://www.gamesradar.com/genshin-impact-codes-redeem/" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "No publisher page read for this check states a rank threshold, so the figure stays reported."
+    },
+    {
+      "table": "failures",
+      "name": "The code only takes on a fresh server",
+      "cells": {
+        "Cause": "The code only takes on a fresh server",
+        "What you see": "Nothing at all happens when you submit, or the reward never lands.",
+        "What to do": "Leave the experience, rejoin, and submit again before anything else. This is reported repeatedly for Roblox experiences after an update and is confirmed by no publisher, so treat it as a cheap thing to try rather than a rule."
+      },
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/grow-a-garden/codes" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Kept visible because readers act on it constantly, and labelled honestly because nothing supports it above tier 2."
+    },
+    {
+      "table": "failures",
+      "name": "Region lock",
+      "cells": {
+        "Cause": "Region lock",
+        "What you see": "An error naming your country, or a silent refusal on a code that works for other people.",
+        "What to do": "Check the account region against the code. Xbox requires the Microsoft account region to match, and PlayStation requires the voucher region to match. Roblox is the exception and states its codes redeem worldwide with the value converted to your local currency."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://support.xbox.com/en-GB/help/subscriptions-billing/redeem-codes-gifting/redeem-prepaid-codes" },
+        { "tier": 1, "url": "https://www.playstation.com/en-gb/support/store/redeem-ps-store-voucher-code/" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Changing a Play or Microsoft region does not move balance already redeemed elsewhere."
+    },
+    {
+      "table": "failures",
+      "name": "The code belongs to a different game",
+      "cells": {
+        "Cause": "The code belongs to a different game",
+        "What you see": "Invalid code, in a game where that code was never valid in the first place.",
+        "What to do": "Check the code against the game named at its source. Codes for one experience routinely appear on lists for its clone, and Microsoft warns that publisher codes which look like platform codes must go through the publisher's own store instead."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://support.xbox.com/en-GB/help/subscriptions-billing/redeem-codes-gifting/redeem-prepaid-codes" },
+        { "tier": 2, "url": "https://www.pcgamesn.com/grow-a-garden/codes" }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The sequel and clone problem is the most common version of this on Roblox."
+    }
+  ],
+  "unverified_summary": "Four things could not be confirmed. The Grow a Garden and Dandy's World redemption paths rest on outlet reporting because neither studio publishes support documentation, and the two sources for Dandy's World describe different buttons in different corners of the screen. The Fortnite V-Bucks gift card page would not open for this check, so no path is recorded for it rather than a guessed one. The Genshin Impact in game menu route and the Adventure Rank threshold are widely repeated and appear on no publisher page, so both stay reported. Nothing here was upgraded to Confirmed on the strength of agreement between aggregators.",
+  "disagreements": [
+    {
+      "item": "The button label in the Nintendo eShop",
+      "source_a": "Nintendo Support says select Enter Code on the left of the screen",
+      "source_b": "Outlet coverage of the Switch 2 eShop says select Redeem Code",
+      "confirmed": "Nintendo's own wording is what this page records. The likeliest explanation is that the label differs between console generations, which no source states."
+    },
+    {
+      "item": "Where the Dandy's World redeem box lives",
+      "source_a": "A Use Code button on the left of the lobby screen",
+      "source_b": "A settings cog at the bottom right with a Redeem Code button",
+      "confirmed": "Not confirmed. No publisher documentation exists for this experience, so the row stays Unverified rather than picking the more popular description."
+    },
+    {
+      "item": "Where a Windows code is redeemed for Xbox content",
+      "source_a": "Older coverage describes the Microsoft Store app account menu",
+      "source_b": "Microsoft's current article documents only the Xbox app for Windows",
+      "confirmed": "The Xbox app path is recorded, because it is what the publisher documents now."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "Sites that promise free currency once you enter a username and a generated code",
+      "why_wrong": "Roblox publishes a support article stating that no generator of this kind exists and that these sites are scams. Entering a username or password on one hands over the account, and the code itself does nothing.",
+      "origin": "Ad networks, video descriptions and comment spam that follow every popular code search."
+    },
+    {
+      "claim": "Codes lifted from a clone or a sequel and listed under the original game",
+      "why_wrong": "A sequel keeps its own code list and the two do not share a redemption box, so a code taken from one fails silently in the other. The reader blames the game rather than the list.",
+      "origin": "Aggregator pages that merge a game and its sequel under a single heading to cover both search terms."
+    },
+    {
+      "claim": "Codes invented to pad out a list",
+      "why_wrong": "A code that appears on one aggregator, on no publisher channel, and nowhere else usually fails on submission. There is no announcement behind it because there was never a code.",
+      "origin": "Pages written to a word count rather than to a source, then copied by the next site down the results."
+    }
+  ],
+  "changes": [
+    { "at": "2026-08-25T09:00:00Z", "what": "Page first published with the redemption path lookup and the failure cause table" },
+    { "at": "2026-08-25T09:00:00Z", "what": "Two retired Roblox redemption addresses recorded as Removed after the redirects were followed" }
+  ],
+  "next_change": {
+    "pattern": "Menu paths move when a platform redesigns its store, launcher or mobile app, and those redesigns ship without a changelog entry anyone outside the company can watch. Experience level paths move whenever a developer reworks their settings panel.",
+    "watch": [
+      "Roblox Support gift card and promo code articles",
+      "Xbox Support redeem codes and gifting article",
+      "PlayStation Support voucher code article",
+      "Nintendo Support eShop download code articles",
+      "Epic Games Store Support code redemption article",
+      "HoYoverse code redemption page"
+    ]
+  }
+}

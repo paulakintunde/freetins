@@ -1,0 +1,4944 @@
+{
+  "subject": "Steal a Brainrot",
+  "slug": "steal-a-brainrot-all-brainrots",
+  "entity_id": "109983668079237",
+  "entity_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
+  "developer": "BRAZILIAN SPYDER",
+  "permalink": "/guides/steal-a-brainrot-all-brainrots/",
+  "checked_at": "2026-08-25T09:00:00Z",
+  "content_changed_at": "2026-08-25T09:00:00Z",
+  "recheck_cadence": "Rechecked after every Saturday content update, and again whenever the experience page posts a scheduled event.",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
+      "note": "Official Roblox experience page, place ID 109983668079237"
+    },
+    {
+      "type": "official_group",
+      "url": "https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER",
+      "note": "BRAZILIAN SPYDER, the verified group that publishes the experience"
+    },
+    {
+      "type": "reference",
+      "url": "https://en.wikipedia.org/wiki/Steal_a_Brainrot",
+      "note": "Independent record of the developer and release"
+    }
+  ],
+  "tables": {
+    "roster": {
+      "caption": "Every brainrot recorded on this page, with its rarity, its base income per second before any mutation or trait multiplier, and the route it comes from",
+      "columns": [
+        "Brainrot",
+        "Rarity",
+        "Income per second",
+        "How to obtain"
+      ],
+      "classification_column": "Rarity"
+    }
+  },
+  "rows": [
+    {
+      "table": "roster",
+      "name": "Noobini Pizzanini",
+      "cells": {
+        "Brainrot": "Noobini Pizzanini",
+        "Rarity": "Common",
+        "Income per second": "$1",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Common",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Noobini_Pizzanini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Red_Carpet"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Highest recorded spawn weight on the Red Carpet."
+    },
+    {
+      "table": "roster",
+      "name": "Lirilì Larilà",
+      "cells": {
+        "Brainrot": "Lirilì Larilà",
+        "Rarity": "Common",
+        "Income per second": "$3",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Common",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Liril%C3%AC_Laril%C3%A0"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Tim Cheese",
+      "cells": {
+        "Brainrot": "Tim Cheese",
+        "Rarity": "Common",
+        "Income per second": "$5",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Common",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Tim_Cheese"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Fluriflura",
+      "cells": {
+        "Brainrot": "Fluriflura",
+        "Rarity": "Common",
+        "Income per second": "$7",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Common",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Fluriflura"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Talpa Di Fero",
+      "cells": {
+        "Brainrot": "Talpa Di Fero",
+        "Rarity": "Common",
+        "Income per second": "$9",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Common",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Talpa_Di_Fero"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Svinina Bombardino",
+      "cells": {
+        "Brainrot": "Svinina Bombardino",
+        "Rarity": "Common",
+        "Income per second": "$10",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Common",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Svinina_Bombardino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Noobini Santanini",
+      "cells": {
+        "Brainrot": "Noobini Santanini",
+        "Rarity": "Common",
+        "Income per second": "$11",
+        "How to obtain": "Santa's Fuse, machine retired"
+      },
+      "classification": "Common",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Noobini_Santanini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Went unobtainable when the seasonal fuse was replaced."
+    },
+    {
+      "table": "roster",
+      "name": "Raccooni Jandelini",
+      "cells": {
+        "Brainrot": "Raccooni Jandelini",
+        "Rarity": "Common",
+        "Income per second": "$12",
+        "How to obtain": "Admin Abuse War and Cyber Craft Machine, both retired"
+      },
+      "classification": "Common",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Raccooni_Jandelini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Event only. Named after the Grow a Garden developer."
+    },
+    {
+      "table": "roster",
+      "name": "Tartaragno",
+      "cells": {
+        "Brainrot": "Tartaragno",
+        "Rarity": "Common",
+        "Income per second": "$13",
+        "How to obtain": "Witch Fuse, machine retired"
+      },
+      "classification": "Common",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Tartaragno"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Pipi Kiwi",
+      "cells": {
+        "Brainrot": "Pipi Kiwi",
+        "Rarity": "Common",
+        "Income per second": "$13",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Common",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Pipi_Kiwi"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Pipi Corni",
+      "cells": {
+        "Brainrot": "Pipi Corni",
+        "Rarity": "Common",
+        "Income per second": "$14",
+        "How to obtain": "Summer Fuse, machine retired"
+      },
+      "classification": "Common",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Pipi_Corni"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Holy Arepa",
+      "cells": {
+        "Brainrot": "Holy Arepa",
+        "Rarity": "Common",
+        "Income per second": "$14",
+        "How to obtain": "Divine Fuse, machine retired"
+      },
+      "classification": "Common",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Holy_Arepa"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Common"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Trippi Troppi",
+      "cells": {
+        "Brainrot": "Trippi Troppi",
+        "Rarity": "Rare",
+        "Income per second": "$15",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Rare",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Trippi_Troppi"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Gangster Footera",
+      "cells": {
+        "Brainrot": "Gangster Footera",
+        "Rarity": "Rare",
+        "Income per second": "$30",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Rare",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Gangster_Footera"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Bandito Bobritto",
+      "cells": {
+        "Brainrot": "Bandito Bobritto",
+        "Rarity": "Rare",
+        "Income per second": "$35",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Rare",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Bandito_Bobritto"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Boneca Ambalabu",
+      "cells": {
+        "Brainrot": "Boneca Ambalabu",
+        "Rarity": "Rare",
+        "Income per second": "$40",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Rare",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Boneca_Ambalabu"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Cacto Hipopotamo",
+      "cells": {
+        "Brainrot": "Cacto Hipopotamo",
+        "Rarity": "Rare",
+        "Income per second": "$50",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Rare",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Cacto_Hipopotamo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Ta Ta Ta Ta Sahur",
+      "cells": {
+        "Brainrot": "Ta Ta Ta Ta Sahur",
+        "Rarity": "Rare",
+        "Income per second": "$55",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Rare",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Ta_Ta_Ta_Ta_Sahur"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Cupcake Koala",
+      "cells": {
+        "Brainrot": "Cupcake Koala",
+        "Rarity": "Rare",
+        "Income per second": "$60",
+        "How to obtain": "Brainrot Dealer and Brainrot Trader, both retired"
+      },
+      "classification": "Rare",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "Robux purchase while it was stocked",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Cupcake_Koala"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Tric Trac Baraboom",
+      "cells": {
+        "Brainrot": "Tric Trac Baraboom",
+        "Rarity": "Rare",
+        "Income per second": "$65",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Rare",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Tric_Trac_Baraboom"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Frogo Elfo",
+      "cells": {
+        "Brainrot": "Frogo Elfo",
+        "Rarity": "Rare",
+        "Income per second": "$67",
+        "How to obtain": "Santa's Fuse, machine retired"
+      },
+      "classification": "Rare",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Frogo_Elfo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Pipi Avocado",
+      "cells": {
+        "Brainrot": "Pipi Avocado",
+        "Rarity": "Rare",
+        "Income per second": "$70",
+        "How to obtain": "Summer Fuse, machine retired"
+      },
+      "classification": "Rare",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Pipi_Avocado"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Pengolino Nuvoletto",
+      "cells": {
+        "Brainrot": "Pengolino Nuvoletto",
+        "Rarity": "Rare",
+        "Income per second": "$72",
+        "How to obtain": "Divine Fuse, machine retired"
+      },
+      "classification": "Rare",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Pengolino_Nuvoletto"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Pinealotto Fruttarino",
+      "cells": {
+        "Brainrot": "Pinealotto Fruttarino",
+        "Rarity": "Rare",
+        "Income per second": "$75",
+        "How to obtain": "Witch Fuse, machine retired"
+      },
+      "classification": "Rare",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Pinealotto_Fruttarino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rare"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Cappuccino Assassino",
+      "cells": {
+        "Brainrot": "Cappuccino Assassino",
+        "Rarity": "Epic",
+        "Income per second": "$75",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Epic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Cappuccino_Assassino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Brr Brr Patapim",
+      "cells": {
+        "Brainrot": "Brr Brr Patapim",
+        "Rarity": "Epic",
+        "Income per second": "$100",
+        "How to obtain": "Red Carpet spawn or the Robux shop"
+      },
+      "classification": "Epic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Robux purchase for the shop route",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brr_Brr_Patapim"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Avocadini Antilopini",
+      "cells": {
+        "Brainrot": "Avocadini Antilopini",
+        "Rarity": "Epic",
+        "Income per second": "$115",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Epic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Avocadini_Antilopini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Trulimero Trulicina",
+      "cells": {
+        "Brainrot": "Trulimero Trulicina",
+        "Rarity": "Epic",
+        "Income per second": "$125",
+        "How to obtain": "Red Carpet spawn or Fishing"
+      },
+      "classification": "Epic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Trulimero_Trulicina"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Bambini Crostini",
+      "cells": {
+        "Brainrot": "Bambini Crostini",
+        "Rarity": "Epic",
+        "Income per second": "$135",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Epic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Bambini_Crostini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Malame Amarele",
+      "cells": {
+        "Brainrot": "Malame Amarele",
+        "Rarity": "Epic",
+        "Income per second": "$140",
+        "How to obtain": "Craft Machine, retired"
+      },
+      "classification": "Epic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Malame_Amarele"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Bananita Dolphinita",
+      "cells": {
+        "Brainrot": "Bananita Dolphinita",
+        "Rarity": "Epic",
+        "Income per second": "$150",
+        "How to obtain": "Red Carpet spawn or Fishing"
+      },
+      "classification": "Epic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Bananita_Dolphinita"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Perochello Lemonchello",
+      "cells": {
+        "Brainrot": "Perochello Lemonchello",
+        "Rarity": "Epic",
+        "Income per second": "$160",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Epic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Perochello_Lemonchello"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Brri Brri Bicus Dicus Bombicus",
+      "cells": {
+        "Brainrot": "Brri Brri Bicus Dicus Bombicus",
+        "Rarity": "Epic",
+        "Income per second": "$175",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Epic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brri_Brri_Bicus_Dicus_Bombicus"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Avocadini Guffo",
+      "cells": {
+        "Brainrot": "Avocadini Guffo",
+        "Rarity": "Epic",
+        "Income per second": "$225",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Epic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Avocadini_Guffo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Ti Ti Ti Sahur",
+      "cells": {
+        "Brainrot": "Ti Ti Ti Sahur",
+        "Rarity": "Epic",
+        "Income per second": "$225",
+        "How to obtain": "Summer Fuse, machine retired"
+      },
+      "classification": "Epic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Ti_Ti_Ti_Sahur"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Mangolini Parrocini",
+      "cells": {
+        "Brainrot": "Mangolini Parrocini",
+        "Rarity": "Epic",
+        "Income per second": "$235",
+        "How to obtain": "Craft Machine and Brainrot Trader, both retired"
+      },
+      "classification": "Epic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mangolini_Parrocini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Frogato Pirato",
+      "cells": {
+        "Brainrot": "Frogato Pirato",
+        "Rarity": "Epic",
+        "Income per second": "$240",
+        "How to obtain": "Witch Fuse, machine retired"
+      },
+      "classification": "Epic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Frogato_Pirato"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Salamino Penguino",
+      "cells": {
+        "Brainrot": "Salamino Penguino",
+        "Rarity": "Epic",
+        "Income per second": "$250",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Epic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Salamino_Penguino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Gato Celesto",
+      "cells": {
+        "Brainrot": "Gato Celesto",
+        "Rarity": "Epic",
+        "Income per second": "$250",
+        "How to obtain": "Divine Fuse, machine retired"
+      },
+      "classification": "Epic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Gato_Celesto"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Doi Doi Do",
+      "cells": {
+        "Brainrot": "Doi Doi Do",
+        "Rarity": "Epic",
+        "Income per second": "$260",
+        "How to obtain": "Brainrot Dealer and Brainrot Trader, both retired"
+      },
+      "classification": "Epic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "Robux purchase while it was stocked",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Doi_Doi_Do"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Penguin Tree",
+      "cells": {
+        "Brainrot": "Penguin Tree",
+        "Rarity": "Epic",
+        "Income per second": "$270",
+        "How to obtain": "Santa's Fuse, machine retired"
+      },
+      "classification": "Epic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Penguin_Tree"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Wombo Rollo",
+      "cells": {
+        "Brainrot": "Wombo Rollo",
+        "Rarity": "Epic",
+        "Income per second": "$275",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Epic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Wombo_Rollo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/roblox-steal-a-brainrot-all-brainrots-list/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Penguino Cocosino",
+      "cells": {
+        "Brainrot": "Penguino Cocosino",
+        "Rarity": "Epic",
+        "Income per second": "$300",
+        "How to obtain": "Summer Fuse, machine retired"
+      },
+      "classification": "Epic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Penguino_Cocosino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Mummio Rappitto",
+      "cells": {
+        "Brainrot": "Mummio Rappitto",
+        "Rarity": "Epic",
+        "Income per second": "$325",
+        "How to obtain": "Witch Fuse, machine retired"
+      },
+      "classification": "Epic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mummio_Rappitto"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Epic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Earns as much as an entry level Legendary."
+    },
+    {
+      "table": "roster",
+      "name": "Burbaloni Loliloli",
+      "cells": {
+        "Brainrot": "Burbaloni Loliloli",
+        "Rarity": "Legendary",
+        "Income per second": "$200",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Burbaloni_Loliloli"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Chimpanzini Bananini",
+      "cells": {
+        "Brainrot": "Chimpanzini Bananini",
+        "Rarity": "Legendary",
+        "Income per second": "$300",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Chimpanzini_Bananini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Ballerina Cappuccina",
+      "cells": {
+        "Brainrot": "Ballerina Cappuccina",
+        "Rarity": "Legendary",
+        "Income per second": "$500",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Ballerina_Cappuccina"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "The source page leaves the obtainability field blank; the roster index lists it as a carpet spawn."
+    },
+    {
+      "table": "roster",
+      "name": "Chef Crabracadabra",
+      "cells": {
+        "Brainrot": "Chef Crabracadabra",
+        "Rarity": "Legendary",
+        "Income per second": "$600",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Chef_Crabracadabra"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Lionel Cactuseli",
+      "cells": {
+        "Brainrot": "Lionel Cactuseli",
+        "Rarity": "Legendary",
+        "Income per second": "$650",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Lionel_Cactuseli"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Glorbo Fruttodrillo",
+      "cells": {
+        "Brainrot": "Glorbo Fruttodrillo",
+        "Rarity": "Legendary",
+        "Income per second": "$750",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Glorbo_Fruttodrillo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Quivioli Ameleonni",
+      "cells": {
+        "Brainrot": "Quivioli Ameleonni",
+        "Rarity": "Legendary",
+        "Income per second": "$900",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Quivioli_Ameleonni"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Clickerino Crabo",
+      "cells": {
+        "Brainrot": "Clickerino Crabo",
+        "Rarity": "Legendary",
+        "Income per second": "$1K",
+        "How to obtain": "Brainrot Dealer and Brainrot Trader, both retired"
+      },
+      "classification": "Legendary",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "Robux purchase while it was stocked",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Clickerino_Crabo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Blueberrinni Octopusini",
+      "cells": {
+        "Brainrot": "Blueberrinni Octopusini",
+        "Rarity": "Legendary",
+        "Income per second": "$1K",
+        "How to obtain": "Red Carpet spawn or Fishing"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Blueberrinni_Octopusini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Caramello Filtrello",
+      "cells": {
+        "Brainrot": "Caramello Filtrello",
+        "Rarity": "Legendary",
+        "Income per second": "$1.05K",
+        "How to obtain": "Craft Machine, retired"
+      },
+      "classification": "Legendary",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Caramello_Filtrello"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Pipi Potato",
+      "cells": {
+        "Brainrot": "Pipi Potato",
+        "Rarity": "Legendary",
+        "Income per second": "$1.1K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Pipi_Potato"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Strawberrelli Flamingelli",
+      "cells": {
+        "Brainrot": "Strawberrelli Flamingelli",
+        "Rarity": "Legendary",
+        "Income per second": "$1.15K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Strawberrelli_Flamingelli"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Cocosini Mama",
+      "cells": {
+        "Brainrot": "Cocosini Mama",
+        "Rarity": "Legendary",
+        "Income per second": "$1.2K",
+        "How to obtain": "Summer Fuse, machine retired"
+      },
+      "classification": "Legendary",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Cocosini_Mama"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Bandito Axolito",
+      "cells": {
+        "Brainrot": "Bandito Axolito",
+        "Rarity": "Legendary",
+        "Income per second": "$1.225K",
+        "How to obtain": "RNG Machine"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Bandito_Axolito"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Pandaccini Bananini",
+      "cells": {
+        "Brainrot": "Pandaccini Bananini",
+        "Rarity": "Legendary",
+        "Income per second": "$1.25K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Pandaccini_Bananini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Quackula",
+      "cells": {
+        "Brainrot": "Quackula",
+        "Rarity": "Legendary",
+        "Income per second": "$1.275K",
+        "How to obtain": "Witch Fuse, machine retired"
+      },
+      "classification": "Legendary",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Quackula"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Pi Pi Watermelon",
+      "cells": {
+        "Brainrot": "Pi Pi Watermelon",
+        "Rarity": "Legendary",
+        "Income per second": "$1.3K",
+        "How to obtain": "RNG Machine"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Pi_Pi_Watermelon"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Buho del Cielo",
+      "cells": {
+        "Brainrot": "Buho del Cielo",
+        "Rarity": "Legendary",
+        "Income per second": "$1.35K",
+        "How to obtain": "Divine Fuse, machine retired"
+      },
+      "classification": "Legendary",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Buho_del_Cielo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Sigma Boy",
+      "cells": {
+        "Brainrot": "Sigma Boy",
+        "Rarity": "Legendary",
+        "Income per second": "$1.35K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Sigma_Boy"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "Its own page states 1.35K while the tier index groups it in a band topping out at 1.3K and one outlet reports 1,300."
+    },
+    {
+      "table": "roster",
+      "name": "Chocco Bunny",
+      "cells": {
+        "Brainrot": "Chocco Bunny",
+        "Rarity": "Legendary",
+        "Income per second": "$1.4K",
+        "How to obtain": "Santa's Fuse, machine retired"
+      },
+      "classification": "Legendary",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Chocco_Bunny"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Puffaball",
+      "cells": {
+        "Brainrot": "Puffaball",
+        "Rarity": "Legendary",
+        "Income per second": "$1.5K",
+        "How to obtain": "Fishing"
+      },
+      "classification": "Legendary",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Puffaball"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Sigma Girl",
+      "cells": {
+        "Brainrot": "Sigma Girl",
+        "Rarity": "Legendary",
+        "Income per second": "$1.8K",
+        "How to obtain": "Craft Machine, retired"
+      },
+      "classification": "Legendary",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Sigma_Girl"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Sealo Regalo",
+      "cells": {
+        "Brainrot": "Sealo Regalo",
+        "Rarity": "Legendary",
+        "Income per second": "$1.825K",
+        "How to obtain": "Santa's Fuse, machine retired"
+      },
+      "classification": "Legendary",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Sealo_Regalo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Electro Quacko",
+      "cells": {
+        "Brainrot": "Electro Quacko",
+        "Rarity": "Legendary",
+        "Income per second": "$1.85K",
+        "How to obtain": "Cyber Craft Machine, retired"
+      },
+      "classification": "Legendary",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Electro_Quacko"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Buho de Fuego",
+      "cells": {
+        "Brainrot": "Buho de Fuego",
+        "Rarity": "Legendary",
+        "Income per second": "$1.85K",
+        "How to obtain": "Witch Fuse, machine retired"
+      },
+      "classification": "Legendary",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Buho_de_Fuego"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Seraphino Gruyero",
+      "cells": {
+        "Brainrot": "Seraphino Gruyero",
+        "Rarity": "Legendary",
+        "Income per second": "$1.9K",
+        "How to obtain": "Divine Fuse, machine retired"
+      },
+      "classification": "Legendary",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Seraphino_Gruyero"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Legendary"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Top of the Legendary tier by income."
+    },
+    {
+      "table": "roster",
+      "name": "Frigo Camelo",
+      "cells": {
+        "Brainrot": "Frigo Camelo",
+        "Rarity": "Mythic",
+        "Income per second": "$2K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Frigo_Camelo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Entry point of the Mythic tier by income."
+    },
+    {
+      "table": "roster",
+      "name": "Orangutini Ananassini",
+      "cells": {
+        "Brainrot": "Orangutini Ananassini",
+        "Rarity": "Mythic",
+        "Income per second": "$2.1K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Orangutini_Ananassini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Rhino Toasterino",
+      "cells": {
+        "Brainrot": "Rhino Toasterino",
+        "Rarity": "Mythic",
+        "Income per second": "$2.15K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rhino_Toasterino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Bombardiro Crocodilo",
+      "cells": {
+        "Brainrot": "Bombardiro Crocodilo",
+        "Rarity": "Mythic",
+        "Income per second": "$2.5K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Bombardiro_Crocodilo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Brutto Gialutto",
+      "cells": {
+        "Brainrot": "Brutto Gialutto",
+        "Rarity": "Mythic",
+        "Income per second": "$3K",
+        "How to obtain": "Craft Machine, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brutto_Gialutto"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Spioniro Golubiro",
+      "cells": {
+        "Brainrot": "Spioniro Golubiro",
+        "Rarity": "Mythic",
+        "Income per second": "$3.5K",
+        "How to obtain": "Mythic Lucky Block"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Spioniro_Golubiro"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Bombombini Gusini",
+      "cells": {
+        "Brainrot": "Bombombini Gusini",
+        "Rarity": "Mythic",
+        "Income per second": "$5K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Bombombini_Gusini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Zibra Zubra Zibralini",
+      "cells": {
+        "Brainrot": "Zibra Zubra Zibralini",
+        "Rarity": "Mythic",
+        "Income per second": "$6K",
+        "How to obtain": "Mythic Lucky Block"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Zibra_Zubra_Zibralini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Tigrilini Watermelini",
+      "cells": {
+        "Brainrot": "Tigrilini Watermelini",
+        "Rarity": "Mythic",
+        "Income per second": "$6.5K",
+        "How to obtain": "Mythic Lucky Block"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Tigrilini_Watermelini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Avocadorilla",
+      "cells": {
+        "Brainrot": "Avocadorilla",
+        "Rarity": "Mythic",
+        "Income per second": "$7K",
+        "How to obtain": "Fuse Machine, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Avocadorilla"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Cavallo Virtuoso",
+      "cells": {
+        "Brainrot": "Cavallo Virtuoso",
+        "Rarity": "Mythic",
+        "Income per second": "$7.5K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Cavallo_Virtuoso"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Gorillo Subwoofero",
+      "cells": {
+        "Brainrot": "Gorillo Subwoofero",
+        "Rarity": "Mythic",
+        "Income per second": "$7.75K",
+        "How to obtain": "Craft Machine, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Gorillo_Subwoofero"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Gorillo Watermelondrillo",
+      "cells": {
+        "Brainrot": "Gorillo Watermelondrillo",
+        "Rarity": "Mythic",
+        "Income per second": "$8K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Gorillo_Watermelondrillo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Stoppo Luminino",
+      "cells": {
+        "Brainrot": "Stoppo Luminino",
+        "Rarity": "Mythic",
+        "Income per second": "$8K",
+        "How to obtain": "Brainrot Trader, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "Robux purchase while it was stocked",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Stoppo_Luminino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Tob Tobi Tobi",
+      "cells": {
+        "Brainrot": "Tob Tobi Tobi",
+        "Rarity": "Mythic",
+        "Income per second": "$8.5K",
+        "How to obtain": "Fuse Machine, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Tob_Tobi_Tobi"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Lerulerulerule",
+      "cells": {
+        "Brainrot": "Lerulerulerule",
+        "Rarity": "Mythic",
+        "Income per second": "$8.75K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Lerulerulerule"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Ganganzelli Trulala",
+      "cells": {
+        "Brainrot": "Ganganzelli Trulala",
+        "Rarity": "Mythic",
+        "Income per second": "$9K",
+        "How to obtain": "Fuse Machine, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Ganganzelli_Trulala"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Widely reported as the best Mythic; the recorded figures put four above it."
+    },
+    {
+      "table": "roster",
+      "name": "Te Te Te Sahur",
+      "cells": {
+        "Brainrot": "Te Te Te Sahur",
+        "Rarity": "Mythic",
+        "Income per second": "$9.5K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Te_Te_Te_Sahur"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Rhino Helicopterino",
+      "cells": {
+        "Brainrot": "Rhino Helicopterino",
+        "Rarity": "Mythic",
+        "Income per second": "$11K",
+        "How to obtain": "Craft Machine, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rhino_Helicopterino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Magi Ribbitini",
+      "cells": {
+        "Brainrot": "Magi Ribbitini",
+        "Rarity": "Mythic",
+        "Income per second": "$11.5K",
+        "How to obtain": "Witch Fuse, machine retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Magi_Ribbitini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Tracoducotulu Delapeladustuz",
+      "cells": {
+        "Brainrot": "Tracoducotulu Delapeladustuz",
+        "Rarity": "Mythic",
+        "Income per second": "$12K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Tracoducotulu_Delapeladustuz"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Jingle Jingle Sahur",
+      "cells": {
+        "Brainrot": "Jingle Jingle Sahur",
+        "Rarity": "Mythic",
+        "Income per second": "$12.25K",
+        "How to obtain": "Santa's Fuse, machine retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Jingle_Jingle_Sahur"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Los Noobinis",
+      "cells": {
+        "Brainrot": "Los Noobinis",
+        "Rarity": "Mythic",
+        "Income per second": "$12.5K",
+        "How to obtain": "RNG Machine"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Los_Noobinis"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Cachorrito Melonito",
+      "cells": {
+        "Brainrot": "Cachorrito Melonito",
+        "Rarity": "Mythic",
+        "Income per second": "$13K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Cachorrito_Melonito"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Spongini Quackini",
+      "cells": {
+        "Brainrot": "Spongini Quackini",
+        "Rarity": "Mythic",
+        "Income per second": "$13K",
+        "How to obtain": "Fuse Machine, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Spongini_Quackini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Carloo",
+      "cells": {
+        "Brainrot": "Carloo",
+        "Rarity": "Mythic",
+        "Income per second": "$13.5K",
+        "How to obtain": "Admin Lucky Block"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Admin Abuse window",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Carloo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Bee Loco",
+      "cells": {
+        "Brainrot": "Bee Loco",
+        "Rarity": "Mythic",
+        "Income per second": "$13.5K",
+        "How to obtain": "Cyber Craft Machine, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Bee_Loco"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Harpuccino",
+      "cells": {
+        "Brainrot": "Harpuccino",
+        "Rarity": "Mythic",
+        "Income per second": "$14K",
+        "How to obtain": "Divine Fuse, machine retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Harpuccino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Carrotini Brainini",
+      "cells": {
+        "Brainrot": "Carrotini Brainini",
+        "Rarity": "Mythic",
+        "Income per second": "$15K",
+        "How to obtain": "Mythic Lucky Block"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Carrotini_Brainini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Cocoteddy",
+      "cells": {
+        "Brainrot": "Cocoteddy",
+        "Rarity": "Mythic",
+        "Income per second": "$15K",
+        "How to obtain": "Summer Fuse, machine retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Cocoteddy"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Centrucci Nuclucci",
+      "cells": {
+        "Brainrot": "Centrucci Nuclucci",
+        "Rarity": "Mythic",
+        "Income per second": "$15.5K",
+        "How to obtain": "Brainrot Trader, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Centrucci_Nuclucci"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "The source flags it as due to move up to Secret."
+    },
+    {
+      "table": "roster",
+      "name": "Toiletto Focaccino",
+      "cells": {
+        "Brainrot": "Toiletto Focaccino",
+        "Rarity": "Mythic",
+        "Income per second": "$16K",
+        "How to obtain": "Red Carpet spawn or RNG Machine"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Toiletto_Focaccino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Jacko Spaventosa",
+      "cells": {
+        "Brainrot": "Jacko Spaventosa",
+        "Rarity": "Mythic",
+        "Income per second": "$16.25K",
+        "How to obtain": "Witch Fuse, machine retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Jacko_Spaventosa"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Bananito Bandito",
+      "cells": {
+        "Brainrot": "Bananito Bandito",
+        "Rarity": "Mythic",
+        "Income per second": "$16.5K",
+        "How to obtain": "Mythic Lucky Block"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Bananito_Bandito"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Tree Tree Tree Sahur",
+      "cells": {
+        "Brainrot": "Tree Tree Tree Sahur",
+        "Rarity": "Mythic",
+        "Income per second": "$17K",
+        "How to obtain": "Santa's Fuse, machine retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Tree_Tree_Tree_Sahur"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Fizzy Soda",
+      "cells": {
+        "Brainrot": "Fizzy Soda",
+        "Rarity": "Mythic",
+        "Income per second": "$17.25K",
+        "How to obtain": "Fuse Machine, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Fizzy_Soda"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Berenjello Angello",
+      "cells": {
+        "Brainrot": "Berenjello Angello",
+        "Rarity": "Mythic",
+        "Income per second": "$18K",
+        "How to obtain": "Divine Fuse, machine retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Berenjello_Angello"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Bucketoro",
+      "cells": {
+        "Brainrot": "Bucketoro",
+        "Rarity": "Mythic",
+        "Income per second": "$18.25K",
+        "How to obtain": "Summer Fuse, machine retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Bucketoro"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Orbi Mochi",
+      "cells": {
+        "Brainrot": "Orbi Mochi",
+        "Rarity": "Mythic",
+        "Income per second": "$18.5K",
+        "How to obtain": "Cyber Craft Machine, retired"
+      },
+      "classification": "Mythic",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Orbi_Mochi"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Tic Tic Ribbit",
+      "cells": {
+        "Brainrot": "Tic Tic Ribbit",
+        "Rarity": "Mythic",
+        "Income per second": "$18.75K",
+        "How to obtain": "RNG Machine"
+      },
+      "classification": "Mythic",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Tic_Tic_Ribbit"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Mythic"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Top of the Mythic tier by income."
+    },
+    {
+      "table": "roster",
+      "name": "Cocofanto Elefanto",
+      "cells": {
+        "Brainrot": "Cocofanto Elefanto",
+        "Rarity": "Brainrot God",
+        "Income per second": "$19K",
+        "How to obtain": "Red Carpet spawn or the Backrooms Event"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Cocofanto_Elefanto"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Buffed from 17.5K so it would still outearn the top Mythic."
+    },
+    {
+      "table": "roster",
+      "name": "Girafa Celestre",
+      "cells": {
+        "Brainrot": "Girafa Celestre",
+        "Rarity": "Brainrot God",
+        "Income per second": "$20K",
+        "How to obtain": "Red Carpet spawn or the Backrooms Event"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Girafa_Celestre"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Gattatino Nyanino",
+      "cells": {
+        "Brainrot": "Gattatino Nyanino",
+        "Rarity": "Brainrot God",
+        "Income per second": "$35K",
+        "How to obtain": "Admin Abuse, the Backrooms Event or the RNG Machine"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Admin Abuse window for that route",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Gattatino_Nyanino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Gattatino Neonino",
+      "cells": {
+        "Brainrot": "Gattatino Neonino",
+        "Rarity": "Brainrot God",
+        "Income per second": "$35K",
+        "How to obtain": "Replaced by Gattatino Nyanino during the Admin Abuse War"
+      },
+      "classification": "Brainrot God",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Gattatino_Neonino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Superseded rather than retired, and still held by players who got it."
+    },
+    {
+      "table": "roster",
+      "name": "Chihuanini Taconini",
+      "cells": {
+        "Brainrot": "Chihuanini Taconini",
+        "Rarity": "Brainrot God",
+        "Income per second": "$45K",
+        "How to obtain": "Taco Lucky Block"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Admin Abuse window",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Chihuanini_Taconini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Tralalero Tralala",
+      "cells": {
+        "Brainrot": "Tralalero Tralala",
+        "Rarity": "Brainrot God",
+        "Income per second": "$50K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Tralalero_Tralala"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Matteo",
+      "cells": {
+        "Brainrot": "Matteo",
+        "Rarity": "Brainrot God",
+        "Income per second": "$50K",
+        "How to obtain": "Admin Abuse, the Backrooms Event or the RNG Machine"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Matteo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Los Crocodillitos",
+      "cells": {
+        "Brainrot": "Los Crocodillitos",
+        "Rarity": "Brainrot God",
+        "Income per second": "$55K",
+        "How to obtain": "Rituals"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Los_Crocodillitos"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Odin Din Din Dun",
+      "cells": {
+        "Brainrot": "Odin Din Din Dun",
+        "Rarity": "Brainrot God",
+        "Income per second": "$75K",
+        "How to obtain": "Red Carpet spawn or the Backrooms Event"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Odin_Din_Din_Dun"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Statutino Libertino",
+      "cells": {
+        "Brainrot": "Statutino Libertino",
+        "Rarity": "Brainrot God",
+        "Income per second": "$75K",
+        "How to obtain": "Replaced by Unclito Samito"
+      },
+      "classification": "Brainrot God",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Statutino_Libertino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Pulled over a copyright concern and replaced."
+    },
+    {
+      "table": "roster",
+      "name": "Orcalero Orcala",
+      "cells": {
+        "Brainrot": "Orcalero Orcala",
+        "Rarity": "Brainrot God",
+        "Income per second": "$100K",
+        "How to obtain": "Brainrot God Lucky Block or the Fishing Event"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Orcalero_Orcala"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Piccione Macchina",
+      "cells": {
+        "Brainrot": "Piccione Macchina",
+        "Rarity": "Brainrot God",
+        "Income per second": "$225K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Piccione_Macchina"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Bombardini Tortinii",
+      "cells": {
+        "Brainrot": "Bombardini Tortinii",
+        "Rarity": "Brainrot God",
+        "Income per second": "$225K",
+        "How to obtain": "Fat Sammy or the RNG Machine"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Bombardini_Tortinii"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Beavo Potto",
+      "cells": {
+        "Brainrot": "Beavo Potto",
+        "Rarity": "Brainrot God",
+        "Income per second": "$315K",
+        "How to obtain": "Bee Lucky Block"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Beavo_Potto"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Update_Log%2FUpdate_63"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Added in the most recent update."
+    },
+    {
+      "table": "roster",
+      "name": "Dumborino Miracello",
+      "cells": {
+        "Brainrot": "Dumborino Miracello",
+        "Rarity": "Brainrot God",
+        "Income per second": "$315K",
+        "How to obtain": "Divine Fuse Machine, retired"
+      },
+      "classification": "Brainrot God",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Dumborino_Miracello"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Tenini Ballini",
+      "cells": {
+        "Brainrot": "Tenini Ballini",
+        "Rarity": "Brainrot God",
+        "Income per second": "$320K",
+        "How to obtain": "Merchandise code"
+      },
+      "classification": "Brainrot God",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Third party merchandise purchase",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Tenini_Ballini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Pretzo Robo",
+      "cells": {
+        "Brainrot": "Pretzo Robo",
+        "Rarity": "Brainrot God",
+        "Income per second": "$320K",
+        "How to obtain": "Cyber Craft Machine, retired"
+      },
+      "classification": "Brainrot God",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Pretzo_Robo"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Brainrot_God"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Outearns the cheapest Secret."
+    },
+    {
+      "table": "roster",
+      "name": "Jackorilla",
+      "cells": {
+        "Brainrot": "Jackorilla",
+        "Rarity": "Secret",
+        "Income per second": "$315K",
+        "How to obtain": "Spooky Lucky Block, event ended"
+      },
+      "classification": "Secret",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Jackorilla"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Lowest income in the Secret tier and the boundary case against Brainrot God."
+    },
+    {
+      "table": "roster",
+      "name": "La Vacca Saturno Saturnita",
+      "cells": {
+        "Brainrot": "La Vacca Saturno Saturnita",
+        "Rarity": "Secret",
+        "Income per second": "$325K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/La_Vacca_Saturno_Saturnita"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "The most common Secret, and still rare without server luck."
+    },
+    {
+      "table": "roster",
+      "name": "Blackhole Goat",
+      "cells": {
+        "Brainrot": "Blackhole Goat",
+        "Rarity": "Secret",
+        "Income per second": "$400K",
+        "How to obtain": "Lucky Block"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Blackhole_Goat"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Extinct Tralalero",
+      "cells": {
+        "Brainrot": "Extinct Tralalero",
+        "Rarity": "Secret",
+        "Income per second": "$450K",
+        "How to obtain": "Fishing Event"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Extinct_Tralalero"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Los Tralaleritos",
+      "cells": {
+        "Brainrot": "Los Tralaleritos",
+        "Rarity": "Secret",
+        "Income per second": "$500K",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Los_Tralaleritos"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Honey Honey Narwhal",
+      "cells": {
+        "Brainrot": "Honey Honey Narwhal",
+        "Rarity": "Secret",
+        "Income per second": "$950K",
+        "How to obtain": "Bee Lucky Block"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Honey_Honey_Narwhal"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Update_Log%2FUpdate_63"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Added in the most recent update."
+    },
+    {
+      "table": "roster",
+      "name": "Graipuss Medussi",
+      "cells": {
+        "Brainrot": "Graipuss Medussi",
+        "Rarity": "Secret",
+        "Income per second": "$1M",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Graipuss_Medussi"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Tung Tung Tung Sahur",
+      "cells": {
+        "Brainrot": "Tung Tung Tung Sahur",
+        "Rarity": "Secret",
+        "Income per second": "$1.5M",
+        "How to obtain": "Removed from the game"
+      },
+      "classification": "Secret",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Tung_Tung_Tung_Sahur"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Started as a Rare, was pulled, and is recorded at Secret. Subject of a public licensing dispute."
+    },
+    {
+      "table": "roster",
+      "name": "Rosatops Triceratino",
+      "cells": {
+        "Brainrot": "Rosatops Triceratino",
+        "Rarity": "Secret",
+        "Income per second": "$3.1M",
+        "How to obtain": "Bee Lucky Block"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rosatops_Triceratino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Update_Log%2FUpdate_63"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Added in the most recent update."
+    },
+    {
+      "table": "roster",
+      "name": "Chicleteira Bicicleteira",
+      "cells": {
+        "Brainrot": "Chicleteira Bicicleteira",
+        "Rarity": "Secret",
+        "Income per second": "$3.5M",
+        "How to obtain": "Red Carpet spawn or Sammy's Base"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Chicleteira_Bicicleteira"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Syrup Samurai",
+      "cells": {
+        "Brainrot": "Syrup Samurai",
+        "Rarity": "Secret",
+        "Income per second": "$6.7M",
+        "How to obtain": "Bee Lucky Block"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Syrup_Samurai"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Update_Log%2FUpdate_63"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Added in the most recent update."
+    },
+    {
+      "table": "roster",
+      "name": "La Grande Combinasion",
+      "cells": {
+        "Brainrot": "La Grande Combinasion",
+        "Rarity": "Secret",
+        "Income per second": "$10M",
+        "How to obtain": "Fuse Machine and Lucky Block routes"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/La_Grande_Combinasion"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Nuclearo Dinossauro",
+      "cells": {
+        "Brainrot": "Nuclearo Dinossauro",
+        "Rarity": "Secret",
+        "Income per second": "$15M",
+        "How to obtain": "Red Carpet spawn"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Nuclearo_Dinossauro"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Los Combinasionas",
+      "cells": {
+        "Brainrot": "Los Combinasionas",
+        "Rarity": "Secret",
+        "Income per second": "$15M",
+        "How to obtain": "Los Lucky Blocks"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Admin Abuse window",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Los_Combinasionas"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Motorino Bumbino",
+      "cells": {
+        "Brainrot": "Motorino Bumbino",
+        "Rarity": "Secret",
+        "Income per second": "$16.5M",
+        "How to obtain": "Bee Lucky Block"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Motorino_Bumbino"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Update_Log%2FUpdate_63"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Added in the most recent update."
+    },
+    {
+      "table": "roster",
+      "name": "La Extinct Grande",
+      "cells": {
+        "Brainrot": "La Extinct Grande",
+        "Rarity": "Secret",
+        "Income per second": "$23.5M",
+        "How to obtain": "Limited quantity release, closed"
+      },
+      "classification": "Secret",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/La_Extinct_Grande"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Supply was capped by the developer rather than by spawn odds."
+    },
+    {
+      "table": "roster",
+      "name": "Los Bros",
+      "cells": {
+        "Brainrot": "Los Bros",
+        "Rarity": "Secret",
+        "Income per second": "$24M",
+        "How to obtain": "Craft Machine, retired"
+      },
+      "classification": "Secret",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Los_Bros"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Esok Sekolah",
+      "cells": {
+        "Brainrot": "Esok Sekolah",
+        "Rarity": "Secret",
+        "Income per second": "$30M",
+        "How to obtain": "Secret Lucky Block"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Esok_Sekolah"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Garama and Madundung",
+      "cells": {
+        "Brainrot": "Garama and Madundung",
+        "Rarity": "Secret",
+        "Income per second": "$50M",
+        "How to obtain": "RNG Machine or Red Carpet spawn"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Garama_and_Madundung"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": ""
+    },
+    {
+      "table": "roster",
+      "name": "Pop Pop Petalini",
+      "cells": {
+        "Brainrot": "Pop Pop Petalini",
+        "Rarity": "Secret",
+        "Income per second": "$62.5M",
+        "How to obtain": "Bee Lucky Block"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Pop_Pop_Petalini"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Update_Log%2FUpdate_63"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Added in the most recent update."
+    },
+    {
+      "table": "roster",
+      "name": "Orchidox",
+      "cells": {
+        "Brainrot": "Orchidox",
+        "Rarity": "Secret",
+        "Income per second": "$155M",
+        "How to obtain": "Bee Lucky Block"
+      },
+      "classification": "Secret",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Orchidox"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Update_Log%2FUpdate_63"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Added in the most recent update."
+    },
+    {
+      "table": "roster",
+      "name": "Griffin",
+      "cells": {
+        "Brainrot": "Griffin",
+        "Rarity": "Secret",
+        "Income per second": "$400M",
+        "How to obtain": "Divine Fuse, machine retired"
+      },
+      "classification": "Secret",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Griffin"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Secret"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Highest income recorded below the OG tier."
+    },
+    {
+      "table": "roster",
+      "name": "Skibidi Toilet",
+      "cells": {
+        "Brainrot": "Skibidi Toilet",
+        "Rarity": "OG",
+        "Income per second": "$450M",
+        "How to obtain": "Red Carpet spawn at extremely low odds"
+      },
+      "classification": "OG",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Skibidi_Toilet"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/OG"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rarities"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Released only after a licensing agreement with the meme rights holder."
+    },
+    {
+      "table": "roster",
+      "name": "John Pork",
+      "cells": {
+        "Brainrot": "John Pork",
+        "Rarity": "OG",
+        "Income per second": "$500M",
+        "How to obtain": "Red Carpet spawn at extremely low odds"
+      },
+      "classification": "OG",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/John_Pork"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/OG"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rarities"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Released only after permission from the original meme creator."
+    },
+    {
+      "table": "roster",
+      "name": "Headless Horseman",
+      "cells": {
+        "Brainrot": "Headless Horseman",
+        "Rarity": "OG",
+        "Income per second": "$600M",
+        "How to obtain": "Witch Fuse, machine retired"
+      },
+      "classification": "OG",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": "2026-08-25T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Headless_Horseman"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/OG"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rarities"
+        }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "Its own page records 600M while the rarity index records 550M. The only OG with no trait attached."
+    },
+    {
+      "table": "roster",
+      "name": "Meowl",
+      "cells": {
+        "Brainrot": "Meowl",
+        "Rarity": "OG",
+        "Income per second": "$600M",
+        "How to obtain": "Red Carpet spawn at extremely low odds"
+      },
+      "classification": "OG",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Meowl"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/OG"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rarities"
+        }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "Income agrees across sources; the purchase cost does not."
+    },
+    {
+      "table": "roster",
+      "name": "Strawberry Elephant",
+      "cells": {
+        "Brainrot": "Strawberry Elephant",
+        "Rarity": "OG",
+        "Income per second": "$750M",
+        "How to obtain": "Red Carpet spawn at extremely low odds"
+      },
+      "classification": "OG",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Strawberry_Elephant"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/OG"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rarities"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "The first OG released and the most searched for rarest brainrot."
+    },
+    {
+      "table": "roster",
+      "name": "Spyder Elephant",
+      "cells": {
+        "Brainrot": "Spyder Elephant",
+        "Rarity": "OG",
+        "Income per second": "$1B",
+        "How to obtain": "Spyder Chain purchase while stocked"
+      },
+      "classification": "OG",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Robux purchase of the Spyder Chain",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Spyder_Elephant"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/OG"
+        },
+        {
+          "tier": 3,
+          "url": "https://stealabrainrot.fandom.com/wiki/Rarities"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Not present in the in game index, and untradeable unless the chain item itself changes hands."
+    }
+  ],
+  "unverified_summary": "Every row here is community documented rather than publisher confirmed. No developer channel publishes a roster, an income table or a spawn table, so no row qualifies as confirmed and every live row displays as Unverified. Income figures are the base rate before mutations and traits, which stack and can multiply a figure many times over. The Brainrot God and Secret tiers are recorded in part rather than in full, because those tiers are far larger than any published figure agrees on. Rows marked Removed are entries whose acquisition route has been retired or superseded; players who already hold them keep them.",
+  "disagreements": [
+    {
+      "item": "How many brainrots exist",
+      "source_a": "The community index counts 513, of which 499 are indexable",
+      "source_b": "One outlet says 525 or more, another says 200 or more, another says 150 or more",
+      "confirmed": "Not confirmed. No publisher channel states a total, so this page counts only what it records."
+    },
+    {
+      "item": "Size of the Secret tier",
+      "source_a": "The rarity overview says 100 or more",
+      "source_b": "The Secret tier page says 270",
+      "confirmed": "Not confirmed. The two figures sit on the same wiki and contradict each other."
+    },
+    {
+      "item": "Size of the Common tier",
+      "source_a": "The rarity overview says 11",
+      "source_b": "The Common tier page lists 12",
+      "confirmed": "Not confirmed. This page records 12 because 12 are individually documented."
+    },
+    {
+      "item": "Headless Horseman income",
+      "source_a": "Its own page records 600M per second at a cost of 600B",
+      "source_b": "The rarity overview records 550M per second at a cost of 550B",
+      "confirmed": "Not confirmed. The row is marked conflicting and carries the higher figure with the disagreement noted."
+    },
+    {
+      "item": "Meowl purchase cost",
+      "source_a": "Its own page records 650B",
+      "source_b": "The rarity overview records 600B",
+      "confirmed": "Income agrees at 600M per second. The cost does not agree and is not recorded here."
+    },
+    {
+      "item": "Sigma Boy income",
+      "source_a": "Its own page records 1.35K per second",
+      "source_b": "The tier index groups it in a band topping out at 1.3K, and one outlet reports 1,300",
+      "confirmed": "Not confirmed. The row is marked conflicting."
+    },
+    {
+      "item": "Best Mythic by income",
+      "source_a": "One outlet names Ganganzelli Trulala at 9,000 per second",
+      "source_b": "The recorded figures put Tic Tic Ribbit, Orbi Mochi, Bucketoro and Berenjello Angello above it",
+      "confirmed": "The outlet figure is out of date rather than wrong; Ganganzelli Trulala is also no longer obtainable."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "Somebody can add Spyder Elephant to your in game index for you",
+      "why_wrong": "It is not in the index at all, and it cannot be traded or stolen unless the Spyder Chain item itself changes hands. Every offer of this kind is a scam.",
+      "origin": "Trading and reselling servers, repeated by resale listings."
+    },
+    {
+      "claim": "Smurf Cat is an obtainable OG brainrot",
+      "why_wrong": "It appears only on unreleased and speculated lists, sourced from teases rather than any release. No route to it exists.",
+      "origin": "Tier list videos and speculation threads."
+    },
+    {
+      "claim": "A fixed roster total that never moves",
+      "why_wrong": "Published totals range from 150 to over 525 and none of them comes from a publisher channel. The roster changes on the weekly update cycle.",
+      "origin": "Aggregator guides copying each other without rechecking."
+    }
+  ],
+  "changes": [
+    {
+      "at": "2026-08-08T00:00:00Z",
+      "what": "Bee event and RNG Machine added, Los Traders retired"
+    },
+    {
+      "at": "2026-08-15T00:00:00Z",
+      "what": "Rebirth 19, an extra base slot and the Grief Shield gear added"
+    },
+    {
+      "at": "2026-08-22T00:00:00Z",
+      "what": "Bee Lucky Block added along with seven honey themed brainrots"
+    },
+    {
+      "at": "2026-08-25T09:00:00Z",
+      "what": "Page first published with the recorded roster, rarity split and removed archive"
+    }
+  ],
+  "next_change": {
+    "pattern": "Content lands on the weekend, on a roughly weekly cycle, and the experience page carries a scheduled event listing before each one.",
+    "watch": [
+      "The scheduled event listing on the Roblox experience page",
+      "The BRAZILIAN SPYDER group feed",
+      "The in game announcement that fires when a Brainrot God, Secret or OG spawns"
+    ]
+  }
+}

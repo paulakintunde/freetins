@@ -1,0 +1,774 @@
+{
+  "subject": "Monopoly GO Tycoon Club",
+  "slug": "monopoly-go-tycoon-club",
+  "entity_id": "1621328561",
+  "entity_url": "https://apps.apple.com/us/app/monopoly-go/id1621328561",
+  "developer": "Scopely",
+  "permalink": "/guides/monopoly-go-tycoon-club/",
+  "checked_at": "2026-08-25T08:00:00Z",
+  "content_changed_at": "2026-08-25T08:00:00Z",
+  "recheck_cadence": "Rechecked weekly against Scopely's help centre article and a live load of the official site, and again within 48 hours of a Tycoon Pass season change. Any active row that goes 14 days without a check is downgraded automatically rather than left looking current.",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77",
+      "note": "Scopely help centre, Tycoon Club article"
+    },
+    {
+      "type": "official_page",
+      "url": "https://support.monopolygo.com/article/d8710677-d2a7-4872-a103-150c50fba474",
+      "note": "Scopely help centre, Tycoon Club Refunds (Xsolla)"
+    },
+    {
+      "type": "official_page",
+      "url": "https://support.monopolygo.com/article/be779dab-6648-45d4-a1e6-ef5e6dac001a",
+      "note": "Scopely help centre, Tycoon Statistics"
+    },
+    {
+      "type": "official_page",
+      "url": "https://www.monopolygo.com/",
+      "note": "Official MONOPOLY GO! site, the only entry point Scopely names"
+    },
+    {
+      "type": "official_page",
+      "url": "https://apps.apple.com/us/app/monopoly-go/id1621328561",
+      "note": "Official App Store listing, seller Scopely, Inc."
+    },
+    {
+      "type": "twitter",
+      "url": "https://x.com/MonopolyGO",
+      "note": "Official X account, where web shop changes are announced"
+    }
+  ],
+  "tables": {
+    "eligibility": {
+      "caption": "What Scopely requires before a Tycoon Club invitation is issued",
+      "columns": [
+        "Requirement",
+        "The rule",
+        "Where the rule comes from"
+      ],
+      "classification_column": "Where the rule comes from"
+    },
+    "benefits": {
+      "caption": "Every Tycoon Club benefit, what it costs and whether it is worth opening",
+      "columns": [
+        "Benefit",
+        "What you actually get",
+        "Costs money",
+        "Limits",
+        "Verdict"
+      ],
+      "classification_column": "Verdict"
+    },
+    "issues": {
+      "caption": "Known Tycoon Club access problems and where each one stands",
+      "columns": [
+        "Issue",
+        "Who it hits",
+        "Current status",
+        "What to do instead"
+      ],
+      "classification_column": "Current status"
+    }
+  },
+  "rows": [
+    {
+      "table": "eligibility",
+      "name": "Board level 11",
+      "cells": {
+        "Requirement": "Board level 11",
+        "The rule": "Your account must have reached board level 11 before an invitation is issued.",
+        "Where the rule comes from": "Scopely"
+      },
+      "classification": "Scopely",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/monopoly-go/tycoon-club"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Scopely's own help article and the highest ranking outlet agree on 11."
+    },
+    {
+      "table": "eligibility",
+      "name": "30 to 35 full days of activity",
+      "cells": {
+        "Requirement": "30 to 35 full days of activity",
+        "The rule": "Scopely states players must have been active for 30 to 35 full days. Outlets publish the top of that range as a flat 35.",
+        "Where the rule comes from": "Scopely"
+      },
+      "classification": "Scopely",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/monopoly-go/tycoon-club"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Scopely gives a range. Treat 35 as the safe number to plan against."
+    },
+    {
+      "table": "eligibility",
+      "name": "An invitation issued in game",
+      "cells": {
+        "Requirement": "An invitation issued in game",
+        "The rule": "Access is invitation only. Scopely issues it once the thresholds are met. Outlets report that members cannot invite anybody else, and Scopely names no member invite mechanism.",
+        "Where the rule comes from": "Scopely"
+      },
+      "classification": "Scopely",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/monopoly-go/tycoon-club"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The member to member invite ban is outlet reporting. Scopely simply describes no such feature."
+    },
+    {
+      "table": "eligibility",
+      "name": "Any spending at all",
+      "cells": {
+        "Requirement": "Any spending at all",
+        "The rule": "None. Scopely lists activity thresholds only, and names no purchase requirement for the invitation or for joining.",
+        "Where the rule comes from": "Scopely by omission"
+      },
+      "classification": "Scopely by omission",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.thegamer.com/monopoly-go-tycoon-club-explained/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "This is an absence claim. Scopely does not say membership is free in those words; it lists two conditions and spending is not among them."
+    },
+    {
+      "table": "eligibility",
+      "name": "A sign-in method for the web club",
+      "cells": {
+        "Requirement": "A sign-in method for the web club",
+        "The rule": "Scopely's help banner says to log in with Facebook or a MONOPOLY GO! account. The signed-out login panel on the official site offered Facebook only when we loaded it.",
+        "Where the rule comes from": "Contested"
+      },
+      "classification": "Contested",
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "A Facebook account linked to the game",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 0,
+          "url": "https://www.monopolygo.com/"
+        },
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/"
+        }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "We hold no invited account, so we could not test whether a MONOPOLY GO! account option appears for an eligible player."
+    },
+    {
+      "table": "eligibility",
+      "name": "Board level 10",
+      "cells": {
+        "Requirement": "Board level 10",
+        "The rule": "Superseded. Several guides still publish board level 10 as the threshold. Scopely's current article says 11.",
+        "Where the rule comes from": "Outlets only"
+      },
+      "classification": "Outlets only",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/monopoly-go/tycoon-club"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The date the threshold moved is not recorded anywhere we could find, so ended_at is left empty rather than guessed."
+    },
+    {
+      "table": "benefits",
+      "name": "Tycoon Club Store",
+      "cells": {
+        "Benefit": "Tycoon Club Store",
+        "What you actually get": "The same offers as the in-game shop, with extra value added on the web version.",
+        "Costs money": "Yes",
+        "Limits": "Some in-game offers are not available on the web. Each offer has a fixed number of purchases shared between the app and the web, so buying in one place removes it from the other.",
+        "Verdict": "Worth it only if you were buying that offer anyway"
+      },
+      "classification": "Paid",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Tycoon Club membership",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.thegamer.com/monopoly-go-tycoon-club-explained/"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Scopely marks the availability caveat with an asterisk in its own article."
+    },
+    {
+      "table": "benefits",
+      "name": "Loyalty Points",
+      "cells": {
+        "Benefit": "Loyalty Points",
+        "What you actually get": "Points on every Tycoon Club Store purchase, tied to the money spent rather than the number of items in the offer.",
+        "Costs money": "Yes",
+        "Limits": "Not earned on in-game shop purchases. Buying a Pick One offer with Buy All pays points on the total spend, not on each price point inside it.",
+        "Verdict": "Purchase-gated, with no way to earn them by playing"
+      },
+      "classification": "Paid",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Tycoon Club membership and a web purchase",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.thegamer.com/monopoly-go-tycoon-club-explained/"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "This is the single fact most guides get wrong by implying points accrue from play."
+    },
+    {
+      "table": "benefits",
+      "name": "Benefits section",
+      "cells": {
+        "Benefit": "Benefits section",
+        "What you actually get": "Bundles bought with Loyalty Points, delivered straight into the game when you next open it.",
+        "Costs money": "Indirectly, because the points came from a purchase",
+        "Limits": "Each bundle can be redeemed only a set number of times.",
+        "Verdict": "The only place Loyalty Points convert into anything"
+      },
+      "classification": "Paid",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Loyalty Points",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/monopoly-go/tycoon-club"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "benefits",
+      "name": "Milestone track and Tycoon Pass",
+      "cells": {
+        "Benefit": "Milestone track and Tycoon Pass",
+        "What you actually get": "A progression track that advances only when you spend Loyalty Points on another benefit. You cannot spend points on the track itself.",
+        "Costs money": "Indirectly, because the points came from a purchase",
+        "Limits": "Time-limited. Points stored in a track reset to zero when a new milestone starts, and a three day break runs between one pass ending and the next beginning.",
+        "Verdict": "Time-limited, so spend before a track closes rather than banking"
+      },
+      "classification": "Time-limited",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Loyalty Points",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/monopoly-go/tycoon-club"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The reward list inside a given track is season specific and is not recorded here, because last season's list is the most common thing competitors publish as current."
+    },
+    {
+      "table": "benefits",
+      "name": "Tycoon Club Store free gift",
+      "cells": {
+        "Benefit": "Tycoon Club Store free gift",
+        "What you actually get": "A free gift inside the web Store, separate from the free gift in the game.",
+        "Costs money": "No",
+        "Limits": "Not synchronised with the in-game free gift, so both can be claimed.",
+        "Verdict": "Free, and the one reason to open the club without spending"
+      },
+      "classification": "Free",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Tycoon Club membership",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/monopoly-go-how-access-get-back-tycoon-club-android-button-website/"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Scopely states the two gifts are not in sync and both can be enjoyed."
+    },
+    {
+      "table": "benefits",
+      "name": "Profile card and achievements",
+      "cells": {
+        "Benefit": "Profile card and achievements",
+        "What you actually get": "An upgraded Tycoon Card carrying gameplay facts, plus achievements that unlock badges for it.",
+        "Costs money": "No",
+        "Limits": "Three achievements can be displayed at a time. Progress made before the feature unlocked does not count towards them.",
+        "Verdict": "Free and cosmetic, with no effect on play"
+      },
+      "classification": "Free",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Tycoon Club membership",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/monopoly-go/tycoon-club"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "benefits",
+      "name": "Tycoon Stats",
+      "cells": {
+        "Benefit": "Tycoon Stats",
+        "What you actually get": "Statistics about your own play, with a share option for social media.",
+        "Costs money": "No",
+        "Limits": "Usually refreshed once a month and shows the previous month. A new account may see nothing until it has generated enough data.",
+        "Verdict": "Free and informational, with nothing to claim"
+      },
+      "classification": "Free",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Tycoon Club membership",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/be779dab-6648-45d4-a1e6-ef5e6dac001a"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/monopoly-go/tycoon-club"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "benefits",
+      "name": "First-time Purchase Bonus",
+      "cells": {
+        "Benefit": "First-time Purchase Bonus",
+        "What you actually get": "Nothing extra. The bonus is available once per price point across the game and the web together.",
+        "Costs money": "Yes",
+        "Limits": "Buying it in one storefront removes it from the other, the Tycoon Club included. Purchases carrying Loyalty Points are not First Purchase bonuses.",
+        "Verdict": "A shared cap dressed as a perk, so read it before buying twice"
+      },
+      "classification": "Paid",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.thegamer.com/monopoly-go-tycoon-club-explained/"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Scopely answers this directly because players buy it twice and expect it twice."
+    },
+    {
+      "table": "benefits",
+      "name": "Daily Wheel",
+      "cells": {
+        "Benefit": "Daily Wheel",
+        "What you actually get": "A free spin reported at the foot of the Benefits tab.",
+        "Costs money": "No",
+        "Limits": "Reported to reset every 24 hours.",
+        "Verdict": "Expected, on outlet reporting only, and absent from Scopely's current article"
+      },
+      "classification": "Free",
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "Tycoon Club membership",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/monopoly-go/tycoon-club"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/monopoly-go-how-access-get-back-tycoon-club-android-button-website/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Two independent outlets describe it and Scopely's current Tycoon Club article never mentions it. It stays Unverified rather than being presented as a current benefit."
+    },
+    {
+      "table": "issues",
+      "name": "Tycoon Club button missing from the in-game menu",
+      "cells": {
+        "Issue": "Tycoon Club button missing from the in-game menu",
+        "Who it hits": "First reported on Android. Scopely's current wording names no platform at all.",
+        "Current status": "Open",
+        "What to do instead": "Open the official site in a phone browser and sign in there. The club account keeps working while the button does not."
+      },
+      "classification": "Open",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Tycoon Club membership",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/monopoly-go-missing-tycoon-club-button-facebook-fix-dev-comment/"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Scopely runs a standing site-wide banner on its help centre telling players who cannot see the button to use the web instead. A standing banner is the strongest available evidence that the problem has not been closed."
+    },
+    {
+      "table": "issues",
+      "name": "The /benefits address people were told to use",
+      "cells": {
+        "Issue": "The /benefits address people were told to use",
+        "Who it hits": "Anyone following a guide written against the older web layout.",
+        "Current status": "Removed",
+        "What to do instead": "Go to the site root instead. Scopely names only the root address."
+      },
+      "classification": "Removed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 0,
+          "url": "https://www.monopolygo.com/benefits"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/monopoly-go-how-access-get-back-tycoon-club-android-button-website/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Loaded signed out, the address redirects to the site root and the left menu carries no Benefits tab. We hold no invited account, so we could not test whether it resolves once signed in."
+    },
+    {
+      "table": "issues",
+      "name": "Home screen shortcut will not stay signed in on iOS",
+      "cells": {
+        "Issue": "Home screen shortcut will not stay signed in on iOS",
+        "Who it hits": "iPhone and iPad running iOS 16 or earlier.",
+        "Current status": "Open with a workaround",
+        "What to do instead": "Update the device, or open the club in Safari rather than through the home screen shortcut."
+      },
+      "classification": "Open with a workaround",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Tycoon Club membership",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Scopely states it directly. No independent outlet covers it, so it stays Reported rather than Confirmed."
+    },
+    {
+      "table": "issues",
+      "name": "Tycoon Pass disappears between seasons",
+      "cells": {
+        "Issue": "Tycoon Pass disappears between seasons",
+        "Who it hits": "Every member, at the end of each pass.",
+        "Current status": "Working as designed",
+        "What to do instead": "Wait it out. Spend any stored Loyalty Points before the old track closes, because the stored total resets."
+      },
+      "classification": "Working as designed",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Tycoon Club membership",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/e2f83c11-234c-4ae3-a61b-97d38d0daf77"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Scopely states a three day break between passes. No independent outlet records the gap, so it stays Reported."
+    },
+    {
+      "table": "issues",
+      "name": "Invitation never arrives after clearing both thresholds",
+      "cells": {
+        "Issue": "Invitation never arrives after clearing both thresholds",
+        "Who it hits": "Players who meet board level 11 and the days played rule.",
+        "Current status": "Unverified",
+        "What to do instead": "Keep playing, then contact Scopely through the in-game customer service feature if it persists."
+      },
+      "classification": "Unverified",
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/monopoly-go/tycoon-club"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/platforms/mobile-gaming/monopoly-go-tycoon-club/"
+        }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "Outlets describe a staged rollout in which eligible accounts are invited at different times. Scopely publishes no queue, no timeframe and no confirmation that a stage system exists."
+    },
+    {
+      "table": "issues",
+      "name": "Refunding a Tycoon Club purchase",
+      "cells": {
+        "Issue": "Refunding a Tycoon Club purchase",
+        "Who it hits": "Anyone who bought through the web Store rather than the app.",
+        "Current status": "Open outside the app stores",
+        "What to do instead": "Fetch the receipt from your Xsolla account, check the transaction number is visible, then contact Scopely support with a screenshot."
+      },
+      "classification": "Open outside the app stores",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "An Xsolla account and the purchase receipt",
+      "added_at": "2026-08-25T08:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://support.monopolygo.com/article/d8710677-d2a7-4872-a103-150c50fba474"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Web purchases are processed by Xsolla, so the app store refund route does not apply. No independent outlet covers this, so it stays Reported."
+    }
+  ],
+  "unverified_summary": "We hold no invited Tycoon Club account, so nothing behind the sign-in was observed directly: the post-login menu labels, the Daily Wheel, the current Tycoon Pass reward list and the live Loyalty Point prices are all unverified here and none of them is described as current. Scopely's help banner says the web club accepts a Facebook or a MONOPOLY GO! account, while the signed-out login panel we loaded offered Facebook only, and we could not resolve that. Whether the invitation is still gated at all is contested: an official social post announced the club was open to everyone, and Scopely's more recent help article still states an invitation and two thresholds. Region availability of the web Store is untested, because Xsolla payment coverage varies by country and Scopely publishes no country list.",
+  "disagreements": [
+    {
+      "item": "Board level threshold",
+      "source_a": "Scopely help centre: board level 11",
+      "source_b": "Pocket Tactics and GamesRadar: board level 10",
+      "confirmed": "Board level 11. Scopely's own article is the more recent statement, so the older guides are recorded as expired."
+    },
+    {
+      "item": "Days played threshold",
+      "source_a": "Scopely help centre: 30 to 35 full days",
+      "source_b": "PCGamesN and most outlets: a flat 35 full days",
+      "confirmed": "Scopely states a range. Plan against 35, because that is the top of it."
+    },
+    {
+      "item": "Whether the club is open to everyone",
+      "source_a": "An official MONOPOLY GO! social post announcing the Tycoon Club was open to all players",
+      "source_b": "Scopely's help centre article, which still states an invitation plus two thresholds",
+      "confirmed": "Not resolved. The help article is the more recent publisher statement, so this page follows the thresholds."
+    },
+    {
+      "item": "Which sign-in methods the web club accepts",
+      "source_a": "Scopely help banner: Facebook or your MONOPOLY GO! account",
+      "source_b": "The signed-out login panel on the official site, which offered Facebook only",
+      "confirmed": "Not resolved. We could not test the panel behind an eligible account."
+    },
+    {
+      "item": "Which address opens the club",
+      "source_a": "Outlets: the /benefits page on the official domain",
+      "source_b": "Scopely: the site root, reached from a copyable link in the in-game menu",
+      "confirmed": "The site root. The /benefits address redirected to it when we loaded it signed out."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "Tycoon Club invite links, invite codes and paid places on an invite list",
+      "why_wrong": "Scopely issues the invitation in game against account thresholds. No link grants membership, and members have no mechanism to invite anyone.",
+      "origin": "Boosting shops and marketplace blogs competing for the search term."
+    },
+    {
+      "claim": "Free Loyalty Point generators",
+      "why_wrong": "Loyalty Points are minted only by a purchase in the Tycoon Club Store. Scopely describes no other issuance path, so there is nothing for a generator to hook into.",
+      "origin": "Generator pages and video descriptions recycled across aggregators."
+    },
+    {
+      "claim": "Lookalike domains presented as the Tycoon Club login",
+      "why_wrong": "Scopely names one entry point, its own domain, reached either from the copyable link in the in-game menu or by typing the site root. No other domain is listed as an official login anywhere in the help centre.",
+      "origin": "Exact-match domain registrations built to rank on the club's name."
+    }
+  ],
+  "changes": [
+    {
+      "at": "2026-08-25T08:00:00Z",
+      "what": "Page first published from Scopely's help centre articles and a live load of the official site"
+    },
+    {
+      "at": "2026-08-25T08:00:00Z",
+      "what": "Board level 10 recorded as Expired after Scopely's article stated board level 11"
+    },
+    {
+      "at": "2026-08-25T08:00:00Z",
+      "what": "The /benefits address recorded as Removed after it redirected to the site root on a signed-out load"
+    },
+    {
+      "at": "2026-08-25T08:00:00Z",
+      "what": "Daily Wheel recorded as Unverified because Scopely's current article does not mention it"
+    }
+  ],
+  "next_change": {
+    "pattern": "The benefit list turns over on the Tycoon Pass season cycle rather than on a calendar date, with a three day break between one pass closing and the next opening, so the reward list is the part most likely to be out of date on any page that names it.",
+    "watch": [
+      "Scopely help centre Tycoon Club article",
+      "The site-wide banner on the MONOPOLY GO! help centre",
+      "The official MONOPOLY GO! X account, where web shop changes are announced"
+    ]
+  }
+}

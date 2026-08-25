@@ -1,0 +1,682 @@
+{
+  "subject": "Steal a Brainrot",
+  "slug": "steal-a-brainrot-codes",
+  "entity_id": "109983668079237",
+  "entity_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
+  "developer": "BRAZILIAN SPYDER",
+  "permalink": "/blog/steal-a-brainrot-codes/",
+  "checked_at": "2026-08-25T09:00:00Z",
+  "content_changed_at": "2026-08-25T09:00:00Z",
+  "recheck_cadence": "Rechecked after every Saturday update Admin Abuse and every Taco Tuesday Admin Abuse, and at least twice a week in between.",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
+      "note": "Official Steal a Brainrot experience page, place ID 109983668079237"
+    },
+    {
+      "type": "official_group",
+      "url": "https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER",
+      "note": "BRAZILIAN SPYDER, the verified Roblox community that publishes the experience"
+    },
+    {
+      "type": "developer_profile",
+      "url": "https://www.roblox.com/users/2678001507/profile",
+      "note": "SpyderSammy, the group owner who hosts the Admin Abuse events where codes drop"
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Every Steal a Brainrot code on record, live and dead",
+      "columns": ["Code", "Reward", "Requirements"]
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "BESTBRAINROTEVER",
+      "cells": {
+        "Code": "BESTBRAINROTEVER",
+        "Reward": "Spawns the Secret brainrot La Vacca Saturno Saturnita on the red carpet",
+        "Requirements": "About 80M cash banked before you redeem, and you must be stood at the red carpet tunnel to buy it before another player does"
+      },
+      "status": "active",
+      "case_sensitive": true,
+      "requirements": "80M cash in hand; stand at the red carpet tunnel entrance before redeeming",
+      "added_at": "2026-06-13T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" },
+        { "tier": 2, "url": "https://beebom.com/steal-a-brainrot-codes/" },
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Two outlets and the community wiki still list this as live, and one of those outlets recorded a fresh recheck. No developer channel states it, so it cannot be marked Active here. The reward spawns on the red carpet rather than landing in your inventory, and stock is capped, so it can be dead without any tracker noticing."
+    },
+    {
+      "table": "codes",
+      "name": "(unique code supplied with a licensed plush)",
+      "cells": {
+        "Code": "(unique code supplied with a licensed plush)",
+        "Reward": "Rolls one of a rotating set: 2x Luck, 4x Luck, Pineaplino, Lazy Ducky, Tenini Ballini, Globa Steppa, Rico Dinero, Polaroidini, Grabatron, Pancake and Syrup or Arcadragon",
+        "Requirements": "You bought the physical plush. The string is generated per buyer, single use, and cannot be shared"
+      },
+      "status": "active",
+      "case_sensitive": true,
+      "requirements": "Proof of plush purchase; one redemption per generated string",
+      "added_at": "2026-06-13T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://beebom.com/steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "This is the only redemption route that is reliably open. There is no public string to copy: each buyer gets their own. Recorded as a row because it is the honest answer to the question the head term asks."
+    },
+    {
+      "table": "codes",
+      "name": "(unique code supplied with the Festive 67 plush)",
+      "cells": {
+        "Code": "(unique code supplied with the Festive 67 plush)",
+        "Reward": "Festive 67",
+        "Requirements": "Bought the Festive 67 plush during the run. Capped at 50,000 total redemptions and generated per buyer"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "Plush purchase during the promotion window; single use",
+      "added_at": "2025-12-13T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.pockettactics.com/steal-a-brainrot-codes" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The first code the game ever accepted, and the reason the redemption field exists at all. The community wiki files it under unavailable codes."
+    },
+    {
+      "table": "codes",
+      "name": "(unique code supplied with the Boppin Bunny plush)",
+      "cells": {
+        "Code": "(unique code supplied with the Boppin Bunny plush)",
+        "Reward": "Boppin Bunny",
+        "Requirements": "Bought the tie-in plush during the run. Generated per buyer"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "Plush purchase during the promotion window; single use",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Recorded only on the community wiki, under unavailable codes. No outlet carries it."
+    },
+    {
+      "table": "codes",
+      "name": "SATURN",
+      "cells": {
+        "Code": "SATURN",
+        "Reward": "Spawned La Vacca Saturno Saturnita on the red carpet",
+        "Requirements": "Cash banked to buy the spawn"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "Cash in hand at the red carpet",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" },
+        { "tier": 2, "url": "https://www.dexerto.com/roblox/steal-a-brainrot-codes-3388813/" }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "Two outlets render this string differently: one as SATURN and one as saturn. The community wiki records neither. Kept here in upper case because every other code the developer has issued is upper case, and flagged in the disagreement table."
+    },
+    {
+      "table": "codes",
+      "name": "ILOVEFOOD123",
+      "cells": {
+        "Code": "ILOVEFOOD123",
+        "Reward": "Kraken",
+        "Requirements": "Limited stock, exclusive drop"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Wiki marks it limited stock and exclusive."
+    },
+    {
+      "table": "codes",
+      "name": "SUMMERUPD3",
+      "cells": {
+        "Code": "SUMMERUPD3",
+        "Reward": "Rocketini Frostini at roughly 75 percent, or Frullato Framingo at roughly 25 percent",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": "2026-06-13T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "One of the few codes with a random reward split rather than a fixed item."
+    },
+    {
+      "table": "codes",
+      "name": "NEEDTHIS4CRAFT333",
+      "cells": {
+        "Code": "NEEDTHIS4CRAFT333",
+        "Reward": "Chicleteira Surfeiteira",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.dexerto.com/roblox/steal-a-brainrot-codes-3388813/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "OCTOBLOCK555",
+      "cells": {
+        "Code": "OCTOBLOCK555",
+        "Reward": "Octo Lucky Block",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": "2026-06-13T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.dexerto.com/roblox/steal-a-brainrot-codes-3388813/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "FREEOCTOBLOCK777",
+      "cells": {
+        "Code": "FREEOCTOBLOCK777",
+        "Reward": "Octo Lucky Block",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.dexerto.com/roblox/steal-a-brainrot-codes-3388813/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Easily confused with FREEOCTO555 and FREEPREMIUMOCTO777, which are separate strings with separate stock."
+    },
+    {
+      "table": "codes",
+      "name": "FREEOCTO555",
+      "cells": {
+        "Code": "FREEOCTO555",
+        "Reward": "Octo Lucky Block",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "FREEPREMIUMOCTO777",
+      "cells": {
+        "Code": "FREEPREMIUMOCTO777",
+        "Reward": "Premium Octo Lucky Block",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "WSUMMERUPD1",
+      "cells": {
+        "Code": "WSUMMERUPD1",
+        "Reward": "Premium Octo Lucky Block, and some redemptions rolled with traits",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": "2026-06-13T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The leading W is part of the string. Trackers that drop it produce a code the game rejects. Traited Premium Octo Lucky Blocks are unusual because the shop version teleports straight to your base instead of spawning."
+    },
+    {
+      "table": "codes",
+      "name": "FREEOCTOBASE333W",
+      "cells": {
+        "Code": "FREEOCTOBASE333W",
+        "Reward": "Octo Base",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The trailing W is part of the string."
+    },
+    {
+      "table": "codes",
+      "name": "WAVERIDER4FREELOL",
+      "cells": {
+        "Code": "WAVERIDER4FREELOL",
+        "Reward": "Waverider gear",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The 4 is a digit, not the word four."
+    },
+    {
+      "table": "codes",
+      "name": "FREE500DRAGS",
+      "cells": {
+        "Code": "FREE500DRAGS",
+        "Reward": "Dragon Cannelloni",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Stock was capped at roughly the number in the string, which is why it emptied fast."
+    },
+    {
+      "table": "codes",
+      "name": "JOHNPORKDAPIGGY",
+      "cells": {
+        "Code": "JOHNPORKDAPIGGY",
+        "Reward": "John Pork",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "DA, not THE. One of three separate strings that all paid out John Pork."
+    },
+    {
+      "table": "codes",
+      "name": "CODESAREREAL321",
+      "cells": {
+        "Code": "CODESAREREAL321",
+        "Reward": "John Pork",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "L2EXPLOITERS",
+      "cells": {
+        "Code": "L2EXPLOITERS",
+        "Reward": "John Pork",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": "2026-06-30T00:00:00Z",
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Issued after a group using automated tooling to harvest codes was banned. Code drops had been paused for several days before it."
+    },
+    {
+      "table": "codes",
+      "name": "IMANEGG",
+      "cells": {
+        "Code": "IMANEGG",
+        "Reward": "Strawberry Elephant",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "No apostrophe. The wiki records it as a personal code made for a member of the admin team, later opened up."
+    },
+    {
+      "table": "codes",
+      "name": "PIZZAISYUM",
+      "cells": {
+        "Code": "PIZZAISYUM",
+        "Reward": "Pizza and Ranch",
+        "Requirements": "Limited stock"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "none beyond stock",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The most recent public string on record."
+    },
+    {
+      "table": "codes",
+      "name": "MAYMEOWLJANDEL",
+      "cells": {
+        "Code": "MAYMEOWLJANDEL",
+        "Reward": "Meowl",
+        "Requirements": "Riddle code, stock capped at three redemptions"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "Solve the riddle; three redemptions total",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Riddle codes are posted as puzzles rather than plain strings and are capped at a handful of redemptions, so they are dead within minutes of the answer being solved."
+    },
+    {
+      "table": "codes",
+      "name": "CANDY24SAMMY",
+      "cells": {
+        "Code": "CANDY24SAMMY",
+        "Reward": "Strawberry Elephant",
+        "Requirements": "Riddle code, stock capped at one redemption"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "Solve the riddle; one redemption total",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Single redemption. Anyone republishing it as an active code is republishing something exactly one account ever claimed."
+    },
+    {
+      "table": "codes",
+      "name": "DIVINECURSED",
+      "cells": {
+        "Code": "DIVINECURSED",
+        "Reward": "Strawberry Elephant",
+        "Requirements": "Riddle code, stock capped at one redemption"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "Solve the riddle; one redemption total",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" },
+        { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Single redemption."
+    },
+    {
+      "table": "codes",
+      "name": "BRUNOISBETTER",
+      "cells": {
+        "Code": "BRUNOISBETTER",
+        "Reward": "Not stated by the source that lists it",
+        "Requirements": "Unknown"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "unknown",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://beebom.com/steal-a-brainrot-codes/" }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "One outlet lists this in its expired set. The community wiki, which records every other code on this page, has no entry for it, and no other outlet carries it. Listed here as expired so a reader searching the string finds an honest answer, not because it is corroborated."
+    },
+    {
+      "table": "codes",
+      "name": "BLUESAMMY67",
+      "cells": {
+        "Code": "BLUESAMMY67",
+        "Reward": "Not stated by the source that lists it",
+        "Requirements": "Unknown"
+      },
+      "status": "expired",
+      "case_sensitive": true,
+      "requirements": "unknown",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://beebom.com/steal-a-brainrot-codes/" }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "Same position as BRUNOISBETTER. One outlet, no wiki record, no corroboration."
+    }
+  ],
+  "unverified_summary": "Nothing on this page is publisher confirmed, and that is the finding rather than a gap in the work. The experience description carries no code list, the community that publishes the game has no shout, and the dedicated codes channel that once existed in the official Discord was removed, so no tier zero or tier one source states any string. BESTBRAINROTEVER is carried by two outlets and the community wiki and is listed as Unverified for that reason. Whether codes are case sensitive is genuinely contested between outlets. BRUNOISBETTER and BLUESAMMY67 come from a single outlet with no wiki record. Exact drop and burn out dates for most codes are not recorded anywhere reliable, because stock caps kill these codes rather than calendar expiry, so per code end dates are left empty rather than invented.",
+  "disagreements": [
+    {
+      "item": "Whether the game has codes at all",
+      "source_a": "PCGamesN states no code has ever released and that the removal of the Discord codes channel means one may never arrive",
+      "source_b": "The community wiki records the redemption feature shipping in the Christmas update and lists more than twenty codes issued since",
+      "confirmed": "Codes exist. That page is describing a state the game left behind, and its redemption instructions point at a menu the code field no longer lives in."
+    },
+    {
+      "item": "Whether codes are case sensitive",
+      "source_a": "GamesRadar states codes are not case sensitive and you do not have to use capitals",
+      "source_b": "Dexerto and several trackers state the field enforces exact case and that a lower case attempt is rejected",
+      "confirmed": "Not settled. Every code the developer has issued is upper case, so typing the string exactly as recorded works either way. This page records every row as case sensitive because that assumption never costs you a redemption."
+    },
+    {
+      "item": "The exact string for the older La Vacca Saturno Saturnita code",
+      "source_a": "GamesRadar renders it SATURN",
+      "source_b": "Dexerto renders it saturn",
+      "confirmed": "Neither. The community wiki has no record of the string in any case, so it is listed here in upper case and flagged."
+    },
+    {
+      "item": "Whether BESTBRAINROTEVER is still live",
+      "source_a": "GamesRadar and Dexerto both list it as active, and one recorded a fresh recheck",
+      "source_b": "PCGamesN and Pocket Tactics both state there are no active codes",
+      "confirmed": "Not confirmable without redeeming it. It is listed as Unverified rather than Active, and the row explains why."
+    },
+    {
+      "item": "BRUNOISBETTER and BLUESAMMY67",
+      "source_a": "Beebom lists both in its expired set",
+      "source_b": "The community wiki and GamesRadar, which between them carry every other code on this page, have no record of either",
+      "confirmed": "No corroboration. Both are archived as expired so the strings are searchable, with the gap in sourcing stated on the row."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "Aggregator pages listing twenty or more codes as currently working, including WSUMMERUPD1, JOHNPORKDAPIGGY and FREEOCTO555",
+      "why_wrong": "Those strings are on the community wiki's unavailable list and in GamesRadar's expired list. The page has reprinted the archive under an active heading, which is why readers report that nothing on it redeems.",
+      "origin": "rblxguide.com and several other automatically generated code trackers"
+    },
+    {
+      "claim": "EASTER2026, TACOTUESDAY and THANKSFOR1B, presented with drop dates",
+      "why_wrong": "The dates attached to them fall before the redemption feature existed, and one falls before the experience was published on Roblox at all. No wiki entry and no outlet record either string.",
+      "origin": "rblxguide.com, which attaches invented timestamps to invented strings"
+    },
+    {
+      "claim": "CANDY as a standalone code rewarding a Strawberry Elephant",
+      "why_wrong": "It is a truncation of CANDY24SAMMY, a riddle code with a single redemption that was claimed once. The shortened string has never been valid.",
+      "origin": "Copy and paste drift between aggregator sites"
+    },
+    {
+      "claim": "Codes taken from Steal The Brainrot Base, the Fortnite island Stealing Brainrots, or browser games called Steal Brainrot Online",
+      "why_wrong": "Those are separate products by separate publishers. Their strings are rejected by place ID 109983668079237 and by every other place in the same universe.",
+      "origin": "Clone titles ranking for the same search term, plus video thumbnails that do not name which game they are showing"
+    },
+    {
+      "claim": "Codes that grant free Robux, cash, or a Secret brainrot straight into your inventory",
+      "why_wrong": "The redemption system spawns a brainrot on the red carpet and you still have to buy it with in game cash. No code on record has ever paid Robux or deposited anything into an inventory.",
+      "origin": "Video titles and comment spam, often attached to a link that harvests account credentials"
+    }
+  ],
+  "changes": [
+    { "at": "2025-12-13T00:00:00Z", "what": "Code redemption added to the game, with the Festive 67 plush code as the first string it accepted" },
+    { "at": "2026-06-13T00:00:00Z", "what": "Redemption moved out of the shop menu to a dedicated Codes button on the left of the screen, and a batch of summer update codes dropped" },
+    { "at": "2026-06-30T00:00:00Z", "what": "Code drops resumed after a pause caused by a group harvesting codes with automated tooling, and L2EXPLOITERS was issued" },
+    { "at": "2026-08-12T00:00:00Z", "what": "An outlet recheck reported BESTBRAINROTEVER still live, which is the freshest external check this page could find" },
+    { "at": "2026-08-25T09:00:00Z", "what": "Page published with the full archive, the corrected redemption path, and the case sensitivity conflict recorded" }
+  ],
+  "next_change": {
+    "pattern": "Codes drop live during Admin Abuse, which runs after the Saturday update at around 3pm Eastern and on Taco Tuesday at 6pm Eastern. Sammy posts them in the running server and in the community server, sometimes as riddles rather than plain strings. Stock is capped rather than dated, so a drop with a low cap can be gone within minutes and a wide one lasts weeks.",
+    "watch": [
+      "The Admin Abuse event in your own server after the Saturday update at around 3pm Eastern",
+      "Taco Tuesday Admin Abuse at 6pm Eastern",
+      "The official Steal a Brainrot Discord, where drops are posted live and where the standing codes channel was removed",
+      "The experience page update notes on Roblox"
+    ]
+  }
+}

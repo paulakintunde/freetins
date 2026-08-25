@@ -1,0 +1,270 @@
+{
+  "subject": "MONOPOLY GO!",
+  "slug": "monopoly-go",
+  "entity_id": "1621328561",
+  "entity_url": "https://apps.apple.com/us/app/monopoly-go/id1621328561",
+  "developer": "Scopely",
+  "permalink": "/daily/monopoly-go/",
+  "checked_at": "2026-08-25T08:00:00Z",
+  "content_changed_at": "2026-08-25T08:00:00Z",
+  "recheck_cadence": "Rechecked every weekday morning UK time against the official channels listed below, and rows are re-dated or moved to Expired at that check. No overnight or weekend recheck is promised, and any active row that goes 14 days without a check is downgraded automatically rather than left looking current.",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://apps.apple.com/us/app/monopoly-go/id1621328561",
+      "note": "Official App Store listing, published by Scopely"
+    },
+    {
+      "type": "official_page",
+      "url": "https://www.monopolygo.com/",
+      "note": "Official MONOPOLY GO! website"
+    },
+    {
+      "type": "instagram",
+      "url": "https://www.instagram.com/monopolygo/",
+      "note": "Official Instagram, where Story drops appear first"
+    },
+    {
+      "type": "facebook",
+      "url": "https://www.facebook.com/monopolygo",
+      "note": "Official Facebook page"
+    },
+    {
+      "type": "discord",
+      "url": "https://discord.com/invite/officialmonopolygo",
+      "note": "Official Discord server"
+    },
+    {
+      "type": "publisher_newsroom",
+      "url": "https://www.scopely.com/en/news/monopoly-go-makes-history-as-the-biggest-mobile-game-launch-of-2023",
+      "note": "Scopely newsroom, which names the official channel handles"
+    }
+  ],
+  "tables": {
+    "links": {
+      "caption": "Every MONOPOLY GO! dice link recorded on this page, newest first",
+      "columns": ["Link", "Reward", "Posted", "Window closes", "Where it came from"]
+    }
+  },
+  "rows": [
+    {
+      "table": "links",
+      "name": "75 dice drop, 24 August",
+      "cells": {
+        "Link": "75 dice drop, 24 August",
+        "Reward": "75 free dice",
+        "Posted": "24 August 2026",
+        "Window closes": "25 August 2026",
+        "Where it came from": "Scopely social channels, mply.io destination"
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Tap on the device running the game. One claim per account.",
+      "added_at": "2026-08-24T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://www.pocketgamer.com/monopoly-go/free-dice/" },
+        { "tier": 2, "url": "https://beebom.com/monopoly-go-dice-links/" },
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/dice-links-free" },
+        { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Three independent outlets list this drop with the same reward and the same closing date. No publisher post could be observed directly, so it stays at Reported rather than Confirmed."
+    },
+    {
+      "table": "links",
+      "name": "Daffy Duck shield drop, 29 July",
+      "cells": {
+        "Link": "Daffy Duck shield drop, 29 July",
+        "Reward": "Daffy Duck shield skin, no dice",
+        "Posted": "29 July 2026",
+        "Window closes": "23 November 2026",
+        "Where it came from": "Scopely social channels, mply.io destination"
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Tap on the device running the game. One claim per account.",
+      "added_at": "2026-07-29T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://www.pocketgamer.com/monopoly-go/free-dice/" },
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/dice-links-free" },
+        { "tier": 2, "url": "https://beebom.com/monopoly-go-dice-links/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "A cosmetic drop, not a dice drop. Its window runs far longer than a normal link, which is why it is still listed while dice drops from the same period have closed."
+    },
+    {
+      "table": "links",
+      "name": "25 dice drop, 21 August",
+      "cells": {
+        "Link": "25 dice drop, 21 August",
+        "Reward": "25 free dice",
+        "Posted": "21 August 2026",
+        "Window closes": "24 August 2026",
+        "Where it came from": "Scopely social channels, mply.io destination"
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Tap on the device running the game. One claim per account.",
+      "added_at": "2026-08-21T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-08-24T00:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://beebom.com/monopoly-go-dice-links/" },
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/dice-links-free" },
+        { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Kept in the table because its 3 day run is the clearest dated evidence anyone publishes for how long a dice link actually lasts."
+    },
+    {
+      "table": "links",
+      "name": "25 dice drop, 20 August",
+      "cells": {
+        "Link": "25 dice drop, 20 August",
+        "Reward": "25 free dice",
+        "Posted": "20 August 2026",
+        "Window closes": "Not recorded",
+        "Where it came from": "Logged by one aggregator only"
+      },
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "Window already closed. Listed for the archive only.",
+      "added_at": "2026-08-20T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "One aggregator logs this drop and no independent outlet records it. A tier 3 source is never a basis for confirming a row, so it stays Unverified rather than being presented as fact."
+    },
+    {
+      "table": "links",
+      "name": "25 dice drop, 19 August",
+      "cells": {
+        "Link": "25 dice drop, 19 August",
+        "Reward": "25 free dice",
+        "Posted": "19 August 2026",
+        "Window closes": "Not recorded",
+        "Where it came from": "Logged by one aggregator only"
+      },
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "Window already closed. Listed for the archive only.",
+      "added_at": "2026-08-19T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Single aggregator source with no independent corroboration, so the row is archived as Unverified."
+    },
+    {
+      "table": "links",
+      "name": "25 dice drop, 18 August",
+      "cells": {
+        "Link": "25 dice drop, 18 August",
+        "Reward": "25 free dice",
+        "Posted": "18 August 2026",
+        "Window closes": "Not recorded",
+        "Where it came from": "Logged by one aggregator only"
+      },
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "Window already closed. Listed for the archive only.",
+      "added_at": "2026-08-18T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Single aggregator source with no independent corroboration, so the row is archived as Unverified."
+    },
+    {
+      "table": "links",
+      "name": "75 dice drop, 17 August",
+      "cells": {
+        "Link": "75 dice drop, 17 August",
+        "Reward": "75 free dice",
+        "Posted": "17 August 2026",
+        "Window closes": "Not recorded",
+        "Where it came from": "Logged by one aggregator only"
+      },
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "Window already closed. Listed for the archive only.",
+      "added_at": "2026-08-17T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Single aggregator source. It matches the weekend pattern of a larger drop, but a pattern is not a source, so it stays Unverified."
+    }
+  ],
+  "unverified_summary": "No row here carries a publisher source we could observe ourselves. Scopely posts dice links to Instagram Stories, Facebook and Discord, none of which can be reopened or archived after a drop closes, so every row rests on outlet reporting and none reaches Confirmed. Four archived drops are logged by a single aggregator with no independent corroboration and stay at Unverified for that reason. Scopely publishes no expiry window of its own, so the roughly 3 day figure comes from dated outlet evidence rather than from the publisher.",
+  "disagreements": [
+    {
+      "item": "How long a dice link stays claimable",
+      "source_a": "One outlet says links die within 24 hours of going live",
+      "source_b": "Another says links last around 3 days, with Instagram Story links up for 24 hours only",
+      "confirmed": "Roughly 3 days. The 25 dice drop posted on 21 August was still being listed as claimable on 24 August, which is the only dated evidence either way. Scopely states nothing."
+    },
+    {
+      "item": "The account level needed to claim a dice link",
+      "source_a": "Several outlets say you must reach Level 15 and unlock the Album before a link will credit",
+      "source_b": "Others describe Level 15 as the sticker and Album gate rather than a gate on dice links",
+      "confirmed": "Not confirmed. No Scopely channel states a level requirement for dice links, and we could not test a low level account."
+    },
+    {
+      "item": "How many dice a single link is worth",
+      "source_a": "One outlet says the publisher gives at least 25 free rolls a day through links",
+      "source_b": "Another says drops range from 25 to 75 and some days carry no new link at all",
+      "confirmed": "Both patterns appear in the dated archive above. Drops of 25 and 75 are recorded, and at the last check no new drop had been posted that day."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "Dice generators that ask for your MONOPOLY GO! username and then promise thousands of rolls",
+      "why_wrong": "A genuine drop credits rolls to the account already signed in on the device you tap from. Nothing exists that grants dice from a username, and handing one over only feeds a survey or ad funnel.",
+      "origin": "Ad funded generator sites and video thumbnails that rank on the same searches as the real link pages."
+    },
+    {
+      "claim": "Reward links hosted on domains other than mply.io",
+      "why_wrong": "Every link Scopely distributes resolves on mply.io. Players and third party sites cannot mint one, so a reward link on any other host was not issued by the publisher.",
+      "origin": "Reposts on aggregator sites and comment sections, often wrapped in a redirect chain."
+    },
+    {
+      "claim": "Four and five figure dice links, for example a 5,000 roll link",
+      "why_wrong": "No dated drop on record carries a grant of that size. Recorded rewards on this page run to 75 rolls or a cosmetic shield.",
+      "origin": "Fabricated screenshots circulated to drive clicks to generator pages."
+    }
+  ],
+  "changes": [
+    { "at": "2026-08-25T07:30:00Z", "what": "Page published with 7 recorded drops and per row posting dates" },
+    { "at": "2026-08-25T08:00:00Z", "what": "The 25 dice drop posted on 21 August moved to Expired after its window closed" }
+  ],
+  "next_change": {
+    "pattern": "Drops land most days but not every day. A 25 roll drop is the common case, a 75 roll drop tends to land at weekends and around events, and each one stays claimable for roughly 3 days. Cosmetic drops such as shield skins run for months rather than days.",
+    "watch": [
+      "The official Instagram Story, which carries the first post of most drops",
+      "The official Facebook page, which repeats the drop in a permanent post",
+      "The official Discord server, where event drops are announced",
+      "The in game news feed"
+    ]
+  }
+}

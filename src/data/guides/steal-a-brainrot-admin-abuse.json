@@ -1,0 +1,444 @@
+{
+  "subject": "Steal a Brainrot",
+  "slug": "steal-a-brainrot-admin-abuse",
+  "entity_id": "109983668079237",
+  "entity_url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
+  "developer": "BRAZILIAN SPYDER",
+  "permalink": "/guides/steal-a-brainrot-admin-abuse/",
+  "checked_at": "2026-08-25T08:00:00Z",
+  "content_changed_at": "2026-08-25T08:00:00Z",
+  "recheck_cadence": "Rechecked after each Tuesday and Saturday slot, and within a day of any update post on the developer's own channels.",
+  "official_sources": [
+    { "type": "official_page", "url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot", "note": "The Steal a Brainrot experience page on Roblox, place ID 109983668079237" },
+    { "type": "roblox_group", "url": "https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER", "note": "BRAZILIAN SPYDER, the verified Roblox community that owns the experience" },
+    { "type": "discord", "url": "https://discord.com/invite/brainrots", "note": "The Discord server that describes itself as the official Steal a Brainrot server" },
+    { "type": "creator_profile", "url": "https://www.roblox.com/users/2678001507/profile", "note": "SpyderSammy, the verified Roblox account that owns the community and hosts most sessions" }
+  ],
+  "tables": {
+    "slots": {
+      "caption": "The recurring admin abuse slots, and what each claim rests on",
+      "columns": ["Slot", "Reported day and start time", "Reported length", "Basis for the claim"]
+    },
+    "occurrences": {
+      "caption": "Dated admin abuse occurrences with start times and what was handed out",
+      "columns": ["Occurrence", "Type", "Date", "Start time", "What was spawned or added"],
+      "classification_column": "Type"
+    }
+  },
+  "rows": [
+    {
+      "table": "slots",
+      "name": "Taco Tuesday",
+      "cells": {
+        "Slot": "Taco Tuesday",
+        "Reported day and start time": "Expected every Tuesday at 6:00 pm United States Eastern time, previously 5:00 pm",
+        "Reported length": "30 to 60 minutes",
+        "Basis for the claim": "Expected from 44 numbered occurrences logged on the community wiki, plus an outlet guide giving the same Eastern time. No developer post states it."
+      },
+      "classification": "Recurring slot",
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "none, the event runs on public and private servers",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://www.dexerto.com/roblox/taco-tuesday-steal-a-brainrot-3242873/" },
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Taco_Tuesday" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Expected, not scheduled. Two Tuesdays in the record were cancelled outright. One aggregator places this slot on a Wednesday, which no dated occurrence supports."
+    },
+    {
+      "table": "slots",
+      "name": "Saturday update admin abuse",
+      "cells": {
+        "Slot": "Saturday update admin abuse",
+        "Reported day and start time": "Expected every Saturday at 3:00 pm United States Eastern time, which the outlet anchor gives as 19:00 UTC",
+        "Reported length": "30 to 45 minutes",
+        "Basis for the claim": "Expected from an unbroken run of dated Saturday updates and an outlet that anchors the update release to 19:00 UTC. No developer post states it."
+      },
+      "classification": "Recurring slot",
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "none, the event runs on public and private servers",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://www.sportskeeda.com/roblox-news/when-is-the-next-steal-a-brainrot-update" },
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Admin_Abuse" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Expected, not scheduled. The session follows the update rather than starting at a fixed clock time, so the start drifts when the update is late."
+    },
+    {
+      "table": "slots",
+      "name": "Unannounced admin abuse",
+      "cells": {
+        "Slot": "Unannounced admin abuse",
+        "Reported day and start time": "No slot. Reported most often late on Friday and on Sunday, with no warning",
+        "Reported length": "A single snap up to a full 30 minute session",
+        "Basis for the claim": "Community wiki description and an outlet guide. Nothing dated, nothing announced in advance, nothing predictable."
+      },
+      "classification": "Recurring slot",
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "none, but you have to already be in game",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Admin_Abuse" },
+        { "tier": 2, "url": "https://www.eldorado.gg/blog/steal-a-brainrot-admin-abuse-schedule-explained/" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "This is the honest answer to a large part of the question. A meaningful share of admin abuse is not scheduled at all and cannot be predicted."
+    },
+    {
+      "table": "occurrences",
+      "name": "Taco Tuesday 44",
+      "cells": {
+        "Occurrence": "Taco Tuesday 44",
+        "Type": "Taco Tuesday",
+        "Date": "18 August 2026",
+        "Start time": "6:00 pm United States Eastern time",
+        "What was spawned or added": "The Taco Merchant released. Brainrots obtainable from it were Burrito Bat, Tacoturbo Tacorito, Nachorilla and Sammyni Truckini."
+      },
+      "classification": "Taco Tuesday",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-18T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-08-18T23:00:00Z",
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Taco_Tuesday" },
+        { "tier": 2, "url": "https://www.eldorado.gg/blog/steal-a-brainrot-update-log/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The outlet update log independently lists Burrito Bat, Nachorilla and Sammyni Truckini and notes three of that week's brainrots came from Taco Tuesday."
+    },
+    {
+      "table": "occurrences",
+      "name": "Taco Tuesday 43",
+      "cells": {
+        "Occurrence": "Taco Tuesday 43",
+        "Type": "Taco Tuesday",
+        "Date": "11 August 2026",
+        "Start time": "6:00 pm United States Eastern time",
+        "What was spawned or added": "Polaroidini added without an announcement, according to the community wiki."
+      },
+      "classification": "Taco Tuesday",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-11T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-08-11T23:00:00Z",
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Taco_Tuesday" },
+        { "tier": 2, "url": "https://www.eldorado.gg/blog/steal-a-brainrot-update-log/" }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "The outlet update log credits Polaroidini to the Saturday update that followed. The two sources disagree on which session it arrived in."
+    },
+    {
+      "table": "occurrences",
+      "name": "Taco Tuesday 42",
+      "cells": {
+        "Occurrence": "Taco Tuesday 42",
+        "Type": "Taco Tuesday",
+        "Date": "4 August 2026",
+        "Start time": "6:00 pm United States Eastern time",
+        "What was spawned or added": "Nothing recorded. The community wiki logs the session but leaves the payload blank."
+      },
+      "classification": "Taco Tuesday",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-04T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-08-04T23:00:00Z",
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Taco_Tuesday" },
+        { "tier": 2, "url": "https://www.dexerto.com/roblox/taco-tuesday-steal-a-brainrot-3242873/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Listed here because an occurrence with no recorded payload is still evidence that the slot ran."
+    },
+    {
+      "table": "occurrences",
+      "name": "Taco Tuesday 41",
+      "cells": {
+        "Occurrence": "Taco Tuesday 41",
+        "Type": "Taco Tuesday",
+        "Date": "28 July 2026",
+        "Start time": "6:00 pm United States Eastern time",
+        "What was spawned or added": "Nothing recorded. The community wiki logs the session but leaves the payload blank."
+      },
+      "classification": "Taco Tuesday",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-07-28T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-07-28T23:00:00Z",
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Taco_Tuesday" },
+        { "tier": 2, "url": "https://www.dexerto.com/roblox/taco-tuesday-steal-a-brainrot-3242873/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "occurrences",
+      "name": "Update 63 session",
+      "cells": {
+        "Occurrence": "Update 63 session",
+        "Type": "Saturday update",
+        "Date": "22 August 2026",
+        "Start time": "3:00 pm United States Eastern time, reported as 19:00 UTC",
+        "What was spawned or added": "Bee Base, Bee Lucky Block, Bee Flying Gear and ten new brainrots including Orchidox, Sammyni Truckini and Pop Pop Petalini."
+      },
+      "classification": "Saturday update",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-22T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-08-22T21:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.eldorado.gg/blog/steal-a-brainrot-update-log/" },
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Admin_Abuse" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The update date is outlet sourced. The session that follows it is community sourced, and its exact start was not independently timed."
+    },
+    {
+      "table": "occurrences",
+      "name": "Update 62 session",
+      "cells": {
+        "Occurrence": "Update 62 session",
+        "Type": "Saturday update",
+        "Date": "15 August 2026",
+        "Start time": "3:00 pm United States Eastern time, anchored by the outlet at 19:00 UTC",
+        "What was spawned or added": "Rebirth 19, a 28th base slot, Grief Shield gear, three new brainrots including Polaroidini, and Lucky Block timers removed."
+      },
+      "classification": "Saturday update",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-15T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-08-15T21:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.sportskeeda.com/roblox-news/when-is-the-next-steal-a-brainrot-update" },
+        { "tier": 2, "url": "https://www.eldorado.gg/blog/steal-a-brainrot-update-log/" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The best evidenced start time on this page. Two outlets, one of which states 19:00 UTC outright, though its own regional conversions are an hour out."
+    },
+    {
+      "table": "occurrences",
+      "name": "Update 61 session",
+      "cells": {
+        "Occurrence": "Update 61 session",
+        "Type": "Saturday update",
+        "Date": "8 August 2026",
+        "Start time": "3:00 pm United States Eastern time, reported as 19:00 UTC",
+        "What was spawned or added": "RNG Machine with upgradable luck, the Queen Bee event, and four Bee traits at five and six times multipliers."
+      },
+      "classification": "Saturday update",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-08T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-08-08T21:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.eldorado.gg/blog/steal-a-brainrot-update-log/" },
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Admin_Abuse" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "occurrences",
+      "name": "Update 60 session",
+      "cells": {
+        "Occurrence": "Update 60 session",
+        "Type": "Saturday update",
+        "Date": "1 August 2026",
+        "Start time": "3:00 pm United States Eastern time, reported as 19:00 UTC",
+        "What was spawned or added": "The Job Job Job Sahur Ritual."
+      },
+      "classification": "Saturday update",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-01T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-08-01T21:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.eldorado.gg/blog/steal-a-brainrot-update-log/" },
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Admin_Abuse" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "occurrences",
+      "name": "Caylus session",
+      "cells": {
+        "Occurrence": "Caylus session",
+        "Type": "Guest host",
+        "Date": "6 June 2026",
+        "Start time": "3:00 pm United States Eastern time, reported as 19:00 UTC",
+        "What was spawned or added": "A guest hosted session run by the creator Caylus in place of Sammy, alongside the main update and a limited stock brainrot."
+      },
+      "classification": "Guest host",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-06-06T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-06-06T21:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.sportskeeda.com/roblox-news/when-is-the-next-steal-a-brainrot-update" },
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Admin_Abuse" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Kept in the record because it shows the host is not fixed. The outlet page is evergreen and now carries a later update, so the citation is to the page rather than a frozen version."
+    },
+    {
+      "table": "occurrences",
+      "name": "Steak session",
+      "cells": {
+        "Occurrence": "Steak session",
+        "Type": "Guest host",
+        "Date": "30 May 2026",
+        "Start time": "3:00 pm United States Eastern time, reported as 19:00 UTC",
+        "What was spawned or added": "A guest hosted session run by Steak in place of Sammy, with content exclusive to that session."
+      },
+      "classification": "Guest host",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-05-30T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-05-30T21:00:00Z",
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Steak%27s_Admin_Abuse" },
+        { "tier": 3, "url": "https://bloxguidesgg.com/blog/steal-a-brainrot-summer-update-caylus-admin-abuse-guide-june-2026" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Both sources are community tier. No outlet with a genuine day level stamp covered this session, so it is the weakest dated row here."
+    },
+    {
+      "table": "occurrences",
+      "name": "Cancelled Taco Tuesday",
+      "cells": {
+        "Occurrence": "Cancelled Taco Tuesday",
+        "Type": "Cancelled",
+        "Date": "26 May 2026",
+        "Start time": "Did not run",
+        "What was spawned or added": "Nothing. Sammy announced in game and in the Discord that he was taking a three week break from admin abuse. The following Tuesday was cancelled too."
+      },
+      "classification": "Cancelled",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-05-26T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2026-05-26T23:00:00Z",
+      "evidence": [
+        { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Taco_Tuesday" },
+        { "tier": 3, "url": "https://bloxguidesgg.com/blog/steal-a-brainrot-summer-update-caylus-admin-abuse-guide-june-2026" }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "The single most useful row on this page. It is the proof that the Tuesday slot is a pattern and not a schedule, and that a cancellation is announced only in game and in the Discord."
+    }
+  ],
+  "unverified_summary": "No developer channel publishes an admin abuse schedule, so nothing here reaches publisher confirmation and no row displays as Active. The start times come from a community wiki and from outlets whose own timezone conversions contradict their stated UTC anchors by an hour. Cancellations and guest hosts are announced in game and in the Discord rather than in anything we can cite, so a slot listed here can be dropped with no public notice, and two of the recorded Tuesdays were.",
+  "disagreements": [
+    {
+      "item": "The UTC equivalent of the Saturday start time",
+      "source_a": "Sportskeeda anchors the Saturday update to 7:00 pm UTC",
+      "source_b": "The same article converts that anchor to 2:00 pm US Eastern Daylight Time and 7:00 pm in the United Kingdom",
+      "confirmed": "Not confirmed. 7:00 pm UTC is 3:00 pm Eastern Daylight Time and 8:00 pm British Summer Time, so the outlet contradicts itself. The Eastern figure of 3:00 pm matches the community record."
+    },
+    {
+      "item": "The UTC equivalent of the Taco Tuesday start time",
+      "source_a": "Dexerto puts the slot at 6:00 pm in New York and 11:00 pm in London",
+      "source_b": "The community wiki labels it 6:00 pm EST all year and separately notes it lands at 3:00 or 4:00 pm Mountain time depending on daylight saving",
+      "confirmed": "Not confirmed. The Eastern figure is consistent across sources. Every conversion out of it is not, because the sources treat a summer clock as if it were a winter one."
+    },
+    {
+      "item": "Which day carries the second slot",
+      "source_a": "Most guides and every dated occurrence place it on Tuesday, branded Taco Tuesday",
+      "source_b": "At least one aggregator states Wednesday at 7:00 pm US Eastern time",
+      "confirmed": "Not confirmed by the developer, but every dated occurrence in the community record falls on a Tuesday. Treat the Wednesday claim as wrong."
+    },
+    {
+      "item": "How long a session lasts",
+      "source_a": "The community wiki says 30 to 45 minutes for the Saturday session and 30 to 60 for Taco Tuesday",
+      "source_b": "Sportskeeda says up to 30 minutes and Dexerto says exactly 30",
+      "confirmed": "Not confirmed. Treat 30 minutes as the floor you can rely on and anything past it as a bonus."
+    },
+    {
+      "item": "Which session added Polaroidini",
+      "source_a": "The community wiki says it was added quietly during the Taco Tuesday beforehand",
+      "source_b": "The Eldorado update log credits it to the Saturday update that followed",
+      "confirmed": "Not confirmed. Both agree the brainrot exists and arrived in that stretch. Neither is a developer post."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "Countdown sites and timer widgets that present an exact next admin abuse time as if it were official",
+      "why_wrong": "No developer channel publishes a countdown. Those timers are derived from the same community pattern recorded on this page, and none of them correct themselves when a session is cancelled or a host changes.",
+      "origin": "Fan built event tracker sites and generic countdown widget services."
+    },
+    {
+      "claim": "Admin commands, admin codes or admin tools for Steal a Brainrot, sold or given away",
+      "why_wrong": "There is no public admin system in the experience. Admin abuse is run by the owner from the developer side, so anything offering you those powers is a credential lure or a malware download.",
+      "origin": "Discord direct messages, short form video claiming secret commands, and third party download pages."
+    },
+    {
+      "claim": "A fixed Wednesday admin abuse slot",
+      "why_wrong": "Every dated occurrence in the community record falls on a Tuesday or a Saturday. No source carrying a dated occurrence supports a Wednesday.",
+      "origin": "An aggregator schedule page that appears to have transposed the day."
+    },
+    {
+      "claim": "That admin abuse only runs on public servers, so you must leave your private server",
+      "why_wrong": "Both the community wiki and outlet coverage state the effects apply to every server, private ones included. Leaving a private server for a public one only raises your chance of being robbed.",
+      "origin": "Word of mouth in trading servers and video comments."
+    }
+  ],
+  "changes": [
+    { "at": "2026-08-25T00:00:00Z", "what": "Page first published with eleven dated occurrences, the three slot rows, and the timezone conflicts recorded rather than resolved" }
+  ],
+  "next_change": {
+    "pattern": "Occurrences cluster on two slots, a Tuesday evening and a Saturday afternoon in United States Eastern time, with unannounced sessions in between and occasional cancellations announced only in game and in the Discord.",
+    "watch": [
+      "The announcement channel of the Discord server that describes itself as the official Steal a Brainrot server",
+      "The in game announcement banner and the red carpet in the experience itself",
+      "The BRAZILIAN SPYDER community page on Roblox",
+      "The SpyderSammy Roblox profile"
+    ]
+  }
+}

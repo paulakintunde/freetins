@@ -1,0 +1,4099 @@
+{
+  "subject": "Roblox song IDs",
+  "slug": "roblox-song-ids",
+  "entity_id": "https://create.roblox.com/store/audio",
+  "entity_url": "https://create.roblox.com/store/audio",
+  "developer": "Roblox Corporation",
+  "permalink": "/guides/roblox-song-ids/",
+  "checked_at": "2026-08-25T09:00:00Z",
+  "content_changed_at": "2026-08-25T09:00:00Z",
+  "recheck_cadence": "Every ID here is re-tested against Roblox's own asset endpoints at least every fourteen days, and the whole table is re-tested as soon as a reader reports an entry dead.",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://create.roblox.com/store/audio",
+      "note": "Roblox Creator Store audio catalogue"
+    },
+    {
+      "type": "official_docs",
+      "url": "https://create.roblox.com/docs/audio/assets",
+      "note": "Roblox documentation on audio assets"
+    },
+    {
+      "type": "official_api",
+      "url": "https://economy.roblox.com/v2/assets/142376088/details",
+      "note": "Roblox asset details endpoint, the record behind every row"
+    }
+  ],
+  "tables": {
+    "roster": {
+      "caption": "Every Roblox song ID recorded on this page",
+      "columns": [
+        "Song",
+        "Artist",
+        "ID",
+        "Genre"
+      ],
+      "classification_column": "Genre"
+    }
+  },
+  "rows": [
+    {
+      "table": "roster",
+      "name": "Raining Tacos",
+      "cells": {
+        "Song": "Raining Tacos",
+        "Artist": "Parry Gripp",
+        "ID": "142376088",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/142376088"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/142376088/details"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Listed free in the Creator Store under the electronic genre and distributed through ParryGripp, but Roblox's delivery endpoint asks for a session before it will hand over the file, so public playback cannot be proved from outside a game."
+    },
+    {
+      "table": "roster",
+      "name": "Crab Rave",
+      "cells": {
+        "Song": "Crab Rave",
+        "Artist": "Noisestorm",
+        "ID": "5410086218",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/5410086218"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/5410086218/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/5410086218"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the electronic genre, runs 161 seconds, distributed through Monstercat. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Shiawase",
+      "cells": {
+        "Song": "Shiawase",
+        "Artist": "Dion Timmer",
+        "ID": "5409360995",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/5409360995"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/5409360995/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/5409360995"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the electronic genre, runs 218 seconds, distributed through Monstercat. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Easter Egg",
+      "cells": {
+        "Song": "Easter Egg",
+        "Artist": "Nitro Fun",
+        "ID": "7024220835",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/7024220835"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/7024220835/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/7024220835"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the electronic genre, runs 204 seconds, distributed through Monstercat. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Safe & Sound",
+      "cells": {
+        "Song": "Safe & Sound",
+        "Artist": "Nitro Fun feat. Danyka Nadeau",
+        "ID": "7024233823",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/7024233823"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/7024233823/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/7024233823"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the electronic genre, runs 245 seconds, distributed through Monstercat. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Hope",
+      "cells": {
+        "Song": "Hope",
+        "Artist": "Tobu",
+        "ID": "99445078556609",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/99445078556609"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/99445078556609/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/99445078556609"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the dance genre, runs 288 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Candyland",
+      "cells": {
+        "Song": "Candyland",
+        "Artist": "Tobu",
+        "ID": "112791021679473",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/112791021679473"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/112791021679473/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/112791021679473"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the dance genre, runs 207 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Infectious",
+      "cells": {
+        "Song": "Infectious",
+        "Artist": "Tobu",
+        "ID": "79451196298919",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/79451196298919"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/79451196298919/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/79451196298919"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the dance genre, runs 300 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Life",
+      "cells": {
+        "Song": "Life",
+        "Artist": "Tobu",
+        "ID": "111531789034719",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/111531789034719"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/111531789034719/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/111531789034719"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the dance genre, runs 204 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Tokyo Drift",
+      "cells": {
+        "Song": "Tokyo Drift",
+        "Artist": "Fumitake Igarashi",
+        "ID": "1837015626",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1837015626"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1837015626/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1837015626"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the electronica genre, runs 62 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Stadium Rave (A)",
+      "cells": {
+        "Song": "Stadium Rave (A)",
+        "Artist": "Sonoton Music",
+        "ID": "1846368080",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1846368080"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1846368080/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1846368080"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the electronic genre, runs 168 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Ghost Protocol",
+      "cells": {
+        "Song": "Ghost Protocol",
+        "Artist": "Pulse Horizon",
+        "ID": "140658568629873",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/140658568629873"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/140658568629873/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/140658568629873"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the dance genre, runs 147 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Tender Tropical House",
+      "cells": {
+        "Song": "Tender Tropical House",
+        "Artist": "AXS",
+        "ID": "1836105293",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1836105293"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1836105293/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1836105293"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the electro-house genre, runs 151 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Night Run",
+      "cells": {
+        "Song": "Night Run",
+        "Artist": "Magnetic Records",
+        "ID": "9044545570",
+        "Genre": "Electronic and dance"
+      },
+      "classification": "Electronic and dance",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9044545570"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9044545570/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9044545570"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the electronic genre, runs 183 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "TOMA FUNK PHONK",
+      "cells": {
+        "Song": "TOMA FUNK PHONK",
+        "Artist": "Symphonk",
+        "ID": "129098116998483",
+        "Genre": "Hip-hop and phonk"
+      },
+      "classification": "Hip-hop and phonk",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/129098116998483"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/129098116998483/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/129098116998483"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the hip-hop genre, runs 150 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "ROBLOX PHONK",
+      "cells": {
+        "Song": "ROBLOX PHONK",
+        "Artist": "Misutra",
+        "ID": "136932193331774",
+        "Genre": "Hip-hop and phonk"
+      },
+      "classification": "Hip-hop and phonk",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/136932193331774"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/136932193331774/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/136932193331774"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the dance genre, runs 155 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "67 KID PHONK",
+      "cells": {
+        "Song": "67 KID PHONK",
+        "Artist": "DRIFTGØD",
+        "ID": "125476440612900",
+        "Genre": "Hip-hop and phonk"
+      },
+      "classification": "Hip-hop and phonk",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/125476440612900"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/125476440612900/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/125476440612900"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the dance genre, runs 104 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "The Loneliest Hour",
+      "cells": {
+        "Song": "The Loneliest Hour",
+        "Artist": "Chilled Monkey LoFi",
+        "ID": "114213622974713",
+        "Genre": "Hip-hop and phonk"
+      },
+      "classification": "Hip-hop and phonk",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/114213622974713"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/114213622974713/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/114213622974713"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the hip-hop genre, runs 240 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "All Dropping 8 Bit Beats",
+      "cells": {
+        "Song": "All Dropping 8 Bit Beats",
+        "Artist": "Jim Condelli",
+        "ID": "9048375035",
+        "Genre": "Hip-hop and phonk"
+      },
+      "classification": "Hip-hop and phonk",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9048375035"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9048375035/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9048375035"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the hip-hop genre, runs 126 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "All 8 Bit Now",
+      "cells": {
+        "Song": "All 8 Bit Now",
+        "Artist": "Jim Condelli",
+        "ID": "9048376021",
+        "Genre": "Hip-hop and phonk"
+      },
+      "classification": "Hip-hop and phonk",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9048376021"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9048376021/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9048376021"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the hip-hop genre, runs 121 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Skibidi fanum tax (Prod. yakside)",
+      "cells": {
+        "Song": "Skibidi fanum tax (Prod. yakside)",
+        "Artist": "Bullet",
+        "ID": "16190757458",
+        "Genre": "Hip-hop and phonk"
+      },
+      "classification": "Hip-hop and phonk",
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/16190757458"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/16190757458/details"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Listed free in the Creator Store under the hip-hop genre and distributed through Clippsly, but Roblox's delivery endpoint asks for a session before it will hand over the file, so public playback cannot be proved from outside a game."
+    },
+    {
+      "table": "roster",
+      "name": "Bossa Me (a)",
+      "cells": {
+        "Song": "Bossa Me (a)",
+        "Artist": "Peter Christiansen",
+        "ID": "1837768517",
+        "Genre": "Lo-fi and chill"
+      },
+      "classification": "Lo-fi and chill",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1837768517"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1837768517/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1837768517"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the lo-fi genre, runs 142 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Poolside",
+      "cells": {
+        "Song": "Poolside",
+        "Artist": "Max Cameron Concors",
+        "ID": "9046863253",
+        "Genre": "Lo-fi and chill"
+      },
+      "classification": "Lo-fi and chill",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9046863253"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9046863253/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9046863253"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the lo-fi-hip-hop genre, runs 165 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Sunset Chill (Bed Version)",
+      "cells": {
+        "Song": "Sunset Chill (Bed Version)",
+        "Artist": "Queens Road",
+        "ID": "9046862941",
+        "Genre": "Lo-fi and chill"
+      },
+      "classification": "Lo-fi and chill",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9046862941"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9046862941/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9046862941"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the lo-fi-hip-hop genre, runs 134 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Tender Chillstep",
+      "cells": {
+        "Song": "Tender Chillstep",
+        "Artist": "AXS",
+        "ID": "1836098504",
+        "Genre": "Lo-fi and chill"
+      },
+      "classification": "Lo-fi and chill",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1836098504"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1836098504/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1836098504"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the chill-out genre, runs 156 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Retro Gamer (60)",
+      "cells": {
+        "Song": "Retro Gamer (60)",
+        "Artist": "Skip Armstrong",
+        "ID": "1837769001",
+        "Genre": "Lo-fi and chill"
+      },
+      "classification": "Lo-fi and chill",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1837769001"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1837769001/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1837769001"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the lo-fi genre, runs 60 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Lo Fi Dreams Hip Hop",
+      "cells": {
+        "Song": "Lo Fi Dreams Hip Hop",
+        "Artist": "Jim Condelli",
+        "ID": "9047050075",
+        "Genre": "Lo-fi and chill"
+      },
+      "classification": "Lo-fi and chill",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9047050075"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9047050075/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9047050075"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the lo-fi-hip-hop genre, runs 129 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Spooky LoFi",
+      "cells": {
+        "Song": "Spooky LoFi",
+        "Artist": "NojikoFM",
+        "ID": "119338609842850",
+        "Genre": "Lo-fi and chill"
+      },
+      "classification": "Lo-fi and chill",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/119338609842850"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/119338609842850/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/119338609842850"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the dance genre, runs 145 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Clair De Lune",
+      "cells": {
+        "Song": "Clair De Lune",
+        "Artist": "JW Media Music",
+        "ID": "1838457617",
+        "Genre": "Classical and orchestral"
+      },
+      "classification": "Classical and orchestral",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1838457617"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1838457617/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1838457617"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the classical genre, runs 262 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Gymnopedie No. 1",
+      "cells": {
+        "Song": "Gymnopedie No. 1",
+        "Artist": "Juice Music",
+        "ID": "9045766377",
+        "Genre": "Classical and orchestral"
+      },
+      "classification": "Classical and orchestral",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9045766377"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9045766377/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9045766377"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the classical genre, runs 152 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Nocturne in E-Flat Major, Op. 9, No. 2",
+      "cells": {
+        "Song": "Nocturne in E-Flat Major, Op. 9, No. 2",
+        "Artist": "Juice Music",
+        "ID": "9045765634",
+        "Genre": "Classical and orchestral"
+      },
+      "classification": "Classical and orchestral",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9045765634"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9045765634/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9045765634"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the classical genre, runs 163 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Morning Mood (f.\"peer Gynt Suite No.1\")",
+      "cells": {
+        "Song": "Morning Mood (f.\"peer Gynt Suite No.1\")",
+        "Artist": "Helmuth Brandenburg",
+        "ID": "1846088038",
+        "Genre": "Classical and orchestral"
+      },
+      "classification": "Classical and orchestral",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1846088038"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1846088038/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1846088038"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the classical-arrangement genre, runs 225 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Turkish March",
+      "cells": {
+        "Song": "Turkish March",
+        "Artist": "KPM Classical Series",
+        "ID": "1842150151",
+        "Genre": "Classical and orchestral"
+      },
+      "classification": "Classical and orchestral",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1842150151"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1842150151/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1842150151"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the classical genre, runs 216 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "The Four Seasons - Spring (a)",
+      "cells": {
+        "Song": "The Four Seasons - Spring (a)",
+        "Artist": "Juice Music",
+        "ID": "9045766074",
+        "Genre": "Classical and orchestral"
+      },
+      "classification": "Classical and orchestral",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9045766074"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9045766074/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9045766074"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the classical genre, runs 144 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Toreador From Carmen C",
+      "cells": {
+        "Song": "Toreador From Carmen C",
+        "Artist": "Unknown",
+        "ID": "1847795501",
+        "Genre": "Classical and orchestral"
+      },
+      "classification": "Classical and orchestral",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1847795501"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1847795501/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1847795501"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the classical-arrangement genre, runs 63 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Chaos",
+      "cells": {
+        "Song": "Chaos",
+        "Artist": "John August Pregler",
+        "ID": "1843497734",
+        "Genre": "Classical and orchestral"
+      },
+      "classification": "Classical and orchestral",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1843497734"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1843497734/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1843497734"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the orchestral-hybrid genre, runs 139 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Kinderszenen - Traumerei",
+      "cells": {
+        "Song": "Kinderszenen - Traumerei",
+        "Artist": "KPM Classical Series",
+        "ID": "1842155223",
+        "Genre": "Classical and orchestral"
+      },
+      "classification": "Classical and orchestral",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1842155223"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1842155223/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1842155223"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the classical genre, runs 185 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Hallelujah From Messiah",
+      "cells": {
+        "Song": "Hallelujah From Messiah",
+        "Artist": "George Handel",
+        "ID": "1846627271",
+        "Genre": "Classical and orchestral"
+      },
+      "classification": "Classical and orchestral",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1846627271"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1846627271/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1846627271"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the christian genre, runs 230 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Nocturne Opus 9 C",
+      "cells": {
+        "Song": "Nocturne Opus 9 C",
+        "Artist": "Frederic Francois Chopin",
+        "ID": "1848028342",
+        "Genre": "Classical and orchestral"
+      },
+      "classification": "Classical and orchestral",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1848028342"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1848028342/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1848028342"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the classical-arrangement genre, runs 64 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Full Force",
+      "cells": {
+        "Song": "Full Force",
+        "Artist": "Tim Besamusca",
+        "ID": "1842801942",
+        "Genre": "Rock and metal"
+      },
+      "classification": "Rock and metal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1842801942"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1842801942/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1842801942"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the hard-rock genre, runs 246 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Boss Fight!",
+      "cells": {
+        "Song": "Boss Fight!",
+        "Artist": "ELEKTRNIK",
+        "ID": "78744747224727",
+        "Genre": "Rock and metal"
+      },
+      "classification": "Rock and metal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/78744747224727"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/78744747224727/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/78744747224727"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the metal genre, runs 300 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Everything",
+      "cells": {
+        "Song": "Everything",
+        "Artist": "Mitchell Marlow",
+        "ID": "1837014514",
+        "Genre": "Rock and metal"
+      },
+      "classification": "Rock and metal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1837014514"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1837014514/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1837014514"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the nu-metal genre, runs 220 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Lazy Day Blues",
+      "cells": {
+        "Song": "Lazy Day Blues",
+        "Artist": "Bert Weedon",
+        "ID": "1840821490",
+        "Genre": "Rock and metal"
+      },
+      "classification": "Rock and metal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1840821490"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1840821490/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1840821490"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the rock-roll genre, runs 63 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Franche Info",
+      "cells": {
+        "Song": "Franche Info",
+        "Artist": "Stephane Daniel Gerard",
+        "ID": "1835383046",
+        "Genre": "Rock and metal"
+      },
+      "classification": "Rock and metal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1835383046"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1835383046/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1835383046"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the rock-techno genre, runs 141 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Invincible Champion",
+      "cells": {
+        "Song": "Invincible Champion",
+        "Artist": "Yvo Abadi",
+        "ID": "1839612139",
+        "Genre": "Rock and metal"
+      },
+      "classification": "Rock and metal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1839612139"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1839612139/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1839612139"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the indie genre, runs 90 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Chill Jazz",
+      "cells": {
+        "Song": "Chill Jazz",
+        "Artist": "John Graham Donaldson",
+        "ID": "1845341094",
+        "Genre": "Jazz and blues"
+      },
+      "classification": "Jazz and blues",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1845341094"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1845341094/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1845341094"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the modern-jazz genre, runs 153 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Lo-fi Chill A",
+      "cells": {
+        "Song": "Lo-fi Chill A",
+        "Artist": "Hip Hop Shop",
+        "ID": "9043887091",
+        "Genre": "Jazz and blues"
+      },
+      "classification": "Jazz and blues",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9043887091"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9043887091/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9043887091"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the blues genre, runs 137 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Piano Bar Jazz (a)",
+      "cells": {
+        "Song": "Piano Bar Jazz (a)",
+        "Artist": "KPM Main Series",
+        "ID": "1841979451",
+        "Genre": "Jazz and blues"
+      },
+      "classification": "Jazz and blues",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1841979451"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1841979451/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1841979451"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the smooth-jazz genre, runs 150 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Drum And Bass",
+      "cells": {
+        "Song": "Drum And Bass",
+        "Artist": "Jean-Jacques Ju Sage",
+        "ID": "1839019142",
+        "Genre": "Jazz and blues"
+      },
+      "classification": "Jazz and blues",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1839019142"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1839019142/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1839019142"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the modern-jazz genre, runs 143 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Oceanic Lofi",
+      "cells": {
+        "Song": "Oceanic Lofi",
+        "Artist": "Headphone Hero",
+        "ID": "139031824972373",
+        "Genre": "Jazz and blues"
+      },
+      "classification": "Jazz and blues",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/139031824972373"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/139031824972373/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/139031824972373"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the jazz genre, runs 157 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Funky Fanfare",
+      "cells": {
+        "Song": "Funky Fanfare",
+        "Artist": "Keith Mansfield",
+        "ID": "1840511219",
+        "Genre": "Jazz and blues"
+      },
+      "classification": "Jazz and blues",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1840511219"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1840511219/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1840511219"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the easy-listening genre, runs 150 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Sunflower",
+      "cells": {
+        "Song": "Sunflower",
+        "Artist": "CG5",
+        "ID": "131238802606572",
+        "Genre": "Pop and vocal"
+      },
+      "classification": "Pop and vocal",
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/131238802606572"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/131238802606572/details"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Listed free in the Creator Store under the pop genre and distributed through TooLostOfficial, but Roblox's delivery endpoint asks for a session before it will hand over the file, so public playback cannot be proved from outside a game."
+    },
+    {
+      "table": "roster",
+      "name": "Funky (A)",
+      "cells": {
+        "Song": "Funky (A)",
+        "Artist": "Richard John Cottle",
+        "ID": "1840434670",
+        "Genre": "Pop and vocal"
+      },
+      "classification": "Pop and vocal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1840434670"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1840434670/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1840434670"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the pop genre, runs 151 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "No Smoking",
+      "cells": {
+        "Song": "No Smoking",
+        "Artist": "Afro Dizzy",
+        "ID": "9047105533",
+        "Genre": "Pop and vocal"
+      },
+      "classification": "Pop and vocal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9047105533"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9047105533/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9047105533"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the pop genre, runs 188 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Young Forever",
+      "cells": {
+        "Song": "Young Forever",
+        "Artist": "Louise Dowd",
+        "ID": "1836795190",
+        "Genre": "Pop and vocal"
+      },
+      "classification": "Pop and vocal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1836795190"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1836795190/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1836795190"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the pop genre, runs 209 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Happy Song",
+      "cells": {
+        "Song": "Happy Song",
+        "Artist": "Justement Music",
+        "ID": "1843404009",
+        "Genre": "Pop and vocal"
+      },
+      "classification": "Pop and vocal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1843404009"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1843404009/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1843404009"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the contemporary-folk genre, runs 168 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "I'm Tickled Pink 30",
+      "cells": {
+        "Song": "I'm Tickled Pink 30",
+        "Artist": "Jack Shaindlin",
+        "ID": "1837485466",
+        "Genre": "Pop and vocal"
+      },
+      "classification": "Pop and vocal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1837485466"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1837485466/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1837485466"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the pop genre, runs 29 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Barbecue In Malibu A",
+      "cells": {
+        "Song": "Barbecue In Malibu A",
+        "Artist": "John Epping",
+        "ID": "1846723316",
+        "Genre": "Pop and vocal"
+      },
+      "classification": "Pop and vocal",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1846723316"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1846723316/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1846723316"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the pop genre, runs 186 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Halloween Horrors Waltz",
+      "cells": {
+        "Song": "Halloween Horrors Waltz",
+        "Artist": "Sylvain Michel Ott",
+        "ID": "1836009626",
+        "Genre": "Game and film score"
+      },
+      "classification": "Game and film score",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1836009626"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1836009626/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1836009626"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the film-score genre, runs 114 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Sad End (Solo Piano)",
+      "cells": {
+        "Song": "Sad End (Solo Piano)",
+        "Artist": "Romain Paillot",
+        "ID": "1838635121",
+        "Genre": "Game and film score"
+      },
+      "classification": "Game and film score",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1838635121"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1838635121/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1838635121"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the film-score genre, runs 153 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "The World Revolving",
+      "cells": {
+        "Song": "The World Revolving",
+        "Artist": "Kawaii Melon",
+        "ID": "89967120507744",
+        "Genre": "Game and film score"
+      },
+      "classification": "Game and film score",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/89967120507744"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/89967120507744/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/89967120507744"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the soundtracks genre, runs 102 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "CITY BUNCH",
+      "cells": {
+        "Song": "CITY BUNCH",
+        "Artist": "Pix3l",
+        "ID": "138682282241619",
+        "Genre": "Game and film score"
+      },
+      "classification": "Game and film score",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/138682282241619"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/138682282241619/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/138682282241619"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the soundtracks genre, runs 108 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "A RETRO SOUL (NOW, SLOP)",
+      "cells": {
+        "Song": "A RETRO SOUL (NOW, SLOP)",
+        "Artist": "ImperfectNORE",
+        "ID": "116457974828068",
+        "Genre": "Game and film score"
+      },
+      "classification": "Game and film score",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/116457974828068"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/116457974828068/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/116457974828068"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the soundtracks genre, runs 75 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Seek & Destroy",
+      "cells": {
+        "Song": "Seek & Destroy",
+        "Artist": "Bryan Kei Mantia",
+        "ID": "1845149698",
+        "Genre": "Game and film score"
+      },
+      "classification": "Game and film score",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1845149698"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1845149698/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1845149698"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the film-score genre, runs 143 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Sneeky",
+      "cells": {
+        "Song": "Sneeky",
+        "Artist": "Gregor F Narholz",
+        "ID": "1846531998",
+        "Genre": "Game and film score"
+      },
+      "classification": "Game and film score",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1846531998"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1846531998/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1846531998"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the film-score genre, runs 34 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Ghostly Night b",
+      "cells": {
+        "Song": "Ghostly Night b",
+        "Artist": "Magnum Opus",
+        "ID": "1841592252",
+        "Genre": "Game and film score"
+      },
+      "classification": "Game and film score",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1841592252"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1841592252/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1841592252"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the film-score genre, runs 139 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Horror Pantomime",
+      "cells": {
+        "Song": "Horror Pantomime",
+        "Artist": "Rupert Christie",
+        "ID": "1836272467",
+        "Genre": "Game and film score"
+      },
+      "classification": "Game and film score",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1836272467"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1836272467/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1836272467"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the panoramic genre, runs 100 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Te Quiero",
+      "cells": {
+        "Song": "Te Quiero",
+        "Artist": "Cezame",
+        "ID": "1837251940",
+        "Genre": "Latin and world"
+      },
+      "classification": "Latin and world",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1837251940"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1837251940/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1837251940"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the latin genre, runs 60 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "La Cucaracha",
+      "cells": {
+        "Song": "La Cucaracha",
+        "Artist": "Unknown",
+        "ID": "1837258874",
+        "Genre": "Latin and world"
+      },
+      "classification": "Latin and world",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1837258874"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1837258874/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1837258874"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the latin-dance-styles genre, runs 130 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Diamonds",
+      "cells": {
+        "Song": "Diamonds",
+        "Artist": "Friedrich Kruntorad",
+        "ID": "1846575559",
+        "Genre": "Latin and world"
+      },
+      "classification": "Latin and world",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1846575559"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1846575559/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1846575559"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the latin-dance-styles genre, runs 243 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Si Zu",
+      "cells": {
+        "Song": "Si Zu",
+        "Artist": "Roger Abaji",
+        "ID": "1838880936",
+        "Genre": "Latin and world"
+      },
+      "classification": "Latin and world",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1838880936"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1838880936/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1838880936"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the asian-influenced genre, runs 106 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Sunrise Workout",
+      "cells": {
+        "Song": "Sunrise Workout",
+        "Artist": "Boris Popov",
+        "ID": "1837324500",
+        "Genre": "Latin and world"
+      },
+      "classification": "Latin and world",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1837324500"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1837324500/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1837324500"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the asian-influenced genre, runs 178 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Mongolian Throat Singing 6",
+      "cells": {
+        "Song": "Mongolian Throat Singing 6",
+        "Artist": "Erdem Baatar",
+        "ID": "1845938478",
+        "Genre": "Latin and world"
+      },
+      "classification": "Latin and world",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1845938478"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1845938478/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1845938478"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the unclassified genre, runs 21 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Winter Holidays",
+      "cells": {
+        "Song": "Winter Holidays",
+        "Artist": "Kosinus",
+        "ID": "9046740461",
+        "Genre": "Seasonal and holiday"
+      },
+      "classification": "Seasonal and holiday",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/9046740461"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/9046740461/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/9046740461"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the film-score genre, runs 140 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Christmas Tree",
+      "cells": {
+        "Song": "Christmas Tree",
+        "Artist": "Alain Mouysset",
+        "ID": "1838667764",
+        "Genre": "Seasonal and holiday"
+      },
+      "classification": "Seasonal and holiday",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1838667764"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1838667764/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1838667764"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the film-score genre, runs 73 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "A Christmas Fantasy (a)",
+      "cells": {
+        "Song": "A Christmas Fantasy (a)",
+        "Artist": "Ron Goodwin",
+        "ID": "1841343148",
+        "Genre": "Seasonal and holiday"
+      },
+      "classification": "Seasonal and holiday",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1841343148"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1841343148/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1841343148"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the neo-classical genre, runs 181 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Classic Easter",
+      "cells": {
+        "Song": "Classic Easter",
+        "Artist": "Sylvain Michel Ott",
+        "ID": "1836009208",
+        "Genre": "Seasonal and holiday"
+      },
+      "classification": "Seasonal and holiday",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1836009208"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1836009208/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1836009208"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the classical-styling genre, runs 122 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Minions - Bee Doo Bee Doo Bee Doo",
+      "cells": {
+        "Song": "Minions - Bee Doo Bee Doo Bee Doo",
+        "Artist": "Q_Q",
+        "ID": "130844390",
+        "Genre": "Meme and novelty"
+      },
+      "classification": "Meme and novelty",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/130844390"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/130844390/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/130844390"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the unclassified genre, runs 10 seconds, distributed through Q_Q. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Cat Chase",
+      "cells": {
+        "Song": "Cat Chase",
+        "Artist": "Yvo Abadi",
+        "ID": "1839444520",
+        "Genre": "Meme and novelty"
+      },
+      "classification": "Meme and novelty",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/1839444520"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/1839444520/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/1839444520"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the kitsch genre, runs 122 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Skibidi Toilet! | Crazy Funny Songs",
+      "cells": {
+        "Song": "Skibidi Toilet! | Crazy Funny Songs",
+        "Artist": "Funny Songs",
+        "ID": "109829522404772",
+        "Genre": "Meme and novelty"
+      },
+      "classification": "Meme and novelty",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/109829522404772"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/109829522404772/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/109829522404772"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the comedy genre, runs 115 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Megalovania Remix",
+      "cells": {
+        "Song": "Megalovania Remix",
+        "Artist": "Klo_vic",
+        "ID": "101598365847186",
+        "Genre": "Meme and novelty"
+      },
+      "classification": "Meme and novelty",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/101598365847186"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/101598365847186/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/101598365847186"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the dance genre, runs 170 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Bad Time | Undertale: Yanderetale",
+      "cells": {
+        "Song": "Bad Time | Undertale: Yanderetale",
+        "Artist": "SleepyOreo",
+        "ID": "134453206423714",
+        "Genre": "Meme and novelty"
+      },
+      "classification": "Meme and novelty",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "The experience must give you a boombox, radio or music panel that accepts a typed ID.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/134453206423714"
+        },
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/134453206423714/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://assetdelivery.roblox.com/v2/assetId/134453206423714"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox files this under the alternative genre, runs 150 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
+    },
+    {
+      "table": "roster",
+      "name": "Mood",
+      "cells": {
+        "Song": "Mood",
+        "Artist": "24kGoldn",
+        "ID": "5519565135",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/5519565135/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/5519565135"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account ripxvrr and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Highway to Hell",
+      "cells": {
+        "Song": "Highway to Hell",
+        "Artist": "AC/DC",
+        "ID": "4728058875",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/4728058875/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/4728058875"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account itdoodle and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Take On Me",
+      "cells": {
+        "Song": "Take On Me",
+        "Artist": "a-ha",
+        "ID": "4606705490",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/4606705490/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/4606705490"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account Voil Records and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "God Is a Woman",
+      "cells": {
+        "Song": "God Is a Woman",
+        "Artist": "Ariana Grande",
+        "ID": "2071829884",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/2071829884/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/2071829884"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account φidur ® records and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "34+35",
+      "cells": {
+        "Song": "34+35",
+        "Artist": "Ariana Grande",
+        "ID": "588219957",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/588219957/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/588219957"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox no longer returns any asset record for this ID. The upload has been deleted outright."
+    },
+    {
+      "table": "roster",
+      "name": "Daisy",
+      "cells": {
+        "Song": "Daisy",
+        "Artist": "Ashnikko",
+        "ID": "5321298199",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/5321298199/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/5321298199"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account unaIive and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "My Head & My Heart",
+      "cells": {
+        "Song": "My Head & My Heart",
+        "Artist": "Ava Max",
+        "ID": "6032653117",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/6032653117/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/6032653117"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account Vulpesmyrca and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Fur Elise",
+      "cells": {
+        "Song": "Fur Elise",
+        "Artist": "Ludwig van Beethoven",
+        "ID": "450051032",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/450051032/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/450051032"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account Classical Nation and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "everything i wanted",
+      "cells": {
+        "Song": "everything i wanted",
+        "Artist": "Billie Eilish",
+        "ID": "4380429016",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/4380429016/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/4380429016"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account RoJuniors and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Let's Get It Started",
+      "cells": {
+        "Song": "Let's Get It Started",
+        "Artist": "The Black Eyed Peas",
+        "ID": "138134680",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/138134680/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/138134680"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"[ Content Deleted ]\". The original upload was made by the account KingOfRabbits and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Rasputin",
+      "cells": {
+        "Song": "Rasputin",
+        "Artist": "Boney M",
+        "ID": "5512350519",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/5512350519/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/5512350519"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account Spenc7r and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Butter",
+      "cells": {
+        "Song": "Butter",
+        "Artist": "BTS",
+        "ID": "6844912719",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/6844912719/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/6844912719"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account SO0MING and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Sandstorm",
+      "cells": {
+        "Song": "Sandstorm",
+        "Artist": "Darude",
+        "ID": "166562385",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/166562385/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/166562385"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account wheelspree and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Levitating",
+      "cells": {
+        "Song": "Levitating",
+        "Artist": "Dua Lipa",
+        "ID": "6606223785",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/6606223785/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/6606223785"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"[ Content Deleted ]\". The original upload was made by the account OtisTheReaperRBX and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "God's Plan",
+      "cells": {
+        "Song": "God's Plan",
+        "Artist": "Drake",
+        "ID": "2201067635",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/2201067635/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/2201067635"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"[ Content Deleted ]\". The original upload was made by the account dupedease and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Solo",
+      "cells": {
+        "Song": "Solo",
+        "Artist": "Clean Bandit",
+        "ID": "2106186490",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/2106186490/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/2106186490"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"[ Content Deleted ]\". The original upload was made by the account qxjoestarr and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Spooky, Scary Skeletons",
+      "cells": {
+        "Song": "Spooky, Scary Skeletons",
+        "Artist": "Andrew Gold",
+        "ID": "138081566",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/138081566/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/138081566"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Spooky Scary Skeletons - JonTron\" by DoomPieOfFun, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Intergalactic",
+      "cells": {
+        "Song": "Intergalactic",
+        "Artist": "Beastie Boys",
+        "ID": "131603357",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/131603357/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/131603357"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Intergalactic\" by Bassics, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Moonlight Sonata",
+      "cells": {
+        "Song": "Moonlight Sonata",
+        "Artist": "Ludwig van Beethoven",
+        "ID": "445023353",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/445023353/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/445023353"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Beethoven - Moonlight Sonata Mvt. 1\" by Classical Nation, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Boom Clap",
+      "cells": {
+        "Song": "Boom Clap",
+        "Artist": "Charli XCX",
+        "ID": "189739789",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/189739789/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/189739789"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Boom clap I'm in me mums car\" by taymaster, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "This Is America",
+      "cells": {
+        "Song": "This Is America",
+        "Artist": "Childish Gambino",
+        "ID": "2062482384",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/2062482384/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/2062482384"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"This Is America\" by devon_wayne, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Gangsta's Paradise",
+      "cells": {
+        "Song": "Gangsta's Paradise",
+        "Artist": "Coolio",
+        "ID": "6070263388",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/6070263388/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/6070263388"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Gangstas Paradise (Loop)\" by Kruutaa, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Get Hyper",
+      "cells": {
+        "Song": "Get Hyper",
+        "Artist": "Droideka",
+        "ID": "138855854",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/138855854/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/138855854"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Droideka - Get hyper.\" by PixelFlame, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Let It Go",
+      "cells": {
+        "Song": "Let It Go",
+        "Artist": "Idina Menzel",
+        "ID": "189105508",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/189105508/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/189105508"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Let it go\" by Chillinimal, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Pumped Up Kicks",
+      "cells": {
+        "Song": "Pumped Up Kicks",
+        "Artist": "Foster the People",
+        "ID": "2694148776",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/2694148776/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/2694148776"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Foster the People - Pumped up Kicks\" by ICUolo, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Heat Waves",
+      "cells": {
+        "Song": "Heat Waves",
+        "Artist": "Glass Animals",
+        "ID": "6432181830",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/6432181830/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/6432181830"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Heat Waves - Glass animals |slowed| :]\" by Tokyo_Nova, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Trumpets",
+      "cells": {
+        "Song": "Trumpets",
+        "Artist": "Jason Derulo",
+        "ID": "146237847",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/146237847/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/146237847"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"And the trumpets they go...\" by jki, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Whatcha Say",
+      "cells": {
+        "Song": "Whatcha Say",
+        "Artist": "Jason Derulo",
+        "ID": "168208965",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/168208965/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/168208965"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Whatcha Say\" by Goremu, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Smooth Criminal",
+      "cells": {
+        "Song": "Smooth Criminal",
+        "Artist": "Michael Jackson",
+        "ID": "4883181281",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/4883181281/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/4883181281"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Michael Jackson, Smooth Criminal best fragment\" by HolyKac, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Despacito",
+      "cells": {
+        "Song": "Despacito",
+        "Artist": "Luis Fonsi",
+        "ID": "673605737",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/673605737/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/673605737"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Luis Fonsi - Despacito\" by memearsalad, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Mii Channel Theme",
+      "cells": {
+        "Song": "Mii Channel Theme",
+        "Artist": "Kazumi Totaka",
+        "ID": "143666548",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/143666548/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/143666548"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Mii Channel Music (Wii)\" by Jinnax, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "The Office Theme",
+      "cells": {
+        "Song": "The Office Theme",
+        "Artist": "Nashville String Machine",
+        "ID": "889397884",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/889397884/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/889397884"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"The Office Theme Song Loud\" by DisneyLandChurro, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Running in the 90s",
+      "cells": {
+        "Song": "Running in the 90s",
+        "Artist": "Max Coveri",
+        "ID": "294997736",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/294997736/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/294997736"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Running in the 90s\" by roblox_user_92006068, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Never Gonna Give You Up",
+      "cells": {
+        "Song": "Never Gonna Give You Up",
+        "Artist": "Rick Astley",
+        "ID": "4662452515",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/4662452515/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/4662452515"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account 24Chubbies and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Bohemian Rhapsody",
+      "cells": {
+        "Song": "Bohemian Rhapsody",
+        "Artist": "Queen",
+        "ID": "142058994",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/142058994/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/142058994"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account TimeHalt and was taken down."
+    },
+    {
+      "table": "roster",
+      "name": "Paint It, Black",
+      "cells": {
+        "Song": "Paint It, Black",
+        "Artist": "The Rolling Stones",
+        "ID": "6828176320",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/6828176320/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/6828176320"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"The Rolling Stones - Paint It, Black\" by Newbie Audios, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Clint Eastwood",
+      "cells": {
+        "Song": "Clint Eastwood",
+        "Artist": "Gorillaz",
+        "ID": "497213766",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/497213766/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/497213766"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Gorillaz - Clint Eastwood\" by imsoawesomeandhot, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Dynamite",
+      "cells": {
+        "Song": "Dynamite",
+        "Artist": "BTS",
+        "ID": "6257627378",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/6257627378/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/6257627378"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"BTS - Dynamite\" by Be Strong, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Sadness and Sorrow",
+      "cells": {
+        "Song": "Sadness and Sorrow",
+        "Artist": "Toshio Masuda",
+        "ID": "131083461",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/131083461/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/131083461"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"Sadness and Sorrow- Naruto OST\" by Rikudobito, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    },
+    {
+      "table": "roster",
+      "name": "Big Poppa",
+      "cells": {
+        "Song": "Big Poppa",
+        "Artist": "The Notorious B.I.G.",
+        "ID": "6209631384",
+        "Genre": "Not listed"
+      },
+      "classification": "Not listed",
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://economy.roblox.com/v2/assets/6209631384/details"
+        },
+        {
+          "tier": 1,
+          "url": "https://create.roblox.com/store/asset/6209631384"
+        }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": "The upload still exists as \"The Notorious B.I.G. - Big Poppa\" by No Limit Recordz, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
+    }
+  ],
+  "unverified_summary": "Nothing here has been tested inside a live boombox, because a boombox belongs to whichever experience you are standing in and any experience can block audio its owner does not own. Three rows sit at Unverified for a harder reason: Roblox still lists them free in the Creator Store, but its delivery endpoint refuses the audio file to a request with no session behind it, so public playback cannot be proved from outside a game. Release dates, chart positions and the identity of cover versions are not recorded here at all, because Roblox does not publish them and no other source can be checked against the asset itself.",
+  "disagreements": [
+    {
+      "item": "How many published song IDs still resolve",
+      "source_a": "Roblox Den lists 2M+ music codes and says its algorithm hides codes that have been removed or deleted",
+      "source_b": "RobloxSong lists 1M+ codes and describes a database that updates in real time to provide working codes only",
+      "confirmed": "Neither claim survives a test. Of 199 unique IDs pulled from four current published lists, 82 no longer resolve as usable audio, and only 56 could be confirmed as served publicly by Roblox."
+    },
+    {
+      "item": "What ID 1846368080 actually plays",
+      "source_a": "Published lists label it Stadium Rave by SpongeBob SquarePants",
+      "source_b": "Roblox records the asset as Stadium Rave (A) by Sonoton Music, from the album Clubmix",
+      "confirmed": "Roblox's own asset record stands. The SpongeBob attribution is not supported by anything on the asset page."
+    },
+    {
+      "item": "What ID 1837015626 actually plays",
+      "source_a": "Published lists title it Tokyo Drift, which readers take as the Teriyaki Boyz recording",
+      "source_b": "Roblox records the asset as Tokyo Drift by Fumitake Igarashi, from the album DIGITAL PLAYGROUND",
+      "confirmed": "Roblox's own asset record stands. It is a production library track that shares a title, not the film recording."
+    },
+    {
+      "item": "Whether Raining Tacos at 142376088 is publicly playable",
+      "source_a": "Every list sampled presents it as a working code, and it is the single most repeated Roblox music code in circulation",
+      "source_b": "Roblox still lists it free in the Creator Store, but its delivery endpoint answers an unauthenticated request with \"Authentication required to access Asset\"",
+      "confirmed": "Not resolvable from outside a session, so the row is held at Unverified rather than being asserted either way."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "ID 1835383046 is Hurt by Nine Inch Nails",
+      "why_wrong": "Roblox records that asset as Franche Info by Stephane Daniel Gerard, a production library track distributed through APM Music.",
+      "origin": "A song ID list that pasted a library ID under a famous title to fill a row."
+    },
+    {
+      "claim": "ID 1845015205 is Sigur 1 by Sigur Ros",
+      "why_wrong": "Roblox records that asset as Nations United by Cornelus Joh M Cor Bolten, again an APM Music library track.",
+      "origin": "The same family of lists, copied between sites without anyone opening the asset page."
+    },
+    {
+      "claim": "ID 186616625 is Hey Jude by The Beatles",
+      "why_wrong": "The asset is not audio. Roblox returns an image asset named Donation 500, so no boombox can play it at all.",
+      "origin": "A list that harvested numbers without checking the asset type behind them."
+    },
+    {
+      "claim": "ID 521116871 is Say So by Doja Cat",
+      "why_wrong": "The asset is a Roblox place, not audio. Roblox returns svkoolzam's Place for that number.",
+      "origin": "A published music code table."
+    },
+    {
+      "claim": "ID 239631256 is the Friends theme",
+      "why_wrong": "The asset is a Roblox place named Legomasterjs's Place. Pasting it into a boombox does nothing.",
+      "origin": "A published music code table."
+    },
+    {
+      "claim": "ID 1841636346 is a track called Angel",
+      "why_wrong": "Roblox records it as Upon a Star a by Alexander Paul Rudd. The title in circulation belongs to no part of the asset record.",
+      "origin": "A bulk list of library IDs given invented titles."
+    }
+  ],
+  "changes": [
+    {
+      "at": "2026-08-25T08:00:00Z",
+      "what": "Page first published. Every ID tested against Roblox's asset, catalogue and delivery endpoints before listing."
+    },
+    {
+      "at": "2026-08-25T08:30:00Z",
+      "what": "Forty widely republished IDs archived as removed or private after testing, rather than dropped."
+    },
+    {
+      "at": "2026-08-25T09:00:00Z",
+      "what": "Three IDs held at Unverified because Roblox lists them free but will not serve the file without a session."
+    }
+  ],
+  "next_change": {
+    "pattern": "Roblox scrubs infringing uploads in waves rather than on a schedule, so an ID can die between one check and the next. Library and distributor uploads survive; re-uploads of commercial records do not.",
+    "watch": [
+      "The Creator Store audio catalogue",
+      "The asset page for each ID on create.roblox.com",
+      "Roblox creator documentation on audio assets"
+    ]
+  }
+}

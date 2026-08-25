@@ -1,0 +1,377 @@
+{
+  "subject": "MONOPOLY GO! Golden Blitz",
+  "slug": "monopoly-go-golden-blitz",
+  "entity_id": "1621328561",
+  "entity_url": "https://apps.apple.com/us/app/monopoly-go/id1621328561",
+  "developer": "Scopely",
+  "permalink": "/guides/monopoly-go-golden-blitz/",
+  "checked_at": "2026-08-25T09:00:00Z",
+  "content_changed_at": "2026-08-25T09:00:00Z",
+  "recheck_cadence": "Rechecked every Monday and Thursday morning UK time, and again within 24 hours of any Golden Blitz appearing in the game or on the official Discord. Each check either adds a new occurrence to the table or re-dates the rows already in it, so a row never claims a check it did not get. No overnight or weekend recheck is promised.",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://apps.apple.com/us/app/monopoly-go/id1621328561",
+      "note": "Official App Store listing, published by Scopely"
+    },
+    {
+      "type": "official_page",
+      "url": "https://www.monopolygo.com/",
+      "note": "Official MONOPOLY GO! website"
+    },
+    {
+      "type": "discord",
+      "url": "https://discord.com/invite/officialmonopolygo",
+      "note": "Official Discord server, which runs the sticker poll before each Blitz"
+    },
+    {
+      "type": "instagram",
+      "url": "https://www.instagram.com/monopolygo/",
+      "note": "Official Instagram, where event Stories appear first"
+    },
+    {
+      "type": "facebook",
+      "url": "https://www.facebook.com/monopolygo",
+      "note": "Official Facebook page, which repeats event posts permanently"
+    }
+  ],
+  "tables": {
+    "next": {
+      "caption": "The next Golden Blitz, expected only and not announced by the publisher",
+      "columns": ["Occurrence", "Expected window", "Gold stickers expected", "Basis for the expectation"]
+    },
+    "occurrences": {
+      "caption": "Every Golden Blitz occurrence on record, newest first",
+      "columns": ["Occurrence", "Window", "Gold stickers unlocked for trade", "Sources behind the dates"]
+    }
+  },
+  "rows": [
+    {
+      "table": "next",
+      "name": "Next Golden Blitz, not announced",
+      "cells": {
+        "Occurrence": "Next Golden Blitz, not announced",
+        "Expected window": "Expected 26 August 2026. Scopely has announced nothing and publishes no calendar.",
+        "Gold stickers expected": "Predicted only: Set 16 Family Portrait and Set 17 The Goods. No publisher confirmation exists.",
+        "Basis for the expectation": "A community sticker poll ran on the official Discord and closed 24 hours later. One outlet dates the Blitz from that poll close, one fan tracker labels the same pair a prediction, and one shop site presents it as already running."
+      },
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "Album unlocked and a duplicate of the featured gold sticker in your collection.",
+      "added_at": "2026-08-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/golden-blitz" },
+        { "tier": 3, "url": "https://monopolygo.game/next-monopoly-go-golden-blitz" },
+        { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "This row is a prediction and is labelled Expected for that reason. Two trackers list the same sticker pair, but one calls it unconfirmed and another prints it as a completed event. Nothing from Scopely names a date, so the row stays Unverified until the event is observed in the app."
+    },
+    {
+      "table": "occurrences",
+      "name": "Golden Blitz, 21 August 2026",
+      "cells": {
+        "Occurrence": "Golden Blitz, 21 August 2026",
+        "Window": "21 to 22 August 2026",
+        "Gold stickers unlocked for trade": "Set 13 Honey, I'm Home and Set 14 Rudy Root",
+        "Sources behind the dates": "One outlet and two fan trackers"
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Duplicate of the featured gold sticker required to send.",
+      "added_at": "2026-08-21T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": "2026-08-22T00:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/golden-blitz" },
+        { "tier": 3, "url": "https://monopolygo.game/next-monopoly-go-golden-blitz" },
+        { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Two of three sources start this occurrence on the 21st. One shop site starts it a day earlier, which is consistent with a local time conversion of a 05:00 UTC start rather than a different event."
+    },
+    {
+      "table": "occurrences",
+      "name": "Golden Blitz, 28 July 2026",
+      "cells": {
+        "Occurrence": "Golden Blitz, 28 July 2026",
+        "Window": "28 to 29 July 2026",
+        "Gold stickers unlocked for trade": "Set 20 Ranier Wolfcastle and Set 21 Guy Incognito",
+        "Sources behind the dates": "One outlet and two fan trackers, all agreeing"
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Duplicate of the featured gold sticker required to send.",
+      "added_at": "2026-07-28T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": "2026-07-29T00:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/golden-blitz" },
+        { "tier": 3, "url": "https://monopolygo.game/next-monopoly-go-golden-blitz" },
+        { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The last occurrence of the Simpsons album cycle. The same outlet that dates this correctly in its own list also states elsewhere on the page that the previous occurrence was the last one, which is why this page rebuilt the table from three sources rather than quoting one."
+    },
+    {
+      "table": "occurrences",
+      "name": "Golden Blitz, 25 July 2026",
+      "cells": {
+        "Occurrence": "Golden Blitz, 25 July 2026",
+        "Window": "25 to 26 July 2026",
+        "Gold stickers unlocked for trade": "Set 18 Carl Carlson and Set 21 Mr. Snrub",
+        "Sources behind the dates": "One outlet and two fan trackers, all agreeing"
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Duplicate of the featured gold sticker required to send.",
+      "added_at": "2026-07-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": "2026-07-26T00:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/golden-blitz" },
+        { "tier": 3, "url": "https://monopolygo.game/next-monopoly-go-golden-blitz" },
+        { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Three days after the previous occurrence, which is the tightest spacing on record and the pattern that repeats near an album close."
+    },
+    {
+      "table": "occurrences",
+      "name": "Golden Blitz, 22 July 2026",
+      "cells": {
+        "Occurrence": "Golden Blitz, 22 July 2026",
+        "Window": "22 to 23 July 2026",
+        "Gold stickers unlocked for trade": "Set 18 Lenny Leonard and Set 17 Shutdown",
+        "Sources behind the dates": "One outlet and two fan trackers, all agreeing"
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Duplicate of the featured gold sticker required to send.",
+      "added_at": "2026-07-22T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": "2026-07-23T00:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/golden-blitz" },
+        { "tier": 3, "url": "https://monopolygo.game/next-monopoly-go-golden-blitz" },
+        { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Sticker pair order differs between trackers. The pair itself is identical across all three sources."
+    },
+    {
+      "table": "occurrences",
+      "name": "Golden Blitz, 19 July 2026",
+      "cells": {
+        "Occurrence": "Golden Blitz, 19 July 2026",
+        "Window": "19 to 20 July 2026",
+        "Gold stickers unlocked for trade": "Set 21 Homer's Hoagie and Set 15 Northern Lights",
+        "Sources behind the dates": "One outlet and two fan trackers, all agreeing"
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Duplicate of the featured gold sticker required to send.",
+      "added_at": "2026-07-19T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": "2026-07-20T00:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/golden-blitz" },
+        { "tier": 3, "url": "https://monopolygo.game/next-monopoly-go-golden-blitz" },
+        { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The first of four occurrences inside ten days, all clustered on the run to the album deadline."
+    },
+    {
+      "table": "occurrences",
+      "name": "Golden Blitz, 12 July 2026",
+      "cells": {
+        "Occurrence": "Golden Blitz, 12 July 2026",
+        "Window": "12 to 13 July 2026",
+        "Gold stickers unlocked for trade": "Set 20 Kent Brockman and Set 18 Pickled Eggs",
+        "Sources behind the dates": "Two fan trackers agree. One outlet dates it three days earlier."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Duplicate of the featured gold sticker required to send.",
+      "added_at": "2026-07-12T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": "2026-07-13T00:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/golden-blitz" },
+        { "tier": 3, "url": "https://monopolygo.game/next-monopoly-go-golden-blitz" },
+        { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "The outlet list carries this occurrence on the 9th with no sticker pair attached, while both trackers carry it on the 12th with the same pair. The pair is agreed, the date is not, and the gap is too large to be a timezone conversion."
+    },
+    {
+      "table": "occurrences",
+      "name": "Golden Blitz, 4 July 2026",
+      "cells": {
+        "Occurrence": "Golden Blitz, 4 July 2026",
+        "Window": "4 to 5 July 2026",
+        "Gold stickers unlocked for trade": "Set 15 Obviously Grilled and Set 16 More Coffee",
+        "Sources behind the dates": "One outlet and two fan trackers, all agreeing"
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Duplicate of the featured gold sticker required to send.",
+      "added_at": "2026-07-04T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": "2026-07-05T00:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/golden-blitz" },
+        { "tier": 3, "url": "https://monopolygo.game/next-monopoly-go-golden-blitz" },
+        { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Both trackers mark this pair as four star stickers, which is the common tier for a Blitz pair outside a season finale."
+    },
+    {
+      "table": "occurrences",
+      "name": "Golden Blitz, 28 June 2026",
+      "cells": {
+        "Occurrence": "Golden Blitz, 28 June 2026",
+        "Window": "28 to 29 June 2026",
+        "Gold stickers unlocked for trade": "Set 13 Blinky and Set 14 Sad Schmuck",
+        "Sources behind the dates": "Two fan trackers agree. One outlet dates it two days earlier."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Duplicate of the featured gold sticker required to send.",
+      "added_at": "2026-06-28T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": "2026-06-29T00:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/golden-blitz" },
+        { "tier": 3, "url": "https://monopolygo.game/next-monopoly-go-golden-blitz" },
+        { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "The outlet list carries this occurrence on the 26th. Both trackers carry it on the 28th with the same sticker pair. The date stays disputed and the row is marked accordingly rather than averaged."
+    },
+    {
+      "table": "occurrences",
+      "name": "Golden Blitz, 2 June 2026",
+      "cells": {
+        "Occurrence": "Golden Blitz, 2 June 2026",
+        "Window": "2 to 3 June 2026",
+        "Gold stickers unlocked for trade": "Set 24 Brick House and Set 24 Blown Away",
+        "Sources behind the dates": "One outlet and two fan trackers, all agreeing"
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Duplicate of the featured gold sticker required to send.",
+      "added_at": "2026-06-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": "2026-06-03T00:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/golden-blitz" },
+        { "tier": 3, "url": "https://monopolygo.game/next-monopoly-go-golden-blitz" },
+        { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "One tracker records a 04:00 UTC start for this occurrence against a 05:00 UTC start for the others, which is the only recorded variation in start time."
+    },
+    {
+      "table": "occurrences",
+      "name": "Golden Blitz, 29 May 2026",
+      "cells": {
+        "Occurrence": "Golden Blitz, 29 May 2026",
+        "Window": "29 to 30 May 2026",
+        "Gold stickers unlocked for trade": "Set 22 Transformed and Set 24 Howling Wolf",
+        "Sources behind the dates": "One outlet and two fan trackers, all agreeing"
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Duplicate of the featured gold sticker required to send.",
+      "added_at": "2026-05-29T00:00:00Z",
+      "last_verified_at": "2026-08-25T09:00:00Z",
+      "ended_at": "2026-05-30T00:00:00Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.pcgamesn.com/monopoly-go/golden-blitz" },
+        { "tier": 3, "url": "https://monopolygo.game/next-monopoly-go-golden-blitz" },
+        { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The oldest occurrence carried on this page. Older entries exist in the outlet list but were not cross-checked against a second source, so they are not listed here."
+    }
+  ],
+  "unverified_summary": "No row on this page reaches Confirmed, and none can. Scopely runs the Golden Blitz as an in-app event with no published calendar, no press note and no permanent post, so there is no publisher record to check a date against after the window shuts. Every row therefore rests on one reputable outlet plus two fan trackers, which is tier 2 and tier 3 evidence with no tier 0 or tier 1 anywhere. Two rows carry dates the outlet and the trackers disagree on by two and three days and are marked Conflicting rather than resolved. The next occurrence is not announced by anyone: the sticker pair circulating for it comes from a community Discord poll, one tracker labels it unconfirmed and a shop site prints it as already completed. The 05:00 UTC start time comes from a single tracker and no other source states a time at all. Nothing here was observed in the app by this desk.",
+  "disagreements": [
+    {
+      "item": "The date of the Kent Brockman and Pickled Eggs occurrence",
+      "source_a": "One outlet lists it three days earlier with no sticker pair attached",
+      "source_b": "Two independent trackers list it on the later date with the pair named",
+      "confirmed": "Not confirmed. The sticker pair is agreed, the date is not, and the row is marked Conflicting."
+    },
+    {
+      "item": "The date of the Blinky and Sad Schmuck occurrence",
+      "source_a": "One outlet lists it two days earlier",
+      "source_b": "Two independent trackers list it on the later date with the same pair",
+      "confirmed": "Not confirmed. Two days is too large to be a timezone conversion, so the row stays Conflicting."
+    },
+    {
+      "item": "Whether the next Golden Blitz has already run",
+      "source_a": "A sticker shop lists the expected pair in its schedule table as a completed event",
+      "source_b": "An outlet and a fan tracker both call the same pair a prediction that Scopely has not confirmed",
+      "confirmed": "Not confirmed as run. The row stays in the expected table with an Unverified status until the event is observed in the app."
+    },
+    {
+      "item": "How long one occurrence lasts",
+      "source_a": "Several sources say a flat 24 hours",
+      "source_b": "Others say 15 to 18 hours, and one describes windows as short as a few hours",
+      "confirmed": "Not confirmed. Every dated window on this page spans two calendar dates, which is consistent with roughly a day but does not settle the exact figure."
+    },
+    {
+      "item": "How often the event runs",
+      "source_a": "One tracker states a flat interval of 4 to 6 days",
+      "source_b": "An outlet states roughly three times a month, clustered at the end of an album and absent at the start of a new one",
+      "confirmed": "The dated table supports the second description. Gaps on record run from 3 days to 26 days, so a flat interval does not fit the evidence."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "Published Golden Blitz calendars listing future dates as fixed schedule",
+      "why_wrong": "Scopely publishes no calendar. Every future date on those pages is a projection from past gaps, and the gaps on record vary by a factor of eight, so a projection presented as a schedule is a guess with a table around it.",
+      "origin": "Sticker shops and aggregator sites that need a date on the page to rank for the schedule query."
+    },
+    {
+      "claim": "Gold sticker generators and Blitz trade bots that ask for your account name",
+      "why_wrong": "A Blitz trade happens inside the app between two accounts already on each other's friend list. Nothing outside the game can place a gold sticker in an album, and a username is enough to target an account for a phishing attempt.",
+      "origin": "Ad funded generator sites that rank alongside genuine event pages."
+    },
+    {
+      "claim": "Claims that any gold sticker can be traded once a Blitz starts",
+      "why_wrong": "Only the two featured stickers unlock. Every other gold sticker stays locked for the whole window, and you still need a duplicate of the featured one before you can send it.",
+      "origin": "Video thumbnails and short form clips that compress the rule into a headline."
+    }
+  ],
+  "changes": [
+    { "at": "2026-08-25T08:00:00Z", "what": "Page published with 10 dated past occurrences rebuilt from three independent lists" },
+    { "at": "2026-08-25T09:00:00Z", "what": "Next occurrence recorded as expected and unannounced after sources split on whether it had run" }
+  ],
+  "next_change": {
+    "pattern": "Occurrences cluster rather than repeat on a fixed interval. Gaps on record run from 3 days to 26 days. The short gaps land in the closing weeks of a sticker album, when several Blitz windows can run inside ten days, and the long gaps land immediately after a new album or season opens, when the event goes quiet for three to four weeks. Expect nothing early in an album and expect a burst as its deadline approaches.",
+    "watch": [
+      "The in game events menu, where a live Blitz shows an icon at the side of the board with a countdown",
+      "The official Discord server, which runs the community sticker poll that precedes each Blitz",
+      "The official Instagram Story, which carries the event post before any aggregator",
+      "The official Facebook page, which repeats the same post permanently"
+    ]
+  }
+}

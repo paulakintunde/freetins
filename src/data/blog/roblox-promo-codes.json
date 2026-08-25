@@ -1,0 +1,2738 @@
+{
+  "subject": "Roblox Promo Codes",
+  "slug": "roblox-promo-codes",
+  "entity_id": "https://www.roblox.com/redeem",
+  "entity_url": "https://www.roblox.com/redeem",
+  "developer": "Roblox Corporation",
+  "permalink": "/blog/roblox-promo-codes/",
+  "checked_at": "2026-08-25T08:00:00Z",
+  "content_changed_at": "2026-08-25T08:00:00Z",
+  "recheck_cadence": "Rechecked weekly against the Roblox redeem page and Roblox's own announcement channels, and within 24 hours of any Roblox post that names a code.",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/redeem",
+      "note": "Redeem Roblox Codes, the only official redemption page"
+    },
+    {
+      "type": "support_article",
+      "url": "https://en.help.roblox.com/hc/en-us/articles/360029650831-How-Do-I-Redeem-a-Promo-Code",
+      "note": "Roblox Support: How Do I Redeem a Promo Code?"
+    },
+    {
+      "type": "support_article",
+      "url": "https://en.help.roblox.com/hc/en-us/articles/203313270-How-Do-I-Get-Promotional-or-Contest-Items",
+      "note": "Roblox Support: How Do I Get Promotional or Contest Items?"
+    },
+    {
+      "type": "support_article",
+      "url": "https://en.help.roblox.com/hc/en-us/articles/204262550-Free-Robux-or-Subscription-Generators",
+      "note": "Roblox Support: Free Robux or Subscription Generators"
+    },
+    {
+      "type": "support_article",
+      "url": "https://en.help.roblox.com/hc/en-us/articles/203313200",
+      "note": "Roblox Support: Ways to Get Robux"
+    },
+    {
+      "type": "support_article",
+      "url": "https://en.help.roblox.com/hc/en-us/articles/203313600-Browser-Customizing-Your-Avatar",
+      "note": "Roblox Support: Browser, Customizing Your Avatar"
+    },
+    {
+      "type": "official_page",
+      "url": "https://en.help.roblox.com/hc/en-us/articles/206596923",
+      "note": "Roblox Support: Roblox on Social Media, the official account list"
+    },
+    {
+      "type": "blog",
+      "url": "https://about.roblox.com/newsroom",
+      "note": "The official Roblox newsroom and blog"
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Every Roblox platform promo code on record, live and dead",
+      "columns": [
+        "Code",
+        "Reward",
+        "Requirements"
+      ]
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "SPIDERCOLA",
+      "cells": {
+        "Code": "SPIDERCOLA",
+        "Reward": "Spider Cola shoulder accessory",
+        "Requirements": "Signed in Roblox account. Redeem on the Roblox redeem page."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Signed in Roblox account. Redeem on the Roblox redeem page.",
+      "added_at": "2019-05-10T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/catalog/3164811019/Spider-Cola"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/Catalog:Spider_Cola"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "The Roblox catalogue page confirms the item exists, is created by Roblox and is not for sale, so a code is the only route to it. Roblox publishes no live promo code list, so redeemability rests on outlet testing. Held at Unverified until a redemption on a fresh account."
+    },
+    {
+      "table": "codes",
+      "name": "Glimmer",
+      "cells": {
+        "Code": "Glimmer",
+        "Reward": "Head Slime hat accessory",
+        "Requirements": "Join the Mansion of Wonder experience and use the Swag Booth. Not redeemable on the website."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Join the Mansion of Wonder experience and use the Swag Booth. Not redeemable on the website.",
+      "added_at": "2021-06-21T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/games/6901029464/Mansion-of-Wonder"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Roblox confirms the experience is live and first party. No Roblox channel states the in-experience code is still accepted, so this stays Unverified."
+    },
+    {
+      "table": "codes",
+      "name": "ThingsGoBoom",
+      "cells": {
+        "Code": "ThingsGoBoom",
+        "Reward": "Ghastly Aura waist accessory",
+        "Requirements": "Join the Mansion of Wonder experience and use the Swag Booth. Not redeemable on the website."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Join the Mansion of Wonder experience and use the Swag Booth. Not redeemable on the website.",
+      "added_at": "2021-06-21T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/games/6901029464/Mansion-of-Wonder"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Roblox confirms the experience is live and first party. No Roblox channel states the in-experience code is still accepted, so this stays Unverified."
+    },
+    {
+      "table": "codes",
+      "name": "ParticleWizard",
+      "cells": {
+        "Code": "ParticleWizard",
+        "Reward": "Tomes of the Magus shoulder accessory",
+        "Requirements": "Join the Mansion of Wonder experience and use the Swag Booth. Not redeemable on the website."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Join the Mansion of Wonder experience and use the Swag Booth. Not redeemable on the website.",
+      "added_at": "2021-06-21T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/games/6901029464/Mansion-of-Wonder"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Roblox confirms the experience is live and first party. No Roblox channel states the in-experience code is still accepted, so this stays Unverified."
+    },
+    {
+      "table": "codes",
+      "name": "FXArtist",
+      "cells": {
+        "Code": "FXArtist",
+        "Reward": "Artist Backpack back accessory",
+        "Requirements": "Join the Mansion of Wonder experience and use the Swag Booth. Not redeemable on the website."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Join the Mansion of Wonder experience and use the Swag Booth. Not redeemable on the website.",
+      "added_at": "2021-06-21T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/games/6901029464/Mansion-of-Wonder"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Roblox confirms the experience is live and first party. No Roblox channel states the in-experience code is still accepted, so this stays Unverified."
+    },
+    {
+      "table": "codes",
+      "name": "Boardwalk",
+      "cells": {
+        "Code": "Boardwalk",
+        "Reward": "Ring of Flames waist accessory",
+        "Requirements": "Join the Mansion of Wonder experience and use the Swag Booth. Not redeemable on the website."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Join the Mansion of Wonder experience and use the Swag Booth. Not redeemable on the website.",
+      "added_at": "2021-06-21T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/games/6901029464/Mansion-of-Wonder"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Roblox confirms the experience is live and first party. No Roblox channel states the in-experience code is still accepted, so this stays Unverified."
+    },
+    {
+      "table": "codes",
+      "name": "SettingTheStage",
+      "cells": {
+        "Code": "SettingTheStage",
+        "Reward": "Build It Backpack back accessory",
+        "Requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website.",
+      "added_at": "2020-07-16T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/games/5306359293/Island-of-Move"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Roblox confirms the experience is live and first party. No Roblox channel states the in-experience code is still accepted, so this stays Unverified."
+    },
+    {
+      "table": "codes",
+      "name": "StrikeAPose",
+      "cells": {
+        "Code": "StrikeAPose",
+        "Reward": "Hustle Hat",
+        "Requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website.",
+      "added_at": "2020-07-16T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/games/5306359293/Island-of-Move"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Roblox confirms the experience is live and first party. No Roblox channel states the in-experience code is still accepted, so this stays Unverified."
+    },
+    {
+      "table": "codes",
+      "name": "GetMoving",
+      "cells": {
+        "Code": "GetMoving",
+        "Reward": "Speedy Shades",
+        "Requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website.",
+      "added_at": "2020-07-16T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/games/5306359293/Island-of-Move"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Roblox confirms the experience is live and first party. No Roblox channel states the in-experience code is still accepted, so this stays Unverified."
+    },
+    {
+      "table": "codes",
+      "name": "WorldAlive",
+      "cells": {
+        "Code": "WorldAlive",
+        "Reward": "Crystalline Companion shoulder accessory",
+        "Requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website.",
+      "added_at": "2020-07-16T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/games/5306359293/Island-of-Move"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Roblox confirms the experience is live and first party. No Roblox channel states the in-experience code is still accepted, so this stays Unverified."
+    },
+    {
+      "table": "codes",
+      "name": "DIY",
+      "cells": {
+        "Code": "DIY",
+        "Reward": "Kinetic Staff back accessory",
+        "Requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website.",
+      "added_at": "2020-07-16T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/games/5306359293/Island-of-Move"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Roblox confirms the experience is live and first party. No Roblox channel states the in-experience code is still accepted, so this stays Unverified."
+    },
+    {
+      "table": "codes",
+      "name": "VictoryLap",
+      "cells": {
+        "Code": "VictoryLap",
+        "Reward": "Cardio Cans hat",
+        "Requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website."
+      },
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Join the Island of Move experience and choose Redeem Code. Not redeemable on the website.",
+      "added_at": "2020-07-16T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/games/5306359293/Island-of-Move"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Roblox confirms the experience is live and first party. No Roblox channel states the in-experience code is still accepted, so this stays Unverified."
+    },
+    {
+      "table": "codes",
+      "name": "SPACESTYLE",
+      "cells": {
+        "Code": "SPACESTYLE",
+        "Reward": "50K Space 'Hawk",
+        "Requirements": "Roblox Twitch milestone stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox Twitch milestone stream. Not redeemable.",
+      "added_at": "2014-06-14T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "HEADPHONES2",
+      "cells": {
+        "Code": "HEADPHONES2",
+        "Reward": "Next Level Blue Headphones",
+        "Requirements": "The Next Level live stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "The Next Level live stream. Not redeemable.",
+      "added_at": "2015-02-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "SXSW2015",
+      "cells": {
+        "Code": "SXSW2015",
+        "Reward": "Southwest Straw Fedora",
+        "Requirements": "Sax Awards event. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Sax Awards event. Not redeemable.",
+      "added_at": "2015-03-16T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "TWEETROBLOX",
+      "cells": {
+        "Code": "TWEETROBLOX",
+        "Reward": "The Bird Says \\_\\_\\_\\_. shoulder accessory",
+        "Requirements": "Roblox account on X, formerly Twitter. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox account on X, formerly Twitter. Not redeemable.",
+      "added_at": "2015-05-29T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2025-06-02T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The longest lived Roblox promo code. Deactivated after roughly ten years."
+    },
+    {
+      "table": "codes",
+      "name": "75KSWOOP",
+      "cells": {
+        "Code": "75KSWOOP",
+        "Reward": "75K Super Swoop",
+        "Requirements": "Roblox Twitch milestone stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox Twitch milestone stream. Not redeemable.",
+      "added_at": "2015-04-29T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "ROADTO100KAY!",
+      "cells": {
+        "Code": "ROADTO100KAY!",
+        "Reward": "Bloxikin #36: Livestreamin' Lizard",
+        "Requirements": "Roblox Twitch milestone stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox Twitch milestone stream. Not redeemable.",
+      "added_at": "2015-08-19T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Only the community archive and one outlet print the surrounding punctuation, so the exact characters are reported rather than confirmed against a Roblox page. Any backslashes in the string are markdown escapes and are not part of the code."
+    },
+    {
+      "table": "codes",
+      "name": "HOTELT2",
+      "cells": {
+        "Code": "HOTELT2",
+        "Reward": "Transylvanian Cape",
+        "Requirements": "Hotel Transylvania 2 tie in. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Hotel Transylvania 2 tie in. Not redeemable.",
+      "added_at": "2015-08-21T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "KEEPIT100",
+      "cells": {
+        "Code": "KEEPIT100",
+        "Reward": "Next Level Future Visor",
+        "Requirements": "The Next Level 100th episode stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "The Next Level 100th episode stream. Not redeemable.",
+      "added_at": "2016-02-10T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "MLGRDC",
+      "cells": {
+        "Code": "MLGRDC",
+        "Reward": "Next Level MLG Headphones",
+        "Requirements": "Roblox Developers Conference stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox Developers Conference stream. Not redeemable.",
+      "added_at": "2016-02-29T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "KCASLIME",
+      "cells": {
+        "Code": "KCASLIME",
+        "Reward": "Nickelodeon Slime Wings",
+        "Requirements": "Kids Choice Awards sponsored stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Kids Choice Awards sponsored stream. Not redeemable.",
+      "added_at": "2016-03-11T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "COOL4SUMMER",
+      "cells": {
+        "Code": "COOL4SUMMER",
+        "Reward": "150K Summer Shades",
+        "Requirements": "Roblox Twitch milestone stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox Twitch milestone stream. Not redeemable.",
+      "added_at": "2016-07-01T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "200KTWITCH",
+      "cells": {
+        "Code": "200KTWITCH",
+        "Reward": "Violet Hood of the Ages",
+        "Requirements": "Roblox Twitch milestone stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox Twitch milestone stream. Not redeemable.",
+      "added_at": "2016-12-03T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "WEAREROBLOX300!",
+      "cells": {
+        "Code": "WEAREROBLOX300!",
+        "Reward": "Visor of the Blue Bird Following",
+        "Requirements": "Bloxy Awards nominees stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Bloxy Awards nominees stream. Not redeemable.",
+      "added_at": "2017-01-05T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Only the community archive and one outlet print the surrounding punctuation, so the exact characters are reported rather than confirmed against a Roblox page. Any backslashes in the string are markdown escapes and are not part of the code."
+    },
+    {
+      "table": "codes",
+      "name": "SPIDERMANONROBLOX",
+      "cells": {
+        "Code": "SPIDERMANONROBLOX",
+        "Reward": "Vulture's Mask",
+        "Requirements": "Spider-Man Homecoming sponsored stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Spider-Man Homecoming sponsored stream. Not redeemable.",
+      "added_at": "2017-09-29T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "ROBLOXROCKS500K",
+      "cells": {
+        "Code": "ROBLOXROCKS500K",
+        "Reward": "Shades of the Blue Bird Following",
+        "Requirements": "Roblox social milestone stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox social milestone stream. Not redeemable.",
+      "added_at": "2017-10-06T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "GOLDENHEADPHONES2017",
+      "cells": {
+        "Code": "GOLDENHEADPHONES2017",
+        "Reward": "24k Gold Headphones",
+        "Requirements": "Roblox Toys retail launch. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox Toys retail launch. Not redeemable.",
+      "added_at": "2017-12-20T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "ONEMILLIONCLUB!",
+      "cells": {
+        "Code": "ONEMILLIONCLUB!",
+        "Reward": "Playful Red Dino",
+        "Requirements": "Snowed-In Tournament stream. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Snowed-In Tournament stream. Not redeemable.",
+      "added_at": "2018-03-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Only the community archive and one outlet print the surrounding punctuation, so the exact characters are reported rather than confirmed against a Roblox page. Any backslashes in the string are markdown escapes and are not part of the code."
+    },
+    {
+      "table": "codes",
+      "name": "FINDTHEKEYS",
+      "cells": {
+        "Code": "FINDTHEKEYS",
+        "Reward": "IOI Helmet",
+        "Requirements": "Ready Player One event. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Ready Player One event. Not redeemable.",
+      "added_at": "2018-03-17T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "JURASSICWORLD",
+      "cells": {
+        "Code": "JURASSICWORLD",
+        "Reward": "Jurassic World Sunglasses",
+        "Requirements": "Jurassic World tie in. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Jurassic World tie in. Not redeemable.",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "!HAPPY12BIRTHDAYROBLOX!",
+      "cells": {
+        "Code": "!HAPPY12BIRTHDAYROBLOX!",
+        "Reward": "12th Birthday Cake Hat",
+        "Requirements": "Roblox birthday stream and social post. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox birthday stream and social post. Not redeemable.",
+      "added_at": "2018-08-27T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Only the community archive and one outlet print the surrounding punctuation, so the exact characters are reported rather than confirmed against a Roblox page. Any backslashes in the string are markdown escapes and are not part of the code."
+    },
+    {
+      "table": "codes",
+      "name": "TARGET2018",
+      "cells": {
+        "Code": "TARGET2018",
+        "Reward": "Full Metal Top Hat",
+        "Requirements": "Target store catalogue. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Target store catalogue. Not redeemable.",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "EBGAMESBLACKFRIDAY",
+      "cells": {
+        "Code": "EBGAMESBLACKFRIDAY",
+        "Reward": "Neon Blue Tie",
+        "Requirements": "EB Games store catalogue. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "EB Games store catalogue. Not redeemable.",
+      "added_at": "2018-11-22T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "KINGOFTHESEAS",
+      "cells": {
+        "Code": "KINGOFTHESEAS",
+        "Reward": "Aquacap",
+        "Requirements": "Origin not stated by Roblox. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Origin not stated by Roblox. Not redeemable.",
+      "added_at": "2018-12-28T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "\\*HAPPY2019ROBLOX\\*",
+      "cells": {
+        "Code": "\\*HAPPY2019ROBLOX\\*",
+        "Reward": "Firestripe Fedora",
+        "Requirements": "Roblox YouTube and Twitch. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox YouTube and Twitch. Not redeemable.",
+      "added_at": "2019-02-01T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Only the community archive and one outlet print the surrounding punctuation, so the exact characters are reported rather than confirmed against a Roblox page. Any backslashes in the string are markdown escapes and are not part of the code."
+    },
+    {
+      "table": "codes",
+      "name": "$ILOVETHEBLOXYS$",
+      "cells": {
+        "Code": "$ILOVETHEBLOXYS$",
+        "Reward": "Showtime Bloxy Popcorn Hat",
+        "Requirements": "Bloxy Awards broadcast. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Bloxy Awards broadcast. Not redeemable.",
+      "added_at": "2019-02-23T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "Only the community archive and one outlet print the surrounding punctuation, so the exact characters are reported rather than confirmed against a Roblox page. Any backslashes in the string are markdown escapes and are not part of the code."
+    },
+    {
+      "table": "codes",
+      "name": "GAMESTOPPRO2019",
+      "cells": {
+        "Code": "GAMESTOPPRO2019",
+        "Reward": "Glorious Pharaoh of the Sun",
+        "Requirements": "GameStop retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "GameStop retail promotion. Not redeemable.",
+      "added_at": "2019-02-24T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "ROBLOXSTRONG",
+      "cells": {
+        "Code": "ROBLOXSTRONG",
+        "Reward": "Super Social Shades",
+        "Requirements": "Roblox account on X, formerly Twitter. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox account on X, formerly Twitter. Not redeemable.",
+      "added_at": "2019-05-03T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "ROBLOXIG500K",
+      "cells": {
+        "Code": "ROBLOXIG500K",
+        "Reward": "Hovering Heart",
+        "Requirements": "Roblox account on Instagram. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox account on Instagram. Not redeemable.",
+      "added_at": "2019-05-15T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "MOTHRAUNLEASHED",
+      "cells": {
+        "Code": "MOTHRAUNLEASHED",
+        "Reward": "Mothra Wings",
+        "Requirements": "Godzilla tie in across Roblox social accounts. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Godzilla tie in across Roblox social accounts. Not redeemable.",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "BARNESNOBLEGAMEON19",
+      "cells": {
+        "Code": "BARNESNOBLEGAMEON19",
+        "Reward": "Neapolitan Crown",
+        "Requirements": "Barnes and Noble retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Barnes and Noble retail promotion. Not redeemable.",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "FEEDINGTIME",
+      "cells": {
+        "Code": "FEEDINGTIME",
+        "Reward": "Flayed Rats",
+        "Requirements": "Stranger Things 3 event. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Stranger Things 3 event. Not redeemable.",
+      "added_at": "2019-07-01T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "STARCOURTMALLSTYLE",
+      "cells": {
+        "Code": "STARCOURTMALLSTYLE",
+        "Reward": "Eleven's Mall Outfit",
+        "Requirements": "Stranger Things 3 event. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Stranger Things 3 event. Not redeemable.",
+      "added_at": "2019-07-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "RETROCRUISER",
+      "cells": {
+        "Code": "RETROCRUISER",
+        "Reward": "Mike's Bike",
+        "Requirements": "Stranger Things 3 event. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Stranger Things 3 event. Not redeemable.",
+      "added_at": "2019-07-03T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "HAPPYCAMPER",
+      "cells": {
+        "Code": "HAPPYCAMPER",
+        "Reward": "Dustin's Camp Know Where Cap",
+        "Requirements": "Stranger Things 3 event. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Stranger Things 3 event. Not redeemable.",
+      "added_at": "2019-07-04T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "LIVERPOOLSCARVESUP",
+      "cells": {
+        "Code": "LIVERPOOLSCARVESUP",
+        "Reward": "Liverpool FC Scarf",
+        "Requirements": "Liverpool FC tie in. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Liverpool FC tie in. Not redeemable.",
+      "added_at": "2019-07-25T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "100YEARSOFNFL",
+      "cells": {
+        "Code": "100YEARSOFNFL",
+        "Reward": "Golden Football",
+        "Requirements": "NFL centenary event. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "NFL centenary event. Not redeemable.",
+      "added_at": "2019-08-27T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "GAMESTOPBATPACK2019",
+      "cells": {
+        "Code": "GAMESTOPBATPACK2019",
+        "Reward": "Coffin BatPack",
+        "Requirements": "GameStop retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "GameStop retail promotion. Not redeemable.",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "SMYTHSSHADES2019",
+      "cells": {
+        "Code": "SMYTHSSHADES2019",
+        "Reward": "Spiky Creepy Shades",
+        "Requirements": "Smyths Toys retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Smyths Toys retail promotion. Not redeemable.",
+      "added_at": "2019-09-11T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "TARGETOWLPAL2019",
+      "cells": {
+        "Code": "TARGETOWLPAL2019",
+        "Reward": "Fall Shoulder Owl Pal",
+        "Requirements": "Target store catalogue. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Target store catalogue. Not redeemable.",
+      "added_at": null,
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "FASHIONFOX",
+      "cells": {
+        "Code": "FASHIONFOX",
+        "Reward": "Highlights Hood",
+        "Requirements": "Roblox social accounts. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox social accounts. Not redeemable.",
+      "added_at": "2020-02-10T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "THISFLEWUP",
+      "cells": {
+        "Code": "THISFLEWUP",
+        "Reward": "Shutter Flyers",
+        "Requirements": "Roblox social accounts. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox social accounts. Not redeemable.",
+      "added_at": "2020-02-11T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "FLOATINGFAVORITE",
+      "cells": {
+        "Code": "FLOATINGFAVORITE",
+        "Reward": "Hyper HoverHeart",
+        "Requirements": "Roblox social accounts. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox social accounts. Not redeemable.",
+      "added_at": "2020-02-12T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "BEARYSTYLISH",
+      "cells": {
+        "Code": "BEARYSTYLISH",
+        "Reward": "Hashtag No Filter",
+        "Requirements": "Roblox social accounts. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox social accounts. Not redeemable.",
+      "added_at": "2020-02-13T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "TOYRUHEADPHONES2020",
+      "cells": {
+        "Code": "TOYRUHEADPHONES2020",
+        "Reward": "Teal Techno Rabbit Headphones",
+        "Requirements": "Toy.ru retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Toy.ru retail promotion. Not redeemable.",
+      "added_at": "2020-05-15T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "JOUECLUBHEADPHONES2020",
+      "cells": {
+        "Code": "JOUECLUBHEADPHONES2020",
+        "Reward": "Black Prince Succulent Headphones",
+        "Requirements": "Jou\u00e9Club website. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Jou\u00e9Club website. Not redeemable.",
+      "added_at": "2020-05-13T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "SMYTHSHEADPHONES2020",
+      "cells": {
+        "Code": "SMYTHSHEADPHONES2020",
+        "Reward": "Gnarly Triangle Headphones",
+        "Requirements": "Leaked before release, never officially issued. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Leaked before release, never officially issued. Not redeemable.",
+      "added_at": "2020-06-12T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "TOYRUBACKPACK2020",
+      "cells": {
+        "Code": "TOYRUBACKPACK2020",
+        "Reward": "Fully Loaded Backpack",
+        "Requirements": "Toy.ru retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Toy.ru retail promotion. Not redeemable.",
+      "added_at": "2020-08-24T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "GROWINGTOGETHER14",
+      "cells": {
+        "Code": "GROWINGTOGETHER14",
+        "Reward": "The Birthday Cape",
+        "Requirements": "Roblox account on Instagram. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox account on Instagram. Not redeemable.",
+      "added_at": "2020-09-01T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "TWEET2MIL",
+      "cells": {
+        "Code": "TWEET2MIL",
+        "Reward": "Socialsaurus Flex",
+        "Requirements": "Roblox social milestone post. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox social milestone post. Not redeemable.",
+      "added_at": "2020-10-07T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "AMAZONNARWHAL2020",
+      "cells": {
+        "Code": "AMAZONNARWHAL2020",
+        "Reward": "Dapper Narwhal Shoulder Pal",
+        "Requirements": "Amazon retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Amazon retail promotion. Not redeemable.",
+      "added_at": "2020-10-13T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "SPIRIT2020",
+      "cells": {
+        "Code": "SPIRIT2020",
+        "Reward": "Spirit Day 2020 Shoulder Friends",
+        "Requirements": "Spirit Day campaign. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Spirit Day campaign. Not redeemable.",
+      "added_at": "2020-10-15T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "TARGETFOX2020",
+      "cells": {
+        "Code": "TARGETFOX2020",
+        "Reward": "Fiery Fox Shoulder Pal",
+        "Requirements": "Target retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Target retail promotion. Not redeemable.",
+      "added_at": "2020-10-15T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "ARGOSWINGS2020",
+      "cells": {
+        "Code": "ARGOSWINGS2020",
+        "Reward": "Topaz Hummingbird Wings",
+        "Requirements": "Argos retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Argos retail promotion. Not redeemable.",
+      "added_at": "2020-10-15T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "WALMARTMXTAIL2020",
+      "cells": {
+        "Code": "WALMARTMXTAIL2020",
+        "Reward": "Wintery Peacock Tail",
+        "Requirements": "Walmart Mexico retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Walmart Mexico retail promotion. Not redeemable.",
+      "added_at": "2020-10-30T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "BIHOOD2020",
+      "cells": {
+        "Code": "BIHOOD2020",
+        "Reward": "Arctic Blue Fuzzy Tiger Hood",
+        "Requirements": "Origin not stated by Roblox. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Origin not stated by Roblox. Not redeemable.",
+      "added_at": "2020-11-13T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "ROSSMANNHAT2020",
+      "cells": {
+        "Code": "ROSSMANNHAT2020",
+        "Reward": "Chilly Winter Wizard Hat",
+        "Requirements": "Rossmann retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Rossmann retail promotion. Not redeemable.",
+      "added_at": "2020-11-21T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "ROBLOXTIKTOK",
+      "cells": {
+        "Code": "ROBLOXTIKTOK",
+        "Reward": "Red Panda Party Pet",
+        "Requirements": "Roblox account on X, formerly Twitter. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox account on X, formerly Twitter. Not redeemable.",
+      "added_at": "2020-12-09T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "TRUASIACAT2020",
+      "cells": {
+        "Code": "TRUASIACAT2020",
+        "Reward": "White Cat Wizard",
+        "Requirements": "Toys R Us Asia retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Toys R Us Asia retail promotion. Not redeemable.",
+      "added_at": "2020-12-22T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "DRRABBITEARS2020",
+      "cells": {
+        "Code": "DRRABBITEARS2020",
+        "Reward": "Royal Winter Rabbit Ears",
+        "Requirements": "Origin not stated by Roblox. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Origin not stated by Roblox. Not redeemable.",
+      "added_at": "2020-12-22T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "RIHAPPYCAT2021",
+      "cells": {
+        "Code": "RIHAPPYCAT2021",
+        "Reward": "Arctic Ninja Cat",
+        "Requirements": "Ri Happy retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Ri Happy retail promotion. Not redeemable.",
+      "added_at": "2021-02-23T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "ROBLOXEDU2021",
+      "cells": {
+        "Code": "ROBLOXEDU2021",
+        "Reward": "Dev Deck back accessory",
+        "Requirements": "Roblox education campaign. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox education campaign. Not redeemable.",
+      "added_at": "2021-04-22T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "WALMARTMEXEARS2021",
+      "cells": {
+        "Code": "WALMARTMEXEARS2021",
+        "Reward": "Steel Rabbit Ears",
+        "Requirements": "Walmart Mexico retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Walmart Mexico retail promotion. Not redeemable.",
+      "added_at": "2021-04-28T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "100MILSEGUIDORES",
+      "cells": {
+        "Code": "100MILSEGUIDORES",
+        "Reward": "Celebratory backpack @RobloxEspanol",
+        "Requirements": "RobloxEspanol social milestone. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "RobloxEspanol social milestone. Not redeemable.",
+      "added_at": "2021-07-20T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "KROGERDAYS2021",
+      "cells": {
+        "Code": "KROGERDAYS2021",
+        "Reward": "Golf Shades",
+        "Requirements": "Kroger retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Kroger retail promotion. Not redeemable.",
+      "added_at": "2021-08-20T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "CARREFOURHOED2021",
+      "cells": {
+        "Code": "CARREFOURHOED2021",
+        "Reward": "Pasta Hat",
+        "Requirements": "Carrefour retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Carrefour retail promotion. Not redeemable.",
+      "added_at": "2021-09-04T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "SMYTHSCAT2021",
+      "cells": {
+        "Code": "SMYTHSCAT2021",
+        "Reward": "King Tab",
+        "Requirements": "Smyths Toys retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Smyths Toys retail promotion. Not redeemable.",
+      "added_at": "2021-09-17T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "AMAZONFRIEND2021",
+      "cells": {
+        "Code": "AMAZONFRIEND2021",
+        "Reward": "Snow Friend",
+        "Requirements": "Amazon retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Amazon retail promotion. Not redeemable.",
+      "added_at": "2021-10-07T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "TARGETMINTHAT2021",
+      "cells": {
+        "Code": "TARGETMINTHAT2021",
+        "Reward": "Peppermint Hat",
+        "Requirements": "Target retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Target retail promotion. Not redeemable.",
+      "added_at": "2021-10-18T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "ECONOMYEVENT2021",
+      "cells": {
+        "Code": "ECONOMYEVENT2021",
+        "Reward": "Robux-Cap",
+        "Requirements": "Issued internally, later released to all users. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Issued internally, later released to all users. Not redeemable.",
+      "added_at": "2021-10-19T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "ROSSMANNCROWN2021",
+      "cells": {
+        "Code": "ROSSMANNCROWN2021",
+        "Reward": "Crown of Electrifying Guitars",
+        "Requirements": "Rossmann retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Rossmann retail promotion. Not redeemable.",
+      "added_at": "2021-11-23T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "MERCADOLIBREFEDORA2021",
+      "cells": {
+        "Code": "MERCADOLIBREFEDORA2021",
+        "Reward": "White Flamingo Fedora",
+        "Requirements": "Mercado Libre retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Mercado Libre retail promotion. Not redeemable.",
+      "added_at": "2021-11-26T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "FREETARGETSANTA2022",
+      "cells": {
+        "Code": "FREETARGETSANTA2022",
+        "Reward": "Upside Down Santa",
+        "Requirements": "Target retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Target retail promotion. Not redeemable.",
+      "added_at": "2022-06-13T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "FREEAMAZONFOX2022",
+      "cells": {
+        "Code": "FREEAMAZONFOX2022",
+        "Reward": "Too Cool Fire Fox",
+        "Requirements": "Amazon retail promotion. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Amazon retail promotion. Not redeemable.",
+      "added_at": "2022-09-28T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "FREENGNBOI",
+      "cells": {
+        "Code": "FREENGNBOI",
+        "Reward": "Nguyen Boi avatar bundle",
+        "Requirements": "Roblox Vietnam launch, later opened worldwide. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox Vietnam launch, later opened worldwide. Not redeemable.",
+      "added_at": "2024-12-19T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "FREENGNGON",
+      "cells": {
+        "Code": "FREENGNGON",
+        "Reward": "Nguyen Gon avatar bundle",
+        "Requirements": "Roblox Vietnam launch, later opened worldwide. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox Vietnam launch, later opened worldwide. Not redeemable.",
+      "added_at": "2024-12-19T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-promo-codes-list/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/roblox-promo-codes/"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": ""
+    },
+    {
+      "table": "codes",
+      "name": "FREEVNGAVT",
+      "cells": {
+        "Code": "FREEVNGAVT",
+        "Reward": "VNCore avatar bundle",
+        "Requirements": "Roblox Vietnam beta account only. Region locked. Not redeemable."
+      },
+      "status": "expired",
+      "case_sensitive": false,
+      "requirements": "Roblox Vietnam beta account only. Region locked. Not redeemable.",
+      "added_at": "2024-06-26T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://www.roblox.com/bundles/386321/VNCore"
+        },
+        {
+          "tier": 3,
+          "url": "https://roblox.fandom.com/wiki/List_of_expired_promotional_codes"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": false,
+      "notes": "The Roblox bundle page states the reward was made exclusively for Vietnamese users, which is the clearest published example of a region locked Roblox code."
+    }
+  ],
+  "unverified_summary": "Nothing on this page is publisher confirmed as currently redeemable, so the live count is zero and every candidate sits at Unverified. That is not a gap in the research. Roblox publishes no list of active promo codes anywhere, and its own support article says only that codes may expire at any time, so the sole evidence that would upgrade a row is a redemption on a fresh account. We could not run that test before publication. We also could not confirm the exact punctuation in six older codes that carry asterisks, dollar signs or exclamation marks, nor whether the Roblox redeem box treats letter case as significant. No live People Also Ask block could be captured for the focus keyword, so the question coverage was built from competitor FAQ sets and autocomplete instead.",
+  "disagreements": [
+    {
+      "item": "Nguyen Boi bundle code",
+      "source_a": "Roblox Den prints FREENGBOI",
+      "source_b": "GamesRadar, Pro Game Guides and the community archive all print FREENGNBOI",
+      "confirmed": "FREENGNBOI. Three independent sources agree and the shorter string appears to be a transcription slip. The code is expired either way."
+    },
+    {
+      "item": "CARREFOURHOED2021 reward",
+      "source_a": "GamesRadar calls it a Pizza Hat",
+      "source_b": "Pro Game Guides and the community archive call it a Pasta Hat",
+      "confirmed": "Pasta Hat, on the weight of two sources against one. No Roblox catalogue page was located to settle it."
+    },
+    {
+      "item": "Violet Hood of the Ages code casing",
+      "source_a": "Pro Game Guides prints 200kTWITCH with a lower case k",
+      "source_b": "The community archive prints 200KTWITCH in full upper case",
+      "confirmed": "Not confirmed. The code is expired, so the difference is academic, but it shows why casing is recorded per row."
+    },
+    {
+      "item": "ECONOMYEVENT2021 reward",
+      "source_a": "GamesRadar and Pro Game Guides call it the Economy Team Cap",
+      "source_b": "The community archive files it as Robux-Cap under an Economy Team Cap catalogue entry",
+      "confirmed": "Both names refer to the same item. Recorded as Robux-Cap, the name the archive gives the asset."
+    },
+    {
+      "item": "ParticleWizard reward",
+      "source_a": "GamesRadar prints Tome of the Magus, singular",
+      "source_b": "Roblox Den prints Tomes of the Magnus",
+      "confirmed": "Recorded as Tomes of the Magus, which Pro Game Guides and the wider archive use. Magnus appears to be a typo."
+    },
+    {
+      "item": "Liverpool FC Scarf code",
+      "source_a": "Outlets print LIVERPOOLSCARVESUP",
+      "source_b": "The community archive lists LIVERPOOLSCARVESUP and LIVERPOOLFCSCARVESUP as alternates",
+      "confirmed": "Not confirmed. The shorter string is recorded because outlets agree on it. The code is expired."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "Promo codes worth 2000, 10000 or 22500 free Robux",
+      "why_wrong": "Roblox has never issued a promo code that awards Robux. Its own support article states there is no such thing as free Robux offers, tricks or codes, and that anyone claiming otherwise is running a scam.",
+      "origin": "Autocomplete driven spam pages and video thumbnails. Roblox promo codes 2000 Robux is one of the highest volume searches on this term and every result for it is fabricated."
+    },
+    {
+      "claim": "Robux generator sites that ask for your username and a human verification step",
+      "why_wrong": "There is no API that mints Robux. The verification step exists to harvest a password, a phone number or an affiliate payout. Roblox treats these as a Terms of Use violation and warns that they take accounts and items.",
+      "origin": "Ad networks and reuploaded YouTube tutorials. This page will not name or link them, because naming a scam host is a referral."
+    },
+    {
+      "claim": "Codes revived from the expired list and presented as new",
+      "why_wrong": "Once a Roblox promo code is deactivated it cannot be redeemed again. Retyping TWEETROBLOX or FREENGNBOI returns an invalid code message. The expired archive on this page exists so you can check a code against it before wasting the attempt.",
+      "origin": "Creators padding a list for views. GamesRadar names this practice directly in its own guide."
+    },
+    {
+      "claim": "A promo code that unlocks Roblox Premium or a subscription for free",
+      "why_wrong": "The same Roblox support article that covers Robux generators covers subscription generators, and rules both out. Premium is a paid subscription and no code grants it.",
+      "origin": "Generator sites that ran out of Robux angles and moved to subscriptions."
+    },
+    {
+      "claim": "Codes typed into a specific Roblox game presented as platform promo codes",
+      "why_wrong": "In-experience codes are issued by that game's developer and are typed into a code box inside the game. They will never work on the Roblox redeem page, and a platform code will never work in a game's code box.",
+      "origin": "Aggregators that merge both kinds into one list without saying which is which. It is the single most common reason a reader reports a code as broken."
+    }
+  ],
+  "changes": [
+    {
+      "at": "2026-08-25T08:00:00Z",
+      "what": "Page published with the full archive of platform promo codes, live candidates and dead"
+    },
+    {
+      "at": "2026-08-25T08:00:00Z",
+      "what": "Redemption path recorded as the Roblox redeem page after the older promo codes path was found to redirect there"
+    },
+    {
+      "at": "2026-08-25T08:00:00Z",
+      "what": "SPIDERCOLA listed as the only site wide code any source still reports as live, held at Unverified pending a redemption test"
+    },
+    {
+      "at": "2026-08-25T08:00:00Z",
+      "what": "Mansion of Wonder and Island of Move experiences confirmed live and first party, so their in-experience codes stay listed"
+    }
+  ],
+  "next_change": {
+    "pattern": "Roblox now releases platform promo codes only alongside a retail tie in, a regional launch or a milestone, with no advance notice. The last new site wide codes landed with a regional launch and lasted about a year before expiring. Long gaps between codes are the norm rather than a sign the page is stale.",
+    "watch": [
+      "The Roblox redeem page itself",
+      "The official Roblox newsroom and blog",
+      "The Roblox accounts listed in the Roblox on Social Media support article",
+      "Roblox Support: How Do I Get Promotional or Contest Items?"
+    ]
+  }
+}
