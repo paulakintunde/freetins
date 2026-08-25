@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
 import { parseFrontmatter, splitFrontmatter } from '../src/lib/frontmatter.ts';
-import { applyStaleness, countRows, validateDataset } from '../src/lib/dataset.ts';
+import { resolveDisplayStatus, countRows, validateDataset } from '../src/lib/dataset.ts';
 import { interpolate } from '../src/lib/interpolate.ts';
 import { runProseChecks } from '../src/lib/prose-qa.ts';
 
@@ -77,13 +77,31 @@ const row = (name = 'Alpha', overrides = {}) => ({
   ...overrides,
 });
 
-test('applyStaleness downgrades an active row past the freshness window', () => {
-  const rows = applyStaleness(
+test('resolveDisplayStatus downgrades an active row past the freshness window', () => {
+  const rows = resolveDisplayStatus(
     [row(), row('Beta', { lastVerifiedAt: isoDaysAgo(20) })],
     Date.now(),
   );
   assert.equal(rows[0].status, 'active');
   assert.equal(rows[1].status, 'unverified');
+});
+
+test('resolveDisplayStatus refuses to show a reported row as active', () => {
+  const rows = resolveDisplayStatus(
+    [row('Beta', { confidence: 'reported' }), row('Gamma', { confidence: 'conflicting' })],
+    Date.now(),
+  );
+  assert.equal(rows[0].status, 'unverified');
+  assert.equal(rows[1].status, 'unverified');
+});
+
+test('resolveDisplayStatus leaves archived rows alone', () => {
+  const rows = resolveDisplayStatus(
+    [row('Beta', { status: 'expired', confidence: 'reported' }), row('Gamma', { status: 'removed' })],
+    Date.now(),
+  );
+  assert.equal(rows[0].status, 'expired');
+  assert.equal(rows[1].status, 'removed');
 });
 
 test('countRows counts by status', () => {

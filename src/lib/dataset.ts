@@ -85,24 +85,36 @@ export interface Dataset {
 export const STALE_AFTER_DAYS = 14;
 
 /** Shorteners and placeholder hosts the brief bans outright. */
-export const BANNED_SOURCE = /(example\.com|freetins\.local|ceesty|clkmein|bit\.ly|tinyurl|cutt\.ly|shorte\.st|adf\.ly)/i;
+export const BANNED_SOURCE = /(example\.com|example\.invalid|freetins\.local|ceesty|clkmein|bit\.ly|tinyurl|cutt\.ly|shorte\.st|adf\.ly)/i;
 
 const isIso = (value: unknown): value is string =>
   typeof value === 'string' && !Number.isNaN(Date.parse(value));
 
 /**
- * An active row whose last check has aged out is downgraded rather than shown
- * as current. The brief forbids fighting this by inflating the timestamp, so it
- * runs at build and no data file can opt out of it.
+ * Decides what status a row is actually allowed to display.
+ *
+ * A data file states an intent; this decides what the reader is shown. Two
+ * demotions apply, and no data file can opt out of either:
+ *
+ * 1. Only a `confirmed` row may show as Active. A row sourced from two outlets
+ *    with no publisher confirmation is `reported`, and reported is not the same
+ *    as verified, so it renders Unverified until a human upgrades it.
+ * 2. An active row whose last check has aged past the freshness window is
+ *    downgraded, because nobody has confirmed it recently enough to assert it.
+ *
+ * Both run at build, so inflating a timestamp or optimistically marking a row
+ * active cannot get an unverified claim onto the page.
  */
-export const applyStaleness = (rows: DatasetRow[], now: number): DatasetRow[] =>
+export const resolveDisplayStatus = (rows: DatasetRow[], now: number): DatasetRow[] =>
   rows.map((row) => {
     if (row.status !== 'active') return row;
+
+    const demote = { ...row, status: 'unverified' as RowStatus };
+    if (row.confidence !== 'confirmed') return demote;
+
     const checked = Date.parse(row.lastVerifiedAt);
-    if (Number.isNaN(checked)) return { ...row, status: 'unverified' as RowStatus };
-    return now - checked > STALE_AFTER_DAYS * 86_400_000
-      ? { ...row, status: 'unverified' as RowStatus }
-      : row;
+    if (Number.isNaN(checked)) return demote;
+    return now - checked > STALE_AFTER_DAYS * 86_400_000 ? demote : row;
   });
 
 export interface DatasetCounts {

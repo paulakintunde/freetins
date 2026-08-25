@@ -20,7 +20,7 @@ const LITERAL_DATE = new RegExp(
   'gi',
 );
 
-const BANNED_DOMAIN = /(example\.com|freetins\.local|ceesty|clkmein|bit\.ly|tinyurl|cutt\.ly|shorte\.st|adf\.ly)/i;
+const BANNED_DOMAIN = /(example\.com|example\.invalid|freetins\.local|ceesty|clkmein|bit\.ly|tinyurl|cutt\.ly|shorte\.st|adf\.ly)/i;
 
 const stripMarkdown = (value: string): string =>
   value

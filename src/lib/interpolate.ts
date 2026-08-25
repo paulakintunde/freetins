@@ -7,7 +7,7 @@
  */
 
 import {
-  applyStaleness,
+  resolveDisplayStatus,
   countRows,
   type Dataset,
   type DatasetRow,
@@ -125,7 +125,7 @@ export interface InterpolationResult {
  * rather than silently rendered as literal braces on the live page.
  */
 export const interpolate = (body: string, dataset: Dataset, now: number): InterpolationResult => {
-  const rows = applyStaleness(dataset.rows, now);
+  const rows = resolveDisplayStatus(dataset.rows, now);
   const counts = countRows(rows);
 
   const scalars: Record<string, string> = {
