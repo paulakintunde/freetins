@@ -1,0 +1,943 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-25T10:21:47.061Z",
+  "method": "unauthenticated-description-scan",
+  "caveat": "groups.roblox.com social-links requires an authenticated cookie and is deliberately not used. Channel coverage here is partial by construction; see notes per record.",
+  "games": [
+    {
+      "gameSlug": "grow-a-garden",
+      "name": "Grow a Garden",
+      "publicationState": "published",
+      "placeId": "126884695634066",
+      "universeId": 7436755782,
+      "groupId": 35789249,
+      "creatorName": "The Garden Game",
+      "updatedAt": "2026-08-24T03:29:38.6054351Z",
+      "visits": 35863127939,
+      "playing": 28373,
+      "hasSocialModules": true,
+      "channels": [],
+      "handleLeads": [
+        {
+          "handle": "@GrowGames",
+          "foundIn": "group-description"
+        }
+      ],
+      "notes": [
+        "Group declares social modules but no channel appears in free text. Manual follow-up required."
+      ]
+    },
+    {
+      "gameSlug": "basketball-zero",
+      "name": "Basketball Zero",
+      "publicationState": "published",
+      "placeId": "130739873848552",
+      "universeId": 7028566528,
+      "groupId": 34852864,
+      "creatorName": "Current.",
+      "updatedAt": "2026-08-23T22:28:27.5262577Z",
+      "visits": 1119195786,
+      "playing": 4701,
+      "hasSocialModules": true,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "Group declares social modules but no channel appears in free text. Manual follow-up required."
+      ]
+    },
+    {
+      "gameSlug": "volleyball-legends",
+      "name": "Volleyball Legends",
+      "publicationState": "published",
+      "placeId": "73956553001240",
+      "universeId": 6931042565,
+      "groupId": 35330702,
+      "creatorName": "Volleyball Game Group",
+      "updatedAt": "2026-08-22T19:06:25.3Z",
+      "visits": 3750785152,
+      "playing": 25089,
+      "hasSocialModules": true,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "Group declares social modules but no channel appears in free text. Manual follow-up required."
+      ]
+    },
+    {
+      "gameSlug": "blue-lock-rivals",
+      "name": "Blue Lock Rivals",
+      "publicationState": "published",
+      "placeId": "18668065416",
+      "universeId": 6325068386,
+      "groupId": 34671275,
+      "creatorName": "Blue Lock Rivals Unofficial Fans",
+      "updatedAt": "2026-08-22T19:00:23.32Z",
+      "visits": 4907211417,
+      "playing": 13771,
+      "hasSocialModules": true,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "Group declares social modules but no channel appears in free text. Manual follow-up required."
+      ]
+    },
+    {
+      "gameSlug": "99-nights-in-the-forest",
+      "name": "99 Nights in the Forest",
+      "publicationState": "published",
+      "placeId": "79546208627805",
+      "universeId": 7326934954,
+      "groupId": 6042520,
+      "creatorName": "Grandma's Favourite Games",
+      "updatedAt": "2026-08-22T18:12:19.445Z",
+      "visits": 29187347079,
+      "playing": 273237,
+      "hasSocialModules": true,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "Group declares social modules but no channel appears in free text. Manual follow-up required."
+      ]
+    },
+    {
+      "gameSlug": "sols-rng",
+      "name": "Sol's RNG",
+      "publicationState": "published",
+      "placeId": "15532962292",
+      "universeId": 5361032378,
+      "groupId": 8509669,
+      "creatorName": "Sol's Studio",
+      "updatedAt": "2026-08-19T06:04:39.746Z",
+      "visits": 2108741891,
+      "playing": 50523,
+      "hasSocialModules": true,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "Group declares social modules but no channel appears in free text. Manual follow-up required."
+      ]
+    },
+    {
+      "gameSlug": "dandys-world",
+      "name": "Dandy's World",
+      "publicationState": "published",
+      "placeId": "16116270224",
+      "universeId": 5569032992,
+      "groupId": 14576965,
+      "creatorName": "BlushCrunch Studio",
+      "updatedAt": "2026-08-21T20:17:59.801Z",
+      "visits": 7351269535,
+      "playing": 24839,
+      "hasSocialModules": true,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "Group declares social modules but no channel appears in free text. Manual follow-up required."
+      ]
+    },
+    {
+      "gameSlug": "type-soul",
+      "name": "Type Soul",
+      "publicationState": "published",
+      "placeId": "14067600077",
+      "universeId": 4871329703,
+      "groupId": 32740991,
+      "creatorName": "Type Soul",
+      "updatedAt": "2026-08-23T22:03:32.991Z",
+      "visits": 817056013,
+      "playing": 258,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": []
+    },
+    {
+      "gameSlug": "anime-card-clash",
+      "name": "Anime Card Clash",
+      "publicationState": "published",
+      "placeId": "110829983956014",
+      "universeId": 6682487255,
+      "groupId": 34903714,
+      "creatorName": "RNG Lab",
+      "updatedAt": "2026-08-22T05:33:38.96Z",
+      "visits": 498516477,
+      "playing": 7056,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": []
+    },
+    {
+      "gameSlug": "tennis-zero",
+      "name": "Tennis Zero",
+      "publicationState": "published",
+      "placeId": "81072337989394",
+      "universeId": 7744159391,
+      "groupId": 36012725,
+      "creatorName": "Current x Blackstar",
+      "updatedAt": "2026-05-30T03:06:34.554Z",
+      "visits": 55034529,
+      "playing": 5,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": []
+    },
+    {
+      "gameSlug": "jujutsu-zero",
+      "name": "Jujutsu Zero",
+      "publicationState": "published",
+      "placeId": "128451689942376",
+      "universeId": 6760085372,
+      "groupId": 35150553,
+      "creatorName": "Studio Resonance",
+      "updatedAt": "2026-08-25T03:27:08.4132138Z",
+      "visits": 110290996,
+      "playing": 6426,
+      "hasSocialModules": true,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "Group declares social modules but no channel appears in free text. Manual follow-up required."
+      ]
+    },
+    {
+      "gameSlug": "weak-legacy-2",
+      "name": "Weak Legacy 2",
+      "publicationState": "published",
+      "placeId": "18337464872",
+      "universeId": 6216468795,
+      "groupId": 34970628,
+      "creatorName": "Weak Games Corp.",
+      "updatedAt": "2026-05-31T01:16:06.29Z",
+      "visits": 155194624,
+      "playing": 276,
+      "hasSocialModules": true,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "Group declares social modules but no channel appears in free text. Manual follow-up required."
+      ]
+    },
+    {
+      "gameSlug": "hunty-zombies",
+      "name": "Hunty Zombies",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "sailor-piece",
+      "name": "Sailor Piece",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "jujutsu-infinite",
+      "name": "Jujutsu Infinite",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "azure-latch",
+      "name": "Azure Latch",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "fruit-battlegrounds",
+      "name": "Fruit Battlegrounds",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "untitled-boxing-game",
+      "name": "Untitled Boxing Game",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "the-forge",
+      "name": "The Forge",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "kaizen",
+      "name": "Kaizen",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "mugen",
+      "name": "Mugen",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "dress-to-impress",
+      "name": "Dress to Impress",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "universal-tower-defense",
+      "name": "Universal Tower Defense",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "anime-last-stand",
+      "name": "Anime Last Stand",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "anime-final-quest",
+      "name": "Anime Final Quest",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "flashpoint",
+      "name": "Flashpoint",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "fisch",
+      "name": "Fisch",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "rivals",
+      "name": "Rivals",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "shindo-life",
+      "name": "Shindo Life",
+      "publicationState": "published",
+      "placeId": "4616652839",
+      "universeId": 1511883870,
+      "groupId": 1226491,
+      "creatorName": "RELL World",
+      "updatedAt": "2026-08-10T18:37:33.861Z",
+      "visits": 2718598249,
+      "playing": 7448,
+      "hasSocialModules": true,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "Group declares social modules but no channel appears in free text. Manual follow-up required."
+      ]
+    },
+    {
+      "gameSlug": "anime-ranger-x",
+      "name": "Anime Ranger X",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "racket-rivals",
+      "name": "Racket Rivals",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "pixel-blade",
+      "name": "Pixel Blade",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "bizarre-lineage",
+      "name": "Bizarre Lineage",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "anime-apocalypse",
+      "name": "Anime Apocalypse",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "clover-retribution",
+      "name": "Clover Retribution",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "devil-hunters",
+      "name": "Devil Hunters",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "spongebob-tower-defense",
+      "name": "SpongeBob Tower Defense",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "ninja-time",
+      "name": "Ninja Time",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "king-legacy",
+      "name": "King Legacy",
+      "publicationState": "published",
+      "placeId": "4520749081",
+      "universeId": 1451439645,
+      "groupId": 5348890,
+      "creatorName": "Sea King Games",
+      "updatedAt": "2026-07-25T12:24:24.662Z",
+      "visits": 4042665148,
+      "playing": 8212,
+      "hasSocialModules": true,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "Group declares social modules but no channel appears in free text. Manual follow-up required."
+      ]
+    },
+    {
+      "gameSlug": "anime-guardians",
+      "name": "Anime Guardians",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "dragon-souls",
+      "name": "Dragon Souls",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "soccer-zero",
+      "name": "Soccer Zero",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "playground-basketball",
+      "name": "Playground Basketball",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "anime-eternal",
+      "name": "Anime Eternal",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "jump-star",
+      "name": "Jump Star",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "restaurant-tycoon-3",
+      "name": "Restaurant Tycoon 3",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "slap-battles",
+      "name": "Slap Battles",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "blade-ball",
+      "name": "Blade Ball",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "plants-vs-brainrots",
+      "name": "Plants vs Brainrots",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "da-hood",
+      "name": "Da Hood",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "anime-vanguards",
+      "name": "Anime Vanguards",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    },
+    {
+      "gameSlug": "driving-empire",
+      "name": "Driving Empire",
+      "publicationState": "planned",
+      "placeId": null,
+      "universeId": null,
+      "groupId": null,
+      "creatorName": null,
+      "updatedAt": null,
+      "visits": null,
+      "playing": null,
+      "hasSocialModules": null,
+      "channels": [],
+      "handleLeads": [],
+      "notes": [
+        "No officialSourceUrl on the game record; nothing to resolve."
+      ]
+    }
+  ]
+}

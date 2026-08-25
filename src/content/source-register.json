@@ -1,0 +1,1326 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-25T10:40:30.099Z",
+  "inputs": [
+    "sources.json",
+    "source-candidates.json",
+    "sources-curated.json"
+  ],
+  "games": [
+    {
+      "gameSlug": "grow-a-garden",
+      "name": "Grow a Garden",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 7436755782,
+        "groupId": 35789249,
+        "creatorName": "The Garden Game",
+        "updatedAt": "2026-08-24T03:29:38.6054351Z",
+        "visits": 35863127939,
+        "hasSocialModules": true
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [
+        {
+          "id": "grow-a-garden:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "inviteUrl": "https://discord.gg/growagarden",
+            "inviteCode": "growagarden",
+            "guildId": "1358536829636448418"
+          },
+          "displayName": "Grow a Garden",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord invite API: guild name matches game name exactly; description says \"official\"; description names the game; holds vanity /growagarden",
+          "approximateMembers": 5074845,
+          "discoveredVia": [
+            "urgametips.com"
+          ],
+          "pollPolicy": {
+            "intervalMinutes": 5,
+            "basis": "game updated 31h ago; boosted to floor for 48h"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "basketball-zero",
+      "name": "Basketball Zero",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 7028566528,
+        "groupId": 34852864,
+        "creatorName": "Current.",
+        "updatedAt": "2026-08-23T22:28:27.5262577Z",
+        "visits": 1119195786,
+        "hasSocialModules": true
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [
+        {
+          "id": "basketball-zero:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "inviteUrl": "https://discord.gg/basketballzero",
+            "inviteCode": "basketballzero",
+            "guildId": "1326149032384532530"
+          },
+          "displayName": "Basketball: Zero",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord invite API: guild name matches game name exactly; description says \"official\"; description names the game; Discord VERIFIED; holds vanity /basketballzero",
+          "approximateMembers": 1418054,
+          "discoveredVia": [
+            "rocodes.gg",
+            "driffle.com"
+          ],
+          "pollPolicy": {
+            "intervalMinutes": 5,
+            "basis": "game updated 36h ago; boosted to floor for 48h"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "volleyball-legends",
+      "name": "Volleyball Legends",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 6931042565,
+        "groupId": 35330702,
+        "creatorName": "Volleyball Game Group",
+        "updatedAt": "2026-08-22T19:06:25.3Z",
+        "visits": 3750785152,
+        "hasSocialModules": true
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [
+        {
+          "id": "volleyball-legends:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "inviteUrl": "https://discord.gg/JK8bFRb5KR",
+            "inviteCode": "JK8bFRb5KR",
+            "guildId": "1328110081136398427"
+          },
+          "displayName": "Volleyball Legends",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord invite API: guild name matches game name exactly; description says \"official\"; description names the game; holds vanity /volleyballlegends",
+          "approximateMembers": 1920968,
+          "discoveredVia": [
+            "rocodes.gg",
+            "www.destructoid.com",
+            "www.gamesradar.com"
+          ],
+          "pollPolicy": {
+            "intervalMinutes": 20,
+            "basis": "game updated 3d ago; active"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "blue-lock-rivals",
+      "name": "Blue Lock Rivals",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 6325068386,
+        "groupId": 34671275,
+        "creatorName": "Blue Lock Rivals Unofficial Fans",
+        "updatedAt": "2026-08-22T19:00:23.32Z",
+        "visits": 4907211417,
+        "hasSocialModules": true
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [
+        {
+          "id": "blue-lock-rivals:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "inviteUrl": "https://discord.gg/bluelockrivals",
+            "inviteCode": "bluelockrivals",
+            "guildId": "1304535758899777626"
+          },
+          "displayName": "Blue Lock: Rivals Unofficial Fans",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord invite API: guild name contains the game name; guild name matches the Roblox creator group \"Blue Lock Rivals Unofficial Fans\"; description names the game; holds vanity /bluelockrivals",
+          "approximateMembers": 1705191,
+          "discoveredVia": [
+            "rocodes.gg",
+            "beebom.com",
+            "www.pocketgamer.com"
+          ],
+          "pollPolicy": {
+            "intervalMinutes": 20,
+            "basis": "game updated 3d ago; active"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "99-nights-in-the-forest",
+      "name": "99 Nights in the Forest",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 7326934954,
+        "groupId": 6042520,
+        "creatorName": "Grandma's Favourite Games",
+        "updatedAt": "2026-08-22T18:12:19.445Z",
+        "visits": 29187347079,
+        "hasSocialModules": true
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [
+        {
+          "id": "99-nights-in-the-forest:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "inviteUrl": "https://discord.gg/JyKTaU42ap",
+            "inviteCode": "JyKTaU42ap",
+            "guildId": "1376308559536455721"
+          },
+          "displayName": "99 Nights in the Forest",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord invite API: guild name matches game name exactly; description says \"official\"; description names the game; holds vanity /nightsintheforest",
+          "approximateMembers": 712235,
+          "discoveredVia": [
+            "www.pockettactics.com",
+            "driffle.com"
+          ],
+          "pollPolicy": {
+            "intervalMinutes": 20,
+            "basis": "game updated 3d ago; active"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "sols-rng",
+      "name": "Sol's RNG",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 5361032378,
+        "groupId": 8509669,
+        "creatorName": "Sol's Studio",
+        "updatedAt": "2026-08-19T06:04:39.746Z",
+        "visits": 2108741891,
+        "hasSocialModules": true
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [
+        {
+          "id": "sols-rng:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "inviteUrl": "https://discord.gg/solsrng",
+            "inviteCode": "solsrng",
+            "guildId": "1186570213077041233"
+          },
+          "displayName": "Sol's RNG",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord invite API: guild name matches game name exactly; description says \"official\"; description names the game; Discord VERIFIED; holds vanity /solsrng",
+          "approximateMembers": 942083,
+          "discoveredVia": [
+            "beebom.com",
+            "www.pocketgamer.com"
+          ],
+          "pollPolicy": {
+            "intervalMinutes": 20,
+            "basis": "game updated 6d ago; active"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "dandys-world",
+      "name": "Dandy's World",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 5569032992,
+        "groupId": 14576965,
+        "creatorName": "BlushCrunch Studio",
+        "updatedAt": "2026-08-21T20:17:59.801Z",
+        "visits": 7351269535,
+        "hasSocialModules": true
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [
+        {
+          "id": "dandys-world:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "inviteUrl": "https://discord.gg/W5t424NwAc",
+            "inviteCode": "W5t424NwAc",
+            "guildId": "969934252844138496"
+          },
+          "displayName": "BlushCrunch Studio",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord invite API: guild name matches the Roblox creator group \"BlushCrunch Studio\"; description says \"official\"; holds vanity /blushcrunch",
+          "approximateMembers": 1000633,
+          "discoveredVia": [
+            "fossbytes.com",
+            "www.sportskeeda.com"
+          ],
+          "pollPolicy": {
+            "intervalMinutes": 20,
+            "basis": "game updated 4d ago; active"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "type-soul",
+      "name": "Type Soul",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 4871329703,
+        "groupId": 32740991,
+        "creatorName": "Type Soul",
+        "updatedAt": "2026-08-23T22:03:32.991Z",
+        "visits": 817056013,
+        "hasSocialModules": null
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [
+        {
+          "id": "type-soul:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "inviteUrl": "https://discord.gg/typesoul",
+            "inviteCode": "typesoul",
+            "guildId": "1248277648787111947"
+          },
+          "displayName": "TYPE://SOUL",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord invite API: guild name matches game name exactly; guild name matches the Roblox creator group \"Type Soul\"; description names the game; holds vanity /typesoul",
+          "approximateMembers": 115249,
+          "discoveredVia": [
+            "www.pocketgamer.com",
+            "www.pockettactics.com",
+            "fossbytes.com"
+          ],
+          "pollPolicy": {
+            "intervalMinutes": 5,
+            "basis": "game updated 37h ago; boosted to floor for 48h"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "anime-card-clash",
+      "name": "Anime Card Clash",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 6682487255,
+        "groupId": 34903714,
+        "creatorName": "RNG Lab",
+        "updatedAt": "2026-08-22T05:33:38.96Z",
+        "visits": 498516477,
+        "hasSocialModules": null
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [
+        {
+          "id": "anime-card-clash:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "inviteUrl": "https://discord.gg/M3jGqKBSZu",
+            "inviteCode": "M3jGqKBSZu",
+            "guildId": "1298843253461876796"
+          },
+          "displayName": "Anime Card Clash (BETA)",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord invite API: guild name contains the game name; description says \"official\"; description names the game; holds vanity /animecardclash",
+          "approximateMembers": 135989,
+          "discoveredVia": [
+            "www.pockettactics.com",
+            "beebom.com"
+          ],
+          "pollPolicy": {
+            "intervalMinutes": 20,
+            "basis": "game updated 3d ago; active"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "tennis-zero",
+      "name": "Tennis Zero",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 7744159391,
+        "groupId": 36012725,
+        "creatorName": "Current x Blackstar",
+        "updatedAt": "2026-05-30T03:06:34.554Z",
+        "visits": 55034529,
+        "hasSocialModules": null
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "jujutsu-zero",
+      "name": "Jujutsu Zero",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 6760085372,
+        "groupId": 35150553,
+        "creatorName": "Studio Resonance",
+        "updatedAt": "2026-08-25T03:27:08.4132138Z",
+        "visits": 110290996,
+        "hasSocialModules": true
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [
+        {
+          "id": "jujutsu-zero:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "inviteUrl": "https://discord.gg/2qVWbwvu7e",
+            "inviteCode": "2qVWbwvu7e",
+            "guildId": "1327773851785891903"
+          },
+          "displayName": "Jujutsu: Zero",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord invite API: guild name matches game name exactly; description says \"official\"; description names the game; holds vanity /jujutsuzero",
+          "approximateMembers": 274206,
+          "discoveredVia": [
+            "www.destructoid.com"
+          ],
+          "pollPolicy": {
+            "intervalMinutes": 5,
+            "basis": "game updated 7h ago; boosted to floor for 48h"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "weak-legacy-2",
+      "name": "Weak Legacy 2",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 6216468795,
+        "groupId": 34970628,
+        "creatorName": "Weak Games Corp.",
+        "updatedAt": "2026-05-31T01:16:06.29Z",
+        "visits": 155194624,
+        "hasSocialModules": true
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [
+        {
+          "id": "weak-legacy-2:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "inviteUrl": "https://discord.gg/Axu4GbnPhf",
+            "inviteCode": "Axu4GbnPhf",
+            "guildId": "1005193452616687746"
+          },
+          "displayName": "Weak Games Corp.",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord invite API: guild name matches the Roblox creator group \"Weak Games Corp.\"; holds vanity /weak-legacy-2",
+          "approximateMembers": 267266,
+          "discoveredVia": [
+            "beebom.com",
+            "driffle.com"
+          ],
+          "pollPolicy": {
+            "intervalMinutes": 360,
+            "basis": "game updated 86d ago; dormant, backed off to ceiling"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "hunty-zombies",
+      "name": "Hunty Zombies",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "sailor-piece",
+      "name": "Sailor Piece",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "jujutsu-infinite",
+      "name": "Jujutsu Infinite",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "azure-latch",
+      "name": "Azure Latch",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "fruit-battlegrounds",
+      "name": "Fruit Battlegrounds",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "untitled-boxing-game",
+      "name": "Untitled Boxing Game",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "the-forge",
+      "name": "The Forge",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "kaizen",
+      "name": "Kaizen",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "mugen",
+      "name": "Mugen",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "dress-to-impress",
+      "name": "Dress to Impress",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "universal-tower-defense",
+      "name": "Universal Tower Defense",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "anime-last-stand",
+      "name": "Anime Last Stand",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "anime-final-quest",
+      "name": "Anime Final Quest",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "flashpoint",
+      "name": "Flashpoint",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "fisch",
+      "name": "Fisch",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "rivals",
+      "name": "Rivals",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "shindo-life",
+      "name": "Shindo Life",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 1511883870,
+        "groupId": 1226491,
+        "creatorName": "RELL World",
+        "updatedAt": "2026-08-10T18:37:33.861Z",
+        "visits": 2718598249,
+        "hasSocialModules": true
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "Roblox group declares social modules but no Discord was confirmed. The declared links need an authenticated read or manual inspection.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "anime-ranger-x",
+      "name": "Anime Ranger X",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "racket-rivals",
+      "name": "Racket Rivals",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "pixel-blade",
+      "name": "Pixel Blade",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "bizarre-lineage",
+      "name": "Bizarre Lineage",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "anime-apocalypse",
+      "name": "Anime Apocalypse",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "clover-retribution",
+      "name": "Clover Retribution",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "devil-hunters",
+      "name": "Devil Hunters",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "spongebob-tower-defense",
+      "name": "SpongeBob Tower Defense",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "ninja-time",
+      "name": "Ninja Time",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "king-legacy",
+      "name": "King Legacy",
+      "surface": "codes",
+      "publicationState": "published",
+      "roblox": {
+        "universeId": 1451439645,
+        "groupId": 5348890,
+        "creatorName": "Sea King Games",
+        "updatedAt": "2026-07-25T12:24:24.662Z",
+        "visits": 4042665148,
+        "hasSocialModules": true
+      },
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "Roblox group declares social modules but no Discord was confirmed. The declared links need an authenticated read or manual inspection.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "anime-guardians",
+      "name": "Anime Guardians",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "dragon-souls",
+      "name": "Dragon Souls",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "soccer-zero",
+      "name": "Soccer Zero",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "playground-basketball",
+      "name": "Playground Basketball",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "anime-eternal",
+      "name": "Anime Eternal",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "jump-star",
+      "name": "Jump Star",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "restaurant-tycoon-3",
+      "name": "Restaurant Tycoon 3",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "slap-battles",
+      "name": "Slap Battles",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "blade-ball",
+      "name": "Blade Ball",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "plants-vs-brainrots",
+      "name": "Plants vs Brainrots",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "da-hood",
+      "name": "Da Hood",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "anime-vanguards",
+      "name": "Anime Vanguards",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "driving-empire",
+      "name": "Driving Empire",
+      "surface": "codes",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No officialSourceUrl on the game record, so nothing could be resolved on Roblox.",
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "monopoly-go",
+      "name": "Monopoly GO",
+      "surface": "daily",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": [
+        "mply.io"
+      ],
+      "linkTtlHours": 24,
+      "sources": [
+        {
+          "id": "monopoly-go:discord",
+          "platform": "discord",
+          "authority": 0,
+          "locator": {
+            "url": "https://discord.gg/officialmonopolygo",
+            "guildId": null
+          },
+          "displayName": "MONOPOLY GO!",
+          "accessMethod": "gateway-or-announcement-follow",
+          "status": "confirmed",
+          "confirmedVia": "Discord public invite API, 25 August 2026. Holds the vanity code officialmonopolygo; description reads 'Official Discord for the mobile game MONOPOLY GO!'.",
+          "approximateMembers": 1226301,
+          "discoveredVia": [
+            "hand-research"
+          ],
+          "note": "UPSTREAM OF FACEBOOK. Reporting consistently describes Scopely releasing reward links here first, with Facebook, Reddit and aggregators picking them up afterwards. This is the single most valuable source on the site and it is reachable by bot.",
+          "pollPolicy": {
+            "intervalMinutes": 360,
+            "basis": "no update timestamp; parked at ceiling"
+          }
+        },
+        {
+          "id": "monopoly-go:facebook",
+          "platform": "facebook",
+          "authority": 0,
+          "locator": {
+            "url": "https://www.facebook.com/monopolygo/",
+            "guildId": null
+          },
+          "displayName": null,
+          "accessMethod": "manual",
+          "status": "unreachable-programmatically",
+          "confirmedVia": "Named repeatedly as an official distribution channel.",
+          "approximateMembers": null,
+          "discoveredVia": [
+            "hand-research"
+          ],
+          "note": "Graph API requires page ownership. Kept as a documented channel, not a pollable source.",
+          "pollPolicy": {
+            "intervalMinutes": null,
+            "basis": "not pollable; documented channel only"
+          }
+        },
+        {
+          "id": "monopoly-go:instagram",
+          "platform": "instagram",
+          "authority": 0,
+          "locator": {
+            "url": "https://www.instagram.com/monopolygo/",
+            "guildId": null
+          },
+          "displayName": null,
+          "accessMethod": "manual",
+          "status": "unreachable-programmatically",
+          "confirmedVia": "hand research, see sources-curated.json",
+          "approximateMembers": null,
+          "discoveredVia": [
+            "hand-research"
+          ],
+          "note": "Same constraint as Facebook.",
+          "pollPolicy": {
+            "intervalMinutes": null,
+            "basis": "not pollable; documented channel only"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "coin-master",
+      "name": "Coin Master",
+      "surface": "daily",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": [
+        "coinmaster.onelink.me",
+        "moonactive.net"
+      ],
+      "linkTtlHours": 72,
+      "sources": [
+        {
+          "id": "coin-master:email",
+          "platform": "email",
+          "authority": 0,
+          "locator": {
+            "url": null,
+            "guildId": null
+          },
+          "displayName": null,
+          "accessMethod": "spike-required",
+          "status": "candidate-route",
+          "confirmedVia": "hand research, see sources-curated.json",
+          "approximateMembers": null,
+          "discoveredVia": [
+            "hand-research"
+          ],
+          "note": "REACHABLE ALTERNATIVE TO FACEBOOK. Registering an address with Coin Master delivers the daily spin link by email. A dedicated mailbox polled over IMAP is a first-party feed that sidesteps the Graph API problem entirely. Needs a spike to confirm delivery cadence and link format before it is relied on.",
+          "pollPolicy": {
+            "intervalMinutes": 360,
+            "basis": "no update timestamp; parked at ceiling"
+          }
+        },
+        {
+          "id": "coin-master:facebook",
+          "platform": "facebook",
+          "authority": 0,
+          "locator": {
+            "url": "https://www.facebook.com/coinmaster/",
+            "guildId": null
+          },
+          "displayName": null,
+          "accessMethod": "manual",
+          "status": "unreachable-programmatically",
+          "confirmedVia": "hand research, see sources-curated.json",
+          "approximateMembers": null,
+          "discoveredVia": [
+            "hand-research"
+          ],
+          "note": "Primary published channel; not pollable.",
+          "pollPolicy": {
+            "intervalMinutes": null,
+            "basis": "not pollable; documented channel only"
+          }
+        },
+        {
+          "id": "coin-master:x",
+          "platform": "x",
+          "authority": 0,
+          "locator": {
+            "url": "https://x.com/coinmastergame",
+            "guildId": null
+          },
+          "displayName": null,
+          "accessMethod": "spike-required",
+          "status": "paid-api-only",
+          "confirmedVia": "hand research, see sources-curated.json",
+          "approximateMembers": null,
+          "discoveredVia": [
+            "hand-research"
+          ],
+          "note": "Cross-posts the Facebook links. Reachable only on a paid X API tier.",
+          "pollPolicy": {
+            "intervalMinutes": 360,
+            "basis": "no update timestamp; parked at ceiling"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "dice-dreams",
+      "name": "Dice Dreams",
+      "surface": "daily",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": [
+        "dicedreams.onelink.me"
+      ],
+      "linkTtlHours": 48,
+      "sources": [
+        {
+          "id": "dice-dreams:facebook",
+          "platform": "facebook",
+          "authority": 0,
+          "locator": {
+            "url": "https://www.facebook.com/DiceDreamsOfficial/",
+            "guildId": null
+          },
+          "displayName": null,
+          "accessMethod": "manual",
+          "status": "unreachable-programmatically",
+          "confirmedVia": "hand research, see sources-curated.json",
+          "approximateMembers": null,
+          "discoveredVia": [
+            "hand-research"
+          ],
+          "note": "Described as the earliest and most reliable channel, and there is no confirmed first-party Discord. THIS IS THE HARDEST OF THE THREE and the one where the build-or-drop question genuinely bites.",
+          "pollPolicy": {
+            "intervalMinutes": null,
+            "basis": "not pollable; documented channel only"
+          }
+        },
+        {
+          "id": "dice-dreams:instagram",
+          "platform": "instagram",
+          "authority": 0,
+          "locator": {
+            "url": "https://www.instagram.com/dicedreams_official/",
+            "guildId": null
+          },
+          "displayName": null,
+          "accessMethod": "manual",
+          "status": "unreachable-programmatically",
+          "confirmedVia": "hand research, see sources-curated.json",
+          "approximateMembers": null,
+          "discoveredVia": [
+            "hand-research"
+          ],
+          "note": "Same constraint.",
+          "pollPolicy": {
+            "intervalMinutes": null,
+            "basis": "not pollable; documented channel only"
+          }
+        }
+      ],
+      "gaps": []
+    },
+    {
+      "gameSlug": "bingo-blitz",
+      "name": "Bingo Blitz",
+      "surface": "daily",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "family-island",
+      "name": "Family Island",
+      "surface": "daily",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No source of any kind. This game cannot be ingested."
+      ]
+    },
+    {
+      "gameSlug": "board-kings",
+      "name": "Board Kings",
+      "surface": "daily",
+      "publicationState": "planned",
+      "roblox": null,
+      "rewardLinkDomains": null,
+      "linkTtlHours": null,
+      "sources": [],
+      "gaps": [
+        "No source of any kind. This game cannot be ingested."
+      ]
+    }
+  ]
+}

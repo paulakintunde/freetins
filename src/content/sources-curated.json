@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "note": "Hand-researched sources that no automated route can reach. Roblox games are covered by scripts/discover-sources.mjs and scripts/mine-discovery-corpus.mjs; this file is for the mobile daily-link titles, where there is no group API to interrogate. Every entry records how it was established so a later reader can re-check it rather than trust it.",
+  "researchedAt": "2026-08-25",
+  "researchedBy": "paul-a",
+  "games": [
+    {
+      "gameSlug": "monopoly-go",
+      "publisher": "Scopely",
+      "rewardLinkDomains": ["mply.io"],
+      "linkTtlHours": 24,
+      "linkTtlNote": "Smaller bundles expire in about a day; larger event bundles can run up to a week. Treat 24h as the default and let a resolved 200 extend it.",
+      "channels": [
+        {
+          "platform": "discord",
+          "authority": 0,
+          "url": "https://discord.gg/officialmonopolygo",
+          "guildId": null,
+          "guildName": "MONOPOLY GO!",
+          "approximateMembers": 1226301,
+          "status": "confirmed",
+          "confirmedVia": "Discord public invite API, 25 August 2026. Holds the vanity code officialmonopolygo; description reads 'Official Discord for the mobile game MONOPOLY GO!'.",
+          "note": "UPSTREAM OF FACEBOOK. Reporting consistently describes Scopely releasing reward links here first, with Facebook, Reddit and aggregators picking them up afterwards. This is the single most valuable source on the site and it is reachable by bot."
+        },
+        {
+          "platform": "facebook",
+          "authority": 0,
+          "url": "https://www.facebook.com/monopolygo/",
+          "status": "unreachable-programmatically",
+          "confirmedVia": "Named repeatedly as an official distribution channel.",
+          "note": "Graph API requires page ownership. Kept as a documented channel, not a pollable source."
+        },
+        {
+          "platform": "instagram",
+          "authority": 0,
+          "url": "https://www.instagram.com/monopolygo/",
+          "status": "unreachable-programmatically",
+          "note": "Same constraint as Facebook."
+        }
+      ]
+    },
+    {
+      "gameSlug": "coin-master",
+      "publisher": "Moon Active",
+      "rewardLinkDomains": ["coinmaster.onelink.me", "moonactive.net"],
+      "linkTtlHours": 72,
+      "linkTtlNote": "Moon Active servers void most daily links after roughly three days.",
+      "channels": [
+        {
+          "platform": "email",
+          "authority": 0,
+          "url": null,
+          "status": "candidate-route",
+          "note": "REACHABLE ALTERNATIVE TO FACEBOOK. Registering an address with Coin Master delivers the daily spin link by email. A dedicated mailbox polled over IMAP is a first-party feed that sidesteps the Graph API problem entirely. Needs a spike to confirm delivery cadence and link format before it is relied on."
+        },
+        {
+          "platform": "facebook",
+          "authority": 0,
+          "url": "https://www.facebook.com/coinmaster/",
+          "status": "unreachable-programmatically",
+          "note": "Primary published channel; not pollable."
+        },
+        {
+          "platform": "x",
+          "authority": 0,
+          "url": "https://x.com/coinmastergame",
+          "status": "paid-api-only",
+          "note": "Cross-posts the Facebook links. Reachable only on a paid X API tier."
+        }
+      ]
+    },
+    {
+      "gameSlug": "dice-dreams",
+      "publisher": "SuperPlay",
+      "rewardLinkDomains": ["dicedreams.onelink.me"],
+      "linkTtlHours": 48,
+      "linkTtlNote": "Reported validity runs 24 to 72 hours per link. 48h is the working default.",
+      "channels": [
+        {
+          "platform": "facebook",
+          "authority": 0,
+          "url": "https://www.facebook.com/DiceDreamsOfficial/",
+          "status": "unreachable-programmatically",
+          "note": "Described as the earliest and most reliable channel, and there is no confirmed first-party Discord. THIS IS THE HARDEST OF THE THREE and the one where the build-or-drop question genuinely bites."
+        },
+        {
+          "platform": "instagram",
+          "authority": 0,
+          "url": "https://www.instagram.com/dicedreams_official/",
+          "status": "unreachable-programmatically",
+          "note": "Same constraint."
+        }
+      ]
+    },
+    {
+      "gameSlug": "bingo-blitz",
+      "publisher": "Playtika",
+      "channels": [],
+      "status": "not-researched",
+      "note": "Deferred. Lower demand than the three headline titles; research when those are settled."
+    },
+    {
+      "gameSlug": "family-island",
+      "publisher": "Melsoft Games",
+      "channels": [],
+      "status": "not-researched",
+      "note": "Deferred."
+    },
+    {
+      "gameSlug": "board-kings",
+      "publisher": "Jelly Button Games",
+      "channels": [],
+      "status": "not-researched",
+      "note": "Deferred."
+    }
+  ]
+}

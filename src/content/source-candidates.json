@@ -1,0 +1,1308 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-25T10:26:39.135Z",
+  "method": "aggregator-corpus-mining",
+  "caveat": "Every entry is an UNCONFIRMED candidate. A link on an aggregator page is that aggregator claiming a channel exists. Confirm against the game itself before promoting any of these to tier 0 or 1.",
+  "pagesFetched": 40,
+  "pagesFailed": 10,
+  "candidates": [
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/2qVWbwvu7e",
+      "citedForGames": [
+        "jujutsu-zero"
+      ],
+      "seenOnPages": [
+        "https://www.destructoid.com/jujutsu-zero-codes/"
+      ],
+      "seenOnDomains": [
+        "www.destructoid.com"
+      ],
+      "invite": "2qVWbwvu7e",
+      "resolution": {
+        "state": "live",
+        "guildId": "1327773851785891903",
+        "guildName": "Jujutsu: Zero",
+        "guildDescription": "Official Discord server for Jujutsu: Zero.",
+        "vanityUrlCode": "jujutsuzero",
+        "features": [
+          "DISCOVERABLE",
+          "COMMUNITY"
+        ],
+        "approximateMembers": 274206,
+        "approximateOnline": 44675,
+        "matchScore": 92,
+        "matchReasons": [
+          "guild name matches game name exactly",
+          "description says \"official\"",
+          "description names the game",
+          "holds vanity /jujutsuzero"
+        ]
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/Axu4GbnPhf",
+      "citedForGames": [
+        "weak-legacy-2"
+      ],
+      "seenOnPages": [
+        "https://beebom.com/weak-legacy-2-codes/",
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "seenOnDomains": [
+        "beebom.com",
+        "driffle.com"
+      ],
+      "invite": "Axu4GbnPhf",
+      "resolution": {
+        "state": "live",
+        "guildId": "1005193452616687746",
+        "guildName": "Weak Games Corp.",
+        "guildDescription": "Weak Games Inc.",
+        "vanityUrlCode": "weak-legacy-2",
+        "features": [
+          "COMMUNITY",
+          "DISCOVERABLE"
+        ],
+        "approximateMembers": 267266,
+        "approximateOnline": 26891,
+        "matchScore": 62,
+        "matchReasons": [
+          "guild name matches the Roblox creator group \"Weak Games Corp.\"",
+          "holds vanity /weak-legacy-2"
+        ]
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/basketballrivalsofficial",
+      "citedForGames": [
+        "basketball-zero"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/basketball-zero"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg"
+      ],
+      "invite": "basketballrivalsofficial",
+      "resolution": {
+        "state": "dead",
+        "detail": "invite expired or revoked"
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/basketballzero",
+      "citedForGames": [
+        "basketball-zero"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/basketball-zero",
+        "https://driffle.com/blog/all-basketball-zero-codes/"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg",
+        "driffle.com"
+      ],
+      "invite": "basketballzero",
+      "resolution": {
+        "state": "live",
+        "guildId": "1326149032384532530",
+        "guildName": "Basketball: Zero",
+        "guildDescription": "The official server for Basketball: Zero on Roblox, where all the off-the-court chat and announcements can be found.",
+        "vanityUrlCode": "basketballzero",
+        "features": [
+          "DISCOVERABLE",
+          "COMMUNITY",
+          "VERIFIED"
+        ],
+        "approximateMembers": 1418054,
+        "approximateOnline": 146500,
+        "matchScore": 117,
+        "matchReasons": [
+          "guild name matches game name exactly",
+          "description says \"official\"",
+          "description names the game",
+          "Discord VERIFIED",
+          "holds vanity /basketballzero"
+        ]
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/bluelockrivals",
+      "citedForGames": [
+        "blue-lock-rivals"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/blue-lock-rivals",
+        "https://beebom.com/blue-lock-rivals-codes/",
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg",
+        "beebom.com",
+        "www.pocketgamer.com"
+      ],
+      "invite": "bluelockrivals",
+      "resolution": {
+        "state": "live",
+        "guildId": "1304535758899777626",
+        "guildName": "Blue Lock: Rivals Unofficial Fans",
+        "guildDescription": "The Discord server for the Roblox game Blue Lock: Rivals. Chat here and discuss the game and its updates.",
+        "vanityUrlCode": "bluelockrivals",
+        "features": [
+          "DISCOVERABLE",
+          "COMMUNITY"
+        ],
+        "approximateMembers": 1705191,
+        "approximateOnline": 123888,
+        "matchScore": 104,
+        "matchReasons": [
+          "guild name contains the game name",
+          "guild name matches the Roblox creator group \"Blue Lock Rivals Unofficial Fans\"",
+          "description names the game",
+          "holds vanity /bluelockrivals"
+        ]
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/growagarden",
+      "citedForGames": [
+        "grow-a-garden"
+      ],
+      "seenOnPages": [
+        "https://urgametips.com/grow-a-garden-codes/"
+      ],
+      "seenOnDomains": [
+        "urgametips.com"
+      ],
+      "invite": "growagarden",
+      "resolution": {
+        "state": "live",
+        "guildId": "1358536829636448418",
+        "guildName": "Grow a Garden",
+        "guildDescription": "Welcome to the official Roblox Grow a Garden server!",
+        "vanityUrlCode": "growagarden",
+        "features": [
+          "DISCOVERABLE",
+          "COMMUNITY"
+        ],
+        "approximateMembers": 5074845,
+        "approximateOnline": 255567,
+        "matchScore": 92,
+        "matchReasons": [
+          "guild name matches game name exactly",
+          "description says \"official\"",
+          "description names the game",
+          "holds vanity /growagarden"
+        ]
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/JK8bFRb5KR",
+      "citedForGames": [
+        "volleyball-legends"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/volleyball-legends",
+        "https://www.destructoid.com/haikyuu-legends-codes/",
+        "https://www.gamesradar.com/games/sports/volleyball-legends-codes/"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg",
+        "www.destructoid.com",
+        "www.gamesradar.com"
+      ],
+      "invite": "JK8bFRb5KR",
+      "resolution": {
+        "state": "live",
+        "guildId": "1328110081136398427",
+        "guildName": "Volleyball Legends",
+        "guildDescription": "This is the Volleyball Legends official discord community!!!",
+        "vanityUrlCode": "volleyballlegends",
+        "features": [
+          "COMMUNITY",
+          "DISCOVERABLE"
+        ],
+        "approximateMembers": 1920968,
+        "approximateOnline": 167494,
+        "matchScore": 92,
+        "matchReasons": [
+          "guild name matches game name exactly",
+          "description says \"official\"",
+          "description names the game",
+          "holds vanity /volleyballlegends"
+        ]
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/JyKTaU42ap",
+      "citedForGames": [
+        "99-nights-in-the-forest"
+      ],
+      "seenOnPages": [
+        "https://www.pockettactics.com/99-nights-in-the-forest-codes",
+        "https://driffle.com/blog/99-nights-in-the-forest-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pockettactics.com",
+        "driffle.com"
+      ],
+      "invite": "JyKTaU42ap",
+      "resolution": {
+        "state": "live",
+        "guildId": "1376308559536455721",
+        "guildName": "99 Nights in the Forest",
+        "guildDescription": "The official 99 Nights in the Forest Discord server!",
+        "vanityUrlCode": "nightsintheforest",
+        "features": [
+          "COMMUNITY",
+          "DISCOVERABLE"
+        ],
+        "approximateMembers": 712235,
+        "approximateOnline": 47832,
+        "matchScore": 92,
+        "matchReasons": [
+          "guild name matches game name exactly",
+          "description says \"official\"",
+          "description names the game",
+          "holds vanity /nightsintheforest"
+        ]
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/M3jGqKBSZu",
+      "citedForGames": [
+        "anime-card-clash"
+      ],
+      "seenOnPages": [
+        "https://www.pockettactics.com/anime-card-clash-codes",
+        "https://beebom.com/anime-card-clash-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pockettactics.com",
+        "beebom.com"
+      ],
+      "invite": "M3jGqKBSZu",
+      "resolution": {
+        "state": "live",
+        "guildId": "1298843253461876796",
+        "guildName": "Anime Card Clash (BETA)",
+        "guildDescription": "Official server for Anime Card Clash on Roblox",
+        "vanityUrlCode": "animecardclash",
+        "features": [
+          "DISCOVERABLE",
+          "COMMUNITY"
+        ],
+        "approximateMembers": 135989,
+        "approximateOnline": 28724,
+        "matchScore": 74,
+        "matchReasons": [
+          "guild name contains the game name",
+          "description says \"official\"",
+          "description names the game",
+          "holds vanity /animecardclash"
+        ]
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/ngYUMWvs",
+      "citedForGames": [
+        "tennis-zero"
+      ],
+      "seenOnPages": [
+        "https://www.hashtechwave.com/tennis-zero-codes/"
+      ],
+      "seenOnDomains": [
+        "www.hashtechwave.com"
+      ],
+      "invite": "ngYUMWvs",
+      "resolution": {
+        "state": "dead",
+        "detail": "invite expired or revoked"
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/RJdhQSVxGm",
+      "citedForGames": [
+        "sols-rng"
+      ],
+      "seenOnPages": [
+        "https://bloxguidesgg.com/games/sols-rng/codes"
+      ],
+      "seenOnDomains": [
+        "bloxguidesgg.com"
+      ],
+      "invite": "RJdhQSVxGm",
+      "resolution": {
+        "state": "live",
+        "guildId": "1399153731148316873",
+        "guildName": "BloxGuidesGG.com",
+        "guildDescription": null,
+        "vanityUrlCode": null,
+        "features": [
+          "COMMUNITY"
+        ],
+        "approximateMembers": 51,
+        "approximateOnline": 6,
+        "matchScore": 0,
+        "matchReasons": []
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/solsrng",
+      "citedForGames": [
+        "sols-rng"
+      ],
+      "seenOnPages": [
+        "https://beebom.com/sols-rng-codes/",
+        "https://www.pocketgamer.com/roblox/sols-rng-codes/"
+      ],
+      "seenOnDomains": [
+        "beebom.com",
+        "www.pocketgamer.com"
+      ],
+      "invite": "solsrng",
+      "resolution": {
+        "state": "live",
+        "guildId": "1186570213077041233",
+        "guildName": "Sol's RNG",
+        "guildDescription": "Official community for Sol's RNG",
+        "vanityUrlCode": "solsrng",
+        "features": [
+          "COMMUNITY",
+          "VERIFIED",
+          "DISCOVERABLE"
+        ],
+        "approximateMembers": 942083,
+        "approximateOnline": 140350,
+        "matchScore": 117,
+        "matchReasons": [
+          "guild name matches game name exactly",
+          "description says \"official\"",
+          "description names the game",
+          "Discord VERIFIED",
+          "holds vanity /solsrng"
+        ]
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/tenniszero",
+      "citedForGames": [
+        "tennis-zero"
+      ],
+      "seenOnPages": [
+        "https://driffle.com/blog/all-tennis-zero-codes/"
+      ],
+      "seenOnDomains": [
+        "driffle.com"
+      ],
+      "invite": "tenniszero",
+      "resolution": {
+        "state": "dead",
+        "detail": "invite expired or revoked"
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/typesoul",
+      "citedForGames": [
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://www.pocketgamer.com/roblox/type-soul-codes/",
+        "https://www.pockettactics.com/type-soul/codes",
+        "https://fossbytes.com/roblox-new-type-soul-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pocketgamer.com",
+        "www.pockettactics.com",
+        "fossbytes.com"
+      ],
+      "invite": "typesoul",
+      "resolution": {
+        "state": "live",
+        "guildId": "1248277648787111947",
+        "guildName": "TYPE://SOUL",
+        "guildDescription": "#1  TYPE://SOUL Community 🔥- Trading, Guide, Tips & Support People. Enjoy it!",
+        "vanityUrlCode": "typesoul",
+        "features": [
+          "COMMUNITY",
+          "DISCOVERABLE"
+        ],
+        "approximateMembers": 115249,
+        "approximateOnline": 12041,
+        "matchScore": 122,
+        "matchReasons": [
+          "guild name matches game name exactly",
+          "guild name matches the Roblox creator group \"Type Soul\"",
+          "description names the game",
+          "holds vanity /typesoul"
+        ]
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/UhhJbBs",
+      "citedForGames": [
+        "shindo-life"
+      ],
+      "seenOnPages": [
+        "https://www.pocketgamer.com/roblox/shindo-life-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pocketgamer.com"
+      ],
+      "invite": "UhhJbBs",
+      "resolution": {
+        "state": "dead",
+        "detail": "invite expired or revoked"
+      }
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/W5t424NwAc",
+      "citedForGames": [
+        "dandys-world"
+      ],
+      "seenOnPages": [
+        "https://fossbytes.com/dandys-world-codes/",
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "seenOnDomains": [
+        "fossbytes.com",
+        "www.sportskeeda.com"
+      ],
+      "invite": "W5t424NwAc",
+      "resolution": {
+        "state": "live",
+        "guildId": "969934252844138496",
+        "guildName": "BlushCrunch Studio",
+        "guildDescription": "This is the official BlushCrunch Studio Community Server! We are a small group of developers working hard to make games for others to enjoy!",
+        "vanityUrlCode": "blushcrunch",
+        "features": [
+          "DISCOVERABLE",
+          "COMMUNITY"
+        ],
+        "approximateMembers": 1000633,
+        "approximateOnline": 84681,
+        "matchScore": 82,
+        "matchReasons": [
+          "guild name matches the Roblox creator group \"BlushCrunch Studio\"",
+          "description says \"official\"",
+          "holds vanity /blushcrunch"
+        ]
+      }
+    },
+    {
+      "platform": "twitch",
+      "url": "https://twitch.tv/pcgamer",
+      "citedForGames": [
+        "99-nights-in-the-forest"
+      ],
+      "seenOnPages": [
+        "https://www.pcgamer.com/games/roblox/99-nights-in-the-forest-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pcgamer.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/ArpitRamGandhi1",
+      "citedForGames": [
+        "dandys-world"
+      ],
+      "seenOnPages": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "seenOnDomains": [
+        "www.sportskeeda.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/Basketball_SK",
+      "citedForGames": [
+        "dandys-world"
+      ],
+      "seenOnPages": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "seenOnDomains": [
+        "www.sportskeeda.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/bloxguides",
+      "citedForGames": [
+        "sols-rng"
+      ],
+      "seenOnPages": [
+        "https://bloxguidesgg.com/games/sols-rng/codes"
+      ],
+      "seenOnDomains": [
+        "bloxguidesgg.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/Chrollo_Blox",
+      "citedForGames": [
+        "basketball-zero"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/basketball-zero"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/gadgetbridge",
+      "citedForGames": [
+        "anime-card-clash"
+      ],
+      "seenOnPages": [
+        "https://www.gadgetbridge.com/anime-card-clash-codes/"
+      ],
+      "seenOnDomains": [
+        "www.gadgetbridge.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/hashtechwave",
+      "citedForGames": [
+        "tennis-zero"
+      ],
+      "seenOnPages": [
+        "https://www.hashtechwave.com/tennis-zero-codes/"
+      ],
+      "seenOnDomains": [
+        "www.hashtechwave.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/Maajora",
+      "citedForGames": [
+        "99-nights-in-the-forest"
+      ],
+      "seenOnPages": [
+        "https://www.pcgamer.com/games/roblox/99-nights-in-the-forest-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pcgamer.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/pcgamer",
+      "citedForGames": [
+        "99-nights-in-the-forest"
+      ],
+      "seenOnPages": [
+        "https://www.pcgamer.com/games/roblox/99-nights-in-the-forest-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pcgamer.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/protori_",
+      "citedForGames": [
+        "volleyball-legends"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/volleyball-legends",
+        "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg",
+        "www.destructoid.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/railwaygalactic",
+      "citedForGames": [
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://www.pockettactics.com/type-soul/codes"
+      ],
+      "seenOnDomains": [
+        "www.pockettactics.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/RellGames",
+      "citedForGames": [
+        "shindo-life"
+      ],
+      "seenOnPages": [
+        "https://www.pocketgamer.com/roblox/shindo-life-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pocketgamer.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/Shaun_w1992",
+      "citedForGames": [
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://www.pocketgamer.com/roblox/type-soul-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pocketgamer.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/SKProFootball",
+      "citedForGames": [
+        "dandys-world"
+      ],
+      "seenOnPages": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "seenOnDomains": [
+        "www.sportskeeda.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/skworldfootball",
+      "citedForGames": [
+        "dandys-world"
+      ],
+      "seenOnPages": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "seenOnDomains": [
+        "www.sportskeeda.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/SKWrestling_",
+      "citedForGames": [
+        "dandys-world"
+      ],
+      "seenOnPages": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "seenOnDomains": [
+        "www.sportskeeda.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/sportskeeda_mlb",
+      "citedForGames": [
+        "dandys-world"
+      ],
+      "seenOnPages": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "seenOnDomains": [
+        "www.sportskeeda.com"
+      ]
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/vb_legends",
+      "citedForGames": [
+        "volleyball-legends"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/volleyball-legends"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg"
+      ]
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/@BlueLockRivalsRBX",
+      "citedForGames": [
+        "blue-lock-rivals"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/blue-lock-rivals"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg"
+      ]
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/@Chrollomedias",
+      "citedForGames": [
+        "basketball-zero"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/basketball-zero"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg"
+      ]
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/@pcgamer",
+      "citedForGames": [
+        "99-nights-in-the-forest"
+      ],
+      "seenOnPages": [
+        "https://www.pcgamer.com/games/roblox/99-nights-in-the-forest-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pcgamer.com"
+      ]
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/channel/UC4r7qwkv3CsODTw3gAuJfdg",
+      "citedForGames": [
+        "dandys-world"
+      ],
+      "seenOnPages": [
+        "https://www.sportskeeda.com/roblox-news/dandys-world-codes"
+      ],
+      "seenOnDomains": [
+        "www.sportskeeda.com"
+      ]
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/channel/UCLaduTRRWdzU8kq9AoqTRlw",
+      "citedForGames": [
+        "shindo-life"
+      ],
+      "seenOnPages": [
+        "https://www.pocketgamer.com/roblox/shindo-life-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pocketgamer.com"
+      ]
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/channel/UCu8i7QLzAfWmef2cZ5hWsNQ",
+      "citedForGames": [
+        "anime-card-clash"
+      ],
+      "seenOnPages": [
+        "https://www.gadgetbridge.com/anime-card-clash-codes/"
+      ],
+      "seenOnDomains": [
+        "www.gadgetbridge.com"
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/pJRwhHBTWT",
+      "citedForGames": [
+        "99-nights-in-the-forest",
+        "anime-card-clash",
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://www.pockettactics.com/99-nights-in-the-forest-codes",
+        "https://www.pockettactics.com/anime-card-clash-codes",
+        "https://www.pockettactics.com/type-soul/codes"
+      ],
+      "seenOnDomains": [
+        "www.pockettactics.com"
+      ],
+      "reason": "site chrome on www.pockettactics.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/paleghosty",
+      "citedForGames": [
+        "99-nights-in-the-forest",
+        "anime-card-clash"
+      ],
+      "seenOnPages": [
+        "https://www.pockettactics.com/99-nights-in-the-forest-codes",
+        "https://www.pockettactics.com/anime-card-clash-codes"
+      ],
+      "seenOnDomains": [
+        "www.pockettactics.com"
+      ],
+      "reason": "site chrome on www.pockettactics.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/pockettactics",
+      "citedForGames": [
+        "99-nights-in-the-forest",
+        "anime-card-clash",
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://www.pockettactics.com/99-nights-in-the-forest-codes",
+        "https://www.pockettactics.com/anime-card-clash-codes",
+        "https://www.pockettactics.com/type-soul/codes"
+      ],
+      "seenOnDomains": [
+        "www.pockettactics.com"
+      ],
+      "reason": "site chrome on www.pockettactics.com"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/@Pocket_Tactics",
+      "citedForGames": [
+        "99-nights-in-the-forest",
+        "anime-card-clash",
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://www.pockettactics.com/99-nights-in-the-forest-codes",
+        "https://www.pockettactics.com/anime-card-clash-codes",
+        "https://www.pockettactics.com/type-soul/codes"
+      ],
+      "seenOnDomains": [
+        "www.pockettactics.com"
+      ],
+      "reason": "site chrome on www.pockettactics.com"
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/MryXrnwZvz",
+      "citedForGames": [
+        "99-nights-in-the-forest",
+        "basketball-zero",
+        "tennis-zero",
+        "weak-legacy-2"
+      ],
+      "seenOnPages": [
+        "https://driffle.com/blog/99-nights-in-the-forest-codes/",
+        "https://driffle.com/blog/all-basketball-zero-codes/",
+        "https://driffle.com/blog/all-tennis-zero-codes/",
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "seenOnDomains": [
+        "driffle.com"
+      ],
+      "reason": "site chrome on driffle.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/drifflecom",
+      "citedForGames": [
+        "99-nights-in-the-forest",
+        "basketball-zero",
+        "tennis-zero",
+        "weak-legacy-2"
+      ],
+      "seenOnPages": [
+        "https://driffle.com/blog/99-nights-in-the-forest-codes/",
+        "https://driffle.com/blog/all-basketball-zero-codes/",
+        "https://driffle.com/blog/all-tennis-zero-codes/",
+        "https://driffle.com/blog/all-weak-legacy-2-codes/"
+      ],
+      "seenOnDomains": [
+        "driffle.com"
+      ],
+      "reason": "site chrome on driffle.com"
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/uXSgphH4yH",
+      "citedForGames": [
+        "anime-card-clash",
+        "grow-a-garden",
+        "sols-rng"
+      ],
+      "seenOnPages": [
+        "https://www.pcgamesn.com/anime-card-clash/codes",
+        "https://www.pcgamesn.com/grow-a-garden/codes",
+        "https://www.pcgamesn.com/sols-rng/codes"
+      ],
+      "seenOnDomains": [
+        "www.pcgamesn.com"
+      ],
+      "reason": "site chrome on www.pcgamesn.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/beebomco",
+      "citedForGames": [
+        "anime-card-clash",
+        "blue-lock-rivals",
+        "sols-rng",
+        "weak-legacy-2"
+      ],
+      "seenOnPages": [
+        "https://beebom.com/anime-card-clash-codes/",
+        "https://beebom.com/blue-lock-rivals-codes/",
+        "https://beebom.com/sols-rng-codes/",
+        "https://beebom.com/weak-legacy-2-codes/"
+      ],
+      "seenOnDomains": [
+        "beebom.com"
+      ],
+      "reason": "site chrome on beebom.com"
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/x5R2YHXr7v",
+      "citedForGames": [
+        "basketball-zero",
+        "blue-lock-rivals",
+        "volleyball-legends"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/basketball-zero",
+        "https://rocodes.gg/codes/blue-lock-rivals",
+        "https://rocodes.gg/codes/volleyball-legends"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg"
+      ],
+      "reason": "site chrome on rocodes.gg"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/rocodesgg",
+      "citedForGames": [
+        "basketball-zero",
+        "blue-lock-rivals",
+        "volleyball-legends"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/basketball-zero",
+        "https://rocodes.gg/codes/blue-lock-rivals",
+        "https://rocodes.gg/codes/volleyball-legends"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg"
+      ],
+      "reason": "site chrome on rocodes.gg"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/@rocodesgg",
+      "citedForGames": [
+        "basketball-zero",
+        "blue-lock-rivals",
+        "volleyball-legends"
+      ],
+      "seenOnPages": [
+        "https://rocodes.gg/codes/basketball-zero",
+        "https://rocodes.gg/codes/blue-lock-rivals",
+        "https://rocodes.gg/codes/volleyball-legends"
+      ],
+      "seenOnDomains": [
+        "rocodes.gg"
+      ],
+      "reason": "site chrome on rocodes.gg"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/wilbossman",
+      "citedForGames": [
+        "blue-lock-rivals",
+        "shindo-life",
+        "volleyball-legends",
+        "weak-legacy-2"
+      ],
+      "seenOnPages": [
+        "https://www.gamesradar.com/games/sports/blue-lock-rivals-codes/",
+        "https://www.gamesradar.com/games/sports/volleyball-legends-codes/",
+        "https://www.gamesradar.com/games/rpg/weak-legacy-2-codes/",
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "seenOnDomains": [
+        "www.gamesradar.com"
+      ],
+      "reason": "site chrome on www.gamesradar.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/gamesradar",
+      "citedForGames": [
+        "blue-lock-rivals",
+        "shindo-life",
+        "volleyball-legends",
+        "weak-legacy-2"
+      ],
+      "seenOnPages": [
+        "https://www.gamesradar.com/games/sports/blue-lock-rivals-codes/",
+        "https://www.gamesradar.com/games/sports/volleyball-legends-codes/",
+        "https://www.gamesradar.com/games/rpg/weak-legacy-2-codes/",
+        "https://www.gamesradar.com/games/rpg/shindo-life-codes/"
+      ],
+      "seenOnDomains": [
+        "www.gamesradar.com"
+      ],
+      "reason": "site chrome on www.gamesradar.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/PocketGamer",
+      "citedForGames": [
+        "blue-lock-rivals",
+        "shindo-life",
+        "sols-rng",
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/",
+        "https://www.pocketgamer.com/roblox/sols-rng-codes/",
+        "https://www.pocketgamer.com/roblox/type-soul-codes/",
+        "https://www.pocketgamer.com/roblox/shindo-life-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pocketgamer.com"
+      ],
+      "reason": "site chrome on www.pocketgamer.com"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/@ArcadeCloud",
+      "citedForGames": [
+        "blue-lock-rivals",
+        "shindo-life",
+        "sols-rng",
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/",
+        "https://www.pocketgamer.com/roblox/sols-rng-codes/",
+        "https://www.pocketgamer.com/roblox/type-soul-codes/",
+        "https://www.pocketgamer.com/roblox/shindo-life-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pocketgamer.com"
+      ],
+      "reason": "site chrome on www.pocketgamer.com"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/c/pocketgamervideo",
+      "citedForGames": [
+        "blue-lock-rivals",
+        "shindo-life",
+        "sols-rng",
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://www.pocketgamer.com/roblox/blue-lock-rivals-codes/",
+        "https://www.pocketgamer.com/roblox/sols-rng-codes/",
+        "https://www.pocketgamer.com/roblox/type-soul-codes/",
+        "https://www.pocketgamer.com/roblox/shindo-life-codes/"
+      ],
+      "seenOnDomains": [
+        "www.pocketgamer.com"
+      ],
+      "reason": "site chrome on www.pocketgamer.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/KidwaiHisan",
+      "citedForGames": [
+        "dandys-world",
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://fossbytes.com/dandys-world-codes/",
+        "https://fossbytes.com/roblox-new-type-soul-codes/"
+      ],
+      "seenOnDomains": [
+        "fossbytes.com"
+      ],
+      "reason": "site chrome on fossbytes.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/fossbytes14",
+      "citedForGames": [
+        "dandys-world",
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://fossbytes.com/dandys-world-codes/",
+        "https://fossbytes.com/roblox-new-type-soul-codes/"
+      ],
+      "seenOnDomains": [
+        "fossbytes.com"
+      ],
+      "reason": "site chrome on fossbytes.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/https",
+      "citedForGames": [
+        "dandys-world",
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://fossbytes.com/dandys-world-codes/",
+        "https://fossbytes.com/roblox-new-type-soul-codes/"
+      ],
+      "seenOnDomains": [
+        "fossbytes.com"
+      ],
+      "reason": "site chrome on fossbytes.com"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/@FossbytesOfficial",
+      "citedForGames": [
+        "dandys-world",
+        "type-soul"
+      ],
+      "seenOnPages": [
+        "https://fossbytes.com/dandys-world-codes/",
+        "https://fossbytes.com/roblox-new-type-soul-codes/"
+      ],
+      "seenOnDomains": [
+        "fossbytes.com"
+      ],
+      "reason": "site chrome on fossbytes.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/UrGameTips",
+      "citedForGames": [
+        "grow-a-garden",
+        "weak-legacy-2"
+      ],
+      "seenOnPages": [
+        "https://urgametips.com/grow-a-garden-codes/",
+        "https://urgametips.com/weak-legacy-2-codes/"
+      ],
+      "seenOnDomains": [
+        "urgametips.com"
+      ],
+      "reason": "site chrome on urgametips.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/destructoid",
+      "citedForGames": [
+        "jujutsu-zero",
+        "type-soul",
+        "volleyball-legends"
+      ],
+      "seenOnPages": [
+        "https://www.destructoid.com/jujutsu-zero-codes/",
+        "https://www.destructoid.com/type-soul-codes/",
+        "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "seenOnDomains": [
+        "www.destructoid.com"
+      ],
+      "reason": "site chrome on www.destructoid.com"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/@DTOID",
+      "citedForGames": [
+        "jujutsu-zero",
+        "type-soul",
+        "volleyball-legends"
+      ],
+      "seenOnPages": [
+        "https://www.destructoid.com/jujutsu-zero-codes/",
+        "https://www.destructoid.com/type-soul-codes/",
+        "https://www.destructoid.com/haikyuu-legends-codes/"
+      ],
+      "seenOnDomains": [
+        "www.destructoid.com"
+      ],
+      "reason": "site chrome on www.destructoid.com"
+    },
+    {
+      "platform": "discord",
+      "url": "https://discord.gg/vwj7zdWxaW",
+      "citedForGames": [
+        "sols-rng",
+        "weak-legacy-2"
+      ],
+      "seenOnPages": [
+        "https://insider-gaming.com/sols-rng-codes-december-2025/",
+        "https://insider-gaming.com/weak-legacy-2-codes/"
+      ],
+      "seenOnDomains": [
+        "insider-gaming.com"
+      ],
+      "reason": "site chrome on insider-gaming.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/InsiderGamingIG",
+      "citedForGames": [
+        "sols-rng",
+        "weak-legacy-2"
+      ],
+      "seenOnPages": [
+        "https://insider-gaming.com/sols-rng-codes-december-2025/",
+        "https://insider-gaming.com/weak-legacy-2-codes/"
+      ],
+      "seenOnDomains": [
+        "insider-gaming.com"
+      ],
+      "reason": "site chrome on insider-gaming.com"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/The3rd_one",
+      "citedForGames": [
+        "sols-rng",
+        "weak-legacy-2"
+      ],
+      "seenOnPages": [
+        "https://insider-gaming.com/sols-rng-codes-december-2025/",
+        "https://insider-gaming.com/weak-legacy-2-codes/"
+      ],
+      "seenOnDomains": [
+        "insider-gaming.com"
+      ],
+      "reason": "site chrome on insider-gaming.com"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://youtube.com/@insider_gaming",
+      "citedForGames": [
+        "sols-rng",
+        "weak-legacy-2"
+      ],
+      "seenOnPages": [
+        "https://insider-gaming.com/sols-rng-codes-december-2025/",
+        "https://insider-gaming.com/weak-legacy-2-codes/"
+      ],
+      "seenOnDomains": [
+        "insider-gaming.com"
+      ],
+      "reason": "site chrome on insider-gaming.com"
+    }
+  ],
+  "discordConfirmedAt": "2026-08-25T10:35:26.987Z"
+}
