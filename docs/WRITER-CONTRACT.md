@@ -1,0 +1,280 @@
+# Freetins writer contract
+
+This supersedes the output-format sections of the batch 4 brief. Everything in the
+brief about research, evidence tiers, honesty, voice and the eight standout
+components still applies unchanged. What changed is where files go, what the data
+file looks like, and how tokens work, because the brief was written against an
+architecture this repository does not have.
+
+Read this before writing. A file that breaks any rule here fails the build.
+
+---
+
+## 1. Where files go
+
+Three files per page. The slug is the same in all three.
+
+| File | Path |
+|---|---|
+| Prose | `src/content/<section>/<slug>.md` |
+| Dataset | `src/data/<section>/<slug>.json` |
+| Verification checklist | `verify/<slug>-VERIFY.md` |
+
+`<section>` is `guides`, `daily` or `blog`. The permalink is `/<section>/<slug>/`.
+
+The brief's paths (`src/data/codes/`, `src/data/guides/` with a different schema,
+`src/content/daily/` with different front matter) are wrong. Use the table above.
+
+A worked example of a passing page is in `docs/content-template/`. Copy its shape.
+
+### Sections that already exist
+
+`/codes/<slug>/` is a separate, older system: markdown in `src/content/codes/`
+plus JSON in `src/data/games/`. Do not write into it. If your assignment named a
+codes page, it is now a `blog` assignment with a `/blog/<slug>/` permalink.
+
+---
+
+## 2. The dataset file
+
+JSON, snake_case keys. This is the payload. Every table, count, date and status on
+the rendered page comes from here.
+
+```json
+{
+  "subject": "Exact entity name as the H1 should read",
+  "slug": "matches-the-filename",
+  "entity_id": "126884695634066",
+  "entity_url": "https://www.roblox.com/games/126884695634066/",
+  "developer": "Studio or publisher",
+  "permalink": "/guides/matches-the-filename/",
+  "checked_at": "2026-08-25T08:00:00Z",
+  "content_changed_at": "2026-08-25T08:00:00Z",
+  "recheck_cadence": "A cadence somebody has actually committed to.",
+  "official_sources": [
+    { "type": "official_page", "url": "https://...", "note": "Shown as the link label" }
+  ],
+  "tables": {
+    "roster": {
+      "caption": "Every entry in X",
+      "columns": ["Entry", "Rarity", "Income per second", "How to obtain"],
+      "classification_column": "Rarity"
+    }
+  },
+  "rows": [
+    {
+      "table": "roster",
+      "name": "Alpha Marker",
+      "cells": {
+        "Entry": "Alpha Marker",
+        "Rarity": "Common",
+        "Income per second": "12",
+        "How to obtain": "Drops from the starting conveyor"
+      },
+      "classification": "Common",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "none",
+      "added_at": "2026-08-01T00:00:00Z",
+      "last_verified_at": "2026-08-24T00:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        { "tier": 1, "url": "https://..." },
+        { "tier": 2, "url": "https://..." }
+      ],
+      "confidence": "confirmed",
+      "needs_human": false,
+      "notes": ""
+    }
+  ],
+  "unverified_summary": "What you could not confirm and why, one to three sentences.",
+  "disagreements": [
+    { "item": "...", "source_a": "...", "source_b": "...", "confirmed": "..." }
+  ],
+  "fakes": [{ "claim": "...", "why_wrong": "...", "origin": "..." }],
+  "changes": [{ "at": "2026-08-20T00:00:00Z", "what": "One clause" }],
+  "next_change": { "pattern": "Observed cadence", "watch": ["Exact channels"] }
+}
+```
+
+### Rules the build enforces
+
+These are checks, not advice. Each one fails the build with a named error.
+
+- `subject`, `slug`, `entity_id`, `developer`, `permalink`, `recheck_cadence` must be present.
+- `checked_at` and `content_changed_at` must be ISO 8601 and must not be in the future.
+- At least one `official_sources` entry.
+- `unverified_summary` must be non-empty.
+- At least one `changes` entry.
+- At least one table declared.
+- Every row needs a cell for every column its table declares.
+- **`name` must equal the row's first-column cell.** They are the same string.
+- `last_verified_at` must be ISO 8601, not in the future, and not before `added_at`.
+- Every row needs at least one evidence URL, and every URL must be `https`.
+- A row with `"confidence": "confirmed"` needs **two** evidence URLs, at least one at tier 0 or 1.
+- No two rows in the same table may share a `name`.
+- No shorteners or placeholder hosts in evidence: `example.com`, `freetins.local`, `ceesty`, `clkmein`, `bit.ly`, `tinyurl`, `cutt.ly`, `shorte.st`, `adf.ly`.
+- The dataset must contain at least one `expired` or `removed` row, **or** `unverified_summary` must explain why no archive exists (say "no expired", "no removed" or "no superseded" in it).
+
+### The staleness rule
+
+Any row with `"status": "active"` whose `last_verified_at` is more than 14 days old
+is automatically downgraded to `unverified` at build. Do not inflate a timestamp to
+avoid this. If you cannot verify a row inside the window, it is not active.
+
+---
+
+## 3. Tokens
+
+Prose contains **no counts, totals, dates, timestamps or relative times**. Write a
+token. The build resolves it against the dataset. An unknown token fails the build
+rather than rendering as literal braces.
+
+### Scalars
+
+| Token | Renders |
+|---|---|
+| `{{totalCount}}` | Every row in the dataset |
+| `{{activeCount}}` | Rows still active after the staleness rule |
+| `{{unverifiedCount}}` | Rows marked or downgraded to unverified |
+| `{{expiredCount}}` | Rows marked expired |
+| `{{removedCount}}` | Rows marked removed |
+| `{{confirmedCount}}` | Rows with `confidence: confirmed` |
+| `{{checkedAt}}` | `checked_at` as a readable date |
+| `{{lastChanged}}` | `content_changed_at` as a readable date |
+| `{{subject}}` | The entity name |
+| `{{developer}}` | The studio or publisher |
+| `{{entityId}}` | The place ID or equivalent |
+| `{{recheckCadence}}` | The Freshness Contract sentence |
+| `{{nextChangePattern}}` | The observed drop or update pattern |
+| `{{unverifiedSummary}}` | The "what we could not verify" text |
+
+### Blocks
+
+| Token | Renders |
+|---|---|
+| `{{table:<id>}}` | That table, all its rows |
+| `{{table:<id>\|status=expired}}` | Filtered to those statuses, comma separated |
+| `{{table:<id>\|not-status=expired,removed}}` | Everything except those statuses |
+| `{{table:<id>\|classification=Rare}}` | Filtered to that classification |
+| `{{disagreements}}` | The Disagreement Table |
+| `{{fakes}}` | The Named Fakes Table |
+| `{{changelog}}` | The last five changes, newest first |
+| `{{officialSources}}` | The official channels as a bullet list |
+
+**Status and Last checked columns are appended to every table automatically.** Do
+not declare them in `columns`. Row-level provenance is not optional.
+
+A table token on a filter that matches nothing renders an honest "no rows recorded"
+line, not an empty table.
+
+---
+
+## 4. The prose file
+
+Front matter, then body. No other keys are allowed.
+
+```markdown
+---
+title: "Under 65 characters"
+slug: "matches-the-filename"
+permalink: "/guides/matches-the-filename/"
+category: "Guides"
+category_slug: "guides"
+focus_keyword: "the head term"
+secondary_keywords:
+  - four to six real long-tail variants
+  - second variant
+  - third variant
+  - fourth variant
+author: "Paul A"
+faq:
+  - q: A question from People Also Ask?
+    a: A direct answer of 40 to 90 words, answer first.
+---
+```
+
+`featured_image` is optional. Everything else is required. `faq` needs 6 to 10 pairs.
+
+### Body structure the build checks
+
+1. **First paragraph is the Answer Block.** 40 to 55 words. Counted after tokens are treated as one word each.
+2. **Second paragraph is the Disambiguation Line.** It must contain the phrase "is not", and it must carry a verifiable identifier: `{{entityId}}`, a six-digit-or-longer number, or an https URL.
+3. An H2 or H3 whose text contains **"could not verify"**.
+4. The `{{changelog}}` token somewhere in the body.
+5. The `{{recheckCadence}}` token (or `{{freshness}}`) somewhere in the body.
+6. **3 to 8 internal links.** Every one must be a directory path ending in a slash. Anchors must be descriptive; "click here", "here", "this", "read more" and "link" are rejected.
+7. No more than four consecutive paragraphs without a heading, list or table.
+8. **Zero em-dashes and en-dashes.** One fails the file.
+9. No literal dates, months, years, or relative times anywhere in prose. This includes "today", "yesterday", "3 days ago", "August 2026" and "2026-08-25".
+
+### The title and the month
+
+The brief asks for month and year in the title for freshness. The visible Last
+Updated line is generated from `checked_at`, so the page carries a real date without
+you typing one. Keep the month out of the `title` field: a title with a hardcoded
+month goes stale the moment it is not rechecked, which is the exact failure the
+brief calls out. The rendered page shows "Last verified <date>" from the dataset.
+
+---
+
+## 5. Links that are safe to use
+
+Live and linkable today:
+
+- `/how-we-verify/`
+- `/codes/grow-a-garden/`
+- `/codes/dandys-world/`
+- `/codes/basketball-zero/`, `/codes/blue-lock-rivals/`, `/codes/type-soul/`,
+  `/codes/volleyball-legends/`, `/codes/99-nights-in-the-forest/`,
+  `/codes/anime-card-clash/`, `/codes/jujutsu-zero/`, `/codes/king-legacy/`,
+  `/codes/shindo-life/`, `/codes/sols-rng/`, `/codes/tennis-zero/`,
+  `/codes/weak-legacy-2/`
+- Any page shipping in the same batch as yours.
+
+**Not live. Never link these:**
+
+- `/redeem-codes/` anything. The prefix does not exist on this site.
+- `/how-to-redeem-game-codes/`
+- A Fisch or Steal a Brainrot codes page under `/codes/`.
+
+If a target in your assignment is not on the live list and is not shipping
+alongside you, omit the link. Never stub.
+
+---
+
+## 6. The verification checklist
+
+`verify/<slug>-VERIFY.md`. One line per non-expired row:
+
+```
+[ ] EXACTSTRING  -> expected: <detail>  | evidence: <tier1 url> <tier2 url> | gates: <requirements> | confidence: <confirmed/reported/conflicting>
+```
+
+At the top, put the access path a tester follows, the entity URL, and any account
+or level prerequisites. Design each line so the check takes under a minute.
+
+---
+
+## 7. Byline
+
+The byline is assigned by section and cannot be set per page. Guides are bylined
+David Ng, Guides Editor. Daily links and blog are bylined Paul A. The `author`
+front matter field records who wrote the draft; the rendered byline comes from the
+section owner. This is deliberate: a page cannot ship crediting the wrong desk.
+
+---
+
+## 8. Before you submit
+
+Run the build. It is the QA gate.
+
+```
+npx astro build
+```
+
+Every rule in sections 2 and 4 is checked there and reports with your file name and
+the specific problem. A clean build means the mechanical contract is satisfied. It
+does not mean the research is good, which is still on you.
+
+Then reply with the five-line receipt from the brief. Do not paste file contents.
