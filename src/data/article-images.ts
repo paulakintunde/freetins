@@ -42,6 +42,16 @@ export const articleArtwork: Record<string, ArticleArtwork> = {
   bestGbaEmulators: artwork('best-gba-emulators', 'Original pixel adventurer passing through four rendering gateways in a bright retro world'),
   bestGbaGames: artwork('best-gba-games', 'Connected pixel-art worlds for racing, tactics, puzzles, science fiction and adventure'),
   resources: artwork('resources', 'Verified compass connecting codes, rewards, puzzles and guide paths across a bright game world'),
+  'how-to-redeem-game-codes': artwork('how-to-redeem-game-codes', 'Code token choosing the correct platform gateway in a bright game plaza'),
+  'roblox-promo-codes': artwork('roblox-promo-codes', 'Roblox avatars celebrating one live promo token beside an archive of expired tokens'),
+  'steal-a-brainrot-codes': artwork('steal-a-brainrot-codes', 'Rare hybrid creatures and live versus sold-out code tokens on a Steal a Brainrot red carpet'),
+  'grow-a-garden-recipes': artwork('grow-a-garden-recipes', 'Giant garden crops feeding an outdoor cooking station surrounded by finished recipes'),
+  'monopoly-go-golden-blitz': artwork('monopoly-go-golden-blitz', 'Two golden Monopoly GO stickers trading across a timed board-city event'),
+  'monopoly-go-tycoon-club': artwork('monopoly-go-tycoon-club', 'Green-and-gold Tycoon Club with a daily reward wheel, loyalty diamonds and milestone path'),
+  'roblox-song-ids': artwork('roblox-song-ids', 'Roblox avatars dancing as colorful music genres converge on an audio medallion'),
+  'steal-a-brainrot-admin-abuse': artwork('steal-a-brainrot-admin-abuse', 'Admin event filling a Steal a Brainrot red carpet with taco rain, meteors and rare creatures'),
+  'steal-a-brainrot-all-brainrots': artwork('steal-a-brainrot-all-brainrots', 'Brainrot creatures arranged by rarity while coins flow toward their collection pads'),
+  'monopoly-go': artwork('monopoly-go', 'Dice following a golden reward path toward a gift chest in a bright Monopoly GO board city'),
 };
 
 export const requireArticleArtwork = (routeId: string) => {
