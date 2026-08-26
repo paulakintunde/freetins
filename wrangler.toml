@@ -9,8 +9,6 @@ database_name = "freetins-app"
 database_id = "c32f1ddb-45a5-4057-b42b-14fbd9ca24dc"
 migrations_dir = "migrations"
 
-[[kv_namespaces]]
-binding = "STATUS"
 
 [[queues.producers]]
 binding = "ALERT_EMAIL"
