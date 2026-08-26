@@ -7,7 +7,6 @@
   "permalink": "/guides/monopoly-go-golden-blitz/",
   "checked_at": "2026-08-25T09:00:00Z",
   "content_changed_at": "2026-08-25T09:00:00Z",
-  "recheck_cadence": "Rechecked every Monday and Thursday morning UK time, and again within 24 hours of any Golden Blitz appearing in the game or on the official Discord. Each check either adds a new occurrence to the table or re-dates the rows already in it, so a row never claims a check it did not get. No overnight or weekend recheck is promised.",
   "official_sources": [
     {
       "type": "official_page",
@@ -67,7 +66,6 @@
         { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "This row is a prediction and is labelled Expected for that reason. Two trackers list the same sticker pair, but one calls it unconfirmed and another prints it as a completed event. Nothing from Scopely names a date, so the row stays Unverified until the event is observed in the app."
     },
     {
@@ -91,7 +89,6 @@
         { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Two of three sources start this occurrence on the 21st. One shop site starts it a day earlier, which is consistent with a local time conversion of a 05:00 UTC start rather than a different event."
     },
     {
@@ -115,7 +112,6 @@
         { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "The last occurrence of the Simpsons album cycle. The same outlet that dates this correctly in its own list also states elsewhere on the page that the previous occurrence was the last one, which is why this page rebuilt the table from three sources rather than quoting one."
     },
     {
@@ -139,7 +135,6 @@
         { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Three days after the previous occurrence, which is the tightest spacing on record and the pattern that repeats near an album close."
     },
     {
@@ -163,7 +158,6 @@
         { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Sticker pair order differs between trackers. The pair itself is identical across all three sources."
     },
     {
@@ -187,7 +181,6 @@
         { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "The first of four occurrences inside ten days, all clustered on the run to the album deadline."
     },
     {
@@ -211,7 +204,6 @@
         { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "The outlet list carries this occurrence on the 9th with no sticker pair attached, while both trackers carry it on the 12th with the same pair. The pair is agreed, the date is not, and the gap is too large to be a timezone conversion."
     },
     {
@@ -235,7 +227,6 @@
         { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Both trackers mark this pair as four star stickers, which is the common tier for a Blitz pair outside a season finale."
     },
     {
@@ -259,7 +250,6 @@
         { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "The outlet list carries this occurrence on the 26th. Both trackers carry it on the 28th with the same sticker pair. The date stays disputed and the row is marked accordingly rather than averaged."
     },
     {
@@ -283,7 +273,6 @@
         { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "One tracker records a 04:00 UTC start for this occurrence against a 05:00 UTC start for the others, which is the only recorded variation in start time."
     },
     {
@@ -307,11 +296,10 @@
         { "tier": 3, "url": "https://mogostickers.com/monopoly-go-latest-game-news/when-is-the-next-golden-blitz-monopoly-go" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "The oldest occurrence carried on this page. Older entries exist in the outlet list but were not cross-checked against a second source, so they are not listed here."
     }
   ],
-  "unverified_summary": "No row on this page reaches Confirmed, and none can. Scopely runs the Golden Blitz as an in-app event with no published calendar, no press note and no permanent post, so there is no publisher record to check a date against after the window shuts. Every row therefore rests on one reputable outlet plus two fan trackers, which is tier 2 and tier 3 evidence with no tier 0 or tier 1 anywhere. Two rows carry dates the outlet and the trackers disagree on by two and three days and are marked Conflicting rather than resolved. The next occurrence is not announced by anyone: the sticker pair circulating for it comes from a community Discord poll, one tracker labels it unconfirmed and a shop site prints it as already completed. The 05:00 UTC start time comes from a single tracker and no other source states a time at all. Nothing here was observed in the app by this desk.",
+  "unverified_summary": "No row on this page is publisher confirmed, and none can be. Scopely runs the Golden Blitz as an in-app event with no published calendar, no press note and no permanent post, so there is no publisher record to check a date against after the window shuts. Every row therefore rests on one reputable outlet plus two fan trackers, which is tier 2 and tier 3 evidence with no tier 0 or tier 1 anywhere. Two rows carry dates the outlet and the trackers disagree on by two and three days and are marked Conflicting rather than resolved. The next occurrence is not announced by anyone: the sticker pair circulating for it comes from a community Discord poll, one tracker labels it unconfirmed and a shop site prints it as already completed. The 05:00 UTC start time comes from a single tracker and no other source states a time at all. Nothing here was observed in the app by this desk.",
   "disagreements": [
     {
       "item": "The date of the Kent Brockman and Pickled Eggs occurrence",
@@ -329,7 +317,7 @@
       "item": "Whether the next Golden Blitz has already run",
       "source_a": "A sticker shop lists the expected pair in its schedule table as a completed event",
       "source_b": "An outlet and a fan tracker both call the same pair a prediction that Scopely has not confirmed",
-      "confirmed": "Not confirmed as run. The row stays in the expected table with an Unverified status until the event is observed in the app."
+      "confirmed": "Not confirmed as run. The row stays in the expected table, listed as awaiting editor verification, until the event is observed in the app."
     },
     {
       "item": "How long one occurrence lasts",

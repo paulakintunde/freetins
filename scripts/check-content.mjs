@@ -19,13 +19,21 @@
  *
  * Add --strict to ignore docs/batch-manifest.json, so a link to a commissioned
  * page that never shipped is reported. The vetter runs that before publication.
+ *
+ * After the results it prints an advisory block: per page, how many rows carry
+ * a typed status, confidence, check date or human flag, and whether the page
+ * carries a typed recheck promise. Those are read as the page's as-published
+ * baseline (or ignored) and never fail a check; the block is the interim
+ * editor-queue printout of typed claims to confirm (docs/adr/0003,
+ * docs/adr/0004). The vocabulary guard exempts these keys in dataset files for
+ * the same reason: a typed claim is queued here, never bounced.
  */
 
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { resolveDisplayStatus, countRows, validateDataset } from '../src/lib/dataset.ts';
+import { countStates, validateDataset } from '../src/lib/dataset.ts';
 import { normaliseDataset } from '../src/lib/normalise.ts';
 import { parseFrontmatter } from '../src/lib/frontmatter.ts';
 import { interpolate } from '../src/lib/interpolate.ts';
@@ -101,6 +109,11 @@ const listSlugs = async (section) => {
   }
 };
 
+/* Row keys that assert a check happened. Read as the baseline, listed for an editor. */
+const TYPED_CLAIM_KEYS = ['status', 'confidence', 'last_verified_at', 'needs_human']; // retired-vocabulary: allow, names the typed claims the queue lists
+/* Page keys that promise a check schedule. Read by nothing, listed for an editor. */
+const TYPED_PAGE_CLAIM_KEYS = ['recheck_cadence']; // retired-vocabulary: allow, names the typed claims the queue lists
+
 const checkPage = async (section, slug, livePaths) => {
   const label = `${section}/${slug}`;
   const problems = [];
@@ -110,7 +123,7 @@ const checkPage = async (section, slug, livePaths) => {
     source = (await readFile(path.join(root, 'src/content', section, `${slug}.md`), 'utf8'))
       .replace(/\r\n/g, '\n');
   } catch {
-    return { label, problems: [`${label}: prose file src/content/${section}/${slug}.md is missing`], counts: null };
+    return { label, problems: [`${label}: prose file src/content/${section}/${slug}.md is missing`], counts: null, typedClaims: null };
   }
 
   const { frontmatter, body, errors } = parseFrontmatter(source, label);
@@ -121,7 +134,7 @@ const checkPage = async (section, slug, livePaths) => {
     raw = JSON.parse(await readFile(path.join(root, 'src/data', section, `${slug}.json`), 'utf8'));
   } catch {
     problems.push(`${label}: dataset src/data/${section}/${slug}.json is missing or is not valid JSON`);
-    return { label, problems, counts: null };
+    return { label, problems, counts: null, typedClaims: null };
   }
 
   const dataset = normaliseDataset(raw, slug);
@@ -150,8 +163,20 @@ const checkPage = async (section, slug, livePaths) => {
   const anchors = [...interpolated.matchAll(/\[([^\]]+)\]\((\/[^)]+)\)/g)]
     .map((match) => ({ anchor: match[1].trim(), target: match[2] }));
 
-  const counts = frontmatter ? countRows(resolveDisplayStatus(dataset.rows, Date.now())) : null;
-  return { label, problems, counts, anchors };
+  // `now` reaches only a link row's TTL; every other count is the frozen baseline.
+  const counts = frontmatter ? countStates(dataset.rows, Date.now(), dataset.tables) : null;
+
+  // Typed claims, counted from the file as written: a row that types any of
+  // these is read as the as-published baseline and listed for an editor, and a
+  // page-level promise is named so the editor can see it.
+  const typedClaims = {
+    rows: (raw.rows ?? []).filter((row) =>
+      row && typeof row === 'object' && TYPED_CLAIM_KEYS.some((key) => key in row),
+    ).length,
+    pageKeys: TYPED_PAGE_CLAIM_KEYS.filter((key) => raw && typeof raw === 'object' && key in raw),
+  };
+
+  return { label, problems, counts, anchors, typedClaims };
 };
 
 const args = process.argv.slice(2);
@@ -178,9 +203,11 @@ if (jobs.length === 0) {
 const livePaths = await collectLivePaths(strict);
 let failed = 0;
 const anchorsByTarget = new Map();
+const typedClaimsByPage = [];
 
 for (const [section, slug] of jobs) {
-  const { label, problems, counts, anchors } = await checkPage(section, slug, livePaths);
+  const { label, problems, counts, anchors, typedClaims } = await checkPage(section, slug, livePaths);
+  if (typedClaims !== null && typedClaims !== undefined) typedClaimsByPage.push([label, typedClaims]);
   for (const { anchor, target } of anchors ?? []) {
     if (!anchorsByTarget.has(target)) anchorsByTarget.set(target, []);
     anchorsByTarget.get(target).push({ page: label, anchor });
@@ -191,7 +218,7 @@ for (const [section, slug] of jobs) {
     for (const problem of problems) console.log(`      ${problem.replace(`${label}: `, '')}`);
   } else {
     const summary = counts
-      ? `${counts.activeCount} active, ${counts.unverifiedCount} unverified, ${counts.expiredCount + counts.removedCount} archived`
+      ? `${counts.verifiedCount} verified, ${counts.activeCount} active, ${counts.listedCount} listed, ${counts.expiredCount} expired`
       : '';
     console.log(`PASS  ${label}  ${summary}`);
   }
@@ -217,6 +244,20 @@ if (jobs.length > 1) {
         console.log(`        "${anchor}" is reused by ${owner} and ${page}`);
       }
     }
+  }
+}
+
+/*
+ * Advisory only. A typed claim is ignored for display, read as the baseline
+ * and queued for an editor; it is never a reason to fail a page
+ * (docs/adr/0004). This block is what an editor works from until the control
+ * page's queue replaces it.
+ */
+if (typedClaimsByPage.length) {
+  console.log('\nTyped claims to confirm (advisory, never failing):');
+  for (const [label, claims] of typedClaimsByPage) {
+    const pageNote = claims.pageKeys.length ? `; page-level claims ignored for display: ${claims.pageKeys.join(', ')}` : '';
+    console.log(`      ${label}  typed claims read as the as-published baseline: ${claims.rows} rows${pageNote}`);
   }
 }
 

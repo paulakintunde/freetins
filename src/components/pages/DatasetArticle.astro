@@ -22,6 +22,7 @@ import { articleArtwork } from '../../data/article-images';
 import { getSectionAuthor } from '../../data/authors';
 import { organizationId } from '../../data/site';
 import type { Dataset, DatasetCounts } from '../../lib/dataset';
+import { DERIVED_CADENCE } from '../../lib/interpolate';
 import { datasetMetaDescription } from '../../lib/metaDescription';
 
 interface EntryData {
@@ -98,9 +99,9 @@ const modifiedAt = dataset.contentChangedAt || rowDates.at(-1) || publishedAt;
 const reviewFormatter = new Intl.DateTimeFormat('en-GB', {
   day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',
 });
-// The date a pre-ledger page typed is its status and stays on screen; a page
-// with none says what is true of it (docs/adr/0004).
-const reviewLabel = dataset.checkedAt
+// The date a pre-ledger page typed is its as-published baseline and stays on
+// screen; a page with none says what is true of it (docs/adr/0004).
+const baselineLine = dataset.checkedAt
   ? `Last verified ${reviewFormatter.format(Date.parse(dataset.checkedAt))}`
   : 'Awaiting editor verification';
 
@@ -191,7 +192,7 @@ const structuredData = {
         </div>
       )}
       <div class="article-meta">
-        <span>{reviewLabel}</span>
+        <span>{baselineLine}</span>
         <span class="byline">
           By <a href={author.path}>{author.name}</a>
           <span class="byline-role">{author.role}</span>
@@ -227,8 +228,8 @@ const structuredData = {
           <section id="sources" class="article-section">
             <h2>Sources</h2>
             <p>
-              Cross-checked against the publisher's own channels and independent
-              reporting. {dataset.recheckCadence || 'Rechecks are recorded on this page as editors make them.'}
+              Sources the writer listed for this page; each row's evidence line
+              shows what backs it. {DERIVED_CADENCE}
             </p>
             <div class="link-directory">
               {dataset.officialSources.map((source) => (

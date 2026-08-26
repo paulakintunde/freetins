@@ -7,7 +7,6 @@
   "permalink": "/blog/how-to-redeem-game-codes/",
   "checked_at": "2026-08-25T09:00:00Z",
   "content_changed_at": "2026-08-25T09:00:00Z",
-  "recheck_cadence": "Every path here is reopened against the publisher's own support page at least every 14 days, and immediately whenever a platform ships a store or launcher redesign.",
   "official_sources": [
     { "type": "official_page", "url": "https://www.roblox.com/redeem", "note": "Roblox code redemption page" },
     { "type": "support_doc", "url": "https://en.help.roblox.com/hc/en-us/articles/115005566223-How-to-redeem-and-spend-your-Gift-Card", "note": "Roblox Support on gift cards and codes" },
@@ -48,7 +47,6 @@
         { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360029650831-How-Do-I-Redeem-a-Promo-Code" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "One page now handles gift cards, promo codes and toy codes."
     },
     {
@@ -71,7 +69,6 @@
         { "tier": 0, "url": "https://www.roblox.com/redeem" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Guides that describe an in-app Redeem button for iPhone or Android are describing the Samsung Galaxy build."
     },
     {
@@ -94,7 +91,6 @@
         { "tier": 0, "url": "https://www.roblox.com/redeem" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The only documented in-app redemption route on Roblox."
     },
     {
@@ -117,7 +113,6 @@
         { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/115005566223-How-to-redeem-and-spend-your-Gift-Card" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Prime Gaming and carrier promotion items use this same page."
     },
     {
@@ -140,7 +135,6 @@
         { "tier": 1, "url": "https://support.xbox.com/en-GB/help/subscriptions-billing/redeem-codes-gifting/redeem-prepaid-codes" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Microsoft states the same rule for publisher issued in game content codes on its own platform."
     },
     {
@@ -163,7 +157,6 @@
         { "tier": 2, "url": "https://www.pocketgamer.com/roblox/grow-a-garden-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Two independent outlets agree on the panel and the button labels. The studio publishes no support documentation, so this cannot reach Confirmed without an in game check."
     },
     {
@@ -186,7 +179,6 @@
         { "tier": 2, "url": "https://www.pcgamer.com/games/roblox/dandys-world-codes/" }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "The two described paths cannot both be current. Recorded as a disagreement rather than resolved in favour of the louder source."
     },
     {
@@ -209,7 +201,6 @@
         { "tier": 1, "url": "https://www.xbox.com/en-GB/redeem" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Codes are five blocks of five characters."
     },
     {
@@ -232,7 +223,6 @@
         { "tier": 1, "url": "https://www.xbox.com/en-GB/redeem" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Microsoft's current article documents the Xbox app rather than the Microsoft Store app. Guides still describing a Microsoft Store path are behind."
     },
     {
@@ -255,7 +245,6 @@
         { "tier": 1, "url": "https://www.xbox.com/en-GB/redeem" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -278,7 +267,6 @@
         { "tier": 1, "url": "https://www.playstation.com/en-us/support/store/ps-store-voucher-code-problems/" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "A code can also be applied at checkout through Redeem Codes and Gift Cards in the payment method menu."
     },
     {
@@ -301,7 +289,6 @@
         { "tier": 1, "url": "https://www.playstation.com/en-us/support/store/ps-store-voucher-code-problems/" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The sidebar path differs from the PS5 triangle menu path."
     },
     {
@@ -324,7 +311,6 @@
         { "tier": 1, "url": "https://www.playstation.com/en-us/support/store/ps-store-voucher-code-problems/" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Discount codes are 10 digits and are entered through Enter Discount Code in the basket."
     },
     {
@@ -347,7 +333,6 @@
         { "tier": 1, "url": "https://www.playstation.com/en-us/support/store/ps-store-voucher-code-problems/" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -370,7 +355,6 @@
         { "tier": 2, "url": "https://www.engadget.com/gaming/nintendo/how-to-redeem-game-codes-on-the-nintendo-switch-2-130059847.html" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Nintendo's own article says Enter Code. Outlet coverage says Redeem Code. The publisher wording is what is recorded here."
     },
     {
@@ -393,7 +377,6 @@
         { "tier": 0, "url": "https://ec.nintendo.com/redeem/" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The prior console sign in requirement is the step most guides omit."
     },
     {
@@ -416,7 +399,6 @@
         { "tier": 0, "url": "https://store.epicgames.com/redeem" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -439,7 +421,6 @@
         { "tier": 0, "url": "https://store.epicgames.com/redeem" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Redirect followed and recorded during this check."
     },
     {
@@ -462,7 +443,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/genshin-impact-codes-redeem/" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The in game menu route and the Adventure Rank gate are widely reported and are not stated on the redemption page, so neither is recorded as confirmed here."
     },
     {
@@ -485,7 +465,6 @@
         { "tier": 1, "url": "https://www.gog.com/redeem" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "GOG warns that some codes contain zeroes where readers type the letter O."
     },
     {
@@ -507,7 +486,6 @@
         { "tier": 1, "url": "https://support.xbox.com/en-GB/help/subscriptions-billing/redeem-codes-gifting/redeem-prepaid-codes" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Left blank rather than guessed. A wrong path here would send readers to a box that rejects the code."
     },
     {
@@ -530,7 +508,6 @@
         { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360029650831-How-Do-I-Redeem-a-Promo-Code" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Redirect followed during this check. Roblox Support now links only the single redemption page."
     },
     {
@@ -553,7 +530,6 @@
         { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360000316606-How-to-Redeem-Toy-Virtual-Item-Codes" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Redirect followed during this check."
     },
     {
@@ -575,7 +551,6 @@
         { "tier": 1, "url": "https://help.starstable.com/hc/en-us/articles/360001374060-Redeem-codes-How-do-I-redeem-a-code" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The single most common cause across every support page read for this check."
     },
     {
@@ -597,7 +572,6 @@
         { "tier": 1, "url": "https://en-americas-support.nintendo.com/app/answers/detail/a_id/22429/~/how-to-redeem-a-download-code-on-nintendo-eshop" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Star Stable names trailing spaces from copy and paste as its own recurring cause."
     },
     {
@@ -619,7 +593,6 @@
         { "tier": 1, "url": "https://www.playstation.com/en-gb/support/store/redeem-ps-store-voucher-code/" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox allows an already owned virtual item code to be passed to another user."
     },
     {
@@ -641,7 +614,6 @@
         { "tier": 1, "url": "https://en.help.roblox.com/hc/en-us/articles/360029650831-How-Do-I-Redeem-a-Promo-Code" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "This is unrecoverable on most platforms, which is why every support page opens by telling you to check the account."
     },
     {
@@ -662,7 +634,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/genshin-impact-codes-redeem/" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "No publisher page read for this check states a rank threshold, so the figure stays reported."
     },
     {
@@ -683,7 +654,6 @@
         { "tier": 2, "url": "https://www.pcgamesn.com/grow-a-garden/codes" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Kept visible because readers act on it constantly, and labelled honestly because nothing supports it above tier 2."
     },
     {
@@ -705,7 +675,6 @@
         { "tier": 1, "url": "https://www.playstation.com/en-gb/support/store/redeem-ps-store-voucher-code/" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Changing a Play or Microsoft region does not move balance already redeemed elsewhere."
     },
     {
@@ -727,11 +696,10 @@
         { "tier": 2, "url": "https://www.pcgamesn.com/grow-a-garden/codes" }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The sequel and clone problem is the most common version of this on Roblox."
     }
   ],
-  "unverified_summary": "Four things could not be confirmed. The Grow a Garden and Dandy's World redemption paths rest on outlet reporting because neither studio publishes support documentation, and the two sources for Dandy's World describe different buttons in different corners of the screen. The Fortnite V-Bucks gift card page would not open for this check, so no path is recorded for it rather than a guessed one. The Genshin Impact in game menu route and the Adventure Rank threshold are widely repeated and appear on no publisher page, so both stay reported. Nothing here was upgraded to Confirmed on the strength of agreement between aggregators.",
+  "unverified_summary": "Four things could not be confirmed. The Grow a Garden and Dandy's World redemption paths rest on outlet reporting because neither studio publishes support documentation, and the two sources for Dandy's World describe different buttons in different corners of the screen. The Fortnite V-Bucks gift card page would not open for this check, so no path is recorded for it rather than a guessed one. The Genshin Impact in game menu route and the Adventure Rank threshold are widely repeated and appear on no publisher page, so both stay reported. Nothing here was recorded as publisher confirmed on the strength of agreement between aggregators.",
   "disagreements": [
     {
       "item": "The button label in the Nintendo eShop",
@@ -743,7 +711,7 @@
       "item": "Where the Dandy's World redeem box lives",
       "source_a": "A Use Code button on the left of the lobby screen",
       "source_b": "A settings cog at the bottom right with a Redeem Code button",
-      "confirmed": "Not confirmed. No publisher documentation exists for this experience, so the row stays Unverified rather than picking the more popular description."
+      "confirmed": "Not confirmed. No publisher documentation exists for this experience, so the row is listed as awaiting editor verification rather than picking the more popular description."
     },
     {
       "item": "Where a Windows code is redeemed for Xbox content",

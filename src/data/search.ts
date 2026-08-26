@@ -22,11 +22,15 @@ const articleGroups: Record<(typeof editorialArticles)[number]['section'], Searc
 
 const slugWords = (slug: string) => slug.split('-');
 
+/** The page's recorded date as a sentence, or the awaiting label when no event exists. */
+const recordedLine = (game: { latestCheckedAt: string | null; checkedLabel: string }) =>
+  game.latestCheckedAt ? `Last recorded ${game.checkedLabel}.` : `${game.checkedLabel}.`;
+
 const codeRecords: SearchRecord[] = publishedGameCatalogue.map((game) => ({
   path: `/codes/${game.slug}/`,
   title: `${game.name} codes`,
   group: 'Codes',
-  description: `Current ${game.name} code reports with source URLs, redemption steps and recorded evidence states. ${game.checkedLabel}.`,
+  description: `${game.name} codes with source URLs, redemption steps and the state of every entry. ${recordedLine(game)}`,
   keywords: [game.name, game.platform, ...slugWords(game.slug), 'codes', 'promo codes', 'redeem', 'free rewards'],
 }));
 
@@ -44,7 +48,7 @@ const dailyRecords: SearchRecord[] = publishedDailyLinkCatalogue.map((game) => (
   path: `/daily/${game.slug}/`,
   title: `${game.name} reward links`,
   group: 'Daily links',
-  description: `${game.name} daily reward links with source URLs and recorded check times. ${game.checkedLabel}.`,
+  description: `${game.name} daily reward links with source URLs and the date each was recorded. ${recordedLine(game)}`,
   keywords: [game.name, game.platform, ...slugWords(game.slug), 'daily', 'free spins', 'reward links', 'links'],
 }));
 
@@ -54,7 +58,7 @@ const cheatRecords: SearchRecord[] = operations.cheatGames
     path: `/cheats/${game.slug}/`,
     title: game.heading,
     group: 'Cheats',
-    description: `${game.name} cheats with platform scope, cited sources and recorded verification events.`,
+    description: `${game.name} cheats with platform scope, cited sources and the state of every entry.`,
     keywords: [game.name, ...game.platforms, ...slugWords(game.slug), 'cheats', 'cheat codes', 'unlockables'],
   }));
 
@@ -76,14 +80,14 @@ const hubRecords: SearchRecord[] = [
     path: '/codes/',
     title: 'All game codes',
     group: 'Site',
-    description: 'Every published code page backed by source URLs and recorded verification events.',
+    description: 'Every published code page backed by source URLs, with a state on every entry.',
     keywords: ['codes', 'all codes', 'browse', 'game codes', 'index'],
   },
   {
     path: '/daily/',
     title: 'Daily links',
     group: 'Site',
-    description: 'Source-linked daily rewards with absolute check times and clear verification states.',
+    description: 'Source-linked daily rewards with recorded dates and clear states.',
     keywords: ['daily', 'daily links', 'free links', 'rewards', 'browse'],
   },
   {
@@ -118,7 +122,7 @@ const hubRecords: SearchRecord[] = [
     path: '/how-we-verify/',
     title: 'How we verify',
     group: 'Site',
-    description: 'The evidence states, source requirements, freshness windows and removal rules used by Freetins.',
+    description: 'What counts as a source, the three states and the as-published baseline, and what a heart does.',
     keywords: ['verify', 'verification', 'evidence', 'sources', 'editorial policy', 'trust'],
   },
 ];

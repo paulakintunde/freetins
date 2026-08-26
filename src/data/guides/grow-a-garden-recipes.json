@@ -7,7 +7,6 @@
   "permalink": "/guides/grow-a-garden-recipes/",
   "checked_at": "2026-08-25T08:00:00Z",
   "content_changed_at": "2026-08-25T08:00:00Z",
-  "recheck_cadence": "Rechecked with every Grow a Garden update that touches cooking, and at least every 7 days while the Cooking Kit is live.",
   "official_sources": [
     {
       "type": "official_page",
@@ -64,7 +63,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Two outlets and the wiki agree on a cone crop plus one sweet crop. No publisher channel states the recipe."
     },
     {
@@ -98,7 +96,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Every recorded Sushi recipe contains Bamboo and a corn family crop. Sources disagree above Divine."
     },
     {
@@ -128,7 +125,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Beebom and the wiki both describe Soup as the fallback for an unrecognised combination."
     },
     {
@@ -162,7 +158,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Lowest base weight of any food, so weight bonuses are hardest to earn here."
     },
     {
@@ -196,7 +191,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "The worked recipe fills all three declared slots exactly."
     },
     {
@@ -230,7 +224,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Only two slots are required. The extra Tomatoes in the worked recipe add weight, not slots."
     },
     {
@@ -264,7 +257,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Waffle and Pie share the pastry slot, so one pastry crop can produce either."
     },
     {
@@ -298,7 +290,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "The two slot recipe is corroborated by both outlets and the wiki."
     },
     {
@@ -332,7 +323,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Donut needs two separate sweet crops, which is why one sweet crop yields Ice Cream instead."
     },
     {
@@ -366,7 +356,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "The wiki recipe list and the slot definition agree on the same four crop combination."
     },
     {
@@ -400,7 +389,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Burger and Sandwich overlap, so a Tomato in the third slot can produce either."
     },
     {
@@ -434,7 +422,6 @@
         }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "The declared slots ask for four crop types but the community recipe uses two. Marked unverified."
     },
     {
@@ -468,7 +455,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Sugar Apple fills the apple slot and is also a sweet crop, which is why it appears twice in many lists."
     },
     {
@@ -502,7 +488,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Both bread slots draw from the same crop group, so two Corn will fill them."
     },
     {
@@ -536,7 +521,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "The only food whose first slot takes flower or toxic crops rather than food crops."
     },
     {
@@ -570,7 +554,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "The only single slot recipe, so extra fruit adds weight rather than filling a slot."
     },
     {
@@ -604,7 +587,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "All three sources give the same four crop combination."
     },
     {
@@ -638,7 +620,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Added with the Cooking Kit rather than the event, and the only food tied to a crafting recipe."
     },
     {
@@ -668,7 +649,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Every recipe still published as craving only depends on this removed mechanic. It is the single biggest reason older recipe lists fail."
     },
     {
@@ -698,11 +678,10 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Cooked food now feeds crafting, pet hunger and the Sell Stand instead of an NPC reward table."
     }
   ],
-  "unverified_summary": "No row on this page is publisher confirmed, so every row displays as Unverified and the active count is zero. Grow a Garden publishes no recipe list on any channel it controls, and the ingredient counts here come from two independent outlets cross checked against the community wiki. Base cook times and base weights come from the wiki alone and no outlet repeats them, so treat those figures as the weakest data on the page. The seasonal foods the wiki documents, including Candy Cane, Eggnog, Fruitcake, Gingerbread Cookie, Holiday Roast, Holiday Stuffing and Wreath, are left out because no second source covers them and their crops are not in the current Seed Shop rotation.",
+  "unverified_summary": "No row on this page is publisher confirmed, so every live row is listed as awaiting editor verification and none stands as Active · as published. Grow a Garden publishes no recipe list on any channel it controls, and the ingredient counts here come from two independent outlets cross checked against the community wiki. Base cook times and base weights come from the wiki alone and no outlet repeats them, so treat those figures as the weakest data on the page. The seasonal foods the wiki documents, including Candy Cane, Eggnog, Fruitcake, Gingerbread Cookie, Holiday Roast, Holiday Stuffing and Wreath, are left out because no second source covers them and their crops are not in the current Seed Shop rotation.",
   "disagreements": [
     {
       "item": "Divine Ice Cream from 3x Sugar Apple plus 1x Corn",

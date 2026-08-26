@@ -9,6 +9,7 @@
  */
 
 import { datasetMetaDescription } from './metaDescription.ts';
+import { earliestAddedAt } from './normalise.ts';
 import { getCollection } from 'astro:content';
 
 export type DatasetSection = 'guides' | 'daily' | 'blog';
@@ -29,7 +30,17 @@ export interface DatasetPageSummary {
    * a link between two pages is a fact about the subject and not a guess.
    */
   entityId: string;
+  /**
+   * The earliest row's added_at, or empty when no row carries one. A page
+   * written after the ledger types no checkedAt, so this is what the hub
+   * sorts and labels it by ("Added <date>").
+   */
+  addedAt: string;
+  /** Rows carrying the Active · as published baseline. Zero on a new page. */
   activeCount: number;
+  /** Rows an editor has verified. Zero until an editor acts. */
+  verifiedCount: number;
+  listedCount: number;
   totalCount: number;
 }
 
@@ -71,7 +82,10 @@ export const listDatasetPages = async (section: DatasetSection): Promise<Dataset
       secondaryKeywords: data.secondaryKeywords ?? [],
       checkedAt: dataset.checkedAt ?? '',
       entityId: String(dataset.entityId ?? ''),
+      addedAt: earliestAddedAt(dataset.rows ?? []),
       activeCount: data.counts?.activeCount ?? 0,
+      verifiedCount: data.counts?.verifiedCount ?? 0,
+      listedCount: data.counts?.listedCount ?? 0,
       totalCount: data.counts?.totalCount ?? 0,
     };
   });

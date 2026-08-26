@@ -28,7 +28,21 @@ export type VerificationMethod =
   | 'reader-corroborated'
   | 'automated-fetch'
   | 'manual-review';
-export type EntryState = 'verified' | 'reported' | 'stale' | 'expired' | 'unverified';
+/**
+ * The public state of an entry. One vocabulary on every page system:
+ *
+ * - `verified`: the newest event on the entry is an editor acceptance.
+ * - `active`: the carried-over as-published baseline. No operational entry
+ *   produces it today; it exists so the type matches the dataset surface and the
+ *   cutover sighting can carry it.
+ * - `listed`: everything live that is not verified or active. Every new entry
+ *   lands here, fully rendered and fully indexed, until an editor acts.
+ * - `expired`: editor-rejected, or a link whose own `expiresAt` has passed.
+ *
+ * No state ever changes because time passed. The only clock input is a link's
+ * `expiresAt`, read at build time.
+ */
+export type EntryState = 'verified' | 'active' | 'listed' | 'expired';
 
 /**
  * A channel the game's publisher controls and posts codes on. This is the only
@@ -52,7 +66,12 @@ export interface OperationalGame {
   surface: OperationalSurface;
   platform: string;
   publicationState: PublicationState;
-  verificationWindowHours: number;
+  /**
+   * How many days the editor queue aims to leave between rechecks of this game.
+   * A queue target only: nothing reads it to derive a state, and no state changes
+   * because the target has passed.
+   */
+  recheckTargetDays: number;
   /** The game's own listing. Used to link the game, never to source a code. */
   officialSourceUrl: string | null;
   /** Channels the publisher posts codes on. Empty means no code here can be confirmed. */
@@ -210,8 +229,8 @@ export interface OperationalData {
 }
 
 /**
- * How well an entry is sourced. Orthogonal to `EntryState`: state answers "did the
- * last check pass", tier answers "do we know the publisher ever issued this". A
+ * How well an entry is sourced. Orthogonal to `EntryState`: state answers "what has
+ * an editor recorded", tier answers "do we know the publisher ever issued this". A
  * redeemed code is verified whatever the paper trail, and a code reposted by fifty
  * blogs is still community-reported.
  *
@@ -313,40 +332,44 @@ export const citationFor = (
 };
 
 /**
- * A code a reader can act on right now: the last check did not reject it and it has
- * not aged out of its freshness window. Expired, stale and never-checked entries are
- * all excluded, which is what makes the count on a game page mean something.
+ * An entry the page shows in its main table: anything not expired. A listed entry
+ * is live content the reader can see and act on; whether an editor has tested it
+ * is what the state label says, not what decides whether it is shown.
  */
-export const isUsableState = (state: EntryState) => state === 'verified' || state === 'reported';
+export const isLiveState = (state: EntryState) => state !== 'expired';
 
 /**
- * Whether a game's page holds enough live, checked content to deserve an index entry.
+ * Whether a game's page deserves an index entry. Content only.
  *
  * `publicationState` used to decide this on its own, which made indexing a flag
- * somebody had to remember to flip. The three highest-intent daily-link pages —
- * Monopoly GO, Coin Master, Dice Dreams — sat `planned` and therefore noindexed
+ * somebody had to remember to flip. The three highest-intent daily-link pages,
+ * Monopoly GO, Coin Master and Dice Dreams, sat `planned` and therefore noindexed
  * with no defect anywhere in the data: nothing was wrong, nobody had thrown the
  * switch. That is the wrong failure mode for the most valuable pages on the site.
  *
- * So `planned` now means "waiting on data" rather than "switched off", and the page
- * indexes itself the moment the data arrives. It cannot index empty: readiness needs
- * a link a reader can act on right now, which means a verification event inside the
- * game's own window, plus the furniture that makes the page answer its query.
+ * So `planned` means "waiting on data" rather than "switched off", and the page
+ * indexes itself the moment a single live entry lands. Nothing else is consulted:
+ * no verification event, no editor star, no timer. A page whose entries are all
+ * Listed · awaiting editor verification is indexed like any other, and no Listed
+ * page is ever noindexed (ADR 0004). Empty pages stay out because there is nothing
+ * on them, which is about emptiness, not verification.
  *
- * `published` is left exactly as it was. Deriving it for those pages too would mean
- * a game whose codes all aged out overnight silently dropped out of the index, and
- * a 14-page deindex is not a change to make as a side effect of this one. `retired`
- * stays out regardless, which is the whole point of retiring something.
+ * The furniture a page wants, `officialSourceUrl` and two `redeemSteps`, is not a
+ * gate input either. Its absence is a queue warning printed by
+ * scripts/check-operational-data.mjs, and a validator rule on the published flag.
+ *
+ * `published` keeps its bypass for now. The fourteen games it indexes today are
+ * pinned when the ledger lands, so the bypass can retire in Step 5 with nothing
+ * changing for them (README says the same). `retired` stays out regardless, which
+ * is the whole point of retiring something.
  */
 export const isIndexable = (
-  game: Pick<OperationalGame, 'publicationState' | 'officialSourceUrl' | 'redeemSteps'>,
+  game: Pick<OperationalGame, 'publicationState'>,
   entries: ResolvedEntry<CodeEntry | DailyLinkEntry | CheatEntry>[],
 ): boolean => {
   if (game.publicationState === 'retired') return false;
   if (game.publicationState === 'published') return true;
-  return Boolean(game.officialSourceUrl)
-    && game.redeemSteps.length >= 2
-    && entries.some((item) => isUsableState(item.state));
+  return entries.some((item) => isLiveState(item.state));
 };
 
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -409,7 +432,7 @@ export const validateOperations = (candidate: OperationalData) => {
     if (!game.name.trim()) errors.push(`Game ${game.slug} is missing a name`);
     if (!['codes', 'daily'].includes(game.surface)) errors.push(`Game ${game.slug} has an invalid surface`);
     if (!['planned', 'published', 'retired'].includes(game.publicationState)) errors.push(`Game ${game.slug} has an invalid publicationState`);
-    if (!Number.isFinite(game.verificationWindowHours) || game.verificationWindowHours <= 0) errors.push(`Game ${game.slug} needs a positive verificationWindowHours`);
+    if (!Number.isFinite(game.recheckTargetDays) || game.recheckTargetDays <= 0) errors.push(`Game ${game.slug} needs a positive recheckTargetDays`);
     if (game.officialSourceUrl !== null && !isHttpsUrl(game.officialSourceUrl)) errors.push(`Game ${game.slug} has an invalid officialSourceUrl`);
     for (const channel of game.publisherChannels ?? []) {
       if (!isHttpsUrl(channel.url)) errors.push(`Game ${game.slug} has an invalid publisher channel URL`);
@@ -554,22 +577,21 @@ export const validateOperations = (candidate: OperationalData) => {
     }
   }
 
+  /*
+   * A published game needs content, never a verification event. Verification is
+   * the editor's job and gates nothing (ADR 0004); a published game whose entries
+   * are all Listed is valid.
+   */
   for (const game of candidate.games.filter((item) => item.publicationState === 'published')) {
     const entries = game.surface === 'codes'
       ? candidate.codes.filter((entry) => entry.gameSlug === game.slug)
       : candidate.dailyLinks.filter((entry) => entry.gameSlug === game.slug);
     if (entries.length === 0) errors.push(`Published game ${game.slug} needs at least one entry`);
-    if (!entries.some((entry) => candidate.verificationEvents.some((event) => event.entryId === entry.id && event.entryType === (game.surface === 'codes' ? 'code' : 'dailyLink')))) {
-      errors.push(`Published game ${game.slug} needs at least one verification event`);
-    }
   }
 
   for (const game of candidate.cheatGames.filter((item) => item.publicationState === 'published')) {
     const entries = candidate.cheats.filter((entry) => entry.gameSlug === game.slug);
     if (entries.length === 0) errors.push(`Published cheat game ${game.slug} needs at least one cheat`);
-    if (!entries.some((entry) => candidate.verificationEvents.some((event) => event.entryId === entry.id && event.entryType === 'cheat'))) {
-      errors.push(`Published cheat game ${game.slug} needs at least one verification event`);
-    }
   }
 
   if (errors.length > 0) throw new Error(`Invalid operational content:\n- ${errors.join('\n- ')}`);
@@ -582,20 +604,32 @@ const latestEventFor = (entryType: EntryType, entryId: string) => operations.ver
   .filter((event) => event.entryType === entryType && event.entryId === entryId)
   .sort((left, right) => Date.parse(right.checkedAt) - Date.parse(left.checkedAt))[0] ?? null;
 
-const resolveState = (
-  game: Pick<OperationalGame, 'verificationWindowHours'>,
+/**
+ * The state an entry displays, from its newest event and nothing else.
+ *
+ * The one clock input allowed anywhere is a link's own `expiresAt`: a reward link
+ * dies on the publisher's schedule whether or not anyone looks at it, so a passed
+ * TTL is Expired at build time. No other transition depends on the time of day:
+ * an event does not go stale, and an entry nobody has tested stays Listed until an
+ * editor acts on it.
+ *
+ * Baseline mapping for the events that exist today: `rejected` is Expired,
+ * `accepted` is Verified, `source-only` and `unreachable` are Listed, as is an
+ * entry with no event at all.
+ */
+export const resolveState = (
+  entry: { expiresAt?: string | null },
   event: VerificationEvent | null,
   now: number,
 ): EntryState => {
-  if (!event) return 'unverified';
+  if (entry.expiresAt && Date.parse(entry.expiresAt) <= now) return 'expired';
+  if (!event) return 'listed';
   if (event.result === 'rejected') return 'expired';
-  const staleAt = Date.parse(event.checkedAt) + game.verificationWindowHours * 60 * 60 * 1000;
-  if (event.result === 'unreachable' || now >= staleAt) return 'stale';
-  return event.result === 'accepted' ? 'verified' : 'reported';
+  if (event.result === 'accepted') return 'verified';
+  return 'listed';
 };
 
 export const resolveEntries = <T extends CodeEntry | DailyLinkEntry | CheatEntry>(
-  game: Pick<OperationalGame, 'verificationWindowHours'>,
   entryType: EntryType,
   entries: T[],
   now = Date.now(),
@@ -605,36 +639,39 @@ export const resolveEntries = <T extends CodeEntry | DailyLinkEntry | CheatEntry
   return {
     entry,
     latestEvent,
-    state: resolveState(game, latestEvent, now),
+    state: resolveState(entry as { expiresAt?: string | null }, latestEvent, now),
     tier,
     label: evidenceLabelOf(tier),
   };
 });
+
+/** The per-state tally a page reports. `liveCount` is everything not expired. */
+export const countEntryStates = (entries: ResolvedEntry<unknown>[]) => ({
+  verifiedCount: entries.filter((item) => item.state === 'verified').length,
+  activeCount: entries.filter((item) => item.state === 'active').length,
+  listedCount: entries.filter((item) => item.state === 'listed').length,
+  expiredCount: entries.filter((item) => item.state === 'expired').length,
+  liveCount: entries.filter((item) => isLiveState(item.state)).length,
+});
+
+const latestCheckedAtOf = (entries: ResolvedEntry<unknown>[]) => entries
+  .map((item) => item.latestEvent?.checkedAt)
+  .filter((value): value is string => Boolean(value))
+  .sort((left, right) => Date.parse(right) - Date.parse(left))[0] ?? null;
 
 export const getOperationalGame = (slug: string) => operations.games.find((game) => game.slug === slug);
 
 export const getCheatOperationalPage = (slug: string, now = Date.now()) => {
   const game = operations.cheatGames.find((item) => item.slug === slug);
   if (!game) return null;
-  const entries = resolveEntries(
-    { verificationWindowHours: 30 * 24 },
-    'cheat',
-    operations.cheats.filter((entry) => entry.gameSlug === slug),
-    now,
-  );
-  const latestCheckedAt = entries
-    .map((item) => item.latestEvent?.checkedAt)
-    .filter((value): value is string => Boolean(value))
-    .sort((left, right) => Date.parse(right) - Date.parse(left))[0] ?? null;
+  const entries = resolveEntries('cheat', operations.cheats.filter((entry) => entry.gameSlug === slug), now);
 
   return {
     game,
     entries,
-    latestCheckedAt,
-    verifiedCount: entries.filter((item) => item.state === 'verified').length,
-    reportedCount: entries.filter((item) => item.state === 'reported').length,
-    staleCount: entries.filter((item) => item.state === 'stale').length,
-    isPublished: game.publicationState === 'published',
+    latestCheckedAt: latestCheckedAtOf(entries),
+    ...countEntryStates(entries),
+    isPublished: isIndexable(game, entries),
   };
 };
 
@@ -649,21 +686,14 @@ export const getGameOperationalPage = (slug: string, now = Date.now()) => {
   if (!game) return null;
   const entryType: EntryType = game.surface === 'codes' ? 'code' : 'dailyLink';
   const entries = game.surface === 'codes'
-    ? resolveEntries(game, entryType, operations.codes.filter((entry) => entry.gameSlug === slug), now)
-    : resolveEntries(game, entryType, operations.dailyLinks.filter((entry) => entry.gameSlug === slug), now);
-  const latestCheckedAt = entries
-    .map((item) => item.latestEvent?.checkedAt)
-    .filter((value): value is string => Boolean(value))
-    .sort((left, right) => Date.parse(right) - Date.parse(left))[0] ?? null;
+    ? resolveEntries(entryType, operations.codes.filter((entry) => entry.gameSlug === slug), now)
+    : resolveEntries(entryType, operations.dailyLinks.filter((entry) => entry.gameSlug === slug), now);
 
   return {
     game,
     entries,
-    latestCheckedAt,
-    verifiedCount: entries.filter((item) => item.state === 'verified').length,
-    reportedCount: entries.filter((item) => item.state === 'reported').length,
-    staleCount: entries.filter((item) => item.state === 'stale').length,
-    expiredCount: entries.filter((item) => item.state === 'expired').length,
+    latestCheckedAt: latestCheckedAtOf(entries),
+    ...countEntryStates(entries),
     isPublished: isIndexable(game, entries),
     values: operations.values.filter((entry) => entry.gameSlug === slug),
     updates: operations.updates.filter((entry) => entry.gameSlug === slug),
@@ -676,38 +706,29 @@ export const formatAbsoluteTimestamp = (value: string) => new Intl.DateTimeForma
   timeZone: 'UTC',
 }).format(new Date(value)) + ' UTC';
 
-const startOfUtcDay = (now: Date) => Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
-
-export const operationalSummary = (now = new Date()) => {
-  const publishedGames = operations.games.filter((game) => game.publicationState === 'published');
-  const checksToday = operations.verificationEvents.filter((event) => Date.parse(event.checkedAt) >= startOfUtcDay(now)).length;
-  const publishedEntryEvents: Array<VerificationEvent | null> = [];
-  publishedGames.forEach((game) => {
-    const page = getGameOperationalPage(game.slug, now.getTime());
-    page?.entries.forEach((item) => publishedEntryEvents.push(item.latestEvent));
-  });
-  const checkedAges = publishedEntryEvents
-    .map((event) => event ? now.getTime() - Date.parse(event.checkedAt) : null)
-    .filter((value): value is number => value !== null)
-    .sort((left, right) => left - right);
-  const middle = Math.floor(checkedAges.length / 2);
-  const medianAgeMs = checkedAges.length === 0
-    ? null
-    : checkedAges.length % 2 === 0
-      ? ((checkedAges[middle - 1] ?? 0) + (checkedAges[middle] ?? 0)) / 2
-      : checkedAges[middle] ?? null;
-  const recentlyChecked = publishedEntryEvents.filter(
-    (event) => event && now.getTime() - Date.parse(event.checkedAt) <= 60 * 60 * 1000,
-  ).length;
+/**
+ * Site-wide figures for the homepage pulse. Counts only: no median age, no
+ * "checked in the last hour", nothing that reads the clock. A figure that decays
+ * while nobody acts would be a timer wearing a different label.
+ */
+export const operationalSummary = (now = Date.now()) => {
+  const pages = operations.games
+    .map((game) => getGameOperationalPage(game.slug, now))
+    .filter((page): page is NonNullable<typeof page> => page !== null);
+  const publishedPages = pages.filter((page) => page.isPublished);
+  const sum = (key: 'verifiedCount' | 'activeCount' | 'listedCount' | 'expiredCount' | 'liveCount') =>
+    publishedPages.reduce((total, page) => total + page[key], 0);
 
   return {
     configuredGames: operations.games.length,
-    publishedGames: publishedGames.length,
-    publishedCodeGames: publishedGames.filter((game) => game.surface === 'codes').length,
-    publishedDailyGames: publishedGames.filter((game) => game.surface === 'daily').length,
-    checksToday,
-    medianAgeMs,
-    recentlyCheckedPercent: publishedEntryEvents.length === 0 ? null : Math.round((recentlyChecked / publishedEntryEvents.length) * 100),
+    publishedGames: publishedPages.length,
+    publishedCodeGames: publishedPages.filter((page) => page.game.surface === 'codes').length,
+    publishedDailyGames: publishedPages.filter((page) => page.game.surface === 'daily').length,
+    verifiedCount: sum('verifiedCount'),
+    activeCount: sum('activeCount'),
+    listedCount: sum('listedCount'),
+    expiredCount: sum('expiredCount'),
+    liveCount: sum('liveCount'),
     verificationEvents: operations.verificationEvents.length,
   };
 };

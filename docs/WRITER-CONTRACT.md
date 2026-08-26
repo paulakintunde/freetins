@@ -3,10 +3,27 @@
 > **Superseded for new pages.** Write any new dataset-backed page to
 > [`docs/WRITER-CONTRACT-v2.md`](WRITER-CONTRACT-v2.md). Pages already written
 > to this contract keep every field it asked for; the build still reads them and
-> nobody is asked to rewrite a page (docs/adr/0004). Two parts of this document
+> nobody is asked to rewrite a page (docs/adr/0004). Three parts of this document
 > no longer describe the build: the `verify/` checklist in sections 1 and 6 is
-> not produced or read (docs/adr/0003), and the verification fields in section 2
-> are read only on pages that already carry them.
+> not produced or read (docs/adr/0003); the verification fields in section 2
+> are read only on pages that already carry them (`recheck_cadence` and
+> `needs_human` were removed from every page at cutover and nothing reads them);
+> and the display rules in section 2 (only a confirmed row shows Active; an
+> active row goes stale after 14 days) and the token table in section 3 describe
+> the pre-ledger build. From the second commit of Step 1a no state changes
+> because time passed: the state a row displayed on cutover day is its
+> as-published baseline, frozen at `CUTOVER_AT`, and the typed `status`,
+> `confidence` and `last_verified_at` are read to reconstruct that baseline;
+> `last_verified_at` and `checked_at` are also shown as the baseline dates (the
+> row's Last checked cell and the page's Last verified line) until an editor
+> event replaces them. The states are ★ Verified, Active · as published, Listed ·
+> awaiting editor verification and Expired (a `removed` row displays Expired).
+> `status=expired` selects expired rows and excludes removed ones, which keep
+> their own `status=removed` view and `{{removedCount}}`; `{{expiredCount}}`
+> counts both. `{{unverifiedCount}}`, `{{removedCount}}` and `{{confirmedCount}}`
+> are aliases kept for these pages (`{{listedCount}}`, `{{expiredCount}}` and
+> `{{verifiedCount}}` are the live tokens), and `{{recheckCadence}}` always
+> renders the derived sentence.
 
 This supersedes the output-format sections of the batch 4 brief. Everything in the
 brief about research, evidence tiers, honesty, voice and the eight standout

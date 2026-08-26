@@ -5,7 +5,7 @@ import Button from '../ui/Button.astro';
 import EditorialArticle from './EditorialArticle.astro';
 import { articleArtwork, requireArticleArtwork } from '../../data/article-images';
 import { editorialArticles, getArticleByPath } from '../../data/articles';
-import { listAllDatasetPages, listDatasetPages, type DatasetSection } from '../../lib/datasetPages';
+import { listAllDatasetPages, listDatasetPages, type DatasetPageSummary, type DatasetSection } from '../../lib/datasetPages';
 import { authors, getAuthorBySlug, getSectionAuthor } from '../../data/authors';
 import { hubIntroFor } from '../../data/hub-intros';
 import { contactEmail, organizationId, websiteId } from '../../data/site';
@@ -33,13 +33,13 @@ import {
   getCheatOperationalPage,
   getGameOperationalPage,
   getProduct,
-  operationalSummary,
   operations,
   type CodeEntry,
   type DailyLinkEntry,
-  isUsableState,
+  isLiveState,
   type EntryState,
   type ResolvedEntry,
+  type VerificationMethod,
 } from '../../data/operations';
 import type { CheckerSnapshot } from '../../lib/checker-status';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -77,12 +77,20 @@ const hubDatasetSection: DatasetSection | null = definition.routeId === 'guideIn
       ? 'blog'
       : null;
 /*
- * Most recently verified first. The loader returns collection order, which is
- * effectively filename order, so without this a hub presents its oldest check as
- * its lead card and the freshness the dataset works to earn is invisible.
+ * Most recently recorded first. The loader returns collection order, which is
+ * effectively filename order, so without this a hub presents its oldest page as
+ * its lead card. A page that predates the ledger carries a `checkedAt` baseline
+ * and sorts on it; a new page has none and sorts on the date its first row was
+ * added, after those. A hub never hides a page for want of a check.
  */
+const addedAtOf = (item: DatasetPageSummary): string =>
+  'addedAt' in item && typeof item.addedAt === 'string' ? item.addedAt : '';
 const hubDatasetPages = (hubDatasetSection ? await listDatasetPages(hubDatasetSection) : [])
-  .sort((left, right) => Date.parse(right.checkedAt) - Date.parse(left.checkedAt));
+  .sort((left, right) => {
+    if (left.checkedAt && right.checkedAt) return Date.parse(right.checkedAt) - Date.parse(left.checkedAt);
+    if (left.checkedAt || right.checkedAt) return left.checkedAt ? -1 : 1;
+    return (Date.parse(addedAtOf(right)) || 0) - (Date.parse(addedAtOf(left)) || 0);
+  });
 
 const publishedHeading = {
   answers: 'Published Answers',
@@ -96,14 +104,19 @@ const dailyGame = dailyLinkCatalogue.find((item) => item.slug === definition.slu
 const operationalPage = definition.slug ? getGameOperationalPage(definition.slug) : null;
 const cheatPage = definition.slug ? getCheatOperationalPage(definition.slug) : null;
 const product = definition.slug ? getProduct(definition.slug) : undefined;
-const operationalStats = operationalSummary();
 const hubIntro = hubIntroFor(definition.routeId);
 const profileAuthor = definition.kind === 'author' && definition.slug ? getAuthorBySlug(definition.slug) : undefined;
 const profileArticles = profileAuthor
   ? editorialArticles.filter((item) => getSectionAuthor(item.section).slug === profileAuthor.slug)
   : [];
+/*
+ * Only an editor's own acts count under a name. Importer output (`manual-review`,
+ * written by a script from a writer's date), reader signal and worker fetches are
+ * events on the record, but none of them is something this person did.
+ */
+const nonEditorMethods = new Set<VerificationMethod>(['manual-review', 'reader-corroborated', 'automated-fetch']);
 const profileAuthorEvents = definition.slug
-  ? operations.verificationEvents.filter((event) => event.checkedBy === definition.slug).length
+  ? operations.verificationEvents.filter((event) => event.checkedBy === definition.slug && !nonEditorMethods.has(event.method)).length
   : 0;
 /*
  * Only cheat games with a published sheet are listed. Naming a game the site has
@@ -117,20 +130,19 @@ const publishedCheatGames = operations.cheatGames
 const codeEntries = (operationalPage?.entries ?? []).filter(
   (item): item is ResolvedEntry<CodeEntry> => 'code' in item.entry,
 );
-const activeCodeEntries = codeEntries.filter((item) => item.state !== 'expired');
-const usableCodeCount = codeEntries.filter((item) => isUsableState(item.state)).length;
+const liveCodeEntries = codeEntries.filter((item) => isLiveState(item.state));
 const expiredCodeEntries = codeEntries.filter((item) => item.state === 'expired');
 const dailyEntries = (operationalPage?.entries ?? []).filter(
   (item): item is ResolvedEntry<DailyLinkEntry> => 'url' in item.entry,
 );
 const timelineEntries = definition.slug ? operationalPage?.updates ?? [] : operations.updates;
 const entryStateLabels: Record<EntryState, string> = {
-  verified: 'Verified active',
-  reported: 'Source-reported',
-  stale: 'Needs recheck',
+  verified: '★ Verified',
+  active: 'Active · as published',
+  listed: 'Listed · awaiting editor verification',
   expired: 'Expired',
-  unverified: 'Unconfirmed',
 };
+const awaitingLabel = 'Awaiting editor verification';
 const gameRoot = game ? `/codes/${game.slug}/` : '/codes/grow-a-garden/';
 const isGamePage = ['codes', 'values', 'updates'].includes(definition.kind) && Boolean(game);
 /*
@@ -171,10 +183,10 @@ const showHeaderArtwork = ['browse', 'codes', 'values', 'dailyGame', 'daily', 'g
 
 const stats = (() => {
   switch (definition.kind) {
-    case 'daily': return [['Configured', String(dailyLinkCatalogue.length)], ['Published', String(publishedDailyLinkCatalogue.length)], ['Active links', String(publishedDailyLinkCatalogue.reduce((total, item) => total + item.activeCount, 0))], ['Checks today', String(operationalStats.checksToday)]];
-    case 'browse': return [['Configured', String(gameCatalogue.length)], ['Published', String(publishedGameCatalogue.length)], ['Active records', String(publishedGameCatalogue.reduce((total, item) => total + item.activeCount, 0))], ['Checks today', String(operationalStats.checksToday)]];
-    case 'codes': return [['Publication', operationalPage?.isPublished ? 'Published' : 'Pending'], ['Last check', operationalPage?.latestCheckedAt ? formatAbsoluteTimestamp(operationalPage.latestCheckedAt) : 'Not recorded'], ['Active records', String(operationalPage ? operationalPage.verifiedCount + operationalPage.reportedCount : 0)], ['Needs recheck', String(operationalPage?.staleCount ?? 0)]];
-    case 'az': return [['Published games', String(publishedGameCatalogue.length + publishedDailyLinkCatalogue.length)], ['Code pages', String(publishedGameCatalogue.length)], ['Daily-link pages', String(publishedDailyLinkCatalogue.length)], ['Cheat sheets', String(operations.cheatGames.filter((item) => item.publicationState === 'published').length)]];
+    case 'daily': return [['Configured', String(dailyLinkCatalogue.length)], ['Published', String(publishedDailyLinkCatalogue.length)], ['Listed links', String(publishedDailyLinkCatalogue.reduce((total, item) => total + item.liveCount, 0))], ['★ Verified', String(publishedDailyLinkCatalogue.reduce((total, item) => total + item.verifiedCount, 0))]];
+    case 'browse': return [['Configured', String(gameCatalogue.length)], ['Published', String(publishedGameCatalogue.length)], ['Listed codes', String(publishedGameCatalogue.reduce((total, item) => total + item.liveCount, 0))], ['★ Verified', String(publishedGameCatalogue.reduce((total, item) => total + item.verifiedCount, 0))]];
+    case 'codes': return [['Listed', String(operationalPage?.liveCount ?? 0)], ['★ Verified', String(operationalPage?.verifiedCount ?? 0)], ['Expired', String(operationalPage?.expiredCount ?? 0)], ['Last recorded', operationalPage?.latestCheckedAt ? formatAbsoluteTimestamp(operationalPage.latestCheckedAt) : awaitingLabel]];
+    case 'az': return [['Published games', String(publishedGameCatalogue.length + publishedDailyLinkCatalogue.length)], ['Code pages', String(publishedGameCatalogue.length)], ['Daily-link pages', String(publishedDailyLinkCatalogue.length)], ['Cheat sheets', String(publishedCheatGames.length)]];
     case 'values': return [['Items published', String(operationalPage?.values.length ?? 0)], ['Source required', 'Every row'], ['Updated', operationalPage?.values[0] ? formatAbsoluteTimestamp(operationalPage.values[0].observedAt) : 'Not recorded'], ['State', operationalPage?.values.length ? 'Published' : 'Pending']];
     case 'search': return [['Published pages', String(editorialArticles.length + publishedGameCatalogue.length + publishedDailyLinkCatalogue.length)], ['Code games', String(publishedGameCatalogue.length)], ['Daily links', String(publishedDailyLinkCatalogue.length)], ['Editorial', String(editorialArticles.length)]];
     default: return [];
@@ -203,7 +215,6 @@ const legalCopy: Record<string, Array<[string, string]>> = {
 };
 
 const pageLinks: Record<string, Array<[string, string]>> = {
-  verify: [['Submit a code', '/submit/'], ['Report a correction', '/contact/?topic=Correction'], ['Blog', '/blog/']],
   alerts: [['Manage alerts', '/alerts/'], ['Privacy', '/privacy/']],
   contact: [['How we verify', '/how-we-verify/'], ['Disclosure', '/disclosure/'], ['Blog', '/blog/']],
   search: [['Browse all codes', '/codes/'], ['All games A-Z', '/games/'], ['How we verify', '/how-we-verify/']],
@@ -247,9 +258,11 @@ const routeUrl = new URL(definition.path, Astro.site).toString();
 const breadcrumbItems = [...crumbs.map(([label, href]) => ({ label, href })), { label: definition.heading, href: definition.path }];
 
 /*
- * Game codes are the most freshness-sensitive pages on the site and were the only
- * ones with no structured freshness signal. dateModified comes from the same
- * verification record the page renders, so the two can never disagree.
+ * Game code pages carry a FAQPage so the counts on the page are machine-readable.
+ * The answer is a tally of states, never a claim that a check happened: a listed
+ * code is one no editor has tested yet, and the answer says so. dateModified on the
+ * Dataset node comes from the same record the page renders, so the two can never
+ * disagree.
  */
 const codePageFaq = definition.kind === 'codes' && operationalPage?.game.redeemSteps.length
   ? [
@@ -260,10 +273,10 @@ const codePageFaq = definition.kind === 'codes' && operationalPage?.game.redeemS
           .join(' '),
       },
       {
-        question: `How many ${operationalPage.game.name} codes work right now?`,
-        answer: usableCodeCount > 0
-          ? `${usableCodeCount} of the ${codeEntries.length} recorded codes passed their most recent check and are still inside the freshness window.`
-          : `None of the ${codeEntries.length} recorded codes currently passes a check. Every one has either expired or aged out of its freshness window.`,
+        question: `How many ${operationalPage.game.name} codes are listed right now?`,
+        answer: liveCodeEntries.length > 0
+          ? `${liveCodeEntries.length} of ${codeEntries.length} codes on record are live: ${operationalPage.verifiedCount} verified by an editor, ${liveCodeEntries.length - operationalPage.verifiedCount} listed and awaiting one, ${expiredCodeEntries.length} kept in the expired archive. A listed code has not been tested by a Freetins editor yet.`
+          : `None of the ${codeEntries.length} codes on record is live: every one has been retired or has passed its expiry, and each stays on the page so you can tell a dead code from one that never existed.`,
       },
     ]
   : [];
@@ -285,8 +298,8 @@ const routeSchema = {
       ? [{
           '@type': 'Dataset',
           '@id': `${routeUrl}#record`,
-          name: `${operationalPage.game.name} verification record`,
-          description: `Recorded verification events for ${operationalPage.game.name}, with the evidence state and check time of every entry.`,
+          name: `${operationalPage.game.name} code record`,
+          description: `Listed codes for ${operationalPage.game.name}, with the state and recorded date of every entry.`,
           url: routeUrl,
           dateModified: operationalPage.latestCheckedAt,
           isPartOf: { '@id': websiteId },
@@ -392,14 +405,14 @@ const routeSchema = {
                   decoding="async"
                 />
               </div>
-              <div class="card-copy"><h3>{item.name}</h3><p>{item.activeCount} active records · {item.checkedLabel}</p></div>
+              <div class="card-copy"><h3>{item.name}</h3><p>{item.liveCount} listed · {item.checkedLabel}</p></div>
             </a>
           ))}
-        </div> : <div class="data-empty"><strong>No code page is published yet</strong><p>The route structure is configured, but a page appears here only after its source URLs, redemption steps and verification events pass validation.</p></div>}
+        </div> : <div class="data-empty"><strong>No code page is published yet</strong><p>The route structure is configured, and a page appears here as soon as it lists a code with a source.</p></div>}
         {plannedGameCatalogue.length > 0 && (
           <div class="verification-queue">
-            <h2>Verification queue</h2>
-            <p>{plannedGameCatalogue.length} configured game pages are waiting for evidence-backed records. These drafts are not presented as working-code pages or included in search indexing.</p>
+            <h2>Pages waiting on data</h2>
+            <p>{plannedGameCatalogue.length} configured game pages have no code listed yet. A page joins this list and the search index the moment its first code is recorded; nothing waits on an editor.</p>
           </div>
         )}
       </section>
@@ -410,9 +423,9 @@ const routeSchema = {
         <div class="section-title"><h2>Published game pages</h2><span>{publishedGameCatalogue.length + publishedDailyLinkCatalogue.length} games</span></div>
         {publishedGameCatalogue.length + publishedDailyLinkCatalogue.length > 0 ? <div class="catalogue columns">
           {[...publishedGameCatalogue, ...publishedDailyLinkCatalogue].sort((left, right) => left.name.localeCompare(right.name)).map((item) => (
-            <a href={item.platform === 'Mobile' ? `/daily/${item.slug}/` : `/codes/${item.slug}/`}><span>{item.name}</span><strong>{item.activeCount} active</strong><time>{item.checkedLabel}</time></a>
+            <a href={item.platform === 'Mobile' ? `/daily/${item.slug}/` : `/codes/${item.slug}/`}><span>{item.name}</span><strong>{item.liveCount} listed</strong><time>{item.checkedLabel}</time></a>
           ))}
-        </div> : <div class="data-empty"><strong>No operational game page is published yet</strong><p>Configured drafts remain outside this index until they contain valid sources and verification records.</p></div>}
+        </div> : <div class="data-empty"><strong>No operational game page is published yet</strong><p>A configured page joins this index as soon as it lists an entry with a source.</p></div>}
       </section>
     )}
 
@@ -436,11 +449,11 @@ const routeSchema = {
                     decoding="async"
                   />
                 </div>
-                <div class="card-copy"><h3>{item.name}</h3><p>{item.activeCount} active links · {item.checkedLabel}</p></div>
+                <div class="card-copy"><h3>{item.name}</h3><p>{item.liveCount} listed links · {item.checkedLabel}</p></div>
               </a>
             );
           })}
-        </div> : <div class="data-empty"><strong>No individual reward link is published right now</strong><p>Reward links rotate within a day or two, so none is listed until it has a destination, a publisher source and a recorded check. The published daily guides below explain how each game reward system works and where its publisher posts, which stays useful between rotations.</p></div>}
+        </div> : <div class="data-empty"><strong>No individual reward link is published right now</strong><p>Reward links rotate within a day or two, so none appears until it has a destination and a source on record. The published daily guides below explain how each game reward system works and where its publisher posts, which stays useful between rotations.</p></div>}
         {hubArticles.length > 0 && (
           <div class="published-articles">
             <h2>{publishedHeading}</h2>
@@ -472,33 +485,33 @@ const routeSchema = {
       <section class="page-section content-boundary split-layout">
         <div>
           <h2>Published links</h2>
-          {dailyEntries.filter((item) => item.state !== 'expired').length > 0 ? <div class="daily-records">
-            {dailyEntries.filter((item) => item.state !== 'expired').map((item) => (
+          {dailyEntries.filter((item) => isLiveState(item.state)).length > 0 ? <div class="daily-records">
+            {dailyEntries.filter((item) => isLiveState(item.state)).map((item) => (
               <div class="daily-record">
                 <a href={item.entry.url} rel="nofollow noopener">
                   <span>{item.entry.label}<small>{entryStateLabels[item.state]}</small></span>
-                  {item.latestEvent ? <time datetime={item.latestEvent.checkedAt} data-relative-time={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <strong>Not checked</strong>}
+                  {item.latestEvent && <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time>}
                 </a>
                 <span class="record-sources"><EntrySource entry={item.entry} /></span>
               </div>
             ))}
-          </div> : <div class="data-empty"><strong>No reward link is published</strong><p>This page is configured, but it will not display a claim link until the URL, source and verification event are present in the operational data.</p></div>}
+          </div> : <div class="data-empty"><strong>No reward link is published</strong><p>This page is configured, and it lists a claim link as soon as one is recorded with its URL and source.</p></div>}
         </div>
-        <aside><h2>Claim and verification</h2><p>{operationalPage?.game.redeemSteps.length ? 'Follow the recorded claim steps for this game. Each link shows its latest evidence state and absolute check time.' : 'Claim instructions have not passed publication validation yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Open the game</a>}{(operationalPage?.game.publisherChannels ?? []).map((channel) => <a href={channel.url} rel="noopener">{channel.label}</a>)}<a href="/daily/">All daily link games</a></aside>
+        <aside><h2>Claim and verification</h2><p>{operationalPage?.game.redeemSteps.length ? 'Follow the recorded claim steps for this game. Each link shows its state and the date it was recorded.' : 'Claim instructions have not been recorded yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Open the game</a>}{(operationalPage?.game.publisherChannels ?? []).map((channel) => <a href={channel.url} rel="noopener">{channel.label}</a>)}<a href="/daily/">All daily link games</a></aside>
       </section>
     )}
 
     {definition.kind === 'codes' && (
       <section class="page-section content-boundary split-layout wide-main">
         <div>
-          <div class="section-title"><h2>Published codes</h2><span>{activeCodeEntries.length} records</span></div>
+          <div class="section-title"><h2>Published codes</h2><span>{liveCodeEntries.length} records</span></div>
           <p class="visually-hidden" aria-live="polite" data-copy-live></p>
-          {activeCodeEntries.length > 0 ? <div class="code-table" aria-label={`Published ${game?.name} codes`}>
-            {activeCodeEntries.map((item) => (
+          {liveCodeEntries.length > 0 ? <div class="code-table" aria-label={`Published ${game?.name} codes`}>
+            {liveCodeEntries.map((item) => (
               <div class="code-row">
                 <div><code>{item.entry.code}</code><span>{item.entry.reward}</span><small>{entryStateLabels[item.state]}</small></div>
                 <div>
-                  {item.latestEvent ? <time datetime={item.latestEvent.checkedAt} data-relative-time={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <small>No verification recorded</small>}
+                  {item.latestEvent && <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time>}
                   <span class="record-sources"><EntrySource entry={item.entry} /></span>
                   <button type="button" data-copy-code={item.entry.code}>Copy</button>
                   <span class="code-reports" data-code-report={item.entry.id} hidden>
@@ -514,13 +527,13 @@ const routeSchema = {
                 </div>
               </div>
             ))}
-          </div> : <div class="data-empty"><strong>No code is published</strong><p>This page stays out of the index until a code, reward, publisher source, redemption path and verification event all pass validation.</p></div>}
+          </div> : <div class="data-empty"><strong>No code is published</strong><p>A single listed code brings this page into the index. None has been recorded for it yet.</p></div>}
           <p class="report-note" data-report-note hidden>Thumbs are reader reports, not verification. They are de-duplicated per address, which stops repeat clicks but cannot separate people sharing a network. A code collecting failure reports is moved up the re-check queue; it is never relabelled by vote. See <a href="/how-we-verify/">how we verify</a>.</p>
           {expiredCodeEntries.length > 0 && <><details class="expired-block"><summary><span class="subhead">Expired codes</span><span>{expiredCodeEntries.length} retired records</span></summary><p class="expired-note">Kept as a maintenance record so a code that stops working can be told apart from one that never existed. Retired codes are not a search destination and carry no claim of being usable.</p><div class="expired-list">
-            {expiredCodeEntries.map((item) => <div><s>{item.entry.code}</s><span>{item.entry.reward}</span>{item.latestEvent ? <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time> : <span>Check not recorded</span>}</div>)}
+            {expiredCodeEntries.map((item) => <div><s>{item.entry.code}</s><span>{item.entry.reward}</span>{item.latestEvent && <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time>}</div>)}
           </div></details></>}
         </div>
-        <aside><h2>Redeem and verify</h2><p>{operationalPage?.game.redeemSteps.length ? 'Follow the recorded redemption path. A code redeemed in game is labelled verified. A current source report without an in-game redemption is labelled source-reported, and its evidence line distinguishes publisher-confirmed from community-reported.' : 'Redemption instructions have not passed publication validation yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Open the game</a>}{(operationalPage?.game.publisherChannels ?? []).map((channel) => <a href={channel.url} rel="noopener">{channel.label}</a>)}<a href="/how-we-verify/">How we verify</a></aside>
+        <aside><h2>Redeem and verify</h2><p>{operationalPage?.game.redeemSteps.length ? 'Follow the recorded redemption path. A code an editor has verified carries a star. Every other code is listed, awaiting editor verification, with its source line distinguishing publisher-confirmed from community-reported. Expired codes stay in the archive below.' : 'Redemption instructions have not been recorded yet.'}</p>{operationalPage?.game.redeemSteps.map((step, index) => <p><strong>{index + 1}.</strong> {step}</p>)}{operationalPage?.game.officialSourceUrl && <a href={operationalPage.game.officialSourceUrl} rel="noopener">Open the game</a>}{(operationalPage?.game.publisherChannels ?? []).map((channel) => <a href={channel.url} rel="noopener">{channel.label}</a>)}<a href="/how-we-verify/">How we verify</a></aside>
       </section>
     )}
 
@@ -554,14 +567,14 @@ const routeSchema = {
         </div>
         {publishedCheatGames.length > 0 && <><h2 class="secondary-list-heading">More cheat pages</h2>
         <div class="catalogue">{publishedCheatGames.map(({ item, page }) => (
-          <a href={`/cheats/${item.slug}/`}><span>{item.name}<small>{item.platforms.join(', ')}</small></span><strong>{page.verifiedCount + page.reportedCount} published</strong></a>
+          <a href={`/cheats/${item.slug}/`}><span>{item.name}<small>{item.platforms.join(', ')}</small></span><strong>{page.liveCount} listed</strong></a>
         ))}</div></>}
       </section>
     )}
 
     {definition.kind === 'cheat' && (
       <section class="page-section content-boundary split-layout wide-main">
-        <div><h2>Published cheats</h2>{cheatPage?.entries.length ? <div class="code-table">{cheatPage.entries.map((item) => <div class="code-row"><div><strong>{item.entry.name}</strong><code>{item.entry.input}</code><small>{item.entry.platforms.join(', ')} · {entryStateLabels[item.state]}</small></div><div>{item.latestEvent && <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time>}<span class="record-sources">{item.entry.sourceUrls.map((url, index) => <a href={url} rel="noopener">Source {index + 1}</a>)}</span><button type="button" data-copy-code={item.entry.input}>Copy</button></div></div>)}</div> : <div class="data-empty"><strong>No cheat record is published</strong><p>The route remains configured, but counts and rows stay hidden until platform scope, sources, confirmed build and verification events are present.</p></div>}</div>
+        <div><h2>Published cheats</h2>{cheatPage?.entries.length ? <div class="code-table">{cheatPage.entries.map((item) => <div class="code-row"><div><strong>{item.entry.name}</strong><code>{item.entry.input}</code><small>{item.entry.platforms.join(', ')} · {entryStateLabels[item.state]}</small></div><div>{item.latestEvent && <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time>}<span class="record-sources">{item.entry.sourceUrls.map((url, index) => <a href={url} rel="noopener">Source {index + 1}</a>)}</span><button type="button" data-copy-code={item.entry.input}>Copy</button></div></div>)}</div> : <div class="data-empty"><strong>No cheat record is published</strong><p>The route remains configured, and rows appear as soon as a cheat is recorded with its platform scope and sources.</p></div>}</div>
         <aside><h2>Confirmed build</h2><p>{cheatPage?.game.confirmedBuild ?? 'No build has been confirmed for publication.'}</p><p>{cheatPage?.game.sourceUrls.length ? 'The sheet has game-level source records in addition to the source on every row.' : 'Game-level sources are still pending.'}</p><a href="/cheats/">All cheat games</a></aside>
       </section>
     )}
@@ -575,9 +588,9 @@ const routeSchema = {
 
             <h2 class="subhead">Verification record</h2>
             <p>{profileAuthorEvents > 0
-              ? `${profileAuthorEvents} operational verification events are attributed to this profile. The number is counted from the event log rather than entered as biography copy, so it cannot be inflated by editing this page.`
-              : 'No operational verification events are attributed to this profile yet. Operational checks on codes and reward links are currently recorded under the site editor; editorial pages in this section are reviewed on the cadence shown against each one.'}</p>
-            <p>Every check recorded under this name carries a timestamp, a method and a result. The rules those checks follow are set out in <a href="/how-we-verify/">how we verify</a>.</p>
+              ? `${profileAuthorEvents} editor events are recorded under this name, each with a method and a date. The number is counted from the event log rather than entered as biography copy, so it cannot be inflated by editing this page.`
+              : 'No editor events are recorded under this name yet. Rows no editor has tested are listed as awaiting editor verification.'}</p>
+            <p>Every editor event recorded under this name carries a timestamp, a method and a result. The rules those events follow are set out in <a href="/how-we-verify/">how we verify</a>.</p>
 
             {profileArticles.length > 0 && <>
               <h2 class="subhead">Published pages by {profileAuthor.name}</h2>
@@ -589,7 +602,7 @@ const routeSchema = {
             </>}
 
             <h2 class="subhead">Corrections</h2>
-            <p>If a page in this section is wrong, email <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with the page URL. Corrections to {profileAuthor.sections.join(', ')} content route to {profileAuthor.name} and are recorded as verification events like any other check.</p>
+            <p>If a page in this section is wrong, email <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with the page URL. Corrections to {profileAuthor.sections.join(', ')} content route to {profileAuthor.name} and are recorded as dated events in the page's history.</p>
           </div>
           <aside>
             <h2>Editorial team</h2>
@@ -681,9 +694,13 @@ const routeSchema = {
                 <div class="card-copy">
                   <h3>{item.heading}</h3>
                   <p>{item.description}</p>
-                  {item.checkedAt && (
+                  {item.checkedAt ? (
                     <p class="card-checked">
                       Last verified <time datetime={item.checkedAt}>{formatAbsoluteTimestamp(item.checkedAt)}</time>
+                    </p>
+                  ) : addedAtOf(item) && (
+                    <p class="card-checked">
+                      Added <time datetime={addedAtOf(item)}>{formatAbsoluteTimestamp(addedAtOf(item))}</time>
                     </p>
                   )}
                 </div>
@@ -692,10 +709,6 @@ const routeSchema = {
           })}
         </div>
       </section>
-    )}
-
-    {definition.kind === 'verify' && (
-      <section class="page-section content-boundary"><h2>Evidence and publication flow</h2><div class="process-grid">{[['01', 'Record the source', 'Every operational entry needs a real HTTPS source URL.'], ['02', 'Perform the right check', 'A redemption, opened link, entered cheat or official-source review becomes a verification event.'], ['03', 'Store the result', 'The event records an ISO timestamp, method, result and responsible editor.'], ['04', 'Derive the page', 'Counts, freshness, archive state and author totals are calculated from those records.']].map(([num, title, copy]) => <div><strong>{num}</strong><h3>{title}</h3><p>{copy}</p></div>)}</div><div class="data-empty"><strong>Automated checker: {operations.services.checker.enabled ? 'configured' : 'not configured'}</strong><p>{operations.services.checker.enabled ? `The configured schedule is every ${operations.services.checker.scheduleMinutes} minutes. Runtime status still comes from the checker status store.` : 'Manual verification records can be published now. The site does not claim an automated schedule until the checker service is enabled.'}</p></div></section>
     )}
 
     {definition.kind === 'updates' && (
@@ -753,7 +766,7 @@ const routeSchema = {
 
           <aside>
             <h2>Published content only</h2>
-            <p>Results point to published editorial pages and evidence-backed operational pages. Configured drafts are excluded until their sources and verification records pass validation.</p>
+            <p>Results point to published editorial pages and operational pages with at least one entry listed. Pages with nothing listed are excluded.</p>
             <p>{searchIndex.length} pages are indexed.</p>
           </aside>
         </div>
@@ -861,7 +874,7 @@ const routeSchema = {
    */
   .card-copy p:not(.card-checked) { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; line-height: 1.5; }
   /*
-   * The check date is the card's freshness signal, not another sentence of the
+   * The recorded date is the card's date line, not another sentence of the
    * excerpt, so it is set apart and given tabular figures to line up down the grid.
    * Scoped under .card-copy to outrank the rule above rather than fight it.
    */

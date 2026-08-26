@@ -45,6 +45,26 @@ records.sort((left, right) => {
   return leftOrder - rightOrder;
 });
 const batchSlugs = new Set(records.map((record) => record.slug));
+
+/*
+ * One-time bootstrap, superseded by the ledger seed. Re-running the import drops
+ * every event on the codes it rewrites and, because ids are positional, a
+ * reordered source row could hand an old event to a different code. So while any
+ * verification event stands on an entry of a game in the batch, the importer
+ * refuses to run and changes nothing.
+ */
+const batchEntryIds = new Set(
+  operations.codes
+    .filter((entry) => batchSlugs.has(entry.gameSlug))
+    .map((entry) => entry.id),
+);
+const batchEventCount = (operations.verificationEvents ?? [])
+  .filter((event) => batchEntryIds.has(event.entryId))
+  .length;
+if (batchEventCount > 0) {
+  console.error(`Refusing to run: ${batchEventCount} verification events stand on entries of the ${batchSlugs.size} games this import would rewrite. The importer is a one-time bootstrap superseded by the ledger seed. Nothing was changed.`);
+  process.exit(1);
+}
 const previewHosts = ['pages.dev', 'vercel.app', 'netlify.app', 'netlify.com', 'workers.dev', 'github.io'];
 const isEvidenceUrl = (value) => {
   try {
@@ -73,14 +93,22 @@ operations.games = operations.games.map((game) => {
     surface: 'codes',
     platform: 'Roblox',
     publicationState: 'published',
-    verificationWindowHours: 24,
+    recheckTargetDays: 1,
     officialSourceUrl: officialGameUrls[record.slug],
     redeemSteps: splitRedeemPath(record.redeem_path),
   };
 });
 
+/*
+ * The importer writes rows, never events, and it is a one-time bootstrap. It
+ * used to manufacture a manual-review event for every typed `active` or
+ * `expired` row, attributed to an editor who had not looked at it (ADR 0003).
+ * An imported row lands Listed · awaiting editor verification and carries no
+ * status field: the typed status in the source record is not copied onto it.
+ * The as-published baseline of the games this script seeded is the ledger
+ * seed's to record, and the first review or retirement is one an editor makes.
+ */
 const importedCodes = [];
-const importedEvents = [];
 
 for (const record of records) {
   record.codes.forEach((candidate, index) => {
@@ -103,45 +131,16 @@ for (const record of records) {
       publisherSourceUrl: existing?.publisherSourceUrl ?? null,
       discoveredVia: existing?.discoveredVia?.length ? existing.discoveredVia : sourceUrls,
     });
-
-    if (candidate.status === 'active') {
-      importedEvents.push({
-        id: `${id}-source-review`,
-        entryType: 'code',
-        entryId: id,
-        checkedAt: record.checked_at,
-        result: 'source-only',
-        method: 'manual-review',
-        checkedBy: 'paul-a',
-      });
-    } else if (candidate.status === 'expired') {
-      importedEvents.push({
-        id: `${id}-archive-review`,
-        entryType: 'code',
-        entryId: id,
-        checkedAt: candidate.expired_at ?? candidate.last_verified_at ?? record.checked_at,
-        result: 'rejected',
-        method: 'manual-review',
-        checkedBy: 'paul-a',
-      });
-    }
   });
 }
 
-const removedEntryIds = new Set(
-  operations.codes
-    .filter((entry) => batchSlugs.has(entry.gameSlug))
-    .map((entry) => entry.id),
-);
 operations.codes = [
   ...operations.codes.filter((entry) => !batchSlugs.has(entry.gameSlug)),
   ...importedCodes,
 ];
-operations.verificationEvents = [
-  ...operations.verificationEvents.filter((event) => !removedEntryIds.has(event.entryId)),
-  ...importedEvents,
-];
+// The guard above proved this set empty; kept so a rewritten id can never keep a stale event.
+operations.verificationEvents = operations.verificationEvents.filter((event) => !batchEntryIds.has(event.entryId));
 
 await writeFile(operationsPath, `${JSON.stringify(operations, null, 2)}\n`);
 
-console.log(`Published ${records.length} games with ${importedCodes.length} code records and ${importedEvents.length} review events.`);
+console.log(`Published ${records.length} games with ${importedCodes.length} code records, each listed as awaiting editor verification.`);

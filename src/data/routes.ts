@@ -18,7 +18,6 @@ export type RouteKind =
   | 'search'
   | 'gearCategory'
   | 'gearProduct'
-  | 'verify'
   | 'submit'
   | 'alerts'
   | 'author'
@@ -53,12 +52,12 @@ export interface RouteDefinition {
 const staticRoutes: RouteDefinition[] = [
   {
     path: '/daily/', routeId: 'daily', kind: 'daily', title: 'Daily links | Freetins', heading: 'Daily links',
-    description: 'Source-linked daily rewards with absolute check times and clear verification states.',
+    description: 'Source-linked daily rewards with recorded dates and clear states.',
     noindex: publishedDailyLinkCatalogue.length + editorialArticles.filter((article) => article.section === 'daily').length === 0,
   },
   {
     path: '/codes/', routeId: 'browse', kind: 'browse', title: 'Game codes | Freetins', heading: 'All codes',
-    description: 'Published code pages backed by source URLs, redemption steps and recorded verification events.',
+    description: 'Published code pages backed by source URLs and redemption steps, with a state on every entry.',
     noindex: publishedGameCatalogue.length === 0,
   },
   {
@@ -90,11 +89,11 @@ const staticRoutes: RouteDefinition[] = [
   },
   {
     path: '/blog/', routeId: 'updates', kind: 'updates', title: 'Blog | Freetins', heading: 'Blog',
-    description: 'Longer pages on how codes and rewards actually work, each built from a dataset where every row carries its own evidence and check date.',
+    description: 'Longer pages on how codes and rewards actually work, each built from a dataset where every row carries its own evidence and state.',
   },
   {
     path: '/games/', routeId: 'az', kind: 'az', title: 'All games A-Z | Freetins', heading: 'All games A-Z',
-    description: 'Every game with a published Freetins page, listed A to Z with the number of codes that currently pass a check.',
+    description: 'Every game with a published Freetins page, listed A to Z with the number of codes listed on it.',
     noindex: publishedGameCatalogue.length + publishedDailyLinkCatalogue.length === 0,
   },
 ];
@@ -122,8 +121,8 @@ const cheatRoutes: RouteDefinition[] = operations.cheatGames.map((game) => {
     title: `${game.heading} | Freetins`,
     heading: game.heading,
     description: article?.description ?? (page?.isPublished
-      ? `${game.name} cheats with platform scope, source URLs and recorded verification events.`
-      : `${game.name} is configured for cheat verification, but no cheat sheet is published yet.`),
+      ? `${game.name} cheats with platform scope, source URLs and the state of every entry.`
+      : `${game.name} has a cheat page configured, but no cheat is listed yet.`),
     name: game.name,
     slug: game.slug,
     noindex: !page?.isPublished && !article,
@@ -208,8 +207,8 @@ const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => ({
   title: `${game.name} reward links and claim guide | Freetins`,
   heading: `${game.name} reward links`,
   description: game.isPublished
-    ? `${game.name} reward links with source URLs and recorded check times.`
-    : `${game.name} is configured for verification, but no reward link is published yet.`,
+    ? `${game.name} reward links with source URLs and the date each was recorded.`
+    : `${game.name} has a page configured, but no reward link is listed yet.`,
   name: game.name,
   slug: game.slug,
   noindex: !game.isPublished,
@@ -233,8 +232,8 @@ const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
       title: `${game.name} codes and how to redeem | Freetins`,
       heading: game.name,
       description: game.isPublished
-        ? `${game.name} codes with source URLs, redemption steps and recorded verification events.`
-        : `${game.name} is configured for verification, but no code is published yet.`,
+        ? `${game.name} codes with source URLs, redemption steps and the state of every entry.`
+        : `${game.name} has a page configured, but no code is listed yet.`,
       noindex: !game.isPublished,
     },
   ];

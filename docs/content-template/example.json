@@ -1,14 +1,12 @@
 {
   "_placeholder_warning": "entity_id, entity_url and every evidence URL here are placeholders. Replace all of them with the real experience identifier and real sources. example.invalid is a banned source, so the checker will fail if any of these survive into a real page.",
+  "_shape": "This is the v2 shape (docs/WRITER-CONTRACT-v2.md). Notice what is absent: no page dates, no cadence promise, no hand-typed change log, and no per-row status, check date or confidence. Those are verification claims, and verification is an act an editor performs after the page is live. Every row here renders as Listed, awaiting editor verification, which is a full listing and not a demotion.",
   "subject": "Pipeline Check",
   "slug": "pipeline-check",
   "entity_id": "000000000000000",
   "entity_url": "https://example.invalid/placeholder-experience",
   "developer": "Freetins Engineering",
   "permalink": "/guides/pipeline-check/",
-  "checked_at": "2026-08-25T08:00:00Z",
-  "content_changed_at": "2026-08-25T08:00:00Z",
-  "recheck_cadence": "Re-verified with every game update, and at least every 48 hours while entries are live.",
   "official_sources": [
     { "type": "official_page", "url": "https://example.invalid/placeholder-experience", "note": "Official experience page" },
     { "type": "discord", "url": "https://discord.gg/freetins", "note": "Developer announcement channel" }
@@ -31,18 +29,13 @@
         "How to obtain": "Drops from the starting conveyor"
       },
       "classification": "Common",
-      "status": "active",
       "case_sensitive": false,
       "requirements": "none",
       "added_at": "2026-08-01T00:00:00Z",
-      "last_verified_at": "2026-08-24T00:00:00Z",
-      "ended_at": null,
       "evidence": [
         { "tier": 1, "url": "https://example.invalid/placeholder-experience" },
         { "tier": 2, "url": "https://www.pcgamesn.com/pipeline-check" }
       ],
-      "confidence": "confirmed",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -55,17 +48,12 @@
         "How to obtain": "Rolled from the rare crate"
       },
       "classification": "Rare",
-      "status": "unverified",
       "case_sensitive": false,
       "requirements": "none",
       "added_at": "2026-08-02T00:00:00Z",
-      "last_verified_at": "2026-08-20T00:00:00Z",
-      "ended_at": null,
       "evidence": [
         { "tier": 2, "url": "https://www.pcgamesn.com/pipeline-check" }
       ],
-      "confidence": "conflicting",
-      "needs_human": true,
       "notes": "One source reports 48 per second and another reports 52. Neither is a publisher channel."
     },
     {
@@ -75,25 +63,20 @@
         "Entry": "Gamma Marker",
         "Rarity": "Rare",
         "Income per second": "60",
-        "How to obtain": "Removed from the crate pool"
+        "How to obtain": "Rolled from the rare crate"
       },
       "classification": "Rare",
-      "status": "removed",
       "case_sensitive": false,
       "requirements": "none",
       "added_at": "2026-07-10T00:00:00Z",
-      "last_verified_at": "2026-08-24T00:00:00Z",
-      "ended_at": "2026-08-15T00:00:00Z",
       "evidence": [
         { "tier": 1, "url": "https://discord.gg/freetins" },
         { "tier": 2, "url": "https://www.pcgamesn.com/pipeline-check" }
       ],
-      "confidence": "confirmed",
-      "needs_human": false,
-      "notes": "Pulled in the mid-season patch and kept listed because searches for it continue."
+      "notes": "Two outlets report it pulled from the crate pool in the mid-season patch. It stays listed until an editor confirms that in the game and retires the row."
     }
   ],
-  "unverified_summary": "One entry carries conflicting income figures from two independent outlets and no publisher confirmation, so it stays marked Unverified rather than being given a number this page cannot stand behind.",
+  "unverified_summary": "One entry carries conflicting income figures from two independent outlets and no publisher confirmation, so it stays listed as awaiting editor verification with the disagreement shown in full, rather than being given a number this page cannot stand behind.",
   "disagreements": [
     {
       "item": "Beta Marker income",
@@ -108,10 +91,6 @@
       "why_wrong": "No such entry appears in the experience or in any publisher post. The screenshots circulating are edited.",
       "origin": "A compilation video reposted across aggregator sites."
     }
-  ],
-  "changes": [
-    { "at": "2026-08-20T00:00:00Z", "what": "Page first published with the full roster" },
-    { "at": "2026-08-25T08:00:00Z", "what": "Gamma Marker moved to Removed after the mid-season patch" }
   ],
   "next_change": {
     "pattern": "Roster changes land with each mid-season patch, roughly every three weeks.",

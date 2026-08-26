@@ -29,25 +29,25 @@ faq:
     a: Work through four causes in order. You already claimed it on that account. The window closed, which happens after roughly 3 days. You opened it on a desktop rather than the device running the game. Or the drop hit its redemption cap, which stops some links crediting before their window is up. A browser cache clear resolves a small number of remaining cases.
   - q: Are dice links the same thing as redeem codes?
     a: No. Monopoly GO has no code entry box. A dice link is a URL that hands the reward straight to the signed in account when tapped, so there is nothing to copy or type. Any page offering a string of characters to paste into the game is describing a mechanic the game does not have.
-  - q: Why does every row on this page say Unverified?
-    a: Because no drop here carries a publisher source we can reopen. Scopely pushes links through Instagram Stories that vanish within a day, so there is nothing left to cite afterwards. Each row is backed by independent outlets that logged it on the day, which is community reporting rather than publisher confirmation. A row is only ever marked Confirmed when a publisher channel can be read back.
+  - q: Why is every row on this page awaiting editor verification?
+    a: Because no editor has opened one yet, and because no drop here carries a publisher source we can reopen. Scopely pushes links through Instagram Stories that vanish within a day, so there is nothing left to cite afterwards. Each row is backed by independent outlets that logged it on the day, which is community reporting rather than publisher confirmation. A row is marked Verified only when an editor has opened it and recorded the result.
   - q: Where do the links appear first?
     a: The official Instagram Story carries most drops before anywhere else, with the Facebook page repeating them in a permanent post and the Discord server carrying event drops. The in game news feed also surfaces some. Every source listed on this page is one of those publisher channels, and aggregators including this one are downstream of them by definition.
 ---
 
-This page records {{totalCount}} Monopoly GO free dice links, each stamped with the date it was posted, and a drop stays claimable for roughly 3 days from that date. None is publisher confirmed, because {{developer}} sends them out through Instagram Stories that cannot be read back. Last verified {{checkedAt}}.
+This page records {{totalCount}} Monopoly GO free dice links, each stamped with the date it was posted, and a drop stays claimable for roughly 3 days from that date. None is publisher confirmed, because {{developer}} sends them out through Instagram Stories that cannot be read back. The record stands as published {{checkedAt}}.
 
 The game here is {{subject}}, published by {{developer}} under App Store ID {{entityId}}. A dice link is not a redeem code, and it is not a sticker or partner event link, both of which grant different rewards and run on their own windows.
 
-## Monopoly GO free dice links still inside their window
+## The most recent Monopoly GO free dice links on record
 
-No fresh drop had been logged at the last check. The top rows below are the drops still inside their claim window, and not one of them is an older entry recycled to fill space. Underneath them sit older drops whose closing date no independent outlet ever recorded, so read the Window closes column before you tap.
+No new drop is on record. The top rows below are the most recent drops on record, each with the closing date the outlets reported, and not one of them is an older entry recycled to fill space. An editor retires a drop once its window has closed. Underneath them sit older drops whose closing date no independent outlet ever recorded, so read the Window closes column before you tap.
 
 {{table:links|status=active,unverified}}
 
-Every row here reads Unverified in the Status column, and that is deliberate rather than a gap. {{developer}} pushes each drop through an Instagram Story that disappears within a day, so once a drop closes there is no publisher post left to reopen and cite. What backs these rows instead is independent outlets that logged the drop on the day it landed, which is community reporting, not publisher confirmation.
+Every row here reads Listed · awaiting editor verification in the Status column, and that is deliberate rather than a gap. {{developer}} pushes each drop through an Instagram Story that disappears within a day, so once a drop closes there is no publisher post left to reopen and cite. What backs these rows instead is independent outlets that logged the drop on the day it landed, which is community reporting, not publisher confirmation.
 
-Nothing is dressed up as Active that we cannot stand behind, and no drop is hidden for being unconfirmed either. A working link you can judge for yourself beats a green pill you have no way to check.
+Nothing is dressed up as Verified that no editor has opened, and no drop is hidden for being untested either. A working link you can judge for yourself beats a green pill you have no way to check.
 
 Each link works once per account. Tap it on the device the game is installed on, because a desktop browser will not credit the rolls.
 
@@ -55,7 +55,7 @@ Each link works once per account. Tap it on the device the game is installed on,
 
 {{table:links|status=expired}}
 
-A drop only reaches Expired here when two independent outlets recorded its posting date and its closing date. That is a higher bar than most rows clear, which is why this archive is short and why the older drops with no recorded closing date stay in the table above instead. None is deleted, because a missing row and an unchecked row look identical once you remove one.
+A drop is Expired here once an editor retires it, after two independent outlets recorded its posting date and its closing date. That is a higher bar than most rows clear, which is why this archive is short and why the older drops with no recorded closing date stay in the table above instead. None is deleted, because a missing row and an untested row look identical once you remove one.
 
 ## How the links actually work and where they originate
 
@@ -99,13 +99,13 @@ Following the Instagram account and turning on Story notifications is the fastes
 
 {{unverifiedSummary}}
 
-The evidence tier behind every row is shown in the dataset rather than asserted in the text, and [the tier system Freetins uses](/how-we-verify/) explains why a drop three outlets agree on still does not reach Confirmed here.
+The evidence line behind every row is shown in the dataset rather than asserted in the text, and [the evidence rules Freetins uses](/how-we-verify/) explain why a drop three outlets agree on still does not reach Verified here: only an editor's own check does that.
 
 ## Change log
 
 {{changelog}}
 
-## How often this page is rechecked
+## How rechecks are recorded
 
 {{recheckCadence}}
 

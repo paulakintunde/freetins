@@ -3,10 +3,10 @@ import { test } from 'node:test';
 import { readFileSync } from 'node:fs';
 
 import { parseFrontmatter, splitFrontmatter } from '../src/lib/frontmatter.ts';
-import { resolveDisplayStatus, countRows, validateDataset } from '../src/lib/dataset.ts';
-import { interpolate } from '../src/lib/interpolate.ts';
+import { CUTOVER_AT, asPublished, displayState, countStates, validateDataset } from '../src/lib/dataset.ts';
+import { interpolate, DERIVED_CADENCE } from '../src/lib/interpolate.ts';
 import { runProseChecks } from '../src/lib/prose-qa.ts';
-import { normaliseDataset, derivedRowId } from '../src/lib/normalise.ts';
+import { normaliseDataset, derivedRowId, earliestAddedAt } from '../src/lib/normalise.ts';
 
 const answer = (words) => Array.from({ length: words }, (_, index) => `word${index}`).join(' ');
 
@@ -64,15 +64,21 @@ test('parseFrontmatter rejects an faq answer outside the word range', () => {
   assert.ok(errors.some((error) => /faq answer 1 is 2 words/.test(error)));
 });
 
-const isoDaysAgo = (days) => new Date(Date.now() - days * 86_400_000).toISOString();
+const DAY = 86_400_000;
+const isoDaysAgo = (days) => new Date(Date.now() - days * DAY).toISOString();
+/* Dates are pinned to the cutover instant, not the wall clock, because the
+ * baseline is frozen there and a test that drifts with the calendar would
+ * prove nothing about it. */
+const isoBeforeCutover = (days) => new Date(Date.parse(CUTOVER_AT) - days * DAY).toISOString();
+const A_YEAR_LATER = Date.parse(CUTOVER_AT) + 365 * DAY;
 
 const row = (name = 'Alpha', overrides = {}) => ({
   id: `pipeline-check:roster:${name.toLowerCase()}`,
   name,
   cells: { Entry: name },
-  addedAt: isoDaysAgo(3),
+  addedAt: isoBeforeCutover(30),
   status: 'active',
-  lastVerifiedAt: isoDaysAgo(1),
+  lastVerifiedAt: isoBeforeCutover(1),
   evidence: [
     { tier: 1, url: 'https://example.org/official' },
     { tier: 2, url: 'https://example.org/outlet' },
@@ -81,43 +87,100 @@ const row = (name = 'Alpha', overrides = {}) => ({
   ...overrides,
 });
 
-test('resolveDisplayStatus downgrades an active row past the freshness window', () => {
-  const rows = resolveDisplayStatus(
-    [row(), row('Beta', { lastVerifiedAt: isoDaysAgo(20) })],
-    Date.now(),
-  );
-  assert.equal(rows[0].status, 'active');
-  assert.equal(rows[1].status, 'unverified');
+test('asPublished freezes at CUTOVER_AT, not the clock', () => {
+  const inside = row('Alpha', { lastVerifiedAt: isoBeforeCutover(13) });
+  const outside = row('Beta', { lastVerifiedAt: isoBeforeCutover(20) });
+  assert.equal(asPublished(inside), 'active');
+  assert.equal(asPublished(outside), 'unverified');
+  // A year on, the same row still displays what it displayed on cutover day.
+  assert.equal(displayState(inside, A_YEAR_LATER), 'active');
+  assert.equal(displayState(inside, Date.now()), 'active');
+  assert.equal(displayState(outside, A_YEAR_LATER), 'listed');
 });
 
-test('resolveDisplayStatus refuses to show a reported row as active', () => {
-  const rows = resolveDisplayStatus(
-    [row('Beta', { confidence: 'reported' }), row('Gamma', { confidence: 'conflicting' })],
-    Date.now(),
-  );
-  assert.equal(rows[0].status, 'unverified');
-  assert.equal(rows[1].status, 'unverified');
+test('a reported typed-active row is listed', () => {
+  assert.equal(displayState(row('Beta', { confidence: 'reported' }), Date.now()), 'listed');
+  assert.equal(displayState(row('Gamma', { confidence: 'conflicting' }), Date.now()), 'listed');
+  assert.equal(asPublished(row('Beta', { confidence: 'reported' })), 'unverified');
 });
 
-test('resolveDisplayStatus leaves archived rows alone', () => {
-  const rows = resolveDisplayStatus(
-    [row('Beta', { status: 'expired', confidence: 'reported' }), row('Gamma', { status: 'removed' })],
-    Date.now(),
-  );
-  assert.equal(rows[0].status, 'expired');
-  assert.equal(rows[1].status, 'removed');
+test('expired and removed both display expired, removed stays selectable', () => {
+  const expired = row('Beta', { status: 'expired', confidence: 'reported' });
+  const removed = row('Gamma', { status: 'removed' });
+  assert.equal(displayState(expired, Date.now()), 'expired');
+  assert.equal(displayState(removed, Date.now()), 'expired');
+  assert.equal(asPublished(expired), 'expired');
+  assert.equal(asPublished(removed), 'removed');
+
+  const page = dataset({ rows: [row(), expired, removed] });
+  const removedOnly = interpolate('{{table:roster|status=removed}}', page, Date.now()).body;
+  assert.match(removedOnly, /\| Gamma \| Expired \|/);
+  assert.doesNotMatch(removedOnly, /\| Beta \|/);
+  const expiredOnly = interpolate('{{table:roster|status=expired}}', page, Date.now()).body;
+  assert.match(expiredOnly, /\| Beta \| Expired \|/);
+  assert.doesNotMatch(expiredOnly, /\| Gamma \|/);
+  const both = interpolate('{{table:roster|status=expired,removed}}', page, Date.now()).body;
+  assert.match(both, /\| Beta \|/);
+  assert.match(both, /\| Gamma \|/);
+  const notRemoved = interpolate('{{table:roster|not-status=removed}}', page, Date.now()).body;
+  assert.match(notRemoved, /\| Alpha \|/);
+  assert.match(notRemoved, /\| Beta \|/);
+  assert.doesNotMatch(notRemoved, /\| Gamma \|/);
 });
 
-test('countRows counts by status', () => {
-  const counts = countRows([
+test('a link row past expires_at is expired only when its table kind is link', () => {
+  const link = row('Spins', { status: 'unverified', confidence: 'reported', expiresAt: '2026-08-23T09:30:00Z' });
+  const after = Date.parse('2026-08-24T00:00:00Z');
+  const before = Date.parse('2026-08-22T00:00:00Z');
+  assert.equal(displayState(link, after, 'link'), 'expired');
+  assert.equal(displayState(link, before, 'link'), 'listed');
+  assert.equal(displayState(link, after, 'fact'), 'listed');
+  assert.equal(displayState(link, after, 'code'), 'listed');
+  assert.equal(displayState(link, after), 'listed');
+  // The baseline does not move: only the display does, and only for a link.
+  assert.equal(asPublished(link), 'unverified');
+});
+
+test('a v2 row with no typed fields is listed', () => {
+  const normalised = normaliseDataset(ledgerShape, 'pipeline-check');
+  const [only] = normalised.rows;
+  assert.equal(asPublished(only), 'unverified');
+  assert.equal(displayState(only, Date.parse('2026-08-25T00:00:00Z'), 'link'), 'listed');
+  assert.equal(displayState(only, A_YEAR_LATER), 'listed');
+});
+
+test('countStates totals', () => {
+  const tables = { roster: { caption: 'Roster', columns: ['Entry'] } };
+  const counts = countStates([
     row(),
-    row('Beta', { status: 'expired' }),
-    row('Gamma', { status: 'removed' }),
-  ]);
-  assert.equal(counts.totalCount, 3);
-  assert.equal(counts.activeCount, 1);
-  assert.equal(counts.expiredCount, 1);
-  assert.equal(counts.removedCount, 1);
+    row('Beta', { confidence: 'reported' }),
+    row('Gamma', { status: 'expired' }),
+    row('Delta', { status: 'removed' }),
+    row('Epsilon', { status: 'unverified', confidence: 'reported' }),
+  ], A_YEAR_LATER, tables);
+  assert.deepEqual(counts, {
+    totalCount: 5,
+    verifiedCount: 0,
+    activeCount: 1,
+    listedCount: 2,
+    expiredCount: 2,
+    removedCount: 1,
+    confirmedCount: 3,
+    unverifiedCount: 2,
+  });
+  assert.equal(counts.unverifiedCount, counts.listedCount);
+});
+
+test('countStates lets a link row expire on its TTL and nothing else on the clock', () => {
+  const tables = { links: { caption: 'Links', columns: ['Entry'], kind: 'link' } };
+  const rows = [
+    row('Alpha', { table: 'links', status: 'unverified', confidence: 'reported', expiresAt: '2026-08-23T00:00:00Z' }),
+    row('Beta', { table: 'links', status: 'unverified', confidence: 'reported' }),
+  ];
+  assert.equal(countStates(rows, Date.parse('2026-08-22T00:00:00Z'), tables).listedCount, 2);
+  const later = countStates(rows, A_YEAR_LATER, tables);
+  assert.equal(later.listedCount, 1);
+  assert.equal(later.expiredCount, 1);
 });
 
 const dataset = (overrides = {}) => ({
@@ -128,7 +191,6 @@ const dataset = (overrides = {}) => ({
   permalink: '/guides/pipeline-check/',
   checkedAt: isoDaysAgo(0),
   contentChangedAt: isoDaysAgo(0),
-  recheckCadence: 'Re-verified every 48 hours.',
   officialSources: [{ type: 'official_page', url: 'https://example.org/official' }],
   tables: { roster: { caption: 'Roster', columns: ['Entry'] } },
   rows: [row(), row('Gamma', { status: 'removed' })],
@@ -146,7 +208,7 @@ test('validateDataset accepts a complete dataset', () => {
 
 test('validateDataset rejects a future timestamp', () => {
   const errors = validateDataset(dataset({
-    checkedAt: new Date(Date.now() + 86_400_000).toISOString(),
+    checkedAt: new Date(Date.now() + DAY).toISOString(),
   }));
   assert.ok(errors.some((error) => /checkedAt is in the future/.test(error)));
 });
@@ -205,18 +267,40 @@ test('normaliseDataset accepts a page with no typed verification fields', () => 
   assert.equal(normalised.tables.links.kind, 'link');
 });
 
+test('earliestAddedAt compares instants, not strings', () => {
+  // The offset timestamp is the earlier instant even though it sorts later as text.
+  const rows = [
+    { addedAt: '2026-07-31T23:30:00Z' },
+    { addedAt: '2026-08-01T00:00:00+01:00' },
+    { addedAt: 'not a date' },
+    { addedAt: null },
+    {},
+  ];
+  assert.equal(earliestAddedAt(rows), '2026-08-01T00:00:00+01:00');
+  assert.equal(earliestAddedAt([{ addedAt: '2026-08-02' }, { addedAt: '2026-08-01T12:00:00Z' }]), '2026-08-01T12:00:00Z');
+  assert.equal(earliestAddedAt([{ addedAt: null }, {}]), '');
+  assert.equal(earliestAddedAt([]), '');
+});
+
 test('interpolate says a page awaits verification rather than inventing dates', () => {
   const normalised = normaliseDataset(ledgerShape, 'pipeline-check');
+  // Pinned before the row's expiry, so the TTL cannot turn the listing expired.
+  const beforeExpiry = Date.parse('2026-08-25T00:00:00Z');
   const { body, unresolved } = interpolate(
     'Checked {{checkedAt}}.\n\n{{table:links}}\n\n{{changelog}}\n\n{{recheckCadence}}',
     normalised,
-    Date.now(),
+    beforeExpiry,
   );
   assert.deepEqual(unresolved, []);
   assert.match(body, /Checked awaiting editor verification\./);
-  assert.match(body, /\| Free spins \| Unverified \| awaiting editor verification \|/);
+  assert.match(body, /\| Free spins \| Listed · awaiting editor verification \| not yet \|/);
   assert.match(body, /No changes recorded yet/);
-  assert.match(body, /Rechecks are recorded on this page/);
+  assert.ok(body.includes(DERIVED_CADENCE));
+
+  // Past the publisher's expiry the link row reads Expired, and the cell still
+  // says no editor has checked it.
+  const afterExpiry = interpolate('{{table:links}}', normalised, Date.parse('2026-09-02T00:00:00Z')).body;
+  assert.match(afterExpiry, /\| Free spins \| Expired \| not yet \|/);
 });
 
 test('parseFrontmatter accepts a description and bounds its length', () => {
@@ -275,7 +359,7 @@ test('validateDataset rejects a shortener in evidence', () => {
   assert.ok(errors.some((error) => /banned source domain/.test(error)));
 });
 
-test('interpolate resolves counts, dates and tables', () => {
+test('interpolate resolves counts, dates and tables with the public labels', () => {
   const { body, unresolved } = interpolate(
     'There are {{activeCount}} of {{totalCount}}, checked {{checkedAt}}.\n\n{{table:roster}}',
     dataset(),
@@ -284,13 +368,80 @@ test('interpolate resolves counts, dates and tables', () => {
   assert.deepEqual(unresolved, []);
   assert.match(body, /There are 1 of 2/);
   assert.match(body, /\| Entry \| Status \| Last checked \|/);
-  assert.match(body, /\| Gamma \| Removed \|/);
+  assert.match(body, /\| Alpha \| Active · as published \| \d{1,2} \w+ \d{4} \|/);
+  assert.match(body, /\| Gamma \| Expired \|/);
+  assert.doesNotMatch(body, /Removed/);
+});
+
+test('interpolate renders the listed label for a reported row', () => {
+  const { body } = interpolate('{{table:roster}}', dataset({ rows: [row('Beta', { confidence: 'reported' })] }), Date.now());
+  assert.match(body, /\| Beta \| Listed · awaiting editor verification \| \d{1,2} \w+ \d{4} \|/);
 });
 
 test('interpolate filters a table by status', () => {
   const { body } = interpolate('{{table:roster|status=removed}}', dataset(), Date.now());
   assert.match(body, /Gamma/);
   assert.doesNotMatch(body, /\| Alpha \|/);
+});
+
+test('interpolate accepts the v1 filter aliases and the four public values', () => {
+  const page = dataset({
+    rows: [
+      row(),
+      row('Beta', { confidence: 'reported' }),
+      row('Gamma', { status: 'removed' }),
+      row('Delta', { status: 'expired' }),
+    ],
+  });
+  const render = (argument) => interpolate(`{{table:roster|${argument}}}`, page, Date.now()).body;
+
+  const unverified = render('status=unverified');
+  assert.match(unverified, /\| Beta \|/);
+  assert.doesNotMatch(unverified, /\| Alpha \|/);
+  assert.equal(render('status=listed'), unverified);
+
+  const live = render('status=active,unverified');
+  assert.match(live, /\| Alpha \|/);
+  assert.match(live, /\| Beta \|/);
+  assert.doesNotMatch(live, /\| Gamma \|/);
+  assert.doesNotMatch(live, /\| Delta \|/);
+  assert.equal(render('status=verified,active,listed'), live);
+
+  assert.match(render('status=verified'), /_No rows recorded\._/);
+});
+
+test('interpolate resolves the count tokens and their v1 aliases', () => {
+  const page = dataset({
+    rows: [
+      row(),
+      row('Beta', { confidence: 'reported' }),
+      row('Gamma', { status: 'removed' }),
+      row('Delta', { status: 'expired' }),
+    ],
+  });
+  const { body, unresolved } = interpolate(
+    [
+      'total {{totalCount}}', 'verified {{verifiedCount}}', 'active {{activeCount}}',
+      'listed {{listedCount}}', 'unverified {{unverifiedCount}}', 'expired {{expiredCount}}',
+      'removed {{removedCount}}', 'confirmed {{confirmedCount}}',
+    ].join('\n'),
+    page,
+    Date.now(),
+  );
+  assert.deepEqual(unresolved, []);
+  assert.equal(body, [
+    'total 4', 'verified 0', 'active 1', 'listed 1', 'unverified 1', 'expired 2', 'removed 1', 'confirmed 3',
+  ].join('\n'));
+});
+
+test('interpolate always renders the derived cadence, never a typed one', () => {
+  // A leftover typed sentence on a stale object is ignored: a schedule nobody
+  // performs is not something the page may promise (docs/adr/0003).
+  const stale = { ...dataset(), recheckCadence: 'Re-verified every 48 hours.' };
+  const { body } = interpolate('{{recheckCadence}}\n\n{{freshness}}', stale, Date.now());
+  assert.equal(body, `${DERIVED_CADENCE}\n\n${DERIVED_CADENCE}`);
+  assert.doesNotMatch(body, /48 hours/);
+  assert.match(DERIVED_CADENCE, /reads not yet/);
 });
 
 test('interpolate reports an unknown token rather than dropping it', () => {

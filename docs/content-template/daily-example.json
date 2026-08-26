@@ -1,6 +1,6 @@
 {
   "_placeholder_warning": "entity_id, entity_url, every official source and every evidence URL here are placeholders. Replace all of them with the real app listing and real posts. example.invalid is a banned source, so the checker will fail if any of these survive into a real page.",
-  "_shape": "This is the v2 shape (docs/WRITER-CONTRACT-v2.md). Notice what is absent: no checked_at, no content_changed_at, no recheck_cadence, no per-row status, last_verified_at or confidence. Those are verification claims, and verification is an act an editor performs after the page is live. Every row here renders as Listed, awaiting editor verification, which is a full listing and not a demotion.",
+  "_shape": "This is the v2 shape (docs/WRITER-CONTRACT-v2.md). Notice what is absent: no page dates, no cadence promise, no per-row status, check date, confidence or human flag. Those are verification claims, and verification is an act an editor performs after the page is live. Every row here renders as Listed, awaiting editor verification, with not yet in its Last checked column; that is a full listing and not a demotion, and no state changes because time has passed.",
   "subject": "Pipeline Check",
   "slug": "pipeline-check-free-spins",
   "entity_id": "000000000000000",

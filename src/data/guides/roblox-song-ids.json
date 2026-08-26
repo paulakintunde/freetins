@@ -7,7 +7,6 @@
   "permalink": "/guides/roblox-song-ids/",
   "checked_at": "2026-08-25T09:00:00Z",
   "content_changed_at": "2026-08-25T09:00:00Z",
-  "recheck_cadence": "Every ID here is re-tested against Roblox's own asset endpoints at least every fourteen days, and the whole table is re-tested as soon as a reader reports an entry dead.",
   "official_sources": [
     {
       "type": "official_page",
@@ -65,7 +64,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Listed free in the Creator Store under the electronic genre and distributed through ParryGripp, but Roblox's delivery endpoint asks for a session before it will hand over the file, so public playback cannot be proved from outside a game."
     },
     {
@@ -99,7 +97,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the electronic genre, runs 161 seconds, distributed through Monstercat. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -133,7 +130,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the electronic genre, runs 218 seconds, distributed through Monstercat. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -167,7 +163,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the electronic genre, runs 204 seconds, distributed through Monstercat. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -201,7 +196,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the electronic genre, runs 245 seconds, distributed through Monstercat. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -235,7 +229,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the dance genre, runs 288 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -269,7 +262,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the dance genre, runs 207 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -303,7 +295,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the dance genre, runs 300 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -337,7 +328,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the dance genre, runs 204 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -371,7 +361,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the electronica genre, runs 62 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -405,7 +394,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the electronic genre, runs 168 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -439,7 +427,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the dance genre, runs 147 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -473,7 +460,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the electro-house genre, runs 151 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -507,7 +493,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the electronic genre, runs 183 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -541,7 +526,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the hip-hop genre, runs 150 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -575,7 +559,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the dance genre, runs 155 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -609,7 +592,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the dance genre, runs 104 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -643,7 +625,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the hip-hop genre, runs 240 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -677,7 +658,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the hip-hop genre, runs 126 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -711,7 +691,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the hip-hop genre, runs 121 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -741,7 +720,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Listed free in the Creator Store under the hip-hop genre and distributed through Clippsly, but Roblox's delivery endpoint asks for a session before it will hand over the file, so public playback cannot be proved from outside a game."
     },
     {
@@ -775,7 +753,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the lo-fi genre, runs 142 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -809,7 +786,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the lo-fi-hip-hop genre, runs 165 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -843,7 +819,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the lo-fi-hip-hop genre, runs 134 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -877,7 +852,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the chill-out genre, runs 156 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -911,7 +885,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the lo-fi genre, runs 60 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -945,7 +918,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the lo-fi-hip-hop genre, runs 129 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -979,7 +951,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the dance genre, runs 145 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1013,7 +984,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the classical genre, runs 262 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1047,7 +1017,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the classical genre, runs 152 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1081,7 +1050,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the classical genre, runs 163 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1115,7 +1083,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the classical-arrangement genre, runs 225 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1149,7 +1116,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the classical genre, runs 216 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1183,7 +1149,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the classical genre, runs 144 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1217,7 +1182,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the classical-arrangement genre, runs 63 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1251,7 +1215,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the orchestral-hybrid genre, runs 139 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1285,7 +1248,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the classical genre, runs 185 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1319,7 +1281,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the christian genre, runs 230 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1353,7 +1314,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the classical-arrangement genre, runs 64 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1387,7 +1347,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the hard-rock genre, runs 246 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1421,7 +1380,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the metal genre, runs 300 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1455,7 +1413,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the nu-metal genre, runs 220 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1489,7 +1446,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the rock-roll genre, runs 63 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1523,7 +1479,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the rock-techno genre, runs 141 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1557,7 +1512,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the indie genre, runs 90 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1591,7 +1545,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the modern-jazz genre, runs 153 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1625,7 +1578,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the blues genre, runs 137 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1659,7 +1611,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the smooth-jazz genre, runs 150 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1693,7 +1644,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the modern-jazz genre, runs 143 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1727,7 +1677,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the jazz genre, runs 157 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1761,7 +1710,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the easy-listening genre, runs 150 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1791,7 +1739,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Listed free in the Creator Store under the pop genre and distributed through TooLostOfficial, but Roblox's delivery endpoint asks for a session before it will hand over the file, so public playback cannot be proved from outside a game."
     },
     {
@@ -1825,7 +1772,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the pop genre, runs 151 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1859,7 +1805,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the pop genre, runs 188 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1893,7 +1838,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the pop genre, runs 209 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1927,7 +1871,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the contemporary-folk genre, runs 168 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1961,7 +1904,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the pop genre, runs 29 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -1995,7 +1937,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the pop genre, runs 186 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2029,7 +1970,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the film-score genre, runs 114 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2063,7 +2003,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the film-score genre, runs 153 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2097,7 +2036,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the soundtracks genre, runs 102 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2131,7 +2069,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the soundtracks genre, runs 108 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2165,7 +2102,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the soundtracks genre, runs 75 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2199,7 +2135,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the film-score genre, runs 143 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2233,7 +2168,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the film-score genre, runs 34 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2267,7 +2201,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the film-score genre, runs 139 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2301,7 +2234,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the panoramic genre, runs 100 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2335,7 +2267,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the latin genre, runs 60 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2369,7 +2300,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the latin-dance-styles genre, runs 130 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2403,7 +2333,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the latin-dance-styles genre, runs 243 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2437,7 +2366,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the asian-influenced genre, runs 106 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2471,7 +2399,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the asian-influenced genre, runs 178 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2505,7 +2432,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the unclassified genre, runs 21 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2539,7 +2465,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the film-score genre, runs 140 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2573,7 +2498,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the film-score genre, runs 73 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2607,7 +2531,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the neo-classical genre, runs 181 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2641,7 +2564,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the classical-styling genre, runs 122 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2675,7 +2597,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the unclassified genre, runs 10 seconds, distributed through Q_Q. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2709,7 +2630,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the kitsch genre, runs 122 seconds, distributed through APMOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2743,7 +2663,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the comedy genre, runs 115 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2777,7 +2696,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the dance genre, runs 170 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2811,7 +2729,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox files this under the alternative genre, runs 150 seconds, distributed through DistrokidOfficial. The audio file is served to an unauthenticated request, which is the strongest public availability signal reachable from outside a session."
     },
     {
@@ -2841,7 +2758,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account ripxvrr and was taken down."
     },
     {
@@ -2871,7 +2787,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account itdoodle and was taken down."
     },
     {
@@ -2901,7 +2816,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account Voil Records and was taken down."
     },
     {
@@ -2931,7 +2845,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account φidur ® records and was taken down."
     },
     {
@@ -2961,7 +2874,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox no longer returns any asset record for this ID. The upload has been deleted outright."
     },
     {
@@ -2991,7 +2903,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account unaIive and was taken down."
     },
     {
@@ -3021,7 +2932,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account Vulpesmyrca and was taken down."
     },
     {
@@ -3051,7 +2961,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account Classical Nation and was taken down."
     },
     {
@@ -3081,7 +2990,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account RoJuniors and was taken down."
     },
     {
@@ -3111,7 +3019,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"[ Content Deleted ]\". The original upload was made by the account KingOfRabbits and was taken down."
     },
     {
@@ -3141,7 +3048,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account Spenc7r and was taken down."
     },
     {
@@ -3171,7 +3077,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account SO0MING and was taken down."
     },
     {
@@ -3201,7 +3106,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account wheelspree and was taken down."
     },
     {
@@ -3231,7 +3135,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"[ Content Deleted ]\". The original upload was made by the account OtisTheReaperRBX and was taken down."
     },
     {
@@ -3261,7 +3164,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"[ Content Deleted ]\". The original upload was made by the account dupedease and was taken down."
     },
     {
@@ -3291,7 +3193,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"[ Content Deleted ]\". The original upload was made by the account qxjoestarr and was taken down."
     },
     {
@@ -3321,7 +3222,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Spooky Scary Skeletons - JonTron\" by DoomPieOfFun, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3351,7 +3251,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Intergalactic\" by Bassics, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3381,7 +3280,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Beethoven - Moonlight Sonata Mvt. 1\" by Classical Nation, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3411,7 +3309,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Boom clap I'm in me mums car\" by taymaster, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3441,7 +3338,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"This Is America\" by devon_wayne, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3471,7 +3367,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Gangstas Paradise (Loop)\" by Kruutaa, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3501,7 +3396,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Droideka - Get hyper.\" by PixelFlame, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3531,7 +3425,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Let it go\" by Chillinimal, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3561,7 +3454,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Foster the People - Pumped up Kicks\" by ICUolo, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3591,7 +3483,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Heat Waves - Glass animals |slowed| :]\" by Tokyo_Nova, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3621,7 +3512,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"And the trumpets they go...\" by jki, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3651,7 +3541,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Whatcha Say\" by Goremu, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3681,7 +3570,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Michael Jackson, Smooth Criminal best fragment\" by HolyKac, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3711,7 +3599,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Luis Fonsi - Despacito\" by memearsalad, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3741,7 +3628,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Mii Channel Music (Wii)\" by Jinnax, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3771,7 +3657,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"The Office Theme Song Loud\" by DisneyLandChurro, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3801,7 +3686,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Running in the 90s\" by roblox_user_92006068, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3831,7 +3715,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account 24Chubbies and was taken down."
     },
     {
@@ -3861,7 +3744,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "Roblox has replaced the upload title with \"(Removed for copyright)\". The original upload was made by the account TimeHalt and was taken down."
     },
     {
@@ -3891,7 +3773,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"The Rolling Stones - Paint It, Black\" by Newbie Audios, but Roblox answers a request for the file with \"Authentication required to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3921,7 +3802,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Gorillaz - Clint Eastwood\" by imsoawesomeandhot, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3951,7 +3831,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"BTS - Dynamite\" by Be Strong, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -3981,7 +3860,6 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"Sadness and Sorrow- Naruto OST\" by Rikudobito, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     },
     {
@@ -4011,11 +3889,10 @@
         }
       ],
       "confidence": "confirmed",
-      "needs_human": false,
       "notes": "The upload still exists as \"The Notorious B.I.G. - Big Poppa\" by No Limit Recordz, but Roblox answers a request for the file with \"User is not authorized to access Asset.\". It is private, so a boombox in someone else's experience cannot load it."
     }
   ],
-  "unverified_summary": "Nothing here has been tested inside a live boombox, because a boombox belongs to whichever experience you are standing in and any experience can block audio its owner does not own. Three rows sit at Unverified for a harder reason: Roblox still lists them free in the Creator Store, but its delivery endpoint refuses the audio file to a request with no session behind it, so public playback cannot be proved from outside a game. Release dates, chart positions and the identity of cover versions are not recorded here at all, because Roblox does not publish them and no other source can be checked against the asset itself.",
+  "unverified_summary": "Nothing here has been tested inside a live boombox, because a boombox belongs to whichever experience you are standing in and any experience can block audio its owner does not own. Three rows are listed as awaiting editor verification for a harder reason: Roblox still lists them free in the Creator Store, but its delivery endpoint refuses the audio file to a request with no session behind it, so public playback cannot be proved from outside a game. Release dates, chart positions and the identity of cover versions are not recorded here at all, because Roblox does not publish them and no other source can be checked against the asset itself.",
   "disagreements": [
     {
       "item": "How many published song IDs still resolve",
@@ -4039,7 +3916,7 @@
       "item": "Whether Raining Tacos at 142376088 is publicly playable",
       "source_a": "Every list sampled presents it as a working code, and it is the single most repeated Roblox music code in circulation",
       "source_b": "Roblox still lists it free in the Creator Store, but its delivery endpoint answers an unauthenticated request with \"Authentication required to access Asset\"",
-      "confirmed": "Not resolvable from outside a session, so the row is held at Unverified rather than being asserted either way."
+      "confirmed": "Not resolvable from outside a session, so the row is listed as awaiting editor verification rather than being asserted either way."
     }
   ],
   "fakes": [

@@ -17,7 +17,9 @@ win and this prompt is wrong.
 The first commit of Step 1a has landed: the build accepts the v2 shape, and every page
 routed from now on is authored to it. Pages written before it keep their v1 fields; the
 build still reads them, and those typed fields are that page's as-published baseline.
-Nothing is ever held back.
+Nothing is ever held back. Its second commit removed the timers: no state changes
+because time passed; the states are ★ Verified, Listed · awaiting editor verification,
+Active · as published (a baseline never assigned to new content) and Expired.
 
 ---
 
@@ -62,12 +64,14 @@ Front matter (no other keys): `title` (under 65 characters, no month), `slug`,
 renderer; artwork is registered by slug in `src/data/article-images.ts`).
 
 Dataset, required at the top: `subject`, `slug`, `entity_id`, `entity_url`,
-`developer`, `permalink`, `official_sources[]` (source-register ids; a source the
-register lacks is added to the register as `official-page`, `app-store` or
-`help-centre` before the page ships, never carried as a URL here), `tables{}`,
-`rows[]`, `disagreements[]`, `fakes[]`, `next_change`. Optional:
-`unverified_summary` (only when a row is genuinely in conflict or unverifiable),
-`reader_confirmations` (true | false).
+`developer`, `permalink`, `official_sources[]` of `{ type, url, note }`, the
+publisher's own channels (this stays a URL until the register in
+`src/content/source-register.json` gains `official-page`, `app-store` and
+`help-centre` kinds and the loader resolves ids, the sequence
+`docs/adr/0003` sets out), `tables{}`, `rows[]`, `disagreements[]`, `fakes[]`,
+`next_change`. Optional: `unverified_summary` (only when a row is genuinely in
+conflict or unverifiable), `reader_confirmations` (true | false), and
+`changes[]` of `{ at, what }` (only real changes; omit on a new page).
 
 Each table declares `caption`, `columns` (never Status or Last checked; those are
 appended from the ledger), optional `classification_column`, and `kind`. Each row
@@ -79,10 +83,11 @@ when the name may be corrected later), `classification`, `case_sensitive`,
 
 Not part of the row shape, and ignored for display if supplied (reported to the
 editor queue, never a reason to reject): `status`, `last_verified_at`, `confidence`,
-`needs_human`, `ended_at` — a row ends only by an `editor-retired` event or a link's
+`needs_human`, `ended_at`. A row ends only by an `editor-retired` event or a link's <!-- retired-vocabulary: allow, names the field only to say it is not typed -->
 `expires_at`. Not part of the dataset shape, likewise ignored: `checked_at`,
-`content_changed_at`, `recheck_cadence`, `changes`. The build derives every one of
-them from the ledger.
+`content_changed_at`, `recheck_cadence`. The build derives every one of them from <!-- retired-vocabulary: allow, names the field only to say it is not typed -->
+the ledger. `changes[]` is different: it is optional, it is not a claim, and the
+build renders it through `{{changelog}}`.
 
 The three sections and what they accept:
 
@@ -93,7 +98,7 @@ The three sections and what they accept:
 | blog | `/blog/<slug>/` | `code` | on by default | code lists, how-to-redeem pieces, anything that would once have been a codes article |
 
 Prose rules the build enforces: no counts, totals, dates or relative times in prose,
-tokens instead — `{{totalCount}}`, `{{activeCount}}` (live rows), `{{verifiedCount}}`
+tokens instead — `{{totalCount}}`, `{{activeCount}}` (the as-published baseline, zero on a new page), `{{verifiedCount}}`
 (starred rows), `{{listedCount}}` (rows in the Listed state), `{{expiredCount}}`
 (retired and TTL-expired rows), `{{checkedAt}}` and `{{lastChanged}}` (which read
 "awaiting editor verification" on a new page with no editor event; pages that
@@ -103,13 +108,15 @@ predate the ledger keep their baseline date), `{{subject}}`, `{{developer}}`,
 `not-status=` and `classification=` filters (status values are `verified`, `active`
 for the as-published baseline, `listed` and `expired`), `{{disagreements}}`,
 `{{fakes}}`, `{{changelog}}`,
-`{{officialSources}}`, `{{history}}` — every one resolved from the ledger or the
-dataset, never from a typed value. First paragraph an Answer Block of 40 to 55 words;
+`{{officialSources}}`. Every one is resolved from the ledger or the dataset, never
+from a typed value; there is no `{{history}}` token until the ledger supplies one.
+First paragraph an Answer Block of 40 to 55 words;
 second paragraph the Disambiguation Line containing "is not" and `{{entityId}}`, a
 six-digit-or-longer number, or an https URL; `{{changelog}}` and `{{recheckCadence}}`
 present; a "could not verify" section required when the dataset declares any
-`disagreements[]` entry or an `unverified_summary`, or when a row is under recheck
-after a reader flag, and absent otherwise; 3 to 8 internal directory links with
+`disagreements[]` entry or an `unverified_summary`, and absent otherwise (a reader
+flag putting a row under recheck is a Step 2 trigger, not implemented today, and
+`check:content` does not look for it); 3 to 8 internal directory links with
 descriptive anchors; at most four consecutive paragraphs; zero em-dashes and
 en-dashes. The Answer Block for a page with no starred row says "no row is starred
 yet", never "0 active".
@@ -133,7 +140,7 @@ optional `schemaType` (Article | CollectionPage | WebPage), `title`, `heading`,
 `sections[]` (may be empty when the body is markdown), optional `faq[]` of
 `{question, answer}`, `sources[]` and `related[]` of `{label, href, description?}`.
 Legal pages only: `effectiveAt`, a fact an author can know. Not part of the object,
-and ignored if supplied (reported to the editor queue): `reviewedAt`, `reviewLabel` —
+and ignored if supplied (reported to the editor queue): `reviewedAt`, `reviewLabel` — <!-- retired-vocabulary: allow, names the fields only to say they are not typed -->
 a review is an event, made from the control page or break-glass in the ledger file. The page never receives a star and never shows
 hearts; it gets a published line, a reviewed line once a real review exists, a
 page-level history and a report control.
@@ -195,8 +202,12 @@ Route D (blog); a brief with no table at all is never Route D.
   and query, name it and require one canonical URL per game-and-query.
 - **Operational page exists?** Check `operations.json` for the game. It changes
   rule 1 and the aliasing note in rule 3.
-- **Sources in the register?** Every `official_sources` entry must resolve to a
-  register id; list any that must be added first under `blockers`.
+- **Sources in the register?** Today an `official_sources` entry is
+  `{ type, url, note }` and the register holds only platform channels, so nothing
+  resolves to a register id yet and a missing register entry is not a blocker.
+  Note under `notes` any official page, app store or help-centre source the
+  register should gain once it takes those kinds; the check becomes a blocker
+  when the loader resolves ids (`docs/adr/0003`).
 - **Section owner.** The byline is the section's owner, not the brief's author.
 - **Live links only.** Internal links must be live paths from the route table or
   pages in the same batch.

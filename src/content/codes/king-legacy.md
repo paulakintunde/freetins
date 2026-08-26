@@ -8,7 +8,7 @@ focus_keyword: "king legacy codes"
 
 The current King Legacy list is short enough to try in a few minutes. Start with the two stat-reset entries if you need to rebuild a character, then claim the experience boosts before a play session. The dragon-color refund has an eligibility condition and is not a general 50-Gem giveaway for every account.
 
-Every live-looking row above is labelled **source-reported**. Two current references agreed on the five entries during the 24 August 2026 review, but no Freetins editor recorded a fresh in-game redemption. The evidence remains **community-reported** because the records do not link the individual strings to a publisher announcement.
+Every live row above is listed as **awaiting editor verification**. Two current references agreed on the five entries during the 24 August 2026 review, but no Freetins editor has redeemed one in game, so none is marked Verified. The evidence remains **community-reported** because the records do not link the individual strings to a publisher announcement.
 
 ## How to redeem King Legacy codes
 
@@ -36,7 +36,7 @@ The relevant icon has changed between interface versions, which is why the route
 
 **The code was already claimed.** Most King Legacy codes are single-use per Roblox account.
 
-**The source state changed.** The developer can retire a code without publishing an expiry date. Check the absolute review timestamp and the row's evidence state rather than relying on a page title that only names a month.
+**The source state changed.** The developer can retire a code without publishing an expiry date. Check the row's state and the date beside it rather than relying on a page title that only names a month.
 
 **The game client is old.** Rejoin from the official experience page after an update so the client and server use the same interface and redemption rules.
 
@@ -48,9 +48,9 @@ This distinction matters because old King Legacy lists often combine every kind 
 
 ## How this page is maintained
 
-The visible table is built from structured content records rather than copied HTML. Each code has a reward, source URL and review event. A successful editor redemption can promote a row to **Verified active**. A current source review produces **Source-reported**. Failed and retired strings remain visible in the expired archive so they are not accidentally republished as new.
+The visible table is built from structured content records rather than copied HTML. Each code has a reward, a source URL and a state. An editor redeeming it in game marks it **Verified**; until then it is listed as **awaiting editor verification**. Failed and retired strings remain visible in the expired archive so they are not accidentally republished as new.
 
-The page does not use a simulated “checked a few minutes ago” stamp. It prints the stored review time and automatically marks the state **Needs recheck** after its freshness window expires. That is why the number and state can change without rewriting this article copy.
+The page does not use a simulated “checked a few minutes ago” stamp, and no state changes because time has passed. The date beside a row belongs to the event that produced it, and a row with no recorded event says so. That is why the number and state can change without rewriting this article copy.
 
 ## Frequently asked questions
 
@@ -70,9 +70,9 @@ The current records contain stat resets, not a Devil Fruit reset. Do not assume 
 
 It is reported as an eligibility-based refund for certain original dragon-color purchases. Accounts outside that condition may receive no payout.
 
-### Can a source-reported code still fail?
+### Can a listed code still fail?
 
-Yes. It can expire after the source check, be restricted to certain accounts, or already have been used. Source-reported means the cited references listed it at the recorded time; it is not an in-game guarantee.
+Yes. It can expire after it was seen on a source, be restricted to certain accounts, or already have been used. Awaiting editor verification means the cited references listed it and nobody at Freetins has redeemed it; it is not an in-game guarantee.
 
 ### Where are retired King Legacy codes kept?
 

@@ -13,7 +13,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Loader } from 'astro/loaders';
-import { resolveDisplayStatus, countRows, validateDataset } from './dataset.ts';
+import { countStates, validateDataset } from './dataset.ts';
 import { interpolate } from './interpolate.ts';
 import { parseFrontmatter } from './frontmatter.ts';
 import { runProseChecks } from './prose-qa.ts';
@@ -49,6 +49,7 @@ export const datasetCollection = (options: DatasetCollectionOptions): Loader => 
     }
 
     const problems: string[] = [];
+    // Reaches only a link row's TTL; no state or count on this surface reads it.
     const now = Date.now();
 
     for (const file of files) {
@@ -84,7 +85,6 @@ export const datasetCollection = (options: DatasetCollectionOptions): Loader => 
 
       if (!frontmatter) continue;
 
-      const rows = resolveDisplayStatus(dataset.rows, now);
       const rendered = await renderMarkdown(interpolated);
 
       store.set({
@@ -94,7 +94,7 @@ export const datasetCollection = (options: DatasetCollectionOptions): Loader => 
           ...frontmatter,
           section: options.section,
           dataset,
-          counts: countRows(rows),
+          counts: countStates(dataset.rows, now, dataset.tables),
         },
         body: interpolated,
         rendered,

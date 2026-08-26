@@ -9,10 +9,10 @@ reviewer checks that no script can.
 |---|---|---|
 | Typecheck | `pnpm typecheck` | Every `.ts` and `.astro` file type-checks under `astro check`. |
 | Lint | `pnpm lint` | The same, failing on warnings. |
-| Validate operational content | `pnpm check:data` | `src/content/operations.json` passes `validateOperations`: unique ids, HTTPS sources, declared publisher channels behind every publisher citation, the reader-cannot-accept rule, and — from Step 1b — the event vocabulary and the editors registry. Also the two checks the validator lacks: no relative "ago" strings, no `example.com`. |
-| Run unit tests | `pnpm test` | `test/operations.test.mjs` (the validator and the index gate), `test/dataset-collection.test.mjs` (front matter, the dataset loader, tokens, prose checks), `test/dataset-routes.test.mjs`, `test/interlinks.test.mjs`, `test/search.test.mjs`, `test/gone.test.mjs`, `test/extract-codes.test.mjs` (the collector's scorer, offline), and `test/content-template.test.mjs` (both writer templates pass every check a page faces). These ran nowhere before this step existed. |
-| Vet dataset pages | `pnpm check:content --strict` | Every page under `src/content/{guides,daily,blog}` passes the checks the Astro loader runs (including the 155-character cap on `description`), and every internal link resolves to a page that has shipped. |
-| Report retired vocabulary | `pnpm check:vocabulary` | Report-only: lists every file still naming a term the Confirmation Ledger retires. It becomes `--strict` in the Step 1a change that retires those terms, and not before — until then the hits are expected. |
+| Validate operational content | `pnpm check:data` | `src/content/operations.json` passes `validateOperations`: unique ids, HTTPS sources, declared publisher channels behind every publisher citation, the reader-cannot-accept rule, a positive `recheckTargetDays` on every game, and — from Step 1b — the event vocabulary and the editors registry. Also the two checks the validator lacks: no relative "ago" strings, no `example.com`. Prints, as an advisory that never fails, the planned games whose live entries still lack a game link or two redeem steps (queue warnings) and the number of importer events read as the baseline. |
+| Run unit tests | `pnpm test` | `test/operations.test.mjs` (the validator, `resolveState` and the content-only index gate: a page with one live entry indexes, an empty or all-expired page does not, and no verification state opens or closes it), `test/dataset-collection.test.mjs` (front matter, the dataset loader, the four display states, which are never time-dependent: the as-published baseline is frozen at `CUTOVER_AT`, and the only clock input is a link row's own `expires_at`; tokens and their v1 aliases; prose checks), `test/dataset-routes.test.mjs`, `test/interlinks.test.mjs`, `test/search.test.mjs`, `test/gone.test.mjs`, `test/extract-codes.test.mjs` (the collector's scorer, offline), `test/content-template.test.mjs` (both writer templates are in the v2 shape and pass every check a page faces), and `test/meta-description.test.mjs` (`clampDescription` and `datasetMetaDescription`: the 155-character cap that `check:content` and the loader enforce, and the description, summary, title fallback order). These ran nowhere before this step existed. |
+| Vet dataset pages | `pnpm check:content --strict` | Every page under `src/content/{guides,daily,blog}` passes the checks the Astro loader runs (including the 155-character cap on `description`), and every internal link resolves to a page that has shipped. Prints each page's state counts (verified, active, listed, expired) and, as an advisory that never fails, the number of rows carrying typed claims that the build reads as the as-published baseline: the interim editor queue of `docs/adr/0003`. A `needs_human` or `recheck_cadence` on an incoming page is listed in that advisory block as a typed claim to confirm and is never a reason to fail the page (`docs/adr/0004` §5). <!-- retired-vocabulary: allow, names the fields only to say they are listed, never fatal --> |
+| Check retired vocabulary | `pnpm check:vocabulary --strict` | No scanned file outside the allow list (`docs/adr/`, `docs/migrations/`, the v1 writer contract and the script itself) names a term in `RETIRED`, the set Step 1a retired. The scan covers `README.md`, `CLAUDE.md`, `package.json`, `astro.config.mjs`, `tsconfig.json`, `wrangler.toml`, `.github/`, `docs/`, `verify/`, `public/` (including the extensionless `_headers` and `_redirects`), `src/`, `scripts/` and `test/`; only `node_modules`, `dist`, `.astro`, `public/og` and `src/assets` are skipped. Terms in `SCHEDULED` (the article review fields, retiring in Step 1b) are reported and never fatal, so the report shows them before the PR that retires them. Two exemptions, each stated in the script. First, a line carrying the marker `retired-vocabulary: allow, <reason>`: the reason after the comma is mandatory (a bare marker is not a marker), and it is honoured only in paths that never render to a reader (`docs/`, `scripts/`, `test/`, `src/lib/`, `README.md`, `.github/`); anywhere else, prose and templates included, the marker is ignored and the term counts. Second, a retired field in key position of a data file (`src/data/games/*.json`, `src/data/articles/*.ts`, and the dataset files `src/data/{guides,daily,blog}/*.json`), where it is the baseline the build reads or a typed claim `check:content` lists (`docs/adr/0004` §3 and §5): key position means the term starts the line or follows `{` or `,` and is followed by a colon, and only those key matches are subtracted, so the same term in the value of that line still counts. The dataset files are exempt in key position so that a v1-shaped incoming page is never bounced by this guard. |
 | Build | `pnpm build` | The site builds; the dataset loader re-runs every content check; the sitemap is generated. |
 | Crawl internal routes | `pnpm check:routes` | Every internal link in `dist/` resolves, no noindex page is in the sitemap and no indexable page is missing from it, no prototype route leaked, and the on-demand routes in `src/data/route-rendering.json` are Worker-only. From Step 2c this step also serves the flag-on build and fetches the server-rendered families and `sitemap-games.xml`. |
 
@@ -29,17 +29,31 @@ serve-and-fetch pass above (Step 2c).
 - **Nothing gates on verification.** No new `noindex`, robots directive, sitemap
   exclusion or hidden state that depends on whether an editor has acted
   (`docs/adr/0004-every-article-gets-a-pass.md`).
+- **No state changes because time passed.** No new timer, window or age rule on any
+  display state; `recheckTargetDays` orders the editor queue and is never a state
+  input. A link row's own `expires_at` is the one clock input.
 - **No new typed verification claim.** A new dataset row or article carries no field
   that asserts a check happened (`docs/adr/0003-no-hand-typed-verification-claims.md`).
-  The vocabulary check will report it; the reviewer confirms it.
+  `check:content` reports it to the editor queue as typed claims to confirm and never
+  fails on it (`docs/adr/0004` §5); the vocabulary check exempts a retired field in key
+  position of a data file, the incoming dataset files included, for the same reason. The
+  reviewer confirms the claim is not displayed.
 - **The build ran locally** for anything touching pages, the loader or the config —
   `check:routes` only means something against a fresh `dist/`.
 
 ## Running locally
 
 ```
-pnpm typecheck && pnpm lint && pnpm check:data && pnpm test && pnpm check:content --strict && pnpm check:vocabulary
+pnpm typecheck && pnpm lint && pnpm check:data && pnpm test && pnpm check:content --strict && pnpm check:vocabulary --strict
 pnpm build && pnpm check:routes
 ```
 
 The first line takes about two minutes; the build a few more.
+
+## The cutover proof
+
+`pnpm snapshot:states` writes every operational entry's and dataset row's displayed state and
+every page's indexability to JSON; `pnpm report:cutover before.json after.json` joins two such
+snapshots to the typed data and writes `docs/migrations/2026-08-cutover-states.md`, exiting 1 on
+any row that moved outside the mapping docs/adr/0004 allows or any page that lost its index
+entry. Run both around any change that touches states or the gate.

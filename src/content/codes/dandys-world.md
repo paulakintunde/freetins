@@ -25,7 +25,7 @@ If you cannot find the button, check the settings cog in the bottom right, since
 
 **It is a retired event code.** Seasonal codes here do not come back, and several lists still carry them as live.
 
-**You are chasing a cosmetic code with conflicting reports.** One current entry is listed as working by two sources and as expired by a third. Freetins shows it as Unverified rather than promising a skin that may not arrive.
+**You are chasing a cosmetic code with conflicting reports.** One current entry is listed as working by two sources and as expired by a third. Freetins lists it as awaiting editor verification rather than promising a skin that may not arrive.
 
 ## When do new Dandy's World codes come out?
 

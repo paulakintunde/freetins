@@ -1,7 +1,7 @@
 /**
  * Orientation copy for the section hubs.
  *
- * The hubs were 107–204 word link lists targeting the site's most competitive head
+ * The hubs were 107 to 204 word link lists targeting the site's most competitive head
  * terms, with no explanation of what belongs in the section or how anything gets on
  * the list. Each entry below answers three questions a reader arriving cold actually
  * has: what is this section, how does something get in, and how should I read a row.
@@ -18,23 +18,23 @@ export interface HubIntro {
 export const hubIntros: Record<string, HubIntro> = {
   browse: {
     summary:
-      'Redeemable code strings for live games, each carrying the state of its most recent check rather than the date it was last copied.',
+      'Redeemable code strings for live games, each carrying its state: verified by an editor, listed and awaiting one, or expired.',
     paragraphs: [
       'This section covers codes you type into a game to claim a reward: currency, spins, cosmetics, boosts. It does not cover built-in cheat commands, which live under Cheats, or reward links you click rather than type, which live under Daily links.',
-      'Every game page lists its codes with an evidence state attached to each one. That state is calculated from a verification log, so a page cannot present a code as current simply because nobody has edited it recently. When a game has nothing that currently passes a check, its page says so instead of padding the list with dead strings.',
+      'Every game page lists its codes with a state attached to each one. That state comes from the page\'s own record of who did what and when, so a page cannot present a code as verified because someone typed that it was. When no editor has tested a game\'s codes yet, every row says so and stays on the page in full.',
     ],
     criteria: [
       {
         heading: 'How a game gets a page',
-        body: 'It needs at least one recorded code with a reward, a redemption path confirmed against the game itself, and a verification event. A game with no published entries does not get a route, which is why the catalogue is smaller than the number of games we track.',
+        body: 'It needs at least one live code on record. A game with no entries has no page, which is why the catalogue is smaller than the number of games we track. Missing redemption steps go on the editor\'s list; they never keep a page out.',
       },
       {
         heading: 'How to read a row',
-        body: 'Verified means an editor redeemed the code and it worked. Source-reported means a publisher post confirms it but nobody redeemed it. Community-reported means no publisher post has been found, whatever other sites claim. Expired codes stay on the page, collapsed, so a code you find elsewhere can be identified as already dead.',
+        body: 'Verified means an editor redeemed the code and it worked. Listed · awaiting editor verification means the code is on record and nobody at Freetins has tested it yet; its evidence line says whether a publisher post or community reporting backs it. Expired codes stay on the page, collapsed, so a code you find elsewhere can be identified as already dead.',
       },
       {
-        heading: 'What the active count means',
-        body: 'Active counts only codes whose most recent check passed and has not aged out of that game freshness window. Stale and never-checked codes are excluded, so an active count of zero on a page listing a dozen codes is accurate, not a bug.',
+        heading: 'What the counts mean',
+        body: 'Verified counts codes an editor has tested. Listed counts codes on record that nobody has tested yet. Neither number changes because time has passed: a code leaves the live list only when an editor retires it or its published expiry passes, and a verified count of zero on a page listing a dozen codes means no editor has reached them, not that they are dead.',
       },
     ],
   },
@@ -95,25 +95,25 @@ export const hubIntros: Record<string, HubIntro> = {
     criteria: [
       {
         heading: 'Checked against first-party material',
-        body: 'Platform behaviour is confirmed against the publisher or platform holder own support documentation and store listings, not against other guides. Where a support page has changed, the guide records when it was last read.',
+        body: 'Platform behaviour is confirmed against the publisher or platform holder own support documentation and store listings, not against other guides.',
       },
       {
         heading: 'The answer comes first',
         body: 'Every guide opens with the direct answer before the explanation. If the answer is no, the first line says no.',
       },
       {
-        heading: 'Re-checked when the game ships',
-        body: 'A guide whose game has published an update is queued for re-checking, because menu paths and feature availability are the details updates break most often.',
+        heading: 'When a game updates',
+        body: 'A game update is a reason for an editor to look again, because menu paths and feature availability are the details updates break most often. When a recheck is made it is recorded on the page.',
       },
     ],
   },
 
   az: {
     summary:
-      'Every game with a published Freetins page, with its current active count so you can see what is worth opening.',
+      'Every game with a published Freetins page, with the number of live entries on it so you can see what is worth opening.',
     paragraphs: [
-      'This directory lists games that have a page, not games we intend to cover. A game appears here once it has published entries and a recorded check; there is no placeholder row for a game still being prepared, because a directory full of empty promises is not a directory.',
-      'The active count beside each game is the number of entries that currently pass a check and are still inside that game freshness window. It is recalculated on every build from the verification log. A game showing zero active entries still has a page worth reading, because "nothing works right now" is the correct answer to the question that brought you here, and the page shows when each code was last checked and rejected.',
+      'This directory lists games that have a page, not games we intend to cover. A game appears here once it has at least one entry on record; there is no placeholder row for a game still being prepared, because a directory full of empty promises is not a directory.',
+      'The count beside each game is the number of live entries on its page, counted from the page\'s own record on every build. A game showing zero still has a page worth reading, because "nothing works right now" is the correct answer to the question that brought you here, and the page shows when each code was retired and what it paid.',
     ],
     criteria: [
       {
@@ -129,15 +129,15 @@ export const hubIntros: Record<string, HubIntro> = {
 
   daily: {
     summary:
-      'Reward links you click rather than codes you type, with the check time on every link.',
+      'Reward links you click rather than codes you type, each with the date it was listed and, once an editor has opened it, the date of that check.',
     paragraphs: [
-      'Daily reward links are the click-to-claim variety: a publisher posts a URL, it grants a reward once per account, and it usually expires within a day or two. They behave differently from codes and are kept separate because the failure mode differs — a dead link silently does nothing, where a dead code at least tells you it was rejected.',
-      'Links here carry the same evidence rules as codes. A link is only presented as claimable if its most recent check passed and has not aged out. Guides in this section explain how a game reward system works and where its publisher posts, which stays useful even when individual links have rotated.',
+      'Daily reward links are the click-to-claim variety: a publisher posts a URL, it grants a reward once per account, and it usually expires within a day or two. They behave differently from codes and are kept separate because the failure mode differs: a dead link silently does nothing, where a dead code at least tells you it was rejected.',
+      'Links here carry the same rules as codes. A link is listed the moment it is found on a publisher channel and stays live until its published expiry passes or an editor retires it. Until an editor has opened it, it is shown as awaiting editor verification, never as tested. Guides in this section explain how a game reward system works and where its publisher posts, which stays useful even when individual links have rotated.',
     ],
     criteria: [
       {
         heading: 'Links are opened, not assumed',
-        body: 'A check on a reward link means the link was opened and the outcome recorded. A link nobody has opened is not presented as working.',
+        body: 'A check on a reward link means an editor opened it and recorded the outcome. A link nobody has opened is listed as awaiting editor verification, never as verified.',
       },
       {
         heading: 'No redirect wrappers',
@@ -156,15 +156,15 @@ export const hubIntros: Record<string, HubIntro> = {
     criteria: [
       {
         heading: 'How a post gets published',
-        body: 'It needs a dataset with evidence on every row, at least one official source, a stated recheck cadence and a written account of what could not be verified. A post that cannot say where its facts came from does not ship.',
+        body: 'It needs a dataset with evidence on every row and at least one official source. Where sources disagree or something could not be verified, the page says so in its own section. A post that cannot say where its facts came from does not ship.',
       },
       {
         heading: 'How to read a status',
-        body: 'Only a row confirmed against a publisher channel displays as Active, and an active row drops back to Unverified once its last check ages out. A page showing no active rows is reporting an honest result, not a broken one.',
+        body: 'A row reads Verified once an editor has tested it, Active · as published if it was live when this site\'s record began and no editor has acted on it since, or Listed · awaiting editor verification when nobody has tested it yet. No state changes because time has passed; a row leaves the live list only when an editor retires it or its published expiry passes. A page with no verified row is reporting an honest result, not a broken one.',
       },
       {
         heading: 'Why dead entries stay',
-        body: 'A deleted row is indistinguishable from a row nobody ever checked. Keeping expired and removed entries in the table is what lets you identify a code you found elsewhere as already dead, and it is the clearest evidence the page is rechecked rather than left to rot.',
+        body: 'A deleted row is indistinguishable from a row nobody ever checked. Keeping expired and removed entries in the table is what lets you identify a code you found elsewhere as already dead, and it is the clearest evidence the page is maintained rather than left to rot.',
       },
     ],
   },

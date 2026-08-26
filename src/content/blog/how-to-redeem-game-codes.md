@@ -31,7 +31,7 @@ faq:
     a: No. Roblox publishes a support article stating that free currency and subscription generators do not exist and that these sites are scams. Any page asking for your username, your password or a payment to unlock a code is taking something from you rather than giving anything back. This site will never link one, whatever the reward on offer.
 ---
 
-This page records the exact redemption path for {{totalCount}} platforms and games, each one checked against the publisher's own support page. Every row shows where the box lives, the buttons you press in order, and any gate. Rows we could not confirm stay listed as Unverified.
+This page records the exact redemption path for {{totalCount}} platforms and games, each one taken from the publisher's own support page. Every row shows where the box lives, the buttons you press in order, and any gate. Rows no editor has confirmed stay listed as awaiting editor verification.
 
 This page explains the mechanics of redemption and is not a list of codes. The identifier it is built around is {{entityId}}, the single page where Roblox gift card, promo and toy codes are now entered, and every other row names its own publisher's destination.
 
@@ -70,7 +70,7 @@ Work down that table in order. The first four causes account for most failures a
 
 {{fakes}}
 
-The test is simple. Trace the code back to the channel the publisher actually posts on. If the trail stops at an aggregator, a compilation video or a comment, the code has no origin and probably never had one. [The evidence tiers behind a Confirmed label](/how-we-verify/) set out why agreement between three list sites still counts for nothing on its own.
+The test is simple. Trace the code back to the channel the publisher actually posts on. If the trail stops at an aggregator, a compilation video or a comment, the code has no origin and probably never had one. [The evidence rules behind a Verified label](/how-we-verify/) set out why agreement between three list sites still counts for nothing on its own.
 
 Generator sites deserve their own line. There is no mechanism by which a third party site can mint platform currency, and every one of them exists to take an account or a payment. Nothing on Freetins will ever point you at one.
 
@@ -78,7 +78,7 @@ Generator sites deserve their own line. There is no mechanism by which a third p
 
 {{table:paths|status=removed}}
 
-This is the failure mode that beats every competitor on this search. A guide describes a menu that was retired, the reader follows it, finds nothing, and concludes the code is dead. Both rows above were confirmed by following the redirect during this check rather than by reading somebody else's guide.
+This is the failure mode that beats every competitor on this search. A guide describes a menu that was retired, the reader follows it, finds nothing, and concludes the code is dead. Both rows above were recorded by following the redirect rather than by reading somebody else's guide.
 
 ## Where are new codes announced?
 
@@ -96,13 +96,13 @@ For live game codes rather than platform codes, the channels that matter are the
 
 {{unverifiedSummary}}
 
-Two of those gaps exist because the studios concerned publish no support documentation at all, which is a structural problem rather than a research failure. [How Freetins verifies every row](/how-we-verify/) explains why an outlet consensus stays at Reported until a publisher or an in game check backs it. The rows stay visible with an Unverified label rather than being hidden, because a hidden row and a wrong row look the same to a reader.
+Two of those gaps exist because the studios concerned publish no support documentation at all, which is a structural problem rather than a research failure. [How Freetins verifies every row](/how-we-verify/) explains why an outlet consensus stays listed until a publisher post or an editor's own check backs it. The rows stay visible, marked awaiting editor verification, rather than being hidden, because a hidden row and a wrong row look the same to a reader.
 
 ## Change log
 
 {{changelog}}
 
-## How often this page is rechecked
+## How rechecks are recorded
 
 {{recheckCadence}}
 

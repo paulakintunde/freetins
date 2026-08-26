@@ -192,3 +192,103 @@ Nothing else on these rows changed. Their typed `status`, `last_verified_at` and
 - BARNESNOBLEGAMEON19 (2026-08-25T08:00:00Z)
 - GAMESTOPBATPACK2019 (2026-08-25T08:00:00Z)
 - TARGETOWLPAL2019 (2026-08-25T08:00:00Z)
+
+
+# Cutover report: the states, the timers and the gate
+
+Second commit of Step 1a, 2026-08-26. The row-by-row proof is generated, not written:
+`pnpm snapshot:states` was run before and after the change (the two JSON files beside this
+report) and `pnpm report:cutover` joined them to the typed data and wrote
+`2026-08-cutover-states.md`. It found no violation: every row moved only along the mapping
+below and no page lost its index entry.
+
+## What every row displays now
+
+| Displayed before | Rows | Displayed after |
+|---|---|---|
+| Needs recheck (operational, timer had fired) | 66 | Listed · awaiting editor verification |
+| Unconfirmed (operational, no event) | 25 | Listed · awaiting editor verification |
+| Expired (operational, rejected at review) | 98 | Expired |
+| Active (dataset, confirmed within the old window) | 115 | Active · as published |
+| Unverified (dataset) | 152 | Listed · awaiting editor verification |
+| Expired (dataset) | 145 | Expired |
+| Removed (dataset) | 83 | Expired (the row keeps a `removed` baseline, still selectable by `status=removed` and counted by `{{removedCount}}` on the pages written to v1) |
+
+Nothing is ★ Verified: no editor event exists yet. The 164 manual-review events in
+`operations.json` are the importer's output and are read as the as-published baseline.
+Index: 14 operational pages indexable before and after (the 14 `published` games, on the
+bypass that Step 5 retires); 10 dataset pages indexed before and after; the sitemap is
+identical at 64 URLs.
+
+## The baseline is frozen, not computed from the clock
+
+A dataset row's baseline is what it displayed on cutover day under the old rule (a typed
+`active` row displayed Active only with `confidence: confirmed` and a `last_verified_at`
+within 14 days). That rule is evaluated against the constant `CUTOVER_AT`
+(2026-08-26T00:00:00Z) in `src/lib/dataset.ts`, never against the build clock: 115 rows carry
+a `last_verified_at` of 2026-08-25 and would otherwise have demoted on 2026-09-08 at the
+first build after that date. No state changes because time has passed. The single clock
+input left anywhere is a link row's own `expires_at`.
+
+## Settings migrated
+
+`verificationWindowHours` is renamed `recheckTargetDays` on all 58 games in
+`src/content/operations.json`: the 52 code games at 24 hours and the 6 daily-surface games at
+6 hours all become 1 day. The field is a target for the editor queue and is read by no
+state derivation. The settings events that record this change in the ledger are written
+when the ledger file lands (Step 1b), by the editor running that cutover, with the note
+"migrated from verificationWindowHours".
+
+## Fields no longer read
+
+`recheck_cadence` (page level) and `needs_human` (every row) were deleted from the ten
+dataset files and both templates: nothing displayed either, and the ten typed cadence
+sentences were schedule promises nobody performed. `{{recheckCadence}}` now renders the
+derived sentence on every page. `status`, `confidence`, `last_verified_at` and `ended_at`
+stay in the ten files as the as-published baseline. `src/data/games/*.json` are frozen
+importer inputs and were not touched.
+
+## Deleted
+
+`STALE_AFTER_DAYS`, `resolveDisplayStatus`, `countRows`, the `stale` and `reported` entry
+states, `isUsableState` (now `isLiveState`), `formatMedianAge`, the median-age and
+checked-in-the-last-hour figures, the dead `verify` route kind, every `data-relative-time`
+attribute, the three demotion tests, the two "published game needs a verification event"
+validator clauses, and the event synthesis in `scripts/build-operational-content.mjs`
+(which was not re-run).
+
+## The index gate
+
+`isIndexable` is content-only: `retired` hides, `published` still indexes (the bypass stays
+until Step 5), and every other page indexes the moment it has one live entry.
+`officialSourceUrl` and two `redeemSteps` left the gate and are printed by `pnpm check:data`
+as queue warnings. Known inconsistency, kept on purpose: the validator still requires that
+furniture on a `published` game, so a `planned` game can index on one live entry while
+flipping it to `published` without the furniture fails the build.
+
+## Copy
+
+Every reader-facing sentence that described the timer model was rewritten; the before and
+after of each is in `2026-08-cutover-copy-sweep.md`. `/how-we-verify/` was rewritten to
+the four states, the baseline, the apex rule, hearts and corrections; its `#evidence-states`
+anchor still lands on the states table.
+
+## Deferred to Step 1b
+
+`reviewLabel` and `reviewedAt` on the editorial articles (`src/data/articles/*.ts`,
+`EditorialArticle.astro`, `RouteScreen.astro`): the vocabulary check reports them and does
+not fail on them until that step moves them to the retired list. The typed `status`,
+`confidence` and `last_verified_at` on dataset rows and the 164 manual-review events become
+ledger sightings in Step 1b; until then they are read as the baseline described above.
+
+## Reviewed and left as they are
+
+Two findings from the adversarial review of this commit were recorded rather than fixed:
+
+- The code-page FAQ ("How many <game> codes are listed right now?") exists only in the
+  FAQPage JSON-LD and is not visible on the page. The pattern predates this commit; the
+  answer text was corrected here. Whether to render it visibly or drop the node is a
+  component decision for Step 1b, when the row markup is rebuilt.
+- Four files (src/pages/index.astro, src/data/authors.ts, src/layouts/partials/Footer.astro,
+  src/data/guides/grow-a-garden-recipes.json) carry CRLF endings on disk; .gitattributes
+  stores every text file as LF, so the committed blobs are unaffected.

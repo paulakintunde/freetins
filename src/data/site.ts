@@ -98,14 +98,15 @@ export const drawerLinks: SiteLink[] = [
 
 const preferredSearches = ['Grow a Garden', 'Monopoly GO', 'Blue Lock Rivals', 'Coin Master', "Sol's RNG"];
 const searchablePageNames = [...publishedGameCatalogue, ...publishedDailyLinkCatalogue]
-  .filter((game) => game.activeCount > 0)
+  .filter((game) => game.liveCount > 0)
   .map((game) => game.name);
 
 /**
- * Only advertise a term that resolves to a published page with something usable on
- * it. A curated name whose page is not live sends readers to an empty search; a game
- * whose codes have all expired sends them somewhere worse, because the page loads and
- * has nothing on it.
+ * Only advertise a term that resolves to a published page with something on it. A
+ * listed code is real content whether or not an editor has tested it yet, so
+ * promotion follows the live count, not the star count. A curated name whose page
+ * is not live sends readers to an empty search; a game whose codes have all expired
+ * sends them somewhere worse, because the page loads and has nothing on it.
  */
 export const hotSearches = [
   ...preferredSearches.filter((term) => searchablePageNames.includes(term)),

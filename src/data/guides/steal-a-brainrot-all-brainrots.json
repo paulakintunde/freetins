@@ -7,7 +7,6 @@
   "permalink": "/guides/steal-a-brainrot-all-brainrots/",
   "checked_at": "2026-08-25T09:00:00Z",
   "content_changed_at": "2026-08-25T09:00:00Z",
-  "recheck_cadence": "Rechecked after every Saturday content update, and again whenever the experience page posts a scheduled event.",
   "official_sources": [
     {
       "type": "official_page",
@@ -73,7 +72,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Highest recorded spawn weight on the Red Carpet."
     },
     {
@@ -107,7 +105,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -141,7 +138,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -175,7 +171,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -209,7 +204,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -243,7 +237,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -273,7 +266,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Went unobtainable when the seasonal fuse was replaced."
     },
     {
@@ -303,7 +295,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Event only. Named after the Grow a Garden developer."
     },
     {
@@ -337,7 +328,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -371,7 +361,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -401,7 +390,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -431,7 +419,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -465,7 +452,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -499,7 +485,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -533,7 +518,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -567,7 +551,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -601,7 +584,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -635,7 +617,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -665,7 +646,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -699,7 +679,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -729,7 +708,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -759,7 +737,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -789,7 +766,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -823,7 +799,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -857,7 +832,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -891,7 +865,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -925,7 +898,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -959,7 +931,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -993,7 +964,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1023,7 +993,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1057,7 +1026,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1091,7 +1059,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1125,7 +1092,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1159,7 +1125,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1189,7 +1154,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1219,7 +1183,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1249,7 +1212,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1283,7 +1245,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1313,7 +1274,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1343,7 +1303,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1373,7 +1332,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1407,7 +1365,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1437,7 +1394,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1467,7 +1423,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Earns as much as an entry level Legendary."
     },
     {
@@ -1497,7 +1452,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1527,7 +1481,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1557,7 +1510,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "The source page leaves the obtainability field blank; the roster index lists it as a carpet spawn."
     },
     {
@@ -1587,7 +1539,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1617,7 +1568,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1647,7 +1597,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1677,7 +1626,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1707,7 +1655,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1737,7 +1684,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1767,7 +1713,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1797,7 +1742,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1827,7 +1771,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1857,7 +1800,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1887,7 +1829,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1917,7 +1858,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1947,7 +1887,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -1977,7 +1916,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2007,7 +1945,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2037,7 +1974,6 @@
         }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "Its own page states 1.35K while the tier index groups it in a band topping out at 1.3K and one outlet reports 1,300."
     },
     {
@@ -2067,7 +2003,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2097,7 +2032,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2127,7 +2061,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2157,7 +2090,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2187,7 +2119,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2217,7 +2148,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2247,7 +2177,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Top of the Legendary tier by income."
     },
     {
@@ -2277,7 +2206,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Entry point of the Mythic tier by income."
     },
     {
@@ -2307,7 +2235,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2337,7 +2264,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2367,7 +2293,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2397,7 +2322,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2427,7 +2351,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2457,7 +2380,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2487,7 +2409,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2517,7 +2438,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2547,7 +2467,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2577,7 +2496,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2607,7 +2525,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2637,7 +2554,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2667,7 +2583,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2697,7 +2612,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2727,7 +2641,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2757,7 +2670,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Widely reported as the best Mythic; the recorded figures put four above it."
     },
     {
@@ -2787,7 +2699,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2817,7 +2728,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2847,7 +2757,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2877,7 +2786,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2907,7 +2815,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2937,7 +2844,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2967,7 +2873,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -2997,7 +2902,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3027,7 +2931,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3057,7 +2960,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3087,7 +2989,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3117,7 +3018,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3147,7 +3047,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3177,7 +3076,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "The source flags it as due to move up to Secret."
     },
     {
@@ -3207,7 +3105,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3237,7 +3134,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3267,7 +3163,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3297,7 +3192,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3327,7 +3221,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3357,7 +3250,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3387,7 +3279,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3417,7 +3308,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3447,7 +3337,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Top of the Mythic tier by income."
     },
     {
@@ -3477,7 +3366,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Buffed from 17.5K so it would still outearn the top Mythic."
     },
     {
@@ -3507,7 +3395,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3537,7 +3424,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3567,7 +3453,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Superseded rather than retired, and still held by players who got it."
     },
     {
@@ -3597,7 +3482,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3627,7 +3511,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3657,7 +3540,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3687,7 +3569,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3717,7 +3598,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3747,7 +3627,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Pulled over a copyright concern and replaced."
     },
     {
@@ -3777,7 +3656,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3807,7 +3685,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3837,7 +3714,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3871,7 +3747,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Added in the most recent update."
     },
     {
@@ -3901,7 +3776,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3931,7 +3805,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -3961,7 +3834,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Outearns the cheapest Secret."
     },
     {
@@ -3991,7 +3863,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Lowest income in the Secret tier and the boundary case against Brainrot God."
     },
     {
@@ -4021,7 +3892,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "The most common Secret, and still rare without server luck."
     },
     {
@@ -4051,7 +3921,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -4081,7 +3950,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -4111,7 +3979,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -4145,7 +4012,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Added in the most recent update."
     },
     {
@@ -4175,7 +4041,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -4205,7 +4070,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Started as a Rare, was pulled, and is recorded at Secret. Subject of a public licensing dispute."
     },
     {
@@ -4239,7 +4103,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Added in the most recent update."
     },
     {
@@ -4269,7 +4132,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -4303,7 +4165,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Added in the most recent update."
     },
     {
@@ -4333,7 +4194,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -4363,7 +4223,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -4393,7 +4252,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -4427,7 +4285,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Added in the most recent update."
     },
     {
@@ -4457,7 +4314,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Supply was capped by the developer rather than by spawn odds."
     },
     {
@@ -4487,7 +4343,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -4517,7 +4372,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -4547,7 +4401,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": ""
     },
     {
@@ -4581,7 +4434,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Added in the most recent update."
     },
     {
@@ -4615,7 +4467,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Added in the most recent update."
     },
     {
@@ -4645,7 +4496,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Highest income recorded below the OG tier."
     },
     {
@@ -4679,7 +4529,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Released only after a licensing agreement with the meme rights holder."
     },
     {
@@ -4713,7 +4562,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Released only after permission from the original meme creator."
     },
     {
@@ -4747,7 +4595,6 @@
         }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "Its own page records 600M while the rarity index records 550M. The only OG with no trait attached."
     },
     {
@@ -4781,7 +4628,6 @@
         }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "Income agrees across sources; the purchase cost does not."
     },
     {
@@ -4815,7 +4661,6 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "The first OG released and the most searched for rarest brainrot."
     },
     {
@@ -4849,11 +4694,10 @@
         }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Not present in the in game index, and untradeable unless the chain item itself changes hands."
     }
   ],
-  "unverified_summary": "Every row here is community documented rather than publisher confirmed. No developer channel publishes a roster, an income table or a spawn table, so no row qualifies as confirmed and every live row displays as Unverified. Income figures are the base rate before mutations and traits, which stack and can multiply a figure many times over. The Brainrot God and Secret tiers are recorded in part rather than in full, because those tiers are far larger than any published figure agrees on. Rows marked Removed are entries whose acquisition route has been retired or superseded; players who already hold them keep them.",
+  "unverified_summary": "Every row here is community documented rather than publisher confirmed. No developer channel publishes a roster, an income table or a spawn table, so no row is publisher confirmed and every live row is listed as awaiting editor verification. Income figures are the base rate before mutations and traits, which stack and can multiply a figure many times over. The Brainrot God and Secret tiers are recorded in part rather than in full, because those tiers are far larger than any published figure agrees on. Rows shown as Expired are entries whose acquisition route has been retired or superseded; players who already hold them keep them.",
   "disagreements": [
     {
       "item": "How many brainrots exist",

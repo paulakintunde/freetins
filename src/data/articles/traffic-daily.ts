@@ -33,6 +33,6 @@ export const doubleDownCasinoArticle: EditorialArticle = {
   ],
   related: [
     { label: 'Browse all daily links', href: '/daily/', description: 'Current reward pages by game.' },
-    { label: 'How Freetins verifies links', href: '/how-we-verify/', description: 'Check schedules and removal rules.' },
+    { label: 'How Freetins verifies links', href: '/how-we-verify/', description: 'What counts as a source, the three states and the as-published baseline, and what a heart does.' },
   ],
 };

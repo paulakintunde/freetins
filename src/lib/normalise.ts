@@ -6,12 +6,14 @@
  * cannot disagree about what a dataset file means.
  *
  * Two shapes are accepted, on purpose. Pages that predate the Confirmation
- * Ledger carry typed verification fields — status, last_verified_at,
- * confidence, checked_at and the rest — and those are still read, because
- * every existing page keeps the status it displays (docs/adr/0004). Pages
- * written after it carry none of them and supply evidence, added_at and
- * requirements instead (docs/adr/0003). Nothing here rejects either shape;
- * what a field means for display is decided downstream.
+ * Ledger carry typed verification fields: status, last_verified_at,
+ * confidence, checked_at and the rest. Those are still read as the
+ * as-published baseline, because every existing page keeps the status it
+ * displayed on cutover day (docs/adr/0004). Pages written after it carry none
+ * of them and supply evidence, added_at and requirements instead
+ * (docs/adr/0003). Nothing here rejects either shape; what a field means for
+ * display is decided downstream. A typed recheck promise and a per-row human
+ * flag are read by nothing and are not carried into the Dataset.
  */
 
 import type { Dataset, DatasetRow, DatasetTable } from './dataset.ts';
@@ -31,6 +33,19 @@ export const slugifyName = (value: string): string =>
  */
 export const derivedRowId = (slug: string, tableId: string, name: string): string =>
   `${slug}:${tableId}:${slugifyName(name)}`;
+
+/**
+ * The earliest row added_at a page carries, or '' when no row has a parseable
+ * one. Compared as instants, not as strings: an offset timestamp and a Z
+ * timestamp, or a date-only value beside a full one, do not sort by text. Lives
+ * here rather than beside the hub so it can be tested without Astro.
+ */
+export const earliestAddedAt = (rows: { addedAt?: string | null }[]): string => {
+  const values = rows
+    .map((row) => row.addedAt ?? '')
+    .filter((value) => value && !Number.isNaN(Date.parse(value)));
+  return values.reduce((earliest, value) => (Date.parse(value) < Date.parse(earliest) ? value : earliest), values[0] ?? '');
+};
 
 /**
  * Explicit rather than a deep key transform, because cell keys are column
@@ -71,7 +86,6 @@ export const normaliseDataset = (raw: any, slug: string): Dataset => {
       url: row.url ?? undefined,
       evidence: (row.evidence ?? []).map((item: any) => ({ tier: item.tier, url: item.url })),
       confidence: row.confidence ?? 'reported',
-      needsHuman: row.needs_human ?? false,
       notes: row.notes ?? '',
     };
   });
@@ -85,7 +99,6 @@ export const normaliseDataset = (raw: any, slug: string): Dataset => {
     permalink: raw.permalink ?? '',
     checkedAt: raw.checked_at ?? '',
     contentChangedAt: raw.content_changed_at ?? '',
-    recheckCadence: raw.recheck_cadence ?? '',
     readerConfirmations: typeof raw.reader_confirmations === 'boolean' ? raw.reader_confirmations : undefined,
     officialSources: (raw.official_sources ?? []).map((item: any) => ({
       type: item.type ?? 'official_page',

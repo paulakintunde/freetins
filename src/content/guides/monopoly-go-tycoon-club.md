@@ -34,7 +34,7 @@ faq:
 
 The {{subject}} is a **free, invitation-only loyalty programme that runs in a browser**, not inside the app. You cannot apply. {{developer}} sends the invite in game once your account clears a board level and a days-played threshold. Joining costs nothing. Most rewards inside it do not.
 
-The club is not a separate app, and it is not a code you paste anywhere: it is a signed-in area of the publisher's own website, attached to the same account you play MONOPOLY GO! on, App Store ID {{entityId}}. Of {{totalCount}} facts recorded on this page, {{confirmedCount}} are confirmed against a publisher source. Last verified {{checkedAt}}.
+The club is not a separate app, and it is not a code you paste anywhere: it is a signed-in area of the publisher's own website, attached to the same account you play MONOPOLY GO! on, App Store ID {{entityId}}. Of {{totalCount}} facts recorded on this page, {{activeCount}} stand as published, {{listedCount}} are listed awaiting editor verification and {{expiredCount}} are kept as Expired. The record stands as published {{checkedAt}}.
 
 ## What the Tycoon Club actually is
 
@@ -123,13 +123,13 @@ If you are chasing dice rather than bundles, the [Monopoly GO free dice link arc
 
 {{unverifiedSummary}}
 
-Every row above carries its own evidence tier rather than a blanket claim of accuracy, and [the tier system behind those labels](/how-we-verify/) explains why a benefit three outlets agree on still sits at Unverified here.
+Every row above carries its own evidence line rather than a blanket claim of accuracy, and [the rules behind those labels](/how-we-verify/) explain why a benefit three outlets agree on is still listed as awaiting editor verification here.
 
 ## Change log
 
 {{changelog}}
 
-## How often this page is rechecked
+## How rechecks are recorded
 
 {{recheckCadence}}
 

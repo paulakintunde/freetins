@@ -34,7 +34,7 @@ faq:
     a: A community poll on the official Discord server decides the pair, and the result circulates before the event opens. That makes the pair a strong signal and still not a confirmation, because Scopely can and does depart from it. The expected row on this page names the pair currently circulating and marks it as a prediction rather than a listing.
 ---
 
-Scopely has not announced the next Golden Blitz and publishes no calendar for it. The table below records {{expiredCount}} past occurrences, each with the gold stickers it unlocked. Gaps between them run from 3 to 26 days, so the pattern is the only guide. Last verified {{checkedAt}}.
+Scopely has not announced the next Golden Blitz and publishes no calendar for it. The table below records {{expiredCount}} past occurrences, each with the gold stickers it unlocked. Gaps between them run from 3 to 26 days, so the pattern is the only guide. The record stands as published {{checkedAt}}.
 
 The Golden Blitz is run by {{developer}} inside the app listed under App Store ID {{entityId}}. It is not a redeem code, it is not the ordinary daily sticker trade allowance, and it is not a fixed calendar event you can plan a diary around.
 
@@ -103,13 +103,13 @@ Milestone rewards are the reliable pack source, and [Tycoon Club milestone rewar
 
 {{unverifiedSummary}}
 
-Nothing here reaches Confirmed, and the reason is structural rather than lazy: there is no publisher artefact to check against once a window shuts. [The evidence tiers behind every row](/how-we-verify/) explain why three sources agreeing still leaves a row at Reported when none of them is the publisher.
+Nothing here is Verified, and the reason is structural rather than lazy: there is no publisher artefact to check against once a window shuts. [The evidence rules behind every row](/how-we-verify/) explain why three sources agreeing still leaves a row listed as awaiting editor verification when none of them is the publisher.
 
 ## Change log
 
 {{changelog}}
 
-## How often this page is rechecked
+## How rechecks are recorded
 
 {{recheckCadence}}
 

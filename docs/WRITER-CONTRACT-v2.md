@@ -32,13 +32,14 @@ Two files per page. The slug is the same in both.
 
 `<section>` is `guides`, `daily` or `blog`. The permalink is `/<section>/<slug>/`.
 
-There is no third file. The `verify/<slug>-VERIFY.md` checklist of v1 is not
-produced and not read: a tester's result is recorded on the page as an event,
-not written up as a document.
+There is no third file. The `verify/` checklist file of v1 is not produced and
+not read: a tester's result is recorded on the page as an event, not written up
+as a document.
 
 Templates to copy: `docs/content-template/example.md` and `.json` (a guides
 roster page) and `docs/content-template/daily-example.md` and `.json` (a daily
-links page). Both pass every check except their placeholder sources.
+links page). Both are in the v2 shape: neither carries a field from the list in
+section 2 below. Both pass every check except their placeholder sources.
 
 ---
 
@@ -68,12 +69,17 @@ Snake case keys, as the templates show.
 
 ### Fields you do not type
 
-These exist on v1 pages and the build still reads them there. **A new page does
-not carry them.** They are claims about verification, and you are not the one
-verifying.
+Most of these exist on v1 pages, where the build reads them as that page's
+as-published baseline and never as a claim; the cadence sentence and the
+per-row human flag were removed from every page at cutover and nothing reads
+them. **A new page does not carry any of them.** They are claims about
+verification, and you are not the one verifying. If you supply them anyway the
+page is still accepted: they are ignored for display and printed by
+`pnpm check:content` as typed claims for the editor queue. When present they are
+validated for form only (a date must be ISO 8601 and not in the future), listed as
+typed claims, and never rejected: carrying them is not a reason to bounce a page.
 
-`checked_at`, `content_changed_at`, `recheck_cadence`, and on rows: `status`,
-`last_verified_at`, `confidence`, `needs_human`, `ended_at`.
+`checked_at`, `content_changed_at`, `recheck_cadence`, and on rows: `status`, `last_verified_at`, `confidence`, `needs_human`, `ended_at`. <!-- retired-vocabulary: allow, names the fields only to say they are not typed -->
 
 If you know a row has ended, say so in `notes` and keep the row: the editor
 retires it, and a retired row stays visible as Expired rather than vanishing.
@@ -138,32 +144,40 @@ Beyond the table above: at least one official source, at least one table, every
 row's table exists, every column has a cell, `name` equals the first column's
 cell, `added_at` is ISO and not in the future, evidence and `url` are https and
 not on a banned domain, `expires_at` is ISO when present, table `kind` is one of
-the three, row ids are unique. Nothing else.
+the three, row ids are unique, every `changes[].at` is ISO 8601 when `changes` is
+present, and a typed `id` is letters, digits and `: _ . / -`.
 
 ### What a row displays
 
 Every row you write renders as **Listed · awaiting editor verification** with
-"awaiting editor verification" in its Last checked column. When an editor tests
-it the row shows **Verified** and the date, without anyone editing the file.
-When it is retired it shows **Expired** and stays in the table. You cannot mark a
-row active, and you do not need to: a listed row is fully rendered, indexed and
-linked from the section hub.
+"not yet" in its Last checked column. When an editor tests it the row shows
+**★ Verified** and the date of that test, without anyone editing the file. When
+an editor retires it, or a link row passes its `expires_at`, it shows **Expired**
+and stays in the table. The fourth label, **Active · as published**, is the
+baseline carried by v1 rows that displayed Active on cutover day; no row written
+to this contract ever carries it. You cannot mark a row active, and you do not
+need to: a listed row is fully rendered, indexed and linked from the section hub,
+and no state on any page changes because time has passed.
 
 ---
 
 ## 3. Tokens
 
-Unchanged from v1 except for what three of them say on a new page.
+The names are v1's. What they count changed with the ledger: a state is never a
+typed value and never a function of the clock.
 
 ### Scalars
 
 | Token | Renders as |
 |---|---|
 | `{{totalCount}}` | Rows on the page |
-| `{{activeCount}}` | Rows an editor has verified and that are current. **Zero on a new page** until an editor acts, so do not build the Answer Block on it; build it on `{{totalCount}}` |
-| `{{unverifiedCount}}`, `{{expiredCount}}`, `{{removedCount}}`, `{{confirmedCount}}` | As named |
-| `{{checkedAt}}`, `{{lastChanged}}` | On a v1 page, the typed dates. On a new page, the words "awaiting editor verification". Do not write a sentence that assumes a date, such as "last verified {{checkedAt}}"; the daily template shows the alternative |
-| `{{recheckCadence}}`, `{{freshness}}` | On a v1 page, the typed sentence. On a new page, a sentence saying rechecks are recorded as editors make them |
+| `{{activeCount}}` | Rows carrying the Active · as published baseline: the state a v1 row displayed on cutover day. **Always zero on a page written to this contract**, so do not build the Answer Block on it; build it on `{{totalCount}}` |
+| `{{verifiedCount}}` | Rows an editor has starred. Zero until an editor acts; say "no row is starred yet", never "0 active" |
+| `{{listedCount}}` | Rows in the Listed state |
+| `{{expiredCount}}` | Rows an editor has retired, link rows past `expires_at`, and rows expired or removed in a v1 baseline |
+| `{{unverifiedCount}}`, `{{removedCount}}`, `{{confirmedCount}}` | Retired for new pages (docs/adr/0003) and kept only as aliases so v1 pages keep building: `{{unverifiedCount}}` equals `{{listedCount}}`, `{{removedCount}}` counts rows whose baseline was removed, `{{confirmedCount}}` counts rows typed `confidence: confirmed`. Do not write them |
+| `{{checkedAt}}`, `{{lastChanged}}` | On a v1 page, the typed dates, read as the baseline. On a new page, the words "awaiting editor verification". Do not write a sentence that assumes a date, such as "last verified {{checkedAt}}"; the daily template shows the alternative |
+| `{{recheckCadence}}`, `{{freshness}}` | Always the derived sentence, on every page: "Rechecks are recorded on this page as editors make them. A row whose Last checked column reads not yet has not been tested by an editor." It promises no schedule and no automatic downgrade, and nothing you type changes it |
 | `{{subject}}`, `{{developer}}`, `{{entityId}}`, `{{nextChangePattern}}`, `{{unverifiedSummary}}` | As named |
 
 ### Blocks
@@ -171,7 +185,7 @@ Unchanged from v1 except for what three of them say on a new page.
 | Token | Renders as |
 |---|---|
 | `{{table:<id>}}` | The table with Status and Last checked appended |
-| `{{table:<id>\|status=expired}}`, `\|not-status=...`, `\|classification=...` | Filtered views |
+| `{{table:<id>\|status=...}}`, `\|not-status=...`, `\|classification=...` | Filtered views. `status=` and `not-status=` take `verified`, `active` (the as-published baseline), `listed` and `expired`, comma-separated. `unverified` and `removed` are accepted only as aliases on v1 pages; do not write them |
 | `{{changelog}}` | Newest five changes, or "No changes recorded yet." |
 | `{{disagreements}}`, `{{fakes}}`, `{{officialSources}}` | As named |
 
@@ -238,8 +252,8 @@ happens.
 |---|---|---|
 | Files | prose, dataset, `verify/` checklist | prose, dataset |
 | Page dates | `checked_at`, `content_changed_at` typed | not typed; the ledger supplies them |
-| Freshness | `recheck_cadence` typed | not typed; a derived sentence renders |
-| Row status | `status`, `confidence`, `last_verified_at` typed | not typed; every row is listed awaiting editor verification |
+| Freshness | `recheck_cadence` typed, no longer read | not typed; the same derived sentence renders on every page <!-- retired-vocabulary: allow, names the v1 field --> |
+| Row status | `status`, `confidence`, `last_verified_at` typed, read as the as-published baseline | not typed; every row is listed awaiting editor verification until an editor acts |
 | Row date | `added_at` optional | `added_at` required |
 | Evidence | confirmed rows need two URLs including tier 0 or 1 | at least one URL; no tier rule |
 | "Could not verify" section | always required | required only when there is something unverified |

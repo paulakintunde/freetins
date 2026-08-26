@@ -7,7 +7,6 @@
   "permalink": "/daily/monopoly-go/",
   "checked_at": "2026-08-25T08:00:00Z",
   "content_changed_at": "2026-08-25T08:00:00Z",
-  "recheck_cadence": "Rechecked every weekday morning UK time against the official channels listed below, and rows are re-dated or moved to Expired at that check. No overnight or weekend recheck is promised, and any active row that goes 14 days without a check is downgraded automatically rather than left looking current.",
   "official_sources": [
     {
       "type": "official_page",
@@ -70,7 +69,6 @@
         { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Three independent outlets list this drop with the same reward and the same closing date. No publisher post could be observed directly, so it stays at Reported rather than Confirmed."
     },
     {
@@ -95,7 +93,6 @@
         { "tier": 2, "url": "https://beebom.com/monopoly-go-dice-links/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "A cosmetic drop, not a dice drop. Its window runs far longer than a normal link, which is why it is still listed while dice drops from the same period have closed."
     },
     {
@@ -120,7 +117,6 @@
         { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Kept in the table because its 3 day run is the clearest dated evidence anyone publishes for how long a dice link actually lasts."
     },
     {
@@ -143,7 +139,6 @@
         { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "One aggregator logs this drop and no independent outlet records it. A tier 3 source is never a basis for confirming a row, so it stays Unverified rather than being presented as fact."
     },
     {
@@ -166,7 +161,6 @@
         { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Single aggregator source with no independent corroboration, so the row is archived as Unverified."
     },
     {
@@ -189,7 +183,6 @@
         { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Single aggregator source with no independent corroboration, so the row is archived as Unverified."
     },
     {
@@ -212,11 +205,10 @@
         { "tier": 3, "url": "https://simplegameguide.com/monopoly-go-free-dice-links/" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Single aggregator source. It matches the weekend pattern of a larger drop, but a pattern is not a source, so it stays Unverified."
     }
   ],
-  "unverified_summary": "No row here carries a publisher source we could observe ourselves. Scopely posts dice links to Instagram Stories, Facebook and Discord, none of which can be reopened or archived after a drop closes, so every row rests on outlet reporting and none reaches Confirmed. Four archived drops are logged by a single aggregator with no independent corroboration and stay at Unverified for that reason. Scopely publishes no expiry window of its own, so the roughly 3 day figure comes from dated outlet evidence rather than from the publisher.",
+  "unverified_summary": "No row here carries a publisher source we could observe ourselves. Scopely posts dice links to Instagram Stories, Facebook and Discord, none of which can be reopened or archived after a drop closes, so every row rests on outlet reporting and none is publisher confirmed. Four older drops are logged by a single aggregator with no independent corroboration and are listed as awaiting editor verification for that reason. Scopely publishes no expiry window of its own, so the roughly 3 day figure comes from dated outlet evidence rather than from the publisher.",
   "disagreements": [
     {
       "item": "How long a dice link stays claimable",

@@ -15,7 +15,7 @@ secondary_keywords:
 author: "Paul A"
 faq:
   - q: Are there any working Steal a Brainrot codes?
-    a: There is one public string on record that trackers still list as live, and it spawns a Secret brainrot on the red carpet rather than paying you anything directly. No developer channel confirms it, so this page shows it as Unverified. Everything else on record has sold out, because these codes are capped by stock rather than by a calendar.
+    a: There is one public string on record that trackers still list as live, and it spawns a Secret brainrot on the red carpet rather than paying you anything directly. No developer channel confirms it, so this page lists it as awaiting editor verification. Everything else on record has sold out, because these codes are capped by stock rather than by a calendar.
   - q: Where is the codes button in Steal a Brainrot?
     a: It sits on the button stack down the left side of your screen, labelled Codes. It used to live at the bottom of the shop menu, and guides that still send you there are out of date. Tap it, type the string into the field that reads Code Here, then press Submit.
   - q: Why does my Steal a Brainrot code say invalid?
@@ -32,15 +32,15 @@ faq:
     a: Because they have reprinted the archive under an active heading. Cross check any long working list against the expired table here and you will find most of the strings on it. A few trackers also publish invented codes with invented drop dates, including dates that fall before the game had a redemption field at all.
 ---
 
-This page records {{totalCount}} Steal a Brainrot codes, of which {{activeCount}} are publisher confirmed and {{unverifiedCount}} are listed as unverified because no developer channel states them. Every dead code stays archived below with its reward. Codes here spawn a brainrot on the red carpet, not into your inventory.
+This page records {{totalCount}} Steal a Brainrot codes, of which {{activeCount}} stand as published and {{listedCount}} are listed awaiting editor verification, with no developer channel behind them. Every dead code stays archived below with its reward. Codes here spawn a brainrot on the red carpet, not into your inventory.
 
 This is Steal a Brainrot by {{developer}}, place ID {{entityId}}. It is not Steal The Brainrot Base, the Fortnite island Stealing Brainrots, or any browser clone, and codes from those titles are rejected by this experience.
 
-## Active Steal a Brainrot codes
+## Live Steal a Brainrot codes
 
 {{table:codes|status=active,unverified}}
 
-Nothing here carries an Active status, and that is the honest result rather than a hole in the research. The experience description lists no codes, the publishing community has no shout, and the codes channel that once sat in the official Discord was removed, so no publisher source states any string. A row backed only by outlets stays Unverified under [the evidence rules this page follows](/how-we-verify/).
+Nothing here is Verified, and that is the honest result rather than a hole in the research. The experience description lists no codes, the publishing community has no shout, and the codes channel that once sat in the official Discord was removed, so no publisher source states any string. A row no editor has tested stays listed as awaiting editor verification under [the evidence rules this page follows](/how-we-verify/).
 
 Treat the rows above as worth a try, not as a promise. Redemption costs you nothing but the typing.
 
@@ -92,7 +92,7 @@ There is no code announcement channel to subscribe to any more. Codes are handed
 
 {{changelog}}
 
-## How often this page is rechecked
+## How rechecks are recorded
 
 {{recheckCadence}}
 

@@ -8,9 +8,9 @@ focus_keyword: "shindo life codes"
 
 Shindo Life codes are unusually easy to mistype. Capital letters matter, the punctuation is part of the code, and almost every current string ends with an exclamation mark. Copy the complete value from the table rather than typing it from memory.
 
-The entries above are labelled **source-reported** because current references listed them on 24 August 2026, but a Freetins editor has not redeemed each one in a fresh game session. Their evidence tier is **community-reported** unless the row links to a publisher channel. That distinction lets us publish useful leads without turning a repeated list into an unsupported claim.
+The entries above are listed as **awaiting editor verification** because current references listed them on 24 August 2026, but a Freetins editor has not redeemed each one in game. Their evidence line is **community-reported** unless the row links to a publisher channel. That distinction lets us publish useful leads without turning a repeated list into an unsupported claim.
 
-Two additional strings appear under **Not verified** when one current source lists them but the main reference does not. Try those last. They have no review event that supports an active state.
+Two additional strings are listed where one current source names them but the main reference does not. Try those last. They are awaiting editor verification like every other row here, with thinner sourcing behind them.
 
 ## How to redeem Shindo Life codes
 
@@ -46,9 +46,9 @@ Check your balances before redeeming several codes in a row. If a game limit app
 
 ## How this page is maintained
 
-The code table is generated from structured records. Each record stores the exact code, its reported reward, the evidence URL and the time of the latest review. A row only becomes **Verified active** after an editor records a successful in-game redemption. A current external report is shown as **Source-reported**, while a failed or retired entry moves to the expired archive.
+The code table is generated from structured records. Each record stores the exact code, its reported reward, the evidence URL and its state. A row becomes **Verified** only after an editor records a successful in-game redemption. Until then it is listed as **awaiting editor verification**, and a failed or retired entry moves to the expired archive.
 
-The timestamp belongs to the evidence event, not to the visitor's browser and not to a cloned “verified minutes ago” counter. If the 24-hour review window passes without a new event, the interface automatically changes the state to **Needs recheck**.
+The date beside a row belongs to the event that produced it, not to the visitor's browser and not to a cloned “verified minutes ago” counter. Nothing changes because time has passed: a row moves only when an editor verifies or retires it.
 
 ## Frequently asked questions
 
@@ -60,7 +60,7 @@ Treat them as case-sensitive. Preserve every capital letter, number and punctuat
 
 Open the character **Edit** screen from the main menu and look for the **Enter-Code** or **YouTube Code** field. It is not the standard Roblox promo-code page.
 
-### Why are the current codes called source-reported?
+### Why are the current codes awaiting editor verification?
 
 They were listed by a current reference, but Freetins has not recorded a successful in-game redemption for every row. The label is intentionally narrower than “verified.”
 

@@ -8,7 +8,7 @@ focus_keyword: "sols rng codes"
 
 Every code in this game pays out the same thing: potion chests that improve your luck and roll speed. None of them grant an aura directly, whatever other lists claim.
 
-This page looks different from the competition on purpose. Published lists for this game disagreed wildly in the same week, so codes without confirmation are shown as Unverified with the source and the date rather than presented as working.
+This page looks different from the competition on purpose. Published lists for this game disagreed wildly in the same week, so codes no editor has tested are listed as awaiting editor verification, with the source beside them, rather than presented as working.
 
 ## How to redeem codes in Sol's RNG
 
@@ -48,9 +48,9 @@ Luck potions raise your chance of a rare roll and haste potions cut the time bet
 
 ## Frequently asked questions
 
-### Why are so many codes on this page marked Unverified?
+### Why are so many codes on this page awaiting editor verification?
 
-Because the trackers disagree and the codes die fast. In the same week, published active lists for this game ranged from one code to six, with no two lists matching. Rather than pick a list and assert it, Freetins publishes every candidate with its source and its check date and marks it Unverified until it has been redeemed in game. A short confirmed list is worth more than a long guessed one.
+Because the trackers disagree and the codes die fast. In the same week, published active lists for this game ranged from one code to six, with no two lists matching. Rather than pick a list and assert it, Freetins publishes every candidate with its source and lists it as awaiting editor verification until an editor has redeemed it in game. A short confirmed list is worth more than a long guessed one.
 
 ### How long do Sol's RNG codes last?
 

@@ -26,13 +26,13 @@ faq:
     a: No. Chris P. and the craving system left with the Cooking Event, and the Cooking Kit replaced the lobby pot. Any recipe still labelled craving only, or that promises a free one tier upgrade, is describing a mechanic that is no longer in the experience. That is the main reason older recipe lists fail when people follow them.
   - q: How do you unlock cooking in Grow a Garden?
     a: You need the Cooking Kit, which is claimed from the achievement sets in the Garden Guide. The Common set is the quickest route, and it asks for ordinary planting, harvesting, shovelling, selling and gifting tasks. Once claimed, the kit appears in your cosmetics inventory and you place it anywhere on your plot.
-  - q: Why is every row on this page marked Unverified?
-    a: Only a row confirmed by the publisher's own channel can display as Active. Grow a Garden publishes no recipe list anywhere it controls, so no row on this page can reach that bar. Each row instead shows the outlets and the community wiki it came from, and rows where those sources conflict are flagged separately.
+  - q: Why is every row on this page awaiting editor verification?
+    a: A row reads Verified only once an editor has tested it, and no editor has tested a recipe here yet. Grow a Garden publishes no recipe list anywhere it controls either, so no row carries publisher confirmation. Each row instead shows the outlets and the community wiki it came from, and rows where those sources conflict are flagged separately.
   - q: What is cooked food actually used for now?
     a: Food meets crafting requirements, feeds pets to restore hunger, sells at the Sell Stand and is fed to NPCs on their birthdays for rewards. Corndog is the clearest example because the Pet Pouch crafting recipe needs it. The old reward tables tied to Chris P. and the Rat Connoisseur no longer apply to any of it.
 ---
 
-This page records {{totalCount}} Grow a Garden cooking entries, each with the exact ingredient counts, the crop slots it fills, its base cook time and its base weight. No publisher channel publishes recipes, so every row carries its own provenance rather than a confident claim. Last verified {{checkedAt}}.
+This page records {{totalCount}} Grow a Garden cooking entries, each with the exact ingredient counts, the crop slots it fills, its base cook time and its base weight. No publisher channel publishes recipes, so every row carries its own provenance rather than a confident claim. The record stands as published {{checkedAt}}.
 
 Grow a Garden is place ID {{entityId}}, published by {{developer}}, and it is not Grow a Garden 2, which is a separate Roblox experience at place ID 97598239454123 built by a different studio with its own crop list.
 
@@ -44,7 +44,7 @@ Recipes in this game are slot based, not fixed lists. Each food declares a set o
 
 That is why so many published lists contradict each other. They record one worked combination and present it as the recipe, when the game only ever checked the slots. The worked examples above are the cheapest combination two independent sources agree on. Use the crop groups if you want to substitute, and check which crops count as sweet, fruit and leafy before you commit a rare seed to the pot.
 
-Nothing here displays as Active. Grow a Garden does not publish recipes on any channel it controls, and a row cannot be marked Active without publisher confirmation. Every row is therefore Unverified, which is the honest label, and [how every row on this page is checked](/how-we-verify/) explains what that status is worth.
+Nothing here is Verified. Grow a Garden does not publish recipes on any channel it controls, and no editor has tested a row yet, so every row is listed as awaiting editor verification, which is the honest label. [How every row on this page is recorded](/how-we-verify/) explains what that status is worth.
 
 ## How to make ice cream in Grow a Garden
 
@@ -144,7 +144,7 @@ Weight is the lever most people miss. A heavier crop adds time to the pot and ra
 
 {{changelog}}
 
-## How often this page is rechecked
+## How rechecks are recorded
 
 {{recheckCadence}}
 

@@ -10,7 +10,7 @@ import { hotSearches } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = 'Freetins - source-backed game codes and guides';
-const description = 'Game codes, reward links, cheats, answers and guides with clear publication states, source records and absolute review times where operational checks exist.';
+const description = 'Game codes, reward links, cheats, answers and guides, each entry with a clear state, a source record and the date it was recorded.';
 const socialImage = '/og/freetins-home-game-codes.jpg';
 const activeSponsorships = getActiveSponsorships();
 
@@ -50,10 +50,10 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
       <div class="hero-copy">
         <div class="eyebrow">
           <span aria-hidden="true"></span>
-          <span>Evidence before freshness claims</span>
+          <span>A record behind every claim</span>
         </div>
         <h1>Game codes<br />with a record behind them</h1>
-        <p>Operational pages publish from source URLs, redemption paths and recorded verification events. Configured drafts stay clearly labeled until that evidence exists.</p>
+        <p>Every code page lists its entries with a source, a state and the date each was recorded. An editor's verification adds a star; nothing waits on it.</p>
         <div class="hero-actions">
           <Button href="/codes/">Find your game</Button>
           <Button href="/how-we-verify/" variant="secondary">How we verify</Button>
@@ -64,7 +64,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
 
   <section class="page-section intro-section content-boundary">
     <h2>Publication status</h2>
-    <p class="section-intro">These figures are calculated from the operational record file. When no verification event exists, the site says so instead of manufacturing freshness.</p>
+    <p class="section-intro">These figures are calculated from the operational record file. A code no editor has tested yet is listed as awaiting editor verification, and the page says so.</p>
 
         <div class="home-search">
       <SearchField label="Find your game" placeholder="Grow a Garden, Monopoly GO, Blue Lock Rivals…" />
@@ -120,15 +120,15 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
             <div class="game-copy">
               <h3>{tile.name}</h3>
               <div>
-                <span>{tile.activeCount} active records</span>
+                <span>{tile.verifiedCount} verified</span>
                 <span>·</span>
-                <span>{tile.staleCount} need recheck</span>
+                <span>{tile.listedCount} listed</span>
               </div>
             </div>
           </a>
         );
       })}
-    </div> : <div class="data-empty"><strong>No operational code page is published yet</strong><p>The component is active and will populate automatically when a configured game has valid entries and verification events.</p></div>}
+    </div> : <div class="data-empty"><strong>No operational code page is published yet</strong><p>The component is active and will populate automatically when a configured game lists at least one code.</p></div>}
   </section>
 
   <section class="page-section sponsored-section content-boundary" data-ad-slot="FT-SPONSOR-ROW">
@@ -166,11 +166,11 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
       {dailyGames.map((game) => (
         <a href={game.href}>
           <span>{game.name}</span>
-          <strong>{game.activeCount} active links</strong>
+          <strong>{game.liveCount} listed links</strong>
           <time datetime={game.latestCheckedAt ?? undefined}>{game.checkedLabel}</time>
         </a>
       ))}
-    </div> : <div class="data-empty"><strong>No daily-link page is published yet</strong><p>The section will populate from validated link and verification records.</p></div>}
+    </div> : <div class="data-empty"><strong>No daily-link page is published yet</strong><p>The section will populate as reward links are recorded.</p></div>}
   </section>
 
   <section class="page-section native-section content-boundary" data-ad-slot={operations.services.advertising.enabled ? 'FT-NATIVE-HOME' : undefined}>

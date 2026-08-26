@@ -7,7 +7,6 @@
   "permalink": "/guides/steal-a-brainrot-admin-abuse/",
   "checked_at": "2026-08-25T08:00:00Z",
   "content_changed_at": "2026-08-25T08:00:00Z",
-  "recheck_cadence": "Rechecked after each Tuesday and Saturday slot, and within a day of any update post on the developer's own channels.",
   "official_sources": [
     { "type": "official_page", "url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot", "note": "The Steal a Brainrot experience page on Roblox, place ID 109983668079237" },
     { "type": "roblox_group", "url": "https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER", "note": "BRAZILIAN SPYDER, the verified Roblox community that owns the experience" },
@@ -47,7 +46,6 @@
         { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Taco_Tuesday" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Expected, not scheduled. Two Tuesdays in the record were cancelled outright. One aggregator places this slot on a Wednesday, which no dated occurrence supports."
     },
     {
@@ -71,7 +69,6 @@
         { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Admin_Abuse" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Expected, not scheduled. The session follows the update rather than starting at a fixed clock time, so the start drifts when the update is late."
     },
     {
@@ -95,7 +92,6 @@
         { "tier": 2, "url": "https://www.eldorado.gg/blog/steal-a-brainrot-admin-abuse-schedule-explained/" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "This is the honest answer to a large part of the question. A meaningful share of admin abuse is not scheduled at all and cannot be predicted."
     },
     {
@@ -120,7 +116,6 @@
         { "tier": 2, "url": "https://www.eldorado.gg/blog/steal-a-brainrot-update-log/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "The outlet update log independently lists Burrito Bat, Nachorilla and Sammyni Truckini and notes three of that week's brainrots came from Taco Tuesday."
     },
     {
@@ -145,7 +140,6 @@
         { "tier": 2, "url": "https://www.eldorado.gg/blog/steal-a-brainrot-update-log/" }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "The outlet update log credits Polaroidini to the Saturday update that followed. The two sources disagree on which session it arrived in."
     },
     {
@@ -170,7 +164,6 @@
         { "tier": 2, "url": "https://www.dexerto.com/roblox/taco-tuesday-steal-a-brainrot-3242873/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Listed here because an occurrence with no recorded payload is still evidence that the slot ran."
     },
     {
@@ -195,7 +188,6 @@
         { "tier": 2, "url": "https://www.dexerto.com/roblox/taco-tuesday-steal-a-brainrot-3242873/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -220,7 +212,6 @@
         { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Admin_Abuse" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "The update date is outlet sourced. The session that follows it is community sourced, and its exact start was not independently timed."
     },
     {
@@ -245,7 +236,6 @@
         { "tier": 2, "url": "https://www.eldorado.gg/blog/steal-a-brainrot-update-log/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "The best evidenced start time on this page. Two outlets, one of which states 19:00 UTC outright, though its own regional conversions are an hour out."
     },
     {
@@ -270,7 +260,6 @@
         { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Admin_Abuse" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -295,7 +284,6 @@
         { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Admin_Abuse" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -320,7 +308,6 @@
         { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Admin_Abuse" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Kept in the record because it shows the host is not fixed. The outlet page is evergreen and now carries a later update, so the citation is to the page rather than a frozen version."
     },
     {
@@ -345,7 +332,6 @@
         { "tier": 3, "url": "https://bloxguidesgg.com/blog/steal-a-brainrot-summer-update-caylus-admin-abuse-guide-june-2026" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Both sources are community tier. No outlet with a genuine day level stamp covered this session, so it is the weakest dated row here."
     },
     {
@@ -370,11 +356,10 @@
         { "tier": 3, "url": "https://bloxguidesgg.com/blog/steal-a-brainrot-summer-update-caylus-admin-abuse-guide-june-2026" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "The single most useful row on this page. It is the proof that the Tuesday slot is a pattern and not a schedule, and that a cancellation is announced only in game and in the Discord."
     }
   ],
-  "unverified_summary": "No developer channel publishes an admin abuse schedule, so nothing here reaches publisher confirmation and no row displays as Active. The start times come from a community wiki and from outlets whose own timezone conversions contradict their stated UTC anchors by an hour. Cancellations and guest hosts are announced in game and in the Discord rather than in anything we can cite, so a slot listed here can be dropped with no public notice, and two of the recorded Tuesdays were.",
+  "unverified_summary": "No developer channel publishes an admin abuse schedule, so nothing here reaches publisher confirmation and every live row is listed as awaiting editor verification. The start times come from a community wiki and from outlets whose own timezone conversions contradict their stated UTC anchors by an hour. Cancellations and guest hosts are announced in game and in the Discord rather than in anything we can cite, so a slot listed here can be dropped with no public notice, and two of the recorded Tuesdays were.",
   "disagreements": [
     {
       "item": "The UTC equivalent of the Saturday start time",

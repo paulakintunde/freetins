@@ -67,7 +67,7 @@ export const authors: Author[] = [
     credential:
       'Covers the Freetins cheats desk, entering each code on the platform it is claimed for and recording the ones that do not register.',
     remit:
-      'Rohene owns the Cheats section: cheat codes, console commands and unlock sequences. He is responsible for the platform scope on every entry, for the achievement and save-file warnings that go with it, and for marking a cheat as unconfirmed rather than guessing.',
+      'Rohene owns the Cheats section: cheat codes, console commands and unlock sequences. He is responsible for the platform scope on every entry, for the achievement and save-file warnings that go with it, and for leaving a cheat listed as awaiting editor verification rather than guessing.',
     sections: ['cheats'],
     path: '/author/rohene-ladner/',
   },

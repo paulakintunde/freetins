@@ -27,12 +27,12 @@ faq:
   - q: What are mutations and traits, and do they change these numbers?
     a: Yes, and that is why the table states base income. A mutation multiplies the base rate and only one can sit on a brainrot at a time. Traits add further multipliers and several can stack on the same brainrot. The result is that two copies of the same brainrot can earn very different amounts, so the base figure is the only stable number to publish.
   - q: Do removed brainrots ever come back?
-    a: Some have returned through a different route, and some have been replaced outright rather than restored, which is what happened when Gattatino Neonino was superseded by Gattatino Nyanino. Removed rows stay in the table here because people keep searching for them, because they still exist in player inventories, and because a deleted row looks identical to a row nobody ever checked.
-  - q: Why does every row on this page say Unverified?
-    a: Because verified has a specific meaning here. A row only reads Active if a developer channel confirms it, and no developer channel publishes a roster, an income table or a spawn table for this experience. Everything recorded here is community documentation cross checked against outlets. Labelling that honestly is more useful than a green pill this page has not earned.
+    a: Some have returned through a different route, and some have been replaced outright rather than restored, which is what happened when Gattatino Neonino was superseded by Gattatino Nyanino. Those rows stay in the table here because people keep searching for them, because they still exist in player inventories, and because a deleted row looks identical to a row nobody ever checked.
+  - q: Why does every row on this page say awaiting editor verification?
+    a: Because verified has a specific meaning here. A row reads Verified only when an editor has tested it, and no editor has tested a row here yet; no developer channel publishes a roster, an income table or a spawn table for this experience either. Everything recorded here is community documentation cross checked against outlets. Labelling that honestly is more useful than a green pill this page has not earned.
 ---
 
-This page records {{totalCount}} brainrots in {{subject}}, each with its rarity, its base income per second and the route it comes from. Every row carries its own status and check date. {{removedCount}} of them can no longer be obtained and stay listed. No row is publisher confirmed, so live rows read Unverified.
+This page records {{totalCount}} brainrots in {{subject}}, each with its rarity, its base income per second and the route it comes from. Every row carries its status and date. {{removedCount}} of them can no longer be obtained and stay listed. Live rows are listed as awaiting editor verification, since no editor has tested one.
 
 The subject here is the experience at place ID {{entityId}}, published by {{developer}}. It is not Steal The Brainrot Base, it is not Become a Brainrot, and it is not the separate New Players Servers place, all of which carry different rosters and different income figures.
 
@@ -95,7 +95,7 @@ OG is the smallest class and the one the rarest queries are really about. Entrie
 5. Steal from other bases. This is the mechanic the experience is named after and it is how most high tier brainrots change hands.
 6. Open Lucky Blocks and run machines. Fuse and craft machines produce brainrots that never appear on the carpet, and the current one is the Bee Lucky Block.
 7. Watch for [what admins can hand out during an Admin Abuse window](/guides/steal-a-brainrot-admin-abuse/). Several entries in the table exist only because of those events and cannot be farmed at all.
-8. Check the status column before you grind. Rows marked Removed have had their route retired, so no amount of play will produce one.
+8. Check the status column before you grind. Rows marked Expired have had their route retired, so no amount of play will produce one.
 
 ## What changed in the most recent update
 
@@ -117,13 +117,13 @@ Every entry whose route has since been retired sits below rather than being dele
 
 {{unverifiedSummary}}
 
-That is why every live row on this page reads Unverified rather than Active. Two independent community sources agreeing is reported, not confirmed, and the difference matters when the figures they agree on were copied from each other. You can read [the evidence tiers this site works to](/how-we-verify/) if you want the full rule.
+That is why every live row on this page is listed as awaiting editor verification rather than Verified. Two independent community sources agreeing is community reporting, not confirmation, and the difference matters when the figures they agree on were copied from each other. You can read [the evidence rules this site works to](/how-we-verify/) if you want the full rule.
 
 ## Change log
 
 {{changelog}}
 
-## How often this page is rechecked
+## How rechecks are recorded
 
 {{recheckCadence}}
 
@@ -136,5 +136,5 @@ That is why every live row on this page reads Unverified rather than Active. Two
 ## Related pages
 
 - [Admin Abuse events and what they hand out](/guides/steal-a-brainrot-admin-abuse/)
-- [Working Steal a Brainrot codes and their rewards](/blog/steal-a-brainrot-codes/)
+- [Steal a Brainrot codes, live and dead, with their rewards](/blog/steal-a-brainrot-codes/)
 - [Grow a Garden codes, the game behind one Common brainrot](/codes/grow-a-garden/)

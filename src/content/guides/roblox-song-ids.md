@@ -19,7 +19,7 @@ faq:
   - q: How do you find Roblox music IDs?
     a: Open the Creator Store audio catalogue, search a keyword such as lofi or phonk, then open the asset you want and copy the number from its page address. That number is the ID. Roblox also exposes the same record through its asset details endpoint, which returns the title, the uploader and the asset type, so you can confirm what a number actually points at before you use it.
   - q: What are some good Roblox song IDs to start with?
-    a: The safest starting point is the licensed catalogue, because those tracks are cleared for use across experiences rather than reuploaded. The genre tables on this page group every confirmed ID by the genre Roblox itself files it under, so you can pick from electronic, phonk, lo-fi, classical, rock, jazz, pop, score, world, seasonal or novelty without leaving the page.
+    a: The safest starting point is the licensed catalogue, because those tracks are cleared for use across experiences rather than reuploaded. The genre tables on this page group every recorded ID by the genre Roblox itself files it under, so you can pick from electronic, phonk, lo-fi, classical, rock, jazz, pop, score, world, seasonal or novelty without leaving the page.
   - q: Can every Roblox game use music IDs?
     a: No. A song ID only does something where the experience gives you a boombox, radio, car stereo or music panel that accepts a typed number. Plenty of experiences have no such item, and some that do restrict input to a list the owner has approved. An ID that works in one place can be refused in another without anything being wrong with the ID.
   - q: Why are my Roblox music codes not working?
@@ -36,7 +36,7 @@ faq:
     a: Yes, where the experience supports them. Tap the boombox in the bar at the bottom of the screen to equip it, tap it again to open the input box, then paste the digits and confirm. The mechanism is identical on phone, tablet, console and desktop, because the code is read by the experience rather than by the device.
 ---
 
-This page records {{totalCount}} Roblox song IDs. Every row carries the status found when it was checked against Roblox's own asset record, the date of that check and the evidence behind it. Dead IDs stay listed with the reason they stopped working, so a checked entry reads differently from a copied one.
+This page records {{totalCount}} Roblox song IDs. Every row carries its status as published, the date beside it and the evidence behind it. Dead IDs stay listed with the reason they stopped working, so a recorded entry reads differently from a copied one.
 
 A Roblox song ID is not a game code you redeem for rewards. It is an asset number in the audio catalogue at {{entityId}}, and it only does anything where an experience hands you a boombox, radio or music panel. If you want the other kind of code, see [Roblox promo codes and what they unlock](/blog/roblox-promo-codes/).
 
@@ -44,7 +44,7 @@ A Roblox song ID is not a game code you redeem for rewards. It is an asset numbe
 
 {{table:roster|status=active,unverified}}
 
-Of the {{totalCount}} IDs recorded on this page, {{activeCount}} are confirmed as served publicly by Roblox and {{unverifiedCount}} are listed by Roblox but could not be confirmed as publicly served. {{expiredCount}} have gone private and {{removedCount}} have been taken down. The last two groups are archived further down rather than deleted.
+Of the {{totalCount}} IDs recorded on this page, {{activeCount}} stand as published, served publicly by Roblox when they were recorded, and {{listedCount}} are listed by Roblox but awaiting editor verification. {{expiredCount}} are Expired: {{removedCount}} of them have been taken down and the rest have gone private. Both groups are archived further down rather than deleted.
 
 ## Jump to a genre
 
@@ -136,7 +136,7 @@ Ordered by how often each cause turned up in the sample of published IDs tested 
 3. For a second opinion, open `https://economy.roblox.com/v2/assets/` followed by the digits and then `/details`. It returns plain text in the browser. Look for `AssetTypeId` of 3, which means audio. Anything else is not a song.
 4. To test public availability, open `https://assetdelivery.roblox.com/v2/assetId/` followed by the digits. A public file returns a location. A restricted one returns an authentication message.
 
-That is the method behind every row here, and it is documented in full alongside [the checking method used across Freetins tables](/how-we-verify/).
+That is the method behind the status each row was published with, and [how Freetins records every check](/how-we-verify/) explains what an editor's own check adds.
 
 ## Where published lists and Roblox disagree
 
@@ -166,7 +166,7 @@ The audio behind each of these still exists under its original title. It simply 
 
 {{changelog}}
 
-## How often this page is rechecked
+## How rechecks are recorded
 
 {{recheckCadence}}
 

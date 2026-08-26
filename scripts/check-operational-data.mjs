@@ -42,5 +42,35 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-await import('../src/data/operations.ts');
+const ops = await import('../src/data/operations.ts');
 console.log(`Operational content passed: ${data.games.length} games, ${data.codes.length} codes, ${data.dailyLinks.length} daily links, ${data.cheats.length} cheats and ${data.verificationEvents.length} verification events.`);
+
+/*
+ * Advisory queue printout. Nothing below changes the exit code. The furniture a
+ * page wants (its own listing URL, two redeem steps) left the index gate with
+ * ADR 0004: a page with a live entry is indexed whether or not the furniture is
+ * there, and its absence is a warning for the editor queue, not a reason to hold
+ * the page. The baseline count is the interim "typed claims to confirm" line
+ * ADR 0003 asks for until the control page's queue exists.
+ */
+const queueWarnings = [];
+for (const game of ops.operations.games) {
+  if (game.publicationState !== 'planned') continue;
+  const page = ops.getGameOperationalPage(game.slug);
+  if (!page || page.liveCount === 0) continue;
+  const missing = [];
+  if (!game.officialSourceUrl) missing.push('no officialSourceUrl');
+  if (game.redeemSteps.length < 2) missing.push(`${game.redeemSteps.length} of 2 redeemSteps`);
+  if (missing.length === 0) continue;
+  const noun = game.surface === 'codes' ? 'codes' : 'links';
+  queueWarnings.push(`${game.slug} lists ${page.liveCount} live ${noun} with ${missing.join(' and ')}`);
+}
+if (queueWarnings.length > 0) {
+  console.log(`Queue warnings (advisory, ${queueWarnings.length}):`);
+  queueWarnings.forEach((warning) => console.log(`- ${warning}`));
+} else {
+  console.log('Queue warnings (advisory): none. Every planned page with a live entry has its listing URL and two redeem steps.');
+}
+
+const baselineEvents = data.verificationEvents.filter((event) => event.method === 'manual-review').length;
+console.log(`Baseline (advisory): ${baselineEvents} of ${data.verificationEvents.length} verification events are manual-review and are read as the as-published baseline, not as editor acts.`);

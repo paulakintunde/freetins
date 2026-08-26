@@ -7,7 +7,6 @@
   "permalink": "/blog/steal-a-brainrot-codes/",
   "checked_at": "2026-08-25T09:00:00Z",
   "content_changed_at": "2026-08-25T09:00:00Z",
-  "recheck_cadence": "Rechecked after every Saturday update Admin Abuse and every Taco Tuesday Admin Abuse, and at least twice a week in between.",
   "official_sources": [
     {
       "type": "official_page",
@@ -52,7 +51,6 @@
         { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "Two outlets and the community wiki still list this as live, and one of those outlets recorded a fresh recheck. No developer channel states it, so it cannot be marked Active here. The reward spawns on the red carpet rather than landing in your inventory, and stock is capped, so it can be dead without any tracker noticing."
     },
     {
@@ -74,7 +72,6 @@
         { "tier": 2, "url": "https://beebom.com/steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": true,
       "notes": "This is the only redemption route that is reliably open. There is no public string to copy: each buyer gets their own. Recorded as a row because it is the honest answer to the question the head term asks."
     },
     {
@@ -96,7 +93,6 @@
         { "tier": 2, "url": "https://www.pockettactics.com/steal-a-brainrot-codes" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "The first code the game ever accepted, and the reason the redemption field exists at all. The community wiki files it under unavailable codes."
     },
     {
@@ -117,7 +113,6 @@
         { "tier": 3, "url": "https://stealabrainrot.fandom.com/wiki/Codes" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Recorded only on the community wiki, under unavailable codes. No outlet carries it."
     },
     {
@@ -139,7 +134,6 @@
         { "tier": 2, "url": "https://www.dexerto.com/roblox/steal-a-brainrot-codes-3388813/" }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "Two outlets render this string differently: one as SATURN and one as saturn. The community wiki records neither. Kept here in upper case because every other code the developer has issued is upper case, and flagged in the disagreement table."
     },
     {
@@ -161,7 +155,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Wiki marks it limited stock and exclusive."
     },
     {
@@ -183,7 +176,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "One of the few codes with a random reward split rather than a fixed item."
     },
     {
@@ -205,7 +197,6 @@
         { "tier": 2, "url": "https://www.dexerto.com/roblox/steal-a-brainrot-codes-3388813/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -227,7 +218,6 @@
         { "tier": 2, "url": "https://www.dexerto.com/roblox/steal-a-brainrot-codes-3388813/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -249,7 +239,6 @@
         { "tier": 2, "url": "https://www.dexerto.com/roblox/steal-a-brainrot-codes-3388813/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Easily confused with FREEOCTO555 and FREEPREMIUMOCTO777, which are separate strings with separate stock."
     },
     {
@@ -271,7 +260,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -293,7 +281,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -315,7 +302,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "The leading W is part of the string. Trackers that drop it produce a code the game rejects. Traited Premium Octo Lucky Blocks are unusual because the shop version teleports straight to your base instead of spawning."
     },
     {
@@ -337,7 +323,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "The trailing W is part of the string."
     },
     {
@@ -359,7 +344,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "The 4 is a digit, not the word four."
     },
     {
@@ -381,7 +365,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Stock was capped at roughly the number in the string, which is why it emptied fast."
     },
     {
@@ -403,7 +386,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "DA, not THE. One of three separate strings that all paid out John Pork."
     },
     {
@@ -425,7 +407,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": ""
     },
     {
@@ -447,7 +428,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Issued after a group using automated tooling to harvest codes was banned. Code drops had been paused for several days before it."
     },
     {
@@ -469,7 +449,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "No apostrophe. The wiki records it as a personal code made for a member of the admin team, later opened up."
     },
     {
@@ -491,7 +470,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "The most recent public string on record."
     },
     {
@@ -513,7 +491,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Riddle codes are posted as puzzles rather than plain strings and are capped at a handful of redemptions, so they are dead within minutes of the answer being solved."
     },
     {
@@ -535,7 +512,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Single redemption. Anyone republishing it as an active code is republishing something exactly one account ever claimed."
     },
     {
@@ -557,7 +533,6 @@
         { "tier": 2, "url": "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/" }
       ],
       "confidence": "reported",
-      "needs_human": false,
       "notes": "Single redemption."
     },
     {
@@ -578,7 +553,6 @@
         { "tier": 2, "url": "https://beebom.com/steal-a-brainrot-codes/" }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "One outlet lists this in its expired set. The community wiki, which records every other code on this page, has no entry for it, and no other outlet carries it. Listed here as expired so a reader searching the string finds an honest answer, not because it is corroborated."
     },
     {
@@ -599,11 +573,10 @@
         { "tier": 2, "url": "https://beebom.com/steal-a-brainrot-codes/" }
       ],
       "confidence": "conflicting",
-      "needs_human": true,
       "notes": "Same position as BRUNOISBETTER. One outlet, no wiki record, no corroboration."
     }
   ],
-  "unverified_summary": "Nothing on this page is publisher confirmed, and that is the finding rather than a gap in the work. The experience description carries no code list, the community that publishes the game has no shout, and the dedicated codes channel that once existed in the official Discord was removed, so no tier zero or tier one source states any string. BESTBRAINROTEVER is carried by two outlets and the community wiki and is listed as Unverified for that reason. Whether codes are case sensitive is genuinely contested between outlets. BRUNOISBETTER and BLUESAMMY67 come from a single outlet with no wiki record. Exact drop and burn out dates for most codes are not recorded anywhere reliable, because stock caps kill these codes rather than calendar expiry, so per code end dates are left empty rather than invented.",
+  "unverified_summary": "Nothing on this page is publisher confirmed, and that is the finding rather than a gap in the work. The experience description carries no code list, the community that publishes the game has no shout, and the dedicated codes channel that once existed in the official Discord was removed, so no tier zero or tier one source states any string. BESTBRAINROTEVER is carried by two outlets and the community wiki and is listed as awaiting editor verification for that reason. Whether codes are case sensitive is genuinely contested between outlets. BRUNOISBETTER and BLUESAMMY67 come from a single outlet with no wiki record. Exact drop and burn out dates for most codes are not recorded anywhere reliable, because stock caps kill these codes rather than calendar expiry, so per code end dates are left empty rather than invented.",
   "disagreements": [
     {
       "item": "Whether the game has codes at all",
@@ -627,7 +600,7 @@
       "item": "Whether BESTBRAINROTEVER is still live",
       "source_a": "GamesRadar and Dexerto both list it as active, and one recorded a fresh recheck",
       "source_b": "PCGamesN and Pocket Tactics both state there are no active codes",
-      "confirmed": "Not confirmable without redeeming it. It is listed as Unverified rather than Active, and the row explains why."
+      "confirmed": "Not confirmable without redeeming it. It is listed as awaiting editor verification rather than presented as working, and the row explains why."
     },
     {
       "item": "BRUNOISBETTER and BLUESAMMY67",

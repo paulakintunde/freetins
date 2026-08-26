@@ -15,7 +15,7 @@ secondary_keywords:
 author: "Paul A"
 faq:
   - q: Are there any working Roblox promo codes?
-    a: One site wide code is still reported as live by every outlet that tests them, and eleven more are redeemed inside two Roblox built event experiences. None of them is confirmed by Roblox itself, because Roblox publishes no list of active codes. Every candidate is therefore shown as Unverified rather than dressed up as working, and the table states which is which.
+    a: One site wide code is still reported as live by every outlet that tests them, and eleven more are redeemed inside two Roblox built event experiences. None of them is confirmed by Roblox itself, because Roblox publishes no list of active codes. Every candidate is therefore listed as awaiting editor verification rather than dressed up as working, and the table states which is which.
   - q: Do Roblox promo codes give you free Robux?
     a: No. Roblox has never issued a promo code that awards Robux, and its own support material says plainly that free Robux offers, tricks and codes do not exist. Anything promising two thousand Robux for a code is fabricated. Sites that ask for your username and a verification step are harvesting credentials or affiliate payouts, and using one puts your account at risk.
   - q: Where do I redeem a Roblox promo code?
@@ -31,10 +31,10 @@ faq:
   - q: When will new Roblox promo codes be released?
     a: There is no schedule. Roblox issues platform codes alongside retail tie ins, regional launches and milestones, with no advance notice, and long gaps between them are normal rather than a sign of a stale list. Announcements land on the official Roblox blog and the Roblox social accounts before any aggregator picks them up.
   - q: Are the Mansion of Wonder and Island of Move codes real?
-    a: The experiences are real, first party and still live, which is verified against Roblox itself. The codes are entered inside those experiences rather than on the redemption page, so they need a different route. Whether each one still grants its item has not been tested on a fresh account, so all eleven are listed as Unverified.
+    a: The experiences are real, first party and still live, which is verified against Roblox itself. The codes are entered inside those experiences rather than on the redemption page, so they need a different route. Whether each one still grants its item has not been tested on a fresh account, so all eleven are listed as awaiting editor verification.
 ---
 
-Roblox hands out platform promo codes very rarely now. This page records {{totalCount}} of them: {{activeCount}} publisher confirmed as live, {{unverifiedCount}} reported live but unconfirmed, and {{expiredCount}} dead. Nothing here awards Robux, because no Roblox code ever has, and no generator does either. Last verified {{checkedAt}}.
+Roblox hands out platform promo codes very rarely now. This page records {{totalCount}} of them: {{activeCount}} standing as published, {{listedCount}} listed and awaiting editor verification, and {{expiredCount}} dead. Nothing here awards Robux, because no Roblox code ever has, and no generator does either. The record stands as published {{checkedAt}}.
 
 This page covers Roblox platform promo codes, the ones {{developer}} issues and you redeem at {{entityId}}. It is not a list of codes for one Roblox experience, which are typed into a code box inside that game and never work on the redemption page.
 
@@ -42,7 +42,7 @@ This page covers Roblox platform promo codes, the ones {{developer}} issues and 
 
 {{table:codes|status=active,unverified}}
 
-Every row above sits at Unverified, and that is the honest position rather than a failure. Roblox does not publish a list of live codes anywhere, so no publisher source exists to confirm one against. What can be verified is that the reward items exist as Roblox created assets and that the two event experiences are still open. Only a redemption on a clean account upgrades a row, and that test is booked rather than done.
+Every row above is listed as awaiting editor verification, and that is the honest position rather than a failure. Roblox does not publish a list of live codes anywhere, so no publisher source exists to confirm one against. What can be verified is that the reward items exist as Roblox created assets and that the two event experiences are still open. Only a redemption by an editor on a clean account marks a row Verified, and no editor has made one yet.
 
 ## Expired Roblox promo codes
 
@@ -90,13 +90,13 @@ No, and the honest answer matters more here than a hedge. Roblox has never issue
 
 {{unverifiedSummary}}
 
-If you want to know what evidence a row needs before it stops saying Unverified, read [the evidence tiers we work to](/how-we-verify/).
+If you want to know what a row needs before it stops reading as awaiting editor verification, read [the evidence rules we work to](/how-we-verify/).
 
 ## Change log
 
 {{changelog}}
 
-## How often this page is rechecked
+## How rechecks are recorded
 
 {{recheckCadence}}
 

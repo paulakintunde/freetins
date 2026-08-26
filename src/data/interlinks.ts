@@ -1,5 +1,5 @@
 import { editorialArticles, type EditorialArticle } from './articles';
-import { publishedGameCatalogue } from './home';
+import { publishedGameCatalogue, recordedAt } from './home';
 
 /**
  * Contextual links between pages that are actually related.
@@ -25,12 +25,22 @@ export { datasetLinksForGame } from '../lib/datasetLinks';
 
 const SIBLING_LIMIT = 4;
 
+/*
+ * Most recently recorded first, on the same key the home tiles use: the newest
+ * event, else the newest entry, else zero. A published game with no event is a
+ * normal state now, and a comparator that returned NaN for it would leave the
+ * order to the sort's mood.
+ */
 const byMostRecentlyChecked = (
-  left: { latestCheckedAt: string | null },
-  right: { latestCheckedAt: string | null },
-) => Date.parse(right.latestCheckedAt ?? '') - Date.parse(left.latestCheckedAt ?? '');
+  left: { latestCheckedAt: string | null; newestEntryAt: string | null },
+  right: { latestCheckedAt: string | null; newestEntryAt: string | null },
+) => recordedAt(right) - recordedAt(left);
 
-/** Published games on the same platform, most recently verified first. */
+/** "N listed codes · recorded <date>", or the awaiting label when no event exists. */
+const recordDescription = (entry: { liveCount: number; latestCheckedAt: string | null; checkedLabel: string }) =>
+  `${entry.liveCount} listed ${entry.liveCount === 1 ? 'code' : 'codes'} · ${entry.latestCheckedAt ? `recorded ${entry.checkedLabel}` : entry.checkedLabel}`;
+
+/** Published games on the same platform, most recently recorded first. */
 export const siblingGamesFor = (slug: string): RelatedLink[] => {
   const game = publishedGameCatalogue.find((entry) => entry.slug === slug);
   if (!game) return [];
@@ -42,7 +52,7 @@ export const siblingGamesFor = (slug: string): RelatedLink[] => {
     .map((entry) => ({
       label: entry.name,
       href: `/codes/${entry.slug}/`,
-      description: `${entry.activeCount} active ${entry.activeCount === 1 ? 'code' : 'codes'} · checked ${entry.checkedLabel}`,
+      description: recordDescription(entry),
     }));
 };
 
@@ -64,7 +74,7 @@ export const gamePageForArticle = (article: EditorialArticle): RelatedLink[] => 
   return [{
     label: `${game.name} codes`,
     href: `/codes/${game.slug}/`,
-    description: `${game.activeCount} active ${game.activeCount === 1 ? 'code' : 'codes'} · checked ${game.checkedLabel}`,
+    description: recordDescription(game),
   }];
 };
 

@@ -19,7 +19,9 @@
     "check:data": "node scripts/check-operational-data.mjs",
     "check:routes": "node scripts/check-routes.mjs",
     "test": "node --test",
-    "check:vocabulary": "node scripts/check-vocabulary.mjs"
+    "check:vocabulary": "node scripts/check-vocabulary.mjs",
+    "snapshot:states": "node scripts/snapshot-states.mjs",
+    "report:cutover": "node scripts/cutover-report.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "12.6.13",

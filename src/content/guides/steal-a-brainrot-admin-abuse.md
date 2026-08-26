@@ -42,7 +42,7 @@ This page covers Steal a Brainrot by {{developer}}, place ID {{entityId}}. It is
 
 {{table:slots}}
 
-Every row above is Expected, not scheduled. The basis column tells you exactly what each expectation rests on, which in every case is a community record and a guide rather than a post from the people who run the event. Nothing here reaches publisher confirmation, so nothing displays as Active. That is the honest state of this subject.
+Every row above is Expected, not scheduled. The basis column tells you exactly what each expectation rests on, which in every case is a community record and a guide rather than a post from the people who run the event. Nothing here reaches publisher confirmation and no editor has tested a slot, so every row is listed as awaiting editor verification. That is the honest state of this subject.
 
 The third row matters as much as the first two. A real share of admin abuse is not on any slot at all. The host runs sessions with no notice, and the only way to catch one is to already be in the experience or watching the announcement channel.
 
@@ -100,10 +100,10 @@ The pattern in that table is worth naming. The Eastern time figures are stable a
 
 {{changelog}}
 
-## How often this page is rechecked
+## How rechecks are recorded
 
 {{recheckCadence}}
 
 {{nextChangePattern}}
 
-Of {{totalCount}} rows recorded here, {{unverifiedCount}} are the recurring slots and the rest are dated occurrences kept as pattern evidence. You can read [how Freetins verifies a page like this one](/how-we-verify/) for what each status actually means.
+Of {{totalCount}} rows recorded here, {{listedCount}} are the recurring slots, listed as awaiting editor verification, and the rest are dated occurrences kept as pattern evidence. You can read [how Freetins verifies a page like this one](/how-we-verify/) for what each status actually means.
