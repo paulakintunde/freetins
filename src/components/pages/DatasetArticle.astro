@@ -82,16 +82,27 @@ const entityId = `${absoluteUrl}#article`;
 /*
  * The earliest recorded change is the publication date and the dataset's own
  * content_changed_at is the modification date, so a redeploy with no recheck
- * cannot roll either of them forward.
+ * cannot roll either of them forward. A page written after the ledger types
+ * neither: its rows' own dates stand in, and a page with no date at all
+ * omits the claim rather than making one up.
  */
-const publishedAt = [...dataset.changes]
-  .map((change) => change.at)
-  .sort()[0] ?? dataset.contentChangedAt;
+const rowDates = dataset.rows
+  .flatMap((row) => [row.addedAt, row.lastVerifiedAt])
+  .filter((value): value is string => Boolean(value))
+  .sort();
+const publishedAt = dataset.changes.length
+  ? [...dataset.changes].map((change) => change.at).sort()[0] ?? ''
+  : rowDates[0] ?? '';
+const modifiedAt = dataset.contentChangedAt || rowDates.at(-1) || publishedAt;
 
 const reviewFormatter = new Intl.DateTimeFormat('en-GB', {
   day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',
 });
-const reviewLabel = `Last verified ${reviewFormatter.format(Date.parse(dataset.checkedAt))}`;
+// The date a pre-ledger page typed is its status and stays on screen; a page
+// with none says what is true of it (docs/adr/0004).
+const reviewLabel = dataset.checkedAt
+  ? `Last verified ${reviewFormatter.format(Date.parse(dataset.checkedAt))}`
+  : 'Awaiting editor verification';
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -100,11 +111,11 @@ const structuredData = {
       '@type': 'Article',
       '@id': entityId,
       headline: dataset.subject,
-      description: data.title,
+      description: data.description ?? data.title,
       url: absoluteUrl,
       ...(artwork && { image: new URL(artwork.socialImage, Astro.site).toString() }),
-      datePublished: publishedAt,
-      dateModified: dataset.contentChangedAt,
+      ...(publishedAt && { datePublished: publishedAt }),
+      ...(modifiedAt && { dateModified: modifiedAt }),
       author: {
         '@type': 'Person',
         name: author.name,
@@ -217,7 +228,7 @@ const structuredData = {
             <h2>Sources</h2>
             <p>
               Cross-checked against the publisher's own channels and independent
-              reporting. {dataset.recheckCadence}
+              reporting. {dataset.recheckCadence || 'Rechecks are recorded on this page as editors make them.'}
             </p>
             <div class="link-directory">
               {dataset.officialSources.map((source) => (

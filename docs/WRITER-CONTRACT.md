@@ -1,5 +1,13 @@
 # Freetins writer contract
 
+> **Superseded for new pages.** Write any new dataset-backed page to
+> [`docs/WRITER-CONTRACT-v2.md`](WRITER-CONTRACT-v2.md). Pages already written
+> to this contract keep every field it asked for; the build still reads them and
+> nobody is asked to rewrite a page (docs/adr/0004). Two parts of this document
+> no longer describe the build: the `verify/` checklist in sections 1 and 6 is
+> not produced or read (docs/adr/0003), and the verification fields in section 2
+> are read only on pages that already carry them.
+
 This supersedes the output-format sections of the batch 4 brief. Everything in the
 brief about research, evidence tiers, honesty, voice and the eight standout
 components still applies unchanged. What changed is where files go, what the data

@@ -40,8 +40,25 @@ const paragraphsOf = (body: string): string[] =>
     .map((block) => block.trim())
     .filter((block) => block && !block.startsWith('#') && !block.startsWith('|') && !block.startsWith('{{'));
 
-export const runProseChecks = (rawBody: string, renderedBody: string, label: string): string[] => {
+export interface ProseCheckOptions {
+  /**
+   * Whether the "What we could not verify" section is required. It is, when the
+   * dataset has something to say there — a disagreement between sources, or an
+   * unverified summary. On a page with nothing unverifiable it is filler, and a
+   * rule that forces filler is a rule against honesty. Defaults to required so
+   * existing callers keep their behaviour.
+   */
+  requireUnverifiedSection?: boolean;
+}
+
+export const runProseChecks = (
+  rawBody: string,
+  renderedBody: string,
+  label: string,
+  options: ProseCheckOptions = {},
+): string[] => {
   const problems: string[] = [];
+  const requireUnverifiedSection = options.requireUnverifiedSection ?? true;
 
   const emDashes = rawBody.match(EM_DASH);
   if (emDashes) {
@@ -81,7 +98,7 @@ export const runProseChecks = (rawBody: string, renderedBody: string, label: str
 
   // Required standout sections, matched on heading text.
   const headings = [...rawBody.matchAll(/^#{2,3}\s+(.+)$/gm)].map((match) => (match[1] ?? '').toLowerCase());
-  if (!headings.some((heading) => /could not verify/.test(heading))) {
+  if (requireUnverifiedSection && !headings.some((heading) => /could not verify/.test(heading))) {
     problems.push(`${label}: missing the "What we could not verify" section`);
   }
   if (!rawBody.includes('{{changelog}}')) {

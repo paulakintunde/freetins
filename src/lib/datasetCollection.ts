@@ -78,7 +78,9 @@ export const datasetCollection = (options: DatasetCollectionOptions): Loader => 
         problems.push(`${label}: unresolved tokens: ${[...new Set(unresolved)].join(', ')}`);
       }
 
-      problems.push(...runProseChecks(body, interpolated, label));
+      problems.push(...runProseChecks(body, interpolated, label, {
+        requireUnverifiedSection: dataset.disagreements.length > 0 || dataset.unverifiedSummary.trim().length > 0,
+      }));
 
       if (!frontmatter) continue;
 

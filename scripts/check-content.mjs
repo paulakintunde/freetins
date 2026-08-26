@@ -132,7 +132,9 @@ const checkPage = async (section, slug, livePaths) => {
     problems.push(`${label}: unresolved tokens: ${[...new Set(unresolved)].join(', ')}`);
   }
 
-  problems.push(...runProseChecks(body, interpolated, label));
+  problems.push(...runProseChecks(body, interpolated, label, {
+    requireUnverifiedSection: dataset.disagreements.length > 0 || dataset.unverifiedSummary.trim().length > 0,
+  }));
 
   // Rule 7 of the contract: never link a route that does not ship.
   for (const match of interpolated.matchAll(/\]\((\/[^)#]*)/g)) {
@@ -142,12 +144,8 @@ const checkPage = async (section, slug, livePaths) => {
     }
   }
 
-  // The checklist is a deliverable, so its absence is a content problem.
-  try {
-    await readFile(path.join(root, 'verify', `${slug}-VERIFY.md`), 'utf8');
-  } catch {
-    problems.push(`${label}: verify/${slug}-VERIFY.md is missing`);
-  }
+  // No checklist file is required. A tester's result is a ledger event, not a
+  // document; the old verify/ files were read by nothing (docs/adr/0003).
 
   const anchors = [...interpolated.matchAll(/\[([^\]]+)\]\((\/[^)]+)\)/g)]
     .map((match) => ({ anchor: match[1].trim(), target: match[2] }));

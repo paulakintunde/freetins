@@ -15,15 +15,32 @@ export interface DatasetEvidence {
   url: string;
 }
 
+/**
+ * What a table's rows are, which decides how the ledger treats them: a `code`
+ * is redeemed, a `link` is opened and expires on a TTL, a `fact` is observed.
+ * Absent means `fact`.
+ */
+export type TableKind = 'fact' | 'link' | 'code';
+
 export interface DatasetTable {
   caption: string;
   /** Subject columns. Status and Last checked are appended by the renderer. */
   columns: string[];
   /** Which column carries the classification used to build the sub-tables. */
   classificationColumn?: string;
+  kind?: TableKind;
 }
 
+/*
+ * Two generations of row live here. `status`, `lastVerifiedAt`, `confidence`,
+ * `endedAt` and `needsHuman` are the typed verification fields of pages that
+ * predate the ledger; they are read so those pages keep the status they show,
+ * and never required of a new page (docs/adr/0003, docs/adr/0004). `id`,
+ * `addedAt`, `evidence` and `requirements` are what every row carries.
+ */
 export interface DatasetRow {
+  /** Ledger id. Derived from slug, table and name when the writer sets none. */
+  id: string;
   /** Table id this row belongs to. Defaults to the first declared table. */
   table?: string;
   name: string;
@@ -34,8 +51,13 @@ export interface DatasetRow {
   caseSensitive?: boolean;
   requirements?: string;
   addedAt?: string | null;
+  /** Empty on a row nobody has checked yet. */
   lastVerifiedAt: string;
   endedAt?: string | null;
+  /** Link rows only: the publisher's own expiry, when known. */
+  expiresAt?: string | null;
+  /** Link rows only: the reward URL, when known. */
+  url?: string;
   evidence: DatasetEvidence[];
   confidence: RowConfidence;
   needsHuman?: boolean;
@@ -68,9 +90,12 @@ export interface Dataset {
   entityUrl?: string;
   developer: string;
   permalink: string;
+  /** Typed on pre-ledger pages; empty on new ones, where the ledger supplies it. */
   checkedAt: string;
   contentChangedAt: string;
   recheckCadence: string;
+  /** Per-page hearts switch; absent means the section default. */
+  readerConfirmations?: boolean;
   officialSources: { type: string; url: string; note?: string }[];
   tables: Record<string, DatasetTable>;
   rows: DatasetRow[];
@@ -135,29 +160,49 @@ export const countRows = (rows: DatasetRow[]): DatasetCounts => ({
   confirmedCount: rows.filter((row) => row.confidence === 'confirmed').length,
 });
 
+const TABLE_KINDS = new Set(['fact', 'link', 'code']);
+const ROW_ID = /^[a-z0-9][a-z0-9:_./-]*$/i;
+
 /**
  * Validation runs at build, so a bad dataset fails the build rather than
  * shipping a page that asserts something nobody checked.
+ *
+ * What it checks is the shape of a claim, never the claim itself. A writer
+ * supplies facts an author can know: that a row exists, where it was seen,
+ * when it was added, what it requires. Whether a row has been checked is the
+ * ledger's business, so the typed verification fields of pre-ledger pages are
+ * validated for form when present and required of nobody (docs/adr/0003). No
+ * rule here can reject a page for want of verification (docs/adr/0004).
  */
 export const validateDataset = (dataset: Dataset): string[] => {
   const errors: string[] = [];
   const label = dataset.slug || 'unknown dataset';
   const now = Date.now();
 
-  for (const field of ['subject', 'slug', 'entityId', 'developer', 'permalink', 'recheckCadence'] as const) {
+  for (const field of ['subject', 'slug', 'entityId', 'developer', 'permalink'] as const) {
     if (!String(dataset[field] ?? '').trim()) errors.push(`${label}: ${field} is required`);
   }
   for (const field of ['checkedAt', 'contentChangedAt'] as const) {
-    if (!isIso(dataset[field])) errors.push(`${label}: ${field} must be an ISO 8601 timestamp`);
-    else if (Date.parse(dataset[field]) > now) errors.push(`${label}: ${field} is in the future`);
+    const value = dataset[field];
+    if (!value) continue;
+    if (!isIso(value)) errors.push(`${label}: ${field} must be an ISO 8601 timestamp when present`);
+    else if (Date.parse(value) > now) errors.push(`${label}: ${field} is in the future`);
   }
   if (!dataset.officialSources?.length) errors.push(`${label}: at least one official source is required`);
-  if (!String(dataset.unverifiedSummary ?? '').trim()) errors.push(`${label}: unverifiedSummary is required`);
-  if (!dataset.changes?.length) errors.push(`${label}: changes needs at least one entry for the change log`);
   if (!Object.keys(dataset.tables ?? {}).length) errors.push(`${label}: at least one table must be declared`);
+
+  for (const [id, table] of Object.entries(dataset.tables ?? {})) {
+    if (table.kind !== undefined && !TABLE_KINDS.has(table.kind)) {
+      errors.push(`${label}: table "${id}" has an unknown kind "${table.kind}"`);
+    }
+  }
+  for (const change of dataset.changes ?? []) {
+    if (!isIso(change.at)) errors.push(`${label}: change log entry "${change.what}" needs an ISO 8601 date`);
+  }
 
   const tableIds = Object.keys(dataset.tables ?? {});
   const seen = new Set<string>();
+  const seenIds = new Set<string>();
 
   dataset.rows?.forEach((row, index) => {
     const rowLabel = `${label} row ${index + 1} (${row.name || 'unnamed'})`;
@@ -167,6 +212,10 @@ export const validateDataset = (dataset: Dataset): string[] => {
     const key = `${tableId}::${row.name?.toLowerCase()}`;
     if (seen.has(key)) errors.push(`${rowLabel}: duplicate row in the same table`);
     seen.add(key);
+
+    if (!ROW_ID.test(row.id ?? '')) errors.push(`${rowLabel}: id "${row.id}" must be letters, digits and : _ . / -`);
+    else if (seenIds.has(row.id)) errors.push(`${rowLabel}: duplicate row id "${row.id}"`);
+    seenIds.add(row.id);
 
     if (!tableIds.includes(tableId)) errors.push(`${rowLabel}: unknown table "${tableId}"`);
     else {
@@ -182,30 +231,27 @@ export const validateDataset = (dataset: Dataset): string[] => {
       }
     }
 
-    if (!isIso(row.lastVerifiedAt)) errors.push(`${rowLabel}: lastVerifiedAt must be ISO 8601`);
-    else if (Date.parse(row.lastVerifiedAt) > now) errors.push(`${rowLabel}: lastVerifiedAt is in the future`);
-    if (row.addedAt && isIso(row.addedAt) && isIso(row.lastVerifiedAt)
-      && Date.parse(row.lastVerifiedAt) < Date.parse(row.addedAt)) {
-      errors.push(`${rowLabel}: lastVerifiedAt predates addedAt`);
-    }
+    // When a row was added is a fact the author knows, and the one date every
+    // row must carry: seeds, sort order and the "New" chip all read it.
+    if (!isIso(row.addedAt)) errors.push(`${rowLabel}: addedAt must be an ISO 8601 timestamp`);
+    else if (Date.parse(row.addedAt) > now) errors.push(`${rowLabel}: addedAt is in the future`);
 
-    if (!row.evidence?.length) errors.push(`${rowLabel}: at least one evidence URL is required`);
-    if (row.confidence === 'confirmed') {
-      if ((row.evidence?.length ?? 0) < 2) errors.push(`${rowLabel}: confirmed rows need two evidence URLs`);
-      if (!row.evidence?.some((item) => item.tier <= 1)) {
-        errors.push(`${rowLabel}: confirmed rows need a tier 0 or tier 1 source`);
+    if (row.lastVerifiedAt) {
+      if (!isIso(row.lastVerifiedAt)) errors.push(`${rowLabel}: lastVerifiedAt must be ISO 8601 when present`);
+      else if (Date.parse(row.lastVerifiedAt) > now) errors.push(`${rowLabel}: lastVerifiedAt is in the future`);
+      else if (isIso(row.addedAt) && Date.parse(row.lastVerifiedAt) < Date.parse(row.addedAt)) {
+        errors.push(`${rowLabel}: lastVerifiedAt predates addedAt`);
       }
     }
+    if (row.expiresAt && !isIso(row.expiresAt)) errors.push(`${rowLabel}: expiresAt must be ISO 8601 when present`);
+    if (row.url !== undefined && !/^https:\/\//.test(row.url)) errors.push(`${rowLabel}: url must be https when present`);
+
+    if (!row.evidence?.length) errors.push(`${rowLabel}: at least one evidence URL is required`);
     row.evidence?.forEach((item) => {
       if (!/^https:\/\//.test(item.url)) errors.push(`${rowLabel}: evidence URL must be https`);
       if (BANNED_SOURCE.test(item.url)) errors.push(`${rowLabel}: banned source domain in evidence`);
     });
   });
-
-  const archived = dataset.rows?.some((row) => row.status === 'expired' || row.status === 'removed');
-  if (!archived && !/no (expired|removed|superseded)/i.test(dataset.unverifiedSummary ?? '')) {
-    errors.push(`${label}: no archived rows and unverifiedSummary does not explain why none exist`);
-  }
 
   return errors;
 };

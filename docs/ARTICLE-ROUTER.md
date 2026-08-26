@@ -7,16 +7,17 @@ formats, the exact files that format accepts, and any blocker found before writi
 Authority for the shapes it quotes, in order: `docs/adr/0004-every-article-gets-a-pass.md`
 for anything about acceptance, indexing or the landing state;
 `docs/adr/0003-no-hand-typed-verification-claims.md` for what a writer may and may not
-type — it outranks the v1 contract on every field it retires; `docs/WRITER-CONTRACT.md` for everything else about dataset pages until
-`docs/WRITER-CONTRACT-v2.md` supersedes it; `src/data/articles/types.ts` for editorial
+type — it outranks the v1 contract on every field it retires; `docs/WRITER-CONTRACT-v2.md`
+for everything else about dataset pages (`docs/WRITER-CONTRACT.md` is v1, kept for the
+pages written to it); `src/data/articles/types.ts` for editorial
 pages; and the Confirmation Ledger plan for the ledger fields (`id`, `kind`,
 `expires_at`, `reader_confirmations`). When this prompt and one of those disagree, they
 win and this prompt is wrong.
 
-Until the first commit of Step 1a lands, the build still enforces the v1 fields. A
-page routed before then is authored to `docs/WRITER-CONTRACT.md` as it stands, so it
-ships at once; its typed fields become its as-published baseline at cutover. A page
-routed after is authored to the v2 shape below. Nothing is ever held back.
+The first commit of Step 1a has landed: the build accepts the v2 shape, and every page
+routed from now on is authored to it. Pages written before it keep their v1 fields; the
+build still reads them, and those typed fields are that page's as-published baseline.
+Nothing is ever held back.
 
 ---
 

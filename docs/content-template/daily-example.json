@@ -1,0 +1,83 @@
+{
+  "_placeholder_warning": "entity_id, entity_url, every official source and every evidence URL here are placeholders. Replace all of them with the real app listing and real posts. example.invalid is a banned source, so the checker will fail if any of these survive into a real page.",
+  "_shape": "This is the v2 shape (docs/WRITER-CONTRACT-v2.md). Notice what is absent: no checked_at, no content_changed_at, no recheck_cadence, no per-row status, last_verified_at or confidence. Those are verification claims, and verification is an act an editor performs after the page is live. Every row here renders as Listed, awaiting editor verification, which is a full listing and not a demotion.",
+  "subject": "Pipeline Check",
+  "slug": "pipeline-check-free-spins",
+  "entity_id": "000000000000000",
+  "entity_url": "https://example.invalid/placeholder-app",
+  "developer": "Freetins Engineering",
+  "permalink": "/daily/pipeline-check-free-spins/",
+  "reader_confirmations": true,
+  "official_sources": [
+    { "type": "official_page", "url": "https://example.invalid/placeholder-app", "note": "Official app page" },
+    { "type": "facebook", "url": "https://example.invalid/placeholder-facebook", "note": "Publisher's Facebook page, where links are posted" },
+    { "type": "x", "url": "https://example.invalid/placeholder-x", "note": "Publisher's X account" }
+  ],
+  "tables": {
+    "links": {
+      "caption": "Free spins links for Pipeline Check",
+      "columns": ["Post", "Reward", "Channel"],
+      "kind": "link"
+    }
+  },
+  "rows": [
+    {
+      "table": "links",
+      "name": "Facebook morning post",
+      "cells": {
+        "Post": "Facebook morning post",
+        "Reward": "25 free spins",
+        "Channel": "Facebook"
+      },
+      "added_at": "2026-08-20T09:30:00Z",
+      "expires_at": "2026-08-23T09:30:00Z",
+      "url": "https://example.invalid/claim/placeholder-1",
+      "requirements": "Open on the device that has the game installed",
+      "evidence": [
+        { "tier": 1, "url": "https://example.invalid/placeholder-facebook/posts/1" }
+      ],
+      "notes": ""
+    },
+    {
+      "table": "links",
+      "name": "Facebook evening post",
+      "cells": {
+        "Post": "Facebook evening post",
+        "Reward": "50 free spins",
+        "Channel": "Facebook"
+      },
+      "added_at": "2026-08-20T19:05:00Z",
+      "expires_at": "2026-08-23T19:05:00Z",
+      "url": "https://example.invalid/claim/placeholder-2",
+      "requirements": "Open on the device that has the game installed",
+      "evidence": [
+        { "tier": 1, "url": "https://example.invalid/placeholder-facebook/posts/2" }
+      ],
+      "notes": ""
+    },
+    {
+      "table": "links",
+      "name": "X weekend post",
+      "cells": {
+        "Post": "X weekend post",
+        "Reward": "Dice bonus",
+        "Channel": "X"
+      },
+      "added_at": "2026-08-22T11:00:00Z",
+      "expires_at": null,
+      "url": "https://example.invalid/claim/placeholder-3",
+      "requirements": "Open on the device that has the game installed",
+      "evidence": [
+        { "tier": 1, "url": "https://example.invalid/placeholder-x/status/3" },
+        { "tier": 2, "url": "https://www.pcgamesn.com/pipeline-check-links" }
+      ],
+      "notes": "The post states no expiry, so none is recorded."
+    }
+  ],
+  "fakes": [],
+  "disagreements": [],
+  "next_change": {
+    "pattern": "The publisher posts a link most days, and more than one on event days.",
+    "watch": ["Facebook", "X"]
+  }
+}

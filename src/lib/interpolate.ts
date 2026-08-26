@@ -81,10 +81,20 @@ const renderTable = (dataset: Dataset, rows: DatasetRow[], argument: string): st
   const body = selected.map((row) => [
     ...tableColumns.map((column) => row.cells[column] ?? ''),
     STATUS_LABELS[row.status],
-    formatDate(row.lastVerifiedAt),
+    // A row nobody has checked says so, rather than showing a date it lacks.
+    row.lastVerifiedAt ? formatDate(row.lastVerifiedAt) : AWAITING,
   ]);
   return markdownTable(columns, body);
 };
+
+/** What a date reads as before an editor has made one. */
+const AWAITING = 'awaiting editor verification';
+
+/**
+ * The freshness sentence when the page does not type one. It promises nothing
+ * a schedule would have to keep: rechecks appear on the page as they happen.
+ */
+const DERIVED_CADENCE = 'Rechecks are recorded on this page as editors make them. A row whose Last checked column reads awaiting editor verification has not been tested by an editor yet.';
 
 const renderDisagreements = (dataset: Dataset): string =>
   dataset.disagreements.length === 0
@@ -104,6 +114,7 @@ const renderFakes = (dataset: Dataset): string =>
 
 /** Newest first, capped at five, per the Change Log block spec. */
 const renderChangelog = (dataset: Dataset): string => {
+  if (dataset.changes.length === 0) return '_No changes recorded yet._';
   const recent = [...dataset.changes]
     .sort((left, right) => Date.parse(right.at) - Date.parse(left.at))
     .slice(0, 5);
@@ -135,15 +146,17 @@ export const interpolate = (body: string, dataset: Dataset, now: number): Interp
     expiredCount: String(counts.expiredCount),
     removedCount: String(counts.removedCount),
     confirmedCount: String(counts.confirmedCount),
-    checkedAt: formatDate(dataset.checkedAt),
-    lastChanged: formatDate(dataset.contentChangedAt),
+    // Pages that predate the ledger keep the dates they typed; a new page has
+    // none until an editor acts, and says so instead of inventing one.
+    checkedAt: dataset.checkedAt ? formatDate(dataset.checkedAt) : AWAITING,
+    lastChanged: dataset.contentChangedAt ? formatDate(dataset.contentChangedAt) : AWAITING,
     subject: dataset.subject,
     developer: dataset.developer,
     entityId: dataset.entityId,
-    recheckCadence: dataset.recheckCadence,
+    recheckCadence: dataset.recheckCadence || DERIVED_CADENCE,
     nextChangePattern: dataset.nextChange.pattern,
     unverifiedSummary: dataset.unverifiedSummary,
-    freshness: dataset.recheckCadence,
+    freshness: dataset.recheckCadence || DERIVED_CADENCE,
   };
 
   const blocks: Record<string, () => string> = {

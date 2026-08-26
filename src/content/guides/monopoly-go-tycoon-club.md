@@ -143,4 +143,4 @@ Every row above carries its own evidence tier rather than a blanket claim of acc
 
 - [the dated Monopoly GO dice link log](/daily/monopoly-go/)
 - [Golden Blitz sticker trading and trade windows](/guides/monopoly-go-golden-blitz/)
-- [How Freetins verifies every page](/how-we-verify/)
+- [How every Freetins page is checked](/how-we-verify/)
