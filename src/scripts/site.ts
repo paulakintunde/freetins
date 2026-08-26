@@ -148,63 +148,6 @@ const syncConsent = () => {
   banner.hidden = true;
 };
 
-const syncCheckerStatus = async () => {
-  const banner = document.querySelector<HTMLElement>('[data-checker-status-url]');
-  const url = banner?.dataset.checkerStatusUrl;
-  if (!banner || !url) return;
-
-  try {
-    const response = await fetch(url, { cache: 'no-store', headers: { Accept: 'application/json' } });
-    if (!response.ok) return;
-    const snapshot = await response.json() as { state?: string; message?: string };
-    if (!['Unconfigured', 'Live', 'Degraded', 'Outage'].includes(snapshot.state ?? '')) return;
-    const state = snapshot.state ?? 'Unconfigured';
-    const title = banner.querySelector<HTMLElement>('[data-checker-title]');
-    const message = banner.querySelector<HTMLElement>('[data-checker-message]');
-    const titles: Record<string, string> = {
-      Unconfigured: 'Automated checking is not active',
-      Live: 'Automated checks are live',
-      Degraded: 'Checks are running behind',
-      Outage: 'Automated checks are unavailable',
-    };
-    banner.className = `outage-banner ${state.toLowerCase()}`;
-    banner.hidden = state === 'Live';
-    if (title) title.textContent = titles[state] ?? titles.Unconfigured ?? 'Automated checking is not active';
-    if (message && snapshot.message) message.textContent = snapshot.message;
-  } catch {
-    // Keep the server-rendered fallback when the status endpoint cannot be reached.
-  }
-};
-
-const STATUS_DISMISSED_KEY = 'ft_status_dismissed';
-
-const syncOutageBanner = () => {
-  const banner = document.querySelector<HTMLElement>('[data-outage-banner]');
-  if (!banner) return;
-
-  try {
-    banner.hidden = localStorage.getItem(STATUS_DISMISSED_KEY) === 'true'
-      || sessionStorage.getItem(STATUS_DISMISSED_KEY) === 'true';
-  } catch {
-    banner.hidden = false;
-  }
-};
-
-const dismissOutageBanner = () => {
-  const banner = document.querySelector<HTMLElement>('[data-outage-banner]');
-  if (banner) banner.hidden = true;
-  try {
-    localStorage.setItem(STATUS_DISMISSED_KEY, 'true');
-  } catch {
-    // Hardened privacy modes can refuse persistent storage; keep it for the session.
-    try {
-      sessionStorage.setItem(STATUS_DISMISSED_KEY, 'true');
-    } catch {
-      // Nothing further to do: the notice simply returns on the next load.
-    }
-  }
-};
-
 const writeClipboard = async (text: string) => {
   if (window.isSecureContext && navigator.clipboard?.writeText) {
     await navigator.clipboard.writeText(text);
@@ -248,11 +191,9 @@ const copyCode = async (button: HTMLButtonElement) => {
   }
 };
 
-const syncPageState = async () => {
+const syncPageState = () => {
   closeDrawer(false);
   syncConsent();
-  await syncCheckerStatus();
-  syncOutageBanner();
 };
 
 document.addEventListener('click', (event) => {
@@ -310,10 +251,6 @@ document.addEventListener('click', (event) => {
   if (target.closest('[data-consent-reject]')) {
     consentElements().purposeButtons.forEach((button) => setConsentButtonState(button, false));
     saveConsentChoices(currentConsentChoices());
-    return;
-  }
-  if (target.closest('[data-outage-dismiss]')) {
-    dismissOutageBanner();
     return;
   }
   const copyButton = target.closest<HTMLButtonElement>('[data-copy-code]');
