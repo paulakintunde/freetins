@@ -1,3 +1,5 @@
+> **Dated audit, 24 August 2026.** This document predates the Confirmation Ledger (`docs/adr/0003-no-hand-typed-verification-claims.md`, `docs/adr/0004-every-article-gets-a-pass.md`). It is kept as evidence of a moment and is not updated; where it contradicts the ADRs, the ADRs govern.
+
 # Pillar 3: User experience and design — measured audit
 
 Audit date: 24 August 2026

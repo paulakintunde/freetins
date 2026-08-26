@@ -1,3 +1,5 @@
+> **Dated audit, 24 August 2026.** This document predates the Confirmation Ledger (`docs/adr/0003-no-hand-typed-verification-claims.md`, `docs/adr/0004-every-article-gets-a-pass.md`). It is kept as evidence of a moment and is not updated; where it contradicts the ADRs, the ADRs govern.
+
 # Freetins cutover readiness — scored
 
 **Re-audit rev 3 — 24 August 2026, 21:55.** Supersedes `.rev1.md` and `.rev2.md`. Every figure re-measured against a clean rebuild of the current working tree. Nothing carried forward.

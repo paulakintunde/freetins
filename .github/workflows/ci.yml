@@ -38,6 +38,23 @@ jobs:
       - name: Validate operational content
         run: pnpm check:data
 
+      # The unit suites cover the validator, the index gate, the dataset loader,
+      # search and the code extractor. They were never run here before; a rewrite
+      # of any of them was unenforced until this step existed.
+      - name: Run unit tests
+        run: pnpm test
+
+      # Vets every dataset page with the same checks the Astro loader runs, plus
+      # live-path link checking. --strict refuses links to pages that have not
+      # shipped, so a page can only cite what exists.
+      - name: Vet dataset pages
+        run: pnpm check:content --strict
+
+      # Report-only until Step 1a of the Confirmation Ledger retires the terms it
+      # lists; it becomes --strict in that same change. See docs/TESTING.md.
+      - name: Report retired vocabulary
+        run: pnpm check:vocabulary
+
       - name: Build
         run: pnpm build
 
