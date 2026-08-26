@@ -1,0 +1,795 @@
+{
+  "subject": "Grow a Garden",
+  "slug": "grow-a-garden-recipes",
+  "entity_id": "126884695634066",
+  "entity_url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
+  "developer": "The Garden Game",
+  "permalink": "/guides/grow-a-garden-recipes/",
+  "checked_at": "2026-08-25T08:00:00Z",
+  "content_changed_at": "2026-08-25T08:00:00Z",
+  "recheck_cadence": "Rechecked with every Grow a Garden update that touches cooking, and at least every 7 days while the Cooking Kit is live.",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/126884695634066/Grow-a-Garden",
+      "note": "Grow a Garden on Roblox, place ID 126884695634066"
+    },
+    {
+      "type": "official_group",
+      "url": "https://www.roblox.com/communities/35789249/The-Garden-Game",
+      "note": "The Garden Game, the publishing group"
+    }
+  ],
+  "tables": {
+    "recipes": {
+      "caption": "Every Grow a Garden recipe, with exact ingredient counts, what gates it and what it produces",
+      "columns": [
+        "Item",
+        "Ingredients with exact quantities",
+        "Unlock requirement",
+        "Output value"
+      ],
+      "classification_column": "Item"
+    }
+  },
+  "rows": [
+    {
+      "table": "recipes",
+      "name": "Ice Cream",
+      "cells": {
+        "Item": "Ice Cream",
+        "Ingredients with exact quantities": "2 crops. 1x cone crop (Cauliflower, Corn, Banana, Violet Corn or Sugarglaze) plus 1x sweet crop. Worked: 1x Corn plus 1x Blueberry",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 5 minutes at base weight 2kg. Rarity rises with rarer and heavier crops"
+      },
+      "classification": "Ice Cream",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/ice-cream"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Two outlets and the wiki agree on a cone crop plus one sweet crop. No publisher channel states the recipe."
+    },
+    {
+      "table": "recipes",
+      "name": "Sushi",
+      "cells": {
+        "Item": "Sushi",
+        "Ingredients with exact quantities": "4 crops. 1x Bamboo plus 1x leafy crop plus 1x vegetable crop plus 1x rice crop (Cauliflower, Corn, Banana, Violet Corn or Sugarglaze). Worked: 4x Bamboo plus 1x Corn",
+        "Unlock requirement": "Cooking Kit, plus Bamboo from the Seed Shop rotation",
+        "Output value": "Base cook time 5 minutes at base weight 2kg. Rarity rises with rarer and heavier crops"
+      },
+      "classification": "Sushi",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, plus Bamboo from the Seed Shop rotation",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/sushi"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Every recorded Sushi recipe contains Bamboo and a corn family crop. Sources disagree above Divine."
+    },
+    {
+      "table": "recipes",
+      "name": "Soup",
+      "cells": {
+        "Item": "Soup",
+        "Ingredients with exact quantities": "Any combination that is not a recipe for another food. There is no Soup recipe to discover",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 5 minutes at base weight 0.5kg. Soup is the fallback output, not a target"
+      },
+      "classification": "Soup",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Beebom and the wiki both describe Soup as the fallback for an unrecognised combination."
+    },
+    {
+      "table": "recipes",
+      "name": "Salad",
+      "cells": {
+        "Item": "Salad",
+        "Ingredients with exact quantities": "2 crops. 1x leafy crop plus 1x vegetable crop. Worked: 2x Tomato",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 6 minutes at base weight 0.2kg. Rarity rises with rarer and heavier crops"
+      },
+      "classification": "Salad",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Lowest base weight of any food, so weight bonuses are hardest to earn here."
+    },
+    {
+      "table": "recipes",
+      "name": "Sandwich",
+      "cells": {
+        "Item": "Sandwich",
+        "Ingredients with exact quantities": "3 crops. 1x bread crop plus 1x leafy crop plus 1x Tomato or Grand Tomato. Worked: 1x Corn plus 2x Tomato",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 6 minutes at base weight 1kg. Rarity rises with rarer and heavier crops"
+      },
+      "classification": "Sandwich",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "The worked recipe fills all three declared slots exactly."
+    },
+    {
+      "table": "recipes",
+      "name": "Pie",
+      "cells": {
+        "Item": "Pie",
+        "Ingredients with exact quantities": "2 crops. 1x pastry crop (Crown Melon, Pumpkin, Coconut or Sugarglaze) plus 1x vegetable crop. Worked: 1x Pumpkin plus 4x Tomato",
+        "Unlock requirement": "Cooking Kit, plus a pastry crop: Crown Melon, Pumpkin, Coconut or Sugarglaze",
+        "Output value": "Base cook time 7 minutes at base weight 3kg. Heaviest base weight of any food"
+      },
+      "classification": "Pie",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, plus a pastry crop: Crown Melon, Pumpkin, Coconut or Sugarglaze",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Only two slots are required. The extra Tomatoes in the worked recipe add weight, not slots."
+    },
+    {
+      "table": "recipes",
+      "name": "Waffle",
+      "cells": {
+        "Item": "Waffle",
+        "Ingredients with exact quantities": "2 crops. 1x pastry crop (Crown Melon, Pumpkin, Coconut or Sugarglaze) plus 1x sweet crop. Worked: 1x Coconut plus 1x Strawberry",
+        "Unlock requirement": "Cooking Kit, plus a pastry crop: Crown Melon, Pumpkin, Coconut or Sugarglaze",
+        "Output value": "Base cook time 6 minutes at base weight 1.2kg. Rarity rises with rarer and heavier crops"
+      },
+      "classification": "Waffle",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, plus a pastry crop: Crown Melon, Pumpkin, Coconut or Sugarglaze",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Waffle and Pie share the pastry slot, so one pastry crop can produce either."
+    },
+    {
+      "table": "recipes",
+      "name": "Hot Dog",
+      "cells": {
+        "Item": "Hot Dog",
+        "Ingredients with exact quantities": "2 crops. 1x bread crop plus 1x meat crop (Pepper, Cactus, Mushroom, Ember Lily, Bone Blossom and similar). Worked: 1x Pepper plus 1x Corn",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 7 minutes at base weight 1.5kg. Rarity rises with rarer and heavier crops"
+      },
+      "classification": "Hot Dog",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "The two slot recipe is corroborated by both outlets and the wiki."
+    },
+    {
+      "table": "recipes",
+      "name": "Donut",
+      "cells": {
+        "Item": "Donut",
+        "Ingredients with exact quantities": "3 crops. 1x bread crop plus 2x sweet crops, one for icing and one for sprinkles. Worked: 1x Corn plus 1x Strawberry plus 1x Blueberry",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 3 minutes at base weight 2kg. One of the fastest foods to cook"
+      },
+      "classification": "Donut",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Donut needs two separate sweet crops, which is why one sweet crop yields Ice Cream instead."
+    },
+    {
+      "table": "recipes",
+      "name": "Pizza",
+      "cells": {
+        "Item": "Pizza",
+        "Ingredients with exact quantities": "4 crops. 1x bread crop plus 1x meat crop plus 1x vegetable crop plus 1x fruit crop for sauce. Worked: 1x Corn plus 1x Pepper plus 1x Tomato plus 1x Strawberry",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 8 minutes at base weight 2kg. Longest base cook time of any food"
+      },
+      "classification": "Pizza",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "The wiki recipe list and the slot definition agree on the same four crop combination."
+    },
+    {
+      "table": "recipes",
+      "name": "Burger",
+      "cells": {
+        "Item": "Burger",
+        "Ingredients with exact quantities": "3 crops. 1x bread crop plus 1x meat crop plus 1x leafy crop. Worked: 1x Corn plus 1x Pepper plus 1x Tomato",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 7 minutes at base weight 2kg. Rarity rises with rarer and heavier crops"
+      },
+      "classification": "Burger",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Burger and Sandwich overlap, so a Tomato in the third slot can produce either."
+    },
+    {
+      "table": "recipes",
+      "name": "Cake",
+      "cells": {
+        "Item": "Cake",
+        "Ingredients with exact quantities": "4 crops. 1x bread crop plus 2x sweet crops for icing and filling plus 1x fruit crop. Worked: 2x Corn plus 2x Strawberry",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 6 minutes at base weight 2kg. Rarity rises with rarer and heavier crops"
+      },
+      "classification": "Cake",
+      "status": "unverified",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "conflicting",
+      "needs_human": true,
+      "notes": "The declared slots ask for four crop types but the community recipe uses two. Marked unverified."
+    },
+    {
+      "table": "recipes",
+      "name": "Candy Apple",
+      "cells": {
+        "Item": "Candy Apple",
+        "Ingredients with exact quantities": "2 crops. 1x apple family crop (Apple, Green Apple, Maple Apple or Sugar Apple) plus 1x sweet crop. Worked: 1x Sugar Apple plus 1x Blueberry",
+        "Unlock requirement": "Cooking Kit, plus an apple family crop",
+        "Output value": "Base cook time 3 minutes at base weight 0.7kg. One of the fastest foods to cook"
+      },
+      "classification": "Candy Apple",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, plus an apple family crop",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Sugar Apple fills the apple slot and is also a sweet crop, which is why it appears twice in many lists."
+    },
+    {
+      "table": "recipes",
+      "name": "Porridge",
+      "cells": {
+        "Item": "Porridge",
+        "Ingredients with exact quantities": "3 crops. 2x bread crops, one base and one cream, plus 1x fruit crop. Worked: 1x Corn plus 1x Sugarglaze plus 1x Apple",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 4 minutes at base weight 2kg. Rarity rises with rarer and heavier crops"
+      },
+      "classification": "Porridge",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Both bread slots draw from the same crop group, so two Corn will fill them."
+    },
+    {
+      "table": "recipes",
+      "name": "Sweet Tea",
+      "cells": {
+        "Item": "Sweet Tea",
+        "Ingredients with exact quantities": "2 crops. 1x flower, toxic or Mint crop plus 1x sweet crop. Worked: 1x Rose plus 1x Peach",
+        "Unlock requirement": "Cooking Kit, plus a flower, toxic or Mint crop",
+        "Output value": "Base cook time 5 minutes at base weight 0.5kg. Rarity rises with rarer and heavier crops"
+      },
+      "classification": "Sweet Tea",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, plus a flower, toxic or Mint crop",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "The only food whose first slot takes flower or toxic crops rather than food crops."
+    },
+    {
+      "table": "recipes",
+      "name": "Smoothie",
+      "cells": {
+        "Item": "Smoothie",
+        "Ingredients with exact quantities": "1 crop. 1x fruit crop, and nothing else is required. Worked: 4x Apple",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 7 minutes at base weight 1.2kg. Rarity rises with rarer and heavier crops"
+      },
+      "classification": "Smoothie",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "The only single slot recipe, so extra fruit adds weight rather than filling a slot."
+    },
+    {
+      "table": "recipes",
+      "name": "Spaghetti",
+      "cells": {
+        "Item": "Spaghetti",
+        "Ingredients with exact quantities": "4 crops. 1x bread crop for pasta plus 1x Tomato or Grand Tomato plus 1x meat crop plus 1x vegetable crop. Worked: 1x Corn plus 1x Tomato plus 1x Bell Pepper plus 1x Jalapeno",
+        "Unlock requirement": "Cooking Kit, claimed from the Garden Guide achievement sets",
+        "Output value": "Base cook time 6 minutes at base weight 2.5kg. Second heaviest base weight"
+      },
+      "classification": "Spaghetti",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, claimed from the Garden Guide achievement sets",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/grow-a-garden/recipes-list"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "All three sources give the same four crop combination."
+    },
+    {
+      "table": "recipes",
+      "name": "Corndog",
+      "cells": {
+        "Item": "Corndog",
+        "Ingredients with exact quantities": "3 crops. 1x woody crop plus 1x meat crop plus 1x Corn or Violet Corn. Worked: 1x Giant Pinecone plus 1x Pepper plus 1x Corn",
+        "Unlock requirement": "Cooking Kit, plus a woody crop such as Giant Pinecone",
+        "Output value": "Base cook time 7 minutes at base weight 1.5kg. Required to craft the Pet Pouch"
+      },
+      "classification": "Corndog",
+      "status": "active",
+      "case_sensitive": false,
+      "requirements": "Cooking Kit, plus a woody crop such as Giant Pinecone",
+      "added_at": "2025-08-16T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": null,
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-kit-guide/"
+        },
+        {
+          "tier": 2,
+          "url": "https://beebom.com/grow-a-garden-cooking-recipe-list/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Food"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Added with the Cooking Kit rather than the event, and the only food tied to a crafting recipe."
+    },
+    {
+      "table": "recipes",
+      "name": "Chris P. craving bonus",
+      "cells": {
+        "Item": "Chris P. craving bonus",
+        "Ingredients with exact quantities": "Any finished food handed to Chris P. while he was craving that dish, 1x per submission",
+        "Unlock requirement": "Cooking Event island, which no longer exists in the experience",
+        "Output value": "Removed. Upgraded the finished food by one rarity tier"
+      },
+      "classification": "Chris P. craving bonus",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none, the NPC left with the event",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2025-08-16T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.thegamer.com/roblox-grow-a-garden-cooking-kit-unlock-how-to-get-use-guide/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Cooking_Event"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Every recipe still published as craving only depends on this removed mechanic. It is the single biggest reason older recipe lists fail."
+    },
+    {
+      "table": "recipes",
+      "name": "Rat Connoisseur food review",
+      "cells": {
+        "Item": "Rat Connoisseur food review",
+        "Ingredients with exact quantities": "1x mutated cooked food per review, then pick one reward from three offered",
+        "Unlock requirement": "Cooking Event island, which no longer exists in the experience",
+        "Output value": "Removed. Gourmet Egg, Kitchen Crate, Culinarian Chest and event seeds"
+      },
+      "classification": "Rat Connoisseur food review",
+      "status": "removed",
+      "case_sensitive": false,
+      "requirements": "none, the NPC left with the event",
+      "added_at": "2025-08-02T00:00:00Z",
+      "last_verified_at": "2026-08-25T08:00:00Z",
+      "ended_at": "2025-08-16T00:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.thegamer.com/roblox-grow-a-garden-cooking-kit-unlock-how-to-get-use-guide/"
+        },
+        {
+          "tier": 3,
+          "url": "https://growagarden.fandom.com/wiki/Cooking_Event"
+        }
+      ],
+      "confidence": "reported",
+      "needs_human": true,
+      "notes": "Cooked food now feeds crafting, pet hunger and the Sell Stand instead of an NPC reward table."
+    }
+  ],
+  "unverified_summary": "No row on this page is publisher confirmed, so every row displays as Unverified and the active count is zero. Grow a Garden publishes no recipe list on any channel it controls, and the ingredient counts here come from two independent outlets cross checked against the community wiki. Base cook times and base weights come from the wiki alone and no outlet repeats them, so treat those figures as the weakest data on the page. The seasonal foods the wiki documents, including Candy Cane, Eggnog, Fruitcake, Gingerbread Cookie, Holiday Roast, Holiday Stuffing and Wreath, are left out because no second source covers them and their crops are not in the current Seed Shop rotation.",
+  "disagreements": [
+    {
+      "item": "Divine Ice Cream from 3x Sugar Apple plus 1x Corn",
+      "source_a": "Beebom lists it as a plain Divine recipe",
+      "source_b": "PCGamesN lists it as Divine only while Chris P. is craving Ice Cream, and the wiki files the same combination under Prismatic craving only",
+      "confirmed": "Not confirmed. Cravings left with the event NPC, so the tier all three describe cannot be reproduced."
+    },
+    {
+      "item": "Prismatic Sushi",
+      "source_a": "Beebom lists 1x Corn plus 1x Bamboo plus 1x Elder Strawberry plus 2x Bone Blossom",
+      "source_b": "The wiki lists 1x Corn plus 1x Bamboo plus 3x Bone Blossom, and PCGamesN calls that same combination Divine while also stating no Prismatic Sushi recipe has been found",
+      "confirmed": "Not confirmed. The base of Bamboo plus a corn family crop is agreed. The Bone Blossom count is not."
+    },
+    {
+      "item": "How many Cooking Kits one garden holds",
+      "source_a": "TheGamer reports that three can be placed at once",
+      "source_b": "The wiki states no limit at all",
+      "confirmed": "Not confirmed. No publisher channel states a cap."
+    },
+    {
+      "item": "Minimum cook time",
+      "source_a": "Beebom states cooking takes at least five minutes",
+      "source_b": "The wiki food list gives per dish base times from one minute to eight minutes",
+      "confirmed": "Not confirmed. The per dish figures contradict a flat five minute floor."
+    },
+    {
+      "item": "Buying the Cooking Kit outright",
+      "source_a": "The wiki lists it in the Cosmetics Shop for 1,000,000",
+      "source_b": "Beebom and TheGamer describe only the Garden Guide achievement route",
+      "confirmed": "Not confirmed. The achievement route is corroborated twice. The shop price is single sourced."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "A Transcendent Sandwich, Sushi or Burger recipe",
+      "why_wrong": "The largest recipe table in circulation records no recipe found at Transcendent for all three, and no second source produces one. Any exact list you are shown was filled in rather than tested.",
+      "origin": "Aggregator posts and compilation videos that copy a recipe table and complete its blank cells."
+    },
+    {
+      "claim": "A secret Soup recipe",
+      "why_wrong": "Soup is the fallback output for any combination the game does not recognise as another food. There is nothing to discover, and a Soup you did not want means your slots did not match a real recipe.",
+      "origin": "Video thumbnails promising a hidden Soup combination."
+    },
+    {
+      "claim": "Craving only recipes presented as current",
+      "why_wrong": "Chris P. and the craving system left with the Cooking Event. Every recipe still marked craving only, or that promises a one tier upgrade, describes a mechanic that is no longer in the experience.",
+      "origin": "Event era guides that were never revised after the NPC was removed."
+    },
+    {
+      "claim": "Ice cream needs a milk or cream crop",
+      "why_wrong": "The cream slot takes any sweet crop. There is no dairy crop in Grow a Garden, so any list naming one is describing a crop that does not exist.",
+      "origin": "Recipe pages written from real world cooking rather than from the game."
+    },
+    {
+      "claim": "A live Cooking Event calendar stamped with the current year",
+      "why_wrong": "The Cooking Event ran once and closed. Pages restamping its calendar with a fresh year are re dating old copy, not reporting a live event.",
+      "origin": "Content farms that regenerate an old guide with a new date to look updated."
+    }
+  ],
+  "changes": [
+    {
+      "at": "2025-08-02T00:00:00Z",
+      "what": "Cooking Event opened in Update 1.17.0 with the lobby pot, Chris P. and the Rat Connoisseur"
+    },
+    {
+      "at": "2025-08-16T00:00:00Z",
+      "what": "Event closed, Chris P. and cravings removed, and cooking made permanent through the Cooking Kit"
+    },
+    {
+      "at": "2025-08-16T00:00:00Z",
+      "what": "Corndog added, and tied to crafting the Pet Pouch"
+    },
+    {
+      "at": "2026-05-08T00:00:00Z",
+      "what": "Recipes documented as fixed crop slots with per dish base cook times and base weights"
+    },
+    {
+      "at": "2026-08-25T08:00:00Z",
+      "what": "Page first published with every recipe, both removed event mechanics and five source conflicts"
+    }
+  ],
+  "next_change": {
+    "pattern": "Food changes arrive with seasonal events rather than on a fixed schedule, and the crop groups behind each slot shift whenever the Seed Shop rotation changes.",
+    "watch": [
+      "The Grow a Garden experience page update notes",
+      "The Garden Game group on Roblox",
+      "The in game Recipe Book, which only lists foods you have already cooked once"
+    ]
+  }
+}

@@ -11,6 +11,13 @@
 import { render } from 'astro:content';
 import { Picture } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+/*
+ * The article shell, shared with the editorial renderer. It lives in a
+ * stylesheet rather than a scoped block here because a scoped block only ever
+ * styles its own component: these class names are also EditorialArticle's, and
+ * both renderers have to resolve to the same page furniture.
+ */
+import '../../styles/article.css';
 import { articleArtwork } from '../../data/article-images';
 import { getSectionAuthor } from '../../data/authors';
 import { organizationId } from '../../data/site';
