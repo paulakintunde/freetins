@@ -847,6 +847,12 @@ const routeSchema = {
   .card-copy h3 { margin: 0; color: var(--text-primary); font: 600 16px / 1.35 var(--font-core); }
   .card-copy p { margin: 6px 0 0; color: var(--text-tertiary); font-size: 13px; }
   /*
+   * The excerpt is a card teaser, not the article. Dataset pages hand the hub a
+   * whole findings paragraph, so without a cap one long card stretches the row
+   * and buries the verified date. Three lines keeps every card the same height.
+   */
+  .card-copy p:not(.card-checked) { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; line-height: 1.5; }
+  /*
    * The check date is the card's freshness signal, not another sentence of the
    * excerpt, so it is set apart and given tabular figures to line up down the grid.
    * Scoped under .card-copy to outrank the rule above rather than fight it.
