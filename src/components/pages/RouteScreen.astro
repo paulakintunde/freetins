@@ -5,9 +5,11 @@ import AlertManager from './AlertManager.astro';
 import InteractiveForms from './InteractiveForms.astro';
 import SearchPanel from './SearchPanel.astro';
 import { dailyLinkCatalogue, gameCatalogue } from '../../data/home';
+import { getLaunchGameContent } from '../../data/launch-game-content';
 import {
   authorArtwork,
   dailyArtwork,
+  daylightGameArtwork,
   gameArtwork,
   gearArtwork,
   requireArtwork,
@@ -43,9 +45,15 @@ const game = gameCatalogue.find((item) => item.slug === definition.slug);
 const dailyGame = dailyLinkCatalogue.find((item) => item.slug === definition.slug);
 const platform = definition.platform ?? 'roblox';
 const gameRoot = game ? `/${platform}/${game.slug}` : '/roblox/grow-a-garden';
+const gameArticle = getLaunchGameContent(game?.slug);
+const gameCodesPath = gameArticle && game ? `/codes/${game.slug}` : `${gameRoot}-codes`;
 const isGamePage = ['hub', 'codes', 'values', 'archive'].includes(definition.kind) && Boolean(game);
 const gameArt = game
-  ? requireArtwork(gameArtwork, game.slug, 'game')
+  ? requireArtwork(
+      definition.kind === 'codes' && gameArticle ? daylightGameArtwork : gameArtwork,
+      game.slug,
+      definition.kind === 'codes' && gameArticle ? 'daylight gameplay' : 'game',
+    )
   : undefined;
 const dailyArt = dailyGame
   ? requireArtwork(dailyArtwork, dailyGame.slug, 'daily reward')
@@ -84,7 +92,9 @@ const stats = (() => {
     case 'daily': return [['Games tracked', '6'], ['Links live now', '45'], ['Median link age', '38 min'], ['Checked every', '1 to 3 h']];
     case 'browse': return [['Games tracked', String(gameCatalogue.length)], ['With live codes', '52'], ['Checked this hour', '41'], ['Platform', 'Roblox']];
     case 'hub': return [['Live codes', String(game?.live ?? 0)], ['Last checked', `${game?.age ?? '3 min'} ago`], ['Guides', '6'], ['Updates', '4']];
-    case 'codes': return [['Last checked', `${game?.age ?? '4 min'} ago`], ['Next check', 'in 56 min'], ['Live now', `${game?.live ?? 6} codes`], ['Verification', '2 sources']];
+    case 'codes': return gameArticle
+      ? [['Active codes', 'Awaiting verified release'], ['Publishing rule', 'Two-source check'], ['Source status', 'Official channels watched'], ['Archive', 'Starts on first release']]
+      : [['Last checked', `${game?.age ?? '4 min'} ago`], ['Next check', 'in 56 min'], ['Live now', `${game?.live ?? 6} codes`], ['Verification', '2 sources']];
     case 'calendar': return [['Added in August', '127'], ['Expired in August', '96'], ['Dated events ahead', '6'], ['Biggest day', '18 Aug']];
     case 'az': return [['Games listed', String(gameCatalogue.length + dailyLinkCatalogue.length)], ['With live codes', '52'], ['Checked this hour', '41'], ['Cheats confirmed', '362']];
     case 'status': return [
@@ -346,13 +356,13 @@ const crumbs = isGamePage
           )}
           <nav class="hub-tabs" aria-label={`${game?.name} sections`}>
             <a href={gameRoot} aria-current="page">Overview</a>
-            <a href={`${gameRoot}-codes`}>Codes</a>
+            <a href={gameCodesPath}>Codes</a>
             <a href={`${gameRoot}/values`}>Values</a>
             <a href={`${gameRoot}/archive`}>Archive</a>
           </nav>
         </section>
         <section class="page-section content-boundary module-grid">
-          <a class="module" href={`${gameRoot}-codes`}><span>Verified {game?.age} ago</span><h2>Newest working codes</h2><strong>{game?.live} live codes</strong></a>
+          <a class="module" href={gameCodesPath}><span>{gameArticle ? 'Verification queue open' : `Verified ${game?.age} ago`}</span><h2>Newest working codes</h2><strong>{gameArticle ? 'Awaiting verified release' : `${game?.live} live codes`}</strong></a>
           <a class="module" href={`${gameRoot}/values`}><span>Updated 2 h ago</span><h2>Item values</h2><strong>84 items tracked</strong></a>
           <a class="module" href={`${gameRoot}/archive`}><span>Permanent record</span><h2>Expired archive</h2><strong>214 codes kept</strong></a>
           {game?.slug === 'grow-a-garden' && <a class="module" href="/guides/every-mutation-and-what-triggers-it"><span>8 min read</span><h2>Every mutation</h2><strong>Guide</strong></a>}
@@ -363,22 +373,36 @@ const crumbs = isGamePage
     {definition.kind === 'codes' && (
       <section class="page-section content-boundary split-layout wide-main">
         <div>
-          <div class="section-title"><h2>Working codes</h2><span>{game?.live ?? 6} live</span></div>
-          <p class="visually-hidden" aria-live="polite" data-copy-live></p>
-          <div class="code-table" aria-label={`Working ${game?.name} codes`}>
-            {liveCodes.slice(0, Math.max(1, Math.min(game?.live ?? 6, liveCodes.length))).map(([code, reward, source, checked]) => (
-              <div class="code-row">
-                <div><code>{code}</code><span>{reward}</span></div>
-                <div><small>{source} · {checked}</small><button type="button" data-copy-code={code}>Copy</button></div>
+          {gameArticle ? (
+            <article class="code-article">
+              <div class="section-title"><h2>Verified codes</h2><span>None published yet</span></div>
+              <p class="empty-code-state">There are no verified active {game?.name} codes to publish right now. We will add a code only after its source and in-game result are confirmed.</p>
+              <h2 class="subhead">How to redeem {game?.name} codes</h2>
+              <p>{gameArticle.redemptionIntro}</p>
+              <ol class="redemption-steps">{gameArticle.redemptionSteps.map((step) => <li>{step}</li>)}</ol>
+              <h2 class="subhead">Before you try a code</h2>
+              <p>{gameArticle.rewardNote}</p>
+            </article>
+          ) : (
+            <>
+              <div class="section-title"><h2>Working codes</h2><span>{game?.live ?? 6} live</span></div>
+              <p class="visually-hidden" aria-live="polite" data-copy-live></p>
+              <div class="code-table" aria-label={`Working ${game?.name} codes`}>
+                {liveCodes.slice(0, Math.max(1, Math.min(game?.live ?? 6, liveCodes.length))).map(([code, reward, source, checked]) => (
+                  <div class="code-row">
+                    <div><code>{code}</code><span>{reward}</span></div>
+                    <div><small>{source} · {checked}</small><button type="button" data-copy-code={code}>Copy</button></div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <h2 class="subhead">Expired codes</h2>
-          <div class="expired-list">
-            {expiredCodes.map(([code, reward, checked]) => <div><s>{code}</s><span>{reward}</span><time>{checked}</time></div>)}
-          </div>
+              <h2 class="subhead">Expired codes</h2>
+              <div class="expired-list">
+                {expiredCodes.map(([code, reward, checked]) => <div><s>{code}</s><span>{reward}</span><time>{checked}</time></div>)}
+              </div>
+            </>
+          )}
         </div>
-        <aside><h2>Verification</h2><p>Every code is opened against two sources before it appears as live. Expired codes stay visible.</p><a href="/how-we-verify">How we verify</a><a href={`${gameRoot}/archive`}>Full archive</a></aside>
+        <aside><h2>Verification</h2><p>{gameArticle?.sourceNote ?? 'Every code is opened against two sources before it appears as live. Expired codes stay visible.'}</p><a href="/how-we-verify">How we verify</a><a href={`${gameRoot}/archive`}>Full archive</a></aside>
       </section>
     )}
 
@@ -534,6 +558,11 @@ const crumbs = isGamePage
   .code-row code { color: var(--green-neon); font: 600 14px / 1.4 ui-monospace, monospace; }
   .code-row span, .code-row small { color: var(--text-tertiary); }
   .code-row button, form button { min-height: 40px; border: 0; background: var(--green-600); color: #fff; padding: 0 14px; cursor: pointer; font: 700 11px / 1 var(--font-core); letter-spacing: .08em; text-transform: uppercase; }
+  .empty-code-state { margin: 0; border: 1px solid color-mix(in srgb, var(--green-600) 35%, var(--border-subtle)); background: color-mix(in srgb, var(--green-600) 8%, var(--surface-raised)); padding: 16px 18px; color: var(--text-secondary); line-height: 1.6; }
+  .code-article > p:not(.empty-code-state) { max-width: 68ch; color: var(--text-secondary); line-height: 1.65; }
+  .redemption-steps { display: grid; gap: 9px; margin: 14px 0 0; padding: 0; list-style: none; counter-reset: redemption-step; }
+  .redemption-steps li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; color: var(--text-secondary); line-height: 1.55; }
+  .redemption-steps li::before { counter-increment: redemption-step; content: counter(redemption-step, decimal-leading-zero); color: var(--text-brand); font: 700 12px / 1.7 var(--font-core); }
   .subhead { margin: 30px 0 12px; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
   .expired-list > div, .data-table > div { display: grid; grid-template-columns: 1.2fr 1.4fr .8fr; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); }
   .expired-list span, .expired-list time, .data-table span, .data-table small { color: var(--text-tertiary); }

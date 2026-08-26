@@ -1,4 +1,5 @@
 import { dailyLinkCatalogue, gameCatalogue } from './home';
+import { launchGameContent } from './launch-game-content';
 import routeRendering from './route-rendering.json';
 
 export type RouteKind =
@@ -246,6 +247,8 @@ const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => ({
 
 const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
   const root = `/${game.platform}/${game.slug}`;
+  const launchContent = launchGameContent[game.slug];
+  const codesPath = launchContent ? `/codes/${game.slug}` : `${root}-codes`;
   return [
     {
       path: root,
@@ -259,12 +262,12 @@ const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
       platform: game.platform,
     },
     {
-      path: `${root}-codes`,
+      path: codesPath,
       routeId: 'codes',
       kind: 'codes' as const,
       title: `${game.name} codes (August 2026) | Freetins`,
       heading: `${game.name} codes (August 2026)`,
-      description: `All working ${game.name} codes, each with the time it was last verified. Expired codes stay visible.`,
+      description: launchContent?.summary ?? `All working ${game.name} codes, each with the time it was last verified. Expired codes stay visible.`,
       name: game.name,
       slug: game.slug,
       platform: game.platform,

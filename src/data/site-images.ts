@@ -14,6 +14,10 @@ const gameSources = import.meta.glob<ImageMetadata>('../assets/games/*-codes-art
   eager: true,
   import: 'default',
 });
+const daylightGameSources = import.meta.glob<ImageMetadata>('../assets/games/*-daylight.png', {
+  eager: true,
+  import: 'default',
+});
 const dailySources = import.meta.glob<ImageMetadata>('../assets/daily/*-free-rewards-art.webp', {
   eager: true,
   import: 'default',
@@ -33,6 +37,7 @@ const byFilename = (sources: Record<string, ImageMetadata>) => Object.fromEntrie
 
 const images = {
   games: byFilename({ ...approvedGameSources, ...gameSources }),
+  daylightGames: byFilename(daylightGameSources),
   daily: byFilename(dailySources),
   gear: byFilename(gearSources),
   team: byFilename(teamSources),
@@ -114,6 +119,26 @@ export const gameArtwork: Record<string, SiteArtwork> = Object.fromEntries(
   Object.entries(gameAlts).map(([slug, alt]) => [
     slug,
     artwork(images.games, `${slug}-codes-art.webp`, alt, `/og/games/${slug}.jpg`),
+  ]),
+);
+
+const daylightGameAlts: Record<string, string> = {
+  'anime-apocalypse': 'Sword fighter escaping zombies across a sunlit ruined city rooftop',
+  'anime-eternal': 'Energy fighter facing creatures in a sunny futuristic city plaza',
+  'anime-final-quest': 'Adventurer approaching a portal guardian in a bright coastal valley',
+  'anime-guardians': 'Elemental guardian units defending a forest path in daylight',
+  'anime-last-stand': 'Defenders holding a desert canyon route against armored creatures',
+  'anime-ranger-x': 'Adventure squad defending a sunlit village lane from armored monsters',
+  'anime-vanguards': 'Elemental defenders protecting a bright coastal path from shadow creatures',
+  'azure-latch': 'Football striker striking an icy blue shot in a daylight stadium',
+  'bizarre-lineage': 'Street fighter facing a translucent guardian spirit in a sunny city plaza',
+  'blade-ball': 'Sword fighters parrying a glowing arena ball under a blue sky',
+};
+
+export const daylightGameArtwork: Record<string, SiteArtwork> = Object.fromEntries(
+  Object.entries(daylightGameAlts).map(([slug, alt]) => [
+    slug,
+    artwork(images.daylightGames, `${slug}-daylight.png`, alt, `/og/games/${slug}-daylight.jpg`),
   ]),
 );
 
