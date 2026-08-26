@@ -76,13 +76,20 @@ const hubDatasetSection: DatasetSection | null = definition.routeId === 'guideIn
     : definition.routeId === 'updates'
       ? 'blog'
       : null;
-const hubDatasetPages = hubDatasetSection ? await listDatasetPages(hubDatasetSection) : [];
+/*
+ * Most recently verified first. The loader returns collection order, which is
+ * effectively filename order, so without this a hub presents its oldest check as
+ * its lead card and the freshness the dataset works to earn is invisible.
+ */
+const hubDatasetPages = (hubDatasetSection ? await listDatasetPages(hubDatasetSection) : [])
+  .sort((left, right) => Date.parse(right.checkedAt) - Date.parse(left.checkedAt));
 
 const publishedHeading = {
   answers: 'Published Answers',
   guideIndex: 'Published Guides',
   cheats: 'Published Cheats',
   daily: 'Published Daily Guides',
+  updates: 'Published Posts',
 }[definition.routeId];
 const game = gameCatalogue.find((item) => item.slug === definition.slug);
 const dailyGame = dailyLinkCatalogue.find((item) => item.slug === definition.slug);
@@ -670,7 +677,15 @@ const routeSchema = {
                     />
                   </div>
                 )}
-                <div class="card-copy"><h3>{item.heading}</h3><p>{item.description}</p></div>
+                <div class="card-copy">
+                  <h3>{item.heading}</h3>
+                  <p>{item.description}</p>
+                  {item.checkedAt && (
+                    <p class="card-checked">
+                      Last verified <time datetime={item.checkedAt}>{formatAbsoluteTimestamp(item.checkedAt)}</time>
+                    </p>
+                  )}
+                </div>
               </a>
             );
           })}
@@ -831,6 +846,13 @@ const routeSchema = {
   .card-copy { min-height: 94px; padding: 13px 14px 16px; background: var(--surface-raised); }
   .card-copy h3 { margin: 0; color: var(--text-primary); font: 600 16px / 1.35 var(--font-core); }
   .card-copy p { margin: 6px 0 0; color: var(--text-tertiary); font-size: 13px; }
+  /*
+   * The check date is the card's freshness signal, not another sentence of the
+   * excerpt, so it is set apart and given tabular figures to line up down the grid.
+   * Scoped under .card-copy to outrank the rule above rather than fight it.
+   */
+  .card-copy .card-checked { margin: 9px 0 0; font-size: 12px; font-variant-numeric: tabular-nums; }
+  .card-copy .card-checked time { color: var(--text-secondary); }
   .split-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 320px); gap: 30px; align-items: start; }
   .wide-main { grid-template-columns: minmax(0, 1.7fr) minmax(240px, .7fr); }
   aside { border: 1px solid var(--border-subtle); background: var(--surface-raised); padding: 20px; }

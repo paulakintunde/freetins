@@ -88,7 +88,7 @@ const staticRoutes: RouteDefinition[] = [
   },
   {
     path: '/blog/', routeId: 'updates', kind: 'updates', title: 'Blog | Freetins', heading: 'Blog',
-    description: 'A publication log appears here when source-backed operational changes are recorded.', noindex: true,
+    description: 'Longer pages on how codes and rewards actually work, each built from a dataset where every row carries its own evidence and check date.',
   },
   {
     path: '/games/', routeId: 'az', kind: 'az', title: 'All games A-Z | Freetins', heading: 'All games A-Z',

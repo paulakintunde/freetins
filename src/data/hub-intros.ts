@@ -145,6 +145,29 @@ export const hubIntros: Record<string, HubIntro> = {
       },
     ],
   },
+
+  updates: {
+    summary:
+      'Longer pages on how a code or reward system actually works, each built from a dataset rather than written around one.',
+    paragraphs: [
+      'This section covers the questions a single game page cannot answer: how redemption works across a whole platform, why a code everybody is sharing does not work, and which of the strings circulating for a game were ever real. A game page lists what is live right now. A post here explains the mechanism behind it and keeps the dead entries on the record.',
+      'Posts are built the same way as the rest of the site. Prose and data live in separate files and are joined at build, so every table, count and date on the page comes from the dataset and the writing cannot drift away from it. Expired and removed entries stay visible rather than being deleted, because most searches are for a string that already died and knowing it is dead in one glance is the useful answer.',
+    ],
+    criteria: [
+      {
+        heading: 'How a post gets published',
+        body: 'It needs a dataset with evidence on every row, at least one official source, a stated recheck cadence and a written account of what could not be verified. A post that cannot say where its facts came from does not ship.',
+      },
+      {
+        heading: 'How to read a status',
+        body: 'Only a row confirmed against a publisher channel displays as Active, and an active row drops back to Unverified once its last check ages out. A page showing no active rows is reporting an honest result, not a broken one.',
+      },
+      {
+        heading: 'Why dead entries stay',
+        body: 'A deleted row is indistinguishable from a row nobody ever checked. Keeping expired and removed entries in the table is what lets you identify a code you found elsewhere as already dead, and it is the clearest evidence the page is rechecked rather than left to rot.',
+      },
+    ],
+  },
 };
 
 export const hubIntroFor = (routeId: string): HubIntro | undefined => hubIntros[routeId];

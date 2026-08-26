@@ -215,6 +215,46 @@ faq:
 
 `featured_image` is optional. Everything else is required. `faq` needs 6 to 10 pairs.
 
+### Artwork
+
+**Do not use the `featured_image` field to set the page image.** It is parsed and
+then ignored: the renderer looks artwork up by slug in `src/data/article-images.ts`
+and never reads the front matter value. Setting it produces no image and no error,
+which is the worst of both.
+
+Artwork is optional and a page ships fine without it. A page with no registered
+artwork renders no hero and no card thumbnail, and its social preview falls back to
+the site default. Nothing breaks, so never hold a page back for a missing image.
+
+To add artwork for a page, three steps:
+
+1. Put a source image somewhere on disk. Landscape, and at least 1536 by 1024.
+2. Run the processor. It writes both the hero and the social crop:
+
+```
+node scripts/process-article-art.mjs <slug>=path/to/source.png
+```
+
+   That produces `src/assets/articles/<slug>-article-art.webp` at 1536 by 1024 and
+   `public/og/articles/<slug>.jpg` at 1200 by 630.
+
+3. Register it in `src/data/article-images.ts`, keyed by the **page slug**:
+
+```ts
+'roblox-promo-codes': artwork('roblox-promo-codes', 'Alt text describing the scene'),
+```
+
+Editorial articles in that file are keyed by `routeId` instead. Dataset-backed pages
+are keyed by slug, because that is what the renderer looks up. Getting this wrong
+throws at build with a named error rather than shipping a blank.
+
+The alt text is the image's description, not a caption or a keyword slot. Say what is
+in the scene.
+
+**Artwork must not depict a game's trademarks, logos or characters.** The existing
+set uses original scenes and generic figures for this reason: a page about one
+publisher's codes cannot illustrate itself with that publisher's assets.
+
 ### Body structure the build checks
 
 1. **First paragraph is the Answer Block.** 40 to 55 words. Counted after tokens are treated as one word each.
