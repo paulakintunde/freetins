@@ -8,6 +8,7 @@
  * cannot drift apart.
  */
 
+import { datasetMetaDescription } from './metaDescription.ts';
 import { getCollection } from 'astro:content';
 
 export type DatasetSection = 'guides' | 'daily' | 'blog';
@@ -58,9 +59,13 @@ export const listDatasetPages = async (section: DatasetSection): Promise<Dataset
        * three identical search results.
        */
       heading: data.title ?? dataset.subject ?? entry.id,
-      // The unverified summary is the most honest one-line description
-      // available: it says what the page does and does not stand behind.
-      description: dataset.unverifiedSummary ?? data.title ?? '',
+      // The same text the page puts in its meta description: the writer's
+      // front-matter line, else the unverified summary cut to snippet length.
+      description: datasetMetaDescription({
+        description: data.description,
+        unverifiedSummary: dataset.unverifiedSummary,
+        title: data.title,
+      }),
       section,
       focusKeyword: data.focusKeyword ?? '',
       secondaryKeywords: data.secondaryKeywords ?? [],

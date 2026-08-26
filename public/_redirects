@@ -9,7 +9,7 @@
 # the 12 protected pages listed in CONTENT-ALIGNMENT-PLAN.md. Without this file
 # every one of them returns 404 the moment the apex domain serves this build.
 #
-# Nine rules below point at a section hub rather than a specific page. That is a
+# Thirteen rules below point at a section hub rather than a specific page. That is a
 # soft-404 shape and it is on loan, not settled: each one is marked at its section
 # and should become a direct 301 as its page ships.
 #
@@ -57,6 +57,17 @@
 /adventure-capitalist-support-code/                                /cheats/                           301
 /best-gba-games-emulator-pokemon-roms-time/                        /guides/                           301
 /nintendo-switch-2-features-games-cost-and-more/                   /guides/                           301
+# Confirmed live 404s with inbound links in the August 2026 audit: the same
+# families as the 100 Pics Christmas Emoji and Pokemon Emerald pages above.
+/100-pics-food-logo-cheats-and-answers-to-all-level/               /answers/                          301
+/100-pics-football-logos-answers-and-cheats-for-level-1-100-2/     /answers/                          301
+/100-pics-movie-logos-answered-level-1-100/                        /answers/                          301
+/8-ball-pool-hack-and-cheats-for-iphone-ipad-pc-facebook-and-android/ /cheats/                        301
+
+# --- Sitemap alias ----------------------------------------------------------
+# The build emits /sitemap-index.xml and robots.txt points there, but tools and
+# the Search Console "add sitemap" default still try the conventional path.
+/sitemap.xml                                                       /sitemap-index.xml                 301
 
 # --- WordPress category archives --------------------------------------------
 # Archive pages, not content. Mapped to the closest equivalent surface.

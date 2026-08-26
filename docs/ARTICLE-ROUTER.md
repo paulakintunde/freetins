@@ -55,7 +55,7 @@ the dataset in the control page, and the result is an event, not a document.
 
 Front matter (no other keys): `title` (under 65 characters, no month), `slug`,
 `permalink`, `category`, `category_slug`, `focus_keyword`, `secondary_keywords`
-(4 to 6), `description` (under 160 characters; the hub-card and search text),
+(4 to 6), `description` (155 characters or fewer, answer first; the meta description, hub-card and search text — caveats stay in the body),
 `author` (the section owner: guides = David Ng; daily and blog = Paul A), `faq`
 (6 to 10 pairs, answers 40 to 90 words), optional `featured_image` (ignored by the
 renderer; artwork is registered by slug in `src/data/article-images.ts`).

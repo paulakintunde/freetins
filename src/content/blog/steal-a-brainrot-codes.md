@@ -2,6 +2,7 @@
 title: "Steal a Brainrot Codes: Every Code, Live and Dead"
 slug: "steal-a-brainrot-codes"
 permalink: "/blog/steal-a-brainrot-codes/"
+description: "Steal a Brainrot codes, live and dead: every code outlets report, what it gave, why most burn out within hours and where the game actually announces them."
 category: "Blog"
 category_slug: "blog"
 focus_keyword: "steal a brainrot codes"

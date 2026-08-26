@@ -2,6 +2,7 @@
 title: "Monopoly GO Tycoon Club: What It Is and How to Get In"
 slug: "monopoly-go-tycoon-club"
 permalink: "/guides/monopoly-go-tycoon-club/"
+description: "The Monopoly GO Tycoon Club is Scopely's free web loyalty programme: how the invitation works, what Loyalty Points buy and how to get the Store free gift."
 category: "Guides"
 category_slug: "guides"
 focus_keyword: "monopoly go tycoon club"

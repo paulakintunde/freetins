@@ -316,6 +316,7 @@ const routeSchema = {
   description={definition.description}
   noindex={definition.noindex ?? false}
   checkerStatus={operations.services.checker.enabled ? checkerSnapshot?.state ?? 'Degraded' : 'Unconfigured'}
+  canonical={definition.canonical ?? true}
   image={routeArtwork?.socialImage}
   imageAlt={routeArtwork?.alt}
 >

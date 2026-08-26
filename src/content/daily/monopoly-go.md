@@ -2,6 +2,7 @@
 title: "Monopoly GO Free Dice Links, Dated Row by Row"
 slug: "monopoly-go"
 permalink: "/daily/monopoly-go/"
+description: "Monopoly GO free dice links, dated row by row: the latest drops, how long each link stays open and where Scopely posts them first."
 category: "Daily"
 category_slug: "daily"
 focus_keyword: "monopoly go free dice links"

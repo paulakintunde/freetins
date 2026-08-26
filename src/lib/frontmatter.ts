@@ -7,6 +7,7 @@
  * rather than guessed at. Written in-repo because js-yaml is only a transitive
  * Astro dependency and is not resolvable from application code under pnpm.
  */
+import { META_DESCRIPTION_LIMIT } from './metaDescription.ts';
 
 export interface ArticleFrontmatter {
   title: string;
@@ -17,13 +18,15 @@ export interface ArticleFrontmatter {
   focusKeyword: string;
   secondaryKeywords: string[];
   author: string;
+  /** The meta description, hub-card and search text: answer first, 155 characters or fewer. */
+  description?: string;
   featuredImage?: string;
   faq: { q: string; a: string }[];
 }
 
 const SCALAR_KEYS = new Set([
   'title', 'slug', 'permalink', 'category', 'category_slug',
-  'focus_keyword', 'author', 'featured_image',
+  'focus_keyword', 'author', 'description', 'featured_image',
 ]);
 
 const unquote = (value: string): string => {
@@ -165,6 +168,13 @@ export const parseFrontmatter = (source: string, label: string): FrontmatterResu
 
   const featuredImage = scalar('featured_image', false);
 
+  // The meta description. Anything past the cap is cut by the renderer, so the
+  // writer is told here rather than finding the tail missing on the live page.
+  const description = scalar('description', false);
+  if (description.length > META_DESCRIPTION_LIMIT) {
+    errors.push(`${label}: description is ${description.length} characters, the limit is ${META_DESCRIPTION_LIMIT}`);
+  }
+
   const frontmatter: ArticleFrontmatter = {
     title,
     slug: scalar('slug'),
@@ -174,6 +184,7 @@ export const parseFrontmatter = (source: string, label: string): FrontmatterResu
     focusKeyword: scalar('focus_keyword'),
     secondaryKeywords: secondary,
     author: scalar('author'),
+    ...(description ? { description } : {}),
     ...(featuredImage ? { featuredImage } : {}),
     faq,
   };

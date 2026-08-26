@@ -2,6 +2,7 @@
 title: "Roblox Song IDs and Music Codes: Every ID We Checked"
 slug: "roblox-song-ids"
 permalink: "/guides/roblox-song-ids/"
+description: "Roblox song IDs and music codes by title, with each asset number, its uploader and its current status, plus how to find any ID in the Creator Store."
 category: "Guides"
 category_slug: "guides"
 focus_keyword: "roblox song ids"

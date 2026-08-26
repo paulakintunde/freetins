@@ -22,6 +22,7 @@ import { articleArtwork } from '../../data/article-images';
 import { getSectionAuthor } from '../../data/authors';
 import { organizationId } from '../../data/site';
 import type { Dataset, DatasetCounts } from '../../lib/dataset';
+import { datasetMetaDescription } from '../../lib/metaDescription';
 
 interface EntryData {
   title: string;
@@ -32,6 +33,7 @@ interface EntryData {
   focusKeyword: string;
   secondaryKeywords: string[];
   author: string;
+  description?: string;
   featuredImage?: string;
   faq: { q: string; a: string }[];
   section: 'guides' | 'daily' | 'blog';
@@ -46,6 +48,18 @@ interface Props {
 const { entry } = Astro.props;
 const { data } = entry;
 const { dataset } = data;
+
+/*
+ * The writer's answer-first line, or the unverified summary cut to snippet
+ * length. Bound raw, the summary put up to 870 characters of caveats in the
+ * description tag and the search result opened on "Nothing on this page is
+ * publisher confirmed".
+ */
+const metaDescription = datasetMetaDescription({
+  description: data.description,
+  unverifiedSummary: dataset.unverifiedSummary,
+  title: data.title,
+});
 
 const { Content, headings } = await render(entry as never);
 const jumpHeadings = headings.filter((heading) => heading.depth === 2);
@@ -136,7 +150,7 @@ const structuredData = {
 
 <BaseLayout
   title={data.title}
-  description={dataset.unverifiedSummary}
+  description={metaDescription}
   image={artwork?.socialImage}
   imageAlt={artwork?.alt}
 >

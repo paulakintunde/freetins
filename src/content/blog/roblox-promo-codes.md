@@ -2,6 +2,7 @@
 title: "Roblox Promo Codes: What Still Works and What Does Not"
 slug: "roblox-promo-codes"
 permalink: "/blog/roblox-promo-codes/"
+description: "Roblox promo codes, live and expired, with the item each unlocks, the official redeem page, and why most lists still print codes that died years ago."
 category: "Blog"
 category_slug: "blog"
 focus_keyword: "roblox promo codes"

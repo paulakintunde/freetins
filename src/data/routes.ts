@@ -46,6 +46,8 @@ export interface RouteDefinition {
   slug?: string;
   platform?: string;
   noindex?: boolean;
+  /** False omits the rel=canonical link. Only the 404 template does this. */
+  canonical?: boolean;
 }
 
 const staticRoutes: RouteDefinition[] = [
@@ -285,7 +287,8 @@ export const getRouteDefinition = (path: string) => {
 };
 
 export const notFoundDefinition: RouteDefinition = {
-  path: '/404',
+  // Trailing slash like every other route, so the breadcrumb items match the URL.
+  path: '/404/',
   routeId: 'notfound',
   kind: 'notTracked',
   title: 'Page not found | Freetins',
@@ -297,6 +300,12 @@ export const notFoundDefinition: RouteDefinition = {
    * indexing: a page whose entire content is "nothing here", eligible to rank and
    * to be counted against the site as a soft 404. The status code is what a
    * crawler acts on at the missing URL; this covers the document itself.
+   *
+   * No canonical either. The same body is served at every missing URL, and a
+   * canonical on it nominates /404/ as the preferred version of an address that
+   * does not exist; a noindex page pointing a canonical at itself is a
+   * contradiction a crawler has to resolve on its own.
    */
   noindex: true,
+  canonical: false,
 };

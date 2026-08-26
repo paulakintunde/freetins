@@ -2,6 +2,7 @@
 title: "How to Redeem Game Codes on Every Major Platform"
 slug: "how-to-redeem-game-codes"
 permalink: "/blog/how-to-redeem-game-codes/"
+description: "How to redeem game codes on Roblox, Xbox, PlayStation, Nintendo, Epic, GOG and Genshin Impact: where each redeem box is, and why a valid code gets refused."
 category: "Blog"
 category_slug: "blog"
 focus_keyword: "how to redeem game codes"

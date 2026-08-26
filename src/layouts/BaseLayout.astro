@@ -16,6 +16,8 @@ interface Props {
   image?: string | undefined;
   imageAlt?: string | undefined;
   noindex?: boolean;
+  /** False omits the rel=canonical link; the 404 template is the one user. */
+  canonical?: boolean;
   theme?: 'light' | 'dark';
 }
 
@@ -27,6 +29,7 @@ const {
   image = '/og/freetins-home-game-codes.jpg',
   imageAlt = 'Freetins game codes and daily reward links',
   noindex = false,
+  canonical: emitCanonical = true,
   theme = 'dark',
 } = Astro.props;
 const hasPrimaryImage = typeof Astro.props.image === 'string';
@@ -101,7 +104,7 @@ const schema = {
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
     {googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />}
-    <link rel="canonical" href={canonical} />
+    {emitCanonical && <link rel="canonical" href={canonical} />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />

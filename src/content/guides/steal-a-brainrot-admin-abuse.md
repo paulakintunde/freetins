@@ -2,6 +2,7 @@
 title: "When Is Admin Abuse in Steal a Brainrot? The Real Record"
 slug: "steal-a-brainrot-admin-abuse"
 permalink: "/guides/steal-a-brainrot-admin-abuse/"
+description: "Admin abuse in Steal a Brainrot has no official schedule. The dated record shows a Tuesday evening slot and a Saturday post-update slot, both US Eastern."
 category: "Guides"
 category_slug: "guides"
 focus_keyword: "when is admin abuse in steal a brainrot"

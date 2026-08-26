@@ -2,6 +2,7 @@
 title: "Every Grow a Garden Recipe and Exact Ingredients"
 slug: "grow-a-garden-recipes"
 permalink: "/guides/grow-a-garden-recipes/"
+description: "Every Grow a Garden recipe with the exact crop count and slot rule for each food, the cheapest crops that fill each slot, and which crops substitute."
 category: "Guides"
 category_slug: "guides"
 focus_keyword: "grow a garden recipes"

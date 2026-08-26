@@ -2,6 +2,7 @@
 title: "Monopoly Go Golden Blitz Schedule and Every Dated Event"
 slug: "monopoly-go-golden-blitz"
 permalink: "/guides/monopoly-go-golden-blitz/"
+description: "Golden Blitz dates in Monopoly GO, row by row, with the sticker pair each event traded, how often it returns and why nobody can announce the next one."
 category: "Guides"
 category_slug: "guides"
 focus_keyword: "monopoly go golden blitz"
