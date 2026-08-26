@@ -1,8 +1,17 @@
 import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
+import { datasetBackedPaths } from './src/data/datasetRoutes.ts';
 import { goneRoutePrefixes, goneRoutes } from './src/data/gone.ts';
 import { routeDefinitions } from './src/data/routes.ts';
+
+/*
+ * A dataset page takes its path over from the route table via `getStaticPaths`, so
+ * where the two disagree the dataset page is the one that renders and the route
+ * entry describes a page nobody serves. Its `noindex` must not keep the live page
+ * out of the sitemap.
+ */
+const datasetOwned = new Set(datasetBackedPaths());
 
 /**
  * The sitemap integration enumerates every route the build emits, including the
@@ -14,7 +23,9 @@ import { routeDefinitions } from './src/data/routes.ts';
 const excludedFromSitemap = new Set([
   '/internal/',
   ...goneRoutes,
-  ...routeDefinitions.filter((route) => route.noindex).map((route) => route.path),
+  ...routeDefinitions
+    .filter((route) => route.noindex && !datasetOwned.has(route.path))
+    .map((route) => route.path),
 ]);
 
 export default defineConfig({

@@ -29,6 +29,7 @@ const workerManifest = existsSync(workerManifestPath)
 const missing = new Map();
 const prototypeLeaks = [];
 const noindexSitemapLeaks = [];
+const sitemapGaps = [];
 let internalLinks = 0;
 let workerLinks = 0;
 const sitemap = readdirSync(outputRoot)
@@ -74,9 +75,21 @@ for (const file of htmlFiles) {
     prototypeLeaks.push(file);
   }
 
-  if (/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(html)) {
-    const canonical = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)/i)?.[1];
+  const canonical = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)/i)?.[1];
+  const isNoindex = /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(html);
+
+  if (isNoindex) {
     if (canonical && sitemap.includes(`<loc>${canonical}</loc>`)) noindexSitemapLeaks.push(canonical);
+  } else if (canonical && !sitemap.includes(`<loc>${canonical}</loc>`)) {
+    /*
+     * The mirror of the check above, and the one that was missing. A page can be
+     * open to Google and never advertised to it, which is silent in a way the
+     * reverse is not: nothing 404s, nothing is flagged, the page simply waits to be
+     * found. `/daily/monopoly-go/` shipped that way because a dataset page took the
+     * path over from a route-table entry still marked noindex, and the sitemap
+     * filter believed the entry.
+     */
+    sitemapGaps.push(canonical);
   }
 
   const links = html.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["']/gi);
@@ -127,6 +140,12 @@ if (noindexSitemapLeaks.length > 0) {
   for (const canonical of noindexSitemapLeaks) console.error(`- ${canonical}`);
 }
 
+if (sitemapGaps.length > 0) {
+  console.error('Indexable pages missing from the sitemap:');
+  for (const canonical of sitemapGaps) console.error(`- ${canonical}`);
+  console.error('Either advertise them in the sitemap or mark them noindex — not neither.');
+}
+
 if (goneSitemapLeaks.length > 0) {
   console.error('Removed (410) routes leaked into the sitemap:');
   for (const route of goneSitemapLeaks) console.error(`- ${route}`);
@@ -138,6 +157,7 @@ if (
   || missing.size > 0
   || invalidOnDemandRoutes.length > 0
   || noindexSitemapLeaks.length > 0
+  || sitemapGaps.length > 0
   || goneSitemapLeaks.length > 0
 ) process.exit(1);
 

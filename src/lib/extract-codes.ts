@@ -75,7 +75,9 @@ const percentile = (values: number[], fraction: number): number => {
   if (values.length === 0) return 0;
   const sorted = [...values].sort((left, right) => left - right);
   const index = Math.min(sorted.length - 1, Math.max(0, Math.floor(sorted.length * fraction)));
-  return sorted[index];
+  // The index is clamped into range above and the empty case already returned,
+  // so this is always a hit. The compiler sees only the index signature.
+  return sorted[index] ?? 0;
 };
 
 /**
@@ -136,13 +138,14 @@ export const spotCandidates = (html: string): Map<string, Set<string>> => {
   };
 
   for (const [, inner] of html.matchAll(/<(?:code|strong|b|mark)\b[^>]*>([\s\S]{1,80}?)<\/(?:code|strong|b|mark)>/gi)) {
-    add(toText(inner).replace(/\s+/g, ' '), 'emphasis');
+    if (inner) add(toText(inner).replace(/\s+/g, ' '), 'emphasis');
   }
 
   for (const [, inner] of html.matchAll(/<li\b[^>]*>([\s\S]{1,160}?)<\/li>/gi)) {
+    if (!inner) continue;
     const text = toText(inner).replace(/\s+/g, ' ').trim();
     const lead = /^([A-Za-z0-9_!?'". -]{3,40}?)(?:\s+[-–—:]\s+|\s*\(|$)/.exec(text);
-    if (lead) add(lead[1], 'list-item');
+    if (lead?.[1]) add(lead[1], 'list-item');
   }
 
   const text = toText(html);
@@ -151,7 +154,7 @@ export const spotCandidates = (html: string): Map<string, Set<string>> => {
     for (const match of text.matchAll(pattern)) {
       const after = text.slice(match.index! + match[0].length, match.index! + match[0].length + 48);
       const token = /^([A-Za-z0-9_!?'-]{3,40})/.exec(after.trim());
-      if (token) add(token[1], 'phrase');
+      if (token?.[1]) add(token[1], 'phrase');
     }
   }
 

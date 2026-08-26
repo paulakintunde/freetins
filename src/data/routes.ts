@@ -291,4 +291,12 @@ export const notFoundDefinition: RouteDefinition = {
   title: 'Page not found | Freetins',
   heading: 'Nothing grows here',
   description: 'The address does not match a page tracked by Freetins.',
+  /*
+   * The body Cloudflare serves with a 404 is also emitted as a real document at
+   * /404/, where it answers 200 like any other page. Without this it invited
+   * indexing: a page whose entire content is "nothing here", eligible to rank and
+   * to be counted against the site as a soft 404. The status code is what a
+   * crawler acts on at the missing URL; this covers the document itself.
+   */
+  noindex: true,
 };
