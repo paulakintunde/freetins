@@ -41,7 +41,7 @@ Grow a Garden is place ID {{entityId}}, published by {{developer}}, and it is no
 
 Recipes in this game are slot based, not fixed lists. Each food declares a set of slots, and each slot accepts any crop from one group. Ice Cream declares a cone slot and a sweet slot, so any cone crop plus any sweet crop produces Ice Cream. Extra crops beyond the required slots add weight and rarity, they do not change which food comes out.
 
-That is why so many published lists contradict each other. They record one worked combination and present it as the recipe, when the game only ever checked the slots. The worked examples above are the cheapest combination two independent sources agree on. Use the crop groups if you want to substitute, and check [which crops count as sweet, fruit and leafy](/guides/grow-a-garden-plant-types/) before you commit a rare seed to the pot.
+That is why so many published lists contradict each other. They record one worked combination and present it as the recipe, when the game only ever checked the slots. The worked examples above are the cheapest combination two independent sources agree on. Use the crop groups if you want to substitute, and check which crops count as sweet, fruit and leafy before you commit a rare seed to the pot.
 
 Nothing here displays as Active. Grow a Garden does not publish recipes on any channel it controls, and a row cannot be marked Active without publisher confirmation. Every row is therefore Unverified, which is the honest label, and [how every row on this page is checked](/how-we-verify/) explains what that status is worth.
 
@@ -155,4 +155,5 @@ Weight is the lever most people miss. A heavier crop adds time to the pot and ra
 
 ## Related pages
 
-- [The full Grow a Garden crop category list](/guides/grow-a-garden-plant-types/)
+- [Grow a Garden codes and their rewards](/codes/grow-a-garden/)
+- [How Freetins verifies every page](/how-we-verify/)
