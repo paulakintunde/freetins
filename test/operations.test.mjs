@@ -132,14 +132,15 @@ test('a publisher post outranks a reported source', () => {
   assert.equal(citation.label, 'Publisher post');
 });
 
-test('a reported source is named rather than disclaimed', () => {
+test('a reported source is labelled without naming or linking the outlet', () => {
+  // The outlet stays in sourceUrls for audit; the page does not cite it.
   const citation = citationFor({
     publisherSourceUrl: null,
     sourceUrls: ['https://www.pcgamesn.com/grow-a-garden/codes'],
   });
   assert.equal(citation.evidenceLabel, 'community-reported');
   assert.equal(citation.tier, 3);
-  assert.equal(citation.label, 'Reported by pcgamesn.com');
+  assert.equal(citation.label, 'Community-reported');
 });
 
 test('an aggregator in discoveredVia is never promoted to a citation', () => {
