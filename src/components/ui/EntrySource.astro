@@ -2,14 +2,10 @@
 /**
  * The evidence line under a code or daily link.
  *
- * Two states, never a bare negative. A publisher post links to the channel the
- * publisher controls. Anything else names the outlet that reported it, because the
- * entry is uncorroborated rather than unsourced and the page should say which of
- * those two things is true. Only an entry with no usable URL at all falls through
- * to "No source recorded".
+ * First-party publisher evidence can be linked. Community and aggregator evidence
+ * remains in the operational data for audit and verification, but is not emitted as
+ * a public outbound link from a code or reward row.
  *
- * Reported links carry `nofollow`: these are aggregators the site is citing, not
- * endorsing, and several of them republish each other.
  */
 import { citationFor, type EvidenceTier } from '../../data/operations';
 
@@ -22,10 +18,12 @@ const citation = citationFor(entry);
 ---
 
 {citation
-  ? <a
-      href={citation.url}
-      rel={citation.evidenceLabel === 'publisher-confirmed' ? 'noopener' : 'nofollow noopener'}
-      data-evidence-tier={citation.evidenceLabel}
-      data-evidence-rung={citation.tier}
-    >{citation.label}</a>
+  ? citation.evidenceLabel === 'publisher-confirmed'
+    ? <a
+        href={citation.url}
+        rel="noopener"
+        data-evidence-tier={citation.evidenceLabel}
+        data-evidence-rung={citation.tier}
+      >{citation.label}</a>
+    : <span class="tier-chip" data-evidence-tier={citation.evidenceLabel} data-evidence-rung={citation.tier}>Community-reported</span>
   : <span class="tier-chip">No source recorded</span>}

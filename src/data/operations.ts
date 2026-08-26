@@ -284,12 +284,8 @@ export interface EntryCitation {
  * The citation a row shows the reader.
  *
  * `publisherSourceUrl` is the strong form and remains the only thing that reads as
- * publisher-confirmed. When there is none the entry still carries the outlet that
- * reported it in `sourceUrls`, and the page used to discard that and print
- * "no publisher post found" instead. That told the reader less than the data holds:
- * a row that is merely uncorroborated read as one nobody could find a source for.
- * Naming the outlet keeps the tier distinction intact and stops the page disclaiming
- * evidence it is holding.
+ * publisher-confirmed. Community and aggregator evidence stays in `sourceUrls` for
+ * internal audit, but is not emitted as a public outbound citation from a row.
  *
  * `discoveredVia` is deliberately not consulted. An aggregator repeating another
  * aggregator is not corroboration, and surfacing it here would launder it into one.
@@ -308,10 +304,9 @@ export const citationFor = (
   }
   const reported = (entry.sourceUrls ?? []).find((url) => isHttpsUrl(url));
   if (!reported) return null;
-  const host = hostOf(reported);
   return {
     url: reported,
-    label: host ? `Reported by ${host}` : 'Reported by one outlet',
+    label: 'Community-reported',
     tier: 3,
     evidenceLabel: 'community-reported',
   };
