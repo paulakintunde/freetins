@@ -127,10 +127,10 @@ export const howWeVerifyArticle: EditorialArticle = {
       id: 'hearts',
       heading: 'What a heart means, and what it does not',
       paragraphs: [
-        'Rows carry a reader control so you can say whether a code worked for you. This page calls it a heart; on code pages today it is drawn as a thumbs up and a thumbs down, and the rule is the same either way. Hearts are reader reports. They are counted, they are shown, and they never change a state.',
+        'Where reader reports are switched on for the site, rows carry a control so you can say whether a code worked for you. This page calls it a heart; on code pages it is drawn as a thumbs up and a thumbs down, and the rule is the same either way. Where they are switched off, which is how the site ships today, no control appears on any page. Hearts are reader reports. No count of them is displayed anywhere on the site, and none of them ever changes a state.',
         'That separation is deliberate. If enough hearts could turn a code green, the site would be publishing unverified consensus as fact, which is the practice this whole method exists to avoid. Hearts never mint a star, and they never touch whether a page is indexed. What they do is order the editor queue: a code collecting failure reports is moved to the front of the list for an editor to check properly, and it is the editor check that changes the label.',
-        'Reports are de-duplicated per network address, which stops the same person clicking repeatedly. It is not fraud resistance and we do not present it as such: carrier networks put thousands of genuine readers behind a single address, so real reports get absorbed, and anyone switching networks can report more than once. Treat the numbers as a rough signal of how a code is behaving in the wild, not as a count of distinct people.',
-        'No IP address is stored. The de-duplication key is a one-way hash of the address combined with a server-side secret and a daily-rotating value, and it expires by itself. There is no way to recover an address from what is kept, and no way to follow one reader between codes beyond the rotation window.',
+        'One report is kept per reader, per code, per day, which stops the same person clicking repeatedly. Readers are told apart by network address, and that is not fraud resistance and we do not present it as such: carrier networks put thousands of genuine readers behind a single address, so real reports get absorbed, and anyone switching networks can report more than once. An editor reading these reports is reading a rough signal of how a code is behaving in the wild, not a count of distinct people.',
+        'No IP address is stored. What is kept is one record holding the day, the code, the verdict and a fingerprint: a one-way hash of the address combined with a server-side secret and a value that rotates daily. The record expires by itself. There is no way to recover an address from it, and no way to follow one reader between codes beyond the rotation window.',
       ],
       table: {
         caption: 'What each signal is allowed to do',
@@ -235,7 +235,7 @@ export const howWeVerifyArticle: EditorialArticle = {
     {
       question: 'Do hearts change whether a code is verified?',
       answer:
-        'No. Hearts are reader reports: they are counted and shown, but only an editor event can change a state, and hearts never touch whether a page is indexed. A code collecting failure reports is moved up the editor queue so an editor looks at it sooner.',
+        'No. Hearts are reader reports. No count of them is shown on the site, only an editor event can change a state, and hearts never touch whether a page is indexed. What they do is move a code collecting failure reports up the editor queue, so an editor looks at it sooner.',
     },
     {
       question: 'Is any of this checked automatically?',

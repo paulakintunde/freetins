@@ -21,7 +21,8 @@
     "test": "node --test",
     "check:vocabulary": "node scripts/check-vocabulary.mjs",
     "snapshot:states": "node scripts/snapshot-states.mjs",
-    "report:cutover": "node scripts/cutover-report.mjs"
+    "report:cutover": "node scripts/cutover-report.mjs",
+    "queue:hearts": "node scripts/tally-votes.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "12.6.13",

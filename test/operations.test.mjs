@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
+import { hasUncommentedReportsBinding, reportsOrderingError } from '../scripts/check-operational-data.mjs';
 import { citationFor, isIndexable, isLiveState, operations, resolveState, validateOperations } from '../src/data/operations.ts';
 
 const freshData = () => structuredClone(operations);
@@ -77,6 +79,72 @@ test('incomplete service activation is rejected', () => {
 
   assert.throws(() => validateOperations(data), /Enabled alerts service needs at least one channel/);
   assert.throws(() => validateOperations(data), /Enabled advertising needs a provider/);
+});
+
+test('the reader-report flag is a required boolean and ships off', () => {
+  /*
+   * services.reports decides at build time whether the reader-report control is
+   * rendered at all (ADR 0005), and the control cannot work without bindings this
+   * repository cannot see. There is no companion field, so the type is the whole
+   * rule: `"false"` is truthy at any reader that does not compare against `true`.
+   * It is required rather than defaulted so a schema that gains the service while
+   * the data forgets it fails the build instead of reading as off by accident.
+   */
+  assert.equal(operations.services.reports.enabled, false);
+
+  const missing = freshData();
+  delete missing.services.reports;
+  assert.throws(() => validateOperations(missing), /services\.reports\.enabled must be a boolean/);
+
+  const typed = freshData();
+  typed.services.reports = { enabled: 'true' };
+  assert.throws(() => validateOperations(typed), /services\.reports\.enabled must be a boolean/);
+
+  const enabled = freshData();
+  enabled.services.reports.enabled = true;
+  assert.doesNotThrow(() => validateOperations(enabled));
+});
+
+test('the reader-report flag cannot be turned on ahead of the REPORTS binding', () => {
+  /*
+   * The other half of the flag rule, and the half no type can carry. `enabled:
+   * true` with no REPORTS binding renders a control on every code row whose every
+   * click answers 503: dead, not degraded, and waiting does not fix it. Half of
+   * that configuration is in this repository (wrangler.toml) and can be read; the
+   * other half is the namespace and the secret on the Cloudflare account, which
+   * cannot be seen from here at all. So the check reads the half it has and the
+   * message says plainly what it did not look at, instead of passing and leaving
+   * the impression that the whole configuration was verified.
+   */
+  const wrangler = readFileSync(new URL('../wrangler.toml', import.meta.url), 'utf8');
+
+  // As shipped: the flag is off and the binding is a commented block. Nothing to say.
+  assert.equal(operations.services.reports.enabled, false);
+  assert.equal(hasUncommentedReportsBinding(wrangler), false);
+  assert.equal(reportsOrderingError(operations.services.reports.enabled, wrangler), null);
+
+  // The real namespace id is recorded, so activation is an uncomment and not a hunt.
+  assert.match(wrangler, /id = "d787c832c5f74ad691b2d259328f81b0"/);
+
+  // Flag on, binding still commented: fatal, naming both files and its own blind spot.
+  const error = reportsOrderingError(true, wrangler);
+  assert.ok(error, 'an enabled flag with no uncommented binding must be reported');
+  assert.match(error, /wrangler\.toml/);
+  assert.match(error, /src\/content\/operations\.json/);
+  assert.match(error, /cannot be checked from this repository/);
+  assert.match(error, /REPORT_SECRET/);
+
+  // Uncommenting that same block, and nothing else, is what clears it.
+  const live = wrangler
+    .split('\n')
+    .map((line) => (/^# (\[\[kv_namespaces\]\]|binding = "REPORTS"|id = "d787c832c5f74ad691b2d259328f81b0")$/.test(line) ? line.slice(2) : line))
+    .join('\n');
+  assert.equal(hasUncommentedReportsBinding(live), true);
+  assert.equal(reportsOrderingError(true, live), null);
+
+  // A binding of that name counts only under kv_namespaces, and only under that name.
+  assert.equal(hasUncommentedReportsBinding('[[d1_databases]]\nbinding = "REPORTS"\n'), false);
+  assert.equal(hasUncommentedReportsBinding('[[kv_namespaces]]\nbinding = "STATUS"\n'), false);
 });
 
 test('prototype domains are rejected from operational records', () => {

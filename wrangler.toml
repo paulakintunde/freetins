@@ -11,3 +11,63 @@ compatibility_flags = ["nodejs_compat"]
 # REPORT_SECRET value. The secret makes the per-address dedup fingerprint one-way;
 # without it the endpoint refuses reports rather than storing a reversible hash.
 # No IP address is ever written to storage.
+
+# --- KV bindings -------------------------------------------------------------
+#
+# Both namespaces are on Cloudflare's free plan and draw on one account-wide
+# budget of 1,000 KV writes a day, which is the binding constraint the whole
+# design is built around (docs/adr/0005-the-free-plan-is-the-design-target.md).
+#
+# The blocks below are commented because a binding declared here is live on the
+# next deploy, and neither namespace should be bound before the site is ready to
+# use it. REPORTS has been created on the account and carries its real id below;
+# STATUS is still a template. They live here rather than only in the dashboard so
+# the bindings can be reviewed, and so the commands that produce them are written
+# down once instead of remembered. Run:
+#
+#   wrangler kv namespace create REPORTS
+#   wrangler kv namespace create STATUS
+#   wrangler pages secret put REPORT_SECRET --project-name freetins
+#
+# then paste the returned ids below, uncomment the blocks, and set
+# `services.reports.enabled` to `true` in src/content/operations.json. Until that
+# last step the report control renders nowhere, which is the intended state.
+#
+# The first of those three commands has already been run on this account: the
+# REPORTS id below is the one it printed, and running it again would create a
+# second, empty namespace rather than return that id. The other two are still
+# outstanding.
+#
+# That order is checked in one direction, and in one place only: `pnpm check:data`
+# fails when `services.reports.enabled` is `true` while this file carries no
+# uncommented `binding = "REPORTS"` block. That is the only half of the
+# configuration this repository can see. Whether the namespace exists on the
+# Cloudflare account, and whether REPORT_SECRET is set on the Pages project, cannot
+# be checked from here; confirm both yourself before flipping the flag.
+#
+# REPORTS holds one vote record per reader, entry and day, with a 7-day TTL. One
+# key per accepted heart means one write and no read-modify-write race.
+#
+# The namespace exists and the id below is the real one, so uncommenting the block
+# is all that binds it. Read this before you do:
+#
+#   A Pages project takes its bindings from the dashboard until its wrangler
+#   configuration declares bindings of its own. From that deploy on, Cloudflare
+#   reads the bindings from this file and ignores the ones configured in the
+#   dashboard. Uncommenting the block below therefore REPLACES the project's
+#   dashboard bindings rather than adding to them, and anything bound only in the
+#   dashboard stops existing at runtime. Open the freetins project's settings
+#   first, write down every binding and variable it holds today, and bring them
+#   all into this file in the same commit.
+#
+# [[kv_namespaces]]
+# binding = "REPORTS"
+# id = "d787c832c5f74ad691b2d259328f81b0"
+#
+# STATUS holds `checker:current` for the optional checker. Its write cadence
+# comes out of the same 1,000-a-day budget as REPORTS, so a checker that runs
+# every minute would spend 1,440 writes and starve the hearts.
+#
+# [[kv_namespaces]]
+# binding = "STATUS"
+# id = "<id printed by `wrangler kv namespace create STATUS`>"

@@ -132,6 +132,14 @@ const codeEntries = (operationalPage?.entries ?? []).filter(
 );
 const liveCodeEntries = codeEntries.filter((item) => isLiveState(item.state));
 const expiredCodeEntries = codeEntries.filter((item) => item.state === 'expired');
+/*
+ * Whether the reader-report control is rendered at all. Configuration decides it, at
+ * build time, so a page view costs no Function request and no KV read: the client
+ * never asks the endpoint whether it exists (docs/adr/0005). When the flag is off
+ * nothing renders — no markup, no note — because a thumb whose click cannot be
+ * recorded is worse than no thumb.
+ */
+const readerReportsEnabled = operations.services.reports.enabled;
 const dailyEntries = (operationalPage?.entries ?? []).filter(
   (item): item is ResolvedEntry<DailyLinkEntry> => 'url' in item.entry,
 );
@@ -514,21 +522,22 @@ const routeSchema = {
                   {item.latestEvent && <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time>}
                   <span class="record-sources"><EntrySource entry={item.entry} /></span>
                   <button type="button" data-copy-code={item.entry.code}>Copy</button>
-                  <span class="code-reports" data-code-report={item.entry.id} hidden>
-                    <button type="button" class="thumb up" data-report-verdict="worked" aria-label={`Report that ${item.entry.code} worked`}>
-                      <svg viewBox="0 0 16 16" aria-hidden="true" width="13" height="13"><path fill="currentColor" d="M6.2 14H4V6.6h2.2L9.4 2c.8 0 1.4.7 1.3 1.5l-.4 2.4h3.1c.9 0 1.5.8 1.3 1.6l-1.1 5A1.4 1.4 0 0 1 12.2 14H6.2ZM1 6.6h1.8V14H1a.6.6 0 0 1-.6-.6V7.2A.6.6 0 0 1 1 6.6Z"/></svg>
-                      <b data-report-count="worked">0</b>
-                    </button>
-                    <button type="button" class="thumb down" data-report-verdict="failed" aria-label={`Report that ${item.entry.code} did not work`}>
-                      <svg viewBox="0 0 16 16" aria-hidden="true" width="13" height="13"><path fill="currentColor" d="M9.8 2H12v7.4H9.8L6.6 14c-.8 0-1.4-.7-1.3-1.5l.4-2.4H2.6a1.4 1.4 0 0 1-1.3-1.6l1.1-5A1.4 1.4 0 0 1 3.8 2h6ZM15 9.4h-1.8V2H15c.3 0 .6.3.6.6v6.2a.6.6 0 0 1-.6.6Z"/></svg>
-                      <b data-report-count="failed">0</b>
-                    </button>
-                  </span>
+                  {readerReportsEnabled && (
+                    <span class="code-reports" data-code-report={item.entry.id}>
+                      <button type="button" class="thumb up" data-report-verdict="worked" aria-label={`Report that ${item.entry.code} worked`}>
+                        <svg viewBox="0 0 16 16" aria-hidden="true" width="13" height="13"><path fill="currentColor" d="M6.2 14H4V6.6h2.2L9.4 2c.8 0 1.4.7 1.3 1.5l-.4 2.4h3.1c.9 0 1.5.8 1.3 1.6l-1.1 5A1.4 1.4 0 0 1 12.2 14H6.2ZM1 6.6h1.8V14H1a.6.6 0 0 1-.6-.6V7.2A.6.6 0 0 1 1 6.6Z"/></svg>
+                      </button>
+                      <button type="button" class="thumb down" data-report-verdict="failed" aria-label={`Report that ${item.entry.code} did not work`}>
+                        <svg viewBox="0 0 16 16" aria-hidden="true" width="13" height="13"><path fill="currentColor" d="M9.8 2H12v7.4H9.8L6.6 14c-.8 0-1.4-.7-1.3-1.5l.4-2.4H2.6a1.4 1.4 0 0 1-1.3-1.6l1.1-5A1.4 1.4 0 0 1 3.8 2h6ZM15 9.4h-1.8V2H15c.3 0 .6.3.6.6v6.2a.6.6 0 0 1-.6.6Z"/></svg>
+                      </button>
+                      <span class="report-status" data-report-status aria-live="polite"></span>
+                    </span>
+                  )}
                 </div>
               </div>
             ))}
           </div> : <div class="data-empty"><strong>No code is published</strong><p>A single listed code brings this page into the index. None has been recorded for it yet.</p></div>}
-          <p class="report-note" data-report-note hidden>Thumbs are reader reports, not verification. They are de-duplicated per address, which stops repeat clicks but cannot separate people sharing a network. A code collecting failure reports is moved up the re-check queue; it is never relabelled by vote. See <a href="/how-we-verify/">how we verify</a>.</p>
+          {readerReportsEnabled && <p class="report-note">Thumbs are reader reports, not verification. They are de-duplicated per address for the day, which stops repeat clicks but cannot separate people sharing a network. A code collecting failure reports is moved up the re-check queue; it is never relabelled by vote. See <a href="/how-we-verify/">how we verify</a>.</p>}
           {expiredCodeEntries.length > 0 && <><details class="expired-block"><summary><span class="subhead">Expired codes</span><span>{expiredCodeEntries.length} retired records</span></summary><p class="expired-note">Kept as a maintenance record so a code that stops working can be told apart from one that never existed. Retired codes are not a search destination and carry no claim of being usable.</p><div class="expired-list">
             {expiredCodeEntries.map((item) => <div><s>{item.entry.code}</s><span>{item.entry.reward}</span>{item.latestEvent && <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time>}</div>)}
           </div></details></>}
@@ -816,6 +825,11 @@ const routeSchema = {
     {relatedLinks.length > 0 && <nav class="next-links content-boundary" aria-label="Related pages">{relatedLinks.map(([label, href]) => <a href={href}>{label}</a>)}</nav>}
   </article>
 
+  {/* Both imports stay in one unconditional block. Astro hoists `<script>` at build
+      time, and putting this one behind `readerReportsEnabled` drops its chunk from the
+      output altogether — the control renders and nothing is listening. The script is
+      inert without the control, so the cost of shipping it either way is one small
+      chunk, which is the cheaper of the two mistakes. */}
   <script>
     import '../../scripts/search';
     import '../../scripts/code-reports';
@@ -909,6 +923,20 @@ const routeSchema = {
   .code-row code { color: var(--green-neon); font: 600 14px / 1.4 ui-monospace, monospace; }
   .code-row span, .code-row small { color: var(--text-tertiary); }
   .code-row button, form button { min-width: 92px; min-height: 44px; border: 0; background: var(--green-600); color: #fff; padding: 0 14px; cursor: pointer; font: 700 var(--fs-caption) / 1 var(--font-core); letter-spacing: .08em; text-transform: uppercase; }
+  .code-reports { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .code-row .thumb { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 0; border: 1px solid var(--border-subtle); background: transparent; color: var(--text-tertiary); }
+  .code-row .thumb[data-reported='true'] { border-color: var(--green-600); background: var(--green-600); color: #fff; }
+  .code-row .thumb:disabled { cursor: default; }
+  .code-row .thumb:not([data-reported='true']):disabled { opacity: .5; }
+  .report-status { color: var(--text-tertiary); font: 400 var(--fs-caption) / 1.4 var(--font-core); }
+  /*
+   * Empty, this takes no space, but it stays rendered: `display: none` removes an
+   * element from the accessibility tree, and a live region that is not in the tree at
+   * the moment its text is written is not announced. The whole point of the region is
+   * the announcement, so it is hidden the way .visually-hidden hides things.
+   */
+  .report-status:empty { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .report-note { max-width: 78ch; margin: 12px 0 0; color: var(--text-tertiary); font: 400 var(--fs-caption) / 1.5 var(--font-core); }
   .subhead { margin: 30px 0 12px; color: var(--text-primary); font: 600 var(--fs-h4) / var(--lh-h4) var(--font-core); }
   .expired-list > div, .data-table > div { display: grid; grid-template-columns: 1.2fr 1.4fr .8fr; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); }
   .expired-list span, .expired-list time, .data-table span, .data-table small { color: var(--text-tertiary); }

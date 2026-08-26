@@ -193,6 +193,25 @@ export interface SponsorshipEntry {
 export interface ServiceConfiguration {
   checker: { enabled: boolean; scheduleMinutes: number | null };
   alerts: { enabled: boolean; channels: Array<'email' | 'discord'>; subscriptionEndpoint: string | null };
+  /**
+   * Whether the reader-report control is rendered at all.
+   *
+   * It is configuration rather than a runtime probe, and that is the whole point.
+   * `/api/code-report.json` refuses both verbs unless the `REPORTS` namespace and
+   * `REPORT_SECRET` are both bound, so a control rendered against an unconfigured
+   * endpoint is a button that fails in silence. Asking the endpoint at load time
+   * would answer that question honestly and charge a metered Function request per
+   * control per page view to do it; reading a boolean at build time answers it for
+   * nothing (`docs/adr/0005-the-free-plan-is-the-design-target.md`).
+   *
+   * There is no companion field because there is nothing else to configure: the
+   * namespace and the secret live in the Cloudflare project, not here. The flag
+   * stays `false` until an operator has created both, and that ordering is what
+   * keeps the fail-closed promise. Turning it on before them renders a control
+   * that answers 503; leaving it off after them costs a redeploy, which is the
+   * cheaper mistake of the two.
+   */
+  reports: { enabled: boolean };
   advertising: { enabled: boolean; provider: string | null; privacyPolicyUrl: string | null; placementIds: string[] };
 }
 
@@ -547,6 +566,17 @@ export const validateOperations = (candidate: OperationalData) => {
   if (candidate.services.alerts.enabled) {
     if (candidate.services.alerts.channels.length === 0) errors.push('Enabled alerts service needs at least one channel');
     if (!candidate.services.alerts.subscriptionEndpoint || !isHttpsUrl(candidate.services.alerts.subscriptionEndpoint)) errors.push('Enabled alerts service needs an HTTPS subscriptionEndpoint');
+  }
+  /*
+   * `reports` has no dependent field to check, so the rule is the type itself.
+   * It is checked rather than assumed because `"false"` is a plausible thing to
+   * type into JSON and is truthy at every reader that does not compare against
+   * `true`, and it is required rather than defaulted because a schema that gains
+   * a service while the data forgets it should fail the build rather than read as
+   * a silent `false` nobody chose.
+   */
+  if (typeof candidate.services.reports?.enabled !== 'boolean') {
+    errors.push('services.reports.enabled must be a boolean');
   }
   if (candidate.services.advertising.enabled) {
     if (!candidate.services.advertising.provider || !candidate.services.advertising.privacyPolicyUrl || !isHttpsUrl(candidate.services.advertising.privacyPolicyUrl)) {

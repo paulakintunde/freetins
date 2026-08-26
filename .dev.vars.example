@@ -1,3 +1,13 @@
 # Copy to .dev.vars for local server-route development. Never commit real values.
-TURNSTILE_SECRET="replace-with-local-turnstile-secret"
-ALERT_TOKEN_SECRET="replace-with-at-least-32-random-bytes"
+
+# Read by src/pages/api/code-report.json.ts. Both verbs of the endpoint refuse
+# without it rather than storing a reversible per-address hash, so a local run
+# without this value exercises the fail-closed path and nothing else.
+REPORT_SECRET="replace-with-at-least-32-random-bytes"
+
+# Not read by any code today. They are kept, commented, as the record of two
+# intended services rather than deleted and rediscovered later — but they are
+# named as unread so nobody sets one and believes it is doing something. Move a
+# line above this comment on the commit that first reads it.
+# TURNSTILE_SECRET="replace-with-local-turnstile-secret"
+# ALERT_TOKEN_SECRET="replace-with-at-least-32-random-bytes"

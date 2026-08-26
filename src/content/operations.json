@@ -3652,6 +3652,9 @@
       "channels": [],
       "subscriptionEndpoint": null
     },
+    "reports": {
+      "enabled": false
+    },
     "advertising": {
       "enabled": false,
       "provider": null,
