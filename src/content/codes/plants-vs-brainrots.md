@@ -6,7 +6,7 @@ focus_keyword: "plants vs brainrots codes"
 
 ## Plants vs Brainrots is now shown as Plants & Brainrots
 
-The official experience currently displays **Plants & Brainrots**, while most players and search results still use "Plants vs Brainrots." This page follows the official game but keeps the established search phrase and Freetins route so readers reach one direct article rather than duplicate pages.
+The official experience currently displays **Plants & Brainrots**, while many players still use "Plants vs Brainrots." Both names refer to the same game and the same code redemption system covered here.
 
 The five rows are **listed, awaiting editor verification**. Their strings and rewards overlap across current references, but Freetins has not redeemed each item in the latest build.
 

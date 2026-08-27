@@ -6,7 +6,7 @@ focus_keyword: "blade ball codes"
 
 ## What the current list actually contains
 
-Blade Ball codes usually grant Wheel Spins, although the table may also include a cosmetic reward. The list above is deliberately narrower than many competing lists: it contains the entries that overlap across current references and leaves out `SERPENT`, whose availability is disputed.
+Blade Ball codes usually grant Wheel Spins, although the table may also include a cosmetic reward. The list above keeps entries that overlap across current references and leaves out `SERPENT`, whose availability is disputed.
 
 Every row is **listed, awaiting editor verification**. That means the code and reward have traceable sources, but a Freetins editor has not redeemed the code in the game. It is useful evidence, not a promise that an old server or previously used account will accept it.
 

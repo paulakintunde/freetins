@@ -330,7 +330,7 @@
       "name": "Fruit Battlegrounds",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
       "officialSourceUrl": "https://www.roblox.com/games/9224601490/Fruit-Battlegrounds",
       "redeemSteps": [
@@ -347,7 +347,7 @@
       "name": "Untitled Boxing Game",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
       "officialSourceUrl": "https://www.roblox.com/games/13621938427/untitled-boxing-game",
       "redeemSteps": [
@@ -409,7 +409,7 @@
       "name": "Dress to Impress",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
       "officialSourceUrl": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
       "redeemSteps": [
@@ -448,7 +448,7 @@
       "name": "Anime Last Stand",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
       "officialSourceUrl": "https://www.roblox.com/games/12886143095/Anime-Last-Stand",
       "redeemSteps": [
@@ -504,7 +504,7 @@
       "name": "Fisch",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
       "officialSourceUrl": "https://www.roblox.com/games/16732694052/Fisch",
       "redeemSteps": [
@@ -520,7 +520,7 @@
       "name": "Rivals",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
       "officialSourceUrl": "https://www.roblox.com/games/17625359962/RIVALS",
       "redeemSteps": [
@@ -633,7 +633,7 @@
       "name": "Clover Retribution",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
       "officialSourceUrl": "https://www.roblox.com/games/10912405603/Clover-Retribution",
       "redeemSteps": [
@@ -825,7 +825,7 @@
       "name": "Blade Ball",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
       "officialSourceUrl": "https://www.roblox.com/games/13772394625/Blade-Ball",
       "redeemSteps": [
@@ -848,7 +848,7 @@
       "name": "Plants & Brainrots",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
       "officialSourceUrl": "https://www.roblox.com/games/127742093697776/Plants-Brainrots",
       "redeemSteps": [
@@ -882,7 +882,7 @@
       "name": "Anime Vanguards",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
       "officialSourceUrl": "https://www.roblox.com/games/16146832113/Anime-Vanguards",
       "redeemSteps": [
@@ -1313,6 +1313,8 @@
         "https://beebom.com/roblox-fruit-battlegrounds-codes/"
       ],
       "publisherSourceUrl": null,
+      "confidence": "conflicting",
+      "needsHuman": true,
       "discoveredVia": [
         "https://www.roblox.com/games/9224601490/Fruit-Battlegrounds",
         "https://www.pockettactics.com/fruit-battlegrounds/codes",
@@ -1346,6 +1348,8 @@
         "https://beebom.com/roblox-fruit-battlegrounds-codes/"
       ],
       "publisherSourceUrl": null,
+      "confidence": "conflicting",
+      "needsHuman": true,
       "discoveredVia": [
         "https://twinfinite.net/guides/all-roblox-fruit-battlegrounds-codes/",
         "https://beebom.com/roblox-fruit-battlegrounds-codes/"
@@ -1378,6 +1382,8 @@
         "https://beebom.com/roblox-fruit-battlegrounds-codes/"
       ],
       "publisherSourceUrl": null,
+      "confidence": "conflicting",
+      "needsHuman": true,
       "discoveredVia": [
         "https://twinfinite.net/guides/all-roblox-fruit-battlegrounds-codes/",
         "https://beebom.com/roblox-fruit-battlegrounds-codes/"
@@ -1387,13 +1393,15 @@
       "id": "untitled-boxing-game-code-1",
       "gameSlug": "untitled-boxing-game",
       "code": "surgeon",
-      "reward": "8 Lucky Spins",
+      "reward": "8 Spins; current sources disagree on whether they are Lucky Spins",
       "firstSeenAt": "2026-08-26T12:00:00Z",
       "sourceUrls": [
         "https://progameguides.com/roblox/untitled-boxing-game-codes/",
         "https://twinfinite.net/guides/untitled-boxing-game-codes/"
       ],
       "publisherSourceUrl": null,
+      "confidence": "conflicting",
+      "needsHuman": true,
       "discoveredVia": [
         "https://progameguides.com/roblox/untitled-boxing-game-codes/",
         "https://twinfinite.net/guides/untitled-boxing-game-codes/"
@@ -1403,13 +1411,15 @@
       "id": "untitled-boxing-game-code-2",
       "gameSlug": "untitled-boxing-game",
       "code": "thedoctorwillseeyousoon",
-      "reward": "15 Lucky Spins",
+      "reward": "15 Spins; current sources disagree on whether they are Lucky Spins",
       "firstSeenAt": "2026-08-26T12:00:00Z",
       "sourceUrls": [
         "https://progameguides.com/roblox/untitled-boxing-game-codes/",
         "https://twinfinite.net/guides/untitled-boxing-game-codes/"
       ],
       "publisherSourceUrl": null,
+      "confidence": "conflicting",
+      "needsHuman": true,
       "discoveredVia": [
         "https://progameguides.com/roblox/untitled-boxing-game-codes/",
         "https://twinfinite.net/guides/untitled-boxing-game-codes/"

@@ -6,7 +6,7 @@ focus_keyword: "untitled boxing game codes"
 
 ## Use the newest spin codes first
 
-Untitled Boxing Game codes mainly grant Spins and Lucky Spins for fighting styles, with occasional Cash or emote rewards. The table starts with the newest Surgeon-update entries, then keeps a small group where current independent lists overlap.
+Untitled Boxing Game codes mainly grant Spins and Lucky Spins for fighting styles, with occasional Cash or emote rewards. The table starts with the newest Surgeon-update entries, then keeps a small group where current independent lists overlap. The two newest reward labels remain disputed, so the table records the shared quantities without pretending the Spin type is settled.
 
 Every row is **listed, awaiting editor verification**. The official Roblox description still displays some older strings that newer sources mark expired, so those are not carried into the live table merely because they remain in the description text.
 
@@ -40,7 +40,7 @@ The code named `100KCASH` is especially easy to misread. Current references repo
 
 ### What do surgeon and thedoctorwillseeyousoon give?
 
-Current sources report eight Lucky Spins and fifteen Lucky Spins respectively.
+Current sources agree on quantities of eight and fifteen Spins, but disagree on whether both rewards are Lucky Spins. The rows remain flagged for an editor check.
 
 ### Does 100KCASH give cash?
 

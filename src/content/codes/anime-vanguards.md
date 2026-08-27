@@ -48,7 +48,7 @@ No. The reported reward is one Red Key.
 
 ### Are older Anime Vanguards codes included?
 
-No. This launch page favors the newest overlapping entries instead of republishing a large uncertain archive.
+No. This page favors the newest overlapping entries instead of republishing a large uncertain archive.
 
 ## Continue on Freetins
 
