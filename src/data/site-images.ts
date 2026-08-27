@@ -129,17 +129,32 @@ export const gameArtwork: Record<string, SiteArtwork> = Object.fromEntries(
 
 const dailyAlts: Record<string, string> = {
   'monopoly-go': 'Dice rolling toward a reward chest on a colorful city property board',
-  'coin-master': 'Prize wheel showering coins over a Nordic-inspired coastal village',
-  'dice-dreams': 'Three dice bouncing before a whimsical hilltop castle',
+  'coin-master': 'Viking builder opening a treasure chest beside a longship and coastal village',
+  'dice-dreams': 'Royal helpers cheering as rolling dice restore a colorful hilltop kingdom',
   'bingo-blitz': 'Numbered bingo balls above colorful cards and a travel suitcase',
   'family-island': 'Island family gathering fruit along a glowing energy trail',
   'board-kings': 'Dice circling a playful city board with a reward vault at its center',
 };
 
+const dailyImageOverrides: Record<string, string> = {
+  'coin-master': 'coin-master-v2-free-rewards-art.webp',
+  'dice-dreams': 'dice-dreams-v2-free-rewards-art.webp',
+};
+
+const dailySocialOverrides: Record<string, string> = {
+  'coin-master': '/og/daily/coin-master-v2.jpg',
+  'dice-dreams': '/og/daily/dice-dreams-v2.jpg',
+};
+
 export const dailyArtwork: Record<string, SiteArtwork> = Object.fromEntries(
   Object.entries(dailyAlts).map(([slug, alt]) => [
     slug,
-    artwork(images.daily, `${slug}-free-rewards-art.webp`, alt, `/og/daily/${slug}.jpg`),
+    artwork(
+      images.daily,
+      dailyImageOverrides[slug] ?? `${slug}-free-rewards-art.webp`,
+      alt,
+      dailySocialOverrides[slug] ?? `/og/daily/${slug}.jpg`,
+    ),
   ]),
 );
 

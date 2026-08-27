@@ -18,6 +18,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
  */
 import '../../styles/article.css';
 import { articleArtwork } from '../../data/article-images';
+import { dailyArtwork } from '../../data/site-images';
 import { authorPerson, authorPersonId, getSectionAuthor } from '../../data/authors';
 import { defaultSocialImage, organizationId } from '../../data/site';
 import type { Dataset, DatasetCounts } from '../../lib/dataset';
@@ -95,7 +96,8 @@ const { Content, headings } = await render(entry as never);
 const jumpHeadings = headings.filter((heading) => heading.depth === 2);
 
 const author = getSectionAuthor(data.section);
-const artwork = articleArtwork[data.slug];
+const artwork = articleArtwork[data.slug]
+  ?? (data.section === 'daily' ? dailyArtwork[data.slug] : undefined);
 
 /*
  * The loader stores the interpolated body's rendered HTML alongside the entry
