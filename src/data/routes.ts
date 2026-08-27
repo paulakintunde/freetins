@@ -7,6 +7,7 @@ import {
 import { editorialArticles, getArticleByPath } from './articles';
 import { authors } from './authors';
 import { getCheatOperationalPage, getProduct, operations } from './operations';
+import { codesTitle, dailyTitle, fitTitle } from '../lib/pageTitle';
 
 export type RouteKind =
   | 'daily'
@@ -49,14 +50,31 @@ export interface RouteDefinition {
   canonical?: boolean;
 }
 
+/*
+ * Hub titles.
+ *
+ * These were the section name and the brand — "Blog | Freetins", fifteen
+ * characters, of which eleven were the brand. A hub competes for the head term
+ * of its whole section and was spending its title on a word from the nav bar.
+ * Each one below leads with the term a reader would type and says what is
+ * behind the link; a count is derived where a count is honest and omitted
+ * where it would advertise an empty shelf. `fitTitle` holds the budget so the
+ * hubs and the game pages cannot drift into two conventions.
+ *
+ * The three noindex hubs keep their short titles: /search/ is an internal
+ * result surface, /submit/ and /alerts/ describe features that are not live.
+ */
+const publishedGameCount = publishedGameCatalogue.length;
+const publishedPageCount = publishedGameCount + publishedDailyLinkCatalogue.length;
+
 const staticRoutes: RouteDefinition[] = [
   {
-    path: '/daily/', routeId: 'daily', kind: 'daily', title: 'Daily links | Freetins', heading: 'Daily links',
+    path: '/daily/', routeId: 'daily', kind: 'daily', title: fitTitle({ stem: 'Daily free reward links, dated row by row' }), heading: 'Daily links',
     description: 'Source-linked daily rewards with recorded dates and clear states.',
     noindex: publishedDailyLinkCatalogue.length + editorialArticles.filter((article) => article.section === 'daily').length === 0,
   },
   {
-    path: '/codes/', routeId: 'browse', kind: 'browse', title: 'Game codes | Freetins', heading: 'All codes',
+    path: '/codes/', routeId: 'browse', kind: 'browse', title: fitTitle({ stem: 'Game codes for Roblox', count: publishedGameCount > 0 ? `all ${publishedGameCount} games we list` : null }), heading: 'All codes',
     description: 'Published code pages backed by source URLs and redemption steps, with a state on every entry.',
     noindex: publishedGameCatalogue.length === 0,
   },
@@ -68,15 +86,15 @@ const staticRoutes: RouteDefinition[] = [
     noindex: true,
   },
   {
-    path: '/cheats/', routeId: 'cheats', kind: 'cheats', title: 'Game cheats | Freetins', heading: 'Cheats',
+    path: '/cheats/', routeId: 'cheats', kind: 'cheats', title: fitTitle({ stem: 'Game cheats by platform, with warnings' }), heading: 'Cheats',
     description: 'Published cheat sheets with platform distinctions, warnings and cited sources.',
   },
   {
-    path: '/answers/', routeId: 'answers', kind: 'info', title: 'Answers | Freetins', heading: 'Answers',
+    path: '/answers/', routeId: 'answers', kind: 'info', title: fitTitle({ stem: 'Level answers, element recipes and puzzle solutions' }), heading: 'Answers',
     description: 'Level answers, element recipes and puzzle solutions, checked against the current build of the game so the numbering still matches what you see.',
   },
   {
-    path: '/guides/', routeId: 'guideIndex', kind: 'info', title: 'Guides | Freetins', heading: 'Guides',
+    path: '/guides/', routeId: 'guideIndex', kind: 'info', title: fitTitle({ stem: 'Game guides: how each feature actually works' }), heading: 'Guides',
     description: 'Explainer and process pages: how a feature works, what is actually available, and what to do when the method everyone repeats does not work.',
   },
   {
@@ -88,11 +106,11 @@ const staticRoutes: RouteDefinition[] = [
     description: 'Alert delivery is not active yet. This page explains the launch requirement.', noindex: true,
   },
   {
-    path: '/blog/', routeId: 'updates', kind: 'updates', title: 'Blog | Freetins', heading: 'Blog',
+    path: '/blog/', routeId: 'updates', kind: 'updates', title: fitTitle({ stem: 'How game codes and rewards actually work' }), heading: 'Blog',
     description: 'Longer pages on how codes and rewards actually work, each built from a dataset where every row carries its own evidence and state.',
   },
   {
-    path: '/games/', routeId: 'az', kind: 'az', title: 'All games A-Z | Freetins', heading: 'All games A-Z',
+    path: '/games/', routeId: 'az', kind: 'az', title: fitTitle({ stem: 'All games A-Z', count: publishedPageCount > 0 ? `every one of the ${publishedPageCount} we list` : null }), heading: 'All games A-Z',
     description: 'Every game with a published Freetins page, listed A to Z with the number of codes listed on it.',
     noindex: publishedGameCatalogue.length + publishedDailyLinkCatalogue.length === 0,
   },
@@ -204,7 +222,7 @@ const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => ({
   path: `/daily/${game.slug}/`,
   routeId: 'freebies',
   kind: 'dailyGame',
-  title: `${game.name} reward links and claim guide | Freetins`,
+  title: dailyTitle(game),
   heading: `${game.name} reward links`,
   description: game.isPublished
     ? `${game.name} reward links with source URLs and the date each was recorded.`
@@ -229,8 +247,14 @@ const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
       path: `${root}/`,
       routeId: 'codes',
       kind: 'codes' as const,
-      title: `${game.name} codes and how to redeem | Freetins`,
-      heading: game.name,
+      title: codesTitle(game),
+      /*
+       * The heading carries the head term too. A title that has just gained a
+       * count and a month over an h1 reading "Grow a Garden" is the standard
+       * trigger for Google discarding the title and writing its own from the
+       * page, which would throw away the derivation above. They move together.
+       */
+      heading: `${game.name} codes`,
       description: game.isPublished
         ? `${game.name} codes with source URLs, redemption steps and the state of every entry.`
         : `${game.name} has a page configured, but no code is listed yet.`,

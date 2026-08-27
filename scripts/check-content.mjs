@@ -38,6 +38,7 @@ import { normaliseDataset } from '../src/lib/normalise.ts';
 import { parseFrontmatter } from '../src/lib/frontmatter.ts';
 import { interpolate } from '../src/lib/interpolate.ts';
 import { runProseChecks } from '../src/lib/prose-qa.ts';
+import { TITLE_BUDGET, fitTitle } from '../src/lib/pageTitle.ts';
 
 const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const SECTIONS = ['guides', 'daily', 'blog'];
@@ -176,7 +177,18 @@ const checkPage = async (section, slug, livePaths) => {
     pageKeys: TYPED_PAGE_CLAIM_KEYS.filter((key) => raw && typeof raw === 'object' && key in raw),
   };
 
-  return { label, problems, counts, anchors, typedClaims };
+  /*
+   * The renderer appends " | Freetins" to the headline, and drops it again on a
+   * headline with no room for it (src/components/pages/DatasetArticle.astro).
+   * A page that loses the suffix is not broken and is never failed for it: the
+   * writer's own words are worth more than the brand, and a result prints the
+   * site name above the title anyway. It is named here so the trim can happen
+   * the next time somebody is already in the file.
+   */
+  const title = frontmatter?.title ?? '';
+  const losesBrand = Boolean(title) && !fitTitle({ stem: title }).endsWith('| Freetins');
+
+  return { label, problems, counts, anchors, typedClaims, title, losesBrand };
 };
 
 const args = process.argv.slice(2);
@@ -204,10 +216,12 @@ const livePaths = await collectLivePaths(strict);
 let failed = 0;
 const anchorsByTarget = new Map();
 const typedClaimsByPage = [];
+const brandlessTitles = [];
 
 for (const [section, slug] of jobs) {
-  const { label, problems, counts, anchors, typedClaims } = await checkPage(section, slug, livePaths);
+  const { label, problems, counts, anchors, typedClaims, title, losesBrand } = await checkPage(section, slug, livePaths);
   if (typedClaims !== null && typedClaims !== undefined) typedClaimsByPage.push([label, typedClaims]);
+  if (losesBrand) brandlessTitles.push([label, title]);
   for (const { anchor, target } of anchors ?? []) {
     if (!anchorsByTarget.has(target)) anchorsByTarget.set(target, []);
     anchorsByTarget.get(target).push({ page: label, anchor });
@@ -258,6 +272,14 @@ if (typedClaimsByPage.length) {
   for (const [label, claims] of typedClaimsByPage) {
     const pageNote = claims.pageKeys.length ? `; page-level claims ignored for display: ${claims.pageKeys.join(', ')}` : '';
     console.log(`      ${label}  typed claims read as the as-published baseline: ${claims.rows} rows${pageNote}`);
+  }
+}
+
+if (brandlessTitles.length) {
+  const room = TITLE_BUDGET - ' | Freetins'.length;
+  console.log(`\nTitles too long for the brand suffix (advisory, never failing):`);
+  for (const [label, title] of brandlessTitles) {
+    console.log(`      ${label}  ${title.length} characters; ${room} or fewer leaves room for " | Freetins"`);
   }
 }
 

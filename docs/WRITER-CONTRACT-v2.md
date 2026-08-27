@@ -200,7 +200,7 @@ typed value and never a function of the clock.
 
 | Key | Required | Rule |
 |---|---|---|
-| `title` | yes | 65 characters or fewer |
+| `title` | yes | 54 characters or fewer, and no month. The renderer appends ` \| Freetins`, and 65 is the budget for the pair. A longer title is accepted and published — it simply loses the suffix, and `pnpm check:content` names it so it can be trimmed on the next edit. Never type a month or a count: on a dataset page neither is derived, because the only date on the page is a typed one and a typed date may not become a claim (`docs/adr/0003`) |
 | `slug`, `permalink`, `category`, `category_slug`, `focus_keyword`, `author` | yes | As v1 |
 | `secondary_keywords` | yes | 4 to 6 |
 | `description` | no, strongly recommended | 155 characters or fewer. This is the hub card and the search snippet. Without it the hub falls back to `unverified_summary`, then the title |
