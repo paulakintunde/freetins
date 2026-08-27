@@ -79,4 +79,14 @@ export const goneRoutes: string[] = [
    * 404 timing while its twin two lines up retired at 410 timing.
    */
   '/coding-learn-computing-programming/',
+  /*
+   * The one archive listing that earns a route. The reasoning at
+   * retiredArchivePrefixes rules out a catch-all under /category/, because a
+   * catch-all matches an unbounded set and every match is a metered invocation.
+   * This is one named leaf: /category/anything-else/ still falls through to the
+   * static 404. It is here because Google is holding it and answering 404 keeps it
+   * for months, which is the cost the prefix reasoning was weighing against and
+   * assumed nobody was paying.
+   */
+  '/category/how-to/',
 ];
