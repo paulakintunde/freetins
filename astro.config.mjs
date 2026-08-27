@@ -175,6 +175,90 @@ const writeIfChanged = (target, contents) => {
   return true;
 };
 
+/**
+ * `<lastmod>`, read back from the page the build actually wrote.
+ *
+ * The sitemap advertised 104 URLs and no `<lastmod>` at all, on a site whose whole
+ * proposition is that it records when each claim was checked. The data was already
+ * there: 54 pages emit a `dateModified` in their graph.
+ *
+ * ## Why it reads the built page rather than recomputing the date
+ *
+ * Three templates derive that date three different ways — `RouteScreen` from the
+ * operational record's `latestCheckedAt`, `DatasetArticle` from the dataset's own
+ * row dates, `EditorialArticle` from the article's typed review field, which Step 1b
+ * retires. Recomputing here would be a fourth derivation of the same fact, in a file
+ * that cannot even reach `astro:content` (see src/data/datasetRoutes.ts), and it
+ * would drift the first time one of the three changed.
+ *
+ * This project has already paid for that mistake once: `/daily/monopoly-go/` shipped
+ * indexable and absent from the sitemap because the page and a stale route entry
+ * disagreed and the sitemap believed the entry. The page that actually renders is
+ * the one whose judgement counts. Reading the emitted graph makes the two agree by
+ * construction, and means Step 1b needs no change here.
+ *
+ * A page with no recorded check emits no `dateModified`, so it gets no `<lastmod>`,
+ * which is the standing rule holding rather than a gap: the build clock never dates
+ * a page (CLAUDE.md; docs/adr/0003-no-hand-typed-verification-claims.md).
+ */
+const recordedLastmod = () => {
+  let outDir = null;
+  const cache = new Map();
+
+  const readFor = (pageUrl) => {
+    const { pathname } = new URL(pageUrl);
+    if (cache.has(pathname)) return cache.get(pathname);
+
+    let latest;
+    try {
+      const html = readFileSync(join(fileURLToPath(outDir), pathname, 'index.html'), 'utf8');
+      /*
+       * One graph per page is a standing rule that `pnpm check:routes` enforces, so
+       * the first block is the only block; a page that somehow has none simply
+       * carries no date.
+       */
+      const block = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+      if (block) {
+        const graph = JSON.parse(block[1]);
+        const nodes = Array.isArray(graph['@graph']) ? graph['@graph'] : [graph];
+        /*
+         * Newest wins. Exactly one node carries the date today; taking the maximum
+         * means a page that later dates both its WebPage and its Article cannot
+         * advertise the older of the two.
+         */
+        for (const node of nodes) {
+          const value = node && typeof node.dateModified === 'string' ? node.dateModified : null;
+          if (!value || Number.isNaN(Date.parse(value))) continue;
+          if (!latest || Date.parse(value) > Date.parse(latest)) latest = value;
+        }
+      }
+    } catch {
+      latest = undefined;
+    }
+
+    cache.set(pathname, latest);
+    return latest;
+  };
+
+  return {
+    integration: {
+      name: 'freetins:sitemap-lastmod',
+      hooks: {
+        'astro:config:done': ({ config }) => {
+          outDir = config.outDir;
+        },
+      },
+    },
+    /** Astro's sitemap omits the element entirely when `lastmod` is absent. */
+    serialize: (item) => {
+      const at = outDir ? readFor(item.url) : undefined;
+      return at ? { ...item, lastmod: at } : item;
+    },
+  };
+};
+
+const sitemapLastmod = recordedLastmod();
+
 const freePlanRouteManifest = () => {
   let resolvedRoutes = null;
   let astroConfig = null;
@@ -335,7 +419,9 @@ export default defineConfig({
        * now, so the integration has nothing to enumerate.
        */
       filter: (page) => !excludedFromSitemap.has(new URL(page).pathname),
+      serialize: sitemapLastmod.serialize,
     }),
+    sitemapLastmod.integration,
     freePlanRouteManifest(),
   ],
   compressHTML: true,
