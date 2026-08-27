@@ -266,13 +266,18 @@
     },
     {
       "slug": "hunty-zombies",
-      "name": "Hunty Zombies",
+      "name": "Hunty Zombie",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/103754275310547/Hunty-Zombie",
+      "redeemSteps": [
+        "Launch Hunty Zombie on Roblox.",
+        "select Codes on the right side of the screen.",
+        "paste the code into the pop-up field.",
+        "press Enter to submit it."
+      ],
       "publisherChannels": []
     },
     {
@@ -376,10 +381,16 @@
       "name": "Kaizen",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/17662297954/KAIZEN",
+      "redeemSteps": [
+        "Launch Kaizen on Roblox.",
+        "select the Settings cog in the top-left corner.",
+        "scroll to the Codes section at the bottom of Settings.",
+        "paste the case-sensitive code into the field.",
+        "select the red check mark to submit it."
+      ],
       "publisherChannels": []
     },
     {
@@ -417,13 +428,19 @@
     },
     {
       "slug": "universal-tower-defense",
-      "name": "Universal Tower Defense",
+      "name": "Universal Tower Defense Z",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/133410800847665/Universal-Tower-Defense-Z",
+      "redeemSteps": [
+        "Launch Universal Tower Defense Z on Roblox.",
+        "wait for the lobby to load.",
+        "select Codes on the right side of the screen.",
+        "paste the code exactly, including punctuation.",
+        "select Redeem."
+      ],
       "publisherChannels": []
     },
     {
@@ -467,13 +484,19 @@
     },
     {
       "slug": "flashpoint",
-      "name": "Flashpoint",
+      "name": "Flashpoint: Worlds Collide",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/13796645198/FLASHPOINT-Worlds-Collide",
+      "redeemSteps": [
+        "Join the Varis Studios Roblox community if the code field is locked.",
+        "launch Flashpoint: Worlds Collide.",
+        "select Codes from the left-side controls.",
+        "paste the code exactly as listed.",
+        "select Redeem."
+      ],
       "publisherChannels": []
     },
     {
@@ -548,10 +571,16 @@
       "name": "Racket Rivals",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/90906407195271/Racket-Rivals",
+      "redeemSteps": [
+        "Launch Racket Rivals on Roblox.",
+        "select Shop at the bottom of the screen.",
+        "open Codes inside the Shop.",
+        "paste the code into the Enter Code field.",
+        "select Submit."
+      ],
       "publisherChannels": []
     },
     {
@@ -559,10 +588,16 @@
       "name": "Pixel Blade",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/18172550962/Pixel-Blade",
+      "redeemSteps": [
+        "Join the Frost Blade Games Roblox community.",
+        "launch Pixel Blade and finish the tutorial.",
+        "approach the Bank in the lobby and press E.",
+        "paste the code into the field.",
+        "select Claim."
+      ],
       "publisherChannels": []
     },
     {
@@ -643,10 +678,16 @@
       "name": "Ninja Time",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/8075399143/Ninja-Time",
+      "redeemSteps": [
+        "Launch Ninja Time on Roblox and enter a world.",
+        "select Menu at the top of the screen.",
+        "open Extra Menu and then Codes.",
+        "paste one code into the field.",
+        "select Redemption."
+      ],
       "publisherChannels": []
     },
     {
@@ -679,25 +720,37 @@
       "publisherChannels": []
     },
     {
-      "slug": "dragon-souls",
-      "name": "Dragon Souls",
+      "slug": "dragon-soul",
+      "name": "Dragon Soul",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/8246874626/Dragon-Soul-Anime-MMO",
+      "redeemSteps": [
+        "Launch Dragon Soul on Roblox.",
+        "press M to open the menu.",
+        "select Codes near the bottom of the menu.",
+        "paste the code into the Enter Code field.",
+        "select Claim."
+      ],
       "publisherChannels": []
     },
     {
       "slug": "soccer-zero",
-      "name": "Soccer Zero",
+      "name": "Soccer: Zero",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/75462869229229/Soccer-Zero",
+      "redeemSteps": [
+        "Launch Soccer: Zero on Roblox.",
+        "skip the opening scene if it appears.",
+        "select Codes at the bottom of the screen.",
+        "paste the code into the field.",
+        "select Redeem."
+      ],
       "publisherChannels": []
     },
     {
@@ -744,10 +797,16 @@
       "name": "Restaurant Tycoon 3",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/119048529960596/Restaurant-Tycoon-3",
+      "redeemSteps": [
+        "Launch Restaurant Tycoon 3 and set up a restaurant.",
+        "open Shop.",
+        "scroll to the Codes field at the bottom.",
+        "paste the code into the field.",
+        "select Submit."
+      ],
       "publisherChannels": []
     },
     {
@@ -4801,6 +4860,567 @@
                 "https://www.game.guide/roblox-codes/plants-vs-brainrots",
                 "https://www.pocketgamer.com/roblox/plants-vs-brainrots-codes/"
           ]
+    },
+    {
+      "id": "hunty-zombie-code-1",
+      "gameSlug": "hunty-zombies",
+      "code": "KapsiHotFix",
+      "reward": "150 Lucky Weapon Spins and 150 Lucky Perk Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/hunty-zombies-codes/",
+        "https://gachapocket.com/hunty-zombie-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "conflicting",
+      "needsHuman": true
+    },
+    {
+      "id": "hunty-zombie-code-2",
+      "gameSlug": "hunty-zombies",
+      "code": "SorryRestart",
+      "reward": "50 Lucky Weapon Spins, 50 Lucky Perk Spins, and 50 Traits",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/hunty-zombies-codes/",
+        "https://gachapocket.com/hunty-zombie-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "conflicting",
+      "needsHuman": true
+    },
+    {
+      "id": "ninja-time-code-1",
+      "gameSlug": "ninja-time",
+      "code": "ThanksFor5KCCU!",
+      "reward": "50 Clan, Element, and Family Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.pcgamesn.com/roblox/ninja-time-codes",
+        "https://www.destructoid.com/the-time-of-ninja-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "ninja-time-code-2",
+      "gameSlug": "ninja-time",
+      "code": "DroprateTweaks!",
+      "reward": "20 Clan, Element, and Family Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.pcgamesn.com/roblox/ninja-time-codes",
+        "https://www.destructoid.com/the-time-of-ninja-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "ninja-time-code-3",
+      "gameSlug": "ninja-time",
+      "code": "Organizations!",
+      "reward": "20 Clan, Element, and Family Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.pcgamesn.com/roblox/ninja-time-codes",
+        "https://www.destructoid.com/the-time-of-ninja-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "ninja-time-code-4",
+      "gameSlug": "ninja-time",
+      "code": "RavensUltimateEternal!",
+      "reward": "20 Clan, Element, and Family Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.pcgamesn.com/roblox/ninja-time-codes",
+        "https://www.destructoid.com/the-time-of-ninja-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "kaizen-code-1",
+      "gameSlug": "kaizen",
+      "code": "SukunaBuff",
+      "reward": "8 Lucky Clan Spins and 8 Binding Vow Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/kaizen-codes/",
+        "https://twinfinite.net/guides/kaizen-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "kaizen-code-2",
+      "gameSlug": "kaizen",
+      "code": "MissionBoard!",
+      "reward": "8 Lucky Clan Spins and 8 Binding Vow Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/kaizen-codes/",
+        "https://twinfinite.net/guides/kaizen-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "kaizen-code-3",
+      "gameSlug": "kaizen",
+      "code": "GetoRaid",
+      "reward": "8 Lucky Clan Spins and 8 Binding Vow Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/kaizen-codes/",
+        "https://twinfinite.net/guides/kaizen-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "kaizen-code-4",
+      "gameSlug": "kaizen",
+      "code": "TodoDely",
+      "reward": "6 Lucky Clan Spins and 6 Binding Vow Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/kaizen-codes/",
+        "https://twinfinite.net/guides/kaizen-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "kaizen-code-5",
+      "gameSlug": "kaizen",
+      "code": "TodoUpd!",
+      "reward": "10 Lucky Clan Spins and 10 Binding Vow Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/kaizen-codes/",
+        "https://twinfinite.net/guides/kaizen-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "kaizen-code-6",
+      "gameSlug": "kaizen",
+      "code": "Unban!",
+      "reward": "5 Lucky Clan Spins and 5 Binding Vow Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/kaizen-codes/",
+        "https://twinfinite.net/guides/kaizen-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "flashpoint-code-1",
+      "gameSlug": "flashpoint",
+      "code": "Hope&Healing!",
+      "reward": "50,000 Cash and 50,000 Experience",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-flashpoint-worlds-collide-codes/",
+        "https://www.pcgamesn.com/flashpoint-worlds-collide/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "flashpoint-code-2",
+      "gameSlug": "flashpoint",
+      "code": "V3X0XZ",
+      "reward": "Vexoxz suit",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-flashpoint-worlds-collide-codes/",
+        "https://www.pcgamesn.com/flashpoint-worlds-collide/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "flashpoint-code-3",
+      "gameSlug": "flashpoint",
+      "code": "nonstoptt",
+      "reward": "Kbnonstop suit",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-flashpoint-worlds-collide-codes/",
+        "https://www.pcgamesn.com/flashpoint-worlds-collide/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "flashpoint-code-4",
+      "gameSlug": "flashpoint",
+      "code": "MartyZealousTooQuick",
+      "reward": "Zealous suit",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-flashpoint-worlds-collide-codes/",
+        "https://www.pcgamesn.com/flashpoint-worlds-collide/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "flashpoint-code-5",
+      "gameSlug": "flashpoint",
+      "code": "ClicksterYT",
+      "reward": "Clickster suit",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-flashpoint-worlds-collide-codes/",
+        "https://www.pcgamesn.com/flashpoint-worlds-collide/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "flashpoint-code-6",
+      "gameSlug": "flashpoint",
+      "code": "jldownfall",
+      "reward": "The Flash suit from Suicide Squad: Kill the Justice League",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-flashpoint-worlds-collide-codes/",
+        "https://www.pcgamesn.com/flashpoint-worlds-collide/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "flashpoint-code-7",
+      "gameSlug": "flashpoint",
+      "code": "N3G4T1V3",
+      "reward": "Negative Flash rebirth suit",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/roblox-flashpoint-worlds-collide-codes/",
+        "https://www.pcgamesn.com/flashpoint-worlds-collide/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "dragon-soul-code-1",
+      "gameSlug": "dragon-soul",
+      "code": "newqolupdate",
+      "reward": "7 Dragon Balls",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://beebom.com/dragon-soul-codes/",
+        "https://www.pockettactics.com/dragon-soul/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "dragon-soul-code-2",
+      "gameSlug": "dragon-soul",
+      "code": "apementor",
+      "reward": "7 Dragon Balls",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://beebom.com/dragon-soul-codes/",
+        "https://www.pockettactics.com/dragon-soul/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "dragon-soul-code-3",
+      "gameSlug": "dragon-soul",
+      "code": "devluck",
+      "reward": "2x Luck boost",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://beebom.com/dragon-soul-codes/",
+        "https://www.pockettactics.com/dragon-soul/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "dragon-soul-code-4",
+      "gameSlug": "dragon-soul",
+      "code": "dragonballs",
+      "reward": "5 Dragon Balls",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://beebom.com/dragon-soul-codes/",
+        "https://www.pockettactics.com/dragon-soul/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "dragon-soul-code-5",
+      "gameSlug": "dragon-soul",
+      "code": "qolupdate",
+      "reward": "7 Dragon Balls",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://beebom.com/dragon-soul-codes/",
+        "https://www.pockettactics.com/dragon-soul/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "dragon-soul-code-6",
+      "gameSlug": "dragon-soul",
+      "code": "dragonsoul",
+      "reward": "30% Experience boost for 3 hours",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://beebom.com/dragon-soul-codes/",
+        "https://www.pockettactics.com/dragon-soul/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "universal-tower-defense-code-1",
+      "gameSlug": "universal-tower-defense",
+      "code": "WeLoveUTDZ!",
+      "reward": "Fern, evolution items, 12 Mythic Etherealization Shards, and Kenpachi EVO",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://raretip.com/games/universal-tower-defense-z/",
+        "https://www.gamesradar.com/games/strategy/universal-tower-defense-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "racket-rivals-code-1",
+      "gameSlug": "racket-rivals",
+      "code": "INPROGRESS",
+      "reward": "2,000 Yen",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/racket-rivals-codes/",
+        "https://rocodes.gg/codes/racket-rivals"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "racket-rivals-code-2",
+      "gameSlug": "racket-rivals",
+      "code": "RESTRUCTURING",
+      "reward": "2,000 Yen",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/racket-rivals-codes/",
+        "https://rocodes.gg/codes/racket-rivals"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "racket-rivals-code-3",
+      "gameSlug": "racket-rivals",
+      "code": "SCORE",
+      "reward": "Yen; level 20 required",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/racket-rivals-codes/",
+        "https://rocodes.gg/codes/racket-rivals"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "racket-rivals-code-4",
+      "gameSlug": "racket-rivals",
+      "code": "CARD",
+      "reward": "Yen; level 20 required",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/racket-rivals-codes/",
+        "https://rocodes.gg/codes/racket-rivals"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "pixel-blade-code-1",
+      "gameSlug": "pixel-blade",
+      "code": "Merchant",
+      "reward": "3 Rings, 2 Tier 1 Chests, and 300 Stardust",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.game.guide/roblox-codes/pixel-blade",
+        "https://robloxden.com/game-codes/pixel-blade"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "pixel-blade-code-2",
+      "gameSlug": "pixel-blade",
+      "code": "725K",
+      "reward": "600 Coins, Tier 1 Chests, and 500 Stardust",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.game.guide/roblox-codes/pixel-blade",
+        "https://robloxden.com/game-codes/pixel-blade"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "pixel-blade-code-3",
+      "gameSlug": "pixel-blade",
+      "code": "700K",
+      "reward": "500 Wishes",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.game.guide/roblox-codes/pixel-blade",
+        "https://robloxden.com/game-codes/pixel-blade"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "pixel-blade-code-4",
+      "gameSlug": "pixel-blade",
+      "code": "650K",
+      "reward": "300 Coins and 12 Godly Potions",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.game.guide/roblox-codes/pixel-blade",
+        "https://robloxden.com/game-codes/pixel-blade"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "pixel-blade-code-5",
+      "gameSlug": "pixel-blade",
+      "code": "600K",
+      "reward": "3 Rings and 1 Tier 1 Chest",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.game.guide/roblox-codes/pixel-blade",
+        "https://robloxden.com/game-codes/pixel-blade"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "pixel-blade-code-6",
+      "gameSlug": "pixel-blade",
+      "code": "World4",
+      "reward": "5 Revives and 500 Coins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.game.guide/roblox-codes/pixel-blade",
+        "https://robloxden.com/game-codes/pixel-blade"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "soccer-zero-code-1",
+      "gameSlug": "soccer-zero",
+      "code": "CUSTOMISATION",
+      "reward": "5 Lucky Style Spins and 5 Lucky Flow Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/soccer-zero-codes/",
+        "https://rocodes.gg/codes/soccer-zero"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "soccer-zero-code-2",
+      "gameSlug": "soccer-zero",
+      "code": "CHAMELEONSOON",
+      "reward": "3 Lucky Style Spins and 5 Lucky Flow Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/soccer-zero-codes/",
+        "https://rocodes.gg/codes/soccer-zero"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "soccer-zero-code-3",
+      "gameSlug": "soccer-zero",
+      "code": "AIKUDELAY",
+      "reward": "5 Lucky Style Spins and 5 Lucky Flow Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/soccer-zero-codes/",
+        "https://rocodes.gg/codes/soccer-zero"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "soccer-zero-code-4",
+      "gameSlug": "soccer-zero",
+      "code": "SERPENT",
+      "reward": "8 Lucky Style Spins and 8 Lucky Flow Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/soccer-zero-codes/",
+        "https://rocodes.gg/codes/soccer-zero"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "soccer-zero-code-5",
+      "gameSlug": "soccer-zero",
+      "code": "5KCODE",
+      "reward": "5 Lucky Style Spins and 5 Lucky Flow Spins",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/soccer-zero-codes/",
+        "https://rocodes.gg/codes/soccer-zero"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "restaurant-tycoon-3-code-1",
+      "gameSlug": "restaurant-tycoon-3",
+      "code": "fishyfriday",
+      "reward": "Premium Staff free trial for 1 hour",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/restaurant-tycoon-3-codes",
+        "https://robloxden.com/game-codes/restaurant-tycoon-3"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "restaurant-tycoon-3-code-2",
+      "gameSlug": "restaurant-tycoon-3",
+      "code": "auto123",
+      "reward": "Auto Money Collection free trial for 1 hour",
+      "firstSeenAt": "2026-08-27T20:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/restaurant-tycoon-3-codes",
+        "https://robloxden.com/game-codes/restaurant-tycoon-3"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
     }
   ],
   "dailyLinks": [],

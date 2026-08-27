@@ -95,7 +95,7 @@ const gameAlts: Record<string, string> = {
   'ninja-time': 'Ninja trainee racing through a mountain village with a blue wind technique',
   'king-legacy': 'Sea adventurer firing golden energy toward a fortified island',
   'anime-guardians': 'Elemental guardian units protecting an enchanted forest path',
-  'dragon-souls': 'Energy fighter flying above a tropical floating island',
+  'dragon-soul': 'Energy fighter flying above a tropical floating island',
   'soccer-zero': 'Soccer striker driving a red-trail shot between two defenders',
   'playground-basketball': 'Streetball player spinning past a defender on an outdoor court',
   'anime-eternal': 'Energy fighter battling ranked creatures on a futuristic city street',

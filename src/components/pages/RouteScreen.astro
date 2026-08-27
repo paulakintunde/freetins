@@ -983,7 +983,9 @@ const routeSchemaNodes = [
   .wide-main { grid-template-columns: minmax(0, 1.7fr) minmax(240px, .7fr); }
   aside { border: 1px solid var(--border-subtle); background: var(--surface-raised); padding: 20px; }
   aside p { margin: 0 0 14px; color: var(--text-secondary); line-height: 1.55; }
+  aside p > strong { margin-right: .25rem; }
   aside a { display: inline-flex; min-height: 24px; align-items: center; margin-top: 10px; color: var(--text-primary); font-weight: 600; }
+  aside a + a { margin-left: 16px; }
   .link-list, .code-table, .expired-list, .data-table { border: 1px solid var(--border-subtle); }
   .link-list a { display: flex; justify-content: space-between; gap: 14px; padding: var(--rowpad) 16px; border-bottom: 1px solid var(--border-subtle); color: var(--text-primary); text-decoration: none; }
   .link-list strong { color: var(--text-brand); font-size: 13px; }
