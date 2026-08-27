@@ -103,11 +103,14 @@ comes back.
 The build now writes the manifest itself, from its own route data, in the opposite
 direction. `include` names only what is genuinely on-demand and `exclude` is empty:
 the two `/api/` endpoints collapsed to one rule, Astro's own `/_image/` and
-`/_server-islands/*`, the four wildcard families that answer 410, and the fifteen
-individual legacy URLs that answer it one path at a time. That is 22 rules where there
-were 100, and it does not grow when a page is added, because pages are not named in
-it. `pnpm check:routes` prints `131 of 131 built pages are served as static assets,
-and 22 of 100 _routes.json rules are in use`. The same derived list is written to
+`/_server-islands/*`, and the fifteen individual legacy URLs that answer 410 one path
+at a time. That is 18 rules where there were 100, and it does not grow when a page is
+added, because pages are not named in it. `pnpm check:routes` prints `131 of 131 built
+pages are served as static assets, and 18 of 100 _routes.json rules are in use`.
+
+Four wildcard families — `/category/*`, `/tag/*`, `/feed/*`, `/page/*` — used to sit in
+that list and answer 410. They were retired to the static 404 for the reason recorded
+below; `retiredArchivePrefixes` in `src/data/gone.ts` carries the full argument. The same derived list is written to
 `src/data/route-rendering.json`, so the file that documents which routes are metered
 is generated from the build rather than maintained by hand.
 
@@ -191,7 +194,20 @@ Only the fourth argues for money, and it corresponds to roughly 50,000 daily
 *interactions*, which the site does not have. That reading depends on the manifest
 above and on nothing else: an invocation is spent when a reader clicks rather than
 when a page is opened, for exactly as long as `include` names the on-demand routes and
-no page. Were the manifest to fall back again, trigger 4 would quietly become roughly
+no page.
+
+That claim was not true while the four WordPress archive wildcards were in the
+manifest, and the gap is worth recording because nothing in this document would have
+caught it. A wildcard matches an unbounded set of paths, so `/page/1/` through
+`/page/9999/` were all live Function routes: an invocation was spent by a crawler with
+no reader, no click and no page, and one bot walking the pagination could reach a fifth
+of trigger 4 in an afternoon. It was the only uncapped metered surface on the site, and
+it existed to answer for a site that no longer exists. Retiring those four to the
+static 404 costs an archive listing 404 timing instead of 410 timing to leave the
+index — slower by weeks, on listings nobody wrote and nobody links to — and closes the
+hole. What remains on the Function is bounded: two endpoints a reader reaches by acting,
+and fifteen named dead URLs. A trigger reading is only as good as the surface it
+measures, and an unbounded surface is not measurable in advance. Were the manifest to fall back again, trigger 4 would quietly become roughly
 50,000 daily *page views* — a figure the site could reach without this feature being
 touched at all, and sooner still with hover prefetching. That is why the reading is
 taken by `pnpm check:routes` on every run, and why that check fails rather than warns.

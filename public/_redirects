@@ -79,19 +79,25 @@
 # --- WordPress archive surfaces: DO NOT redirect these -----------------------
 # /category/*, /tag/*, /feed/ and paginated /page/<n>/ are crawl artefacts from the
 # old software: listings generated from content that has already moved, never pages
-# anybody wrote. Google still has them indexed and they 404 today.
+# anybody wrote. Google still has them indexed.
 #
-# They cannot be enumerated — there is no fixed list of tag slugs or page numbers —
-# so each prefix is a catch-all route under `src/pages/` returning 410, the same
-# treatment and the same reasoning as the removed topics below. Dumping a whole
-# archive onto /codes/ would be the soft-404 pattern this file already refuses.
+# They are not redirected, for the reason this file refuses every other soft-404
+# shape: an archive of posts that moved has no single successor, and dumping the
+# whole surface onto /codes/ helps nobody.
+#
+# They are no longer 410 either. Each prefix used to be a catch-all route returning
+# 410, which meant a metered Function invocation for every request to an unbounded
+# set of paths — /page/1/ through /page/9999/ are all valid, and one crawler walking
+# them could spend a fifth of the daily free-plan budget on listings nobody wrote.
+# They now fall through to the static 404.html, which costs nothing to serve. The
+# trade is named in full at `retiredArchivePrefixes` in `src/data/gone.ts`.
 #
 # A named 301 for one path beneath a prefix still works and still wins, because
 # first match wins here. That is the intended escape hatch when an archive path
 # does turn out to have a real successor.
 #
-# The prefixes and their rationale live in `src/data/gone.ts`; `test/gone.test.mjs`
-# asserts each has a catch-all and that none is redirected wholesale.
+# `test/gone.test.mjs` asserts no catch-all comes back under these prefixes without
+# that decision being revisited, and that none is redirected wholesale.
 
 # --- Deliberate removals: DO NOT redirect these -----------------------------
 # 15 URLs with no relationship to game help. They are removed on purpose and must

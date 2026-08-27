@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import test from 'node:test';
-import { goneRoutePrefixes, goneRoutes } from '../src/data/gone.ts';
+import { goneRoutes, retiredArchivePrefixes } from '../src/data/gone.ts';
 
 const pageFileFor = (route) => `src/pages${route}index.astro`;
 
@@ -45,47 +45,37 @@ test('the removal list matches the count the migration review recorded', () => {
   }
 });
 
-test('every removed WordPress archive prefix has a catch-all that can return 410', () => {
-  for (const prefix of goneRoutePrefixes) {
-    const file = `src/pages${prefix}[...slug].astro`;
-    assert.ok(existsSync(file), `${prefix} has no catch-all at ${file}`);
-
-    const source = readFileSync(file, 'utf8');
-    assert.match(source, /export const prerender = false;/, `${prefix} is prerendered, so it cannot set a status`);
-    assert.match(source, /<GonePage variant="archive" \/>/, `${prefix} does not render the archive 410 body`);
-  }
-});
-
-test('archive prefixes are single segments that shadow no real route', () => {
-  // A bare catch-all would swallow every single-segment page on the site. These are
-  // safe only because nothing real lives under them, so the day someone wants a
-  // /page/ or /tag/ section, this test is the thing that objects.
-  const realSegments = new Set(
-    readdirSync('src/pages', { withFileTypes: true })
-      .filter((item) => item.isDirectory())
-      .map((item) => `/${item.name}/`),
-  );
-
-  for (const prefix of goneRoutePrefixes) {
+test('no WordPress archive prefix has a route, so none of them reaches the Function', () => {
+  // These four used to be 410 catch-alls. A catch-all matches an unbounded set of
+  // paths, and every match was a metered Function invocation, so `/page/1/` through
+  // `/page/9999/` was the one place a crawler could spend the free-plan budget at
+  // will. They now fall through to the static 404.html, which costs nothing.
+  //
+  // This test is the thing that objects if one comes back. Reinstating a catch-all
+  // is a real option — it buys faster de-indexing — but it re-opens an uncapped
+  // metered surface, so it has to be an argued decision rather than a reflex.
+  // The reasoning is recorded at `retiredArchivePrefixes` in src/data/gone.ts.
+  for (const prefix of retiredArchivePrefixes) {
     assert.ok(prefix.startsWith('/') && prefix.endsWith('/'), `${prefix} is not a trailing-slash prefix`);
     assert.equal(prefix.split('/').filter(Boolean).length, 1, `${prefix} is not a single segment`);
-
-    // The prefix owns its directory: the only thing in it is the catch-all itself.
-    const contents = readdirSync(`src/pages${prefix}`);
-    assert.deepEqual(contents, ['[...slug].astro'], `${prefix} holds real pages as well as the catch-all`);
-    assert.ok(realSegments.has(prefix), `${prefix} has no directory under src/pages`);
+    assert.ok(
+      !existsSync(`src/pages${prefix}`),
+      `${prefix} has a route again — see retiredArchivePrefixes in src/data/gone.ts before restoring it`,
+    );
   }
 });
 
-test('no archive prefix is also redirected wholesale', () => {
-  // A named 301 for one path beneath a prefix is the intended escape hatch. A rule
-  // for the bare prefix itself is not: first match wins, so it would outrank the 410.
+test('a retired archive prefix is not redirected wholesale either', () => {
+  // Falling through to a 404 is the decision. A 301 for the bare prefix would send a
+  // whole archive surface to one hub, which is the soft-404 pattern `_redirects`
+  // already refuses for the removed topics. A named 301 for one path *beneath* a
+  // prefix stays the intended escape hatch — first match wins, so it still works.
   const redirects = readFileSync('public/_redirects', 'utf8')
     .split('\n')
     .filter((line) => line.trim() && !line.trim().startsWith('#'))
     .map((line) => line.trim().split(/\s+/)[0]);
 
-  for (const prefix of goneRoutePrefixes) {
-    assert.ok(!redirects.includes(prefix), `${prefix} is both redirected and marked gone`);
+  for (const prefix of retiredArchivePrefixes) {
+    assert.ok(!redirects.includes(prefix), `${prefix} is redirected wholesale`);
   }
 });

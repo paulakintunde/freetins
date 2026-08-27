@@ -5,7 +5,7 @@ import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import { datasetBackedPaths } from './src/data/datasetRoutes.ts';
-import { goneRoutePrefixes, goneRoutes } from './src/data/gone.ts';
+import { goneRoutes } from './src/data/gone.ts';
 import { routeDefinitions } from './src/data/routes.ts';
 
 /*
@@ -51,9 +51,13 @@ const excludedFromSitemap = new Set([
  *
  * So this integration writes the file itself, from the inverse and much smaller
  * list: the routes the build reports as NOT prerendered. That list is the two API
- * endpoints, four 410 catch-alls and fifteen individual removed paths, and it does
- * not grow with the page inventory — so `exclude` is empty and a page is a static
- * asset by default rather than by rule.
+ * endpoints and fifteen individual removed paths, and it does not grow with the page
+ * inventory — so `exclude` is empty and a page is a static asset by default rather
+ * than by rule.
+ *
+ * The four WordPress archive catch-alls that used to sit here were retired to the
+ * static 404: they were the only unbounded metered surface on the site. See
+ * `retiredArchivePrefixes` in src/data/gone.ts.
  *
  * The adapter skips its own generation when `_routes.json` already exists, and in
  * any case runs first: the adapter is unshifted ahead of `integrations`
@@ -312,16 +316,12 @@ export default defineConfig({
   integrations: [
     sitemap({
       /*
-       * The prefix check is belt-and-braces. A catch-all route has no concrete URL
-       * for the integration to enumerate, so `/category/*` and friends should never
-       * reach the sitemap anyway — but a sitemap that advertises a 410 is expensive
-       * to notice and cheap to prevent.
+       * `goneRoutes` has to be named explicitly in `excludedFromSitemap`: those paths
+       * return 410 and carry no `RouteDefinition`, so the `noindex` filter cannot see
+       * them. The WordPress archive prefixes need no rule — they have no route at all
+       * now, so the integration has nothing to enumerate.
        */
-      filter: (page) => {
-        const { pathname } = new URL(page);
-        if (excludedFromSitemap.has(pathname)) return false;
-        return !goneRoutePrefixes.some((prefix) => pathname.startsWith(prefix));
-      },
+      filter: (page) => !excludedFromSitemap.has(new URL(page).pathname),
     }),
     freePlanRouteManifest(),
   ],

@@ -102,8 +102,9 @@ const resolvesOnWorker = (pathname) =>
  * every built page must be served as a static asset, and every on-demand route
  * must still be matched by an include rule. Both matter. A manifest that misses
  * a page costs money on every view; a manifest that misses `/api/code-report.json`
- * or `/tag/anything` answers 404 where an endpoint or a 410 should be, and neither
- * failure announces itself.
+ * answers 404 where an endpoint should be, and neither failure announces itself.
+ * (The WordPress archive prefixes are deliberately absent from the manifest now and
+ * answer from the static 404 — see `retiredArchivePrefixes` in src/data/gone.ts.)
  *
  * Hence two numbers on every run, pass or fail: how many built pages are served
  * as static assets out of how many exist, and how many rules are in use out of

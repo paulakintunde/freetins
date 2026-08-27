@@ -22,32 +22,35 @@
  * Every entry here has a matching `src/pages/<path>/index.astro`; `test/gone.test.ts`
  * asserts the two stay in step.
  */
-/**
- * WordPress archive prefixes that are gone as a shape, not as a list of URLs.
+/*
+ * WordPress archive prefixes — `/category/`, `/tag/`, `/feed/` and paginated
+ * `/page/<n>/` — used to have one 410 catch-all route each. They no longer do, and
+ * that is deliberate. They now fall through to the static `404.html`.
  *
- * The old site emitted `/category/<slug>/`, `/tag/<slug>/`, `/feed/` and paginated
- * `/page/<n>/` indexes. These are crawl artefacts: a listing generated from content
- * that has already moved, never a page anybody wrote. Google still has them indexed
- * and they 404 today.
+ * 410 is still the better answer in the abstract: it says the removal is intentional,
+ * and crawlers drop it faster than a 404 they retry for months. It was not worth its
+ * price here. `_redirects` cannot express 410, so each catch-all had to be a route
+ * with `prerender = false` — a metered Cloudflare Function invocation on every hit.
+ * Unlike `goneRoutes` below, a prefix matches an unbounded set: `/page/1/` through
+ * `/page/9999/` are all valid requests, and one crawler walking them spends 9,999
+ * invocations against the 50,000/day reading in upgrade trigger 4
+ * (docs/adr/0005-the-free-plan-is-the-design-target.md). That was the only uncapped
+ * metered surface on the site, and it existed to answer for a site that no longer
+ * exists.
  *
- * They are not enumerable — there is no fixed list of tag slugs or page numbers to
- * put in `goneRoutes` — so each prefix gets one catch-all route instead. A bare
- * catch-all would shadow every real single-segment page on the site, which is why
- * `goneRoutes` uses one file per path; these are safe because they are *prefixed*
- * and no real section lives at `/category/`, `/tag/`, `/feed/` or `/page/`.
+ * What is given up: an archive listing takes 404 timing to leave the index rather
+ * than 410 timing — slower by weeks, on a listing nobody wrote and nobody links to.
+ * The 410 argument holds for the fifteen named topics below because those are real
+ * articles that may carry inbound links. It does not carry a paginated tag index.
  *
- * 410 rather than a redirect to a hub, for the same reason as `goneRoutes`: an
- * archive of posts that moved has no single successor, and dumping the whole
- * archive surface onto `/codes/` is the soft-404 pattern `public/_redirects`
- * already refuses for the removed topics. Nine rules in that file currently point
- * at generic hubs and are marked there as temporary; these prefixes are not
- * joining them.
+ * The escape hatch is unchanged: anything under one of these prefixes that DOES turn
+ * out to have a successor belongs in `public/_redirects` as an explicit 301, which
+ * still wins because first match wins there.
  *
- * Anything under these prefixes that DOES have a successor belongs in
- * `public/_redirects` as an explicit 301. First match wins there, so a named rule
- * outranks this catch-all — which is the intended escape hatch.
+ * `test/gone.test.mjs` asserts no catch-all comes back under these prefixes without
+ * this reasoning being revisited.
  */
-export const goneRoutePrefixes: string[] = [
+export const retiredArchivePrefixes: string[] = [
   '/category/',
   '/tag/',
   '/feed/',

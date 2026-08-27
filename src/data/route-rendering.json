@@ -9,16 +9,12 @@
     "/amd-ryzen-rainmeter-skin-setup/",
     "/api/*",
     "/blackmart-alpha-apk-latest-version-blackmarket-apk/",
-    "/category/*",
     "/cowan-clock-for-rainmeter/",
     "/download-jw-player-videos-high-quality/",
-    "/feed/*",
     "/jarvis-iron-man-a-blue-rainmeter-skin-theme-inspiration/",
     "/jarvis-shield-interface-rainmeter-skin-installation/",
     "/kurugin-rainmeter-skin/",
     "/monstercat-visualizer-rainmeter-realtime-audio-visualizer/",
-    "/page/*",
-    "/tag/*",
     "/tech-guides/ios-emulators-windows/",
     "/tech-guides/iphone-secret-codes/",
     "/visbubble-round-visualizer-for-rainmeter-skin/",
@@ -45,10 +41,6 @@
     "/what-is-coding-learn-computing-programming/"
   ],
   "onDemandRoutePrefixes": [
-    "/_server-islands/",
-    "/category/",
-    "/feed/",
-    "/page/",
-    "/tag/"
+    "/_server-islands/"
   ]
 }
