@@ -70,10 +70,10 @@ const gameAlts: Record<string, string> = {
   'weak-legacy-2': 'Swordsman using flame and mist techniques in a mountain village',
   'hunty-zombies': 'Survivor with dual blasters facing teal zombies in a school corridor',
   'sailor-piece': 'Sailor leaping from a wooden ship toward a tropical island',
-  'jujutsu-infinite': 'Spell fighter controlling a violet sphere against shadow creatures',
+  'jujutsu-infinite': 'Sorcerer striking a golden seal with a gavel in a sunlit courtyard',
   'azure-latch': 'Soccer striker sending an icy blue volley toward goal',
-  'fruit-battlegrounds': 'Elemental fighters clashing fire and ice fruit powers on an island',
-  'untitled-boxing-game': 'Two boxers exchanging a counterpunch in a neon ring',
+  'fruit-battlegrounds': 'Elemental fighters clashing fire and water powers on a tropical island',
+  'untitled-boxing-game': 'Two boxers exchanging a body counterpunch in an open-air ring',
   'the-forge': 'Miner-smith forging a glowing blade beside a crystal mine',
   kaizen: 'Martial spell fighters clashing jade and crimson energy in the rain',
   mugen: 'Swordsmen dueling with flame and water trails beside a lantern village',
@@ -88,7 +88,7 @@ const gameAlts: Record<string, string> = {
   'racket-rivals': 'Racket players contesting a glowing ball above a turquoise court',
   'pixel-blade': 'Armored hero swinging a luminous sword through crystal creatures',
   'bizarre-lineage': 'Street fighter surrounded by a violet guardian aura in a snowy city',
-  'anime-apocalypse': 'Swordsman wall-running above zombies in a neon city dungeon',
+  'anime-apocalypse': 'Swordsman wall-running above zombies in a sunlit ruined city',
   'clover-retribution': 'Mage casting a blue shield from an emerald spellbook',
   'devil-hunters': 'Hunter confronting a many-armed shadow creature at a rainy intersection',
   'spongebob-tower-defense': 'Original coral guardians defending an undersea path from bubble creatures',
@@ -106,8 +106,8 @@ const gameAlts: Record<string, string> = {
   'plants-vs-brainrots': 'Block-built plants defending garden rows from colorful creatures',
   'da-hood': 'Street avatars running through a rain-darkened brick neighborhood',
   'anime-vanguards': 'Elemental defenders protecting a path from shadow enemies',
-  'driving-empire': 'Orange and blue sports cars racing through a wet city at dusk',
-  fisch: 'Angler landing a glowing rare fish near a lighthouse at sunset',
+  'driving-empire': 'Orange and blue sports cars racing through a sunny coastal city',
+  fisch: 'Angler landing a glowing rare fish near an island lighthouse in daylight',
 };
 
 export const gameArtwork: Record<string, SiteArtwork> = Object.fromEntries(
