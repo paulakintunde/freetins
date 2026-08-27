@@ -38,7 +38,10 @@ test('no removed URL is also redirected', () => {
 });
 
 test('the removal list matches the count the migration review recorded', () => {
-  assert.equal(goneRoutes.length, 15);
+  // 15 from the migration review, plus /coding-learn-computing-programming/ — the
+  // slug WordPress served the same article at before its title changed, still
+  // indexed and still answering 404 while its twin answered 410.
+  assert.equal(goneRoutes.length, 16);
   assert.equal(new Set(goneRoutes).size, goneRoutes.length, 'duplicate entry in goneRoutes');
   for (const route of goneRoutes) {
     assert.ok(route.startsWith('/') && route.endsWith('/'), `${route} is not a trailing-slash path`);

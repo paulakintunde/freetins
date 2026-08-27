@@ -73,4 +73,10 @@ export const goneRoutes: string[] = [
   '/download-jw-player-videos-high-quality/',
   '/adblock-vs-adblock-plus-chrome-android-firefox-safari/',
   '/what-is-coding-learn-computing-programming/',
+  /*
+   * The same article under the slug WordPress served it at before the title
+   * changed. Google still lists this one and it answers 404, so it was retiring at
+   * 404 timing while its twin two lines up retired at 410 timing.
+   */
+  '/coding-learn-computing-programming/',
 ];

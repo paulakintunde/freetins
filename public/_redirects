@@ -73,7 +73,7 @@
 # Archive pages, not content. Mapped to the closest equivalent surface.
 /code/                                                             /codes/                            301
 /featured/                                                         /                                  301
-/news-updates/                                                     /                                  301
+/news-updates/                                                     /blog/                             301
 /uncategorized/                                                    /                                  301
 
 # --- WordPress archive surfaces: DO NOT redirect these -----------------------
