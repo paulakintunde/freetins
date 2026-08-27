@@ -75,3 +75,10 @@ Not in this game. Once a decoration or seed code is retired it stays retired, wh
 ### What do Grow a Garden codes actually give?
 
 Recent codes have paid out decorations rather than progression items. Older codes gave seed packs and event rewards. Nothing in the current code system meaningfully speeds up sheckle earning, so treat codes as cosmetics with the occasional useful extra.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Plants & Brainrots codes](/codes/plants-vs-brainrots/)
+- [Fisch codes](/codes/fisch/)
+- [How Freetins verifies codes](/how-we-verify/)

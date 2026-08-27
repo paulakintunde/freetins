@@ -75,3 +75,10 @@ Yes. Some have been hidden inside videos on the official YouTube channel rather 
 ### Do codes give auras directly?
 
 No. They give potions and chests that improve your odds. No code has ever granted a specific aura, and any list claiming otherwise is fabricating.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Fisch codes](/codes/fisch/)
+- [Dragon Soul codes](/codes/dragon-soul/)
+- [How Freetins verifies codes](/how-we-verify/)

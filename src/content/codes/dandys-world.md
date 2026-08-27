@@ -72,3 +72,10 @@ No, it gave event pumpkins, which are a separate event currency. That is worth k
 ### Where do new codes appear?
 
 The BlushCrunch Studio Discord is the main channel, with the developer's YouTube channel as a secondary source.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [99 Nights in the Forest codes](/codes/99-nights-in-the-forest/)
+- [Hunty Zombie codes](/codes/hunty-zombies/)
+- [How Freetins verifies codes](/how-we-verify/)

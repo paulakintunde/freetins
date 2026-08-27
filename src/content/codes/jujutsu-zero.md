@@ -73,3 +73,10 @@ Watch the like count on the Roblox experience page. Milestone codes are named af
 ### Is the game finished?
 
 No, it is in beta and the developer is still adding techniques, raids and rewards, which is why the code cadence tracks both patches and milestones.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Jujutsu Infinite codes](/codes/jujutsu-infinite/)
+- [Type Soul codes](/codes/type-soul/)
+- [How Freetins verifies codes](/how-we-verify/)

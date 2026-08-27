@@ -74,3 +74,10 @@ Yes, each account redeems independently, but each code works only once per accou
 ### Is this the same game as Soccer Zero or Goalbound?
 
 No. They are separate Roblox experiences with separate code lists despite the shared genre and overlapping developer talent.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Azure Latch codes](/codes/azure-latch/)
+- [Soccer: Zero codes](/codes/soccer-zero/)
+- [How Freetins verifies codes](/how-we-verify/)

@@ -76,3 +76,10 @@ Lucky Style Spins roll for playstyles and Lucky Zone Spins roll for zone abiliti
 ### Where do the developers post codes first?
 
 The official Discord, in the update log and codes channels. Codes usually appear there before any tracker picks them up.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Soccer: Zero codes](/codes/soccer-zero/)
+- [Tennis Zero codes](/codes/tennis-zero/)
+- [How Freetins verifies codes](/how-we-verify/)

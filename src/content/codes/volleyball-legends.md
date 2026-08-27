@@ -76,3 +76,10 @@ The official Discord server, usually alongside the update announcement, and occa
 ### Can I use a code twice?
 
 No, one redemption per account.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Basketball Zero codes](/codes/basketball-zero/)
+- [Tennis Zero codes](/codes/tennis-zero/)
+- [How Freetins verifies codes](/how-we-verify/)

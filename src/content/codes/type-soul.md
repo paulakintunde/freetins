@@ -75,3 +75,10 @@ It went quiet for roughly a year and returned in 2026 with the original develope
 ### Can I trade the items codes give me?
 
 Rerolls are part of the trading economy in this game, and shikai rerolls function as the community's de facto currency. That makes code rerolls genuinely valuable beyond your own account.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Jujutsu Infinite codes](/codes/jujutsu-infinite/)
+- [Weak Legacy 2 codes](/codes/weak-legacy-2/)
+- [How Freetins verifies codes](/how-we-verify/)

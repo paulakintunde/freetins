@@ -74,3 +74,10 @@ Rankings shift with every crossover update, since each one introduces a new set 
 ### Where do new codes appear first?
 
 The official Discord codes channel, and at player milestones or after maintenance as compensation.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Anime Eternal codes](/codes/anime-eternal/)
+- [Anime Vanguards codes](/codes/anime-vanguards/)
+- [How Freetins verifies codes](/how-we-verify/)

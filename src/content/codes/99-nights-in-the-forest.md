@@ -74,3 +74,10 @@ Chests found during runs, passing day milestones deep into a run, and badge comp
 ### Do the codes expire?
 
 The current set has been live for an unusually long stretch by Roblox standards, but expiry is never announced. Redeem when you find them rather than saving them.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Dandy's World codes](/codes/dandys-world/)
+- [Hunty Zombie codes](/codes/hunty-zombies/)
+- [How Freetins verifies codes](/how-we-verify/)

@@ -81,3 +81,10 @@ Use the official Roblox experience page first, then compare any developer announ
 - [King Legacy codes](/codes/king-legacy/) for another anime-inspired Roblox progression game
 - [All published code pages](/codes/) for the current evidence-backed directory
 - [How Freetins verifies codes](/how-we-verify/) for state, evidence and timestamp definitions
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Ninja Time codes](/codes/ninja-time/)
+- [Jujutsu Infinite codes](/codes/jujutsu-infinite/)
+- [How Freetins verifies codes](/how-we-verify/)

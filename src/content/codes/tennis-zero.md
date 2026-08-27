@@ -75,3 +75,10 @@ Yes, each account claims once, provided each has joined the community group.
 ### Is this game the same as Neo Tennis or Racket Rivals?
 
 No. They are separate experiences with separate code lists, and codes do not carry across.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Basketball Zero codes](/codes/basketball-zero/)
+- [Volleyball Legends codes](/codes/volleyball-legends/)
+- [How Freetins verifies codes](/how-we-verify/)

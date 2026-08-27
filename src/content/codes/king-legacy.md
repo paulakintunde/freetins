@@ -83,3 +83,10 @@ They appear in the expired section of this page. Keeping the archive prevents ol
 - [Shindo Life codes](/codes/shindo-life/) for spins, RELLcoins and gift entries
 - [All published code pages](/codes/) for the current evidence-backed directory
 - [How Freetins verifies codes](/how-we-verify/) for state, evidence and timestamp definitions
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Fruit Battlegrounds codes](/codes/fruit-battlegrounds/)
+- [Sailor Piece codes](/codes/sailor-piece/)
+- [How Freetins verifies codes](/how-we-verify/)

@@ -74,3 +74,10 @@ No. Weak Legacy and Weak Legacy 2 are separate experiences with separate lists, 
 ### What are Fate Spins?
 
 A rarer spin type than the standard ones, issued in much smaller quantities by milestone codes. Save them rather than using them alongside ordinary spins.
+
+## Continue on Freetins
+
+- [All published code pages](/codes/)
+- [Type Soul codes](/codes/type-soul/)
+- [Kaizen codes](/codes/kaizen/)
+- [How Freetins verifies codes](/how-we-verify/)
