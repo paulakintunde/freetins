@@ -321,6 +321,19 @@ const hasCodeList = definition.kind === 'codes' && codeEntries.length > 0;
  * clock's (CLAUDE.md; docs/adr/0003-no-hand-typed-verification-claims.md).
  */
 const recordedCheckAt = isGamePage ? operationalPage?.latestCheckedAt : undefined;
+
+/*
+ * The code pages were the site's only surface publishing anonymously. Every
+ * editorial template has carried a byline and a Person node from the start; these
+ * pages, which are the largest section and the namesake one, carried neither — so
+ * the page making the most falsifiable claims on the site was the page with no
+ * named human behind it.
+ *
+ * The name is resolved from the section rather than typed here, exactly as
+ * `EditorialArticle` resolves it, so a code page cannot ship crediting a desk
+ * nobody holds (src/data/authors.ts).
+ */
+const codesAuthor = definition.kind === 'codes' ? getSectionAuthor('codes') : undefined;
 /*
  * `★ Verified` is the site's published word for a state, and the star is part of
  * how the table shows it, not part of what it says. A description reads the
@@ -347,6 +360,7 @@ const webPageProperties = {
    * machine-readable freshness signal on the way past.
    */
   ...(recordedCheckAt ? { dateModified: recordedCheckAt } : {}),
+  ...(codesAuthor ? { author: { '@id': authorPersonId(codesAuthor, Astro.site) } } : {}),
 };
 
 const routeSchemaNodes = [
@@ -396,6 +410,12 @@ const routeSchemaNodes = [
    * id, travels with every byline that references it (src/data/authors.ts).
    */
   ...(profileAuthor ? [authorPerson(profileAuthor, Astro.site)] : []),
+  /*
+   * The same node under the same id, emitted in full rather than referenced. A
+   * bare `@id` pointing at the profile page is a reference this document cannot
+   * resolve, which is a byline with nothing behind it (src/data/authors.ts).
+   */
+  ...(codesAuthor ? [authorPerson(codesAuthor, Astro.site)] : []),
   ...(codePageFaq.length > 0
     ? [{
         '@type': 'FAQPage',
@@ -433,6 +453,15 @@ const routeSchemaNodes = [
       {definition.eyebrow && <p class="eyebrow">{definition.eyebrow}</p>}
       <h1>{definition.heading}</h1>
       <p class="lede">{definition.description}</p>
+      {codesAuthor && (
+        <div class="article-meta">
+          <span class="byline">
+            By <a href={codesAuthor.path}>{codesAuthor.name}</a>
+            <span class="byline-role">{codesAuthor.role}</span>
+            <span class="byline-bio">{codesAuthor.credential}</span>
+          </span>
+        </div>
+      )}
       {isGamePage && gameTabs.length > 0 && (
         <nav class="game-tabs" aria-label={`${game?.name} sections`}>
           {gameTabs.map((tab) => (

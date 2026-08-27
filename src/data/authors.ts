@@ -2,6 +2,17 @@ import type { EditorialArticle } from './articles/types';
 import { organizationId } from './site';
 
 /**
+ * Every surface a byline can own.
+ *
+ * Wider than `EditorialArticle['section']` because `/codes/` is a desk without being
+ * an editorial article: those pages are rendered from the operational record by
+ * `RouteScreen`, not from an article object. It was the only surface on the site
+ * publishing with no named human behind it, on a site whose whole argument is that
+ * a named editor stands behind each claim — and it is the largest section.
+ */
+export type AuthoredSection = EditorialArticle['section'] | 'codes';
+
+/**
  * Author identities used by the article byline, the author profile routes and the
  * Person node in article structured data.
  *
@@ -22,8 +33,8 @@ export interface Author {
   credential: string;
   /** What this person is accountable for, shown on the profile page. */
   remit: string;
-  /** Editorial sections this person owns. */
-  sections: EditorialArticle['section'][];
+  /** Sections this person owns. */
+  sections: AuthoredSection[];
   path: string;
 }
 
@@ -36,7 +47,7 @@ export const authors: Author[] = [
       'Runs the verification and corrections process behind every published Freetins page, and owns the evidence standard the site is held to.',
     remit:
       'Paul sets the evidence standard, signs off publication states, and owns every page that does not belong to a section specialist: game codes, daily reward links, resources and the site policy pages. Corrections that cross sections come to him.',
-    sections: ['resources', 'daily', 'legal', 'about', 'blog'],
+    sections: ['codes', 'resources', 'daily', 'legal', 'about', 'blog'],
     path: '/author/paul-a/',
   },
   {
@@ -90,7 +101,7 @@ export const getAuthorBySlug = (slug: string) => authors.find((author) => author
  * The byline for an article, resolved from its section. Falls back to the editor
  * so a new section cannot ship without an accountable name attached.
  */
-export const getSectionAuthor = (section: EditorialArticle['section']): Author =>
+export const getSectionAuthor = (section: AuthoredSection): Author =>
   authors.find((author) => author.sections.includes(section)) ?? requireAuthor(DEFAULT_AUTHOR_SLUG);
 
 /**
@@ -99,7 +110,8 @@ export const getSectionAuthor = (section: EditorialArticle['section']): Author =
  * claim standing on a surface nobody has given them, and a new section has to
  * name its subject here before it can ship a byline at all.
  */
-const sectionExpertise: Record<EditorialArticle['section'], string> = {
+const sectionExpertise: Record<AuthoredSection, string> = {
+  codes: 'Game code records, evidence lines and redemption paths',
   answers: 'Puzzle and level answer sheets',
   guides: 'Game guides and platform walkthroughs',
   resources: 'Editorial resource directories',
