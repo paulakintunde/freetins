@@ -167,21 +167,6 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
       <p class="eyebrow">{article.eyebrow}</p>
       <h1>{article.heading}</h1>
       <p class="lede">{article.description}</p>
-      {articleArt && (
-        <div class="article-art">
-          <Picture
-            src={articleArt.src}
-            alt={articleArt.alt}
-            formats={['avif']}
-            fallbackFormat="webp"
-            widths={[480, 768, 1080, 1440, 1536]}
-            sizes="(max-width: 767px) calc(100vw - 40px), min(100vw - (2 * var(--page-gutter)), 1200px)"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </div>
-      )}
       <div class="article-meta">
         <span>{article.reviewLabel}</span>
         <span class="byline">
@@ -304,6 +289,28 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
             {section.note && <aside class="editor-note"><strong>Good to know</strong><p>{section.note}</p></aside>}
           </section>
         ))}
+
+        {/*
+         * The artwork closes the article body rather than opening the page. In the
+         * header it rendered 1198x798 against 839px of usable desktop viewport, which
+         * put the byline 387px below the fold and the "What to know" answer 518px below
+         * it - the one block on the page written to be quoted, and nobody reached it.
+         * It sits after the body and before the FAQ.
+         */}
+        {articleArt && (
+          <div class="article-art">
+            <Picture
+              src={articleArt.src}
+              alt={articleArt.alt}
+              formats={['avif']}
+              fallbackFormat="webp"
+              widths={[480, 768, 1080, 1440, 1536]}
+              sizes="(max-width: 767px) calc(100vw - 40px), min(100vw - (2 * var(--page-gutter)), 1200px)"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        )}
 
         {article.faq && article.faq.length > 0 && (
           <section id="frequently-asked-questions" class="article-section faq-section">

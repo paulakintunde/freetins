@@ -139,13 +139,24 @@
   }
 }
 
+/*
+ * `max-height` caps the block that 3/2 produces on a wide viewport: at 1200px of
+ * content width the ratio alone is 800px, which is taller than the usable desktop
+ * viewport and was the whole reason the byline and the answer sat below the fold.
+ * The image already crops with `object-fit: cover`, so the cap trims rather than
+ * distorts. `width: 100%` is explicit because `aspect-ratio` with only a
+ * `max-height` shrinks the box on both axes instead of just the one.
+ * `margin-block` rather than `margin-top`: the artwork now has content under it.
+ */
 .editorial-article .article-art {
+  width: 100%;
   max-width: 1200px;
-  margin-top: clamp(26px, 4vw, 44px);
+  margin-block: clamp(26px, 4vw, 44px);
   overflow: hidden;
   border: 1px solid var(--border-strong);
   background: var(--surface-raised);
   aspect-ratio: 3 / 2;
+  max-height: clamp(240px, 34vh, 400px);
 }
 
 .editorial-article .article-art picture,

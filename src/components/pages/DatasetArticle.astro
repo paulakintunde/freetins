@@ -205,21 +205,6 @@ const schemaNodes = [
       </nav>
       <p class="eyebrow">{data.category}</p>
       <h1>{headline}</h1>
-      {artwork && (
-        <div class="article-art">
-          <Picture
-            src={artwork.src}
-            alt={artwork.alt}
-            formats={['avif']}
-            fallbackFormat="webp"
-            widths={[480, 768, 1080, 1440, 1536]}
-            sizes="(max-width: 767px) calc(100vw - 40px), min(100vw - (2 * var(--page-gutter)), 1200px)"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </div>
-      )}
       <div class="article-meta">
         <span>{baselineLine}</span>
         <span class="byline">
@@ -241,6 +226,29 @@ const schemaNodes = [
 
         <div class="article-body">
           <div class="markdown-body"><Content /></div>
+
+          {/*
+           * The artwork closes the article body rather than opening the page. In the
+           * header it rendered 1198x798 against 839px of usable desktop viewport, which
+           * put the byline 314px below the fold and the first line of prose 509px below
+           * it: a reader saw a headline and a picture, and neither the author nor the
+           * answer. It sits after the prose and before the FAQ so the page still shows
+           * the game it is about, at the point where the reader has finished reading.
+           */}
+          {artwork && (
+            <div class="article-art">
+              <Picture
+                src={artwork.src}
+                alt={artwork.alt}
+                formats={['avif']}
+                fallbackFormat="webp"
+                widths={[480, 768, 1080, 1440, 1536]}
+                sizes="(max-width: 767px) calc(100vw - 40px), min(100vw - (2 * var(--page-gutter)), 1200px)"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          )}
 
           {data.faq.length > 0 && (
             <section id="frequently-asked-questions" class="article-section">
