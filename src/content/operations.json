@@ -293,8 +293,14 @@
       "platform": "Roblox",
       "publicationState": "planned",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/10450270085/Jujutsu-Infinite",
+      "redeemSteps": [
+        "Launch Jujutsu Infinite from the official Roblox page.",
+        "select Customize on the main menu or open the shopping-cart menu.",
+        "find the Redeem Code Here field.",
+        "paste the case-sensitive code.",
+        "press the arrow button to submit it."
+      ],
       "publisherChannels": []
     },
     {
@@ -315,8 +321,14 @@
       "platform": "Roblox",
       "publicationState": "planned",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/9224601490/Fruit-Battlegrounds",
+      "redeemSteps": [
+        "Launch Fruit Battlegrounds from the official Roblox page.",
+        "select Spin Fruit on the main menu.",
+        "select Spin and approach the treasure chest.",
+        "enter the code in the box at the lower-left corner.",
+        "select Redeem."
+      ],
       "publisherChannels": []
     },
     {
@@ -326,8 +338,14 @@
       "platform": "Roblox",
       "publicationState": "planned",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/13621938427/untitled-boxing-game",
+      "redeemSteps": [
+        "Launch untitled boxing game from the official Roblox page.",
+        "wait in the lobby rather than entering a fight.",
+        "open Codes at the lower-left side of the screen.",
+        "paste the code exactly as listed.",
+        "select Redeem."
+      ],
       "publisherChannels": []
     },
     {
@@ -370,9 +388,20 @@
       "platform": "Roblox",
       "publicationState": "planned",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
-      "publisherChannels": []
+      "officialSourceUrl": "https://www.roblox.com/games/15101393044/Dress-To-Impress",
+      "redeemSteps": [
+        "Launch Dress to Impress from the official Roblox page.",
+        "select the handbag icon on the left side of the screen.",
+        "enter the code in the text box.",
+        "select the checkmark or press Enter to redeem the item."
+      ],
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/dresstoimpress",
+          "label": "Dress to Impress Discord"
+        }
+      ]
     },
     {
       "slug": "universal-tower-defense",
@@ -392,9 +421,20 @@
       "platform": "Roblox",
       "publicationState": "planned",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
-      "publisherChannels": []
+      "officialSourceUrl": "https://www.roblox.com/games/12886143095/Anime-Last-Stand",
+      "redeemSteps": [
+        "Launch Anime Last Stand from the official Roblox page.",
+        "select Codes in the lower-right corner of the lobby screen.",
+        "paste the code with its capitalization and punctuation intact.",
+        "select Redeem and wait for the reward confirmation."
+      ],
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.gg/animelaststand",
+          "label": "Anime Last Stand Discord"
+        }
+      ]
     },
     {
       "slug": "anime-final-quest",
@@ -425,8 +465,13 @@
       "platform": "Roblox",
       "publicationState": "planned",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/16732694052/Fisch",
+      "redeemSteps": [
+        "Launch Fisch from the official Roblox page.",
+        "open Settings from the top of the screen.",
+        "scroll through the Other section to the code field at the bottom.",
+        "paste the code and press Enter."
+      ],
       "publisherChannels": []
     },
     {
@@ -436,8 +481,14 @@
       "platform": "Roblox",
       "publicationState": "planned",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/17625359962/RIVALS",
+      "redeemSteps": [
+        "Launch RIVALS from the official Roblox page and complete the first six shooting-range tasks.",
+        "join the Nosniy Games Roblox group if the game asks you to verify membership.",
+        "open Shop, select More, then open Codes.",
+        "scroll to Redeem a Code and complete the on-screen verification.",
+        "paste the case-sensitive code and select Redeem."
+      ],
       "publisherChannels": []
     },
     {
@@ -508,8 +559,14 @@
       "platform": "Roblox",
       "publicationState": "planned",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/140409475718339/Anime-Apocalypse",
+      "redeemSteps": [
+        "Launch Anime Apocalypse from the official Roblox page.",
+        "wait for the lobby interface to load.",
+        "select Codes on the right side of the screen.",
+        "paste one code into the Enter Code Here field.",
+        "select Confirm."
+      ],
       "publisherChannels": []
     },
     {
@@ -669,9 +726,21 @@
       "platform": "Roblox",
       "publicationState": "planned",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
-      "publisherChannels": []
+      "officialSourceUrl": "https://www.roblox.com/games/13772394625/Blade-Ball",
+      "redeemSteps": [
+        "Launch Blade Ball from the official Roblox page.",
+        "select Extra on the top bar.",
+        "select Codes to open the Redeem Code box.",
+        "paste the case-sensitive code.",
+        "select the checkmark to submit it."
+      ],
+      "publisherChannels": [
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/bladeball",
+          "label": "Blade Ball Discord"
+        }
+      ]
     },
     {
       "slug": "plants-vs-brainrots",
@@ -713,8 +782,14 @@
       "platform": "Roblox",
       "publicationState": "planned",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/3351674303/Driving-Empire",
+      "redeemSteps": [
+        "Launch Driving Empire from the official Roblox page and join a server.",
+        "select the Settings cog at the top of the screen.",
+        "open the Codes tab.",
+        "paste the code into the Input Code box.",
+        "select Submit."
+      ],
       "publisherChannels": []
     },
     {
@@ -791,6 +866,676 @@
     }
   ],
   "codes": [
+    {
+      "id": "blade-ball-code-1",
+      "gameSlug": "blade-ball",
+      "code": "RAMADAN",
+      "reward": "1 Wheel Spin",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/action/blade-ball-codes/",
+        "https://urgametips.com/blade-ball-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/action/blade-ball-codes/",
+        "https://urgametips.com/blade-ball-codes/"
+      ]
+    },
+    {
+      "id": "blade-ball-code-2",
+      "gameSlug": "blade-ball",
+      "code": "SPOOKYSEASON",
+      "reward": "1 Wheel Spin",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/action/blade-ball-codes/",
+        "https://urgametips.com/blade-ball-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/action/blade-ball-codes/",
+        "https://urgametips.com/blade-ball-codes/"
+      ]
+    },
+    {
+      "id": "blade-ball-code-3",
+      "gameSlug": "blade-ball",
+      "code": "4BVISITS",
+      "reward": "Bubble Wand sword skin",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/action/blade-ball-codes/",
+        "https://urgametips.com/blade-ball-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/action/blade-ball-codes/",
+        "https://urgametips.com/blade-ball-codes/"
+      ]
+    },
+    {
+      "id": "blade-ball-code-4",
+      "gameSlug": "blade-ball",
+      "code": "SHARKATTACK",
+      "reward": "1 Wheel Spin",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/action/blade-ball-codes/",
+        "https://urgametips.com/blade-ball-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/action/blade-ball-codes/",
+        "https://urgametips.com/blade-ball-codes/"
+      ]
+    },
+    {
+      "id": "blade-ball-code-5",
+      "gameSlug": "blade-ball",
+      "code": "SUMMERWHEEL",
+      "reward": "1 Wheel Spin",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.gamesradar.com/games/action/blade-ball-codes/",
+        "https://urgametips.com/blade-ball-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.gamesradar.com/games/action/blade-ball-codes/",
+        "https://urgametips.com/blade-ball-codes/"
+      ]
+    },
+    {
+      "id": "dress-to-impress-code-1",
+      "gameSlug": "dress-to-impress",
+      "code": "LANADOLLDRESS",
+      "reward": "Reworked Lana tutu",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.pcgamer.com/games/roblox/dress-to-impress-codes/",
+        "https://www.pockettactics.com/dress-to-impress/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamer.com/games/roblox/dress-to-impress-codes/",
+        "https://www.pockettactics.com/dress-to-impress/codes"
+      ]
+    },
+    {
+      "id": "dress-to-impress-code-2",
+      "gameSlug": "dress-to-impress",
+      "code": "CA11MEHHALEY",
+      "reward": "CMH outfit set",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.pcgamer.com/games/roblox/dress-to-impress-codes/",
+        "https://www.pockettactics.com/dress-to-impress/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamer.com/games/roblox/dress-to-impress-codes/",
+        "https://www.pockettactics.com/dress-to-impress/codes"
+      ]
+    },
+    {
+      "id": "dress-to-impress-code-3",
+      "gameSlug": "dress-to-impress",
+      "code": "CH00P1E_B4CK_AGA1N",
+      "reward": "Choo outfit set",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.pcgamer.com/games/roblox/dress-to-impress-codes/",
+        "https://www.pockettactics.com/dress-to-impress/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamer.com/games/roblox/dress-to-impress-codes/",
+        "https://www.pockettactics.com/dress-to-impress/codes"
+      ]
+    },
+    {
+      "id": "dress-to-impress-code-4",
+      "gameSlug": "dress-to-impress",
+      "code": "VANILLAMACE",
+      "reward": "Headscarf",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.pcgamer.com/games/roblox/dress-to-impress-codes/",
+        "https://www.pockettactics.com/dress-to-impress/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamer.com/games/roblox/dress-to-impress-codes/",
+        "https://www.pockettactics.com/dress-to-impress/codes"
+      ]
+    },
+    {
+      "id": "dress-to-impress-code-5",
+      "gameSlug": "dress-to-impress",
+      "code": "PIXIIUWU",
+      "reward": "Long ballgown dress",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.pcgamer.com/games/roblox/dress-to-impress-codes/",
+        "https://www.pockettactics.com/dress-to-impress/codes"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pcgamer.com/games/roblox/dress-to-impress-codes/",
+        "https://www.pockettactics.com/dress-to-impress/codes"
+      ]
+    },
+    {
+      "id": "fisch-code-1",
+      "gameSlug": "fisch",
+      "code": "SCARLET",
+      "reward": "Scarlet skin for Nate's Blade",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://fischepedia.com/wiki/codes/",
+        "https://robloxden.com/game-codes/fisch"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://fischepedia.com/wiki/codes/",
+        "https://robloxden.com/game-codes/fisch"
+      ]
+    },
+    {
+      "id": "fisch-code-2",
+      "gameSlug": "fisch",
+      "code": "TemporarySubmarine",
+      "reward": "Submarine parts",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://fischepedia.com/wiki/codes/",
+        "https://robloxden.com/game-codes/fisch"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://fischepedia.com/wiki/codes/",
+        "https://robloxden.com/game-codes/fisch"
+      ]
+    },
+    {
+      "id": "fisch-code-3",
+      "gameSlug": "fisch",
+      "code": "CARBON",
+      "reward": "Carbon bobber",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://fischepedia.com/wiki/codes/",
+        "https://robloxden.com/game-codes/fisch"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://fischepedia.com/wiki/codes/",
+        "https://robloxden.com/game-codes/fisch"
+      ]
+    },
+    {
+      "id": "anime-last-stand-code-1",
+      "gameSlug": "anime-last-stand",
+      "code": "ALSISBACK!",
+      "reward": "100 Technique Shards, 20,000 Emeralds, 30 Essence Selectors and 50,000 Gold",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://tryhardguides.com/anime-last-stand-codes-for-free-emeralds-gold/",
+        "https://progameguides.com/roblox/anime-last-stand--codes/",
+        "https://www.destructoid.com/anime-last-stand-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://tryhardguides.com/anime-last-stand-codes-for-free-emeralds-gold/",
+        "https://progameguides.com/roblox/anime-last-stand--codes/",
+        "https://www.destructoid.com/anime-last-stand-codes/"
+      ]
+    },
+    {
+      "id": "anime-last-stand-code-2",
+      "gameSlug": "anime-last-stand",
+      "code": "NEWLEVELS??",
+      "reward": "45 Technique Shards, 10,000 Emeralds and 15 Essence Selectors",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://tryhardguides.com/anime-last-stand-codes-for-free-emeralds-gold/",
+        "https://progameguides.com/roblox/anime-last-stand--codes/",
+        "https://www.destructoid.com/anime-last-stand-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://tryhardguides.com/anime-last-stand-codes-for-free-emeralds-gold/",
+        "https://progameguides.com/roblox/anime-last-stand--codes/",
+        "https://www.destructoid.com/anime-last-stand-codes/"
+      ]
+    },
+    {
+      "id": "anime-last-stand-code-3",
+      "gameSlug": "anime-last-stand",
+      "code": "WeeklyReturn!",
+      "reward": "25 Rerolls and 15 Mythic Shards",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://tryhardguides.com/anime-last-stand-codes-for-free-emeralds-gold/",
+        "https://progameguides.com/roblox/anime-last-stand--codes/",
+        "https://www.destructoid.com/anime-last-stand-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://tryhardguides.com/anime-last-stand-codes-for-free-emeralds-gold/",
+        "https://progameguides.com/roblox/anime-last-stand--codes/",
+        "https://www.destructoid.com/anime-last-stand-codes/"
+      ]
+    },
+    {
+      "id": "anime-last-stand-code-4",
+      "gameSlug": "anime-last-stand",
+      "code": "FORMYBROTHER!!!",
+      "reward": "50 Rerolls, 15 Perfect Stat Cubes and 50 Stat Cubes",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://tryhardguides.com/anime-last-stand-codes-for-free-emeralds-gold/",
+        "https://progameguides.com/roblox/anime-last-stand--codes/",
+        "https://www.destructoid.com/anime-last-stand-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://tryhardguides.com/anime-last-stand-codes-for-free-emeralds-gold/",
+        "https://progameguides.com/roblox/anime-last-stand--codes/",
+        "https://www.destructoid.com/anime-last-stand-codes/"
+      ]
+    },
+    {
+      "id": "anime-last-stand-code-5",
+      "gameSlug": "anime-last-stand",
+      "code": "Shibuya!",
+      "reward": "30 Rerolls, 10 Perfect Stat Cubes and 5,000 Jewels",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://tryhardguides.com/anime-last-stand-codes-for-free-emeralds-gold/",
+        "https://progameguides.com/roblox/anime-last-stand--codes/",
+        "https://www.destructoid.com/anime-last-stand-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://tryhardguides.com/anime-last-stand-codes-for-free-emeralds-gold/",
+        "https://progameguides.com/roblox/anime-last-stand--codes/",
+        "https://www.destructoid.com/anime-last-stand-codes/"
+      ]
+    },
+    {
+      "id": "jujutsu-infinite-code-1",
+      "gameSlug": "jujutsu-infinite",
+      "code": "HELLO_JJI",
+      "reward": "50 Spins",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/jujutsu-infinite/codes",
+        "https://progameguides.com/roblox/jujutsu-infinite-codes/",
+        "https://robloxden.com/game-codes/jujutsu-infinite"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pockettactics.com/jujutsu-infinite/codes",
+        "https://progameguides.com/roblox/jujutsu-infinite-codes/",
+        "https://robloxden.com/game-codes/jujutsu-infinite"
+      ]
+    },
+    {
+      "id": "fruit-battlegrounds-code-1",
+      "gameSlug": "fruit-battlegrounds",
+      "code": "YOO1M110K!",
+      "reward": "Gems; current sources disagree on the amount",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.roblox.com/games/9224601490/Fruit-Battlegrounds",
+        "https://www.pockettactics.com/fruit-battlegrounds/codes",
+        "https://beebom.com/roblox-fruit-battlegrounds-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.roblox.com/games/9224601490/Fruit-Battlegrounds",
+        "https://www.pockettactics.com/fruit-battlegrounds/codes",
+        "https://beebom.com/roblox-fruit-battlegrounds-codes/"
+      ]
+    },
+    {
+      "id": "fruit-battlegrounds-code-2",
+      "gameSlug": "fruit-battlegrounds",
+      "code": "HIGHER1M120K",
+      "reward": "800 Gems",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/fruit-battlegrounds/codes",
+        "https://beebom.com/roblox-fruit-battlegrounds-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pockettactics.com/fruit-battlegrounds/codes",
+        "https://beebom.com/roblox-fruit-battlegrounds-codes/"
+      ]
+    },
+    {
+      "id": "fruit-battlegrounds-code-3",
+      "gameSlug": "fruit-battlegrounds",
+      "code": "BIGMILLIHUNNID!",
+      "reward": "Gems; current sources disagree on the amount",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://twinfinite.net/guides/all-roblox-fruit-battlegrounds-codes/",
+        "https://beebom.com/roblox-fruit-battlegrounds-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://twinfinite.net/guides/all-roblox-fruit-battlegrounds-codes/",
+        "https://beebom.com/roblox-fruit-battlegrounds-codes/"
+      ]
+    },
+    {
+      "id": "fruit-battlegrounds-code-4",
+      "gameSlug": "fruit-battlegrounds",
+      "code": "ITSTHEBILLION!",
+      "reward": "600 Gems",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://twinfinite.net/guides/all-roblox-fruit-battlegrounds-codes/",
+        "https://beebom.com/roblox-fruit-battlegrounds-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://twinfinite.net/guides/all-roblox-fruit-battlegrounds-codes/",
+        "https://beebom.com/roblox-fruit-battlegrounds-codes/"
+      ]
+    },
+    {
+      "id": "fruit-battlegrounds-code-5",
+      "gameSlug": "fruit-battlegrounds",
+      "code": "CODEFIX",
+      "reward": "Reward type disputed by current sources",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://twinfinite.net/guides/all-roblox-fruit-battlegrounds-codes/",
+        "https://beebom.com/roblox-fruit-battlegrounds-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://twinfinite.net/guides/all-roblox-fruit-battlegrounds-codes/",
+        "https://beebom.com/roblox-fruit-battlegrounds-codes/"
+      ]
+    },
+    {
+      "id": "untitled-boxing-game-code-1",
+      "gameSlug": "untitled-boxing-game",
+      "code": "surgeon",
+      "reward": "8 Lucky Spins",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/untitled-boxing-game-codes/",
+        "https://twinfinite.net/guides/untitled-boxing-game-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/untitled-boxing-game-codes/",
+        "https://twinfinite.net/guides/untitled-boxing-game-codes/"
+      ]
+    },
+    {
+      "id": "untitled-boxing-game-code-2",
+      "gameSlug": "untitled-boxing-game",
+      "code": "thedoctorwillseeyousoon",
+      "reward": "15 Lucky Spins",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/untitled-boxing-game-codes/",
+        "https://twinfinite.net/guides/untitled-boxing-game-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/untitled-boxing-game-codes/",
+        "https://twinfinite.net/guides/untitled-boxing-game-codes/"
+      ]
+    },
+    {
+      "id": "untitled-boxing-game-code-3",
+      "gameSlug": "untitled-boxing-game",
+      "code": "100KCASH",
+      "reward": "1 Spin",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/untitled-boxing-game-codes/",
+        "https://twinfinite.net/guides/untitled-boxing-game-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/untitled-boxing-game-codes/",
+        "https://twinfinite.net/guides/untitled-boxing-game-codes/"
+      ]
+    },
+    {
+      "id": "untitled-boxing-game-code-4",
+      "gameSlug": "untitled-boxing-game",
+      "code": "dragonfish",
+      "reward": "5 Spins",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/untitled-boxing-game-codes/",
+        "https://twinfinite.net/guides/untitled-boxing-game-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/untitled-boxing-game-codes/",
+        "https://twinfinite.net/guides/untitled-boxing-game-codes/"
+      ]
+    },
+    {
+      "id": "untitled-boxing-game-code-5",
+      "gameSlug": "untitled-boxing-game",
+      "code": "lovefromubg",
+      "reward": "2 Spins",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/untitled-boxing-game-codes/",
+        "https://twinfinite.net/guides/untitled-boxing-game-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/untitled-boxing-game-codes/",
+        "https://twinfinite.net/guides/untitled-boxing-game-codes/"
+      ]
+    },
+    {
+      "id": "driving-empire-code-1",
+      "gameSlug": "driving-empire",
+      "code": "USA250",
+      "reward": "Rocket Car",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/driving-empire/codes",
+        "https://www.igeeksblog.com/roblox-driving-empire-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pockettactics.com/driving-empire/codes",
+        "https://www.igeeksblog.com/roblox-driving-empire-codes/"
+      ]
+    },
+    {
+      "id": "driving-empire-code-2",
+      "gameSlug": "driving-empire",
+      "code": "2MLIKES",
+      "reward": "2017 Nissan GT-R",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/driving-empire/codes",
+        "https://www.igeeksblog.com/roblox-driving-empire-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pockettactics.com/driving-empire/codes",
+        "https://www.igeeksblog.com/roblox-driving-empire-codes/"
+      ]
+    },
+    {
+      "id": "driving-empire-code-3",
+      "gameSlug": "driving-empire",
+      "code": "200KMEMBERS",
+      "reward": "50,000 Cash",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/driving-empire/codes",
+        "https://www.igeeksblog.com/roblox-driving-empire-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://www.pockettactics.com/driving-empire/codes",
+        "https://www.igeeksblog.com/roblox-driving-empire-codes/"
+      ]
+    },
+    {
+      "id": "rivals-code-1",
+      "gameSlug": "rivals",
+      "code": "FREE195",
+      "reward": "3 Keys",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/rivals-codes/",
+        "https://www.pcgamer.com/games/roblox/roblox-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/rivals-codes/",
+        "https://www.pcgamer.com/games/roblox/roblox-rivals-codes/"
+      ]
+    },
+    {
+      "id": "rivals-code-2",
+      "gameSlug": "rivals",
+      "code": "CANNONBALLLLL",
+      "reward": "5 Goodie Bags",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/rivals-codes/",
+        "https://www.pcgamer.com/games/roblox/roblox-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/rivals-codes/",
+        "https://www.pcgamer.com/games/roblox/roblox-rivals-codes/"
+      ]
+    },
+    {
+      "id": "rivals-code-3",
+      "gameSlug": "rivals",
+      "code": "COMMUNITY24",
+      "reward": "1 Community Wrap for a random weapon",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/rivals-codes/",
+        "https://www.pcgamer.com/games/roblox/roblox-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/rivals-codes/",
+        "https://www.pcgamer.com/games/roblox/roblox-rivals-codes/"
+      ]
+    },
+    {
+      "id": "rivals-code-4",
+      "gameSlug": "rivals",
+      "code": "BONUS",
+      "reward": "1 Key",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/rivals-codes/",
+        "https://www.pcgamer.com/games/roblox/roblox-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/rivals-codes/",
+        "https://www.pcgamer.com/games/roblox/roblox-rivals-codes/"
+      ]
+    },
+    {
+      "id": "rivals-code-5",
+      "gameSlug": "rivals",
+      "code": "BOOST",
+      "reward": "1 Key",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/rivals-codes/",
+        "https://www.pcgamer.com/games/roblox/roblox-rivals-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/rivals-codes/",
+        "https://www.pcgamer.com/games/roblox/roblox-rivals-codes/"
+      ]
+    },
+    {
+      "id": "anime-apocalypse-code-1",
+      "gameSlug": "anime-apocalypse",
+      "code": "LETTHEAURAFARMSTART",
+      "reward": "15 Raid Tickets, 30 Trait Rerolls, 25 Lucky Ability Spins, 25 Lucky Gadget Spins and a Level Zero cosmetic",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/anime-apocalypse-codes/",
+        "https://www.gamesradar.com/games/rpg/anime-apocalypse-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/anime-apocalypse-codes/",
+        "https://www.gamesradar.com/games/rpg/anime-apocalypse-codes/"
+      ]
+    },
+    {
+      "id": "anime-apocalypse-code-2",
+      "gameSlug": "anime-apocalypse",
+      "code": "BONUSCODEFORSJW",
+      "reward": "15 Raid Tickets, 30 Trait Rerolls, 1 World Boss Token, 25 Lucky Ability Spins and 25 Lucky Gadget Spins",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/anime-apocalypse-codes/",
+        "https://www.gamesradar.com/games/rpg/anime-apocalypse-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/anime-apocalypse-codes/",
+        "https://www.gamesradar.com/games/rpg/anime-apocalypse-codes/"
+      ]
+    },
+    {
+      "id": "anime-apocalypse-code-3",
+      "gameSlug": "anime-apocalypse",
+      "code": "SHADOWMONARCH",
+      "reward": "250,000 Coins, 15 Raid Tickets, 20 Trait Rerolls, 15 Lucky Ability Spins, 15 Lucky Gadget Spins and a double-drop boost",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/anime-apocalypse-codes/",
+        "https://www.gamesradar.com/games/rpg/anime-apocalypse-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/anime-apocalypse-codes/",
+        "https://www.gamesradar.com/games/rpg/anime-apocalypse-codes/"
+      ]
+    },
+    {
+      "id": "anime-apocalypse-code-4",
+      "gameSlug": "anime-apocalypse",
+      "code": "INTHESHADOWS",
+      "reward": "250,000 Coins, 15 Raid Tickets, 20 Trait Rerolls, 15 Lucky Ability Spins, 15 Lucky Gadget Spins and a double-drop boost",
+      "firstSeenAt": "2026-08-26T12:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/anime-apocalypse-codes/",
+        "https://www.gamesradar.com/games/rpg/anime-apocalypse-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "discoveredVia": [
+        "https://progameguides.com/roblox/anime-apocalypse-codes/",
+        "https://www.gamesradar.com/games/rpg/anime-apocalypse-codes/"
+      ]
+    },
     {
       "id": "99-nights-in-the-forest-code-1",
       "gameSlug": "99-nights-in-the-forest",
