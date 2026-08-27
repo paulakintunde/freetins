@@ -13,7 +13,7 @@ import { footerColumns } from '../../data/site';
 
       {footerColumns.map((column) => (
         <div class="footer-column">
-          <h2>{column.title}</h2>
+          <p class="column-title">{column.title}</p>
           <div class="footer-links">
             {column.items.map((item) => (
               'href' in item ? (
@@ -68,7 +68,7 @@ import { footerColumns } from '../../data/site';
     flex: 0 1 150px;
   }
 
-  .footer-column h2 {
+  .footer-column .column-title {
     margin: 0 0 11px;
     color: var(--text-caption);
     font: 700 var(--fs-caption) / 1.4 var(--font-core);

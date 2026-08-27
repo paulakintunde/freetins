@@ -57,8 +57,8 @@ const isActive = (href: string) => {
       ))}
     </nav>
 
-    <section class="push-prompt" data-push-prompt>
-      <h2>{alertsActive ? 'Code alerts are active' : 'Code alerts are not active yet'}</h2>
+    <section class="push-prompt" data-push-prompt aria-labelledby="push-prompt-title">
+      <p class="push-title" id="push-prompt-title">{alertsActive ? 'Code alerts are active' : 'Code alerts are not active yet'}</p>
       <p>{alertsActive
         ? `Available channels: ${operations.services.alerts.channels.join(', ')}. Choose games and provide delivery details on the Alerts page.`
         : 'The alert pathway is preserved, but no permission or contact detail is requested until a delivery service is configured.'}</p>
@@ -221,7 +221,7 @@ const isActive = (href: string) => {
     padding: 15px;
   }
 
-  .push-prompt h2 {
+  .push-prompt .push-title {
     margin: 0;
     color: var(--text-primary);
     font: 600 14px / 1.4 var(--font-core);

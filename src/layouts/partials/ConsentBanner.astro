@@ -49,7 +49,7 @@ const copy = isGdpr
 >
   <div class="consent-inner content-boundary">
     <div class="consent-copy">
-      <h2>{copy.title}</h2>
+      <p class="consent-title">{copy.title}</p>
       <p>{copy.body} <a href="/privacy/">Read the privacy page</a>.</p>
     </div>
 
@@ -60,7 +60,7 @@ const copy = isGdpr
           return (
             <div class="purpose-row">
               <div>
-                <h3>{purpose.name}</h3>
+                <p class="purpose-name" id={`consent-purpose-${purpose.id}`}>{purpose.name}</p>
                 <p>{purpose.description}</p>
               </div>
               <button
@@ -68,6 +68,7 @@ const copy = isGdpr
                 class:list={['purpose-toggle', { enabled, required: purpose.required }]}
                 role="switch"
                 aria-checked={enabled ? 'true' : 'false'}
+                aria-labelledby={`consent-purpose-${purpose.id}`}
                 data-purpose={purpose.id}
                 data-enabled={enabled ? 'true' : 'false'}
                 disabled={purpose.required}
@@ -80,7 +81,7 @@ const copy = isGdpr
       </div>
 
       <div class="vendor-list">
-        <h3>Named vendors</h3>
+        <p class="vendor-title">Named vendors</p>
         {consentVendors.map((vendor) => (
           <div><span>{vendor.name}</span><span>{vendor.purpose}</span></div>
         ))}
@@ -120,7 +121,7 @@ const copy = isGdpr
     padding-block: 8px;
   }
 
-  .compact .consent-copy h2 {
+  .compact .consent-copy .consent-title {
     display: inline;
     font-size: var(--fs-body);
   }
@@ -130,7 +131,7 @@ const copy = isGdpr
     margin: 0;
   }
 
-  .compact .consent-copy p::before { content: ' '; }
+  .compact .consent-copy p:not(.consent-title)::before { content: ' '; }
 
   @media (max-width: 560px) {
     .compact .consent-inner { flex-wrap: wrap; }
@@ -141,7 +142,7 @@ const copy = isGdpr
     flex: 1 1 300px;
   }
 
-  .consent-copy h2 {
+  .consent-copy .consent-title {
     margin: 0;
     color: var(--text-primary);
     font: 600 15px / 1.4 var(--font-core);
@@ -179,8 +180,8 @@ const copy = isGdpr
     flex: 1 1 0;
   }
 
-  .purpose-row h3,
-  .vendor-list h3 {
+  .purpose-row .purpose-name,
+  .vendor-list .vendor-title {
     margin: 0;
     color: var(--text-primary);
     font: 600 13px / 1.4 var(--font-core);

@@ -41,6 +41,7 @@ const missing = new Map();
 const prototypeLeaks = [];
 const noindexSitemapLeaks = [];
 const sitemapGaps = [];
+const headingOrderLeaks = [];
 let internalLinks = 0;
 let workerLinks = 0;
 const sitemap = readdirSync(outputRoot)
@@ -143,6 +144,18 @@ const servedAsStaticAsset = (pathname) =>
 
 for (const file of htmlFiles) {
   const html = readFileSync(file, 'utf8');
+
+  /*
+   * The header, the drawer, the footer and the consent banner render outside
+   * <main>, and the drawer and the banner render before it, so a heading in any of
+   * them is the document's first heading: the page's own h1 arrives second, and a
+   * footer column title shares its level with the content's h2s. Chrome carries no
+   * heading elements for that reason and names its regions with aria instead. The
+   * rule is invisible in a partial that looks like it is only labelling its own
+   * block, so it is read back out of the emitted HTML here.
+   */
+  const firstHeading = html.match(/<h([1-6])\b/i)?.[1];
+  if (firstHeading !== '1') headingOrderLeaks.push({ file, level: firstHeading });
 
   /*
    * The anchor list targets the prototype's nav, whose links were exactly `#codes`,
@@ -267,6 +280,15 @@ if (sitemapGaps.length > 0) {
   console.error('Either advertise them in the sitemap or mark them noindex — not neither.');
 }
 
+if (headingOrderLeaks.length > 0) {
+  console.error('Pages whose first heading is not the page h1:');
+  for (const { file: path, level } of headingOrderLeaks.slice(0, 12)) {
+    console.error(`- ${path} (${level ? `first heading is an h${level}` : 'no heading at all'})`);
+  }
+  if (headingOrderLeaks.length > 12) console.error(`- ...and ${headingOrderLeaks.length - 12} more`);
+  console.error('A heading in the chrome outranks the content it precedes. Name the chrome region with aria-label or aria-labelledby and style its text with a class instead of a heading level.');
+}
+
 if (goneSitemapLeaks.length > 0) {
   console.error('Removed (410) routes leaked into the sitemap:');
   for (const route of goneSitemapLeaks) console.error(`- ${route}`);
@@ -318,6 +340,7 @@ if (
   || noindexSitemapLeaks.length > 0
   || sitemapGaps.length > 0
   || goneSitemapLeaks.length > 0
+  || headingOrderLeaks.length > 0
   || meteredPages.length > 0
   || meteredAssets.length > 0
 ) process.exit(1);
