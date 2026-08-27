@@ -178,37 +178,3 @@ In order of how often it actually happens:
 ## How this guide was reviewed
 
 The first 40 answer sets were compared across independent answer references, while coin and hint mechanics were checked against PeopleFun support. The page states its coverage limit instead of claiming to contain every level.
-
-## FAQ: Wordscapes answers
-
-**How many levels does Wordscapes have?**
-
-Thousands, and the number keeps rising. PeopleFun has added packs continuously since the 2017 launch, which is why no answer page can honestly claim a complete list. This page publishes cross-checked answers for levels 1 to 40 and gives you a letter-based method that works on every level beyond that, including ones added after this page was written.
-
-**What are the answers to Wordscapes level 13?**
-
-Level 13, which the game also labels Pine 1 in the Forest group, uses the letters A, D, E, S and V. The answers are ADS, SAD, SAVE, VASE and SAVED. If your board shows different letters, you are not on level 13, because early-level numbering differs between the app and many answer sites.
-
-**Why does my level number not match the answer site?**
-
-Because Forest does not start at level 1 in the source snapshot. The Sunrise group takes levels 1 to 12, so Pine 1 is game level 13. Compare both the letters and the level shown in your app rather than trusting one label alone.
-
-**How do I get free coins in Wordscapes?**
-
-Six official routes: bonus words found inside levels, the daily login gift, challenge words on coin squares, the free daily store item, rewarded video ads, and Mt. Fortune events. Bonus words are the biggest and cost nothing but a few extra seconds per level. There is no code system and no working coin generator.
-
-**Is shuffle free in Wordscapes?**
-
-Yes. The circular arrow in the middle of the letter wheel reorders the letters at no cost and can be used as often as you like. Only the hint buttons spend coins. Shuffle first, because most stuck levels are caused by reading the wheel in a fixed order rather than by not knowing the word.
-
-**Does the daily puzzle affect my main level progress?**
-
-No. The daily puzzle runs on its own track with its own calendar and its own rewards. Completing it does not advance your level number, and failing to complete it does not block the main packs. It is worth doing purely as an extra coin source if you are opening the app anyway.
-
-**Why are there two of the same letter on the wheel?**
-
-Because the answer needs both. Levels 16, 19, 25, 31, 33 and 38 all have a duplicated letter, and the long word cannot be spelled without using it twice. TRACT needs two Ts, APPLY needs two Ps, NINTH needs two Ns. If a slot refuses to fill, recount the wheel before assuming the level is broken.
-
-**Are Wordscapes cheat apps safe?**
-
-Standalone answer websites are harmless. Modded APKs promising unlimited coins are not: they break in-app purchases, void official support and put unverified software on your device. The in-game hint button and the free shuffle do the same job legitimately, and bonus words pay for the hints if you collect them as you go.

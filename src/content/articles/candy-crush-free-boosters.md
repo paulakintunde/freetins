@@ -144,35 +144,3 @@ Currency and progression in Candy Crush Saga are stored server side. That is the
 ## How this guide was reviewed
 
 Booster behavior was checked against King support and every method is labelled as account-dependent where appropriate. The page does not claim a public promo-code system or promise that an event or rewarded offer appears for every player.
-
-## FAQ: Candy Crush free boosters and lives
-
-**Does Candy Crush Saga have free redeem codes?**
-No public free-booster code field is documented in the current game. Paid King gift cards are different: they are redeemed through King's web store with a code and PIN rather than entered inside Candy Crush Saga.
-
-**How do I get free boosters in Candy Crush Saga?**
-Claim the Daily Treat Machine every day, take part in rotating events such as Chocolate Box, complete milestone levels, and enter the official contests on King Community. If your account is offered the video ad reward at the fail screen, that is another free booster or a free life per attempt.
-
-**How do I get unlimited lives in Candy Crush?**
-You cannot get truly unlimited lives for free. The practical maximum is a full meter of 5 refilling one life every 30 minutes, plus one life per friend request accepted. A large, active friends list linked through Facebook or a King account is the closest thing to unlimited that exists.
-
-**Does changing the time on my phone still give free lives?**
-No. Life timers are validated server side on linked accounts, so the extra lives do not stick. Worse, a mismatched device clock can push your next life wait into the hundreds or thousands of minutes. If that happens, set your date and time back to automatic and wait for it to correct.
-
-**Are Candy Crush booster generators safe?**
-No. They deliver nothing, because currency is stored on King's servers with no local value to edit. At best you lose time in a verification loop. At worst you install adware, hand over payment details, or give away your account password. Never enter your King or Facebook password on a third-party site.
-
-**Can I get banned for using a Candy Crush mod APK?**
-Yes, modified clients breach King's terms of service and put your progress at risk. The bigger practical danger is the file itself: a sideloaded APK from an unofficial mirror is an unvetted binary from an anonymous publisher, and repackaged malware is common in that category.
-
-**Is the Piggy Bank free?**
-Filling it is free, opening it is not. Gold Bars accumulate in the Piggy Bank automatically as you complete levels and collect stars, with Hard and Super Hard levels paying more. Once it is full you have to make a real money purchase to release the bars, sold at a discount against the standard store bundles.
-
-**Why do my friends get video ads for free lives and I do not?**
-Video ad rewards are rolled out by region, app version and King's own ad availability, not by a setting you control. Update the app first, since an old build is the most common cause. If it still does not appear, your account is simply not in the rollout and there is no way to force it.
-
-**How do I ask friends for lives if I have no friends on Candy Crush?**
-Link Facebook in Settings first, then build a list through the Candy Crush groups on King Community and Facebook where players swap add requests. Send lives out before asking for them, since players reciprocate far more often. Twenty active friends beat a hundred dormant accounts.
-
-**Do King gift cards give boosters or just Gold Bars?**
-Gift cards credit Gold Bars only. You redeem the code and PIN at store.king.com, choose which King game receives them, and the bars appear in that game. You then spend the bars on boosters, lives or extra moves in the in-game shop. Choose the correct game, as the credit is not transferable afterwards.

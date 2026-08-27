@@ -162,32 +162,3 @@ In order of how often it happens:
 ## How this guide was reviewed
 
 The supported-mod route and console restrictions were checked against Larian's modding guidance and the current mod.io catalogue. Script Extender and save editing are explicitly treated as unsupported PC tools whose compatibility can change after patches.
-
-## FAQ: Baldur's Gate 3 cheats
-
-**Does Baldur's Gate 3 have console commands?**
-Not natively. Larian never enabled a debug console for players, so there is no command line built into the game. The only working console is the Lua console included with Norbyte's Script Extender mod, which is PC only. On PS5 and Xbox no console exists in any form.
-
-**How do I open the developer console in BG3?**
-Install a Script Extender release compatible with your current game build, then create `ScriptExtenderSettings.json` in the game's `bin` folder containing `"CreateConsole": true`. Launch the game and a second command-prompt window opens. Load a save, click that window, press Enter, and wait for the `S >>` prompt before typing.
-
-**Do BG3 mods disable achievements?**
-Yes. Larian confirms achievements are automatically switched off while mods are active, including cosmetic mods and mods installed through the official in-game manager. On PC the Achievement Enabler mod restores them. On PS5 and Xbox there is no workaround, so a modded console run earns no trophies.
-
-**Can I use cheats on PS5 and Xbox?**
-Only official mods from the in-game manager, capped at 100 active mods per save. Useful ones include Adjustable Party Limit, Double XP, Weightless Gold and Cheaters Spell Scroll. Script Extender, Nexus mods, save editing and Cheat Engine are all PC only and will not come to console.
-
-**Is there an unlimited gold cheat in BG3?**
-On PC, `AddGold(GetHostCharacter(), 10000)` in the Script Extender console gives you as much as you want, repeatable. On console, the closest option is pickpocketing merchants after splitting their gold into small stacks, which needs no mods and works on every platform.
-
-**Do cheats work in Honour Mode?**
-Mechanically yes, but you lose the point of it. Mods disable achievements, so a modded Honour run cannot earn Foehammer. The no-mod exploits still apply: bench a fourth companion at camp so a party wipe cannot happen, and cross region boundaries to full-heal between fights.
-
-**Will mods break my save when the game updates?**
-They can. A mod built for an older version may stop the save loading or silently remove content the save depends on. The February 2026 patch was specifically a fix for corrupted saves. After any update, launch once with all mods off, confirm the base game loads, then re-enable in small batches.
-
-**Can I use mods in multiplayer?**
-Yes, if every player has identical mods at identical versions. The game shows a verification window on load or join and offers to download, enable, update or downgrade to match. Third-party PC mods do not sync across platforms, so a Nexus-modded PC host cannot play with console players.
-
-**How do I check whether a BG3 mod still supports my build?**
-Check the mod's current game-version badge and recent update notes in the in-game Browse tab or its mod page. Script Extender, native plugins and save editors need extra care because a game hotfix can break them independently of curated mods.

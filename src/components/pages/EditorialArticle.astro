@@ -13,6 +13,7 @@ import { authorPerson, authorPersonId, getSectionAuthor } from '../../data/autho
 import { gamePageForArticle, siblingArticlesFor } from '../../data/interlinks';
 import { defaultSocialImage, organizationId } from '../../data/site';
 import { canonicalUrl, webPageId } from '../../lib/pageGraph';
+import { faqAnswerText } from '../../lib/faqAnswer';
 import { sectionArtIndex, splitAtArtAnchor } from '../../lib/articleArtSlot';
 import ArticleArt from '../ArticleArt.astro';
 
@@ -156,7 +157,13 @@ const schemaNodes = [
         mainEntity: article.faq.map((item) => ({
           '@type': 'Question',
           name: item.question,
-          acceptedAnswer: { '@type': 'Answer', text: item.answer },
+          /*
+           * The answer is inline HTML for the reader (ArticleFaq in
+           * src/data/articles/types.ts). A parser wants the sentence, not the
+           * markup, so the tags come off here and the text stays identical to
+           * what the page shows.
+           */
+          acceptedAnswer: { '@type': 'Answer', text: faqAnswerText(item.answer) },
         })),
       }]
     : []),
@@ -331,7 +338,8 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
             {article.faq.map((item) => (
               <details>
                 <summary>{item.question}</summary>
-                <p>{item.answer}</p>
+                {/* Inline HTML by contract; see ArticleFaq in src/data/articles/types.ts. */}
+                <p set:html={item.answer} />
               </details>
             ))}
           </section>

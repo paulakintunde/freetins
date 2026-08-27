@@ -127,37 +127,3 @@ Licensing. Nintendo controls its own catalogue, so Metroid, Zelda and Mario arri
 ## How this guide was reviewed
 
 Current Switch Online availability was checked against Nintendo and a maintained catalogue. Rankings are editorial judgement, while platform availability and subscription requirements are treated as sourced facts.
-
-## FAQ: best GBA games
-
-### What is the best GBA game of all time?
-
-Metroid Fusion. It combines the strongest level design on the system with pacing built for handheld sessions, and it is one of the easiest picks to play legally today because it is included with Nintendo Switch Online + Expansion Pack on Switch and Switch 2. The Legend of Zelda: The Minish Cap and Pokemon Emerald round out the top three.
-
-### How many GBA games are on Nintendo Switch Online?
-
-29 games, as of August 22, 2026. The library includes Metroid Fusion, Metroid: Zero Mission, The Minish Cap, both Golden Sun games, both Fire Emblem releases, four Super Mario Advance titles and Mario vs. Donkey Kong, which was added in March 2026. You need the Expansion Pack tier, priced at $49.99/£34.99 per year for an individual membership.
-
-### Are GBA ROMs legal to download?
-
-Freetins does not link ROM libraries. Copyright rules and personal-copy exceptions vary by country, and owning a cartridge does not automatically make an unrelated download authorized. Use licensed releases or game files you are entitled to use, and seek local legal advice for a definitive answer.
-
-### Can you play Pokemon Emerald legally in 2026?
-
-Only on an original cartridge in original hardware, in a Game Boy Player, or on an Analogue Pocket, or via a ROM you dump from your own cart. Emerald is not on Nintendo Switch Online and has no official re-release as of August 22, 2026. Watch for fakes when buying: genuine carts have Nintendo branding moulded into the connector edge.
-
-### Is the best Pokemon GBA game Emerald or FireRed?
-
-Emerald, on content: it adds the Battle Frontier, lets you catch both Groudon and Kyogre, and has the strongest post-game on the system. FireRed/LeafGreen wins if you want Kanto and the original 151, and its cartridges are usually cheaper and easier to find genuine. Both are cart-only in 2026.
-
-### Can the Switch 2 play GBA games?
-
-Yes. The Game Boy Advance - Nintendo Classics app runs on both Switch and Switch 2 with a Switch Online + Expansion Pack membership, giving access to all 29 GBA titles with save states, button remapping and online multiplayer. The Switch 2 has no cartridge slot for physical GBA games; only the NSO app route works.
-
-### What GBA games have modern remakes?
-
-Advance Wars 1+2: Re-Boot Camp on Switch remakes the first two Advance Wars games, Story of Seasons: Friends of Mineral Town remakes Harvest Moon on Switch, PC, PS4 and Xbox, and the Castlevania Advance Collection bundles Aria of Sorrow with the other two GBA Castlevanias on all major platforms. Sigma Star Saga DX, a remaster of the 2005 cult GBA game, is due in 2026.
-
-### Is buying used GBA cartridges legal?
-
-Yes, completely. The first-sale doctrine (and its UK/EU equivalents) makes reselling and buying secondhand games fully legal, and it is the only way to own games with no digital release, such as Pokemon Emerald, Final Fantasy Tactics Advance and Drill Dozer. Buy from sellers who photograph the circuit board, because counterfeit carts are common for high-value titles.

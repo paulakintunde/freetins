@@ -35,6 +35,21 @@ export interface ArticleSection {
 
 export interface ArticleFaq {
   question: string;
+  /**
+   * Inline HTML, not plain text.
+   *
+   * Eight pages kept their FAQ as prose because the answers are full of commands
+   * and file paths — `motherlode`, `/gamerule keepInventory true` — and a plain
+   * string renders those with the backticks showing. The alternative was a markdown
+   * renderer in the template, which means a dependency and a parse on every build
+   * for a handful of inline spans, so the conversion happens once when an answer is
+   * written instead.
+   *
+   * Inline only: `<code>`, `<strong>`, `<em>`, `<a>`. Anything block-level belongs in
+   * the article body. Text is escaped before the tags go in, so an answer that says
+   * `<` says it rather than opening an element. A plain-text answer is already valid
+   * here and needs no change.
+   */
   answer: string;
 }
 

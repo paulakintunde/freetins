@@ -144,35 +144,3 @@ Freetins does not link to ROM libraries. That keeps this guide focused on emulat
 ## How this guide was reviewed
 
 Availability and maintenance claims were checked against official project sites and store documentation. Prices remain dated snapshots, and the guide separates emulator legality from the separate question of game-file rights.
-
-## FAQ: GBA emulators
-
-**What is the best GBA emulator in 2026?**
-mGBA is the strongest desktop starting point and Delta is the simplest iPhone and iPad option. On Android, compare the current official listings for Pizza Boy, Lemuroid and other maintained choices because price and feature availability can change.
-
-**Can I use a GBA emulator on iPhone without jailbreaking?**
-Yes. Apple changed App Review Guideline 4.7 on April 5, 2024 to permit retro console emulators worldwide, and Delta launched on the App Store on April 17, 2024. Delta, RetroArch, Provenance, Linking Boy and Folium are all normal App Store downloads. You no longer need AltStore, a developer certificate or a jailbreak.
-
-**Is downloading a GBA emulator legal?**
-Emulator software and game files are separate legal questions, and the rules vary by country. Use official emulator downloads and only game files you are entitled to use; obtain local legal advice if you need a definitive answer for cartridge backups.
-
-**Which GBA emulator supports link cable for Pokemon trading?**
-Linkboy on Android and Linking Boy on iOS, both from Pixel Respawn LLC, do link cable emulation for up to four players over local network or on one device. Pizza Boy A Pro also supports local and Wi-Fi multiplayer. On desktop, mGBA links up to four instances and VisualBoyAdvance-M adds GameCube joybus support.
-
-**Do I need a BIOS file to play GBA games?**
-Usually not. mGBA, Delta and Pizza Boy all include a high-level BIOS replacement that runs almost the entire commercial library. A real 16KB GBA BIOS improves the boot animation and a handful of edge cases. If you want one, dump it from your own console rather than downloading it, since the file is Nintendo copyright.
-
-**Why did my save file disappear on Android?**
-Almost always storage permissions rather than a bug. Android's scoped storage rules can revoke an emulator's folder access after an update or a phone migration. Grant All files access in Android Settings, keep games in Internal Storage rather than a removable SD card, and check the `.sav` file sits beside the `.gba` file with the same name.
-
-**Is there an official mGBA app for Android or iOS?**
-No. The mGBA FAQ states that nobody on the project is a mobile developer and there is no official port. The mGBA core is available inside RetroArch on both Android and iOS, which gives you the same emulation quality in a different interface.
-
-**Can I play GBA games legally without any ROMs?**
-Yes. Nintendo Switch Online + Expansion Pack includes a licensed Game Boy Advance catalogue on supported Switch hardware. Original cartridges on compatible hardware are another route. Check Nintendo and hardware makers for current availability and pricing.
-
-**Is GBA4iOS still worth installing?**
-No. It has been unmaintained for around a decade and its creator, Riley Testut, replaced it with Delta. Sites offering GBA4iOS IPA files are unofficial re-signing services with no link to the original project. Install Delta from the App Store: it is free, open source, and does everything GBA4iOS did.
-
-**What is the best free GBA emulator for Android?**
-Pizza Boy A Basic. It uses the same engine as the paid Pro version, its listing states explicitly that it has no advertising, and it was updated on May 15, 2026. Lemuroid is the alternative if you want open source with automatic save handling. Avoid free emulators that show ads mid-game.
