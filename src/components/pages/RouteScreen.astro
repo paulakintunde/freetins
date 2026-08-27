@@ -610,6 +610,42 @@ const routeSchemaNodes = [
       </section>
     )}
 
+    {definition.kind === 'values' && (
+      <section class="page-section content-boundary"><div class="section-title"><h2>{game?.name}, published values</h2><span>Source on every row</span></div>{operationalPage?.values.length ? <div class="data-table">{operationalPage.values.map((item) => <div><strong>{item.item}</strong><span>{item.tier}</span><b>{item.value}</b><time datetime={item.observedAt}>{formatAbsoluteTimestamp(item.observedAt)}</time><a href={item.sourceUrl} rel="noopener">Source</a></div>)}</div> : <div class="data-empty"><strong>No value row is published</strong><p>The values surface remains configured, but it cannot display estimates, trends or trade counts without a timestamped source record.</p></div>}</section>
+    )}
+
+    {definition.kind === 'guide' && (
+      <section class="page-section content-boundary"><div class="data-empty"><strong>This guide is configured but not published</strong><p>The route is preserved for editorial work and stays out of the index. It moves into the published Guides index only after the full article and its sources are added to the editorial data.</p></div></section>
+    )}
+
+    {/*
+     * The artwork sits between the page's data and whatever prose follows it:
+     * after the code table, before the copy that explains how to redeem. In the
+     * page header it was 529px of an 839px desktop viewport and pushed the first
+     * code row 173px below the fold (28d68be). Here it separates the record from
+     * the writing about the record, which is where the reader pauses anyway.
+     *
+     * The values and guide sections above are ordered before it for the same
+     * reason. Only one kind renders per page, so their position relative to each
+     * other is irrelevant; their position relative to this block is not.
+     */}
+    {showRouteArtwork && routeArtwork && (
+      <section class="page-section content-boundary">
+        <div class="entity-art">
+          <Picture
+            src={routeArtwork.src}
+            alt={routeArtwork.alt}
+            formats={['avif']}
+            fallbackFormat="webp"
+            widths={[480, 768, 1080, 1440, 1536]}
+            sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), min(100vw - (2 * var(--page-gutter)), 1672px)"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </section>
+    )}
+
     {definition.kind === 'codes' && CodeCopy && (
       <section class="page-section content-boundary route-editorial">
         <CodeCopy />
@@ -707,10 +743,6 @@ const routeSchemaNodes = [
       <section class="page-section content-boundary product-layout">{productArt && <div class="product-media"><Picture src={productArt.src} alt={productArt.alt} formats={['avif']} fallbackFormat="webp" widths={[480, 768, 1080, 1536]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), 55vw" loading="eager" fetchpriority="high" decoding="async" /></div>}<div>{product ? <><p class="eyebrow">Checked listing</p><h2>Published product record</h2><dl><div><dt>Price</dt><dd>{product.price} {product.currency}</dd></div><div><dt>Checked</dt><dd>{formatAbsoluteTimestamp(product.checkedAt)}</dd></div><div><dt>Disclosure</dt><dd>{product.disclosure}</dd></div></dl><a href={product.merchantUrl} rel="sponsored noopener">Open merchant source</a><br /><Button href="/disclosure/" variant="secondary">Read the disclosure</Button></> : <div class="data-empty"><strong>This listing is not published</strong><p>The product surface is preserved, but no price, stock or recommendation is asserted until a validated merchant record exists.</p></div>}</div></section>
     )}
 
-    {definition.kind === 'values' && (
-      <section class="page-section content-boundary"><div class="section-title"><h2>{game?.name}, published values</h2><span>Source on every row</span></div>{operationalPage?.values.length ? <div class="data-table">{operationalPage.values.map((item) => <div><strong>{item.item}</strong><span>{item.tier}</span><b>{item.value}</b><time datetime={item.observedAt}>{formatAbsoluteTimestamp(item.observedAt)}</time><a href={item.sourceUrl} rel="noopener">Source</a></div>)}</div> : <div class="data-empty"><strong>No value row is published</strong><p>The values surface remains configured, but it cannot display estimates, trends or trade counts without a timestamped source record.</p></div>}</section>
-    )}
-
     {(definition.kind === 'privacy' || definition.kind === 'affiliate' || definition.kind === 'terms') && (
       <section class="page-section content-boundary prose"><p class="updated">Last updated 21 August 2026</p>{legalSections.map(([heading, copy], index) => <section><span>{String(index + 1).padStart(2, '0')}</span><div><h2>{heading}</h2><p>{copy}</p></div></section>)}</section>
     )}
@@ -788,10 +820,6 @@ const routeSchemaNodes = [
       <section class="page-section content-boundary">{timelineEntries.length ? <div class="timeline">{timelineEntries.map((item) => <article><time datetime={item.publishedAt}>{formatAbsoluteTimestamp(item.publishedAt)}</time><span>{item.version}</span><div><h2>{item.title}</h2><p>{item.summary}</p><a href={item.sourceUrl} rel="noopener">Source</a></div></article>)}</div> : <div class="data-empty"><strong>No timeline entry is published</strong><p>The timeline remains configured. An entry appears only with a version, summary, absolute publication time and source URL.</p></div>}</section>
     )}
 
-    {definition.kind === 'guide' && (
-      <section class="page-section content-boundary"><div class="data-empty"><strong>This guide is configured but not published</strong><p>The route is preserved for editorial work and stays out of the index. It moves into the published Guides index only after the full article and its sources are added to the editorial data.</p></div></section>
-    )}
-
     {definition.kind === 'search' && (
       <section class="page-section content-boundary search-page" data-search-app>
         <div class="form-layout">
@@ -856,23 +884,6 @@ const routeSchemaNodes = [
 
     {definition.kind === 'notTracked' && (
       <section class="page-section content-boundary"><div class="notice"><span>{definition.eyebrow ?? 'Freetins'}</span><h2>Request the game and it enters validation</h2><p>{definition.description}</p></div></section>
-    )}
-
-    {showRouteArtwork && routeArtwork && (
-      <section class="page-section content-boundary">
-        <div class="entity-art">
-          <Picture
-            src={routeArtwork.src}
-            alt={routeArtwork.alt}
-            formats={['avif']}
-            fallbackFormat="webp"
-            widths={[480, 768, 1080, 1440, 1536]}
-            sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), min(100vw - (2 * var(--page-gutter)), 1672px)"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </section>
     )}
 
     {datasetRelated.length > 0 && (
@@ -980,6 +991,7 @@ const routeSchemaNodes = [
   .card-copy .card-checked { margin: auto 0 0; padding-top: 9px; font-size: 12px; font-variant-numeric: tabular-nums; }
   .card-copy .card-checked time { color: var(--text-secondary); }
   .split-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 320px); gap: 30px; align-items: start; }
+  .split-layout > * { min-width: 0; }
   .wide-main { grid-template-columns: minmax(0, 1.7fr) minmax(240px, .7fr); }
   aside { border: 1px solid var(--border-subtle); background: var(--surface-raised); padding: 20px; }
   aside p { margin: 0 0 14px; color: var(--text-secondary); line-height: 1.55; }
@@ -1006,8 +1018,8 @@ const routeSchemaNodes = [
   .module h2 { margin: 30px 0 7px; color: var(--text-primary); font: 600 18px / 1.3 var(--font-core); }
   .module strong { color: var(--text-brand); font-size: 13px; }
   .code-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: var(--rowpad) 16px; border-bottom: 1px solid var(--border-subtle); }
-  .code-row > div { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
-  .code-row code { color: var(--green-neon); font: 600 14px / 1.4 ui-monospace, monospace; }
+  .code-row > div { display: flex; min-width: 0; max-width: 100%; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .code-row code { max-width: 100%; overflow-wrap: anywhere; color: var(--green-neon); font: 600 14px / 1.4 ui-monospace, monospace; }
   .code-row span, .code-row small { color: var(--text-tertiary); }
   .code-row button, form button { min-width: 92px; min-height: 44px; border: 0; background: var(--green-600); color: #fff; padding: 0 14px; cursor: pointer; font: 700 var(--fs-caption) / 1 var(--font-core); letter-spacing: .08em; text-transform: uppercase; }
   .code-reports { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; }

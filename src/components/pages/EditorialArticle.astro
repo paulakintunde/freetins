@@ -1,5 +1,4 @@
 ---
-import { Picture } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import { articleArtwork } from '../../data/article-images';
 import type { EditorialArticle as EditorialArticleData, ArticleLink } from '../../data/articles';
@@ -14,6 +13,8 @@ import { authorPerson, authorPersonId, getSectionAuthor } from '../../data/autho
 import { gamePageForArticle, siblingArticlesFor } from '../../data/interlinks';
 import { defaultSocialImage, organizationId } from '../../data/site';
 import { canonicalUrl, webPageId } from '../../lib/pageGraph';
+import { sectionArtIndex, splitAtArtAnchor } from '../../lib/articleArtSlot';
+import ArticleArt from '../ArticleArt.astro';
 
 interface Props {
   article: EditorialArticleData;
@@ -41,6 +42,22 @@ const relatedLinks = [
   ...siblingArticlesFor(article),
 ];
 const articleArt = articleArtwork[article.routeId];
+
+/*
+ * This renderer takes a body two ways: markdown from a content entry, or the
+ * article's own structured sections. The artwork goes one heading into whichever
+ * it is - above the second, or the third when the first section is short
+ * (src/lib/articleArtSlot.ts) - so both shapes place it the same way.
+ *
+ * Markdown is split on its rendered HTML, which the collection stores. It is
+ * plain markdown with no imports or components, so `set:html` produces the DOM
+ * `<Content />` would. When that HTML is missing, or there are too few headings,
+ * both shapes fall back to the artwork closing the body.
+ */
+const renderedHtml = (contentEntry as { rendered?: { html?: string } } | undefined)?.rendered?.html ?? '';
+const artSplit = articleArt && Content ? splitAtArtAnchor(renderedHtml) : null;
+const artSectionIndex = articleArt && !Content ? sectionArtIndex(article.sections) : null;
+
 const sectionLabels = {
   answers: 'Answers',
   guides: 'Guides',
@@ -195,8 +212,18 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
 
       <div class="article-body">
         {Content ? (
-          <div class="markdown-body"><Content /></div>
-        ) : article.sections.map((section) => (
+          artSplit ? (
+            <div class="markdown-body">
+              <Fragment set:html={artSplit.before} />
+              <ArticleArt art={articleArt} />
+              <Fragment set:html={artSplit.after} />
+            </div>
+          ) : (
+            <div class="markdown-body"><Content /></div>
+          )
+        ) : article.sections.map((section, index) => (
+          <>
+          {index === artSectionIndex && <ArticleArt art={articleArt} />}
           <section id={section.id} class="article-section">
             <h2>{section.heading}</h2>
             {section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
@@ -288,29 +315,15 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
 
             {section.note && <aside class="editor-note"><strong>Good to know</strong><p>{section.note}</p></aside>}
           </section>
+          </>
         ))}
 
         {/*
-         * The artwork closes the article body rather than opening the page. In the
-         * header it rendered 1198x798 against 839px of usable desktop viewport, which
-         * put the byline 387px below the fold and the "What to know" answer 518px below
-         * it - the one block on the page written to be quoted, and nobody reached it.
-         * It sits after the body and before the FAQ.
+         * Nowhere to anchor the artwork inside the body - too few headings, or no
+         * rendered markdown to split - so it closes the body instead. Both branches
+         * above have already placed it when they could, hence the null checks.
          */}
-        {articleArt && (
-          <div class="article-art">
-            <Picture
-              src={articleArt.src}
-              alt={articleArt.alt}
-              formats={['avif']}
-              fallbackFormat="webp"
-              widths={[480, 768, 1080, 1440, 1536]}
-              sizes="(max-width: 767px) calc(100vw - 40px), min(100vw - (2 * var(--page-gutter)), 1200px)"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        )}
+        {articleArt && !artSplit && artSectionIndex === null && <ArticleArt art={articleArt} />}
 
         {article.faq && article.faq.length > 0 && (
           <section id="frequently-asked-questions" class="article-section faq-section">

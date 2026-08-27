@@ -9,7 +9,6 @@
  * build clock.
  */
 import { render } from 'astro:content';
-import { Picture } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 /*
  * The article shell, shared with the editorial renderer. It lives in a
@@ -26,6 +25,8 @@ import { DERIVED_CADENCE } from '../../lib/interpolate';
 import { datasetMetaDescription } from '../../lib/metaDescription';
 import { canonicalUrl, webPageId } from '../../lib/pageGraph';
 import { fitTitle } from '../../lib/pageTitle';
+import { splitAtArtAnchor } from '../../lib/articleArtSlot';
+import ArticleArt from '../ArticleArt.astro';
 
 interface EntryData {
   title: string;
@@ -90,10 +91,25 @@ const headline = data.title;
 const documentTitle = fitTitle({ stem: data.title });
 
 const { Content, headings } = await render(entry as never);
+
 const jumpHeadings = headings.filter((heading) => heading.depth === 2);
 
 const author = getSectionAuthor(data.section);
 const artwork = articleArtwork[data.slug];
+
+/*
+ * The loader stores the interpolated body's rendered HTML alongside the entry
+ * (src/lib/datasetCollection.ts), which is what makes it possible to place the
+ * artwork inside the body rather than around it. The markdown here is plain -
+ * no imports, no components - so re-emitting it with `set:html` renders the
+ * same DOM the `<Content />` component would.
+ *
+ * If that HTML is ever missing, `artSplit` is null, `<Content />` renders whole
+ * and the artwork falls to the end of the body. That is the pre-existing
+ * behaviour, so the page degrades to correct rather than to broken.
+ */
+const renderedHtml = (entry as { rendered?: { html?: string } }).rendered?.html ?? '';
+const artSplit = artwork ? splitAtArtAnchor(renderedHtml) : null;
 
 const sectionLabels = { guides: 'Guides', daily: 'Daily links', blog: 'Blog' };
 const sectionPaths = { guides: '/guides/', daily: '/daily/', blog: '/blog/' };
@@ -225,29 +241,26 @@ const schemaNodes = [
         </nav>
 
         <div class="article-body">
-          <div class="markdown-body"><Content /></div>
-
           {/*
-           * The artwork closes the article body rather than opening the page. In the
-           * header it rendered 1198x798 against 839px of usable desktop viewport, which
-           * put the byline 314px below the fold and the first line of prose 509px below
-           * it: a reader saw a headline and a picture, and neither the author nor the
-           * answer. It sits after the prose and before the FAQ so the page still shows
-           * the game it is about, at the point where the reader has finished reading.
+           * The artwork sits one heading into the prose: above the second `<h2>`,
+           * or the third when the first section is short (src/lib/articleArtSlot.ts).
+           * In the page header it rendered 1198x798 against 839px of usable desktop
+           * viewport, which put the byline 314px below the fold and the first line
+           * of prose 509px below it - a reader saw a headline and a picture, and
+           * neither the author nor the answer.
            */}
-          {artwork && (
-            <div class="article-art">
-              <Picture
-                src={artwork.src}
-                alt={artwork.alt}
-                formats={['avif']}
-                fallbackFormat="webp"
-                widths={[480, 768, 1080, 1440, 1536]}
-                sizes="(max-width: 767px) calc(100vw - 40px), min(100vw - (2 * var(--page-gutter)), 1200px)"
-                loading="lazy"
-                decoding="async"
-              />
+          {artSplit ? (
+            <div class="markdown-body">
+              <Fragment set:html={artSplit.before} />
+              <ArticleArt art={artwork} />
+              <Fragment set:html={artSplit.after} />
             </div>
+          ) : (
+            <>
+              <div class="markdown-body"><Content /></div>
+              {/* Fewer than two headings to anchor to: the artwork closes the body. */}
+              <ArticleArt art={artwork} />
+            </>
           )}
 
           {data.faq.length > 0 && (

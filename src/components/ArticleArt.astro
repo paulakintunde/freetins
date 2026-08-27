@@ -1,0 +1,42 @@
+---
+/*
+ * The article artwork, in the one place both renderers get it from.
+ *
+ * It appears up to three times in a template - above the second heading, above
+ * the third, or closing the body when there is nothing to anchor to - and the
+ * attributes have to be identical every time. `loading="lazy"` and the absent
+ * `fetchpriority` are load-bearing: the artwork is never above the fold any
+ * more, and telling the browser to fetch it eagerly would put an off-screen
+ * picture ahead of the content the reader came for. `width` and `height` come
+ * from `Picture`, which is what keeps CLS at zero while it loads.
+ */
+import { Picture } from 'astro:assets';
+import type { ArticleArtwork } from '../data/article-images';
+
+/*
+ * `| undefined` rather than `art?:` because the project sets
+ * `exactOptionalPropertyTypes`, under which an optional property does not accept
+ * an explicit `undefined` - and every caller passes one, since a page without
+ * artwork is the ordinary case rather than an omitted argument.
+ */
+interface Props {
+  art: ArticleArtwork | undefined;
+}
+
+const { art } = Astro.props;
+---
+
+{art && (
+  <div class="article-art">
+    <Picture
+      src={art.src}
+      alt={art.alt}
+      formats={['avif']}
+      fallbackFormat="webp"
+      widths={[480, 768, 1080, 1440, 1536]}
+      sizes="(max-width: 767px) calc(100vw - 40px), min(100vw - (2 * var(--page-gutter)), 1200px)"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+)}
