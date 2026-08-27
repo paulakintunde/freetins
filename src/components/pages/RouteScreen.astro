@@ -133,6 +133,7 @@ const codeEntries = (operationalPage?.entries ?? []).filter(
 );
 const liveCodeEntries = codeEntries.filter((item) => isLiveState(item.state));
 const expiredCodeEntries = codeEntries.filter((item) => item.state === 'expired');
+const codeEmptyStateReason = operationalPage?.game.emptyStateReason?.trim() ?? '';
 /*
  * Whether the reader-report control is rendered at all. Configuration decides it, at
  * build time, so a page view costs no Function request and no KV read: the client
@@ -299,7 +300,9 @@ const codePageFaq = definition.kind === 'codes' && operationalPage?.game.redeemS
         question: `How many ${operationalPage.game.name} codes are listed right now?`,
         answer: liveCodeEntries.length > 0
           ? `${liveCodeEntries.length} of ${codeEntries.length} codes on record are live: ${operationalPage.verifiedCount} verified by an editor, ${liveCodeEntries.length - operationalPage.verifiedCount} listed and awaiting one, ${expiredCodeEntries.length} kept in the expired archive. A listed code has not been tested by a Freetins editor yet.`
-          : `None of the ${codeEntries.length} codes on record is live: every one has been retired or has passed its expiry, and each stays on the page so you can tell a dead code from one that never existed.`,
+          : codeEntries.length > 0
+            ? `None of the ${codeEntries.length} codes on record is live: every one has been retired or has passed its expiry, and each stays on the page so you can tell a dead code from one that never existed.`
+            : codeEmptyStateReason || `No source-backed ${operationalPage.game.name} code is published as active right now.`,
       },
     ]
   : [];
@@ -600,7 +603,7 @@ const routeSchemaNodes = [
                 </div>
               </div>
             ))}
-          </div> : <div class="data-empty"><strong>No code is published</strong><p>A single listed code brings this page into the index. None has been recorded for it yet.</p></div>}
+          </div> : <div class="data-empty"><strong>No active code is published</strong><p>{codeEmptyStateReason || 'No source-backed code has been recorded for this page yet.'}</p></div>}
           {readerReportsEnabled && <p class="report-note">Thumbs are reader reports, not verification. They are de-duplicated per address for the day, which stops repeat clicks but cannot separate people sharing a network. A code collecting failure reports is moved up the re-check queue; it is never relabelled by vote. See <a href="/how-we-verify/">how we verify</a>.</p>}
           {expiredCodeEntries.length > 0 && <><details class="expired-block"><summary><span class="subhead">Expired codes</span><span>{expiredCodeEntries.length} retired records</span></summary><p class="expired-note">Kept as a maintenance record so a code that stops working can be told apart from one that never existed. Retired codes are not a search destination and carry no claim of being usable.</p><div class="expired-list">
             {expiredCodeEntries.map((item) => <div><s>{item.entry.code}</s><span>{item.entry.reward}</span>{item.latestEvent && <time datetime={item.latestEvent.checkedAt}>{formatAbsoluteTimestamp(item.latestEvent.checkedAt)}</time>}</div>)}

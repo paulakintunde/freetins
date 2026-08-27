@@ -76,6 +76,12 @@ export interface OperationalGame {
   officialSourceUrl: string | null;
   /** Channels the publisher posts codes on. Empty means no code here can be confirmed. */
   publisherChannels?: PublisherChannel[];
+  /**
+   * Evidence-backed explanation for a published code page with no current rows.
+   * This preserves an honest no-active-codes answer without allowing unfinished
+   * published pages to bypass the ordinary entry requirement.
+   */
+  emptyStateReason?: string | null;
   redeemSteps: string[];
 }
 
@@ -453,6 +459,8 @@ export const validateOperations = (candidate: OperationalData) => {
     if (!['planned', 'published', 'retired'].includes(game.publicationState)) errors.push(`Game ${game.slug} has an invalid publicationState`);
     if (!Number.isFinite(game.recheckTargetDays) || game.recheckTargetDays <= 0) errors.push(`Game ${game.slug} needs a positive recheckTargetDays`);
     if (game.officialSourceUrl !== null && !isHttpsUrl(game.officialSourceUrl)) errors.push(`Game ${game.slug} has an invalid officialSourceUrl`);
+    if (game.emptyStateReason !== undefined && game.emptyStateReason !== null && !game.emptyStateReason.trim()) errors.push(`Game ${game.slug} has an empty emptyStateReason`);
+    if (game.emptyStateReason && game.surface !== 'codes') errors.push(`Game ${game.slug} can declare an emptyStateReason only on the codes surface`);
     for (const channel of game.publisherChannels ?? []) {
       if (!isHttpsUrl(channel.url)) errors.push(`Game ${game.slug} has an invalid publisher channel URL`);
       if (!channel.label.trim()) errors.push(`Game ${game.slug} has a publisher channel with no label`);
@@ -608,15 +616,18 @@ export const validateOperations = (candidate: OperationalData) => {
   }
 
   /*
-   * A published game needs content, never a verification event. Verification is
-   * the editor's job and gates nothing (ADR 0004); a published game whose entries
-   * are all Listed is valid.
+   * Published games normally need entries. A code page may instead carry an
+   * explicit evidence-backed empty state; that is a deliberate answer, not a
+   * placeholder. The reason becomes invalid once rows exist so it cannot silently
+   * go stale when a code is later published.
    */
   for (const game of candidate.games.filter((item) => item.publicationState === 'published')) {
     const entries = game.surface === 'codes'
       ? candidate.codes.filter((entry) => entry.gameSlug === game.slug)
       : candidate.dailyLinks.filter((entry) => entry.gameSlug === game.slug);
-    if (entries.length === 0) errors.push(`Published game ${game.slug} needs at least one entry`);
+    const emptyStateReason = game.emptyStateReason?.trim() ?? '';
+    if (entries.length === 0 && !emptyStateReason) errors.push(`Published game ${game.slug} needs at least one entry or an emptyStateReason`);
+    if (entries.length > 0 && emptyStateReason) errors.push(`Published game ${game.slug} has entries and cannot declare an emptyStateReason`);
   }
 
   for (const game of candidate.cheatGames.filter((item) => item.publicationState === 'published')) {

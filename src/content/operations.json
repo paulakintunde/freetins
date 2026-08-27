@@ -285,10 +285,16 @@
       "name": "Sailor Piece",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/77747658251236/Sailor-Piece",
+      "redeemSteps": [
+        "Launch Sailor Piece and reach the level required by the current code batch.",
+        "open Settings from the game interface.",
+        "scroll to the 'A Secret Code...' field near the bottom.",
+        "paste one code exactly as shown.",
+        "press Redeem."
+      ],
       "publisherChannels": []
     },
     {
@@ -398,10 +404,17 @@
       "name": "Mugen",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/139598620873181/MUGEN",
+      "emptyStateReason": "Current August sources disagree on whether the latest candidate codes still redeem, so none is published as active.",
+      "redeemSteps": [
+        "Launch Mugen and join the Pure Pure Roblox community if prompted.",
+        "wait for the main interface to load.",
+        "select Codes on the left side of the screen.",
+        "paste the string into the Enter Code field.",
+        "press Redeem."
+      ],
       "publisherChannels": []
     },
     {
@@ -605,10 +618,16 @@
       "name": "Bizarre Lineage",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/14890802310/Bizarre-Lineage",
+      "redeemSteps": [
+        "Launch Bizarre Lineage when the official experience is available.",
+        "join the Bizarre Collective Roblox community and reach level 10 if those requirements remain active.",
+        "open the in-game Shop.",
+        "scroll to the code section at the bottom.",
+        "paste the code and press Redeem Code."
+      ],
       "publisherChannels": []
     },
     {
@@ -647,13 +666,19 @@
     },
     {
       "slug": "devil-hunters",
-      "name": "Devil Hunters",
+      "name": "Devil Hunter",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/131079272918660/Devil-Hunter",
+      "redeemSteps": [
+        "Launch Devil Hunter and complete the tutorial until the phone is unlocked.",
+        "join the official Roblox community if the Codes app requires membership.",
+        "press N to open the phone.",
+        "open the Codes app and paste one code.",
+        "press Enter to claim the reward."
+      ],
       "publisherChannels": []
     },
     {
@@ -713,10 +738,15 @@
       "name": "Anime Guardians",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/17282336195/Anime-Guardians",
+      "redeemSteps": [
+        "Launch Anime Guardians and wait for the lobby interface to load.",
+        "select Codes on the right side of the screen.",
+        "paste one code into the text field.",
+        "press Redeem."
+      ],
       "publisherChannels": []
     },
     {
@@ -758,10 +788,16 @@
       "name": "Playground Basketball",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/18474291382/Playground-Basketball",
+      "redeemSteps": [
+        "Like Playground Basketball and join the Playground Basketball Roblox community.",
+        "launch the game and remain on the main menu.",
+        "select the gift icon at the top of the screen.",
+        "paste a code into the ENTER CODE field.",
+        "press REDEEM."
+      ],
       "publisherChannels": []
     },
     {
@@ -783,13 +819,20 @@
     },
     {
       "slug": "jump-star",
-      "name": "Jump Star",
+      "name": "Jump Stars",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/17323507436/Jump-Stars",
+      "emptyStateReason": "Current sources classify the same historical code strings inconsistently, so none is published as active.",
+      "redeemSteps": [
+        "Launch Jump Stars and join the Jump Corp Roblox community if prompted.",
+        "wait for the lobby menu to load.",
+        "select Codes.",
+        "paste the string into the Enter Code field.",
+        "press Redeem."
+      ],
       "publisherChannels": []
     },
     {
@@ -814,10 +857,16 @@
       "name": "Slap Battles",
       "surface": "codes",
       "platform": "Roblox",
-      "publicationState": "planned",
+      "publicationState": "published",
       "recheckTargetDays": 1,
-      "officialSourceUrl": null,
-      "redeemSteps": [],
+      "officialSourceUrl": "https://www.roblox.com/games/6403373529/Slap-Battles",
+      "emptyStateReason": "The current source review found no active Slap Battles code after removing expired and cross-game strings.",
+      "redeemSteps": [
+        "Launch Slap Battles and earn at least 1,000 Slaps if the code gate remains active.",
+        "select the Codes icon from the lobby interface.",
+        "paste the string into the Enter Code Here field.",
+        "press Redeem."
+      ],
       "publisherChannels": []
     },
     {
@@ -5428,6 +5477,235 @@
       "sourceUrls": [
         "https://www.pockettactics.com/restaurant-tycoon-3-codes",
         "https://robloxden.com/game-codes/restaurant-tycoon-3"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "anime-guardians-code-1",
+      "gameSlug": "anime-guardians",
+      "code": "NEWGUILDSHINYBOOST",
+      "reward": "25,000 Gems, 500 Trait Rerolls, and 25,000 Coins",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/anime-guardians/codes",
+        "https://robloxden.com/game-codes/anime-guardians"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "anime-guardians-code-2",
+      "gameSlug": "anime-guardians",
+      "code": "UPD29",
+      "reward": "500 Trait Rerolls, 500 Super Stat Rerolls, and 500 Stat Rerolls",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/anime-guardians/codes",
+        "https://robloxden.com/game-codes/anime-guardians"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "anime-guardians-code-3",
+      "gameSlug": "anime-guardians",
+      "code": "PARAT2SBR",
+      "reward": "10,000 Green Spins Coins",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/anime-guardians/codes",
+        "https://robloxden.com/game-codes/anime-guardians"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "anime-guardians-code-4",
+      "gameSlug": "anime-guardians",
+      "code": "BASEDEFENSE",
+      "reward": "1 Limit Breaker",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/anime-guardians/codes",
+        "https://robloxden.com/game-codes/anime-guardians"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "anime-guardians-code-5",
+      "gameSlug": "anime-guardians",
+      "code": "UPD28.5",
+      "reward": "500 Trait Rerolls and 5,000 Green Spins Coins",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/anime-guardians/codes",
+        "https://robloxden.com/game-codes/anime-guardians"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "bizarre-lineage-code-1",
+      "gameSlug": "bizarre-lineage",
+      "code": "Delay1",
+      "reward": "1 Stand Arrow, 1 Rare Chest, 1 Stat Point Essence, 1 Common Chest, 1 Stand Stat Essence, 1 Stand Personality Essence, 1 Gold Coin, and 1 Face Reroll",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/bizarre-lineage-codes",
+        "https://bizarrelineage.fandom.com/wiki/Codes",
+        "https://robloxden.com/game-codes/bizarre-lineage"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "conflicting",
+      "needsHuman": true
+    },
+    {
+      "id": "bizarre-lineage-code-2",
+      "gameSlug": "bizarre-lineage",
+      "code": "250kLikes",
+      "reward": "1 Lucky Arrow, 1 Face Reroll, 1 Stand Arrow, and 1 Common Chest",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://bizarrelineage.fandom.com/wiki/Codes",
+        "https://robloxden.com/game-codes/bizarre-lineage",
+        "https://rocodes.gg/codes/bizarre-lineage"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "conflicting",
+      "needsHuman": true
+    },
+    {
+      "id": "bizarre-lineage-code-3",
+      "gameSlug": "bizarre-lineage",
+      "code": "500kLikes",
+      "reward": "1 Lucky Arrow, 1 Face Reroll, 1 Stand Arrow, and 1 Common Chest",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://bizarrelineage.fandom.com/wiki/Codes",
+        "https://robloxden.com/game-codes/bizarre-lineage",
+        "https://rocodes.gg/codes/bizarre-lineage"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "conflicting",
+      "needsHuman": true
+    },
+    {
+      "id": "devil-hunters-code-1",
+      "gameSlug": "devil-hunters",
+      "code": "ISTHISANERASERDEVIL?",
+      "reward": "Patch reward bundle; exact contents not published",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/devil-hunter-codes/",
+        "https://www.devil-hunter.com/official/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "devil-hunters-code-2",
+      "gameSlug": "devil-hunters",
+      "code": "SOMEREROLLS",
+      "reward": "Reroll reward bundle; exact quantity not published",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/devil-hunter-codes/",
+        "https://www.devil-hunter.com/official/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "devil-hunters-code-3",
+      "gameSlug": "devil-hunters",
+      "code": "DEVILSGALORE",
+      "reward": "Patch 2 reward bundle; exact contents not published",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/devil-hunter-codes/",
+        "https://www.devil-hunter.com/official/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "devil-hunters-code-4",
+      "gameSlug": "devil-hunters",
+      "code": "LARGEPATCH",
+      "reward": "Patch 2 reward bundle; exact contents not published",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/devil-hunter-codes/",
+        "https://www.devil-hunter.com/official/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "devil-hunters-code-5",
+      "gameSlug": "devil-hunters",
+      "code": "SPAINWC",
+      "reward": "Patch 2 reward bundle; exact contents not published",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/devil-hunter-codes/",
+        "https://www.devil-hunter.com/official/codes"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "playground-basketball-code-1",
+      "gameSlug": "playground-basketball",
+      "code": "RECUPDATE",
+      "reward": "4,500 Coins",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/playground-basketball-codes",
+        "https://robloxden.com/game-codes/playground-basketball"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "playground-basketball-code-2",
+      "gameSlug": "playground-basketball",
+      "code": "UPDATE8",
+      "reward": "4,500 Coins",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://www.pockettactics.com/playground-basketball-codes",
+        "https://robloxden.com/game-codes/playground-basketball"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "sailor-piece-code-1",
+      "gameSlug": "sailor-piece",
+      "code": "TojiDanteUpdate",
+      "reward": "50 Power Shards, 75 Passive Shards, 12 untradeable Secret Chests, 100 untradeable Clan Rerolls, 10 untradeable Aura Crates, and 8 untradeable Cosmetic Crates; requires level 12,500",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/sailor-piece-codes/",
+        "https://www.destructoid.com/sailor-piece-codes/",
+        "https://techwiser.com/roblox-sailor-piece-codes/"
+      ],
+      "publisherSourceUrl": null,
+      "confidence": "reported"
+    },
+    {
+      "id": "sailor-piece-code-2",
+      "gameSlug": "sailor-piece",
+      "code": "Weloveyou",
+      "reward": "50 Power Shards, 75 Passive Shards, 12 untradeable Secret Chests, 100 untradeable Clan Rerolls, 10 untradeable Aura Crates, and 8 untradeable Cosmetic Crates; requires level 12,500",
+      "firstSeenAt": "2026-08-27T21:00:00Z",
+      "sourceUrls": [
+        "https://progameguides.com/roblox/sailor-piece-codes/",
+        "https://www.destructoid.com/sailor-piece-codes/",
+        "https://techwiser.com/roblox-sailor-piece-codes/"
       ],
       "publisherSourceUrl": null,
       "confidence": "reported"

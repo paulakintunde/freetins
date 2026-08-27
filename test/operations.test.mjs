@@ -64,6 +64,35 @@ test('a published game with entries but no verification event is valid', () => {
   assert.doesNotThrow(() => validateOperations(data));
 });
 
+test('a published zero-code page needs an explicit empty-state reason', () => {
+  const data = freshData();
+  const game = data.games.find((item) => item.slug === 'mugen');
+  assert.ok(game);
+  delete game.emptyStateReason;
+
+  assert.throws(() => validateOperations(data), /needs at least one entry or an emptyStateReason/);
+
+  game.emptyStateReason = 'Current sources disagree on whether the latest candidate codes still redeem.';
+  assert.doesNotThrow(() => validateOperations(data));
+});
+
+test('an empty-state reason cannot remain after a code is added', () => {
+  const data = freshData();
+  const game = data.games.find((item) => item.slug === 'mugen');
+  assert.ok(game);
+  assert.ok(game.emptyStateReason);
+  data.codes.push({
+    id: 'mugen-new-code',
+    gameSlug: game.slug,
+    code: 'NEW-CODE',
+    reward: 'Test reward',
+    firstSeenAt: '2026-08-27T10:00:00Z',
+    sourceUrls: ['https://www.roblox.com/games/139598620873181/MUGEN'],
+  });
+
+  assert.throws(() => validateOperations(data), /has entries and cannot declare an emptyStateReason/);
+});
+
 test('recheckTargetDays is validated as a positive number and read by nothing else', () => {
   const data = freshData();
   const game = data.games.find((item) => item.slug === 'grow-a-garden');
