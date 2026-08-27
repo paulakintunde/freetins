@@ -237,6 +237,49 @@ const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => ({
  * or updates page for a game that has none put 147 placeholder URLs in front of
  * crawlers, every one of them linked from the game tab bar.
  */
+/**
+ * The meta description for a game's code page.
+ *
+ * The line it replaces was one fixed sentence for every game, 76 to 97 characters
+ * against the roughly 155 a result renders — so the largest section on the site
+ * threw away a third of its snippet on all 53 pages, while the page below already
+ * held the facts to fill it.
+ *
+ * It says only what the record says. Every clause is a count of rows or a feature
+ * the page displays; none of them characterises a code as working, which is why the
+ * count is `liveCount` reported as *listed* and why no clause claims a check
+ * happened (CLAUDE.md; docs/adr/0003-no-hand-typed-verification-claims.md). It is
+ * the same vocabulary `codesTitle` composes with, so the title and the snippet
+ * under it cannot describe the page two different ways.
+ */
+const DESCRIPTION_BUDGET = 158;
+
+const codesDescription = (game: (typeof gameCatalogue)[number]): string => {
+  if (!game.isPublished) return `${game.name} has a page configured, but no code is listed yet.`;
+
+  /*
+   * A page can be published and still hold no rows. Describing "codes, each with
+   * its source link" there would advertise rows that do not exist, which is the
+   * one thing a description on this site may not do.
+   */
+  if (game.liveCount === 0) {
+    return `${game.name} on ${game.platform}: no code is listed yet. The redemption path and the official source are recorded, and codes appear here as they are.`;
+  }
+
+  const core = `${game.name} on ${game.platform}: ${game.liveCount} codes listed, each with its source link, publication state and evidence line.`;
+
+  /*
+   * The archive clause is the one that can push a long game name past the budget,
+   * so it is the one that gets dropped — the same shape as `fitTitle`, which sheds
+   * its optional parts rather than truncating mid-word.
+   */
+  const full = game.expiredCount > 0
+    ? `${core} Redemption steps, and ${game.expiredCount} expired codes kept on the page.`
+    : `${core} Redemption steps included.`;
+
+  return full.length <= DESCRIPTION_BUDGET ? full : `${core} Redemption steps included.`;
+};
+
 const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
   const root = `/codes/${game.slug}`;
   const shared = { name: game.name, slug: game.slug, platform: game.platform };
@@ -255,9 +298,7 @@ const gameRoutes: RouteDefinition[] = gameCatalogue.flatMap((game) => {
        * page, which would throw away the derivation above. They move together.
        */
       heading: `${game.name} codes`,
-      description: game.isPublished
-        ? `${game.name} codes with source URLs, redemption steps and the state of every entry.`
-        : `${game.name} has a page configured, but no code is listed yet.`,
+      description: codesDescription(game),
       noindex: !game.isPublished,
     },
   ];
