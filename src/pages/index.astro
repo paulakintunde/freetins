@@ -1,12 +1,10 @@
 ---
 import { Picture } from 'astro:assets';
 import Button from '../components/ui/Button.astro';
-import SearchField from '../components/ui/SearchField.astro';
 import { dailyGames, homeTiles, pulse, publishedGameCatalogue } from '../data/home';
 import { homeHeroArtwork, partnerArtwork } from '../data/home-images';
 import { getActiveSponsorships, operations } from '../data/operations';
 import { gameArtwork } from '../data/site-images';
-import { hotSearches } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = 'Freetins - source-backed game codes and guides';
@@ -63,17 +61,9 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   </section>
 
   <section class="page-section intro-section content-boundary">
-    <h2>Publication status</h2>
-    <p class="section-intro">These figures are calculated from the operational record file. A code no editor has tested yet is listed as awaiting editor verification, and the page says so.</p>
-
-        <div class="home-search">
-      <SearchField label="Find your game" placeholder="Grow a Garden, Monopoly GO, Blue Lock Rivals…" />
-      <div class="hot-searches">
-        <span>Most searched</span>
-        {hotSearches.map((term) => (
-          <a href={`/search/?q=${encodeURIComponent(term)}`}>{term}</a>
-        ))}
-      </div>
+    <div class="intro-copy">
+      <h2>Publication status</h2>
+      <p class="section-intro">Figures come directly from the operational record. Untested codes are clearly marked as awaiting editor verification.</p>
     </div>
 
     <div class="pulse-grid">
@@ -86,7 +76,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
     </div>
   </section>
 
-  <section class="page-section content-boundary">
+  <section class="page-section games-section content-boundary">
     <div class="section-heading">
       <h2>Published code pages</h2>
       <a href="/codes/">{publishedGameCatalogue.length} published games</a>
@@ -128,12 +118,13 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
           </a>
         );
       })}
-    </div> : <div class="data-empty"><strong>No operational code page is published yet</strong><p>The component is active and will populate automatically when a configured game lists at least one code.</p></div>}
+    </div> : <div class="data-empty"><strong>No code pages yet</strong><p>A game appears here as soon as its first code is recorded.</p></div>}
   </section>
 
+  {activeSponsorships.length > 0 && (
   <section class="page-section sponsored-section content-boundary" data-ad-slot="FT-SPONSOR-ROW">
     <h2>Sponsorship</h2>
-    {activeSponsorships.length > 0 ? <div class="sponsored-grid">
+    <div class="sponsored-grid">
       {activeSponsorships.map((entry) => (
           <a class="sponsored-card" href={entry.targetUrl} rel="sponsored noopener">
             <div class="sponsored-media">
@@ -154,8 +145,9 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
             </div>
           </a>
       ))}
-    </div> : <div class="data-empty"><strong>No paid placement is active</strong><p>This module is preserved, but it renders a promotion only when a dated sponsorship record, destination and disclosure are configured.</p></div>}
+    </div>
   </section>
+  )}
 
   <section class="page-section content-boundary">
     <div class="section-heading daily-heading">
@@ -173,7 +165,8 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
     </div> : <div class="data-empty"><strong>No daily-link page is published yet</strong><p>The section will populate as reward links are recorded.</p></div>}
   </section>
 
-  <section class="page-section native-section content-boundary" data-ad-slot={operations.services.advertising.enabled ? 'FT-NATIVE-HOME' : undefined}>
+  {operations.services.advertising.enabled && (
+  <section class="page-section native-section content-boundary" data-ad-slot="FT-NATIVE-HOME">
     <div class="native-card">
       <div class="native-media">
         <Picture
@@ -188,12 +181,13 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
         />
       </div>
       <div>
-        <span>Advertising status</span>
-        <h2>{operations.services.advertising.enabled ? 'Advertising is configured' : 'Advertising is not active'}</h2>
-        <p>{operations.services.advertising.enabled ? `${operations.services.advertising.provider} is configured for ${operations.services.advertising.placementIds.length} named placements.` : 'The placement remains in the architecture, but no vendor script, targeting claim or paid creative is active.'}</p>
+        <span>Sponsored</span>
+        <h2>{operations.services.advertising.provider}</h2>
+        <p>A paid placement. It never changes a code's state, a badge, or the order of anything on this site.</p>
       </div>
     </div>
   </section>
+  )}
 </BaseLayout>
 
 <style>
@@ -209,7 +203,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   .hero {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: clamp(380px, 31vw, 440px);
     overflow: hidden;
     border-bottom: 1px solid var(--border-subtle);
     background: var(--surface-card);
@@ -254,19 +248,21 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   .hero-boundary {
     position: relative;
     z-index: 2;
+    display: flex;
     height: 100%;
+    align-items: center;
   }
 
   .hero-copy {
-    max-width: min(760px, 64%);
-    padding: clamp(38px, 13vw, 190px) var(--page-gutter) clamp(28px, 3.4vw, 48px);
+    max-width: min(680px, 60%);
+    padding: clamp(30px, 4vw, 52px) var(--page-gutter);
   }
 
   .eyebrow {
     display: flex;
     align-items: center;
     gap: 9px;
-    margin-bottom: clamp(12px, 1.6vw, 20px);
+    margin-bottom: clamp(10px, 1.2vw, 14px);
     color: #fff;
     font: 700 13px / 1.4 var(--font-core);
     letter-spacing: 0.12em;
@@ -285,15 +281,15 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   .hero h1 {
     margin: 0;
     color: #fff;
-    font: 600 clamp(34px, 5vw, 76px) / 1.04 var(--font-display);
+    font: 600 clamp(34px, 4vw, 58px) / 1.02 var(--font-display);
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-wrap: pretty;
   }
 
   .hero-copy > p {
-    max-width: 48ch;
-    margin: clamp(14px, 1.6vw, 22px) 0 0;
+    max-width: 46ch;
+    margin: clamp(12px, 1.2vw, 17px) 0 0;
     color: #d7dce1;
     font: 400 var(--fs-body-lg) / var(--lh-body-lg) var(--font-core);
     text-wrap: pretty;
@@ -303,7 +299,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: clamp(20px, 2.4vw, 30px);
+    margin-top: clamp(17px, 1.8vw, 23px);
   }
 
   .page-section {
@@ -311,7 +307,11 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   }
 
   .intro-section {
-    padding-top: clamp(28px, 4vw, 52px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(390px, 0.9fr);
+    align-items: end;
+    gap: clamp(24px, 4vw, 56px);
+    padding-top: clamp(22px, 2.4vw, 30px);
   }
 
   .page-section > h2,
@@ -321,7 +321,9 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
     font: 600 var(--fs-h3) / var(--lh-h3) var(--font-display);
   }
 
-  .intro-section > h2 {
+  .intro-copy > h2 {
+    margin: 0;
+    color: var(--text-primary);
     font: 600 var(--fs-h2) / var(--lh-h2) var(--font-display);
     letter-spacing: 0.02em;
     text-transform: uppercase;
@@ -329,59 +331,24 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
 
   .section-intro {
     max-width: 62ch;
-    margin: 14px 0 0;
+    margin: 8px 0 0;
     color: var(--text-secondary);
     font: 400 var(--fs-body-lg) / var(--lh-body-lg) var(--font-core);
     text-wrap: pretty;
   }
 
-  .home-search {
-    max-width: 620px;
-    margin-top: 26px;
-  }
-
-  .hot-searches {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-top: 12px;
-  }
-
-  .hot-searches > span {
-    color: var(--text-caption);
-    font: 400 12.5px / 1.4 var(--font-core);
-  }
-
-  .hot-searches a {
-    display: inline-flex;
-    min-height: 44px;
-    align-items: center;
-    border: 1px solid var(--border-subtle);
-    color: var(--text-secondary);
-    padding: 0 13px;
-    font: 400 13px / 1 var(--font-core);
-    text-decoration: none;
-    transition: background var(--dur-fast) var(--ease-standard);
-  }
-
-  .hot-searches a:hover {
-    background: var(--white-a12);
-  }
-
   .pulse-grid {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 28px;
     border: 1px solid var(--border-subtle);
     background: var(--surface-raised);
   }
 
   .pulse-grid > div {
-    min-width: 150px;
-    flex: 1 1 150px;
+    min-width: 120px;
+    flex: 1 1 120px;
     border-right: 1px solid var(--border-subtle);
-    padding: 14px 18px;
+    padding: 12px 16px;
   }
 
   .pulse-grid > div:last-child {
@@ -391,7 +358,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   .pulse-grid strong {
     display: block;
     color: var(--text-primary);
-    font: 600 26px / 1.1 var(--font-display);
+    font: 600 23px / 1.1 var(--font-display);
     letter-spacing: 0.02em;
     font-variant-numeric: tabular-nums;
   }
@@ -410,6 +377,10 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
     flex-wrap: wrap;
     gap: 16px;
     margin-bottom: 18px;
+  }
+
+  .games-section {
+    padding-top: clamp(24px, 2.8vw, 34px);
   }
 
   .section-heading > a {
@@ -660,17 +631,29 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
 
   @media (max-width: 767px) {
     .hero {
-      aspect-ratio: auto;
-      min-height: 560px;
+      height: auto;
+      min-height: 450px;
     }
 
     .hero-copy {
       max-width: 100%;
-      padding-top: 72px;
+      padding-top: 46px;
+      padding-bottom: 30px;
+    }
+
+    .intro-section {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 16px;
     }
 
     .page-section {
-      padding-top: 36px;
+      padding-top: 26px;
+    }
+
+    .intro-copy > h2 {
+      font-size: 28px;
+      line-height: 1.05;
     }
 
     .game-grid,
