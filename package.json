@@ -10,8 +10,10 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "pnpm build && wrangler pages dev dist",
+    "build": "pnpm run guards && astro build && pnpm check:routes",
+    "build:only": "astro build",
+    "guards": "pnpm lint && pnpm check:data && pnpm test && pnpm check:content --strict && pnpm check:vocabulary --strict",
+    "preview": "pnpm build:only && wrangler pages dev dist",
     "typecheck": "astro check",
     "lint": "astro check --minimumFailingSeverity warning",
     "audit:live": "node scripts/audit-live-site.mjs",
