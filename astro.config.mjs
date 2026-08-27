@@ -259,6 +259,85 @@ const recordedLastmod = () => {
 
 const sitemapLastmod = recordedLastmod();
 
+/**
+ * `rel` on every external link markdown renders.
+ *
+ * 72 outbound anchors under `/daily/` carried no `rel` at all. They are the reward
+ * and claim links — `static.moonactive.net/.../reward2.html`, `rewards.dicedreams.com`
+ * — plus the store, social and Discord links beside them, and they reach the page as
+ * markdown: the dataset loader interpolates its rows into the body before it is
+ * rendered (src/components/pages/DatasetArticle.astro), and markdown link syntax
+ * cannot carry an attribute. So no amount of editing the data would have fixed it.
+ *
+ * The same class of link in `RouteScreen`'s reward table has been `nofollow noopener`
+ * since it was written, so the daily prose is given the same treatment rather than a
+ * second policy for the same destination. A reward endpoint rotates, a Discord invite
+ * is not an editorial endorsement, and neither is a store listing.
+ *
+ * Which links those are is read from the data rather than guessed. Nofollowing every
+ * external markdown link was tried first and it reached 44 links in `/blog/` and
+ * `/guides/` that are first-party documentation — Roblox's own help pages, Xbox,
+ * PlayStation and Nintendo support, Wikipedia. Those are the evidence, on a site
+ * whose argument is that it shows its evidence, so they stay followed. Matching on
+ * the source file does not work either: the dataset loader renders this markdown
+ * itself, and the vfile it passes carries no path.
+ *
+ * So the set below is every URL that appears in a `src/data/daily/*.json` row. That
+ * is the definition of a reward link on this site rather than a proxy for it, and it
+ * maintains itself: a new drop is nofollowed because it is in the data, and a host
+ * that stops being a reward endpoint stops matching when its rows go.
+ *
+ * The formal `officialSources` citations were never in scope: the template renders
+ * those anchors itself with `noopener noreferrer`. A link that already declares
+ * `rel` keeps what it declares.
+ */
+const rewardLinkUrls = () => {
+  const urls = new Set();
+  let files;
+  try {
+    files = readdirSync(join(process.cwd(), 'src', 'data', 'daily'));
+  } catch {
+    return urls;
+  }
+
+  for (const file of files) {
+    if (!file.endsWith('.json')) continue;
+    const dataset = JSON.parse(readFileSync(join(process.cwd(), 'src', 'data', 'daily', file), 'utf8'));
+    for (const row of dataset.rows ?? []) {
+      for (const cell of Object.values(row.cells ?? {})) {
+        for (const match of String(cell).matchAll(/https?:\/\/[^\s)\]]+/g)) urls.add(match[0]);
+      }
+    }
+  }
+
+  return urls;
+};
+
+const externalLinkRel = () => {
+  const rewardUrls = rewardLinkUrls();
+
+  return (tree) => {
+    const visit = (node) => {
+      if (node.tagName === 'a' && node.properties && !node.properties.rel) {
+        const href = node.properties.href;
+        if (typeof href === 'string' && /^https?:\/\//i.test(href)) {
+          let external = false;
+          try {
+            external = new URL(href).origin !== 'https://www.freetins.com';
+          } catch {
+            external = false;
+          }
+          if (external) {
+            node.properties.rel = rewardUrls.has(href) ? ['nofollow', 'noopener'] : ['noopener'];
+          }
+        }
+      }
+      for (const child of node.children ?? []) visit(child);
+    };
+    visit(tree);
+  };
+};
+
 const freePlanRouteManifest = () => {
   let resolvedRoutes = null;
   let astroConfig = null;
@@ -402,6 +481,9 @@ export default defineConfig({
   },
   build: {
     format: 'directory',
+  },
+  markdown: {
+    rehypePlugins: [externalLinkRel],
   },
   prefetch: {
     defaultStrategy: 'hover',

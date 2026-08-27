@@ -70,7 +70,13 @@ const publishedPageCount = publishedGameCount + publishedDailyLinkCatalogue.leng
 const staticRoutes: RouteDefinition[] = [
   {
     path: '/daily/', routeId: 'daily', kind: 'daily', title: fitTitle({ stem: 'Daily free reward links, dated row by row' }), heading: 'Daily links',
-    description: 'Source-linked daily rewards with recorded dates and clear states.',
+    /*
+     * 65 characters, the shortest description on the site, on a section hub. The
+     * clauses added are the ones the hub can stand behind: every link carries the
+     * date it was recorded and a state, expired links stay on the page rather than
+     * vanishing, and none of it claims a link works.
+     */
+    description: 'Daily free reward links for Coin Master, Monopoly Go, Dice Dreams and more, each with its source, the date it was recorded and its current state.',
     noindex: publishedDailyLinkCatalogue.length + editorialArticles.filter((article) => article.section === 'daily').length === 0,
   },
   {
