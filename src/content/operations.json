@@ -3653,7 +3653,7 @@
       "subscriptionEndpoint": null
     },
     "reports": {
-      "enabled": false
+      "enabled": true
     },
     "advertising": {
       "enabled": false,

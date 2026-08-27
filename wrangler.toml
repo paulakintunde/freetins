@@ -30,13 +30,14 @@ compatibility_flags = ["nodejs_compat"]
 #   wrangler pages secret put REPORT_SECRET --project-name freetins
 #
 # then paste the returned ids below, uncomment the blocks, and set
-# `services.reports.enabled` to `true` in src/content/operations.json. Until that
-# last step the report control renders nowhere, which is the intended state.
+# `services.reports.enabled` to `true` in src/content/operations.json.
 #
-# The first of those three commands has already been run on this account: the
-# REPORTS id below is the one it printed, and running it again would create a
-# second, empty namespace rather than return that id. The other two are still
-# outstanding.
+# For REPORTS that is done. The namespace was created on this account and the id
+# below is the one it printed; running the command again would make a second, empty
+# namespace rather than return that id. REPORT_SECRET is set on the project, in both
+# the production and preview environments. The STATUS namespace is still a template:
+# the checker is off, and a checker writing every minute would spend 1,440 writes a
+# day against a 1,000-a-day budget, so it stays unbound until its cadence is decided.
 #
 # That order is checked in one direction, and in one place only: `pnpm check:data`
 # fails when `services.reports.enabled` is `true` while this file carries no
@@ -48,21 +49,29 @@ compatibility_flags = ["nodejs_compat"]
 # REPORTS holds one vote record per reader, entry and day, with a 7-day TTL. One
 # key per accepted heart means one write and no read-modify-write race.
 #
-# The namespace exists and the id below is the real one, so uncommenting the block
-# is all that binds it. Read this before you do:
+# A Pages project takes its bindings from the dashboard until its wrangler
+# configuration declares bindings of its own. From that deploy on Cloudflare reads
+# the bindings from this file and ignores the dashboard's, so a binding that lived
+# only there would stop existing at runtime. The freetins project's binding list
+# was read before this block was uncommented, on 2026-08-26, and it held nothing:
+# no binding was displaced. Anything added in the dashboard from now on is ignored,
+# so add it here instead.
 #
-#   A Pages project takes its bindings from the dashboard until its wrangler
-#   configuration declares bindings of its own. From that deploy on, Cloudflare
-#   reads the bindings from this file and ignores the ones configured in the
-#   dashboard. Uncommenting the block below therefore REPLACES the project's
-#   dashboard bindings rather than adding to them, and anything bound only in the
-#   dashboard stops existing at runtime. Open the freetins project's settings
-#   first, write down every binding and variable it holds today, and bring them
-#   all into this file in the same commit.
-#
-# [[kv_namespaces]]
-# binding = "REPORTS"
-# id = "d787c832c5f74ad691b2d259328f81b0"
+# Preview deployments bind the same namespace deliberately. Whether the control
+# renders is decided at build time, so a preview build shows it; with no binding
+# there, every click on a preview would fail, which is the dead control the design
+# exists to prevent. Preview traffic is negligible, and a vote key already carries
+# its own day, entry and reader, so sharing one namespace costs nothing.
+
+[[kv_namespaces]]
+binding = "REPORTS"
+id = "d787c832c5f74ad691b2d259328f81b0"
+
+[env.preview]
+
+[[env.preview.kv_namespaces]]
+binding = "REPORTS"
+id = "d787c832c5f74ad691b2d259328f81b0"
 #
 # STATUS holds `checker:current` for the optional checker. Its write cadence
 # comes out of the same 1,000-a-day budget as REPORTS, so a checker that runs

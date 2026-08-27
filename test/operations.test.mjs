@@ -81,7 +81,7 @@ test('incomplete service activation is rejected', () => {
   assert.throws(() => validateOperations(data), /Enabled advertising needs a provider/);
 });
 
-test('the reader-report flag is a required boolean and ships off', () => {
+test('the reader-report flag is a required boolean', () => {
   /*
    * services.reports decides at build time whether the reader-report control is
    * rendered at all (ADR 0005), and the control cannot work without bindings this
@@ -90,7 +90,7 @@ test('the reader-report flag is a required boolean and ships off', () => {
    * It is required rather than defaulted so a schema that gains the service while
    * the data forgets it fails the build instead of reading as off by accident.
    */
-  assert.equal(operations.services.reports.enabled, false);
+  assert.equal(typeof operations.services.reports.enabled, 'boolean');
 
   const missing = freshData();
   delete missing.services.reports;
@@ -118,16 +118,25 @@ test('the reader-report flag cannot be turned on ahead of the REPORTS binding', 
    */
   const wrangler = readFileSync(new URL('../wrangler.toml', import.meta.url), 'utf8');
 
-  // As shipped: the flag is off and the binding is a commented block. Nothing to say.
-  assert.equal(operations.services.reports.enabled, false);
-  assert.equal(hasUncommentedReportsBinding(wrangler), false);
+  /*
+   * As shipped, both halves are on: the namespace was created on the account, the
+   * secret is set on both Pages environments, and the dashboard held no binding to
+   * displace. The rule is that the two move together, so what is asserted here is
+   * agreement between the two files, not either particular value.
+   */
+  assert.equal(hasUncommentedReportsBinding(wrangler), operations.services.reports.enabled);
   assert.equal(reportsOrderingError(operations.services.reports.enabled, wrangler), null);
 
-  // The real namespace id is recorded, so activation is an uncomment and not a hunt.
+  // The real namespace id is recorded, so the binding is reviewable in the repository.
   assert.match(wrangler, /id = "d787c832c5f74ad691b2d259328f81b0"/);
 
-  // Flag on, binding still commented: fatal, naming both files and its own blind spot.
-  const error = reportsOrderingError(true, wrangler);
+  // Flag on, binding commented out: fatal, naming both files and its own blind spot.
+  const commented = wrangler
+    .split('\n')
+    .map((line) => (/^(\[\[kv_namespaces\]\]|binding = "REPORTS"|id = "d787c832c5f74ad691b2d259328f81b0")$/.test(line) ? `# ${line}` : line))
+    .join('\n');
+  assert.equal(hasUncommentedReportsBinding(commented), false);
+  const error = reportsOrderingError(true, commented);
   assert.ok(error, 'an enabled flag with no uncommented binding must be reported');
   assert.match(error, /wrangler\.toml/);
   assert.match(error, /src\/content\/operations\.json/);
@@ -135,12 +144,8 @@ test('the reader-report flag cannot be turned on ahead of the REPORTS binding', 
   assert.match(error, /REPORT_SECRET/);
 
   // Uncommenting that same block, and nothing else, is what clears it.
-  const live = wrangler
-    .split('\n')
-    .map((line) => (/^# (\[\[kv_namespaces\]\]|binding = "REPORTS"|id = "d787c832c5f74ad691b2d259328f81b0")$/.test(line) ? line.slice(2) : line))
-    .join('\n');
-  assert.equal(hasUncommentedReportsBinding(live), true);
-  assert.equal(reportsOrderingError(true, live), null);
+  assert.equal(hasUncommentedReportsBinding(wrangler), true);
+  assert.equal(reportsOrderingError(true, wrangler), null);
 
   // A binding of that name counts only under kv_namespaces, and only under that name.
   assert.equal(hasUncommentedReportsBinding('[[d1_databases]]\nbinding = "REPORTS"\n'), false);
