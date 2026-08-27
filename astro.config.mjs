@@ -302,7 +302,20 @@ export default defineConfig({
   site: 'https://www.freetins.com',
   output: 'static',
   trailingSlash: 'always',
-  adapter: cloudflare({ imageService: 'compile' }),
+  /*
+   * `imageService: 'custom'` is the adapter's only mode that keeps a configured
+   * `image.service`: 'compile' overwrites it with the stock sharp service, so the
+   * per-format quality in src/lib/image-service.ts would be silently discarded.
+   * The transform underneath is still sharp at build time, which is what 'compile'
+   * bought — the site is `output: 'static'`, every page is prerendered and every
+   * image is written to disk, so nothing reaches sharp at runtime under either
+   * mode. `pnpm check:routes` reads `dist/_routes.json` back and is the guard that
+   * this did not turn a page view into a metered request (ADR 0005).
+   */
+  adapter: cloudflare({ imageService: 'custom' }),
+  image: {
+    service: { entrypoint: './src/lib/image-service.ts' },
+  },
   build: {
     format: 'directory',
   },
