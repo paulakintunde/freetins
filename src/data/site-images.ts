@@ -110,10 +110,20 @@ const gameAlts: Record<string, string> = {
   fisch: 'Angler landing a glowing rare fish near an island lighthouse in daylight',
 };
 
+const gameSocialOverrides: Record<string, string> = {
+  'anime-vanguards': '/og/games/anime-vanguards-v2.jpg',
+  'plants-vs-brainrots': '/og/games/plants-vs-brainrots-v2.jpg',
+};
+
 export const gameArtwork: Record<string, SiteArtwork> = Object.fromEntries(
   Object.entries(gameAlts).map(([slug, alt]) => [
     slug,
-    artwork(images.games, `${slug}-codes-art.webp`, alt, `/og/games/${slug}.jpg`),
+    artwork(
+      images.games,
+      `${slug}-codes-art.webp`,
+      alt,
+      gameSocialOverrides[slug] ?? `/og/games/${slug}.jpg`,
+    ),
   ]),
 );
 
