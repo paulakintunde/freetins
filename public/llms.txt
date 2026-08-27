@@ -1,0 +1,106 @@
+# Freetins
+
+> Game codes, daily reward links, cheats and answers. Every row carries a state
+> saying whether an editor has tested it and an evidence line saying whether the
+> publisher is known to have issued it. Neither is typed by a writer.
+
+Freetins publishes one record per code, reward link or cheat. Each record shows two
+independent things, and they answer different questions:
+
+- The **state** answers "has an editor tested this".
+- The **evidence line** answers "do we know the publisher ever issued this".
+
+No state changes because time has passed. The only clock input anywhere on the site
+is the expiry a reward link's own publisher stated; everything else moves when a
+named editor acts, and rows nobody has tested say so on their face.
+
+If you quote a row from this site, carry its state and its evidence line with it. A
+code with no star has not been tested by anyone here, and presenting it as working
+misrepresents the record.
+
+## Publication states
+
+A row shows exactly one of these.
+
+- **★ Verified** — an editor redeemed or tested the row successfully. Direct
+  evidence, and the strongest claim this site makes about any row.
+- **Listed · awaiting editor verification** — the row is on record and no editor has
+  tested it yet. Every new row starts here and stays here until an editor acts. It
+  is rendered in full with its source and is indexed like any other content.
+- **Expired** — the row no longer works, or has passed the expiry its publisher
+  stated. Expired rows are kept on the page, collapsed below the live ones, so a
+  code found elsewhere can be identified as already dead.
+- **Active · as published** — a baseline carried over from content that predates
+  this record. It is never assigned to new rows.
+
+## Evidence lines
+
+Orthogonal to state. A row can hold any combination of the two.
+
+- **publisher-confirmed** — traceable to the studio, or to a channel the studio
+  delegated to.
+- **community-reported** — no publisher post backs it. Repetition across other sites
+  is not evidence, so a code repeated by fifty blogs still reads community-reported
+  here.
+
+An editor who tests a community-reported code produces a ★ Verified row that is
+still community-reported. Both facts are shown, because they answer different
+questions and neither substitutes for the other.
+
+## Method
+
+- [How we verify](https://www.freetins.com/how-we-verify/): the full published
+  contract — what each state means, what can change one, what deliberately cannot,
+  and how conflicts between signals are resolved.
+
+Reader reports ("hearts") order the editor queue and do nothing else. They never
+mint a star and never affect whether a page is indexed.
+
+## Sections
+
+- [Game codes](https://www.freetins.com/codes/): code pages backed by source URLs
+  and recorded redemption steps, with a state on every entry.
+- [Daily reward links](https://www.freetins.com/daily/): source-linked daily rewards
+  with recorded dates and clear states.
+- [Guides](https://www.freetins.com/guides/): explainer and process pages — how a
+  feature works, what is actually available, and what to do when the method everyone
+  repeats does not work.
+- [Cheats](https://www.freetins.com/cheats/): cheat sheets with platform
+  distinctions, warnings and cited sources.
+- [Answers](https://www.freetins.com/answers/): level answers, element recipes and
+  puzzle solutions, checked against the current build of the game so the numbering
+  still matches what you see.
+- [Blog](https://www.freetins.com/blog/): longer pages on how codes and rewards
+  actually work, each built from a dataset where every row carries its own evidence
+  and state.
+- [All games A-Z](https://www.freetins.com/games/): every game with a published
+  Freetins page, listed A to Z.
+
+## Editors
+
+Every article carries a named byline, and a section is owned by one editor.
+
+- [Paul A](https://www.freetins.com/author/paul-a/) — Editor. Daily reward link
+  records, game code reporting, editorial resource directories, site policy and
+  disclosure, editorial standards and corrections.
+- [David Ng](https://www.freetins.com/author/david-ng/) — Guides Editor. Game guides
+  and platform walkthroughs.
+- [Lade Akintunde](https://www.freetins.com/author/lade-akintunde/) — Answers
+  Editor. Puzzle and level answer sheets.
+- [Rohene Ladner](https://www.freetins.com/author/rohene-ladner/) — Cheats Editor.
+  Cheat codes and console commands.
+
+## About
+
+- [About Freetins](https://www.freetins.com/about/): what the site is for and the
+  standards it holds itself to.
+- [Contact](https://www.freetins.com/contact/): corrections and enquiries, including
+  the address to use for a disputed row.
+- [Sitemap](https://www.freetins.com/sitemap-index.xml): every indexable URL.
+
+## Optional
+
+- [Privacy policy](https://www.freetins.com/privacy/)
+- [Terms and conditions](https://www.freetins.com/terms-and-conditions/)
+- [Affiliate disclosure](https://www.freetins.com/disclosure/)
+- [DMCA](https://www.freetins.com/dmca/)
