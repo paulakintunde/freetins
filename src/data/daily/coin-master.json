@@ -1,0 +1,860 @@
+{
+  "subject": "Coin Master",
+  "slug": "coin-master",
+  "entity_id": "406889139",
+  "entity_url": "https://apps.apple.com/us/app/coin-master/id406889139",
+  "developer": "Moon Active",
+  "permalink": "/daily/coin-master/",
+  "reader_confirmations": true,
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://apps.apple.com/us/app/coin-master/id406889139",
+      "note": "Apple App Store listing, published by Moon Active"
+    },
+    {
+      "type": "official_page",
+      "url": "https://play.google.com/store/apps/details?id=com.moonactive.coinmaster",
+      "note": "Google Play listing, developer printed as Moon Active"
+    },
+    {
+      "type": "help_centre",
+      "url": "https://support.coinmastergame.com/hc/en-us",
+      "note": "Moon Active help centre, the Support link on the App Store listing"
+    },
+    {
+      "type": "help_centre_article",
+      "url": "https://support.coinmastergame.com/hc/en-us/articles/28407634992274-How-can-I-get-free-rewards",
+      "note": "The help centre article on free rewards, which carries the coin-master.co short link this page follows and calls the Loyalty Club free to join"
+    },
+    {
+      "type": "help_centre_article",
+      "url": "https://support.coinmastergame.com/hc/en-us/articles/32006108226706-How-can-I-stay-updated-to-strategically-maximize-my-rewards",
+      "note": "The help centre article stating that the Reward Center aggregates valid links from Facebook, Instagram and X and is updated daily, and that the Loyalty Club pays perks including spins"
+    },
+    {
+      "type": "help_centre_article",
+      "url": "https://support.coinmastergame.com/hc/en-us/articles/4417064414738-What-is-the-Coin-Master-Loyalty-Club",
+      "note": "The help centre article stating that the Loyalty Club unlocks once you reach village 210"
+    },
+    {
+      "type": "reward_host",
+      "url": "https://rewards.coinmaster.com/rewards/rewards.html",
+      "note": "The reward page the publisher's own coin-master.co gift link resolves to with a permanent redirect, carrying a pe_HELP campaign token"
+    },
+    {
+      "type": "reward_center",
+      "url": "https://coin-master.co/m/Reward-Center2",
+      "note": "The Reward Center, named and linked as that in the help centre article on free rewards, which tells players to visit it each day"
+    },
+    {
+      "type": "official_page",
+      "url": "https://coinmaster.com/",
+      "note": "The game domain, which answers with a permanent redirect to the official Facebook page"
+    },
+    {
+      "type": "facebook",
+      "url": "https://www.facebook.com/coinmaster/",
+      "note": "Official Facebook page, and the destination coinmaster.com itself redirects to"
+    },
+    {
+      "type": "facebook_group",
+      "url": "https://www.facebook.com/groups/654305044707245/",
+      "note": "Official Trading Group, the only other Facebook property Moon Active claims"
+    },
+    {
+      "type": "instagram",
+      "url": "https://www.instagram.com/coinmasterofficial/",
+      "note": "Official Instagram account, named in the help centre"
+    },
+    {
+      "type": "x",
+      "url": "https://x.com/CoinMasterGame/",
+      "note": "Official account on X, named in the help centre"
+    },
+    {
+      "type": "whatsapp",
+      "url": "https://www.whatsapp.com/channel/0029VbC4wjEGZNCoD12idw1N",
+      "note": "Official WhatsApp channel, which the help centre says carries updates and special rewards"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/@CoinMasterOfficial",
+      "note": "Coin Master Official on YouTube, whose own outbound links name the same three handles the help centre does"
+    },
+    {
+      "type": "loyalty_club",
+      "url": "https://loyalty.coinmaster.com/",
+      "note": "Loyalty Club, which the help centre article on the Loyalty Club calls free to join and open from village 210"
+    },
+    {
+      "type": "publisher_site",
+      "url": "https://www.moonactive.com/",
+      "note": "Moon Active, the Developer Website printed on the App Store listing"
+    },
+    {
+      "type": "legal",
+      "url": "https://static.moonactive.net/legal/privacy.html",
+      "note": "Privacy policy from the App Store listing, which establishes moonactive.net as a Moon Active domain"
+    }
+  ],
+  "tables": {
+    "links": {
+      "caption": "Every Coin Master spins drop recorded on this page, newest first. The window column carries the figure outlets report, not a figure Moon Active publishes",
+      "columns": [
+        "Drop",
+        "Reward",
+        "Campaign token",
+        "Window outlets report",
+        "Where it came from",
+        "Open"
+      ],
+      "kind": "link"
+    }
+  },
+  "rows": [
+    {
+      "table": "links",
+      "name": "Facebook drop, 26 August",
+      "cells": {
+        "Drop": "Facebook drop, 26 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_FCBZqvuPV_20260826",
+        "Window outlets report": "Closes 29 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_FCBZqvuPV_20260826)"
+      },
+      "added_at": "2026-08-26T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_FCBZqvuPV_20260826",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ]
+    },
+    {
+      "table": "links",
+      "name": "Help centre drop, 26 August",
+      "cells": {
+        "Drop": "Help centre drop, 26 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_HELPeFAnRK_20260826",
+        "Window outlets report": "Closes 29 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_HELPeFAnRK_20260826)"
+      },
+      "added_at": "2026-08-26T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_HELPeFAnRK_20260826",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ]
+    },
+    {
+      "table": "links",
+      "name": "Instagram drop, 26 August",
+      "cells": {
+        "Drop": "Instagram drop, 26 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_INSMKdiyN_20260826",
+        "Window outlets report": "Closes 29 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_INSMKdiyN_20260826)"
+      },
+      "added_at": "2026-08-26T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_INSMKdiyN_20260826",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ]
+    },
+    {
+      "table": "links",
+      "name": "X drop, 26 August",
+      "cells": {
+        "Drop": "X drop, 26 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_TWIPTtGkM_20260826",
+        "Window outlets report": "Closes 29 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, SimpleGameGuide",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_TWIPTtGkM_20260826)"
+      },
+      "added_at": "2026-08-26T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_TWIPTtGkM_20260826",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        }
+      ],
+      "notes": "TWI is the source code Moon Active mints for X, and it still carries the platform's former initial."
+    },
+    {
+      "table": "links",
+      "name": "YouTube drop, 26 August",
+      "cells": {
+        "Drop": "YouTube drop, 26 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_YTUBgITyuo_20260826",
+        "Window outlets report": "Closes 29 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, SimpleGameGuide",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_YTUBgITyuo_20260826)"
+      },
+      "added_at": "2026-08-26T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_YTUBgITyuo_20260826",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        }
+      ],
+      "notes": "YTUB is not in the list of source codes the reward page's own script enumerates, but it circulates, which is why that list should not be treated as exhaustive."
+    },
+    {
+      "table": "links",
+      "name": "Chatbot drop, 26 August",
+      "cells": {
+        "Drop": "Chatbot drop, 26 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_CHATBwwTcQz_20260825",
+        "Window outlets report": "Closes 29 August 2026",
+        "Where it came from": "TechGameWorld",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_CHATBwwTcQz_20260825)"
+      },
+      "added_at": "2026-08-26T13:58:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_CHATBwwTcQz_20260825",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        }
+      ],
+      "notes": "The token carries the previous day inside it, which is normal: the trailing digits are the mint date, not the publication date."
+    },
+    {
+      "table": "links",
+      "name": "Email drop, 26 August",
+      "cells": {
+        "Drop": "Email drop, 26 August",
+        "Reward": "25 free spins",
+        "Campaign token": "pe_EMAILhEYfAJ_20260825",
+        "Window outlets report": "Closes 29 August 2026",
+        "Where it came from": "TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_EMAILhEYfAJ_20260825)"
+      },
+      "added_at": "2026-08-26T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_EMAILhEYfAJ_20260825",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ],
+      "notes": "Email campaigns are consistently 25 spins rather than the 50 the social channels carry."
+    },
+    {
+      "table": "links",
+      "name": "Facebook drop, 25 August",
+      "cells": {
+        "Drop": "Facebook drop, 25 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_FCBsWMEoA_20260825",
+        "Window outlets report": "Closes 28 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_FCBsWMEoA_20260825)"
+      },
+      "added_at": "2026-08-25T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_FCBsWMEoA_20260825",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ]
+    },
+    {
+      "table": "links",
+      "name": "Second Facebook drop, 25 August",
+      "cells": {
+        "Drop": "Second Facebook drop, 25 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_FCBFDxJfG_20260825",
+        "Window outlets report": "Closes 28 August 2026",
+        "Where it came from": "TechGameWorld, Pocket Gamer, SimpleGameGuide",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_FCBFDxJfG_20260825)"
+      },
+      "added_at": "2026-08-25T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_FCBFDxJfG_20260825",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        }
+      ],
+      "notes": "A second Facebook campaign on the same day, which is why a reader who claimed one Facebook link can still claim the other."
+    },
+    {
+      "table": "links",
+      "name": "Instagram drop, 25 August",
+      "cells": {
+        "Drop": "Instagram drop, 25 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_INSKEZqjM_20260825",
+        "Window outlets report": "Closes 28 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_INSKEZqjM_20260825)"
+      },
+      "added_at": "2026-08-25T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_INSKEZqjM_20260825",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ]
+    },
+    {
+      "table": "links",
+      "name": "Second Instagram drop, 25 August",
+      "cells": {
+        "Drop": "Second Instagram drop, 25 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_INSVNuAig_20260825",
+        "Window outlets report": "Closes 28 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_INSVNuAig_20260825)"
+      },
+      "added_at": "2026-08-25T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_INSVNuAig_20260825",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ],
+      "notes": "A second Instagram campaign on the same day."
+    },
+    {
+      "table": "links",
+      "name": "WhatsApp drop, 25 August",
+      "cells": {
+        "Drop": "WhatsApp drop, 25 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_WATSPvmUWk_20260825",
+        "Window outlets report": "Closes 28 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, SimpleGameGuide",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_WATSPvmUWk_20260825)"
+      },
+      "added_at": "2026-08-25T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_WATSPvmUWk_20260825",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        }
+      ],
+      "notes": "The WATS source code corroborates the help centre line that the WhatsApp channel carries special rewards and not only updates."
+    },
+    {
+      "table": "links",
+      "name": "Help centre drop, 25 August",
+      "cells": {
+        "Drop": "Help centre drop, 25 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_HELPdKXEhR_20260825",
+        "Window outlets report": "Closes 28 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_HELPdKXEhR_20260825)"
+      },
+      "added_at": "2026-08-25T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_HELPdKXEhR_20260825",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ],
+      "notes": "HELP is the source code on drops the publisher surfaces through its own help centre and Reward Center."
+    },
+    {
+      "table": "links",
+      "name": "Email drop, 25 August",
+      "cells": {
+        "Drop": "Email drop, 25 August",
+        "Reward": "25 free spins",
+        "Campaign token": "pe_EMAILNxKHFE_20260824",
+        "Window outlets report": "Closes 28 August 2026",
+        "Where it came from": "TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_EMAILNxKHFE_20260824)"
+      },
+      "added_at": "2026-08-25T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_EMAILNxKHFE_20260824",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ],
+      "notes": "Reaching the email campaigns first means subscribing through the help centre contact form under the topic Subscribe for Email Rewards and Updates."
+    },
+    {
+      "table": "links",
+      "name": "In-app rich message drop, 24 August",
+      "cells": {
+        "Drop": "In-app rich message drop, 24 August",
+        "Reward": "100 free spins",
+        "Campaign token": "pe_RICHHnGKeP_20260817",
+        "Window outlets report": "Closes 27 August 2026",
+        "Where it came from": "TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_RICHHnGKeP_20260817)"
+      },
+      "added_at": "2026-08-24T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_RICHHnGKeP_20260817",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ],
+      "notes": "The largest grant recorded here, and the clearest case of a mint date differing from a publication date: the token was minted a week before outlets carried it."
+    },
+    {
+      "table": "links",
+      "name": "Facebook drop, 24 August",
+      "cells": {
+        "Drop": "Facebook drop, 24 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_FCBWpvNCg_20260824",
+        "Window outlets report": "Closes 27 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_FCBWpvNCg_20260824)"
+      },
+      "added_at": "2026-08-24T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_FCBWpvNCg_20260824",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ]
+    },
+    {
+      "table": "links",
+      "name": "X drop, 24 August",
+      "cells": {
+        "Drop": "X drop, 24 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_TWIeJfpwt_20260824",
+        "Window outlets report": "Closes 27 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_TWIeJfpwt_20260824)"
+      },
+      "added_at": "2026-08-24T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_TWIeJfpwt_20260824",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ]
+    },
+    {
+      "table": "links",
+      "name": "Help centre drop, 24 August",
+      "cells": {
+        "Drop": "Help centre drop, 24 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_HELPxWhEkd_20260824",
+        "Window outlets report": "Closes 27 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_HELPxWhEkd_20260824)"
+      },
+      "added_at": "2026-08-24T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_HELPxWhEkd_20260824",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ]
+    },
+    {
+      "table": "links",
+      "name": "Threads drop, 23 August",
+      "cells": {
+        "Drop": "Threads drop, 23 August",
+        "Reward": "50 free spins",
+        "Campaign token": "pe_THREjwKvIP_20260823",
+        "Window outlets report": "Closes 26 August 2026",
+        "Where it came from": "Pocket Tactics, TechGameWorld, Pocket Gamer, SimpleGameGuide, RezorTricks",
+        "Open": "[Open on static.moonactive.net](https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_THREjwKvIP_20260823)"
+      },
+      "added_at": "2026-08-23T00:00:00Z",
+      "expires_at": null,
+      "url": "https://static.moonactive.net/static/coinmaster/reward/reward2.html?c=pe_THREjwKvIP_20260823",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/coin-master/free-spins"
+        },
+        {
+          "tier": 2,
+          "url": "https://techgameworld.com/coin-master-free-spins/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/coin-master/free-spins/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/coin-master-free-spins-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://rezortricks.com/coin-master-free-spins/"
+        }
+      ],
+      "notes": "The THRE source code shows Moon Active mints campaigns for a Threads presence, but no Threads handle is named anywhere in the help centre, so none is listed as official on this page."
+    }
+  ],
+  "unverified_summary": "Not one row on this page carries evidence from a Moon Active channel we could read ourselves. The publisher distributes through Facebook, Instagram, X, WhatsApp, YouTube, Threads, email and an in game chatbot, and none of those can be read back programmatically, so every drop here rests on independent outlets and aggregators rather than on the publisher's own post. The claim window is the largest gap. Moon Active publishes no figure at all and describes its reward links only as time sensitive, so the three day figure in the window column is what outlets state rather than a publisher fact, and no row on this page is retired because that figure has passed. The publisher's own behaviour cuts against reading the figure as a general rule: the gift link its help centre article on free rewards still points at redirects to a token minted in September 2025, so Moon Active circulates links far older than three days. Whether that campaign still pays could not be tested. A single claim per link is likewise reported rather than stated by the publisher: TechGameWorld says each link generally works only once, and no Moon Active statement we read addresses it. Outlets transcribe the campaign tokens inconsistently, and no fetch settles which shape the publisher minted, because the reward pages answer with a success response for any token value at all. Aggregators claim reward links are locked to a region and recommend a virtual private network; no publisher statement supports that and no region parameter appears anywhere in the link chain, so it is recorded as unestablished rather than repeated. One row here rests on a single outlet, the two oldest days here are a sample rather than a full sweep of those days, and the exact wording the game shows on a dead link was reported to us rather than seen first hand.",
+  "disagreements": [
+    {
+      "item": "How long a Coin Master reward link stays claimable",
+      "source_a": "Outlets report a three day window, not unanimously, and Pocket Gamer gives the worked example that a link released two days earlier still works while one released three days earlier does not",
+      "source_b": "Moon Active publishes no figure anywhere in its help centre, describes its reward links only as time sensitive, and still points its free rewards article at a gift link that redirects to a token minted in September 2025",
+      "confirmed": "Three days is the best evidenced figure and it is what the window column on every row carries, attributed there rather than asserted as a publisher rule. The paragraph under the link table names which outlet reports what. The publisher circulates a gift link whose token was minted in September 2025, which is hard to square with three days as a rule covering everything Moon Active issues, so the reported figure is best read as describing the social campaign drops outlets watch. Nothing on this page is retired because that figure has passed, and no row shows Expired on the strength of it."
+    },
+    {
+      "item": "Whether the game must be linked to Facebook before a reward link pays out",
+      "source_a": "Two outlets state that you need a Facebook account and that the game must be linked to it",
+      "source_b": "Moon Active's own article on Facebook login frames the connection as progress saving and playing with friends, and describes guest accounts without qualification",
+      "confirmed": "Unsupported by the publisher. Moon Active mints reward campaigns for WhatsApp, email, YouTube, X, Instagram, Threads, its chatbot and its own help centre, none of which involves Facebook at all, and the redemption path is a deep link into the installed app with no Facebook step in it."
+    },
+    {
+      "item": "Whether reward links are locked to a region",
+      "source_a": "Several aggregators list region locking among the reasons a link fails and suggest a virtual private network as the fix",
+      "source_b": "No Moon Active statement mentions regions, and the reward link carries no region or geography parameter at any hop in its chain",
+      "confirmed": "Unestablished. The only geography anywhere in the plumbing is the app store fallback shown to people who do not have the game installed, which is fixed to the United States storefront and has no bearing on whether a reward pays out."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "Facebook pages promising spins or coins in return for liking, commenting on or sharing a post",
+      "why_wrong": "Moon Active states that its only official Facebook properties are the Coin Master main page and the Coin Master Trading Group, and asks players to report any other page making those offers. A genuine drop does not ask you to engage with a post before it pays.",
+      "origin": "Impersonation pages that copy the game artwork to farm engagement, named directly in the publisher's own help centre."
+    },
+    {
+      "claim": "Spin generators that ask for your Coin Master username and promise thousands of spins",
+      "why_wrong": "A reward is banked when the installed app redeems a Moon Active campaign token through a deep link, and the tokens in circulation are minted by Moon Active for its own channels. A generator has none to hand out, and handing over a username feeds a survey funnel and nothing else.",
+      "origin": "Advertising funded generator sites that rank on the same searches as the real link pages, and video thumbnails pointing at them."
+    },
+    {
+      "claim": "Links advertised as four hundred spins, eight hundred spins or unlimited spins",
+      "why_wrong": "The largest grant recorded on this page across the days it covers is one hundred spins, once. Fifty is the standard grant on the social channels and twenty five on the email campaign. Nothing on record comes near those figures.",
+      "origin": "Fabricated screenshots and headline bait used to pull traffic towards generator and survey pages."
+    },
+    {
+      "claim": "Reward links on hosts with no connection to the publisher",
+      "why_wrong": "A Coin Master reward link is an address carrying a ?c= campaign token on rewards.coinmaster.com or static.moonactive.net, or a Moon Active short link on coin-master.co that redirects to one. Players and third party sites do not mint campaign tokens. The real flow is a chain of redirects that ends in the app, so it asks for no password, no survey answer and no account name.",
+      "origin": "Redirector chains on aggregator sites and in comment sections, some wrapping the real link and some replacing it."
+    },
+    {
+      "claim": "Third party free spins apps published on the app stores",
+      "why_wrong": "One live Google Play listing, under a developer name unconnected to Moon Active, uses coinmasterfreespin inside its own package identifier. It is not published by Moon Active, and the spins are credited by the game itself when it redeems a campaign token.",
+      "origin": "Store listings that borrow the game name and the reward link vocabulary to collect installs and advertising impressions."
+    },
+    {
+      "claim": "Collecting the same drop repeatedly across extra accounts",
+      "why_wrong": "Moon Active lists creating or inviting fake accounts for additional rewards as unfair play, with account suspension and limited gameplay as the stated consequence. The spins are real, and so is the penalty.",
+      "origin": "Guides and videos that present multi accounting as a farming technique without mentioning the published consequence."
+    },
+    {
+      "claim": "The desktop fallback image republished as though it were a reward link",
+      "why_wrong": "Opened on a desktop, the reward chain diverts the browser to a play on mobile image hosted on the publisher's own reward domain. Several aggregators have copied that image address into their link lists. Clicking one downloads a picture. Same domain, different path, no reward.",
+      "origin": "Automated scraping of the reward chain that captures the desktop fallback instead of the campaign link."
+    }
+  ],
+  "next_change": {
+    "pattern": "The two days this page records in full carry seven campaigns each. Fifty free spins is the standard grant, the email campaign is consistently twenty five, and one hundred appeared once. Facebook, Instagram and the help centre each carried a drop on both of those days, while X, YouTube, WhatsApp, Threads and the in game chatbot appear intermittently. The two oldest days here carry four rows and one row because they were recorded as a sample rather than swept in full, not because the publisher slowed down. There is no posting hour to wait for, since observed drops land at any point across the day.",
+    "watch": [
+      "The publisher's own Reward Center, reached from the help centre article on free rewards, which Moon Active says gathers valid links from Facebook, Instagram and X and updates daily",
+      "The official Facebook page, which is also where coinmaster.com itself redirects",
+      "The official Instagram account",
+      "The official account on X",
+      "The official WhatsApp channel, which the help centre says carries special rewards",
+      "The help centre, whose articles carry publisher minted gift links directly",
+      "Email, by subscribing through the help centre contact form under the topic Subscribe for Email Rewards and Updates"
+    ]
+  }
+}

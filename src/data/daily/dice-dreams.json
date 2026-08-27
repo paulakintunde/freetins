@@ -1,0 +1,722 @@
+{
+  "subject": "Dice Dreams",
+  "slug": "dice-dreams",
+  "entity_id": "1484468651",
+  "entity_url": "https://apps.apple.com/us/app/dice-dreams/id1484468651",
+  "developer": "SuperPlay",
+  "permalink": "/daily/dice-dreams/",
+  "reader_confirmations": true,
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://apps.apple.com/us/app/dice-dreams/id1484468651",
+      "note": "Official App Store listing, id 1484468651. The developer byline reads SuperPlay; the seller of record on the same listing is SuperPlay LTD"
+    },
+    {
+      "type": "google_play",
+      "url": "https://play.google.com/store/apps/details?id=com.superplaystudios.dicedreams",
+      "note": "Official Google Play listing, bundle com.superplaystudios.dicedreams"
+    },
+    {
+      "type": "official_page",
+      "url": "https://www.superplay.co/games/dice-dreams/",
+      "note": "SuperPlay's own page for the game, which links the Facebook and Instagram accounts below, and the studio's LinkedIn page, which is the company rather than the game"
+    },
+    {
+      "type": "facebook",
+      "url": "https://www.facebook.com/DiceDreams/",
+      "note": "Official Facebook page, linked by SuperPlay, reported by outlets as the first channel for most drops"
+    },
+    {
+      "type": "instagram",
+      "url": "https://www.instagram.com/dicedreams_official/",
+      "note": "Official Instagram, linked by SuperPlay, whose bio carries a standing link on get.dicedreams.com"
+    },
+    {
+      "type": "youtube",
+      "url": "https://www.youtube.com/@DiceDreams_Official",
+      "note": "Official YouTube channel, whose about page links get.dicedreams.com under the title Play Now, beside the Facebook, Instagram and TikTok accounts"
+    },
+    {
+      "type": "tiktok",
+      "url": "https://www.tiktok.com/@dicedreams_official",
+      "note": "Official TikTok account, linked from the YouTube channel's about page beside the Facebook and Instagram accounts SuperPlay links itself"
+    },
+    {
+      "type": "reward_domain",
+      "url": "https://rewards.dicedreams.com/",
+      "note": "The publisher's own reward host, where every drop recorded on this page resolves"
+    },
+    {
+      "type": "support",
+      "url": "https://www.superplay.co/contact-us/",
+      "note": "SuperPlay's contact form"
+    },
+    {
+      "type": "terms",
+      "url": "https://www.superplay.co/terms/",
+      "note": "SuperPlay's terms and conditions, which say you may not create multiple accounts in any game"
+    },
+    {
+      "type": "publisher_newsroom",
+      "url": "https://news.playtika.com/2024-09-18-Playtika-Enters-into-Agreement-to-Acquire-SuperPlay,-Creator-of-Hit-Mobile-Games-Dice-Dreams-and-Domino-Dreams",
+      "note": "Playtika newsroom release confirming SuperPlay as a Playtika studio"
+    }
+  ],
+  "tables": {
+    "latest": {
+      "caption": "The most recent Dice Dreams reward links on record, newest first",
+      "columns": [
+        "Drop",
+        "Reward",
+        "Channel",
+        "Posted",
+        "Who carried it when recorded",
+        "Open"
+      ],
+      "kind": "link"
+    },
+    "archive": {
+      "caption": "Earlier Dice Dreams drops, newest first, kept as the record of the publisher's cadence",
+      "columns": [
+        "Drop",
+        "Reward",
+        "Channel",
+        "Posted",
+        "Who carried it when recorded",
+        "Open"
+      ],
+      "kind": "link"
+    }
+  },
+  "rows": [
+    {
+      "table": "latest",
+      "name": "CommunityPost_260826zzq",
+      "cells": {
+        "Drop": "CommunityPost_260826zzq",
+        "Reward": "50 rolls",
+        "Channel": "Community post",
+        "Posted": "26 August 2026",
+        "Who carried it when recorded": "Game Rant, SimpleGameGuide, Coins Crazy",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_260826zzq)"
+      },
+      "added_at": "2026-08-26T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_260826zzq",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        },
+        {
+          "tier": 3,
+          "url": "https://coinscrazy.com/dice-dreams-free-rolls/"
+        }
+      ],
+      "notes": "None of the outlets that recorded this code shows the publisher post it came from, and neither could we."
+    },
+    {
+      "table": "latest",
+      "name": "CommunityStory_260826bbs",
+      "cells": {
+        "Drop": "CommunityStory_260826bbs",
+        "Reward": "50 rolls",
+        "Channel": "Community story",
+        "Posted": "26 August 2026",
+        "Who carried it when recorded": "Game Rant, SimpleGameGuide, Coins Crazy",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_260826bbs)"
+      },
+      "added_at": "2026-08-26T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_260826bbs",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        },
+        {
+          "tier": 3,
+          "url": "https://coinscrazy.com/dice-dreams-free-rolls/"
+        }
+      ],
+      "notes": "A story code. The post behind it disappears by design, which is exactly why no tier 1 evidence exists for it."
+    },
+    {
+      "table": "latest",
+      "name": "CommunityWhatsapp_260826",
+      "cells": {
+        "Drop": "CommunityWhatsapp_260826",
+        "Reward": "50 rolls",
+        "Channel": "WhatsApp channel",
+        "Posted": "26 August 2026",
+        "Who carried it when recorded": "Game Rant, SimpleGameGuide, Coins Crazy",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityWhatsapp_260826)"
+      },
+      "added_at": "2026-08-26T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityWhatsapp_260826",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        },
+        {
+          "tier": 3,
+          "url": "https://coinscrazy.com/dice-dreams-free-rolls/"
+        }
+      ],
+      "notes": "Carries no letter suffix, which is consistent across every WhatsApp code recorded here."
+    },
+    {
+      "table": "latest",
+      "name": "CommunityPost_250826bbz",
+      "cells": {
+        "Drop": "CommunityPost_250826bbz",
+        "Reward": "50 rolls",
+        "Channel": "Community post",
+        "Posted": "25 August 2026",
+        "Who carried it when recorded": "Game Rant, SimpleGameGuide, Coins Crazy",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_250826bbz)"
+      },
+      "added_at": "2026-08-25T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_250826bbz",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        },
+        {
+          "tier": 3,
+          "url": "https://coinscrazy.com/dice-dreams-free-rolls/"
+        }
+      ],
+      "notes": "Pocket Tactics was not carrying this code when it was recorded here."
+    },
+    {
+      "table": "latest",
+      "name": "CommunityStory_250826nnp",
+      "cells": {
+        "Drop": "CommunityStory_250826nnp",
+        "Reward": "50 rolls",
+        "Channel": "Community story",
+        "Posted": "25 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant, SimpleGameGuide, Coins Crazy",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_250826nnp)"
+      },
+      "added_at": "2026-08-25T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_250826nnp",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        },
+        {
+          "tier": 3,
+          "url": "https://coinscrazy.com/dice-dreams-free-rolls/"
+        }
+      ],
+      "notes": "All four outlets checked were carrying this code when it was recorded here."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityPost_240826cca",
+      "cells": {
+        "Drop": "CommunityPost_240826cca",
+        "Reward": "50 rolls",
+        "Channel": "Community post",
+        "Posted": "24 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant, SimpleGameGuide, Coins Crazy",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_240826cca)"
+      },
+      "added_at": "2026-08-24T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_240826cca",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        },
+        {
+          "tier": 3,
+          "url": "https://coinscrazy.com/dice-dreams-free-rolls/"
+        }
+      ],
+      "notes": "All four outlets checked were carrying this code when it was recorded here."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityStory_240826bba",
+      "cells": {
+        "Drop": "CommunityStory_240826bba",
+        "Reward": "50 rolls",
+        "Channel": "Community story",
+        "Posted": "24 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant, SimpleGameGuide, Coins Crazy",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_240826bba)"
+      },
+      "added_at": "2026-08-24T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_240826bba",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        },
+        {
+          "tier": 3,
+          "url": "https://coinscrazy.com/dice-dreams-free-rolls/"
+        }
+      ],
+      "notes": "All four outlets checked were carrying this code when it was recorded here."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityPost_230826bba",
+      "cells": {
+        "Drop": "CommunityPost_230826bba",
+        "Reward": "50 rolls",
+        "Channel": "Community post",
+        "Posted": "23 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant, SimpleGameGuide",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_230826bba)"
+      },
+      "added_at": "2026-08-23T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_230826bba",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        }
+      ],
+      "notes": "Three outlets were carrying this code when it was recorded here."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityStory_230826bbw",
+      "cells": {
+        "Drop": "CommunityStory_230826bbw",
+        "Reward": "50 rolls",
+        "Channel": "Community story",
+        "Posted": "23 August 2026",
+        "Who carried it when recorded": "Game Rant, SimpleGameGuide",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_230826bbw)"
+      },
+      "added_at": "2026-08-23T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_230826bbw",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        }
+      ],
+      "notes": "Kept because the code's own date and channel prefix match the pattern every other row follows."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityPost_220826cca",
+      "cells": {
+        "Drop": "CommunityPost_220826cca",
+        "Reward": "50 rolls",
+        "Channel": "Community post",
+        "Posted": "22 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant, SimpleGameGuide",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_220826cca)"
+      },
+      "added_at": "2026-08-22T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_220826cca",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        }
+      ],
+      "notes": "Shares its letter suffix with the post code two days later, which is common and is not a sign of a copied listing."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityStory_220826asf",
+      "cells": {
+        "Drop": "CommunityStory_220826asf",
+        "Reward": "50 rolls",
+        "Channel": "Community story",
+        "Posted": "22 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant, SimpleGameGuide",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_220826asf)"
+      },
+      "added_at": "2026-08-22T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_220826asf",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        }
+      ],
+      "notes": "This is the older code used to show that a stale link and a current one return byte identical pages to a browser."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityWhatsapp_220826",
+      "cells": {
+        "Drop": "CommunityWhatsapp_220826",
+        "Reward": "50 rolls",
+        "Channel": "WhatsApp channel",
+        "Posted": "22 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant, SimpleGameGuide",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityWhatsapp_220826)"
+      },
+      "added_at": "2026-08-22T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityWhatsapp_220826",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        }
+      ],
+      "notes": "Pocket Tactics filed this one under the following day. The code carries its own date and that is the one recorded here."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityPost_210826oop",
+      "cells": {
+        "Drop": "CommunityPost_210826oop",
+        "Reward": "50 rolls",
+        "Channel": "Community post",
+        "Posted": "21 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant, SimpleGameGuide",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_210826oop)"
+      },
+      "added_at": "2026-08-21T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_210826oop",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        }
+      ],
+      "notes": "Three outlets were carrying this code when it was recorded here."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityStory_210826bqa",
+      "cells": {
+        "Drop": "CommunityStory_210826bqa",
+        "Reward": "50 rolls",
+        "Channel": "Community story",
+        "Posted": "21 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant, SimpleGameGuide",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_210826bqa)"
+      },
+      "added_at": "2026-08-21T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_210826bqa",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        }
+      ],
+      "notes": "Three outlets were carrying this code when it was recorded here."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityWhatsapp_210826",
+      "cells": {
+        "Drop": "CommunityWhatsapp_210826",
+        "Reward": "50 rolls",
+        "Channel": "WhatsApp channel",
+        "Posted": "21 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant, SimpleGameGuide",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityWhatsapp_210826)"
+      },
+      "added_at": "2026-08-21T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityWhatsapp_210826",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        },
+        {
+          "tier": 3,
+          "url": "https://simplegameguide.com/dice-dreams-free-dice-rolls/"
+        }
+      ],
+      "notes": "Three outlets were carrying this code when it was recorded here."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityPost_200826bba",
+      "cells": {
+        "Drop": "CommunityPost_200826bba",
+        "Reward": "50 rolls",
+        "Channel": "Community post",
+        "Posted": "20 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_200826bba)"
+      },
+      "added_at": "2026-08-20T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityPost_200826bba",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        }
+      ],
+      "notes": "The oldest date this page records."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityStory_200826bop",
+      "cells": {
+        "Drop": "CommunityStory_200826bop",
+        "Reward": "50 rolls",
+        "Channel": "Community story",
+        "Posted": "20 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_200826bop)"
+      },
+      "added_at": "2026-08-20T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityStory_200826bop",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        }
+      ],
+      "notes": "The oldest date this page records."
+    },
+    {
+      "table": "archive",
+      "name": "CommunityWhatsapp_200826",
+      "cells": {
+        "Drop": "CommunityWhatsapp_200826",
+        "Reward": "50 rolls",
+        "Channel": "WhatsApp channel",
+        "Posted": "20 August 2026",
+        "Who carried it when recorded": "Pocket Tactics, Game Rant",
+        "Open": "[Open on rewards.dicedreams.com](https://rewards.dicedreams.com/?handler=reward&link=CommunityWhatsapp_200826)"
+      },
+      "added_at": "2026-08-20T00:00:00Z",
+      "expires_at": null,
+      "url": "https://rewards.dicedreams.com/?handler=reward&link=CommunityWhatsapp_200826",
+      "requirements": "Open on the device running the game.",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/dice-dreams/free-rolls"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamerant.com/dice-dreams-free-rolls-links/"
+        }
+      ],
+      "notes": "The oldest date this page records. Like every WhatsApp code here it carries no letters after the date."
+    }
+  ],
+  "unverified_summary": "No row on this page carries a source on SuperPlay's own channels. Neither the Facebook page nor the Instagram profile can be read for post content: both hand a crawler an Open Graph shell and nothing else, so every drop listed here rests on outlets that transcribed it rather than on a publisher post we could reopen, and the Who carried it when recorded column names those outlets row by row. That column is a dated record rather than a running count: it names the outlets holding a code at the moment this page recorded the drop, and an outlet that picked the code up afterwards does not appear there. SuperPlay has published no claim window anywhere we can reach, and the help centre that would have carried one now answers 404 at its root and at its /hc/en-us path. The 48 hour figure this page works to is the default our own source register carries for this game, and nobody has measured it. That is why no row here carries a stated expiry: the date each code embeds is the one date a reader can read off a Dice Dreams drop, and typing an expiry we had inferred would put a publisher statement on this page that was never made. That a link is single use per account is reported by the outlets too, and SuperPlay has stated nothing about it either way, which is why no row says it. We could not confirm that links are region locked, could not confirm the claim that a Facebook linked account is required, and could not find the WhatsApp channel address that the publisher's own link codes point to. The message a reader sees in game on a link already claimed is second hand as well: it comes from a guide site, not from the game, and so does every in game route to rolls named further up this page. The TikTok account listed above is linked from the YouTube channel's about page, but TikTok answers our requests with a challenge page rather than the profile, so we could not read it ourselves. An X account that looks like the game's own is linked from neither SuperPlay's page for the game nor that about page, so it is left off the source list.",
+  "disagreements": [
+    {
+      "item": "How many rolls one link grants",
+      "source_a": "Three of the four outlets checked printed 50 rolls beside each link when these drops were recorded, and the fourth printed no per link figure",
+      "source_b": "Older write ups describe a range of roughly 25 to 100 rolls, and a stale list still shows 20, 60 and 80 roll links from a prior year",
+      "confirmed": "50 rolls on every drop recorded on this page, on the strength of the three outlets that stated a figure. The wider range belongs to earlier drops and is not what the current codes carry."
+    },
+    {
+      "item": "Which Facebook page is the official one",
+      "source_a": "The source register Freetins keeps for this game recorded facebook.com/DiceDreamsOfficial",
+      "source_b": "SuperPlay's own site links facebook.com/DiceDreams",
+      "confirmed": "The page SuperPlay links. Its own page for the game links facebook.com/DiceDreams and not the handle in our register, so the register entry is the one this page drops."
+    },
+    {
+      "item": "Which domain a genuine reward link uses",
+      "source_a": "The source register Freetins keeps for this game records dicedreams.onelink.me only",
+      "source_b": "Every drop recorded here resolves on rewards.dicedreams.com, and the publisher's own profile links use get.dicedreams.com",
+      "confirmed": "All three are SuperPlay's. Every drop recorded here is on rewards.dicedreams.com; get.dicedreams.com and dicedreams.onelink.me are the install and attribution link, which opens the game on a device that has it and the App Store listing on one that does not. Our register named the attribution host and missed the reward host, so it is flagged here."
+    },
+    {
+      "item": "Which day the WhatsApp code CommunityWhatsapp_220826 was posted",
+      "source_a": "Pocket Tactics files it under 23 August 2026",
+      "source_b": "Game Rant and SimpleGameGuide file it under 22 August 2026",
+      "confirmed": "The code carries its own date and that is the one recorded here. The split is a useful reminder that outlets transcribe one another rather than watch the channel."
+    },
+    {
+      "item": "Whether reward links are region locked",
+      "source_a": "One list site says some links may be region locked and suggests a VPN",
+      "source_b": "No other outlet we checked mentions region locking",
+      "confirmed": "Nothing. We could neither confirm it nor refute it, and the sites raising it are the same sites selling generators."
+    }
+  ],
+  "fakes": [
+    {
+      "claim": "Roll generators that take a player ID and then ask you to complete a verification step",
+      "why_wrong": "Rolls are server side state on SuperPlay's account service, and the game is the client that changes them, after a dicedreams deep link. On the generator we opened, the verify button points at a content locker, so the offer is the product and no reward waits at the end of it.",
+      "origin": "Generator pages hosted free on public code hosting, ranking on the same searches as the real link lists."
+    },
+    {
+      "claim": "Third party Dice Dreams rewards apps on the Play Store",
+      "why_wrong": "One with more than ten thousand installs is published by a private individual rather than by SuperPlay LTD, and its own body text calls it an independent fan app. It is an advert wrapper around a list of links anyone can read for nothing.",
+      "origin": "Play Store listings using the game's name and artwork, promising verified and updated links."
+    },
+    {
+      "claim": "Free rolls PDFs sitting on university, government and corporate domains",
+      "why_wrong": "The file was uploaded by a stranger through an unsecured webform or form plugin, so the institution in the address bar says nothing about who wrote it. Every one we opened pushes a roll generator or a link farm.",
+      "origin": "Upload directories on real institutional sites, and the same text reposted on hijacked retail store blogs."
+    },
+    {
+      "claim": "Lookalike accounts said to post Dice Dreams codes",
+      "why_wrong": "A Facebook handle widely repeated as official is not the one SuperPlay's own page for the game links, and neither are the lookalike handles on X and YouTube that circulate beside it. None of them appears in the source list on this page.",
+      "origin": "Search summaries and aggregator pages repeating handles without opening them."
+    },
+    {
+      "claim": "Reward links on any host other than the publisher's own reward domain",
+      "why_wrong": "A genuine drop resolves on rewards.dicedreams.com, carries a handler and link query, and its link value names a channel and a posting date. The page it lands on is a deep link launcher on SuperPlay's own property, so a link somewhere else is not one of these.",
+      "origin": "Reposts wrapped in redirect chains, and comment sections underneath real link lists."
+    },
+    {
+      "claim": "Anything asking for a password, an app install or a survey in exchange for rolls",
+      "why_wrong": "A real drop asks for nothing. The one input it takes is the tap, and the game reads the deep link from there. There is no field, no login and no string to type on the page it opens.",
+      "origin": "Offer wall funnels and video thumbnails that rank on the same searches as the real link pages."
+    }
+  ],
+  "next_change": {
+    "pattern": "Two or three drops land on each of the seven dates recorded above, with no gap in the run: a community post and a community story on all seven, and a WhatsApp code on four of them. The publisher's code prefixes also name a broadcast list and a group, and no code from either appears on this page. Reward size has held at 50 rolls on every drop recorded here. Expect the codes to keep naming their own channel and their own posting date, because that is what makes a genuine one recognisable.",
+    "watch": [
+      "The official Facebook page, reported by outlets as the earliest and heaviest drop channel",
+      "The official Instagram account, whose bio carries a standing link on get.dicedreams.com",
+      "The WhatsApp channel the CommunityWhatsapp codes point to, address not yet found",
+      "In game event pop ups, which one outlet reports carrying drops as well"
+    ]
+  }
+}

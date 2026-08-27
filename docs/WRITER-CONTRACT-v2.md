@@ -131,7 +131,7 @@ retires it, and a retired row stays visible as Expired rather than vanishing.
 | `classification` | no | Matches the table's classification column |
 | `case_sensitive` | no | For codes |
 | `url` | link rows | The reward URL, https |
-| `expires_at` | link rows | The publisher's stated expiry, ISO 8601, or `null` when none is stated |
+| `expires_at` | link rows | Only an expiry the publisher itself has stated, ISO 8601. `null` whenever the publisher has stated nothing, which is the usual case, and an omitted key means the same. A derived window, a measured window or a window an outlet reports is never typed here: it is a report about the link, not a fact the publisher set, so it belongs in a visible cell that names who reported it. Typed here it retires rows on a schedule no publisher chose, against what /how-we-verify/ promises the reader |
 | `id` | no | Defaults to `<slug>:<table>:<name slugified>`. Set it only if the derived one would collide or if a name must change while the row keeps its history |
 | `notes` | no | Plain text |
 
@@ -153,11 +153,14 @@ Every row you write renders as **Listed · awaiting editor verification** with
 "not yet" in its Last checked column. When an editor tests it the row shows
 **★ Verified** and the date of that test, without anyone editing the file. When
 an editor retires it, or a link row passes its `expires_at`, it shows **Expired**
-and stays in the table. The fourth label, **Active · as published**, is the
-baseline carried by v1 rows that displayed Active on cutover day; no row written
-to this contract ever carries it. You cannot mark a row active, and you do not
-need to: a listed row is fully rendered, indexed and linked from the section hub,
-and no state on any page changes because time has passed.
+and stays in the table. Those are the only two ways in: no row reaches Expired
+unless an editor has retired it or an expiry its publisher stated has passed,
+which is what /how-we-verify/ promises the reader. The fourth label,
+**Active · as published**, is the baseline carried by v1 rows that displayed
+Active on cutover day; no row written to this contract ever carries it. You
+cannot mark a row active, and you do not need to: a listed row is fully
+rendered, indexed and linked from the section hub, and no state on any page
+changes because time has passed.
 
 ---
 
