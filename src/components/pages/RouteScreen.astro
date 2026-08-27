@@ -6,9 +6,9 @@ import EditorialArticle from './EditorialArticle.astro';
 import { articleArtwork, requireArticleArtwork } from '../../data/article-images';
 import { editorialArticles, getArticleByPath } from '../../data/articles';
 import { listAllDatasetPages, listDatasetPages, type DatasetPageSummary, type DatasetSection } from '../../lib/datasetPages';
-import { authors, getAuthorBySlug, getSectionAuthor } from '../../data/authors';
+import { authorPerson, authorPersonId, authors, getAuthorBySlug, getSectionAuthor } from '../../data/authors';
 import { hubIntroFor } from '../../data/hub-intros';
-import { contactEmail, organizationId, websiteId } from '../../data/site';
+import { contactEmail, websiteId } from '../../data/site';
 import EntrySource from '../ui/EntrySource.astro';
 import {
   dailyLinkCatalogue,
@@ -41,6 +41,7 @@ import {
   type ResolvedEntry,
   type VerificationMethod,
 } from '../../data/operations';
+import { canonicalUrl } from '../../lib/pageGraph';
 import type { CheckerSnapshot } from '../../lib/checker-status';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
@@ -255,14 +256,20 @@ const crumbTrail: Array<[string, string]> = isGamePage
 
 /*
  * The template renders definition.heading as the final aria-current crumb, so a
- * parent crumb carrying the same label would repeat it. On a game's own codes
- * page the heading is the game name, which produced
- * "Home / Codes / Grow a Garden / Grow a Garden".
+ * trail entry pointing at this very page would render it twice. On a game's own
+ * codes page the last trail entry is the game root, which is this page, and it
+ * produced "Home / Codes / Grow a Garden / Grow a Garden".
+ *
+ * Matched on the path, not on the label. The labels agreed only for as long as
+ * the heading was the bare game name; the moment the heading became "Grow a
+ * Garden codes" a label comparison stopped matching and the duplicate crumb
+ * came back, this time as a link to the page the reader is already on. The path
+ * is what "this is the current page" actually means.
  */
-const crumbs = crumbTrail.filter(([label], index) =>
-  !(index === crumbTrail.length - 1 && label === definition.heading));
+const crumbs = crumbTrail.filter(([, href], index) =>
+  !(index === crumbTrail.length - 1 && href === definition.path));
 
-const routeUrl = new URL(definition.path, Astro.site).toString();
+const routeUrl = canonicalUrl(definition.path, Astro.site).toString();
 const breadcrumbItems = [...crumbs.map(([label, href]) => ({ label, href })), { label: definition.heading, href: definition.path }];
 
 /*
@@ -289,44 +296,107 @@ const codePageFaq = definition.kind === 'codes' && operationalPage?.game.redeemS
     ]
   : [];
 
-const routeSchema = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${routeUrl}#breadcrumb`,
-      itemListElement: breadcrumbItems.map((crumb, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: crumb.label,
-        item: new URL(crumb.href, Astro.site).toString(),
-      })),
-    },
-    ...(operationalPage?.latestCheckedAt && isGamePage
-      ? [{
-          '@type': 'Dataset',
-          '@id': `${routeUrl}#record`,
-          name: `${operationalPage.game.name} code record`,
-          description: `Listed codes for ${operationalPage.game.name}, with the state and recorded date of every entry.`,
-          url: routeUrl,
-          dateModified: operationalPage.latestCheckedAt,
-          isPartOf: { '@id': websiteId },
-          creator: { '@id': organizationId },
-        }]
-      : []),
-    ...(codePageFaq.length > 0
-      ? [{
-          '@type': 'FAQPage',
-          '@id': `${routeUrl}#faq`,
-          mainEntity: codePageFaq.map((item) => ({
-            '@type': 'Question',
-            name: item.question,
-            acceptedAnswer: { '@type': 'Answer', text: item.answer },
-          })),
-        }]
-      : []),
-  ],
+/*
+ * The code list is bound to the table the page actually renders: the published
+ * rows plus the expired archive kept beside them, on the `codes` route only.
+ * The Dataset node it replaces was gated on a recorded check instead, so it
+ * appeared on a route with no table and vanished from a table with no check.
+ */
+const hasCodeList = definition.kind === 'codes' && codeEntries.length > 0;
+/*
+ * A recorded check is the only thing that may date this page. `latestCheckedAt`
+ * comes from the record the table renders, so the date and the rows can never
+ * disagree, and a page nobody has checked carries no date rather than the build
+ * clock's (CLAUDE.md; docs/adr/0003-no-hand-typed-verification-claims.md).
+ */
+const recordedCheckAt = isGamePage ? operationalPage?.latestCheckedAt : undefined;
+/*
+ * `★ Verified` is the site's published word for a state, and the star is part of
+ * how the table shows it, not part of what it says. A description reads the
+ * label out loud, so the glyph comes off and the wording stays exactly as the
+ * page publishes it.
+ */
+const spokenStateLabel = (state: EntryState) => entryStateLabels[state].replace('★ ', '');
+
+/*
+ * Merged into BaseLayout's single WebPage node rather than declared in a graph
+ * of its own. A second script tag is a second graph, and two graphs on one page
+ * are how one `@id` came to carry two names (src/lib/pageGraph.ts). The trail
+ * ends at this page, so it belongs to this page's node; on a code page the code
+ * record is what the page is about.
+ */
+const webPageProperties = {
+  breadcrumb: { '@id': `${routeUrl}#breadcrumb` },
+  ...(hasCodeList ? { mainEntity: { '@id': `${routeUrl}#codelist` } } : {}),
+  ...(profileAuthor ? { mainEntity: { '@id': authorPersonId(profileAuthor, Astro.site) } } : {}),
+  /*
+   * `dateModified` sits here rather than on the list beside it: ItemList is an
+   * Intangible and has no such property, while a WebPage is a CreativeWork and
+   * does. Moving off Dataset would otherwise have dropped the page's only
+   * machine-readable freshness signal on the way past.
+   */
+  ...(recordedCheckAt ? { dateModified: recordedCheckAt } : {}),
 };
+
+const routeSchemaNodes = [
+  {
+    '@type': 'BreadcrumbList',
+    '@id': `${routeUrl}#breadcrumb`,
+    itemListElement: breadcrumbItems.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.label,
+      item: new URL(crumb.href, Astro.site).toString(),
+    })),
+  },
+  /*
+   * An ItemList, not a Dataset. Dataset feeds Google Dataset Search — a
+   * research-data vertical this page has no business in — and asks for
+   * `license` and a real `distribution`, neither of which a rendered table of
+   * codes has. Neither type earns a rich result here; the list is simply the
+   * true description of what the page holds, which is what a machine reading it
+   * needs. Every row carries its own published state, so nothing in the graph
+   * says a code works that the table does not also say.
+   */
+  ...(hasCodeList && operationalPage
+    ? [{
+        '@type': 'ItemList',
+        '@id': `${routeUrl}#codelist`,
+        name: `${operationalPage.game.name} codes`,
+        description: `Every ${operationalPage.game.name} code on record, published and expired, with the state of each.`,
+        url: routeUrl,
+        numberOfItems: codeEntries.length,
+        itemListOrder: 'https://schema.org/ItemListUnordered',
+        itemListElement: codeEntries.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'Thing',
+            name: item.entry.code,
+            description: `${item.entry.reward} — ${spokenStateLabel(item.state)}`,
+          },
+        })),
+        isPartOf: { '@id': websiteId },
+      }]
+    : []),
+  /*
+   * The profile page is about the person, so the Person node is minted where
+   * the reader can see the standing behind it. The same node, under the same
+   * id, travels with every byline that references it (src/data/authors.ts).
+   */
+  ...(profileAuthor ? [authorPerson(profileAuthor, Astro.site)] : []),
+  ...(codePageFaq.length > 0
+    ? [{
+        '@type': 'FAQPage',
+        '@id': `${routeUrl}#faq`,
+        mainEntity: codePageFaq.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: { '@type': 'Answer', text: item.answer },
+        })),
+      }]
+    : []),
+];
 ---
 
 {article ? (
@@ -340,8 +410,9 @@ const routeSchema = {
   canonical={definition.canonical ?? true}
   image={routeArtwork?.socialImage}
   imageAlt={routeArtwork?.alt}
+  webPage={webPageProperties}
+  schemaNodes={routeSchemaNodes}
 >
-  <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(routeSchema)}></script>
   <article class="route-page" data-route-kind={definition.kind}>
     <header class="page-head content-boundary">
       <nav class="breadcrumbs" aria-label="Breadcrumb">

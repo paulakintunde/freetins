@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
 import { goneRoutes } from '../src/data/gone.ts';
+import { TITLE_BUDGET } from '../src/lib/pageTitle.ts';
 
 const outputRoot = resolve('dist');
 const renderingContractPath = resolve('src/data/route-rendering.json');
@@ -42,6 +43,26 @@ const prototypeLeaks = [];
 const noindexSitemapLeaks = [];
 const sitemapGaps = [];
 const headingOrderLeaks = [];
+const titlesTooLong = [];
+const titlesMissing = [];
+/*
+ * Structured data, read back as a graph.
+ *
+ * A page's JSON-LD is one graph whose nodes are resolved by `@id`. Two nodes
+ * under one id are one node with two values for the same property, which a
+ * strict merge cannot resolve and will either arbitrate or drop. That is not a
+ * shape any template can see on its own: BaseLayout declared `{url}#webpage`
+ * named after the document title, three page templates each declared it again
+ * in a second script tag named after their own heading, and every one of them
+ * was correct in isolation. Thirty-two pages shipped that way. So the graphs
+ * are assembled here, out of the emitted HTML, where the whole page is visible.
+ */
+const graphsUnparsed = [];
+const graphsSplit = [];
+const graphIdCollisions = [];
+const graphDanglingRefs = [];
+/** Indexable pages only, keyed by title, to find pages competing with each other. */
+const titlesByText = new Map();
 let internalLinks = 0;
 let workerLinks = 0;
 const sitemap = readdirSync(outputRoot)
@@ -139,6 +160,16 @@ const pathnameForDocument = (file) => {
  * Function and no manifest runs the Function for every request. The manifest
  * agreement check below makes its absence fatal.
  */
+/**
+ * Astro escapes markup characters in both the <title> and the JSON-LD payload.
+ * A title's length is measured as a reader sees it, and a graph has to parse,
+ * so both are decoded through here.
+ */
+const decodeEntities = (text) => text
+  .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+  .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)))
+  .replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+
 const servedAsStaticAsset = (pathname) =>
   !workerManifest.include.some((pattern) => matchesPattern(pathname, pattern))
   || workerManifest.exclude.some((pattern) => matchesPattern(pathname, pattern));
@@ -158,6 +189,46 @@ for (const file of htmlFiles) {
   const firstHeading = html.match(/<h([1-6])\b/i)?.[1];
   if (firstHeading !== '1') headingOrderLeaks.push({ file, level: firstHeading });
 
+  const ldBlocks = [...html.matchAll(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)]
+    .map((match) => match[1]);
+  if (ldBlocks.length > 1) graphsSplit.push({ file, count: ldBlocks.length });
+  for (const block of ldBlocks) {
+    let document;
+    try {
+      document = JSON.parse(decodeEntities(block));
+    } catch (error) {
+      graphsUnparsed.push({ file, reason: error.message });
+      continue;
+    }
+    const nodes = Array.isArray(document['@graph']) ? document['@graph'] : [document];
+    const declared = new Set();
+    for (const node of nodes) {
+      const id = node?.['@id'];
+      if (!id) continue;
+      if (declared.has(id)) graphIdCollisions.push({ file, id });
+      declared.add(id);
+    }
+    /*
+     * A bare { "@id": x } is a reference to a node; anything else is a node.
+     * The site-wide Organization and WebSite are declared in every page's
+     * graph by BaseLayout, so a reference to either resolves like any other.
+     */
+    const references = [];
+    const walkNode = (value) => {
+      if (Array.isArray(value)) { value.forEach(walkNode); return; }
+      if (!value || typeof value !== 'object') return;
+      const keys = Object.keys(value);
+      if (keys.length === 1 && keys[0] === '@id') { references.push(value['@id']); return; }
+      for (const key of keys) if (key !== '@id') walkNode(value[key]);
+    };
+    walkNode(nodes);
+    for (const reference of new Set(references)) {
+      if (!declared.has(reference)) {
+        graphDanglingRefs.push({ file, id: reference });
+      }
+    }
+  }
+
   /*
    * The anchor list targets the prototype's nav, whose links were exactly `#codes`,
    * `#daily` and so on. It must close on the quote: without the boundary it also
@@ -170,6 +241,34 @@ for (const file of htmlFiles) {
 
   const canonical = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)/i)?.[1];
   const isNoindex = /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(html);
+
+  /*
+   * Titles, read back out of the emitted HTML.
+   *
+   * The grammar in src/lib/pageTitle.ts cannot enforce this on its own: the
+   * author, cheat, gear and editorial templates compose their titles inline,
+   * and a dataset page's title is a writer's front-matter field. So the budget
+   * is held here, where every title the site actually ships passes through one
+   * place, whichever template built it.
+   *
+   * Length is measured after decoding entities. Astro escapes the apostrophe in
+   * "Dandy's World", and counting `&#39;` as five characters would fail a title
+   * that is well inside the budget as a reader sees it.
+   *
+   * Duplicates are counted among indexable pages only. Two noindex placeholders
+   * sharing a title costs nothing; two indexable pages sharing one are two
+   * pages asking Google to pick between them.
+   */
+  const title = decodeEntities(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] ?? '').trim();
+
+  if (!title) titlesMissing.push(file);
+  else if (title.length > TITLE_BUDGET) titlesTooLong.push({ file, title });
+
+  if (title && !isNoindex) {
+    const sharing = titlesByText.get(title) ?? [];
+    sharing.push(file);
+    titlesByText.set(title, sharing);
+  }
 
   if (isNoindex) {
     if (canonical && sitemap.includes(`<loc>${canonical}</loc>`)) noindexSitemapLeaks.push(canonical);
@@ -290,6 +389,59 @@ if (headingOrderLeaks.length > 0) {
   console.error('A heading in the chrome outranks the content it precedes. Name the chrome region with aria-label or aria-labelledby and style its text with a class instead of a heading level.');
 }
 
+const duplicateTitles = [...titlesByText.entries()].filter(([, files]) => files.length > 1);
+
+if (titlesMissing.length > 0) {
+  console.error('Pages that emitted no <title> at all:');
+  for (const file of titlesMissing.slice(0, 12)) console.error(`- ${file}`);
+  if (titlesMissing.length > 12) console.error(`- ...and ${titlesMissing.length - 12} more`);
+}
+
+if (titlesTooLong.length > 0) {
+  console.error(`Titles over the ${TITLE_BUDGET}-character budget:`);
+  for (const { file: path, title } of titlesTooLong.slice(0, 12)) {
+    console.error(`- ${path} (${title.length}) ${title}`);
+  }
+  if (titlesTooLong.length > 12) console.error(`- ...and ${titlesTooLong.length - 12} more`);
+  console.error('Google cuts the tail off in the result list, so the characters past the budget are spent on nobody. Compose the title with fitTitle in src/lib/pageTitle.ts, which drops whole parts in a fixed order rather than truncating, or shorten the front-matter title the page was built from.');
+}
+
+if (duplicateTitles.length > 0) {
+  console.error('Indexable pages sharing a title:');
+  for (const [title, files] of duplicateTitles.slice(0, 12)) {
+    console.error(`- ${title} (${files.join(', ')})`);
+  }
+  if (duplicateTitles.length > 12) console.error(`- ...and ${duplicateTitles.length - 12} more`);
+  console.error('Two pages with one title are two pages asking Google to choose between them, and it will usually choose neither. Give each the term it is actually for, or merge them.');
+}
+
+if (graphsSplit.length > 0) {
+  console.error('Pages emitting more than one JSON-LD block:');
+  for (const { file: path, count } of graphsSplit.slice(0, 12)) console.error(`- ${path} (${count} blocks)`);
+  if (graphsSplit.length > 12) console.error(`- ...and ${graphsSplit.length - 12} more`);
+  console.error('One page is one graph. Pass the template\'s nodes to BaseLayout as schemaNodes, and the properties its WebPage node needs as webPage, instead of declaring a second graph (src/lib/pageGraph.ts).');
+}
+
+if (graphsUnparsed.length > 0) {
+  console.error('Pages whose JSON-LD did not parse:');
+  for (const { file: path, reason } of graphsUnparsed.slice(0, 12)) console.error(`- ${path}: ${reason}`);
+  if (graphsUnparsed.length > 12) console.error(`- ...and ${graphsUnparsed.length - 12} more`);
+}
+
+if (graphIdCollisions.length > 0) {
+  console.error('Nodes sharing an @id inside one graph:');
+  for (const { file: path, id } of graphIdCollisions.slice(0, 12)) console.error(`- ${path}: ${id}`);
+  if (graphIdCollisions.length > 12) console.error(`- ...and ${graphIdCollisions.length - 12} more`);
+  console.error('Two nodes under one id are one node with two values for the same property, and a strict merge resolves that by guessing. Merge them into the single node BaseLayout declares.');
+}
+
+if (graphDanglingRefs.length > 0) {
+  console.error('Graph references pointing at a node the page never declares:');
+  for (const { file: path, id } of graphDanglingRefs.slice(0, 12)) console.error(`- ${path}: ${id}`);
+  if (graphDanglingRefs.length > 12) console.error(`- ...and ${graphDanglingRefs.length - 12} more`);
+  console.error('The id is usually a trailing slash away from the node it means. Derive it with canonicalUrl and webPageId in src/lib/pageGraph.ts rather than composing it from a stored path.');
+}
+
 if (goneSitemapLeaks.length > 0) {
   console.error('Removed (410) routes leaked into the sitemap:');
   for (const route of goneSitemapLeaks) console.error(`- ${route}`);
@@ -342,9 +494,17 @@ if (
   || sitemapGaps.length > 0
   || goneSitemapLeaks.length > 0
   || headingOrderLeaks.length > 0
+  || titlesMissing.length > 0
+  || titlesTooLong.length > 0
+  || duplicateTitles.length > 0
+  || graphsSplit.length > 0
+  || graphsUnparsed.length > 0
+  || graphIdCollisions.length > 0
+  || graphDanglingRefs.length > 0
   || meteredPages.length > 0
   || meteredAssets.length > 0
 ) process.exit(1);
 
 const sitemapEntries = (sitemap.match(/<loc>/g) ?? []).length;
-console.log(`Route crawl passed: ${htmlFiles.length} documents, ${internalLinks} internal links, ${workerLinks} Worker links and ${sitemapEntries} sitemap entries checked.`);
+const longestTitle = Math.max(0, ...[...titlesByText.keys()].map((title) => title.length));
+console.log(`Route crawl passed: ${htmlFiles.length} documents, ${internalLinks} internal links, ${workerLinks} Worker links and ${sitemapEntries} sitemap entries checked. ${titlesByText.size} indexable titles, all unique, longest ${longestTitle} of ${TITLE_BUDGET} characters. One JSON-LD graph per page, every @id declared once and every reference resolved.`);

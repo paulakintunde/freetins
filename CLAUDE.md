@@ -52,6 +52,28 @@ says what each proves.
   consults content only.
 - No state changes because time passed; `recheckTargetDays` is a queue target, never
   a state input. The one clock input is a link row's own `expires_at`.
+- Titles are composed by `src/lib/pageTitle.ts`, never typed into a template. The
+  month in a title comes from a recorded check and from nothing else — never the
+  build clock, and never a typed `checked_at`; a page with no check carries no
+  month. A count counts records and never characterises them, so `listed` is
+  writable and `working`, `active` and `verified` are not. `pnpm check:routes`
+  reads every emitted title back for the 65-character budget and for uniqueness.
+- One page emits one JSON-LD graph, and `BaseLayout` owns it. A page template hands
+  its nodes to `schemaNodes` and the properties its page node needs to `webPage`;
+  it never renders a second `application/ld+json` block and never declares a
+  `#webpage` node of its own. Ids come from `canonicalUrl` and `webPageId` in
+  `src/lib/pageGraph.ts`, never composed from a stored path, so a template's id and
+  the layout's are the same string. `pnpm check:routes` reads every emitted graph
+  back and fails on a split graph, a repeated `@id` or a reference to a node the
+  page never declares.
+- An `@id` is shared across pages; a node is never hoisted to one of them. An
+  author's Person node (`authorPerson` in `src/data/authors.ts`) carries the same
+  id everywhere and is emitted in full on every page that bylines them, because a
+  parser reads one document at a time and a reference it cannot resolve is a
+  byline with no standing behind it. The same goes for `Organization`. A page node
+  may carry `dateModified` only from a recorded check — never the build clock —
+  and `image` is never omitted for want of artwork: a page with none falls back to
+  `defaultSocialImage`, the picture its own `og:image` already names.
 - The free plan is the design target, not a phase. Any runtime feature must degrade
   honestly when its budget is exhausted: a short true sentence to the reader, never a
   500, never a silent failure, never a stale number presented as live. A page view

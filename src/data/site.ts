@@ -65,6 +65,18 @@ export const edgeAnalytics = {
 } as const;
 
 /** Stable JSON-LD node identifiers, referenced by `@id` across every page graph. */
+/**
+ * The picture a page falls back to when it has no artwork of its own.
+ *
+ * It is named here rather than defaulted inside the layout because the card and
+ * the graph have to show the same picture. The layout defaulted `og:image` to it
+ * while the article templates omitted `image` from the graph entirely, so a page
+ * with no artwork advertised a picture to a social crawler and none to a search
+ * one — two accounts of the same page, from the same build.
+ */
+export const defaultSocialImage = '/og/freetins-home-game-codes.jpg';
+export const defaultSocialImageAlt = 'Freetins game codes and daily reward links';
+
 export const organizationId = `${siteOrigin}/#org`;
 export const websiteId = `${siteOrigin}/#site`;
 

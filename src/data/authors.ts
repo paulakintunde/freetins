@@ -1,4 +1,5 @@
 import type { EditorialArticle } from './articles/types';
+import { organizationId } from './site';
 
 /**
  * Author identities used by the article byline, the author profile routes and the
@@ -91,3 +92,48 @@ export const getAuthorBySlug = (slug: string) => authors.find((author) => author
  */
 export const getSectionAuthor = (section: EditorialArticle['section']): Author =>
   authors.find((author) => author.sections.includes(section)) ?? requireAuthor(DEFAULT_AUTHOR_SLUG);
+
+/**
+ * What owning a section makes a person accountable for. `knowsAbout` is derived
+ * from the sections they hold rather than typed per author, so a byline cannot
+ * claim standing on a surface nobody has given them, and a new section has to
+ * name its subject here before it can ship a byline at all.
+ */
+const sectionExpertise: Record<EditorialArticle['section'], string> = {
+  answers: 'Puzzle and level answer sheets',
+  guides: 'Game guides and platform walkthroughs',
+  resources: 'Editorial resource directories',
+  cheats: 'Cheat codes and console commands',
+  daily: 'Daily reward link records',
+  blog: 'Game code reporting',
+  legal: 'Site policy and disclosure',
+  about: 'Editorial standards and corrections',
+};
+
+/**
+ * The stable id of an author's Person node, minted on their own profile URL, so
+ * one person is one node however many pages carry their byline.
+ */
+export const authorPersonId = (author: Author, site: URL | undefined): string =>
+  `${new URL(author.path, site)}#person`;
+
+/**
+ * The Person node itself, emitted in full on every page that references it.
+ *
+ * The id is shared across pages; the node is not hoisted to one of them. A bare
+ * `{"@id": …}` on an article, pointing at a node declared only on the profile
+ * page, is a reference nothing on that article can resolve — a parser reads one
+ * document at a time, so the byline would arrive with a name and no standing
+ * behind it, which is the opposite of what an author entity is for. Repeating
+ * the node under one id is what makes the id mean anything.
+ */
+export const authorPerson = (author: Author, site: URL | undefined) => ({
+  '@type': 'Person',
+  '@id': authorPersonId(author, site),
+  name: author.name,
+  url: new URL(author.path, site).toString(),
+  jobTitle: author.role,
+  description: author.credential,
+  worksFor: { '@id': organizationId },
+  knowsAbout: author.sections.map((section) => sectionExpertise[section]),
+});

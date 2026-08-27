@@ -56,7 +56,9 @@ src/data/<section>/<slug>.json         the dataset, snake_case
 There is no verify file. The checklist an editor works through is generated from
 the dataset in the control page, and the result is an event, not a document.
 
-Front matter (no other keys): `title` (under 65 characters, no month), `slug`,
+Front matter (no other keys): `title` (54 characters or fewer, no month; the
+renderer appends ` | Freetins` and the pair must fit 65 — see the contract),
+`slug`,
 `permalink`, `category`, `category_slug`, `focus_keyword`, `secondary_keywords`
 (4 to 6), `description` (155 characters or fewer, answer first; the meta description, hub-card and search text — caveats stay in the body),
 `author` (the section owner: guides = David Ng; daily and blog = Paul A), `faq`
@@ -135,7 +137,9 @@ src/content/articles/<contentSlug>.md  the body; front matter is only `slug`
 The object (`EditorialArticle` in `src/data/articles/types.ts`): `contentSlug`,
 `path`, `routeId` (unique; the ledger id is `page:<routeId>`), `section` (answers |
 guides | resources | cheats | daily | legal | about | blog), optional `gameSlug`,
-optional `schemaType` (Article | CollectionPage | WebPage), `title`, `heading`,
+optional `schemaType` (Article | CollectionPage | WebPage — the last two are page
+types, so they become the `@type` of the page's one WebPage node rather than a
+second node beside it), `title`, `heading`,
 `description`, `eyebrow`, `author`, `authorPath`, `publishedAt`, `quickAnswer`,
 `sections[]` (may be empty when the body is markdown), optional `faq[]` of
 `{question, answer}`, `sources[]` and `related[]` of `{label, href, description?}`.

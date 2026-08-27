@@ -6,7 +6,16 @@ import Footer from './partials/Footer.astro';
 import Header from './partials/Header.astro';
 import OutageBanner, { type CheckerStatus } from './partials/OutageBanner.astro';
 import { operations } from '../data/operations';
-import { contactEmail, googleSiteVerification, organizationId, siteOrigin, websiteId } from '../data/site';
+import {
+  contactEmail,
+  defaultSocialImage,
+  defaultSocialImageAlt,
+  googleSiteVerification,
+  organizationId,
+  siteOrigin,
+  websiteId,
+} from '../data/site';
+import { canonicalUrl, webPageId } from '../lib/pageGraph';
 
 interface Props {
   title: string;
@@ -19,6 +28,19 @@ interface Props {
   /** False omits the rel=canonical link; the 404 template is the one user. */
   canonical?: boolean;
   theme?: 'light' | 'dark';
+  /**
+   * Properties merged into this page's single WebPage node: the breadcrumb it
+   * ends, the entity it is about, a narrower page type, the dates a template
+   * knows and the layout does not. A template that needs any of these says so
+   * here; it never declares a WebPage of its own (src/lib/pageGraph.ts).
+   */
+  webPage?: Record<string, unknown>;
+  /**
+   * The template's own nodes: Article, BreadcrumbList, FAQPage, Dataset. They
+   * join the one graph this layout emits, because a second script tag with a
+   * second graph is how one @id came to carry two names.
+   */
+  schemaNodes?: Record<string, unknown>[];
 }
 
 const {
@@ -26,22 +48,16 @@ const {
   description,
   checkerStatus = operations.services.checker.enabled ? 'Degraded' : 'Unconfigured',
   consentMode = 'gdpr',
-  image = '/og/freetins-home-game-codes.jpg',
-  imageAlt = 'Freetins game codes and daily reward links',
+  image = defaultSocialImage,
+  imageAlt = defaultSocialImageAlt,
   noindex = false,
   canonical: emitCanonical = true,
   theme = 'dark',
+  webPage = {},
+  schemaNodes = [],
 } = Astro.props;
 const hasPrimaryImage = typeof Astro.props.image === 'string';
-const normalizedPathname = Astro.url.pathname === '/index.html'
-  ? '/'
-  : Astro.url.pathname.replace(/\.html$/, '');
-const cleanPathname = normalizedPathname === '/'
-  ? '/'
-  : normalizedPathname.endsWith('/')
-    ? normalizedPathname
-    : `${normalizedPathname}/`;
-const canonical = new URL(cleanPathname, Astro.site);
+const canonical = canonicalUrl(Astro.url.pathname, Astro.site);
 const socialImage = new URL(image, Astro.site);
 const schema = {
   '@context': 'https://schema.org',
@@ -51,6 +67,20 @@ const schema = {
       '@id': organizationId,
       name: 'Freetins',
       url: siteOrigin,
+      /*
+       * The publisher logo. Every Article on the site points its `publisher` at
+       * this node by id, so the property was missing from all of them at once.
+       * The asset is the favicon already in `public/`, at the 512x512 Google asks
+       * a publisher logo to clear — no new art, and nothing invented. `sameAs` is
+       * still absent because the site has no profile anywhere to cite, and a
+       * fabricated one would be worse than the gap.
+       */
+      logo: {
+        '@type': 'ImageObject',
+        url: new URL('/favicon.png', Astro.site),
+        width: 512,
+        height: 512,
+      },
       description: 'Source-backed game codes, daily reward links, cheats, answers and guides with explicit publication states.',
       publishingPrinciples: `${siteOrigin}/how-we-verify/`,
       correctionsPolicy: `${siteOrigin}/how-we-verify/`,
@@ -72,8 +102,15 @@ const schema = {
       },
     },
     {
+      /*
+       * The page's one WebPage node. `name` is the document title, because that
+       * is what a WebPage's name is: the string the <title> carries. A
+       * template's heading is the Article's `headline` and belongs there.
+       * Everything a template adds is merged in after, including a narrower
+       * `@type` for a page that is a collection rather than a document.
+       */
       '@type': 'WebPage',
-      '@id': `${canonical}#webpage`,
+      '@id': webPageId(canonical),
       url: canonical,
       name: title,
       description,
@@ -89,7 +126,9 @@ const schema = {
           },
         }
         : {}),
+      ...webPage,
     },
+    ...schemaNodes,
   ],
 };
 ---

@@ -19,11 +19,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
  */
 import '../../styles/article.css';
 import { articleArtwork } from '../../data/article-images';
-import { getSectionAuthor } from '../../data/authors';
-import { organizationId } from '../../data/site';
+import { authorPerson, authorPersonId, getSectionAuthor } from '../../data/authors';
+import { defaultSocialImage, organizationId } from '../../data/site';
 import type { Dataset, DatasetCounts } from '../../lib/dataset';
 import { DERIVED_CADENCE } from '../../lib/interpolate';
 import { datasetMetaDescription } from '../../lib/metaDescription';
+import { canonicalUrl, webPageId } from '../../lib/pageGraph';
+import { fitTitle } from '../../lib/pageTitle';
 
 interface EntryData {
   title: string;
@@ -62,6 +64,31 @@ const metaDescription = datasetMetaDescription({
   title: data.title,
 });
 
+/*
+ * The page's own headline, not the dataset subject. A subject names the thing
+ * the dataset is about, so every page about one game carries the same one: the
+ * three Steal a Brainrot pages each published <h1>Steal a Brainrot</h1> while
+ * their titles already said which of the three you were reading. The
+ * front-matter title is the headline, capped at 65 characters by
+ * scripts/check-content, and the subject keeps the breadcrumb, where repeating
+ * across sibling pages is the point.
+ */
+const headline = data.title;
+
+/*
+ * The brand suffix every other template carries. It was missing here alone, so
+ * the dataset pages were the only results on the site that did not say who
+ * published them.
+ *
+ * Appended by the renderer rather than typed by the writer, because a writer
+ * cannot budget for eleven characters they never see, and because a suffix
+ * typed twelve times is a suffix that will eventually be typed wrong. `fitTitle`
+ * drops it again on a headline with no room, which is the honest outcome: the
+ * writer's own words win the space, and scripts/check-content.mjs names the
+ * pages that lost the suffix so they can be trimmed on their next edit.
+ */
+const documentTitle = fitTitle({ stem: data.title });
+
 const { Content, headings } = await render(entry as never);
 const jumpHeadings = headings.filter((heading) => heading.depth === 2);
 
@@ -77,7 +104,7 @@ const crumbs = [
   { label: dataset.subject, href: data.permalink },
 ];
 
-const absoluteUrl = new URL(data.permalink, Astro.site).toString();
+const absoluteUrl = canonicalUrl(data.permalink, Astro.site).toString();
 const entityId = `${absoluteUrl}#article`;
 
 /*
@@ -105,69 +132,71 @@ const baselineLine = dataset.checkedAt
   ? `Last verified ${reviewFormatter.format(Date.parse(dataset.checkedAt))}`
   : 'Awaiting editor verification';
 
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Article',
-      '@id': entityId,
-      headline: dataset.subject,
-      description: data.description ?? data.title,
-      url: absoluteUrl,
-      ...(artwork && { image: new URL(artwork.socialImage, Astro.site).toString() }),
-      ...(publishedAt && { datePublished: publishedAt }),
-      ...(modifiedAt && { dateModified: modifiedAt }),
-      author: {
-        '@type': 'Person',
-        name: author.name,
-        url: new URL(author.path, Astro.site).toString(),
-        jobTitle: author.role,
-        description: author.credential,
-      },
-      publisher: { '@id': organizationId },
-      mainEntityOfPage: { '@id': `${absoluteUrl}#webpage` },
-    },
-    {
-      '@type': 'WebPage',
-      '@id': `${absoluteUrl}#webpage`,
-      url: absoluteUrl,
-      name: dataset.subject,
-      breadcrumb: { '@id': `${absoluteUrl}#breadcrumb` },
-      mainEntity: { '@id': entityId },
-    },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${absoluteUrl}#breadcrumb`,
-      itemListElement: crumbs.map((crumb, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: crumb.label,
-        item: new URL(crumb.href, Astro.site).toString(),
-      })),
-    },
-    ...(data.faq.length
-      ? [{
-          '@type': 'FAQPage',
-          '@id': `${absoluteUrl}#faq`,
-          mainEntity: data.faq.map((pair) => ({
-            '@type': 'Question',
-            name: pair.q,
-            acceptedAnswer: { '@type': 'Answer', text: pair.a },
-          })),
-        }]
-      : []),
-  ],
+/*
+ * The WebPage node is BaseLayout's, one per page. This template knows two
+ * things about it that the layout cannot: the trail the page sits at the end
+ * of, and the Article the page exists to carry. It adds those and declares no
+ * page node of its own (src/lib/pageGraph.ts).
+ */
+const webPageProperties = {
+  breadcrumb: { '@id': `${absoluteUrl}#breadcrumb` },
+  mainEntity: { '@id': entityId },
 };
+
+const schemaNodes = [
+  {
+    '@type': 'Article',
+    '@id': entityId,
+    headline: dataset.subject,
+    description: data.description ?? data.title,
+    url: absoluteUrl,
+    /*
+     * Never omitted. A page with no artwork of its own still advertises the
+     * site default in its own og:image, so leaving `image` out of the graph
+     * described the page one way to a social crawler and another way to a
+     * search one. Both now name the picture the page actually shows.
+     */
+    image: new URL(artwork?.socialImage ?? defaultSocialImage, Astro.site).toString(),
+    ...(publishedAt && { datePublished: publishedAt }),
+    ...(modifiedAt && { dateModified: modifiedAt }),
+    author: { '@id': authorPersonId(author, Astro.site) },
+    publisher: { '@id': organizationId },
+    mainEntityOfPage: { '@id': webPageId(absoluteUrl) },
+  },
+  // The byline's own node, carried by every page that references it.
+  authorPerson(author, Astro.site),
+  {
+    '@type': 'BreadcrumbList',
+    '@id': `${absoluteUrl}#breadcrumb`,
+    itemListElement: crumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.label,
+      item: new URL(crumb.href, Astro.site).toString(),
+    })),
+  },
+  ...(data.faq.length
+    ? [{
+        '@type': 'FAQPage',
+        '@id': `${absoluteUrl}#faq`,
+        mainEntity: data.faq.map((pair) => ({
+          '@type': 'Question',
+          name: pair.q,
+          acceptedAnswer: { '@type': 'Answer', text: pair.a },
+        })),
+      }]
+    : []),
+];
 ---
 
 <BaseLayout
-  title={data.title}
+  title={documentTitle}
   description={metaDescription}
   image={artwork?.socialImage}
   imageAlt={artwork?.alt}
+  webPage={webPageProperties}
+  schemaNodes={schemaNodes}
 >
-  <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
-
   <article class="editorial-article">
     <header class="article-head content-boundary">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -175,7 +204,7 @@ const structuredData = {
         <span aria-current="page">{crumbs.at(-1)?.label}</span>
       </nav>
       <p class="eyebrow">{data.category}</p>
-      <h1>{dataset.subject}</h1>
+      <h1>{headline}</h1>
       {artwork && (
         <div class="article-art">
           <Picture

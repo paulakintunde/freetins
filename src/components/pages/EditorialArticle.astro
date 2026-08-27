@@ -10,9 +10,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
  * styles its own component, and these class names belong to both renderers.
  */
 import '../../styles/article.css';
-import { getSectionAuthor } from '../../data/authors';
+import { authorPerson, authorPersonId, getSectionAuthor } from '../../data/authors';
 import { gamePageForArticle, siblingArticlesFor } from '../../data/interlinks';
-import { organizationId } from '../../data/site';
+import { defaultSocialImage, organizationId } from '../../data/site';
+import { canonicalUrl, webPageId } from '../../lib/pageGraph';
 
 interface Props {
   article: EditorialArticleData;
@@ -69,70 +70,80 @@ const crumbs = article.section === 'resources' || article.section === 'legal' ||
       { label: sectionLabel, href: sectionPath },
       { label: article.heading, href: article.path },
     ];
-const absoluteUrl = new URL(article.path, Astro.site).toString();
+const absoluteUrl = canonicalUrl(article.path, Astro.site).toString();
+const pageId = webPageId(absoluteUrl);
 const articleType = article.schemaType ?? (article.section === 'resources' ? 'CollectionPage' : 'Article');
-const isWebPage = articleType === 'WebPage';
-const entityId = `${absoluteUrl}${isWebPage ? '#webpage' : '#article'}`;
+/*
+ * WebPage and CollectionPage are page types: on those the page itself is the
+ * entity, so what would have been a second node is merged into the one WebPage
+ * node BaseLayout declares, narrower `@type` and all. Only an Article is a
+ * separate thing the page is about, and only it gets an `#article` node.
+ */
+const isPageEntity = articleType === 'WebPage' || articleType === 'CollectionPage';
+const entityId = isPageEntity ? pageId : `${absoluteUrl}#article`;
 const elementSlug = (name: string) => name.toLowerCase()
   .replace(/[^a-z0-9]+/g, '-')
   .replace(/^-|-$/g, '');
 const elementLetter = (name: string) => name.charAt(0).toUpperCase();
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': articleType,
-      '@id': entityId,
-      ...(isWebPage ? { name: article.heading } : { headline: article.heading }),
-      description: article.description,
-      url: absoluteUrl,
-      ...(articleArt && { image: new URL(articleArt.socialImage, Astro.site).toString() }),
-      datePublished: article.publishedAt,
-      dateModified: article.reviewedAt,
-      author: {
-        '@type': 'Person',
-        name: author.name,
-        url: new URL(author.path, Astro.site).toString(),
-        jobTitle: author.role,
-        description: author.credential,
-      },
-      publisher: { '@id': organizationId },
-      ...(!isWebPage && { mainEntityOfPage: { '@id': `${absoluteUrl}#webpage` } }),
-    },
-    ...(!isWebPage
-      ? [{
-          '@type': 'WebPage',
-          '@id': `${absoluteUrl}#webpage`,
-          url: absoluteUrl,
-          name: article.heading,
-          description: article.description,
-          breadcrumb: { '@id': `${absoluteUrl}#breadcrumb` },
-          mainEntity: { '@id': entityId },
-        }]
-      : []),
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${absoluteUrl}#breadcrumb`,
-      itemListElement: crumbs.map((crumb, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: crumb.label,
-        item: new URL(crumb.href, Astro.site).toString(),
-      })),
-    },
-    ...(article.faq?.length
-      ? [{
-          '@type': 'FAQPage',
-          '@id': `${absoluteUrl}#faq`,
-          mainEntity: article.faq.map((item) => ({
-            '@type': 'Question',
-            name: item.question,
-            acceptedAnswer: { '@type': 'Answer', text: item.answer },
-          })),
-        }]
-      : []),
-  ],
+/** Who wrote it and when: true of the page whether or not it holds an Article. */
+const provenance = {
+  datePublished: article.publishedAt,
+  dateModified: article.reviewedAt,
+  author: { '@id': authorPersonId(author, Astro.site) },
+  publisher: { '@id': organizationId },
 };
+
+/*
+ * Merged into BaseLayout's single WebPage node. `name` and `description` are
+ * deliberately absent: the layout sets them from the document title and the
+ * meta description, and a second value for either is the duplicate this
+ * arrangement exists to end (src/lib/pageGraph.ts).
+ */
+const webPageProperties = {
+  breadcrumb: { '@id': `${absoluteUrl}#breadcrumb` },
+  ...(isPageEntity
+    ? { '@type': articleType, ...provenance }
+    : { mainEntity: { '@id': entityId } }),
+};
+
+const schemaNodes = [
+  ...(isPageEntity
+    ? []
+    : [{
+        '@type': articleType,
+        '@id': entityId,
+        headline: article.heading,
+        description: article.description,
+        url: absoluteUrl,
+        // Never omitted; see the note on the same property in DatasetArticle.astro.
+        image: new URL(articleArt?.socialImage ?? defaultSocialImage, Astro.site).toString(),
+        ...provenance,
+        mainEntityOfPage: { '@id': pageId },
+      }]),
+  // The byline's own node, carried by every page that references it.
+  authorPerson(author, Astro.site),
+  {
+    '@type': 'BreadcrumbList',
+    '@id': `${absoluteUrl}#breadcrumb`,
+    itemListElement: crumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.label,
+      item: new URL(crumb.href, Astro.site).toString(),
+    })),
+  },
+  ...(article.faq?.length
+    ? [{
+        '@type': 'FAQPage',
+        '@id': `${absoluteUrl}#faq`,
+        mainEntity: article.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: { '@type': 'Answer', text: item.answer },
+        })),
+      }]
+    : []),
+];
 
 const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   ? { target: '_blank', rel: 'noopener noreferrer' }
@@ -144,9 +155,9 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
   description={article.description}
   image={articleArt?.socialImage}
   imageAlt={articleArt?.alt}
+  webPage={webPageProperties}
+  schemaNodes={schemaNodes}
 >
-  <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
-
   <article class="editorial-article">
     <header class="article-head content-boundary">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
