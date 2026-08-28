@@ -287,11 +287,13 @@ const sitemapLastmod = recordedLastmod();
  * maintains itself: a new drop is nofollowed because it is in the data, and a host
  * that stops being a reward endpoint stops matching when its rows go.
  *
- * The formal `officialSources` citations were never in scope: the template renders
- * those anchors itself with `noopener noreferrer`. A link that already declares
- * `rel` keeps what it declares.
+ * Formal `officialSources` citations normally remain followed evidence. Dice Dreams
+ * is the one page with an explicit all-external-links policy, so its source URLs join
+ * the reward URL set here. The Sources directory declares its own `rel` in
+ * `DatasetArticle.astro`; this set covers the duplicate links interpolated into its
+ * Markdown tables.
  */
-const rewardLinkUrls = () => {
+const dailyNofollowUrls = () => {
   const urls = new Set();
   let files;
   try {
@@ -308,13 +310,19 @@ const rewardLinkUrls = () => {
         for (const match of String(cell).matchAll(/https?:\/\/[^\s)\]]+/g)) urls.add(match[0]);
       }
     }
+
+    if (file === 'dice-dreams.json') {
+      for (const source of dataset.official_sources ?? []) {
+        if (typeof source.url === 'string') urls.add(source.url);
+      }
+    }
   }
 
   return urls;
 };
 
 const externalLinkRel = () => {
-  const rewardUrls = rewardLinkUrls();
+  const nofollowUrls = dailyNofollowUrls();
 
   return (tree) => {
     const visit = (node) => {
@@ -328,7 +336,7 @@ const externalLinkRel = () => {
             external = false;
           }
           if (external) {
-            node.properties.rel = rewardUrls.has(href) ? ['nofollow', 'noopener'] : ['noopener'];
+            node.properties.rel = nofollowUrls.has(href) ? ['nofollow', 'noopener'] : ['noopener'];
           }
         }
       }

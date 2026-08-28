@@ -53,6 +53,7 @@ interface Props {
 const { entry } = Astro.props;
 const { data } = entry;
 const { dataset } = data;
+const nofollowOfficialSources = data.permalink === '/daily/dice-dreams/';
 
 /*
  * The writer's answer-first line, or the unverified summary cut to snippet
@@ -285,7 +286,11 @@ const schemaNodes = [
             </p>
             <div class="link-directory">
               {dataset.officialSources.map((source) => (
-                <a href={source.url} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel={nofollowOfficialSources ? 'nofollow noopener noreferrer' : 'noopener noreferrer'}
+                >
                   <strong>{source.note ?? source.type}</strong>
                   <span>Official channel</span>
                 </a>
