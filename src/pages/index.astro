@@ -12,6 +12,39 @@ const description = 'Game codes, reward links, cheats, answers and guides, each 
 const socialImage = '/og/freetins-home-game-codes.jpg';
 const activeSponsorships = getActiveSponsorships();
 
+const discoverySections = [
+  {
+    label: 'Cheats',
+    href: '/cheats/',
+    copy: 'Cheats cover built-in button sequences, console commands and unlock inputs, with the platform and save-file warnings that matter. Start here when you need an effect inside a game rather than a publisher reward code.',
+    links: [
+      { label: 'LEGO Jurassic World cheats', href: '/cheats/lego-jurassic-world/' },
+      { label: 'GTA 5 cheats', href: '/cheats/gta-5/' },
+      { label: 'Guitar Hero 3 cheats', href: '/cheats/guitar-hero-3/' },
+    ],
+  },
+  {
+    label: 'Answers',
+    href: '/answers/',
+    copy: 'Answers help when a puzzle, recipe or level blocks your progress. Each page states its coverage and distinguishes between similar game releases so you can use the right solution.',
+    links: [
+      { label: 'Little Alchemy element combinations', href: '/answers/little-alchemy/' },
+      { label: 'Clear Vision 3 walkthrough', href: '/answers/clear-vision-3/' },
+      { label: 'Guess the Emoji levels 1 to 10', href: '/answers/guess-emoji-levels-1-10/' },
+    ],
+  },
+  {
+    label: 'Guides',
+    href: '/guides/',
+    copy: 'Guides explain game systems, availability and setup in plain language. The direct answer comes first, followed by the steps, limits and first-party details that help you act on it.',
+    links: [
+      { label: 'GTA 5 radio stations guide', href: '/guides/gta-5-radio-stations/' },
+      { label: 'Grow a Garden recipes', href: '/guides/grow-a-garden-recipes/' },
+      { label: 'Best GBA emulators', href: '/guides/best-gba-emulators/' },
+    ],
+  },
+] as const;
+
 function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   const artwork = artworks[name];
 
@@ -163,6 +196,25 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
         </a>
       ))}
     </div> : <div class="data-empty"><strong>No daily-link page is published yet</strong><p>The section will populate as reward links are recorded.</p></div>}
+  </section>
+
+  <section class="page-section discovery-section content-boundary">
+    <div class="section-heading">
+      <h2>Explore cheats, answers and guides</h2>
+      <a href="/games/">Browse all games</a>
+    </div>
+    <p class="discovery-intro">Codes are only one way into the site. These sections cover built-in cheats, exact puzzle answers and practical guides for the questions a reward code cannot solve.</p>
+    <div class="discovery-grid">
+      {discoverySections.map((section) => (
+        <article class="discovery-card">
+          <a class="discovery-category" href={section.href}>{section.label}</a>
+          <p>{section.copy}</p>
+          <div class="discovery-links">
+            {section.links.map((link) => <a href={link.href}>{link.label}</a>)}
+          </div>
+        </article>
+      ))}
+    </div>
   </section>
 
   {operations.services.advertising.enabled && (
@@ -585,6 +637,70 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
     font-variant-numeric: tabular-nums;
   }
 
+  .discovery-section {
+    padding-top: clamp(34px, 4.5vw, 54px);
+  }
+
+  .discovery-intro {
+    max-width: 72ch;
+    margin: -6px 0 20px;
+    color: var(--text-secondary);
+    font: 400 var(--fs-body-lg) / var(--lh-body-lg) var(--font-core);
+  }
+
+  .discovery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .discovery-card {
+    position: relative;
+    border: 1px solid var(--border-subtle);
+    background: var(--surface-raised);
+    padding: 22px;
+  }
+
+  .discovery-card::before {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    left: -1px;
+    height: 3px;
+    background: var(--green-neon);
+    content: '';
+  }
+
+  .discovery-category {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    color: var(--text-primary);
+    font: 600 var(--fs-h4) / var(--lh-h4) var(--font-display);
+    letter-spacing: .02em;
+    text-transform: uppercase;
+  }
+
+  .discovery-card > p {
+    margin: 10px 0 20px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .discovery-links {
+    display: grid;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .discovery-links a {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
   .native-section {
     padding-top: clamp(28px, 4vw, 40px);
   }
@@ -662,7 +778,8 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
     }
 
     .game-grid,
-    .sponsored-grid {
+    .sponsored-grid,
+    .discovery-grid {
       grid-template-columns: 1fr;
     }
   }
