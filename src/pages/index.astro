@@ -50,7 +50,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
           <span aria-hidden="true"></span>
           <span>A record behind every claim</span>
         </div>
-        <h1>Game codes<br />with a record behind them</h1>
+        <h1>Game codes,<br />sourced and tracked</h1>
         <p>Every code page lists its entries with a source, a state and the date each was recorded. An editor's verification adds a star; nothing waits on it.</p>
         <div class="hero-actions">
           <Button href="/codes/">Find your game</Button>
@@ -203,7 +203,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   .hero {
     position: relative;
     width: 100%;
-    height: clamp(380px, 31vw, 440px);
+    height: clamp(450px, 33vw, 480px);
     overflow: hidden;
     border-bottom: 1px solid var(--border-subtle);
     background: var(--surface-card);
@@ -251,11 +251,13 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
     display: flex;
     height: 100%;
     align-items: center;
+    box-sizing: border-box;
+    padding-block: clamp(24px, 2.2vw, 32px);
   }
 
   .hero-copy {
     max-width: min(680px, 60%);
-    padding: clamp(30px, 4vw, 52px) var(--page-gutter);
+    padding: 0 var(--page-gutter);
   }
 
   .eyebrow {
@@ -281,7 +283,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   .hero h1 {
     margin: 0;
     color: #fff;
-    font: 600 clamp(34px, 4vw, 58px) / 1.02 var(--font-display);
+    font: 600 clamp(34px, 4vw, 54px) / 1.02 var(--font-display);
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-wrap: pretty;
@@ -637,8 +639,11 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
 
     .hero-copy {
       max-width: 100%;
-      padding-top: 46px;
-      padding-bottom: 30px;
+      padding-block: 38px;
+    }
+
+    .hero-boundary {
+      padding-block: 0;
     }
 
     .intro-section {
