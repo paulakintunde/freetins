@@ -8,7 +8,7 @@ import { editorialArticles, getArticleByPath } from '../../data/articles';
 import { listAllDatasetPages, listDatasetPages, type DatasetPageSummary, type DatasetSection } from '../../lib/datasetPages';
 import { authorPerson, authorPersonId, authors, getAuthorBySlug, getSectionAuthor } from '../../data/authors';
 import { hubIntroFor } from '../../data/hub-intros';
-import { contactEmail, websiteId } from '../../data/site';
+import { contactEmail, organizationId, websiteId } from '../../data/site';
 import EntrySource from '../ui/EntrySource.astro';
 import {
   dailyLinkCatalogue,
@@ -106,6 +106,31 @@ const operationalPage = definition.slug ? getGameOperationalPage(definition.slug
 const cheatPage = definition.slug ? getCheatOperationalPage(definition.slug) : null;
 const product = definition.slug ? getProduct(definition.slug) : undefined;
 const hubIntro = hubIntroFor(definition.routeId);
+const popularCodeSpotlights = [
+  {
+    slug: 'grow-a-garden',
+    copy: 'Grow a Garden turns a simple farming loop into a collection chase through seeds, pets and crop mutations. Players return to improve their plots, discover rare results and prepare for the next event.',
+  },
+  {
+    slug: 'steal-a-brainrot',
+    copy: 'Steal a Brainrot mixes collecting with the risk of other players raiding your base. Its fast upgrades, unusual characters and unpredictable public servers make each session feel different.',
+  },
+  {
+    slug: '99-nights-in-the-forest',
+    copy: '99 Nights in the Forest is built around gathering supplies, defending camp and surviving together as the nights become harder. Players love the shared tension and the stories that emerge when a plan goes wrong.',
+  },
+  {
+    slug: 'blue-lock-rivals',
+    copy: 'Blue Lock Rivals turns anime-inspired football into quick competitive matches shaped by styles and flow abilities. It appeals to players who enjoy team play but still want dramatic individual moments.',
+  },
+  {
+    slug: 'volleyball-legends',
+    copy: 'Volleyball Legends rewards timing, positioning and cooperation in fast volleyball matches. Its rotating styles and abilities give players new ways to serve, set, block and attack.',
+  },
+].flatMap((spotlight) => {
+  const publishedGame = publishedGameCatalogue.find((item) => item.slug === spotlight.slug);
+  return publishedGame ? [{ ...spotlight, name: publishedGame.name }] : [];
+});
 const profileAuthor = definition.kind === 'author' && definition.slug ? getAuthorBySlug(definition.slug) : undefined;
 const profileArticles = profileAuthor
   ? editorialArticles.filter((item) => getSectionAuthor(item.section).slug === profileAuthor.slug)
@@ -323,6 +348,27 @@ const hasCodeList = definition.kind === 'codes' && codeEntries.length > 0;
 const recordedCheckAt = isGamePage ? operationalPage?.latestCheckedAt : undefined;
 
 /*
+ * The page's own dates, and who published it.
+ *
+ * `latestCheckedAt` alone left 39 of 53 code pages with no date of any kind: a
+ * page can hold forty dated codes and still have had no editor check, and the
+ * graph said nothing about its age. `recordCreatedAt` and `recordChangedAt` read
+ * the record's own timestamps instead (src/data/operations.ts), so every page
+ * with a single entry carries both.
+ *
+ * Neither comes from the build clock, and neither asserts that anyone checked
+ * anything: the star, the verified count and the check date on screen are still
+ * driven by verification events alone, so docs/adr/0003 is untouched.
+ *
+ * `publisher` is the site's one Organization. A second organisation for the codes
+ * desk was considered and rejected: `@id` is what consolidates a publisher across
+ * a domain, and two of them would have split every signal the articles already
+ * send, for a distinction no reader makes.
+ */
+const recordPublishedAt = isGamePage ? operationalPage?.recordCreatedAt : undefined;
+const recordChangedAt = isGamePage ? operationalPage?.recordChangedAt : undefined;
+
+/*
  * The code pages were the site's only surface publishing anonymously. Every
  * editorial template has carried a byline and a Person node from the start; these
  * pages, which are the largest section and the namesake one, carried neither — so
@@ -354,12 +400,19 @@ const webPageProperties = {
   ...(hasCodeList ? { mainEntity: { '@id': `${routeUrl}#codelist` } } : {}),
   ...(profileAuthor ? { mainEntity: { '@id': authorPersonId(profileAuthor, Astro.site) } } : {}),
   /*
-   * `dateModified` sits here rather than on the list beside it: ItemList is an
-   * Intangible and has no such property, while a WebPage is a CreativeWork and
-   * does. Moving off Dataset would otherwise have dropped the page's only
+   * The dates sit here rather than on the list beside them: ItemList is an
+   * Intangible and has neither property, while a WebPage is a CreativeWork and
+   * has both. Moving off Dataset would otherwise have dropped the page's only
    * machine-readable freshness signal on the way past.
+   *
+   * `recordChangedAt` falls back to the recorded check so a page whose entries
+   * somehow carry no `firstSeenAt` still says what it knows rather than nothing.
    */
-  ...(recordedCheckAt ? { dateModified: recordedCheckAt } : {}),
+  ...(recordPublishedAt ? { datePublished: recordPublishedAt } : {}),
+  ...(recordChangedAt || recordedCheckAt
+    ? { dateModified: recordChangedAt ?? recordedCheckAt }
+    : {}),
+  ...(isGamePage ? { publisher: { '@id': organizationId } } : {}),
   ...(codesAuthor ? { author: { '@id': authorPersonId(codesAuthor, Astro.site) } } : {}),
 };
 
@@ -513,6 +566,23 @@ const routeSchemaNodes = [
             </a>
           ))}
         </div> : <div class="data-empty"><strong>No code page is published yet</strong><p>The route structure is configured, and a page appears here as soon as it lists a code with a source.</p></div>}
+        {popularCodeSpotlights.length > 0 && (
+          <div class="popular-codes">
+            <div class="section-title">
+              <h2>Popular code games</h2>
+              <span>{popularCodeSpotlights.length} places to start</span>
+            </div>
+            <p class="popular-codes-intro">These games are prominent in current code searches and offer very different reasons to play, from relaxed collecting to competitive team matches. This is an editorial starting point, not a live ranking.</p>
+            <div class="popular-code-grid">
+              {popularCodeSpotlights.map((item) => (
+                <article class="popular-code-card">
+                  <h3><a href={`/codes/${item.slug}/`}>{item.name} codes</a></h3>
+                  <p>{item.copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
         {plannedGameCatalogue.length > 0 && (
           <div class="verification-queue">
             <h2>Pages waiting on data</h2>
@@ -1022,6 +1092,15 @@ const routeSchemaNodes = [
    */
   .card-copy .card-checked { margin: auto 0 0; padding-top: 9px; font-size: 12px; font-variant-numeric: tabular-nums; }
   .card-copy .card-checked time { color: var(--text-secondary); }
+  .popular-codes { margin-top: clamp(40px, 5vw, 64px); }
+  .popular-codes-intro { max-width: 76ch; margin: 0 0 20px; color: var(--text-secondary); font: 400 var(--fs-body-lg) / var(--lh-body-lg) var(--font-core); }
+  .popular-code-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--border-subtle); border-left: 1px solid var(--border-subtle); }
+  .popular-code-card { min-height: 180px; border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); background: var(--surface-raised); padding: 22px; }
+  .popular-code-card:last-child { grid-column: 1 / -1; min-height: auto; }
+  .popular-code-card h3 { margin: 0; font: 600 18px / 1.3 var(--font-core); }
+  .popular-code-card h3 a { color: var(--text-primary); }
+  .popular-code-card h3 a:hover, .popular-code-card h3 a:focus-visible { color: var(--text-brand); }
+  .popular-code-card p { margin: 10px 0 0; color: var(--text-secondary); line-height: 1.6; }
   .split-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 320px); gap: 30px; align-items: start; }
   .split-layout > * { min-width: 0; }
   .wide-main { grid-template-columns: minmax(0, 1.7fr) minmax(240px, .7fr); }
@@ -1155,7 +1234,8 @@ const routeSchemaNodes = [
   @media (max-width: 767px) {
     .split-layout, .profile-detail, .product-layout, .guide-layout, .form-layout { grid-template-columns: 1fr; }
     .profile-grid { grid-template-columns: 1fr; }
-    .card-grid { grid-template-columns: 1fr; }
+    .card-grid, .popular-code-grid { grid-template-columns: 1fr; }
+    .popular-code-card:last-child { grid-column: auto; }
     .catalogue.columns { columns: auto; }
     .catalogue time { display: none; }
     .entity-art, .hub-art { aspect-ratio: 4 / 3; min-height: 0; }

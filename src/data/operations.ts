@@ -700,6 +700,43 @@ const latestCheckedAtOf = (entries: ResolvedEntry<unknown>[]) => entries
   .filter((value): value is string => Boolean(value))
   .sort((left, right) => Date.parse(right) - Date.parse(left))[0] ?? null;
 
+/*
+ * When this page's record came into being, and when it last demonstrably moved.
+ *
+ * `dateModified` used to come from `latestCheckedAt` alone, which meant only the
+ * 14 of 53 code pages carrying a recorded check said anything at all about their
+ * own age. The other 39 held a full table of dated entries and published no date.
+ *
+ * Both values are read off recorded facts and never off the build clock, which is
+ * the line the standing rule draws. `firstSeenAt` is when an entry entered the
+ * record, not an assertion that anyone checked it, so it makes no verification
+ * claim and docs/adr/0003 is untouched: a page with no check still shows no star,
+ * no verified count and no check date. Taking the later of the newest entry and
+ * the newest check keeps `dateModified` honest in both directions - adding a code
+ * changes the page just as much as re-checking one does.
+ *
+ * Every one of the 320 entries in the record carries `firstSeenAt`, so this
+ * resolves for every page that has a single entry.
+ */
+const recordDatesOf = (entries: ResolvedEntry<unknown>[]) => {
+  /*
+   * Read rather than typed, because the three entry shapes do not agree: codes and
+   * daily links carry `firstSeenAt`, cheats do not. A cheat page therefore keeps
+   * the behaviour it already had - a `dateModified` from its newest check, and no
+   * `datePublished` - instead of being excluded from the helper entirely.
+   */
+  const seen = entries
+    .map((item) => (item.entry as { firstSeenAt?: unknown }).firstSeenAt)
+    .filter((value): value is string => typeof value === 'string' && value.length > 0)
+    .sort();
+  const checked = latestCheckedAtOf(entries);
+  const newest = [seen.at(-1), checked]
+    .filter((value): value is string => Boolean(value))
+    .sort((left, right) => Date.parse(right) - Date.parse(left))[0] ?? null;
+
+  return { recordCreatedAt: seen[0] ?? null, recordChangedAt: newest };
+};
+
 export const getOperationalGame = (slug: string) => operations.games.find((game) => game.slug === slug);
 
 export const getCheatOperationalPage = (slug: string, now = Date.now()) => {
@@ -711,6 +748,7 @@ export const getCheatOperationalPage = (slug: string, now = Date.now()) => {
     game,
     entries,
     latestCheckedAt: latestCheckedAtOf(entries),
+    ...recordDatesOf(entries),
     ...countEntryStates(entries),
     isPublished: isIndexable(game, entries),
   };
@@ -734,6 +772,7 @@ export const getGameOperationalPage = (slug: string, now = Date.now()) => {
     game,
     entries,
     latestCheckedAt: latestCheckedAtOf(entries),
+    ...recordDatesOf(entries),
     ...countEntryStates(entries),
     isPublished: isIndexable(game, entries),
     values: operations.values.filter((entry) => entry.gameSlug === slug),
