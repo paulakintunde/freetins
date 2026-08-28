@@ -1,0 +1,39 @@
+{
+  "game": "Steal a Brainrot",
+  "slug": "steal-a-brainrot",
+  "developer": "BRAZILIAN SPYDER",
+  "code_system": true,
+  "disambiguation": "This page covers Steal a Brainrot by BRAZILIAN SPYDER on Roblox, place ID 109983668079237. It is not Steal The Brainrot Base, the Fortnite island Stealing Brainrots, or any browser clone, and codes are not interchangeable with those titles.",
+  "redeem_path": "Launch Steal a Brainrot from its official Roblox experience page, find the button stack down the left side of the screen and select Codes, type the string into the field that reads Code Here, then select Submit.",
+  "redeem_requirements": "No level or rebirth gate on the field itself. A code spawns a brainrot on the red carpet rather than paying out, so a Secret-tier reward needs the cash banked to buy the spawn before another player outbids you at 150 percent of base cost.",
+  "official_sources": [
+    {
+      "type": "roblox_page",
+      "url": "https://www.roblox.com/games/109983668079237/Steal-a-Brainrot",
+      "note": "Official experience page."
+    },
+    {
+      "type": "roblox_group",
+      "url": "https://www.roblox.com/communities/35815907/BRAZILIAN-SPYDER",
+      "note": "Official publisher community."
+    },
+    {
+      "type": "developer_profile",
+      "url": "https://www.roblox.com/users/2678001507/profile",
+      "note": "SpyderSammy, the group owner who hands codes out live during Admin Abuse events."
+    }
+  ],
+  "codes": [
+    {
+      "code": "BESTBRAINROTEVER",
+      "reward": "Spawns the Secret brainrot La Vacca Saturno Saturnita on the red carpet",
+      "status": "active",
+      "added_at": "2026-06-13T00:00:00Z",
+      "evidence": [
+        "https://www.gamesradar.com/games/simulation/roblox-steal-a-brainrot-codes/",
+        "https://beebom.com/steal-a-brainrot-codes/",
+        "https://stealabrainrot.fandom.com/wiki/Codes"
+      ]
+    }
+  ]
+}

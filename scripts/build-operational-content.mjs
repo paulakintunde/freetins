@@ -1,8 +1,8 @@
-import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { readFile, readdir, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const root = process.cwd();
-const recordsDirectory = path.resolve(root, process.argv[2] ?? 'src/data/games');
+const recordsPath = path.resolve(root, process.argv[2] ?? 'src/data/games');
 const operationsPath = path.join(root, 'src', 'content', 'operations.json');
 
 const officialGameUrls = {
@@ -28,11 +28,15 @@ const splitRedeemPath = (value) => value
   .filter(Boolean)
   .map((step) => step.endsWith('.') ? step : `${step}.`);
 
-const files = (await readdir(recordsDirectory))
-  .filter((filename) => filename.endsWith('.json'))
-  .sort();
-const records = await Promise.all(files.map(async (filename) => (
-  JSON.parse(await readFile(path.join(recordsDirectory, filename), 'utf8'))
+const recordsStat = await stat(recordsPath);
+const recordFiles = recordsStat.isDirectory()
+  ? (await readdir(recordsPath))
+      .filter((filename) => filename.endsWith('.json'))
+      .sort()
+      .map((filename) => path.join(recordsPath, filename))
+  : [recordsPath];
+const records = await Promise.all(recordFiles.map(async (filename) => (
+  JSON.parse(await readFile(filename, 'utf8'))
 )));
 const operations = JSON.parse(await readFile(operationsPath, 'utf8'));
 const existingGameOrder = new Map();
@@ -79,8 +83,12 @@ const existingCodesByKey = new Map(
   operations.codes.map((entry) => [`${entry.gameSlug}:${entry.code}`, entry]),
 );
 
-for (const slug of batchSlugs) {
-  if (!officialGameUrls[slug]) throw new Error(`Missing official game URL for ${slug}`);
+const officialGameUrlFor = (record) => officialGameUrls[record.slug]
+  ?? record.official_sources?.find((source) => source.type === 'roblox_page')?.url
+  ?? null;
+
+for (const record of records) {
+  if (!officialGameUrlFor(record)) throw new Error(`Missing official game URL for ${record.slug}`);
 }
 
 operations.games = operations.games.map((game) => {
@@ -94,10 +102,26 @@ operations.games = operations.games.map((game) => {
     platform: 'Roblox',
     publicationState: 'published',
     recheckTargetDays: 1,
-    officialSourceUrl: officialGameUrls[record.slug],
+    officialSourceUrl: officialGameUrlFor(record),
     redeemSteps: splitRedeemPath(record.redeem_path),
   };
 });
+
+const existingGameSlugs = new Set(operations.games.map((game) => game.slug));
+for (const record of records) {
+  if (existingGameSlugs.has(record.slug)) continue;
+  operations.games.push({
+    slug: record.slug,
+    name: record.game,
+    surface: 'codes',
+    platform: 'Roblox',
+    publicationState: 'published',
+    recheckTargetDays: 1,
+    officialSourceUrl: officialGameUrlFor(record),
+    redeemSteps: splitRedeemPath(record.redeem_path),
+    publisherChannels: [],
+  });
+}
 
 /*
  * The importer writes rows, never events, and it is a one-time bootstrap. It

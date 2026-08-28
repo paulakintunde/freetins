@@ -14,6 +14,10 @@ const gameSources = import.meta.glob<ImageMetadata>('../assets/games/*-codes-art
   eager: true,
   import: 'default',
 });
+const sharedGameSources = import.meta.glob<ImageMetadata>('../assets/articles/steal-a-brainrot-codes-article-art.webp', {
+  eager: true,
+  import: 'default',
+});
 const dailySources = import.meta.glob<ImageMetadata>('../assets/daily/*-free-rewards-art.webp', {
   eager: true,
   import: 'default',
@@ -32,7 +36,7 @@ const byFilename = (sources: Record<string, ImageMetadata>) => Object.fromEntrie
 );
 
 const images = {
-  games: byFilename({ ...approvedGameSources, ...gameSources }),
+  games: byFilename({ ...approvedGameSources, ...gameSources, ...sharedGameSources }),
   daily: byFilename(dailySources),
   gear: byFilename(gearSources),
   team: byFilename(teamSources),
@@ -108,11 +112,17 @@ const gameAlts: Record<string, string> = {
   'anime-vanguards': 'Elemental defenders protecting a path from shadow enemies',
   'driving-empire': 'Orange and blue sports cars racing through a sunny coastal city',
   fisch: 'Angler landing a glowing rare fish near an island lighthouse in daylight',
+  'steal-a-brainrot': 'Rare creatures moving along a red carpet between collectible player bases',
+};
+
+const gameImageOverrides: Record<string, string> = {
+  'steal-a-brainrot': 'steal-a-brainrot-codes-article-art.webp',
 };
 
 const gameSocialOverrides: Record<string, string> = {
   'anime-vanguards': '/og/games/anime-vanguards-v2.jpg',
   'plants-vs-brainrots': '/og/games/plants-vs-brainrots-v2.jpg',
+  'steal-a-brainrot': '/og/articles/steal-a-brainrot-codes.jpg',
 };
 
 export const gameArtwork: Record<string, SiteArtwork> = Object.fromEntries(
@@ -120,7 +130,7 @@ export const gameArtwork: Record<string, SiteArtwork> = Object.fromEntries(
     slug,
     artwork(
       images.games,
-      `${slug}-codes-art.webp`,
+      gameImageOverrides[slug] ?? `${slug}-codes-art.webp`,
       alt,
       gameSocialOverrides[slug] ?? `/og/games/${slug}.jpg`,
     ),
