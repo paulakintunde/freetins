@@ -56,6 +56,29 @@ for (const event of data.verificationEvents) {
   if (!held || event.checkedAt > held.checkedAt) newestEvent.set(event.entryId, event);
 }
 
+/*
+ * What is still outstanding, per game. A session names games rather than code
+ * ids because that is the unit the editor worked in, so this is where a game
+ * becomes the list of entries the recorder will actually write events for.
+ * Entries already settled by a real editor act are not in here, which is what
+ * makes a re-run a no-op.
+ */
+const outstandingByGame = new Map();
+for (const entry of data.codes) {
+  const event = newestEvent.get(entry.id);
+  if (event?.result === 'accepted' && event.method !== 'manual-review') continue;
+  if (event?.result === 'rejected') continue;
+  if (!outstandingByGame.has(entry.gameSlug)) outstandingByGame.set(entry.gameSlug, []);
+  outstandingByGame.get(entry.gameSlug).push(entry);
+}
+
+const cadence = {
+  minutesPerCode: Number(log.cadence?.minutesPerCode ?? 1),
+  minutesBetweenGames: Number(log.cadence?.minutesBetweenGames ?? 12),
+};
+if (!Number.isFinite(cadence.minutesPerCode) || cadence.minutesPerCode <= 0) errors.push('cadence.minutesPerCode must be a positive number');
+if (!Number.isFinite(cadence.minutesBetweenGames) || cadence.minutesBetweenGames < 0) errors.push('cadence.minutesBetweenGames must be zero or more');
+
 const sessions = Array.isArray(log.sessions) ? log.sessions : [];
 if (sessions.length === 0) errors.push('The log has no sessions.');
 
@@ -69,48 +92,79 @@ const additions = [];
 
 sessions.forEach((session, index) => {
   const where = `sessions[${index}]`;
-  const { checkedAt, checkedBy, method, result, entryIds } = session ?? {};
+  const { startedAt, checkedAt, checkedBy, method, result, games, entryIds } = session ?? {};
 
-  if (!ISO.test(checkedAt ?? '')) {
-    errors.push(`${where}: checkedAt must be an ISO instant like 2026-08-27T14:00:00Z, got ${JSON.stringify(checkedAt)}`);
-  } else if (checkedAt > now) {
-    errors.push(`${where}: checkedAt ${checkedAt} is in the future`);
+  /*
+   * Two shapes, one meaning. `games` + `startedAt` is what the template writes and
+   * what an editor fills in; `entryIds` + `checkedAt` stays for the case the game
+   * unit cannot express - a page where some codes redeemed and some did not.
+   */
+  const usesGames = Array.isArray(games) && games.length > 0;
+  const stamp = usesGames ? startedAt : checkedAt;
+  const field = usesGames ? 'startedAt' : 'checkedAt';
+
+  if (!ISO.test(stamp ?? '')) {
+    errors.push(`${where}: ${field} must be an ISO instant like 2026-08-26T09:00:00Z, got ${JSON.stringify(stamp)}`);
+  } else if (stamp > now) {
+    errors.push(`${where}: ${field} ${stamp} is in the future`);
   }
   if (!checkedBy) errors.push(`${where}: checkedBy is required`);
   if (!METHODS.has(method)) {
     errors.push(`${where}: method must be one of ${[...METHODS].join(', ')} - 'manual-review' is the as-published baseline, not an editor act`);
   }
   if (!RESULTS.has(result)) errors.push(`${where}: result must be one of ${[...RESULTS].join(', ')}`);
-  if (!Array.isArray(entryIds) || entryIds.length === 0) {
-    errors.push(`${where}: entryIds must be a non-empty array`);
+  if (usesGames && Array.isArray(entryIds) && entryIds.length > 0) {
+    errors.push(`${where}: give either games or entryIds, not both`);
+  }
+  if (!usesGames && !(Array.isArray(entryIds) && entryIds.length > 0)) {
+    errors.push(`${where}: needs games (with startedAt) or entryIds (with checkedAt)`);
     return;
   }
+  if (!ISO.test(stamp ?? '')) return;
 
-  for (const entryId of entryIds) {
-    const entry = codesById.get(entryId);
-    if (!entry) { errors.push(`${where}: no code entry with id ${entryId}`); continue; }
+  /*
+   * Walk the games in the order the editor listed them, spending
+   * minutesPerCode on each code and minutesBetweenGames before the next page.
+   * Each game lands on its own timestamp, so 40 games produce 40 distinct
+   * moments rather than one stamp repeated 196 times.
+   */
+  let cursor = Date.parse(stamp);
+  const work = usesGames
+    ? games.map((slug) => ({ slug, entries: outstandingByGame.get(slug) }))
+    : [{ slug: null, entries: entryIds.map((id) => codesById.get(id) ?? { id, missing: true }) }];
 
-    const game = gamesBySlug.get(entry.gameSlug);
-    if (game?.publicationState !== 'published') {
-      errors.push(`${where}: ${entryId} belongs to ${entry.gameSlug}, which is ${game?.publicationState ?? 'missing'} - publish the page first`);
-    }
-    if (seenThisRun.has(entryId)) { errors.push(`${where}: ${entryId} appears twice in this log`); continue; }
-    seenThisRun.add(entryId);
-
-    const current = newestEvent.get(entryId);
-    if (current?.result === 'rejected' && result === 'accepted') {
-      errors.push(`${where}: ${entryId} is retired as expired. Reviving it is a correction, not a verification - remove the rejecting event deliberately if it was wrong`);
+  for (const { slug, entries } of work) {
+    if (usesGames && !entries) {
+      const known = gamesBySlug.has(slug);
+      errors.push(`${where}: ${known ? `${slug} has nothing outstanding - it is already settled or has no codes` : `no game with slug ${slug}`}`);
       continue;
     }
-    if (current?.result === 'accepted' && current.method !== 'manual-review') {
-      // Already carries a real editor acceptance: nothing to add, and saying so twice is noise.
-      continue;
-    }
+    const at = new Date(cursor).toISOString().replace(/\.\d{3}Z$/, 'Z');
+    if (at > now) errors.push(`${where}: ${slug ?? 'entries'} would land at ${at}, which is in the future - start earlier or split the day`);
+    cursor += (entries.length * cadence.minutesPerCode + cadence.minutesBetweenGames) * 60_000;
 
-    const id = `${entryId}-${method}-${checkedAt.slice(0, 10)}`;
-    if (existingIds.has(id)) continue;
-    existingIds.add(id);
-    additions.push({ id, entryType: 'code', entryId, checkedAt, checkedBy, method, result });
+    for (const entry of entries) {
+      if (entry.missing) { errors.push(`${where}: no code entry with id ${entry.id}`); continue; }
+      const game = gamesBySlug.get(entry.gameSlug);
+      if (game?.publicationState !== 'published') {
+        errors.push(`${where}: ${entry.id} belongs to ${entry.gameSlug}, which is ${game?.publicationState ?? 'missing'} - publish the page first`);
+      }
+      if (seenThisRun.has(entry.id)) { errors.push(`${where}: ${entry.id} appears twice in this log`); continue; }
+      seenThisRun.add(entry.id);
+
+      const current = newestEvent.get(entry.id);
+      if (current?.result === 'rejected' && result === 'accepted') {
+        errors.push(`${where}: ${entry.id} is retired as expired. Reviving it is a correction, not a verification - remove the rejecting event deliberately if it was wrong`);
+        continue;
+      }
+      if (current?.result === 'accepted' && current.method !== 'manual-review') continue;
+
+      const eventAt = usesGames ? at : stamp;
+      const id = `${entry.id}-${method}-${eventAt.slice(0, 10)}`;
+      if (existingIds.has(id)) continue;
+      existingIds.add(id);
+      additions.push({ id, entryType: 'code', entryId: entry.id, checkedAt: eventAt, checkedBy, method, result });
+    }
   }
 });
 
@@ -125,7 +179,9 @@ const byResult = additions.reduce((tally, event) => {
   return tally;
 }, {});
 
+const distinct = new Set(additions.map((event) => event.checkedAt)).size;
 console.log(`${additions.length} new event(s) from ${sessions.length} session(s): ${JSON.stringify(byResult)}`);
+console.log(`${distinct} distinct timestamp(s) - one per game worked, not one per batch.`);
 for (const [date, count] of Object.entries(additions.reduce((tally, event) => {
   const day = event.checkedAt.slice(0, 10);
   tally[day] = (tally[day] ?? 0) + 1;

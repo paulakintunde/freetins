@@ -99,34 +99,62 @@ if (flag('template')) {
     process.exit(1);
   }
   /*
-   * One block per working day rather than one stamp for the batch. ADR 0003
+   * The template lists games, not code ids.
+   *
+   * An editor works a page at a time, so that is the unit they can actually
+   * attest to: "I did these games on this day, in this order". Asking them to
+   * paste 196 entry ids instead would be asking them to transcribe something the
+   * recorder can derive, and every transcription is a chance to attach a real
+   * check to the wrong code.
+   *
+   * One block per day worked, and every day carries its own `startedAt`. ADR 0003
    * names the existing batch timestamps as the evidence that a script invented
-   * the events it wrote ("sixty-six of them share two batch timestamps"), so the
-   * shape of this file is the argument against repeating that: a date the editor
-   * did not work is a date they have to delete.
+   * the events it wrote, so a shape that makes the editor delete days they did
+   * not work is the point, not decoration.
    */
+  const order = [...byGame.entries()].sort((left, right) => left[0].localeCompare(right[0]));
   const template = {
     $comment: [
-      'The editor\'s own log. One block per day actually worked.',
-      'checkedBy: the editor id, matching src/data/authors.ts.',
-      'method: how the entry was tested. `redeemed` means the code was entered in the',
-      '  game and the reward arrived. Do not use `manual-review`: that is the',
-      '  as-published baseline, not an editor act, and it mints no star.',
-      'result: `accepted` if it redeemed, `rejected` if it did not.',
-      'entryIds: the ids from `pnpm queue`.',
-      'Delete any day block that did not happen. scripts/record-verifications.mjs',
-      '  refuses unknown ids, duplicate work and future dates.',
+      "The editor's own record of a verification pass. Fill this in, then run pnpm record:checks.",
+      '',
+      '1. Split `games` across as many day blocks as you actually worked. Delete any',
+      '   block you do not use, and delete any game you did not get to.',
+      '2. Put the games in the order you worked them. The recorder walks the list in',
+      '   order and gives each game its own timestamp.',
+      '3. Set `startedAt` on each block to when you sat down that day, as an ISO',
+      '   instant in UTC.',
+      '4. `cadence` turns that start time into a timestamp per game: minutesPerCode',
+      '   for each code on the page, then minutesBetweenGames before the next one.',
+      '   Change the numbers if your pace was different.',
+      '',
+      'checkedBy  the editor id, matching src/data/authors.ts.',
+      'method     `redeemed` means the code was entered in the game and the reward',
+      '           arrived. `manual-review` is refused: it is the as-published',
+      '           baseline, not an editor act, and it mints no star.',
+      'result     `accepted` if it redeemed, `rejected` if it did not. A game where',
+      '           some codes failed needs its own block with the failures listed as',
+      '           `entryIds` and result `rejected`.',
+      '',
+      'The day is yours; the minute within the day is derived from the cadence above.',
+      'Both the recorder and the commit say so, so nobody later reads a modelled',
+      'minute as an observed one.',
     ],
+    cadence: { minutesPerCode: 1, minutesBetweenGames: 12 },
     sessions: [
       {
-        checkedAt: 'YYYY-MM-DDTHH:MM:SSZ',
+        startedAt: 'YYYY-MM-DDTHH:MM:SSZ',
         checkedBy: 'paul-a',
         method: 'redeemed',
         result: 'accepted',
-        entryIds: listed.slice(0, 3).map((entry) => entry.id),
+        games: order.map(([slug]) => slug),
       },
     ],
   };
-  writeFileSync(LOG, `${JSON.stringify(template, null, 2)}\n`, 'utf8');
-  console.log(`Wrote ${LOG} with ${listed.length} entries outstanding. Fill in the sessions and run pnpm record:checks.`);
+  writeFileSync(LOG, `${JSON.stringify(template, null, 2)}
+`, 'utf8');
+  const totalMinutes = listed.length + (byGame.size - 1) * 12;
+  console.log(`Wrote ${LOG}`);
+  console.log(`  ${byGame.size} games pre-filled, ${listed.length} entries behind them.`);
+  console.log(`  At 1 min a code and 12 min between games that is about ${(totalMinutes / 60).toFixed(1)} hours,`);
+  console.log('  so split the games across the days you actually worked.');
 }
