@@ -24,6 +24,8 @@
     "check:vocabulary": "node scripts/check-vocabulary.mjs",
     "snapshot:states": "node scripts/snapshot-states.mjs",
     "report:cutover": "node scripts/cutover-report.mjs",
+    "queue": "node scripts/verification-queue.mjs",
+    "record:checks": "node scripts/record-verifications.mjs",
     "queue:hearts": "node scripts/tally-votes.mjs"
   },
   "dependencies": {
