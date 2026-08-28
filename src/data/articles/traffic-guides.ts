@@ -7,6 +7,14 @@ const checked = {
 export const jurassicWorldGameArticle: EditorialArticle = {
   ...checked,
   path: '/guides/jurassic-world-the-game/', routeId: 'jurassicWorldGame', section: 'guides',
+  /*
+   * The original publication date, carried across the WordPress cutover. This
+   * page replaced /jurassic-world-cheats-and-tricks-for-android-ios/, which 301s here and which
+   * Google still shows as published 19 June 2025. `reviewedAt` stays at the
+   * rewrite date: the URL is a year old, the words on it are not, and the two
+   * fields are the place to say so.
+   */
+  publishedAt: '2025-06-19',
   title: 'Jurassic World: The Game Cheats and Strategy | Freetins',
   heading: 'Jurassic World: The Game cheats and safe strategy',
   description: 'Jurassic World: The Game has no cheat-code screen. Use these safe DNA, coin, park and battle strategies instead of generators or mod APKs.',

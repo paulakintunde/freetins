@@ -10,7 +10,14 @@ export const clearVision3Article: EditorialArticle = {
   eyebrow: 'Answer sheet',
   author: 'Paul A',
   authorPath: '/author/paul-a/',
-  publishedAt: '2026-08-23',
+  /*
+   * The original publication date, carried across the WordPress cutover. This
+   * page replaced /clear-vision-3-cheats-and-walkthrough-for-all-missions/, which 301s here and which
+   * Google still shows as published 8 June 2025. `reviewedAt` stays at the
+   * rewrite date: the URL is a year old, the words on it are not, and the two
+   * fields are the place to say so.
+   */
+  publishedAt: '2025-06-08',
   reviewedAt: '2026-08-23',
   reviewLabel: 'Reviewed 23 August 2026',
   quickAnswer: 'Set distance before wind on every long shot. Buy power before entering Central, then increase clip size for two-target missions. The tables below give the target or object for each supported mission answer.',

@@ -48,6 +48,14 @@ JYJAFX|Minikit Detector|Extra`
 export const legoJurassicWorldArticle: EditorialArticle = {
   ...checked,
   path: '/cheats/lego-jurassic-world/', routeId: 'legoJurassicWorld', section: 'cheats',
+  /*
+   * The original publication date, carried across the WordPress cutover. This
+   * page replaced /lego-jurassic-world-cheats-list-unlockables-and-codes/, which 301s here and which
+   * Google still shows as published 19 June 2025. `reviewedAt` stays at the
+   * rewrite date: the URL is a year old, the words on it are not, and the two
+   * fields are the place to say so.
+   */
+  publishedAt: '2025-06-19',
   title: 'LEGO Jurassic World Cheat Codes and Unlocks | Freetins',
   heading: 'LEGO Jurassic World cheat codes and unlocks',
   description: 'All 34 LEGO Jurassic World codes, how to enter them on every platform, and the correct way to unlock dinosaurs and red brick extras.',

@@ -10,6 +10,14 @@ const rows = (value: string) => value.trim().split('\n').map((row) => row.split(
 export const littleAlchemyArticle: EditorialArticle = {
   ...checked,
   path: '/answers/little-alchemy/', routeId: 'littleAlchemy', section: 'answers',
+  /*
+   * The original publication date, carried across the WordPress cutover. This
+   * page replaced /little-alchemy-cheats-list-540-element-combination-guide/, which 301s here and which
+   * Google still shows as published 8 June 2025. `reviewedAt` stays at the
+   * rewrite date: the URL is a year old, the words on it are not, and the two
+   * fields are the place to say so.
+   */
+  publishedAt: '2025-06-08',
   title: 'Little Alchemy Combinations: 580 Elements Guide | Freetins',
   heading: 'Little Alchemy combinations and 580-element guide',
   description: 'All 580 standard Little Alchemy elements and their recipes in a searchable A-to-Z guide, plus direct paths to Life, Human, Time and Wood.',
