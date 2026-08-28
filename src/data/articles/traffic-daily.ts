@@ -6,7 +6,15 @@ export const doubleDownCasinoArticle: EditorialArticle = {
   heading: 'DoubleDown Casino free chips and promo links',
   description: 'How official DoubleDown Casino free-chip links work, where to find current promotions, how to claim them and how to avoid fake typed codes.',
   eyebrow: 'Daily reward guide',
-  author: 'Paul A', authorPath: '/author/paul-a/', publishedAt: '2026-08-23', reviewedAt: '2026-08-23', reviewLabel: 'Reviewed 23 August 2026',
+  author: 'Paul A', authorPath: '/author/paul-a/', reviewedAt: '2026-08-23', reviewLabel: 'Reviewed 23 August 2026',
+  /*
+   * The original publication date, carried across the WordPress cutover.
+   * /ddc-codes-best-double-casino-codes/, /doubledown-casino-promo-codes-coupons-free-chips/
+   * and /redeem-codes/doubledown-casino/
+   * 301s here. `reviewedAt` stays at the rewrite date: the URL is the age,
+   * the words are not.
+   */
+  publishedAt: '2025-07-30',
   quickAnswer: 'DoubleDown promotions are claim links, not typed coupon codes. Use the official free-chips page, verified social accounts, email, mobile notifications and the in-game inbox. Never provide extra personal information to unlock chips.',
   sections: [
     { id: 'how-promos-work', heading: 'How DoubleDown promotions work', paragraphs: ['An official promotion opens the game and credits the logged-in account. A link can expire or be limited to one claim per account. DoubleDown support does not describe a general typed-code box, so strings copied from coupon sites have nowhere to be entered.'] },

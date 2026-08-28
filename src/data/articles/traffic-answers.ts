@@ -170,6 +170,13 @@ const guessEmojiAnswers = rows(`
 export const guessEmojiArticle: EditorialArticle = {
   ...checked,
   path: '/answers/guess-emoji-levels-1-10/', routeId: 'guessEmojiLevels1To10', section: 'answers',
+  /*
+   * The original publication date, carried across the WordPress cutover.
+   * /guess-emoji-level-12345678910-cheats-answers/ and /walkthroughs/guess-the-emoji/
+   * 301s here. `reviewedAt` stays at the rewrite date: the URL is the age,
+   * the words are not.
+   */
+  publishedAt: '2025-08-02',
   title: 'Guess the Emoji Answers: Levels 1 to 10 | Freetins',
   heading: 'Guess the Emoji answers for levels 1 to 10',
   description: 'All 100 Guess the Emoji answers for levels 1 through 10 in one searchable table, plus spelling fixes and help when an answer is rejected.',
@@ -299,6 +306,13 @@ const christmasAnswers = rows(`
 export const christmasEmojiArticle: EditorialArticle = {
   ...checked,
   path: '/answers/100-pics-christmas-emoji/', routeId: 'christmasEmoji', section: 'answers',
+  /*
+   * The original publication date, carried across the WordPress cutover.
+   * /100-pics-christmas-emoji-answers-for-all-levels/
+   * 301s here. `reviewedAt` stays at the rewrite date: the URL is the age,
+   * the words are not.
+   */
+  publishedAt: '2025-08-10',
   title: '100 Pics Christmas Emoji Answers: All 100 | Freetins',
   heading: '100 Pics Christmas Emoji answers for all 100 puzzles',
   description: 'A searchable list of all 100 Christmas Emoji answers, with alternate wording and a fix for packs whose puzzle order does not match older guides.',
@@ -328,6 +342,13 @@ export const christmasEmojiArticle: EditorialArticle = {
 export const littleAlchemyEnergyArticle: EditorialArticle = {
   ...checked,
   path: '/answers/little-alchemy-2-energy/', routeId: 'littleAlchemyEnergy', section: 'answers',
+  /*
+   * The original publication date, carried across the WordPress cutover.
+   * /make-energy-little-alchemy/
+   * 301s here. `reviewedAt` stays at the rewrite date: the URL is the age,
+   * the words are not.
+   */
+  publishedAt: '2025-08-11',
   title: 'How to Make Energy in Little Alchemy 1 and 2 | Freetins',
   heading: 'How to make Energy in Little Alchemy 1 and 2',
   description: 'Make Energy in one move in either Little Alchemy game, then use it to create Life, Lightning, Heat, Electricity and other key elements.',

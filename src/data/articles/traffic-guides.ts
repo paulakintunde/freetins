@@ -50,6 +50,13 @@ export const jurassicWorldGameArticle: EditorialArticle = {
 export const gta5DemoArticle: EditorialArticle = {
   ...checked,
   path: '/guides/gta-5-demo/', routeId: 'gta5Demo', section: 'guides',
+  /*
+   * The original publication date, carried across the WordPress cutover.
+   * /gta-5-demo-download-free-pc-ps3-ps4/
+   * 301s here. `reviewedAt` stays at the rewrite date: the URL is the age,
+   * the words are not.
+   */
+  publishedAt: '2025-09-29',
   title: 'GTA 5 Demo Download: What Is Actually Available | Freetins',
   heading: 'GTA 5 demo download: what is actually available',
   description: 'There is no official GTA 5 demo. Check the legitimate stores, avoid fake mobile and compressed downloads, and choose the correct edition for your platform.',

@@ -101,6 +101,13 @@ const guitarCodes = [
 export const guitarHero3Article: EditorialArticle = {
   ...checked,
   path: '/cheats/guitar-hero-3/', routeId: 'guitarHero3', section: 'cheats',
+  /*
+   * The original publication date, carried across the WordPress cutover.
+   * /game-cheats/guitar-hero-3/ and /guitar-hero-3-cheats-for-ps2-ps3-wii-and-xbox-360-controller/
+   * 301s here. `reviewedAt` stays at the rewrite date: the URL is the age,
+   * the words are not.
+   */
+  publishedAt: '2025-07-20',
   title: 'Guitar Hero 3 Cheats and Controller Codes | Freetins',
   heading: 'Guitar Hero 3 cheats and controller codes',
   description: 'Every cross-checked Guitar Hero 3 fret sequence, the correct controller mapping, achievement warnings and fixes for codes that do not register.',
@@ -132,6 +139,13 @@ export const guitarHero3Article: EditorialArticle = {
 export const pokemonEmeraldArticle: EditorialArticle = {
   ...checked,
   path: '/cheats/pokemon-emerald/', routeId: 'pokemonEmerald', section: 'cheats',
+  /*
+   * The original publication date, carried across the WordPress cutover.
+   * /pokemon-emerald-rare-candy-cheat-code/ and /game-cheats/pokemon-emerald-cheats/
+   * 301s here. `reviewedAt` stays at the rewrite date: the URL is the age,
+   * the words are not.
+   */
+  publishedAt: '2025-07-22',
   title: 'Pokemon Emerald Rare Candy Cheat and Fixes | Freetins',
   heading: 'Pokemon Emerald rare candy cheat and fixes',
   description: 'The Pokemon Emerald Rare Candy PC and Poke Mart codes, correct cheat formats, emulator entry steps and safe troubleshooting.',

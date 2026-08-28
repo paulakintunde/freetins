@@ -10,7 +10,13 @@ export const gta5RadioStationsArticle: EditorialArticle = {
   eyebrow: 'Game guide',
   author: 'Paul A',
   authorPath: '/author/paul-a/',
-  publishedAt: '2026-08-23',
+  /*
+   * The original publication date, carried across the WordPress cutover.
+   * /gta-5-v-soundtrack-music-radio-stations-full-tracklist/
+   * 301s here. `reviewedAt` stays at the rewrite date: the URL is the age,
+   * the words are not.
+   */
+  publishedAt: '2025-08-23',
   reviewedAt: '2026-08-23',
   reviewLabel: 'Reviewed 23 August 2026',
   quickAnswer: 'GTA 5 has 26 radio stations when Self Radio on PC is included. The Media Player is a separate audio slot, not a radio station. Hold the radio control while driving to open the wheel and choose a station.',
