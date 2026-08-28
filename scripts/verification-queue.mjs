@@ -1,7 +1,7 @@
 /*
  * The editor's checklist: every code entry no editor has acted on yet.
  *
- * docs/adr/0003 retires `verify/<slug>-VERIFY.md` in favour of "a checklist
+ * docs/adr/0003 retires the per-page verification file in favour of "a checklist
  * generated from the dataset by the control page's run-this-game flow from Step
  * 2a", and says that "between Steps 1a and 2a the `pnpm queue` printout is the
  * checklist". Step 2a does not exist yet, so this is that printout: it reads the
