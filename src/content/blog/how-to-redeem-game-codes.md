@@ -33,7 +33,7 @@ faq:
 
 This page records the exact redemption path for {{totalCount}} platforms and games, each one taken from the publisher's own support page. Every row shows where the box lives, the buttons you press in order, and any gate. Rows no editor has confirmed stay listed as awaiting editor verification.
 
-This page explains the mechanics of redemption and is not a list of codes. The identifier it is built around is {{entityId}}, the single page where Roblox gift card, promo and toy codes are now entered, and every other row names its own publisher's destination.
+This page explains the mechanics of redemption and is not a list of codes. Its reference point is the [official Roblox code redemption page]({{entityId}}), where Roblox gift card, promo and toy codes are now entered, and every other row names its own publisher's destination.
 
 ## Where to enter game codes, by platform and by game
 

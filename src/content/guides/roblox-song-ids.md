@@ -38,7 +38,7 @@ faq:
 
 This page records {{totalCount}} Roblox song IDs. Every row carries its status as published, the date beside it and the evidence behind it. Dead IDs stay listed with the reason they stopped working, so a recorded entry reads differently from a copied one.
 
-A Roblox song ID is not a game code you redeem for rewards. It is an asset number in the audio catalogue at {{entityId}}, and it only does anything where an experience hands you a boombox, radio or music panel. If you want the other kind of code, see [Roblox promo codes and what they unlock](/blog/roblox-promo-codes/).
+A Roblox song ID is not a game code you redeem for rewards. It is an asset number in the [Roblox Creator Store audio catalogue]({{entityId}}), and it only does anything where an experience hands you a boombox, radio or music panel. If you want the other kind of code, see [Roblox promo codes and what they unlock](/blog/roblox-promo-codes/).
 
 ## Every Roblox song ID we checked
 

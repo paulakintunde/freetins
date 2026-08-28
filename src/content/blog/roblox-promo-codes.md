@@ -36,7 +36,7 @@ faq:
 
 Roblox hands out platform promo codes very rarely now. This page records {{totalCount}} of them: {{activeCount}} standing as published, {{listedCount}} listed and awaiting editor verification, and {{expiredCount}} dead. Nothing here awards Robux, because no Roblox code ever has, and no generator does either. The record stands as published {{checkedAt}}.
 
-This page covers Roblox platform promo codes, the ones {{developer}} issues and you redeem at {{entityId}}. It is not a list of codes for one Roblox experience, which are typed into a code box inside that game and never work on the redemption page.
+This page covers Roblox platform promo codes, the ones {{developer}} issues and you redeem on the [official Roblox code redemption page]({{entityId}}). It is not a list of codes for one Roblox experience, which are typed into a code box inside that game and never work on the redemption page.
 
 ## Roblox promo codes still reported as live
 
