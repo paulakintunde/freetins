@@ -37,6 +37,36 @@ the pages publish.
 
 ## Step 2 — make the log
 
+Two ways. Use the console unless you have a reason not to.
+
+### The console (recommended)
+
+```bash
+pnpm queue:html
+```
+
+Writes `verification-console.html`, a self-contained page holding every
+outstanding code grouped by game. Open it in a browser:
+
+- click a game, mark each code **Redeemed** or **Failed**, or hit
+  **All N redeemed** for a clean page;
+- add a day for each session you worked and set when you sat down — it converts
+  your local time to UTC for you;
+- assign each game to a day from the dropdown. The order you assign them is the
+  order the recorder walks them in;
+- watch the JSON build live on the right, then **Copy**, **Download .json** or
+  **Download .md**.
+
+Marks are kept in that browser's local storage, so progress survives a refresh
+but does not follow you to another machine. Finish a pass on one machine, or
+export as you go.
+
+The file is generated, never committed: it is a snapshot of what was outstanding
+at that moment, and a stale copy is worse than none. `.gitignore` keeps it out.
+Regenerate it whenever the record changes.
+
+### By hand
+
 ```bash
 pnpm queue --template
 ```
@@ -44,6 +74,8 @@ pnpm queue --template
 Writes `src/content/verification-log.json`, pre-filled with every outstanding
 game slug in one block, and tells you roughly how many hours that represents at
 the default cadence. It refuses to overwrite an existing log.
+
+The console writes exactly this format, so both routes meet at the same file.
 
 ## Step 3 — fill it in
 

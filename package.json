@@ -26,6 +26,7 @@
     "report:cutover": "node scripts/cutover-report.mjs",
     "queue": "node scripts/verification-queue.mjs",
     "record:checks": "node scripts/record-verifications.mjs",
+    "queue:html": "node scripts/verification-console.mjs",
     "queue:hearts": "node scripts/tally-votes.mjs"
   },
   "dependencies": {

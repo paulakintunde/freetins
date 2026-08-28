@@ -22,3 +22,8 @@ site-content-match-audit.md
 
 # Playwright MCP scratch output
 .playwright-mcp/
+
+# The verification console is a snapshot of what was outstanding when it was
+# generated, and a stale copy of that is worse than none. Regenerate it with
+# `pnpm queue:html`; never commit one.
+verification-console.html
