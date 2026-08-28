@@ -1,5 +1,5 @@
 ---
-title: "All Brainrots in Steal a Brainrot: Rarity and Income List"
+title: "All Brainrots in Steal a Brainrot: Rarity and Income"
 slug: "steal-a-brainrot-all-brainrots"
 permalink: "/guides/steal-a-brainrot-all-brainrots/"
 description: "Every documented brainrot in Steal a Brainrot with its rarity tier, base income per second and how it is obtained, retired entries included."
