@@ -101,7 +101,13 @@ operations.games = operations.games.map((game) => {
     surface: 'codes',
     platform: 'Roblox',
     publicationState: 'published',
-    recheckTargetDays: 1,
+    /*
+     * 30, matching every game already on record. The generator shipped 1, which
+     * nothing read until `pnpm queue --due` did, and a one-day target meant the
+     * whole catalogue reported overdue the morning after a complete pass. A
+     * target nobody can meet is noise, not a signal.
+     */
+    recheckTargetDays: 30,
     officialSourceUrl: officialGameUrlFor(record),
     redeemSteps: splitRedeemPath(record.redeem_path),
   };
@@ -116,7 +122,13 @@ for (const record of records) {
     surface: 'codes',
     platform: 'Roblox',
     publicationState: 'published',
-    recheckTargetDays: 1,
+    /*
+     * 30, matching every game already on record. The generator shipped 1, which
+     * nothing read until `pnpm queue --due` did, and a one-day target meant the
+     * whole catalogue reported overdue the morning after a complete pass. A
+     * target nobody can meet is noise, not a signal.
+     */
+    recheckTargetDays: 30,
     officialSourceUrl: officialGameUrlFor(record),
     redeemSteps: splitRedeemPath(record.redeem_path),
     publisherChannels: [],
