@@ -27,6 +27,7 @@
  */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { checkableGames, newestEventsByEntry } from './lib/verification-scope.mjs';
 
 const OPERATIONS = resolve('src/content/operations.json');
 const LOG = resolve('src/content/verification-log.json');
@@ -49,28 +50,23 @@ const codesById = new Map(data.codes.map((entry) => [entry.id, entry]));
 const gamesBySlug = new Map(data.games.map((game) => [game.slug, game]));
 const existingIds = new Set(data.verificationEvents.map((event) => event.id));
 
-const newestEvent = new Map();
-for (const event of data.verificationEvents) {
-  if (event.entryType !== 'code') continue;
-  const held = newestEvent.get(event.entryId);
-  if (!held || event.checkedAt > held.checkedAt) newestEvent.set(event.entryId, event);
-}
+const newestEvent = newestEventsByEntry(data);
 
 /*
- * What is still outstanding, per game. A session names games rather than code
- * ids because that is the unit the editor worked in, so this is where a game
- * becomes the list of entries the recorder will actually write events for.
- * Entries already settled by a real editor act are not in here, which is what
- * makes a re-run a no-op.
+ * A session names games rather than code ids, because that is the unit the
+ * editor worked in, so this is where a slug becomes the entries the recorder
+ * writes events for. Entries already settled by a real editor act are not in
+ * here, which is what makes a re-run a no-op.
+ *
+ * The scope is shared with the queue and the console (scripts/lib), so all three
+ * agree on which pages an editor may act on. They did not always: this asked for
+ * `publicationState === 'published'` and refused ten pages that were publicly
+ * indexed with 26 codes on them.
  */
-const outstandingByGame = new Map();
-for (const entry of data.codes) {
-  const event = newestEvent.get(entry.id);
-  if (event?.result === 'accepted' && event.method !== 'manual-review') continue;
-  if (event?.result === 'rejected') continue;
-  if (!outstandingByGame.has(entry.gameSlug)) outstandingByGame.set(entry.gameSlug, []);
-  outstandingByGame.get(entry.gameSlug).push(entry);
-}
+const scope = checkableGames(data);
+const outstandingByGame = new Map(
+  [...scope.values()].map((game) => [game.slug, game.outstanding]),
+);
 
 const cadence = {
   minutesPerCode: Number(log.cadence?.minutesPerCode ?? 1),
@@ -145,9 +141,15 @@ sessions.forEach((session, index) => {
 
     for (const entry of entries) {
       if (entry.missing) { errors.push(`${where}: no code entry with id ${entry.id}`); continue; }
-      const game = gamesBySlug.get(entry.gameSlug);
-      if (game?.publicationState !== 'published') {
-        errors.push(`${where}: ${entry.id} belongs to ${entry.gameSlug}, which is ${game?.publicationState ?? 'missing'} - publish the page first`);
+      /*
+       * Checkable, not published. A `planned` game with a live entry is indexed
+       * like any other, and ADR 0004 is explicit that indexing never waits on
+       * verification - so a page a reader can find is a page an editor may
+       * record against. A retired game is the one that is genuinely off limits.
+       */
+      if (!scope.has(entry.gameSlug)) {
+        const game = gamesBySlug.get(entry.gameSlug);
+        errors.push(`${where}: ${entry.id} belongs to ${entry.gameSlug}, which is ${game?.publicationState ?? 'missing'} and has no live entry - nothing to check there`);
       }
       if (seenThisRun.has(entry.id)) { errors.push(`${where}: ${entry.id} appears twice in this log`); continue; }
       seenThisRun.add(entry.id);

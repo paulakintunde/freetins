@@ -20,6 +20,7 @@
  */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { checkableGames, dueForRecheck } from './lib/verification-scope.mjs';
 
 const OPERATIONS = resolve('src/content/operations.json');
 const LOG = resolve('src/content/verification-log.json');
@@ -33,34 +34,45 @@ const value = (name) => {
 
 const data = JSON.parse(readFileSync(OPERATIONS, 'utf8'));
 
-/*
- * The newest event on an entry decides its state, so the queue asks the same
- * question the site does rather than a similar one. `accepted` is an editor
- * acceptance and `rejected` retires the row; both mean the entry is settled.
- * `source-only` and `unreachable` leave it Listed and still outstanding.
- */
-const newestEvent = new Map();
-for (const event of data.verificationEvents) {
-  if (event.entryType !== 'code') continue;
-  const held = newestEvent.get(event.entryId);
-  if (!held || event.checkedAt > held.checkedAt) newestEvent.set(event.entryId, event);
-}
-
-const publishedGames = new Map(
-  data.games
-    .filter((game) => game.surface === 'codes' && game.publicationState === 'published')
-    .map((game) => [game.slug, game]),
-);
+const scope = checkableGames(data);
 
 const outstanding = [];
 const settled = { verified: 0, expired: 0 };
-for (const entry of data.codes) {
-  const game = publishedGames.get(entry.gameSlug);
-  if (!game) continue;
-  const event = newestEvent.get(entry.id);
-  if (event?.result === 'accepted') { settled.verified += 1; continue; }
-  if (event?.result === 'rejected') { settled.expired += 1; continue; }
-  outstanding.push({ ...entry, gameName: game.name, currentEvent: event?.result ?? null });
+for (const game of scope.values()) {
+  settled.verified += game.verified.length;
+  settled.expired += game.expired.length;
+  for (const entry of game.outstanding) {
+    outstanding.push({ ...entry, gameName: game.name, publicationState: game.publicationState });
+  }
+}
+
+/*
+ * `--due` answers a different question: not "what has never been checked" but
+ * "what was checked long enough ago that the game's own target has passed".
+ * Once a pass is complete the first list is empty and only this one has work in
+ * it, which is what makes a second pass findable.
+ */
+if (flag('due')) {
+  const due = dueForRecheck(data);
+  if (due.length === 0) {
+    const soonest = [...scope.values()]
+      .filter((game) => game.lastCheckedAt)
+      .map((game) => game.recheckTargetDays - (Date.now() - Date.parse(game.lastCheckedAt)) / 86400000)
+      .sort((left, right) => left - right)[0];
+    console.log('Nothing is due for a recheck.');
+    if (soonest !== undefined) console.log(`  Next one falls due in about ${Math.ceil(soonest)} day(s).`);
+    process.exit(0);
+  }
+  console.log(`Due for recheck: ${due.length} page(s).`);
+  console.log('');
+  for (const game of due) {
+    console.log(`  ${game.name}  (/codes/${game.slug}/)`);
+    console.log(`     last checked ${game.lastCheckedAt} - ${game.ageDays.toFixed(1)} days ago, target ${game.recheckTargetDays}`);
+    console.log(`     ${game.entries.length} entries: ${game.verified.length} verified, ${game.expired.length} expired, ${game.outstanding.length} never checked`);
+  }
+  console.log('');
+  console.log('Re-check them, then record the result the usual way: pnpm queue:html or pnpm queue --template.');
+  process.exit(0);
 }
 
 const only = value('game');

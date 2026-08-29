@@ -17,6 +17,7 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname, join } from 'node:path';
+import { checkableGames } from './lib/verification-scope.mjs';
 import { fileURLToPath } from 'node:url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -29,33 +30,22 @@ const OUT = resolve(outIndex === -1 ? 'verification-console.html' : argv[outInde
 
 const data = JSON.parse(readFileSync(OPERATIONS, 'utf8'));
 
-const newestEvent = new Map();
-for (const event of data.verificationEvents) {
-  if (event.entryType !== 'code') continue;
-  const held = newestEvent.get(event.entryId);
-  if (!held || event.checkedAt > held.checkedAt) newestEvent.set(event.entryId, event);
-}
-
-const publishedGames = new Map(
-  data.games
-    .filter((game) => game.surface === 'codes' && game.publicationState === 'published')
-    .map((game) => [game.slug, game]),
-);
-
+/*
+ * The same scope the queue and the recorder use (scripts/lib), so the console
+ * cannot show a page the recorder would refuse, or hide one it would accept.
+ */
 const byGame = new Map();
-for (const entry of data.codes) {
-  const game = publishedGames.get(entry.gameSlug);
-  if (!game) continue;
-  const event = newestEvent.get(entry.id);
-  // Settled either way: an editor accepted it, or it is retired as expired.
-  if (event?.result === 'accepted' && event.method !== 'manual-review') continue;
-  if (event?.result === 'rejected') continue;
-  if (!byGame.has(entry.gameSlug)) byGame.set(entry.gameSlug, { slug: entry.gameSlug, name: game.name, entries: [] });
-  byGame.get(entry.gameSlug).entries.push({
-    id: entry.id,
-    code: entry.code,
-    reward: entry.reward,
-    source: entry.publisherSourceUrl ? 'publisher-confirmed' : 'community-reported',
+for (const game of checkableGames(data).values()) {
+  if (game.outstanding.length === 0) continue;
+  byGame.set(game.slug, {
+    slug: game.slug,
+    name: game.name,
+    entries: game.outstanding.map((entry) => ({
+      id: entry.id,
+      code: entry.code,
+      reward: entry.reward,
+      source: entry.publisherSourceUrl ? 'publisher-confirmed' : 'community-reported',
+    })),
   });
 }
 
