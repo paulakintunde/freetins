@@ -7349,6 +7349,1770 @@
       "result": "rejected",
       "method": "manual-review",
       "checkedBy": "paul-a"
+    },
+    {
+      "id": "anime-card-clash-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "anime-card-clash-code-1",
+      "checkedAt": "2026-08-26T16:59:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-card-clash-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "anime-card-clash-code-2",
+      "checkedAt": "2026-08-26T16:59:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-card-clash-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "anime-card-clash-code-3",
+      "checkedAt": "2026-08-26T16:59:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-card-clash-code-4-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "anime-card-clash-code-4",
+      "checkedAt": "2026-08-26T16:59:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-card-clash-code-5-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "anime-card-clash-code-5",
+      "checkedAt": "2026-08-26T16:59:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-card-clash-code-6-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "anime-card-clash-code-6",
+      "checkedAt": "2026-08-26T16:59:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "blade-ball-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "blade-ball-code-1",
+      "checkedAt": "2026-08-26T17:17:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "blade-ball-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "blade-ball-code-2",
+      "checkedAt": "2026-08-26T17:17:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "blade-ball-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "blade-ball-code-3",
+      "checkedAt": "2026-08-26T17:17:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "blade-ball-code-4-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "blade-ball-code-4",
+      "checkedAt": "2026-08-26T17:17:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "blade-ball-code-5-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "blade-ball-code-5",
+      "checkedAt": "2026-08-26T17:17:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "ninja-time-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "ninja-time-code-1",
+      "checkedAt": "2026-08-26T17:34:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "ninja-time-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "ninja-time-code-2",
+      "checkedAt": "2026-08-26T17:34:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "ninja-time-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "ninja-time-code-3",
+      "checkedAt": "2026-08-26T17:34:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "ninja-time-code-4-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "ninja-time-code-4",
+      "checkedAt": "2026-08-26T17:34:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dress-to-impress-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "dress-to-impress-code-1",
+      "checkedAt": "2026-08-26T17:50:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dress-to-impress-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "dress-to-impress-code-2",
+      "checkedAt": "2026-08-26T17:50:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dress-to-impress-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "dress-to-impress-code-3",
+      "checkedAt": "2026-08-26T17:50:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dress-to-impress-code-4-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "dress-to-impress-code-4",
+      "checkedAt": "2026-08-26T17:50:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dress-to-impress-code-5-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "dress-to-impress-code-5",
+      "checkedAt": "2026-08-26T17:50:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "type-soul-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "type-soul-code-1",
+      "checkedAt": "2026-08-26T18:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "type-soul-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "type-soul-code-2",
+      "checkedAt": "2026-08-26T18:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "type-soul-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "type-soul-code-3",
+      "checkedAt": "2026-08-26T18:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "type-soul-code-4-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "type-soul-code-4",
+      "checkedAt": "2026-08-26T18:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "type-soul-code-5-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "type-soul-code-5",
+      "checkedAt": "2026-08-26T18:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "type-soul-code-6-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "type-soul-code-6",
+      "checkedAt": "2026-08-26T18:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "type-soul-code-7-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "type-soul-code-7",
+      "checkedAt": "2026-08-26T18:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "type-soul-code-8-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "type-soul-code-8",
+      "checkedAt": "2026-08-26T18:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "99-nights-in-the-forest-code-1-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "99-nights-in-the-forest-code-1",
+      "checkedAt": "2026-08-27T22:00:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "99-nights-in-the-forest-code-2-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "99-nights-in-the-forest-code-2",
+      "checkedAt": "2026-08-27T22:00:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "99-nights-in-the-forest-code-3-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "99-nights-in-the-forest-code-3",
+      "checkedAt": "2026-08-27T22:00:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "99-nights-in-the-forest-code-4-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "99-nights-in-the-forest-code-4",
+      "checkedAt": "2026-08-27T22:00:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-last-stand-code-1-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "anime-last-stand-code-1",
+      "checkedAt": "2026-08-27T22:16:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-last-stand-code-2-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "anime-last-stand-code-2",
+      "checkedAt": "2026-08-27T22:16:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-last-stand-code-3-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "anime-last-stand-code-3",
+      "checkedAt": "2026-08-27T22:16:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-last-stand-code-4-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "anime-last-stand-code-4",
+      "checkedAt": "2026-08-27T22:16:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-last-stand-code-5-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "anime-last-stand-code-5",
+      "checkedAt": "2026-08-27T22:16:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-vanguards-code-1-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "anime-vanguards-code-1",
+      "checkedAt": "2026-08-27T22:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-vanguards-code-2-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "anime-vanguards-code-2",
+      "checkedAt": "2026-08-27T22:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-vanguards-code-3-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "anime-vanguards-code-3",
+      "checkedAt": "2026-08-27T22:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "kaizen-code-1-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "kaizen-code-1",
+      "checkedAt": "2026-08-27T22:48:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "kaizen-code-2-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "kaizen-code-2",
+      "checkedAt": "2026-08-27T22:48:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "kaizen-code-3-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "kaizen-code-3",
+      "checkedAt": "2026-08-27T22:48:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "kaizen-code-4-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "kaizen-code-4",
+      "checkedAt": "2026-08-27T22:48:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "kaizen-code-5-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "kaizen-code-5",
+      "checkedAt": "2026-08-27T22:48:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "kaizen-code-6-redeemed-2026-08-27",
+      "entryType": "code",
+      "entryId": "kaizen-code-6",
+      "checkedAt": "2026-08-27T22:48:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "sols-rng-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "sols-rng-code-1",
+      "checkedAt": "2026-08-25T18:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "sols-rng-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "sols-rng-code-2",
+      "checkedAt": "2026-08-25T18:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "sols-rng-code-3-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "sols-rng-code-3",
+      "checkedAt": "2026-08-25T18:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "sols-rng-code-4-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "sols-rng-code-4",
+      "checkedAt": "2026-08-25T18:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "sols-rng-code-5-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "sols-rng-code-5",
+      "checkedAt": "2026-08-25T18:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "sols-rng-code-6-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "sols-rng-code-6",
+      "checkedAt": "2026-08-25T18:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dandys-world-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "dandys-world-code-1",
+      "checkedAt": "2026-08-25T18:19:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dandys-world-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "dandys-world-code-2",
+      "checkedAt": "2026-08-25T18:19:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dragon-soul-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "dragon-soul-code-1",
+      "checkedAt": "2026-08-25T18:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dragon-soul-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "dragon-soul-code-2",
+      "checkedAt": "2026-08-25T18:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dragon-soul-code-3-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "dragon-soul-code-3",
+      "checkedAt": "2026-08-25T18:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dragon-soul-code-4-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "dragon-soul-code-4",
+      "checkedAt": "2026-08-25T18:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dragon-soul-code-5-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "dragon-soul-code-5",
+      "checkedAt": "2026-08-25T18:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "dragon-soul-code-6-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "dragon-soul-code-6",
+      "checkedAt": "2026-08-25T18:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "king-legacy-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "king-legacy-code-1",
+      "checkedAt": "2026-08-25T18:51:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "king-legacy-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "king-legacy-code-2",
+      "checkedAt": "2026-08-25T18:51:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "king-legacy-code-3-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "king-legacy-code-3",
+      "checkedAt": "2026-08-25T18:51:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "king-legacy-code-4-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "king-legacy-code-4",
+      "checkedAt": "2026-08-25T18:51:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "king-legacy-code-5-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "king-legacy-code-5",
+      "checkedAt": "2026-08-25T18:51:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "restaurant-tycoon-3-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "restaurant-tycoon-3-code-1",
+      "checkedAt": "2026-08-25T19:08:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "restaurant-tycoon-3-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "restaurant-tycoon-3-code-2",
+      "checkedAt": "2026-08-25T19:08:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "rivals-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "rivals-code-1",
+      "checkedAt": "2026-08-25T19:22:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "rivals-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "rivals-code-2",
+      "checkedAt": "2026-08-25T19:22:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "rivals-code-3-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "rivals-code-3",
+      "checkedAt": "2026-08-25T19:22:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "rivals-code-4-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "rivals-code-4",
+      "checkedAt": "2026-08-25T19:22:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "rivals-code-5-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "rivals-code-5",
+      "checkedAt": "2026-08-25T19:22:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "untitled-boxing-game-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "untitled-boxing-game-code-1",
+      "checkedAt": "2026-08-25T19:39:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "untitled-boxing-game-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "untitled-boxing-game-code-2",
+      "checkedAt": "2026-08-25T19:39:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "untitled-boxing-game-code-3-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "untitled-boxing-game-code-3",
+      "checkedAt": "2026-08-25T19:39:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "untitled-boxing-game-code-4-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "untitled-boxing-game-code-4",
+      "checkedAt": "2026-08-25T19:39:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "untitled-boxing-game-code-5-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "untitled-boxing-game-code-5",
+      "checkedAt": "2026-08-25T19:39:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-1",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-2",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-3-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-3",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-4-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-4",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-5-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-5",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-6-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-6",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-7-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-7",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-8-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-8",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-9-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-9",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-10-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-10",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-11-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-11",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-12-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-12",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-13-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-13",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-14-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-14",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-15-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-15",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-16-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-16",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-17-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-17",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-18-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-18",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-19-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-19",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-20-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-20",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-21-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-21",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-22-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-22",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-23-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-23",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-24-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-24",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-25-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-25",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-26-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-26",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-27-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-27",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-28-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-28",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-29-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-29",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-30-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-30",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-31-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-31",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-32-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-32",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-33-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-33",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-34-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-34",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-35-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-35",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-36-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-36",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-37-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-37",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "shindo-life-code-38-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "shindo-life-code-38",
+      "checkedAt": "2026-08-25T00:11:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "basketball-zero-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "basketball-zero-code-1",
+      "checkedAt": "2026-08-25T01:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "basketball-zero-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "basketball-zero-code-2",
+      "checkedAt": "2026-08-25T01:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "blue-lock-rivals-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "blue-lock-rivals-code-1",
+      "checkedAt": "2026-08-25T01:15:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "blue-lock-rivals-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "blue-lock-rivals-code-2",
+      "checkedAt": "2026-08-25T01:15:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "blue-lock-rivals-code-3-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "blue-lock-rivals-code-3",
+      "checkedAt": "2026-08-25T01:15:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "blue-lock-rivals-code-4-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "blue-lock-rivals-code-4",
+      "checkedAt": "2026-08-25T01:15:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "blue-lock-rivals-code-5-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "blue-lock-rivals-code-5",
+      "checkedAt": "2026-08-25T01:15:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "clover-retribution-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "clover-retribution-code-1",
+      "checkedAt": "2026-08-25T01:32:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "clover-retribution-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "clover-retribution-code-2",
+      "checkedAt": "2026-08-25T01:32:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "clover-retribution-code-3-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "clover-retribution-code-3",
+      "checkedAt": "2026-08-25T01:32:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "fisch-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "fisch-code-1",
+      "checkedAt": "2026-08-25T01:47:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "fisch-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "fisch-code-2",
+      "checkedAt": "2026-08-25T01:47:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "fisch-code-3-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "fisch-code-3",
+      "checkedAt": "2026-08-25T01:47:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "grow-a-garden-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "grow-a-garden-code-1",
+      "checkedAt": "2026-08-25T02:02:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "grow-a-garden-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "grow-a-garden-code-2",
+      "checkedAt": "2026-08-25T02:02:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "grow-a-garden-code-3-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "grow-a-garden-code-3",
+      "checkedAt": "2026-08-25T02:02:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "jujutsu-zero-code-1-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "jujutsu-zero-code-1",
+      "checkedAt": "2026-08-25T02:17:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "jujutsu-zero-code-2-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "jujutsu-zero-code-2",
+      "checkedAt": "2026-08-25T02:17:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "jujutsu-zero-code-3-redeemed-2026-08-25",
+      "entryType": "code",
+      "entryId": "jujutsu-zero-code-3",
+      "checkedAt": "2026-08-25T02:17:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "flashpoint-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "flashpoint-code-1",
+      "checkedAt": "2026-08-26T21:14:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "flashpoint-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "flashpoint-code-2",
+      "checkedAt": "2026-08-26T21:14:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "flashpoint-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "flashpoint-code-3",
+      "checkedAt": "2026-08-26T21:14:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "flashpoint-code-4-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "flashpoint-code-4",
+      "checkedAt": "2026-08-26T21:14:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "flashpoint-code-5-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "flashpoint-code-5",
+      "checkedAt": "2026-08-26T21:14:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "flashpoint-code-6-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "flashpoint-code-6",
+      "checkedAt": "2026-08-26T21:14:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "flashpoint-code-7-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "flashpoint-code-7",
+      "checkedAt": "2026-08-26T21:14:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "racket-rivals-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "racket-rivals-code-1",
+      "checkedAt": "2026-08-26T21:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "racket-rivals-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "racket-rivals-code-2",
+      "checkedAt": "2026-08-26T21:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "racket-rivals-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "racket-rivals-code-3",
+      "checkedAt": "2026-08-26T21:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "racket-rivals-code-4-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "racket-rivals-code-4",
+      "checkedAt": "2026-08-26T21:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "pixel-blade-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "pixel-blade-code-1",
+      "checkedAt": "2026-08-26T21:49:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "pixel-blade-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "pixel-blade-code-2",
+      "checkedAt": "2026-08-26T21:49:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "pixel-blade-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "pixel-blade-code-3",
+      "checkedAt": "2026-08-26T21:49:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "pixel-blade-code-4-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "pixel-blade-code-4",
+      "checkedAt": "2026-08-26T21:49:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "pixel-blade-code-5-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "pixel-blade-code-5",
+      "checkedAt": "2026-08-26T21:49:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "pixel-blade-code-6-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "pixel-blade-code-6",
+      "checkedAt": "2026-08-26T21:49:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "fruit-battlegrounds-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "fruit-battlegrounds-code-1",
+      "checkedAt": "2026-08-26T22:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "fruit-battlegrounds-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "fruit-battlegrounds-code-2",
+      "checkedAt": "2026-08-26T22:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "fruit-battlegrounds-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "fruit-battlegrounds-code-3",
+      "checkedAt": "2026-08-26T22:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "fruit-battlegrounds-code-4-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "fruit-battlegrounds-code-4",
+      "checkedAt": "2026-08-26T22:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "fruit-battlegrounds-code-5-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "fruit-battlegrounds-code-5",
+      "checkedAt": "2026-08-26T22:07:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "plants-vs-brainrots-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "plants-vs-brainrots-code-1",
+      "checkedAt": "2026-08-26T22:24:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "plants-vs-brainrots-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "plants-vs-brainrots-code-2",
+      "checkedAt": "2026-08-26T22:24:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "plants-vs-brainrots-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "plants-vs-brainrots-code-3",
+      "checkedAt": "2026-08-26T22:24:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "plants-vs-brainrots-code-4-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "plants-vs-brainrots-code-4",
+      "checkedAt": "2026-08-26T22:24:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "plants-vs-brainrots-code-5-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "plants-vs-brainrots-code-5",
+      "checkedAt": "2026-08-26T22:24:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "volleyball-legends-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "volleyball-legends-code-1",
+      "checkedAt": "2026-08-26T22:41:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "volleyball-legends-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "volleyball-legends-code-2",
+      "checkedAt": "2026-08-26T22:41:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "volleyball-legends-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "volleyball-legends-code-3",
+      "checkedAt": "2026-08-26T22:41:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "weak-legacy-2-code-1-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "weak-legacy-2-code-1",
+      "checkedAt": "2026-08-26T22:56:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "weak-legacy-2-code-2-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "weak-legacy-2-code-2",
+      "checkedAt": "2026-08-26T22:56:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "weak-legacy-2-code-3-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "weak-legacy-2-code-3",
+      "checkedAt": "2026-08-26T22:56:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "weak-legacy-2-code-4-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "weak-legacy-2-code-4",
+      "checkedAt": "2026-08-26T22:56:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "weak-legacy-2-code-5-redeemed-2026-08-26",
+      "entryType": "code",
+      "entryId": "weak-legacy-2-code-5",
+      "checkedAt": "2026-08-26T22:56:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-guardians-code-1-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "anime-guardians-code-1",
+      "checkedAt": "2026-08-28T16:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-guardians-code-2-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "anime-guardians-code-2",
+      "checkedAt": "2026-08-28T16:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-guardians-code-3-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "anime-guardians-code-3",
+      "checkedAt": "2026-08-28T16:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-guardians-code-4-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "anime-guardians-code-4",
+      "checkedAt": "2026-08-28T16:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "anime-guardians-code-5-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "anime-guardians-code-5",
+      "checkedAt": "2026-08-28T16:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "bizarre-lineage-code-1-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "bizarre-lineage-code-1",
+      "checkedAt": "2026-08-28T16:18:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "bizarre-lineage-code-2-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "bizarre-lineage-code-2",
+      "checkedAt": "2026-08-28T16:18:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "bizarre-lineage-code-3-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "bizarre-lineage-code-3",
+      "checkedAt": "2026-08-28T16:18:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "sailor-piece-code-1-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "sailor-piece-code-1",
+      "checkedAt": "2026-08-28T16:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "sailor-piece-code-2-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "sailor-piece-code-2",
+      "checkedAt": "2026-08-28T16:33:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "devil-hunters-code-1-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "devil-hunters-code-1",
+      "checkedAt": "2026-08-28T16:47:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "devil-hunters-code-2-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "devil-hunters-code-2",
+      "checkedAt": "2026-08-28T16:47:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "devil-hunters-code-3-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "devil-hunters-code-3",
+      "checkedAt": "2026-08-28T16:47:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "devil-hunters-code-4-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "devil-hunters-code-4",
+      "checkedAt": "2026-08-28T16:47:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "devil-hunters-code-5-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "devil-hunters-code-5",
+      "checkedAt": "2026-08-28T16:47:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "playground-basketball-code-1-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "playground-basketball-code-1",
+      "checkedAt": "2026-08-28T17:04:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "playground-basketball-code-2-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "playground-basketball-code-2",
+      "checkedAt": "2026-08-28T17:04:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "hunty-zombie-code-1-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "hunty-zombie-code-1",
+      "checkedAt": "2026-08-28T17:18:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "hunty-zombie-code-2-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "hunty-zombie-code-2",
+      "checkedAt": "2026-08-28T17:18:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "universal-tower-defense-code-1-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "universal-tower-defense-code-1",
+      "checkedAt": "2026-08-28T17:32:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "soccer-zero-code-1-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "soccer-zero-code-1",
+      "checkedAt": "2026-08-28T17:45:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "soccer-zero-code-2-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "soccer-zero-code-2",
+      "checkedAt": "2026-08-28T17:45:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "soccer-zero-code-3-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "soccer-zero-code-3",
+      "checkedAt": "2026-08-28T17:45:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "soccer-zero-code-4-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "soccer-zero-code-4",
+      "checkedAt": "2026-08-28T17:45:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "soccer-zero-code-5-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "soccer-zero-code-5",
+      "checkedAt": "2026-08-28T17:45:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "steal-a-brainrot-code-1-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "steal-a-brainrot-code-1",
+      "checkedAt": "2026-08-28T18:02:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
+    },
+    {
+      "id": "tennis-zero-code-1-redeemed-2026-08-28",
+      "entryType": "code",
+      "entryId": "tennis-zero-code-1",
+      "checkedAt": "2026-08-28T18:15:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted"
     }
   ]
 }
