@@ -242,19 +242,24 @@ const articleRoutes: RouteDefinition[] = editorialArticles
   eyebrow: article.eyebrow,
   }));
 
-const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => ({
-  path: `/daily/${game.slug}/`,
-  routeId: 'freebies',
-  kind: 'dailyGame',
-  title: dailyTitle(game),
-  heading: `${game.name} reward links`,
-  description: game.isPublished
-    ? `${game.name} reward links with source URLs and the date each was recorded.`
-    : `${game.name} has a page configured, but no reward link is listed yet.`,
-  name: game.name,
-  slug: game.slug,
-  noindex: !game.isPublished,
-}));
+const dailyRoutes: RouteDefinition[] = dailyLinkCatalogue.map((game) => {
+  const path = `/daily/${game.slug}/`;
+  const article = getArticleByPath(path);
+
+  return {
+    path,
+    routeId: 'freebies',
+    kind: 'dailyGame',
+    title: article?.title ?? dailyTitle(game),
+    heading: article?.heading ?? `${game.name} reward links`,
+    description: article?.description ?? (game.isPublished
+      ? `${game.name} reward links with source URLs and the date each was recorded.`
+      : `${game.name} has a page configured, but no reward link is listed yet.`),
+    name: game.name,
+    slug: game.slug,
+    noindex: !game.isPublished && !article,
+  };
+});
 
 /*
  * Only sections with published content get a route. Generating a values, archive
