@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
 import { goneRoutes } from '../src/data/gone.ts';
+import { operations } from '../src/data/operations.ts';
 import { TITLE_BUDGET } from '../src/lib/pageTitle.ts';
 
 const outputRoot = resolve('dist');
@@ -45,6 +46,9 @@ const sitemapGaps = [];
 const headingOrderLeaks = [];
 const titlesTooLong = [];
 const titlesMissing = [];
+const searchQueryLinks = [];
+const inactiveAlertLinks = [];
+const inactiveSubmissionLinks = [];
 /*
  * Structured data, read back as a graph.
  *
@@ -65,6 +69,10 @@ const graphDanglingRefs = [];
 const titlesByText = new Map();
 let internalLinks = 0;
 let workerLinks = 0;
+const alertsAvailable = operations.services.alerts.enabled
+  && Boolean(operations.services.alerts.subscriptionEndpoint);
+const submissionsAvailable = operations.services.submissions.enabled
+  && Boolean(operations.services.submissions.endpoint);
 const sitemap = readdirSync(outputRoot)
   .filter((name) => /^sitemap-\d+\.xml$/.test(name))
   .map((name) => readFileSync(join(outputRoot, name), 'utf8'))
@@ -291,6 +299,21 @@ for (const file of htmlFiles) {
     const url = new URL(href, 'https://freetins.test');
     if (url.origin !== 'https://freetins.test') continue;
 
+    /*
+     * Search forms remain available, but a known game must link to its canonical
+     * page instead of spending a site-wide hop on a noindex result URL. Inactive
+     * capabilities stay buildable for review without being promoted globally.
+     */
+    if (url.pathname === '/search/' && url.searchParams.has('q')) {
+      searchQueryLinks.push({ file, href });
+    }
+    if (!alertsAvailable && url.pathname === '/alerts/') {
+      inactiveAlertLinks.push({ file, href });
+    }
+    if (!submissionsAvailable && url.pathname === '/submit/') {
+      inactiveSubmissionLinks.push({ file, href });
+    }
+
     internalLinks += 1;
     if (resolvesToDocument(url.pathname)) continue;
     if (resolvesOnWorker(url.pathname)) {
@@ -485,6 +508,21 @@ if (totalRuleCount >= ROUTE_RULE_WARNING) {
   console.warn(`Warning: ${totalRuleCount} of ${ROUTE_RULE_CAP} rules is upgrade trigger 3 (docs/adr/0005-the-free-plan-is-the-design-target.md). Restructure routes so fewer rules cover more paths before Cloudflare stops reading the file.`);
 }
 
+if (searchQueryLinks.length > 0) {
+  console.error('Internal anchors point to noindex search-result URLs instead of canonical pages:');
+  for (const item of searchQueryLinks.slice(0, 12)) console.error(`- ${relative(outputRoot, item.file)} -> ${item.href}`);
+}
+
+if (inactiveAlertLinks.length > 0) {
+  console.error('Inactive Alerts is promoted by internal links:');
+  for (const item of inactiveAlertLinks.slice(0, 12)) console.error(`- ${relative(outputRoot, item.file)} -> ${item.href}`);
+}
+
+if (inactiveSubmissionLinks.length > 0) {
+  console.error('Inactive Submit is promoted by internal links:');
+  for (const item of inactiveSubmissionLinks.slice(0, 12)) console.error(`- ${relative(outputRoot, item.file)} -> ${item.href}`);
+}
+
 if (
   prototypeLeaks.length > 0
   || missing.size > 0
@@ -495,6 +533,9 @@ if (
   || goneSitemapLeaks.length > 0
   || headingOrderLeaks.length > 0
   || titlesMissing.length > 0
+  || searchQueryLinks.length > 0
+  || inactiveAlertLinks.length > 0
+  || inactiveSubmissionLinks.length > 0
   || titlesTooLong.length > 0
   || duplicateTitles.length > 0
   || graphsSplit.length > 0

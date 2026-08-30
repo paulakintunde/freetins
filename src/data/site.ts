@@ -1,4 +1,5 @@
 import { publishedDailyLinkCatalogue, publishedGameCatalogue } from './home';
+import { operations } from './operations';
 
 /**
  * The published contact address. Previously the site used support@ on the legal and
@@ -96,6 +97,12 @@ export const navLinks: SiteLink[] = [
   { label: 'Resources', href: '/resources/', section: 'resources' },
 ];
 
+export const alertsAvailable = operations.services.alerts.enabled
+  && Boolean(operations.services.alerts.subscriptionEndpoint);
+
+export const submissionsAvailable = operations.services.submissions.enabled
+  && Boolean(operations.services.submissions.endpoint);
+
 export const drawerLinks: SiteLink[] = [
   { label: 'Today', href: '/' },
   { label: 'Codes', href: '/codes/' },
@@ -105,24 +112,32 @@ export const drawerLinks: SiteLink[] = [
   { label: 'Guides', href: '/guides/' },
   { label: 'All games A–Z', href: '/games/' },
   { label: 'Resources', href: '/resources/' },
-  { label: 'Alerts', href: '/alerts/' },
+  ...(alertsAvailable ? [{ label: 'Alerts', href: '/alerts/' }] : []),
 ];
 
-const preferredSearches = ['Grow a Garden', 'Monopoly GO', 'Blue Lock Rivals', 'Coin Master', "Sol's RNG"];
-const searchablePageNames = [...publishedGameCatalogue, ...publishedDailyLinkCatalogue]
-  .filter((game) => game.liveCount > 0)
-  .map((game) => game.name);
+const preferredGames = ['Grow a Garden', 'Monopoly GO', 'Blue Lock Rivals', 'Coin Master', "Sol's RNG"];
+const searchablePages: SiteLink[] = [
+  ...publishedGameCatalogue
+    .filter((game) => game.liveCount > 0)
+    .map((game) => ({ label: game.name, href: `/codes/${game.slug}/` })),
+  ...publishedDailyLinkCatalogue
+    .filter((game) => game.liveCount > 0)
+    .map((game) => ({ label: game.name, href: `/daily/${game.slug}/` })),
+];
+
+const preferredPages = preferredGames.flatMap((name) => {
+  const page = searchablePages.find((candidate) => candidate.label === name);
+  return page ? [page] : [];
+});
 
 /**
- * Only advertise a term that resolves to a published page with something on it. A
- * listed code is real content whether or not an editor has tested it yet, so
- * promotion follows the live count, not the star count. A curated name whose page
- * is not live sends readers to an empty search; a game whose codes have all expired
- * sends them somewhere worse, because the page loads and has nothing on it.
+ * Only advertise a direct link to a published page with something live on it. The
+ * preferred list controls editorial ordering, not availability, so removing a page
+ * or its last live entry also removes its shortcut at the next build.
  */
-export const hotSearches = [
-  ...preferredSearches.filter((term) => searchablePageNames.includes(term)),
-  ...searchablePageNames.filter((name) => !preferredSearches.includes(name)),
+export const featuredGameLinks = [
+  ...preferredPages,
+  ...searchablePages.filter((page) => !preferredGames.includes(page.label)),
 ].slice(0, 5);
 
 export type FooterItem =
@@ -141,7 +156,10 @@ export const footerColumns: FooterColumn[] = [
       { label: 'All games A–Z', href: '/games/' },
       { label: 'Codes', href: '/codes/' },
       { label: 'Cheats', href: '/cheats/' },
-      { label: 'Submit a code', href: '/submit/' },
+      {
+        label: 'Submit a code',
+        href: submissionsAvailable ? '/submit/' : '/contact/?topic=Code%20submission',
+      },
     ],
   },
   {
@@ -199,4 +217,3 @@ export const consentVendors = [
     ? [{ name: operations.services.advertising.provider, purpose: 'Advertising' }]
     : []),
 ] as const;
-import { operations } from './operations';

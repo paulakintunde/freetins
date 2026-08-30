@@ -105,11 +105,17 @@ const staticRoutes: RouteDefinition[] = [
   },
   {
     path: '/submit/', routeId: 'submit', kind: 'submit', title: 'Submit a code | Freetins', heading: 'Submit a code',
-    description: 'Submission intake is not active yet. Use the published contact address for corrections.', eyebrow: 'Community', noindex: true,
+    description: operations.services.submissions.enabled && operations.services.submissions.endpoint
+      ? 'Submit a game code and the source where it was published for editorial review.'
+      : 'Submission intake is not active yet. Use the published contact address for corrections.',
+    eyebrow: 'Community', noindex: true,
   },
   {
     path: '/alerts/', routeId: 'alerts', kind: 'alerts', title: 'Code alerts | Freetins', heading: 'Know before the code expires',
-    description: 'Alert delivery is not active yet. This page explains the launch requirement.', noindex: true,
+    description: operations.services.alerts.enabled && operations.services.alerts.subscriptionEndpoint
+      ? 'Choose games and subscribe through a configured Freetins alert channel.'
+      : 'Alert delivery is not active yet. This page explains the launch requirement.',
+    noindex: true,
   },
   {
     path: '/blog/', routeId: 'updates', kind: 'updates', title: fitTitle({ stem: 'How game codes and rewards actually work' }), heading: 'Blog',

@@ -104,10 +104,29 @@ test('recheckTargetDays is validated as a positive number and read by nothing el
 test('incomplete service activation is rejected', () => {
   const data = freshData();
   data.services.alerts.enabled = true;
+  data.services.submissions.enabled = true;
   data.services.advertising.enabled = true;
 
   assert.throws(() => validateOperations(data), /Enabled alerts service needs at least one channel/);
+  assert.throws(() => validateOperations(data), /Enabled submissions service needs an HTTPS endpoint/);
   assert.throws(() => validateOperations(data), /Enabled advertising needs a provider/);
+});
+
+test('the submissions service is required and fails closed', () => {
+  const missing = freshData();
+  delete missing.services.submissions;
+  assert.throws(() => validateOperations(missing), /services\.submissions\.enabled must be a boolean/);
+
+  const mistyped = freshData();
+  mistyped.services.submissions.enabled = 'true';
+  assert.throws(() => validateOperations(mistyped), /services\.submissions\.enabled must be a boolean/);
+
+  const enabled = freshData();
+  enabled.services.submissions = {
+    enabled: true,
+    endpoint: 'https://www.freetins.com/api/code-submission',
+  };
+  assert.doesNotThrow(() => validateOperations(enabled));
 });
 
 test('the reader-report flag is a required boolean', () => {

@@ -8,7 +8,14 @@ import { editorialArticles, getArticleByPath } from '../../data/articles';
 import { listAllDatasetPages, listDatasetPages, type DatasetPageSummary, type DatasetSection } from '../../lib/datasetPages';
 import { authorPerson, authorPersonId, authors, getAuthorBySlug, getSectionAuthor } from '../../data/authors';
 import { hubIntroFor } from '../../data/hub-intros';
-import { contactEmail, organizationId, websiteId } from '../../data/site';
+import {
+  alertsAvailable,
+  contactEmail,
+  featuredGameLinks,
+  organizationId,
+  submissionsAvailable,
+  websiteId,
+} from '../../data/site';
 import EntrySource from '../ui/EntrySource.astro';
 import {
   dailyLinkCatalogue,
@@ -27,7 +34,6 @@ import type { RouteDefinition } from '../../data/routes';
 import { gameTabsForSlug } from '../../data/game-tabs';
 import { datasetLinksForGame, gameRelatedLinks } from '../../data/interlinks';
 import { searchIndex } from '../../data/search';
-import { hotSearches } from '../../data/site';
 import {
   formatAbsoluteTimestamp,
   getCheatOperationalPage,
@@ -258,11 +264,11 @@ const legalCopy: Record<string, Array<[string, string]>> = {
 };
 
 const pageLinks: Record<string, Array<[string, string]>> = {
-  alerts: [['Manage alerts', '/alerts/'], ['Privacy', '/privacy/']],
+  alerts: [['Privacy', '/privacy/']],
   contact: [['How we verify', '/how-we-verify/'], ['Disclosure', '/disclosure/'], ['Blog', '/blog/']],
   search: [['Browse all codes', '/codes/'], ['All games A-Z', '/games/'], ['How we verify', '/how-we-verify/']],
   updates: [['How we verify', '/how-we-verify/'], ['Resources', '/resources/']],
-  notTracked: [['Request this game', '/submit/'], ['Browse every game', '/games/'], ['Search Freetins', '/search/']],
+  notTracked: [['Request this game', '/contact/?topic=Game%20request'], ['Browse every game', '/games/'], ['Search Freetins', '/search/']],
   guide: [['Guides', '/guides/'], ['Resources', '/resources/'], ['How we verify', '/how-we-verify/']],
 };
 
@@ -960,9 +966,9 @@ const routeSchemaNodes = [
             </noscript>
 
             <div class="search-shortcuts">
-              <span>Most searched</span>
-              {hotSearches.map((term) => (
-                <a href={`/search/?q=${encodeURIComponent(term)}`}>{term}</a>
+              <span>Popular games</span>
+              {featuredGameLinks.map((link) => (
+                <a href={link.href}>{link.label}</a>
               ))}
             </div>
           </div>
@@ -977,11 +983,26 @@ const routeSchemaNodes = [
     )}
 
     {definition.kind === 'alerts' && (
-      <section class="page-section content-boundary">{operations.services.alerts.enabled && operations.services.alerts.subscriptionEndpoint ? <div class="form-layout"><form method="post" action={operations.services.alerts.subscriptionEndpoint}><label>Your email<input type="email" name="contact" autocomplete="email" required /></label><button type="submit">Subscribe</button></form><aside><h2>Active channels</h2><p>{operations.services.alerts.channels.join(', ')}</p></aside></div> : <div class="data-empty"><strong>Alerts are configured but not active</strong><p>No contact details are collected. The form will appear only after a delivery channel and HTTPS subscription endpoint pass configuration validation.</p></div>}</section>
+      <section class="page-section content-boundary">{alertsAvailable ? <div class="form-layout"><form method="post" action={operations.services.alerts.subscriptionEndpoint ?? undefined}><label>Your email<input type="email" name="contact" autocomplete="email" required /></label><button type="submit">Subscribe</button></form><aside><h2>Active channels</h2><p>{operations.services.alerts.channels.join(', ')}</p></aside></div> : <div class="data-empty"><strong>Alerts are configured but not active</strong><p>No contact details are collected. The form will appear only after a delivery channel and HTTPS subscription endpoint pass configuration validation.</p></div>}</section>
     )}
 
     {definition.kind === 'submit' && (
-      <section class="page-section content-boundary"><div class="data-empty"><strong>Submission intake is not active</strong><p>No form data is collected or queued. For a correction to an existing page, email <a href={`mailto:${contactEmail}`}>{contactEmail}</a> with the page URL and source.</p></div></section>
+      <section class="page-section content-boundary">
+        {submissionsAvailable ? (
+          <div class="form-layout">
+            <form method="post" action={operations.services.submissions.endpoint ?? undefined}>
+              <label>Game name<input type="text" name="game" autocomplete="off" required /></label>
+              <label>Code<input type="text" name="code" autocomplete="off" required /></label>
+              <label>Publisher or source URL<input type="url" name="source" inputmode="url" required /></label>
+              <label>Your email, optional<input type="email" name="contact" autocomplete="email" /></label>
+              <button type="submit">Send for review</button>
+            </form>
+            <aside><h2>What happens next</h2><p>An editor checks the source and the exact code before adding a record. A submission never creates a verified label by itself.</p></aside>
+          </div>
+        ) : (
+          <div class="data-empty"><strong>Submission intake is not active</strong><p>No form data is collected or queued. Use <a href="/contact/?topic=Code%20submission">Contact</a> to send a code source or email <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p></div>
+        )}
+      </section>
     )}
 
     {definition.kind === 'notTracked' && (

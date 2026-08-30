@@ -1,14 +1,12 @@
 ---
 import Brand from '../../components/Brand.astro';
-import { operations } from '../../data/operations';
-import { drawerLinks, hotSearches } from '../../data/site';
+import { alertsAvailable, drawerLinks, featuredGameLinks } from '../../data/site';
 
 interface Props {
   currentPath?: string;
 }
 
 const { currentPath = '/' } = Astro.props;
-const alertsActive = operations.services.alerts.enabled;
 
 const normalizedCurrentPath = currentPath === '/index.html'
   ? '/'
@@ -41,9 +39,9 @@ const isActive = (href: string) => {
         <input id="drawer-query" name="q" type="search" placeholder="Search a game" />
         <button type="submit">Go</button>
       </form>
-      <div class="search-chips" aria-label="Most searched games">
-        {hotSearches.map((term) => (
-          <a href={`/search/?q=${encodeURIComponent(term)}`}>{term}</a>
+      <div class="search-chips" aria-label="Popular games">
+        {featuredGameLinks.map((link) => (
+          <a href={link.href}>{link.label}</a>
         ))}
       </div>
     </div>
@@ -57,15 +55,15 @@ const isActive = (href: string) => {
       ))}
     </nav>
 
-    <section class="push-prompt" data-push-prompt aria-labelledby="push-prompt-title">
-      <p class="push-title" id="push-prompt-title">{alertsActive ? 'Code alerts are active' : 'Code alerts are not active yet'}</p>
-      <p>{alertsActive
-        ? `Available channels: ${operations.services.alerts.channels.join(', ')}. Choose games and provide delivery details on the Alerts page.`
-        : 'The alert pathway is preserved, but no permission or contact detail is requested until a delivery service is configured.'}</p>
-      <div class="push-actions">
-        <a class="allow-button" href="/alerts/">{alertsActive ? 'Manage alerts' : 'See alert status'}</a>
-      </div>
-    </section>
+    {alertsAvailable && (
+      <section class="push-prompt" data-push-prompt aria-labelledby="push-prompt-title">
+        <p class="push-title" id="push-prompt-title">Code alerts are active</p>
+        <p>Choose games and provide delivery details on the Alerts page.</p>
+        <div class="push-actions">
+          <a class="allow-button" href="/alerts/">Manage alerts</a>
+        </div>
+      </section>
+    )}
 
     <div class="drawer-footer">
       <a href="/how-we-verify/">How we verify</a>

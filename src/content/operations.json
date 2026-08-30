@@ -5863,6 +5863,10 @@
       "channels": [],
       "subscriptionEndpoint": null
     },
+    "submissions": {
+      "enabled": false,
+      "endpoint": null
+    },
     "reports": {
       "enabled": true
     },

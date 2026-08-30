@@ -200,6 +200,12 @@ export interface ServiceConfiguration {
   checker: { enabled: boolean; scheduleMinutes: number | null };
   alerts: { enabled: boolean; channels: Array<'email' | 'discord'>; subscriptionEndpoint: string | null };
   /**
+   * The public code-submission intake. The footer points to Contact until both
+   * fields describe a usable service, so an inactive form is never promoted
+   * across the whole site.
+   */
+  submissions: { enabled: boolean; endpoint: string | null };
+  /**
    * Whether the reader-report control is rendered at all.
    *
    * It is configuration rather than a runtime probe, and that is the whole point.
@@ -574,6 +580,12 @@ export const validateOperations = (candidate: OperationalData) => {
   if (candidate.services.alerts.enabled) {
     if (candidate.services.alerts.channels.length === 0) errors.push('Enabled alerts service needs at least one channel');
     if (!candidate.services.alerts.subscriptionEndpoint || !isHttpsUrl(candidate.services.alerts.subscriptionEndpoint)) errors.push('Enabled alerts service needs an HTTPS subscriptionEndpoint');
+  }
+  if (typeof candidate.services.submissions?.enabled !== 'boolean') {
+    errors.push('services.submissions.enabled must be a boolean');
+  } else if (candidate.services.submissions.enabled
+    && (!candidate.services.submissions.endpoint || !isHttpsUrl(candidate.services.submissions.endpoint))) {
+    errors.push('Enabled submissions service needs an HTTPS endpoint');
   }
   /*
    * `reports` has no dependent field to check, so the rule is the type itself.
