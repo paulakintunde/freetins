@@ -1,0 +1,153 @@
+import type { EditorialArticle } from './types';
+
+const publication: Pick<
+  EditorialArticle,
+  'author' | 'authorPath' | 'publishedAt' | 'reviewedAt' | 'reviewLabel' | 'sections'
+> = {
+  author: 'Paul A',
+  authorPath: '/author/paul-a/',
+  publishedAt: '2026-08-30',
+  reviewedAt: '2026-08-30',
+  reviewLabel: 'Reviewed 30 August 2026',
+  sections: [],
+};
+
+export const cheatExpansionArticles: EditorialArticle[] = [
+  {
+    ...publication,
+    contentSlug: 'gta-san-andreas-cheats',
+    path: '/cheats/gta-san-andreas/',
+    routeId: 'gtaSanAndreasCheats',
+    section: 'cheats',
+    title: 'GTA San Andreas Cheats for PC, PS5 and Xbox | Freetins',
+    heading: 'GTA San Andreas cheats for PC, PlayStation and Xbox',
+    description: 'GTA San Andreas cheats organized by effect, platform and edition, with PC phrases, controller inputs, save warnings and fixes for codes that fail.',
+    eyebrow: 'Cheat sheet',
+    quickAnswer: 'Save in a separate slot, then enter cheats during normal gameplay. PC accepts typed phrases, while PlayStation, Xbox and Switch use controller sequences. Definitive Edition removes a small number of Classic cheats and disables achievements on a cheated save.',
+    faq: [
+      { question: 'What is the GTA San Andreas money cheat?', answer: 'On PC, type <code>HESOYAM</code> during gameplay. It gives CJ $250,000, full health and full armor. The equivalent controller sequence is listed in the platform table. It can be repeated, but use a separate save because Definitive Edition achievements can be affected.' },
+      { question: 'Do San Andreas cheats work on PS5 and Xbox Series X or S?', answer: 'Most original console combinations work in Definitive Edition on PS5, PS4, Xbox Series and Xbox One. A few engine-dependent cheats were removed, so the edition notes beside the tables matter. Enter sequences during gameplay with the d-pad, not while paused.' },
+      { question: 'Can I use GTA San Andreas cheats on Android or iPhone?', answer: 'The Definitive Edition mobile release can accept keyboard phrases when a physical keyboard is connected. Touch controls do not provide a dependable way to enter every controller combination, so mobile support varies by release and control setup.' },
+      { question: 'Why is a San Andreas cheat not working?', answer: 'Check that the game is not paused, use the d-pad for directions, enter the sequence quickly, and confirm whether the cheat survived the move to Definitive Edition. Reload a clean save before retrying because some world-state cheats conflict with missions or with each other.' },
+      { question: 'Can San Andreas cheats be turned off?', answer: 'Many toggles turn off when entered again, but riot, pedestrian and traffic-state cheats can persist or damage mission behavior. Reloading a save from before activation is the only dependable reset, which is why a dedicated cheat save is essential.' },
+    ],
+    sources: [
+      { label: 'GTA Base San Andreas PC reference', href: 'https://www.gtabase.com/gta-san-andreas/gta-san-andreas-cheats-pc-definitive-edition', description: 'PC phrases, alternatives and Definitive Edition compatibility notes.' },
+      { label: 'PC Gamer San Andreas platform reference', href: 'https://www.pcgamer.com/games/grand-theft-auto/san-andreas-cheats/', description: 'Current PC, PlayStation, Xbox and Switch input cross-check.' },
+    ],
+    related: [
+      { label: 'GTA Vice City cheats', href: '/cheats/gta-vice-city/', description: 'PC phrases and controller combinations for Vice City.' },
+      { label: 'GTA 5 cheats', href: '/cheats/gta-5/', description: 'Story Mode commands, phone numbers and platform inputs.' },
+    ],
+  },
+  {
+    ...publication,
+    contentSlug: 'gta-vice-city-cheats',
+    path: '/cheats/gta-vice-city/',
+    routeId: 'gtaViceCityCheats',
+    section: 'cheats',
+    title: 'GTA Vice City Cheats for PC, PS5 and Xbox | Freetins',
+    heading: 'GTA Vice City cheats for PC, PlayStation and Xbox',
+    description: 'GTA Vice City cheats grouped by effect and platform, including PC codes, controller inputs, Definitive Edition differences and save-safety advice.',
+    eyebrow: 'Cheat sheet',
+    quickAnswer: 'Type PC codes during gameplay or enter the matching controller sequence on console. Keep a clean save: pedestrian and riot cheats may not reverse safely, and Definitive Edition achievements can be disabled on the cheated save.',
+    faq: [
+      { question: 'Is there a money cheat in GTA Vice City?', answer: 'No. Vice City has health, armor, weapon, vehicle and wanted-level cheats, but no code that adds money. Claims such as <code>FULLCITYPEOPLEMINES</code> are fake. Property income, missions and hidden packages are the reliable money routes.' },
+      { question: 'Do Vice City cheats work in Definitive Edition?', answer: 'Most Classic codes remain available on PC, PlayStation, Xbox and Switch. Definitive Edition also adds Big Head Mode and, on supported builds, an invincibility phrase. Save first because some pedestrian and traffic effects cannot be cleanly toggled off.' },
+      { question: 'How do I enter Vice City cheats on PS5?', answer: 'Load the Definitive Edition, stay in normal gameplay, and press the PlayStation combination quickly using the d-pad for directions. Do not open the pause menu first. A confirmation appears when the sequence registers.' },
+      { question: 'Why do Vice City cheats stop missions working?', answer: 'Pedestrian riot, armed pedestrian and aggression cheats alter world behavior used by mission scripts. Reload a save made before the cheat. Turning the code off or saving afterward does not reliably restore every scripted character.' },
+      { question: 'Can Vice City cheats be used on mobile?', answer: 'Keyboard phrases can work with a connected physical keyboard on supported mobile releases. Touch-only input does not expose every console sequence, so availability depends on whether you are playing the Classic mobile port or Definitive Edition.' },
+    ],
+    sources: [
+      { label: 'GTA Base Vice City PC reference', href: 'https://www.gtabase.com/gta-vice-city/gta-vice-city-cheats-pc-definitive-edition', description: 'PC code list, false-code notes and Definitive Edition differences.' },
+      { label: 'Vandal Vice City PC reference', href: 'https://vandal.elespanol.com/en/grand-theft-auto-vice-city/grand-theft-auto-vice-city-pc-cheats.html', description: 'Independent Classic and Definitive Edition code cross-check.' },
+    ],
+    related: [
+      { label: 'GTA San Andreas cheats', href: '/cheats/gta-san-andreas/', description: 'Platform-labelled cheats for the next game in the trilogy.' },
+      { label: 'GTA 5 radio stations', href: '/guides/gta-5-radio-stations/', description: 'Every station and the music it plays.' },
+    ],
+  },
+  {
+    ...publication,
+    contentSlug: 'red-dead-redemption-2-cheats',
+    path: '/cheats/red-dead-redemption-2/',
+    routeId: 'redDeadRedemption2Cheats',
+    section: 'cheats',
+    title: 'Red Dead Redemption 2 Cheats and Newspaper Unlocks | Freetins',
+    heading: 'Red Dead Redemption 2 cheats and newspaper requirements',
+    description: 'All RDR2 cheat phrases with their effects and newspaper or story requirements, plus exact entry steps for PC, PlayStation and Xbox.',
+    eyebrow: 'Cheat sheet',
+    quickAnswer: 'Pause, open Settings, then open the Cheats menu and enter the phrase exactly. Some phrases work immediately; others remain locked until the required newspaper is owned. Activating a cheat blocks saving and trophies for that session.',
+    faq: [
+      { question: 'How do you enter cheats in Red Dead Redemption 2?', answer: 'Pause the game, open Settings, then press Triangle on PlayStation or Y on Xbox to open the Cheats list. Press the same button again to enter a phrase. On PC, use the prompt shown in the lower-right corner of Settings.' },
+      { question: 'Why does RDR2 say a cheat is invalid?', answer: 'Retype the phrase with the same words and punctuation, then check its newspaper requirement. Buying the right paper before its story issue becomes available will not work because the later issue does not exist yet.' },
+      { question: 'Can you save after using cheats in RDR2?', answer: 'No. Once a cheat is activated, manual saving and progress saving are disabled for the session, and trophies or achievements cannot be earned. Load the manual save you made before entering the Cheats menu to resume normal progress.' },
+      { question: 'What is the RDR2 money cheat?', answer: '<code>Greed is now a virtue</code> adds $500 each time it is activated and has no newspaper requirement. The money exists only in the unsavable cheat session, so it cannot permanently fund a normal playthrough.' },
+      { question: 'Do RDR2 cheats work on PS5 and Xbox Series consoles?', answer: 'Yes through backward compatibility. The menu path and phrases are the same as on PS4 and Xbox One. The PC release uses the same phrases and requirements.' },
+    ],
+    sources: [
+      { label: 'PowerPyx RDR2 cheat reference', href: 'https://www.powerpyx.com/red-dead-redemption-2-cheats/', description: 'Phrase, effect and newspaper-requirement cross-check.' },
+      { label: 'Red Dead Wiki cheat reference', href: 'https://reddead.fandom.com/wiki/Cheats_in_Redemption_2', description: 'Independent menu, restriction and unlock cross-check.' },
+    ],
+    related: [
+      { label: 'GTA 5 cheats', href: '/cheats/gta-5/', description: 'Rockstar Story Mode cheats with platform inputs.' },
+      { label: 'Skyrim console commands', href: '/cheats/skyrim/', description: 'PC commands for player, inventory and quest control.' },
+    ],
+  },
+  {
+    ...publication,
+    contentSlug: 'skyrim-console-commands',
+    path: '/cheats/skyrim/',
+    routeId: 'skyrimConsoleCommands',
+    section: 'cheats',
+    title: 'Skyrim Console Commands, Item IDs and Cheats | Freetins',
+    heading: 'Skyrim console commands, item IDs and safe fixes',
+    description: 'Useful Skyrim console commands for gold, items, skills, quests, NPCs and travel, with target selection, examples and warnings for Special and Anniversary Edition.',
+    eyebrow: 'Command guide',
+    quickAnswer: 'On Windows PC, press the console key below Esc, enter a command, and press Enter. Select an NPC or object before target commands. Console commands are unavailable on PlayStation, Xbox and Switch, where curated Creations are the supported alternative.',
+    faq: [
+      { question: 'How do I open the Skyrim console?', answer: 'On Windows PC, press the key below Esc, usually tilde or grave. Regional layouts may use apostrophe, section or another key in that position. The console is not available on PlayStation, Xbox or Switch.' },
+      { question: 'What is the Skyrim gold command?', answer: 'Enter <code>player.additem 0000000f 1000</code> to add 1,000 gold. Replace 1000 with the amount you want. Leading zeroes in the gold form ID can be omitted, but keeping the full ID makes the command easier to recognize.' },
+      { question: 'Do Skyrim console commands disable achievements?', answer: 'Bethesda warns that developer-console use can stop achievements in affected sessions. Make a manual save, use commands only when necessary, close the game, and relaunch before returning to an achievement-focused save.' },
+      { question: 'How do I find an NPC or item ID in Skyrim?', answer: 'Open the console and click the visible target to obtain its reference ID. For inventory items, use <code>help "item name" 4</code> and Page Up or Page Down to search the results. Base IDs and reference IDs are not interchangeable.' },
+      { question: 'What command fixes a broken Skyrim quest?', answer: 'Start with <code>sqt</code> and <code>getstage [QuestID]</code> to diagnose the active stage. Use <code>setstage [QuestID] [Stage]</code> only after checking the correct stage. Avoid <code>caqs</code>, which attempts to complete every quest and can damage the save.' },
+    ],
+    sources: [
+      { label: 'UESP Skyrim console reference', href: 'https://en.uesp.net/wiki/Skyrim:Console', description: 'Community-maintained command syntax and target behavior.' },
+      { label: 'PC Gamer Skyrim command reference', href: 'https://www.pcgamer.com/skyrim-console-commands-let-you-cheat-and-do-other-stuff/', description: 'Current Special and Anniversary Edition command cross-check.' },
+      { label: 'Bethesda achievement support', href: 'https://help.bethesda.net/app/answers/detail/a_id/18255/', description: 'Official warning about developer-console mode and achievements.' },
+    ],
+    related: [
+      { label: 'Fallout 4 console commands', href: '/cheats/fallout-4/', description: 'Bethesda console syntax adapted to the Commonwealth.' },
+      { label: 'Baldur\'s Gate 3 cheats', href: '/cheats/baldurs-gate-3/', description: 'Official mods and unsupported PC-only options.' },
+    ],
+  },
+  {
+    ...publication,
+    contentSlug: 'fallout-4-console-commands',
+    path: '/cheats/fallout-4/',
+    routeId: 'fallout4ConsoleCommands',
+    section: 'cheats',
+    title: 'Fallout 4 Console Commands, Item IDs and Cheats | Freetins',
+    heading: 'Fallout 4 console commands, item IDs and safe fixes',
+    description: 'Fallout 4 console commands for caps, items, perks, settlements, NPCs and quests, with working examples, ID lookup and save-safety warnings.',
+    eyebrow: 'Command guide',
+    quickAnswer: 'On Windows PC, press the console key below Esc, type a command and press Enter. Click an object before target commands. The developer console is unavailable on PlayStation, Xbox and Switch, and it is disabled in Survival mode.',
+    faq: [
+      { question: 'How do I open the console in Fallout 4?', answer: 'On Windows PC, press tilde or the key below Esc. Keyboard layouts may map it to grave or apostrophe. The console is unavailable on PlayStation, Xbox and Switch, and normal console access is disabled in Survival mode.' },
+      { question: 'What is the Fallout 4 caps command?', answer: 'Enter <code>player.additem 0000000f 1000</code> to add 1,000 caps. Replace 1000 with another amount. The form ID is the same familiar currency ID used by Bethesda Game Studios titles.' },
+      { question: 'How do I find an item ID in Fallout 4?', answer: 'Use <code>help "item name" 4</code> and Page Up or Page Down to inspect results. Click a placed object with the console open to see its reference ID. DLC item IDs can begin with a load-order prefix that differs between installations.' },
+      { question: 'Do Fallout 4 console commands disable achievements?', answer: 'Bethesda support says entering developer mode can flag subsequent progress. Keep a clean manual save, avoid saving over it after console use, then fully restart the game before returning to achievement play.' },
+      { question: 'Can I use Fallout 4 console commands on PS5 or Xbox?', answer: 'No. The developer console is a Windows PC feature. Console players can use approved Creations, but mods can affect achievements and do not provide the same direct command interface.' },
+    ],
+    sources: [
+      { label: 'Fallout Wiki command reference', href: 'https://fallout.fandom.com/wiki/Fallout_4_console_commands', description: 'Command syntax, platform limitations and target behavior.' },
+      { label: 'PC Gamer Fallout 4 commands', href: 'https://www.pcgamer.com/fallout-4-cheats-and-console-commands-can-turn-you-into-a-superhero/', description: 'Current command and practical-use cross-check.' },
+      { label: 'Bethesda developer-mode support', href: 'https://help.bethesda.net/app/answers/detail/a_id/41891', description: 'Official developer-mode and achievement warning.' },
+    ],
+    related: [
+      { label: 'Skyrim console commands', href: '/cheats/skyrim/', description: 'The related Creation Engine command guide.' },
+      { label: 'The Sims 4 cheats', href: '/cheats/the-sims-4/', description: 'Money, skill, career and build commands.' },
+    ],
+  },
+];
