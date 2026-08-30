@@ -6,6 +6,9 @@ interface Props {
   type?: 'button' | 'submit';
   fullWidth?: boolean;
   id?: string;
+  /** Passed through on the anchor form only; ignored when the button renders a <button>. */
+  rel?: string;
+  target?: string;
 }
 
 const {
@@ -15,13 +18,15 @@ const {
   type = 'button',
   fullWidth = false,
   id,
+  rel,
+  target,
 } = Astro.props;
 const classes = ['button', variant, size, { 'full-width': fullWidth }];
 ---
 
 {
   href ? (
-    <a id={id} class:list={classes} href={href}><slot /></a>
+    <a id={id} class:list={classes} href={href} rel={rel} target={target}><slot /></a>
   ) : (
     <button id={id} class:list={classes} type={type}><slot /></button>
   )

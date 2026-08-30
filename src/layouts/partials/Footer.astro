@@ -1,5 +1,6 @@
 ---
 import Brand from '../../components/Brand.astro';
+import PreferredSource from '../../components/ui/PreferredSource.astro';
 import { footerColumns } from '../../data/site';
 ---
 
@@ -9,6 +10,7 @@ import { footerColumns } from '../../data/site';
       <div class="brand-block">
         <Brand compact />
         <p>Source-backed codes, links and editorial guides. Every entry shows its state and the date it was recorded.</p>
+        <PreferredSource variant="inline" />
       </div>
 
       {footerColumns.map((column) => (

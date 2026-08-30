@@ -1,0 +1,109 @@
+---
+import Button from './Button.astro';
+import { preferredSourceUrl } from '../../data/site';
+
+/**
+ * Google's "preferred sources" opt-in, rendered as a plain anchor.
+ *
+ * The link and the reasoning for taking the deeplink over Google's `publisher.js`
+ * button live on `preferredSourceUrl` in `src/data/site.ts`. What matters here is
+ * that this component adds no script, no third-party request on a page view and no
+ * CSP allowance: it is an anchor, and nothing leaves the reader's browser until
+ * they click it.
+ *
+ * Two shapes, one link:
+ *   - `card`   the default. A bordered block for the end of an article, where a
+ *              reader who has just got what they came for is the one being asked.
+ *   - `inline` a single text link, for the footer, where a block would be noise.
+ *
+ * The card takes its colours from the semantic tokens rather than from literals, so
+ * it reads correctly on the dark site chrome and inside `.article-reading-surface`,
+ * which overrides those same tokens to a light scope.
+ */
+interface Props {
+  variant?: 'card' | 'inline';
+}
+
+const { variant = 'card' } = Astro.props;
+
+/**
+ * `rel="noopener"` matches every other outbound link on the site. No `target`: this
+ * is a deliberate trip to the reader's own Google settings, not a reference they
+ * are consulting beside the page, so replacing the tab is the honest behaviour and
+ * it leaves the back button working.
+ */
+const linkRel = 'noopener';
+---
+
+{
+  variant === 'inline' ? (
+    <a class="preferred-source-inline" href={preferredSourceUrl} rel={linkRel}>
+      Add Freetins to Google
+    </a>
+  ) : (
+    <aside class="preferred-source-card" aria-labelledby="preferred-source-heading">
+      <p class="eyebrow">Google Search</p>
+      <h2 id="preferred-source-heading">Prefer Freetins in your results</h2>
+      <p class="body">
+        Google lets you name the sites you want to see more of. Choose Freetins and our
+        pages get priority placement in your Top Stories, carrying a preferred label, and
+        can be highlighted in AI Overviews. The setting lives in your Google account, not
+        ours, and you can change it there whenever you like.
+      </p>
+      <Button href={preferredSourceUrl} rel={linkRel} size="sm">Add Freetins to Google</Button>
+    </aside>
+  )
+}
+
+<style>
+  .preferred-source-inline {
+    display: inline-flex;
+    min-height: 32px;
+    align-items: center;
+    width: fit-content;
+    margin-top: 12px;
+    color: var(--text-brand);
+    font: 600 13.5px / 1.4 var(--font-core);
+    text-decoration: none;
+  }
+
+  .preferred-source-inline:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+  }
+
+  .preferred-source-card {
+    margin-top: clamp(28px, 4vw, 44px);
+    border: 1px solid var(--border-strong);
+    /* The 3px edge is the only ornament: it borrows the CTA green so the block reads
+       as an invitation rather than as another evidence panel. */
+    border-left-width: 3px;
+    border-left-color: var(--green-600);
+    background: var(--surface-raised);
+    padding: clamp(18px, 2.4vw, 24px);
+  }
+
+  .preferred-source-card .eyebrow {
+    margin: 0 0 8px;
+    color: var(--text-caption);
+    font: 700 var(--fs-caption) / 1.4 var(--font-core);
+    letter-spacing: var(--ls-eyebrow);
+    text-transform: uppercase;
+  }
+
+  .preferred-source-card h2 {
+    max-width: 28ch;
+    margin: 0 0 10px;
+    color: var(--text-primary);
+    font: 650 var(--fs-h4) / 1.2 var(--font-display);
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  .preferred-source-card .body {
+    max-width: 62ch;
+    margin: 0 0 18px;
+    color: var(--text-secondary);
+    font: 400 var(--fs-body-sm) / 1.62 var(--font-core);
+  }
+</style>

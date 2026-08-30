@@ -78,6 +78,31 @@ export const edgeAnalytics = {
 export const defaultSocialImage = '/og/freetins-home-game-codes.jpg';
 export const defaultSocialImageAlt = 'Freetins game codes and daily reward links';
 
+/**
+ * Google's source-preferences deeplink for this site.
+ *
+ * Google lets a reader name the sites they want to see more of; a chosen site gets
+ * priority placement in that reader's Top Stories and can be highlighted in AI
+ * Overviews. The setting lives in the reader's Google account, never here.
+ *
+ * Google offers two ways to expose it. The first loads `publisher.js` from
+ * news.google.com and renders a Google-styled button, which would mean a
+ * third-party script on every page view, a `script-src` and `frame-src` opening in
+ * `public/_headers`, and a control this site cannot colour. The second is this
+ * deeplink, which Google documents as a first-class option and which is a plain
+ * anchor: no script, no request until a reader clicks, no CSP change, and a button
+ * that carries the site's own tokens. The second is what the site uses.
+ *
+ * The host is derived rather than typed, for the same reason every other absolute
+ * URL here is: the canonical property, the backlinks and the Search Console
+ * property are all on `www`, and a host change must not leave this link pointing at
+ * a different site than the canonical tag does.
+ *
+ * @see https://developers.google.com/search/docs/appearance/preferred-sources
+ */
+export const preferredSourceUrl =
+  `https://www.google.com/preferences/source?q=${new URL(siteOrigin).host}`;
+
 export const organizationId = `${siteOrigin}/#org`;
 export const websiteId = `${siteOrigin}/#site`;
 

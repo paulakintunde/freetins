@@ -10,6 +10,7 @@
  */
 import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PreferredSource from '../ui/PreferredSource.astro';
 /*
  * The article shell, shared with the editorial renderer. It lives in a
  * stylesheet rather than a scoped block here because a scoped block only ever
@@ -297,6 +298,8 @@ const schemaNodes = [
               ))}
             </div>
           </section>
+
+          <PreferredSource />
         </div>
       </div>
     </div>
