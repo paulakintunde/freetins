@@ -205,21 +205,33 @@ const guideRoutes: RouteDefinition[] = ([
   ['sprinkler-placement-that-works', 'Sprinkler placement that actually works'],
   ['what-to-buy-first-from-the-gear-shop', 'What to buy first from the gear shop'],
   ['pet-setup-for-passive-income', 'Pet setup for passive income'],
-] as const).map(([slug, heading]) => ({
-  path: `/guides/${slug}/`,
-  routeId: 'guide',
-  kind: 'guide' as const,
-  title: `${heading} | Freetins`,
-  heading,
-  description: `${heading} is configured for editorial review but is not published yet.`,
-  name: 'Grow a Garden',
-  slug,
-  noindex: true,
-}));
+] as const).map(([slug, heading]) => {
+  const path = `/guides/${slug}/`;
+  const article = getArticleByPath(path);
 
-const generatedCheatPaths = new Set(cheatRoutes.map((route) => route.path));
+  return {
+    path,
+    routeId: 'guide',
+    kind: 'guide' as const,
+    title: article?.title ?? `${heading} | Freetins`,
+    heading: article?.heading ?? heading,
+    description: article?.description ?? `${heading} is configured for editorial review but is not published yet.`,
+    name: 'Grow a Garden',
+    slug,
+    noindex: !article,
+  };
+});
+
+const generatedEditorialPaths = new Set([
+  ...cheatRoutes,
+  ...guideRoutes,
+  ...gearCategoryRoutes,
+  ...gearProductRoutes,
+].map((route) => route.path));
+for (const game of dailyLinkCatalogue) generatedEditorialPaths.add(`/daily/${game.slug}/`);
+
 const articleRoutes: RouteDefinition[] = editorialArticles
-  .filter((article) => !generatedCheatPaths.has(article.path))
+  .filter((article) => !generatedEditorialPaths.has(article.path))
   .map((article) => ({
   path: article.path,
   routeId: article.routeId,
