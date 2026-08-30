@@ -11,6 +11,7 @@ import { importedEditorialArticles } from './imported';
 import { cheatExpansionArticles } from './cheat-expansion';
 import { guideExpansionArticles } from './guide-expansion';
 import { dailyExpansionArticles } from './daily-expansion';
+import { gearExpansionArticles } from './gear-expansion';
 import type { EditorialArticle } from './types';
 
 export type { ArticleLink, EditorialArticle } from './types';
@@ -34,6 +35,7 @@ export const editorialArticles: EditorialArticle[] = [
   ...cheatExpansionArticles,
   ...guideExpansionArticles,
   ...dailyExpansionArticles,
+  ...gearExpansionArticles,
   ...legalArticles,
 ];
 

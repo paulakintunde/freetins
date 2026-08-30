@@ -47,7 +47,7 @@ export const authors: Author[] = [
       'Runs the verification and corrections process behind every published Freetins page, and owns the evidence standard the site is held to.',
     remit:
       'Paul sets the evidence standard, signs off publication states, and owns every page that does not belong to a section specialist: game codes, daily reward links, resources and the site policy pages. Corrections that cross sections come to him.',
-    sections: ['codes', 'resources', 'daily', 'legal', 'about', 'blog'],
+    sections: ['codes', 'resources', 'daily', 'gear', 'legal', 'about', 'blog'],
     path: '/author/paul-a/',
   },
   {
@@ -117,6 +117,7 @@ const sectionExpertise: Record<AuthoredSection, string> = {
   resources: 'Editorial resource directories',
   cheats: 'Cheat codes and console commands',
   daily: 'Daily reward link records',
+  gear: 'Gaming accessory compatibility and buying guides',
   blog: 'Game code reporting',
   legal: 'Site policy and disclosure',
   about: 'Editorial standards and corrections',

@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import { articleArtwork } from '../../data/article-images';
 import type { EditorialArticle as EditorialArticleData, ArticleLink } from '../../data/articles';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PreferredSource from '../ui/PreferredSource.astro';
 /*
  * The article shell, shared with the dataset renderer. It lives in a
  * stylesheet rather than a scoped block because a scoped block only ever
@@ -65,6 +66,7 @@ const sectionLabels = {
   resources: 'Resources',
   cheats: 'Cheats',
   daily: 'Daily links',
+  gear: 'Gear',
   blog: 'Blog',
   legal: 'Legal',
   about: 'About',
@@ -75,13 +77,21 @@ const sectionPaths = {
   resources: '/resources/',
   cheats: '/cheats/',
   daily: '/daily/',
+  gear: '/resources/',
   blog: '/blog/',
   legal: '/about/',
   about: '/about/',
 };
 const sectionLabel = sectionLabels[article.section];
 const sectionPath = sectionPaths[article.section];
-const crumbs = article.section === 'resources' || article.section === 'legal' || article.section === 'about'
+const crumbs = article.section === 'gear'
+  ? [
+      { label: 'Home', href: '/' },
+      { label: 'Resources', href: '/resources/' },
+      ...(article.parent ? [article.parent] : []),
+      { label: article.heading, href: article.path },
+    ]
+  : article.section === 'resources' || article.section === 'legal' || article.section === 'about'
   ? [{ label: 'Home', href: '/' }, { label: sectionLabel, href: article.path }]
   : [
       { label: 'Home', href: '/' },
@@ -359,6 +369,8 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
             </div>
           </section>
         )}
+
+        <PreferredSource />
       </div>
       </div>
 

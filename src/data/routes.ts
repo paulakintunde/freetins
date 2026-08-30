@@ -165,17 +165,22 @@ const gearCategories = [
   ['pc-and-console', 'PC and console gear'],
 ] as const;
 
-const gearCategoryRoutes: RouteDefinition[] = gearCategories.map(([slug, name]) => ({
-  path: `/gear/${slug}/`,
-  routeId: 'gear',
-  kind: 'gearCategory',
-  title: `${name} | Freetins`,
-  heading: name,
-  description: `Source-linked ${name.toLowerCase()} research appears here when a checked product record is published.`,
-  name,
-  slug,
-  noindex: !operations.products.some((product) => product.category === slug),
-}));
+const gearCategoryRoutes: RouteDefinition[] = gearCategories.map(([slug, name]) => {
+  const path = `/gear/${slug}/`;
+  const article = getArticleByPath(path);
+
+  return {
+    path,
+    routeId: 'gear',
+    kind: 'gearCategory',
+    title: article?.title ?? `${name} | Freetins`,
+    heading: article?.heading ?? name,
+    description: article?.description ?? `Source-linked ${name.toLowerCase()} research appears here when a checked product record is published.`,
+    name,
+    slug,
+    noindex: !operations.products.some((product) => product.category === slug) && !article,
+  };
+});
 
 const gearProductRoutes: RouteDefinition[] = ([
   ['roblox', 'roblox-gift-card-25-cad', 'Roblox gift card, 25 CAD'],
@@ -184,19 +189,24 @@ const gearProductRoutes: RouteDefinition[] = ([
   ['mobile', 'phone-cooling-clip', 'Phone cooling clip'],
   ['pc-and-console', 'mechanical-keypad-24-key', 'Mechanical keypad, 24 key'],
   ['pc-and-console', 'charging-dock-two-bay', 'Charging dock, two bay'],
-] as const).map(([category, slug, name]) => ({
-  path: `/gear/${category}/${slug}/`,
-  routeId: 'gearItem',
-  kind: 'gearProduct' as const,
-  title: `${name} | Freetins`,
-  heading: name,
-  description: getProduct(slug)
-    ? `Checked price, merchant source and editorial rationale for ${name.toLowerCase()}.`
-    : `${name} is configured for product research, but no checked listing is published yet.`,
-  name,
-  slug,
-  noindex: !getProduct(slug),
-}));
+] as const).map(([category, slug, name]) => {
+  const path = `/gear/${category}/${slug}/`;
+  const article = getArticleByPath(path);
+
+  return {
+    path,
+    routeId: 'gearItem',
+    kind: 'gearProduct' as const,
+    title: article?.title ?? `${name} | Freetins`,
+    heading: article?.heading ?? name,
+    description: article?.description ?? (getProduct(slug)
+      ? `Checked price, merchant source and editorial rationale for ${name.toLowerCase()}.`
+      : `${name} is configured for product research, but no checked listing is published yet.`),
+    name,
+    slug,
+    noindex: !getProduct(slug) && !article,
+  };
+});
 
 const guideRoutes: RouteDefinition[] = ([
   ['every-mutation-and-what-triggers-it', 'Every mutation in Grow a Garden and what triggers it'],

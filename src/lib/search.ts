@@ -11,6 +11,7 @@ export type SearchGroup =
   | 'Cheats'
   | 'Answers'
   | 'Guides'
+  | 'Gear'
   | 'Resources'
   | 'Blog'
   | 'Site';
