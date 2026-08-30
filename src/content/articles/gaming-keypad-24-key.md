@@ -4,6 +4,8 @@ A compact grid of 24 mechanical keys can handle movement, modifiers and a layer 
 
 Current dedicated gaming keypads often use 25 to 32 inputs because the layout includes a thumb pad, scroll wheel or modifiers. The better buying question is therefore not “does it have exactly 24 keys?” It is “can my hand reach the controls I need, with software and switches I trust?”
 
+This is one part of the broader [PC and console gear compatibility guide](/gear/pc-and-console/), where platform support comes before a product label.
+
 ## Start with the action map
 
 List the controls used in the game before looking at products:

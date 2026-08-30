@@ -23,7 +23,7 @@ export const dailyExpansionArticles: EditorialArticle[] = [
     heading: 'Bingo Blitz free credits and official reward sources',
     description: 'No unexpired Bingo Blitz credit link is listed right now. Use the official link pattern, claim steps, in-game credit sources and failure fixes safely.',
     eyebrow: 'Daily rewards guide',
-    quickAnswer: 'Freetins does not currently list an unexpired Bingo Blitz reward link. Official freebie links use the <code>link.bingoblitz.com</code> domain and are shared through Bingo Blitz channels. You can still use daily rewards, Doug\'s Rewards Wheel, the Gift Center, quests and official promo codes.',
+    quickAnswer: 'Freetins does not currently list an unexpired Bingo Blitz reward link. Official freebie links use the link.bingoblitz.com domain and are shared through Bingo Blitz channels. You can still use daily rewards, Doug\'s Rewards Wheel, the Gift Center, quests and official promo codes.',
     faq: [
       { question: 'Are there any Bingo Blitz free credit links today?', answer: 'No unexpired reward link is currently recorded on this Freetins page. Check the official Bingo Blitz free-credits page and verified social channels; never treat a copied reward amount as current without its source URL.' },
       { question: 'What domain do official Bingo Blitz freebie links use?', answer: 'Bingo Blitz support says social freebie links begin with <code>https://link.bingoblitz.com/</code>. A lookalike domain, survey page or login form is not the documented claim path.' },

@@ -6,6 +6,8 @@ PlayStation DualSense controllers contain rechargeable batteries and can use a d
 
 Choose by exact controller model before comparing charge speed, lighting or price.
 
+If the dock is one part of a larger setup, the [PC and console gear guide](/gear/pc-and-console/) applies the same compatibility-first test to headsets and keypads.
+
 ## The safest PS5 reference: Sony's DualSense station
 
 PlayStation currently states that its official DualSense Charging Station accepts up to two DualSense or DualSense Edge wireless controllers. It uses a click-in design, includes an AC adapter and power cord, and charges without taking the PS5's USB ports.

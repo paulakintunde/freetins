@@ -2,6 +2,8 @@
 
 A Canadian $25 Roblox gift card adds Roblox Credit to the account that redeems it. That credit can be used for Robux or other eligible Roblox services under the current purchase flow. It is not safest to promise one permanent Robux number.
 
+The [Roblox gear and gift-card guide](/gear/roblox/) explains when a Roblox-specific purchase is useful and when ordinary platform-compatible hardware is the better gift.
+
 Robux pricing, Premium purchase options and gift-card bonuses can change. The correct amount is the one Roblox shows while the signed-in user spends the credit. A frozen conversion table can become wrong while the card's face value remains $25 CAD.
 
 ## Where to buy it safely in Canada

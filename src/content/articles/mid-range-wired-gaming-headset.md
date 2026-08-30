@@ -6,6 +6,8 @@ A four-pole 3.5 mm plug carries stereo audio and microphone through many console
 
 Write down the exact devices and ports before comparing products. If a manufacturer names a platform only under one connection mode, do not assume the other cable behaves the same way.
 
+For the wider accessory decision, start with the [PC and console gear buying guide](/gear/pc-and-console/) before narrowing the shortlist to audio.
+
 ## What mid-range should buy
 
 A useful mid-range wired headset should provide:
