@@ -102,7 +102,7 @@ export const cheatExpansionArticles: EditorialArticle[] = [
     section: 'cheats',
     title: 'Skyrim Console Commands, Item IDs and Cheats | Freetins',
     heading: 'Skyrim console commands, item IDs and safe fixes',
-    description: 'Useful Skyrim console commands for gold, items, skills, quests, NPCs and travel, with target selection, examples and warnings for Special and Anniversary Edition.',
+    description: 'Skyrim console commands for gold, items, skills, quests, NPCs and travel, with target selection, examples and warnings for Special and Anniversary Edition.',
     eyebrow: 'Command guide',
     quickAnswer: 'On Windows PC, press the console key below Esc, enter a command, and press Enter. Select an NPC or object before target commands. Console commands are unavailable on PlayStation, Xbox and Switch, where curated Creations are the supported alternative.',
     faq: [

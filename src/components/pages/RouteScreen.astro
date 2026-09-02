@@ -562,7 +562,7 @@ const routeSchemaNodes = [
                   alt={requireArtwork(gameArtwork, item.slug, 'game').alt}
                   formats={['avif']}
                   fallbackFormat="webp"
-                  widths={[320, 528, 792, 1056]}
+                  widths={[320, 528, 792]}
                   sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 50vw, 25vw"
                   loading="lazy"
                   decoding="async"
@@ -623,7 +623,7 @@ const routeSchemaNodes = [
                     alt={art.alt}
                     formats={['avif']}
                     fallbackFormat="webp"
-                    widths={[320, 528, 792, 1056]}
+                    widths={[320, 528, 792]}
                     sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), (max-width: 1199px) 50vw, 33vw"
                     loading="lazy"
                     decoding="async"
@@ -646,7 +646,7 @@ const routeSchemaNodes = [
                     alt={requireArticleArtwork(item.routeId).alt}
                     formats={['avif']}
                     fallbackFormat="webp"
-                    widths={[320, 528, 792, 1056]}
+                    widths={[320, 528, 792]}
                     sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 50vw, 33vw"
                     loading="lazy"
                     decoding="async"
@@ -772,7 +772,7 @@ const routeSchemaNodes = [
                   alt={requireArticleArtwork(item.routeId).alt}
                   formats={['avif']}
                   fallbackFormat="webp"
-                  widths={[320, 528, 792, 1056]}
+                  widths={[320, 528, 792]}
                   sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 50vw, 33vw"
                   loading="lazy"
                   decoding="async"
@@ -842,7 +842,7 @@ const routeSchemaNodes = [
         <h2>Checked product records</h2>
         {operations.products.filter((item) => item.category === definition.slug).length ? <div class="card-grid">{operations.products.filter((item) => item.category === definition.slug).map((item) => {
           const art = requireArtwork(gearArtwork, item.slug, 'gear product');
-          return <a class="media-card" href={`/gear/${item.category}/${item.slug}/`}><div class="media"><Picture src={art.src} alt={art.alt} formats={['avif']} fallbackFormat="webp" widths={[320, 528, 792, 1056]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), (max-width: 1199px) 50vw, 33vw" loading="lazy" decoding="async" /></div><div class="card-copy"><h3>{item.name}</h3><p>{item.price} {item.currency} · checked {formatAbsoluteTimestamp(item.checkedAt)}</p></div></a>;
+          return <a class="media-card" href={`/gear/${item.category}/${item.slug}/`}><div class="media"><Picture src={art.src} alt={art.alt} formats={['avif']} fallbackFormat="webp" widths={[320, 528, 792]} sizes="(max-width: 767px) calc(100vw - (2 * var(--page-gutter))), (max-width: 1199px) 50vw, 33vw" loading="lazy" decoding="async" /></div><div class="card-copy"><h3>{item.name}</h3><p>{item.price} {item.currency} · checked {formatAbsoluteTimestamp(item.checkedAt)}</p></div></a>;
         })}</div> : <div class="data-empty"><strong>No product recommendation is published</strong><p>The category remains configured. A card appears only after price, currency, merchant URL, check timestamp and disclosure pass validation.</p></div>}
       </section>
     )}
@@ -867,7 +867,7 @@ const routeSchemaNodes = [
                   alt={requireArticleArtwork(item.routeId).alt}
                   formats={['avif']}
                   fallbackFormat="webp"
-                  widths={[320, 528, 792, 1056]}
+                  widths={[320, 528, 792]}
                   sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 50vw, 33vw"
                   loading="lazy"
                   decoding="async"
@@ -897,7 +897,7 @@ const routeSchemaNodes = [
                       alt={art.alt}
                       formats={['avif']}
                       fallbackFormat="webp"
-                      widths={[320, 528, 792, 1056]}
+                      widths={[320, 528, 792]}
                       sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 50vw, 33vw"
                       loading="lazy"
                       decoding="async"

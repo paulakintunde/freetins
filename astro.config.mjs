@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import cloudflare from '@astrojs/cloudflare';
@@ -205,8 +205,9 @@ const recordedLastmod = () => {
   let outDir = null;
   const cache = new Map();
 
-  const readFor = (pageUrl) => {
-    const { pathname } = new URL(pageUrl);
+  const readFor = (pageUrl) => readForPath(new URL(pageUrl).pathname);
+
+  const readForPath = (pathname) => {
     if (cache.has(pathname)) return cache.get(pathname);
 
     let latest;
@@ -240,6 +241,83 @@ const recordedLastmod = () => {
     return latest;
   };
 
+  /*
+   * A hub's own date, taken from the newest page it lists.
+   *
+   * Hubs and author pages carry no `dateModified` of their own and so got no
+   * `<lastmod>`, which left the seven section indexes and the four author profiles
+   * undated - the pages a crawler most benefits from being told about, because they
+   * change whenever anything beneath them does.
+   *
+   * This invents nothing. A listing changed when one of the things it lists changed,
+   * so the newest child's recorded date is the hub's date as a matter of fact, not
+   * of derivation. A hub whose children all lack a date still gets none.
+   *
+   * Author pages are the same shape with a different relation - the newest article
+   * they byline - but the byline is not recoverable from a path, so they are matched
+   * by reading each built page for the author's id. That is one directory scan at
+   * build time, cached like everything else here.
+   */
+  const newestUnder = (predicate) => {
+    let latest;
+    for (const pathname of allPagePaths()) {
+      if (!predicate(pathname)) continue;
+      const at = readForPath(pathname);
+      if (!at) continue;
+      if (!latest || Date.parse(at) > Date.parse(latest)) latest = at;
+    }
+    return latest;
+  };
+
+  let pagePaths = null;
+  const allPagePaths = () => {
+    if (pagePaths) return pagePaths;
+    const root = fileURLToPath(outDir);
+    const found = [];
+    const walk = (dir, prefix) => {
+      for (const entry of readdirSync(dir, { withFileTypes: true })) {
+        if (!entry.isDirectory()) continue;
+        if (entry.name.startsWith('_') || entry.name === 'og') continue;
+        const next = join(dir, entry.name);
+        const route = `${prefix}${entry.name}/`;
+        if (existsSync(join(next, 'index.html'))) found.push(route);
+        walk(next, route);
+      }
+    };
+    walk(root, '/');
+    pagePaths = found;
+    return pagePaths;
+  };
+
+  /** The hubs, and the child prefix each one indexes. */
+  const HUBS = ['/codes/', '/cheats/', '/answers/', '/guides/', '/daily/', '/blog/', '/gear/'];
+
+  const derivedFor = (pathname) => {
+    if (pathname === '/') {
+      // The homepage lists the whole catalogue, so its date is the newest anywhere.
+      return newestUnder((p) => p !== '/');
+    }
+    if (HUBS.includes(pathname)) {
+      return newestUnder((p) => p.startsWith(pathname) && p !== pathname);
+    }
+    if (pathname === '/games/') {
+      return newestUnder((p) => p.startsWith('/codes/') && p !== '/codes/');
+    }
+    if (pathname.startsWith('/author/')) {
+      const id = pathname.slice('/author/'.length, -1);
+      return newestUnder((p) => {
+        if (p.startsWith('/author/')) return false;
+        try {
+          const html = readFileSync(join(fileURLToPath(outDir), p, 'index.html'), 'utf8');
+          return html.includes(`/author/${id}/#person`);
+        } catch {
+          return false;
+        }
+      });
+    }
+    return undefined;
+  };
+
   return {
     integration: {
       name: 'freetins:sitemap-lastmod',
@@ -251,7 +329,13 @@ const recordedLastmod = () => {
     },
     /** Astro's sitemap omits the element entirely when `lastmod` is absent. */
     serialize: (item) => {
-      const at = outDir ? readFor(item.url) : undefined;
+      if (!outDir) return item;
+      /*
+       * The page's own recorded date first. A hub has none of its own, so it falls
+       * back to the newest date among the pages it lists - which is a fact about the
+       * listing, not a second derivation of anybody's check.
+       */
+      const at = readFor(item.url) ?? derivedFor(new URL(item.url).pathname);
       return at ? { ...item, lastmod: at } : item;
     },
   };

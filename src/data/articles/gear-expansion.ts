@@ -256,7 +256,7 @@ export const gearExpansionArticles: EditorialArticle[] = [
     faq: [
       { question: 'How much Robux does a $25 CAD Roblox card give?', answer: 'The card first adds Roblox Credit. Robux pricing and possible bonuses can change, so check the amount shown in the signed-in Roblox purchase flow instead of relying on a frozen conversion table.' },
       { question: 'Can a Canadian Roblox gift card be redeemed elsewhere?', answer: 'Roblox support says gift-card codes can be redeemed worldwide and converted to the account’s local currency. A retailer may still sell a product labelled for Canadian accounts, so review both the listing and current Roblox terms.' },
-      { question: 'Where do I redeem a Roblox gift card?', answer: 'Sign in to the intended account in a browser, open <a href="https://www.roblox.com/redeem">Roblox.com/redeem</a>, enter the code and confirm the credit. Standard mobile apps and consoles do not provide the normal redemption flow.' },
+      { question: 'Where do I redeem a Roblox gift card?', answer: 'Sign in to the intended account in a browser, open <a href="https://www.roblox.com/redeem" rel="noopener noreferrer">Roblox.com/redeem</a>, enter the code and confirm the credit. Standard mobile apps and consoles do not provide the normal redemption flow.' },
       { question: 'Can a Roblox gift card be refunded?', answer: 'Roblox terms say gift cards are generally non-refundable and cannot be replaced when lost, stolen or used without authorization. Check the retailer’s final-sale terms before paying.' },
     ],
     sources: [

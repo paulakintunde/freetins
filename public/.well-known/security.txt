@@ -1,0 +1,11 @@
+# Freetins security contact.
+#
+# There is no bug bounty and no reward. This file exists so somebody who finds a
+# problem has an address to send it to instead of guessing, which is the whole
+# point of RFC 9116.
+
+Contact: mailto:support@freetins.com
+Expires: 2027-09-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.freetins.com/.well-known/security.txt
+Policy: https://www.freetins.com/how-we-verify/
