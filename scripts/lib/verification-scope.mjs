@@ -63,6 +63,20 @@ export const checkableGames = (operations) => {
       recheckTargetDays: game.recheckTargetDays,
       entries,
       outstanding: entries.filter((entry) => settled(newest.get(entry.id)) === null),
+      /*
+       * Every entry with the state it currently holds, for the re-check pass. The
+       * first pass only ever needed what was outstanding; once the catalogue is
+       * fully checked that list is empty and the work becomes re-checking what is
+       * already recorded, which needs the whole list and each entry's standing.
+       */
+      all: entries.map((entry) => {
+        const event = newest.get(entry.id);
+        return {
+          ...entry,
+          state: settled(event) ?? 'listed',
+          lastCheckedAt: event && event.method !== 'manual-review' ? event.checkedAt : null,
+        };
+      }),
       verified: entries.filter((entry) => settled(newest.get(entry.id)) === 'verified'),
       expired: entries.filter((entry) => settled(newest.get(entry.id)) === 'expired'),
       lastCheckedAt: entries

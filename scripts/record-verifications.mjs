@@ -19,8 +19,10 @@
  * - It will not verify an entry that is already retired. A rejected entry needs
  *   a correction, not a verification, and quietly reviving one would change what
  *   the archive says without anybody deciding to.
- * - It will not run twice over the same entry. Re-running is a no-op, so a
- *   half-finished run can be finished without doubling anything.
+ * - It will not move a star's date backwards, and re-running the same log writes
+ *   nothing. A re-check dated later than the one it replaces is written, because
+ *   that is the whole point of a second pass; anything dated the same day or
+ *   earlier is dropped.
  *
  *   pnpm record:checks              validate and write
  *   pnpm record:checks --dry-run    validate and report, write nothing
@@ -55,8 +57,7 @@ const newestEvent = newestEventsByEntry(data);
 /*
  * A session names games rather than code ids, because that is the unit the
  * editor worked in, so this is where a slug becomes the entries the recorder
- * writes events for. Entries already settled by a real editor act are not in
- * here, which is what makes a re-run a no-op.
+ * writes events for.
  *
  * The scope is shared with the queue and the console (scripts/lib), so all three
  * agree on which pages an editor may act on. They did not always: this asked for
@@ -64,8 +65,25 @@ const newestEvent = newestEventsByEntry(data);
  * indexed with 26 codes on them.
  */
 const scope = checkableGames(data);
-const outstandingByGame = new Map(
-  [...scope.values()].map((game) => [game.slug, game.outstanding]),
+
+/*
+ * Every entry a session may act on, which is every entry that is not retired -
+ * not only the ones never checked.
+ *
+ * This asked for `game.outstanding` and that was right for exactly one pass. Once
+ * the catalogue was fully checked that list emptied, and a re-check naming a game
+ * expanded to nothing and wrote nothing while reporting success. A second pass is
+ * the normal case, not the exception: codes die continuously and the whole point
+ * of a recorded check is that it can be made again.
+ *
+ * An entry that already carries a newer acceptance is dropped further down, so a
+ * re-run stays a no-op and a star's date never moves backwards.
+ */
+const markableByGame = new Map(
+  [...scope.values()].map((game) => [
+    game.slug,
+    game.all.filter((entry) => entry.state !== 'expired'),
+  ]),
 );
 
 const cadence = {
@@ -126,7 +144,7 @@ sessions.forEach((session, index) => {
    */
   let cursor = Date.parse(stamp);
   const work = usesGames
-    ? games.map((slug) => ({ slug, entries: outstandingByGame.get(slug) }))
+    ? games.map((slug) => ({ slug, entries: markableByGame.get(slug) }))
     : [{ slug: null, entries: entryIds.map((id) => codesById.get(id) ?? { id, missing: true }) }];
 
   for (const { slug, entries } of work) {
@@ -159,7 +177,21 @@ sessions.forEach((session, index) => {
         errors.push(`${where}: ${entry.id} is retired as expired. Reviving it is a correction, not a verification - remove the rejecting event deliberately if it was wrong`);
         continue;
       }
-      if (current?.result === 'accepted' && current.method !== 'manual-review') continue;
+      /*
+       * A re-check is the point of the second pass, so an entry that already
+       * carries an acceptance takes another one - provided the new check is
+       * actually newer. That is what moves the star's date forward, and with it
+       * the month in the page title.
+       *
+       * Older or same-day is dropped rather than written. Re-running a log must
+       * stay a no-op, and an event dated before the one it replaces would make
+       * `latestCheckedAt` go backwards.
+       */
+      if (
+        current?.result === 'accepted'
+        && current.method !== 'manual-review'
+        && Date.parse(usesGames ? at : stamp) <= Date.parse(current.checkedAt)
+      ) continue;
 
       const eventAt = usesGames ? at : stamp;
       const id = `${entry.id}-${method}-${eventAt.slice(0, 10)}`;

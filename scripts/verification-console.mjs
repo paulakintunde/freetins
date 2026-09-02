@@ -12,7 +12,8 @@
  * outstanding at the moment it was generated, and a stale copy of that is worse
  * than none: regenerate it, do not keep it.
  *
- *   pnpm queue:html                    write verification-console.html
+ *   pnpm queue:html                    only what has never been checked
+ *   pnpm queue:html --all              every entry, for a re-check pass
  *   pnpm queue:html --out <path>       somewhere else
  */
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -34,17 +35,35 @@ const data = JSON.parse(readFileSync(OPERATIONS, 'utf8'));
  * The same scope the queue and the recorder use (scripts/lib), so the console
  * cannot show a page the recorder would refuse, or hide one it would accept.
  */
+const ALL = argv.includes('--all');
+
+/*
+ * `--all` is the re-check pass.
+ *
+ * The first pass only ever needed what was outstanding, and once the catalogue is
+ * fully checked that list is empty - the console would open on nothing. Codes die
+ * continuously, so the ongoing work is re-checking what is already recorded, which
+ * needs every entry and the standing each one currently holds.
+ *
+ * Expired entries are shown but not markable. Reviving a retired code is a
+ * correction somebody should make deliberately, and the recorder refuses it.
+ */
 const byGame = new Map();
 for (const game of checkableGames(data).values()) {
-  if (game.outstanding.length === 0) continue;
+  const source = ALL ? game.all : game.outstanding;
+  if (source.length === 0) continue;
   byGame.set(game.slug, {
     slug: game.slug,
     name: game.name,
-    entries: game.outstanding.map((entry) => ({
+    lastCheckedAt: game.lastCheckedAt,
+    recheckTargetDays: game.recheckTargetDays,
+    entries: source.map((entry) => ({
       id: entry.id,
       code: entry.code,
       reward: entry.reward,
       source: entry.publisherSourceUrl ? 'publisher-confirmed' : 'community-reported',
+      state: entry.state ?? 'listed',
+      lastCheckedAt: entry.lastCheckedAt ?? null,
     })),
   });
 }
@@ -58,7 +77,7 @@ const totalEntries = games.reduce((sum, game) => sum + game.entries.length, 0);
  * Both are escaped rather than trusted: a game name or a reward string is
  * editorial text, and nothing stops one containing either.
  */
-const payload = JSON.stringify({ games, totalEntries })
+const payload = JSON.stringify({ games, totalEntries, mode: ALL ? 'all' : 'outstanding' })
   .replace(/</g, '\\u003c')
   .replace(/>/g, '\\u003e');
 
@@ -70,6 +89,7 @@ if (html.includes('__QUEUE_DATA__')) {
 
 writeFileSync(OUT, html, 'utf8');
 console.log(`Wrote ${OUT}`);
-console.log(`  ${games.length} games, ${totalEntries} outstanding code entries.`);
+console.log(`  ${games.length} games, ${totalEntries} ${ALL ? 'code entries (every state)' : 'outstanding code entries'}.`);
+if (!ALL && totalEntries === 0) console.log('  Nothing outstanding. Run with --all to re-check what is already recorded.');
 console.log('  Open it in a browser. Marks are kept in that browser, so finish on one machine.');
 console.log('  Export the JSON when done, or hand the .md to the agent.');

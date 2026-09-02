@@ -161,7 +161,9 @@ const el = (tag, props = {}, kids = []) => {
   return node;
 };
 const gameState = (game) => {
-  const marks = game.entries.map((entry) => state.marks[entry.id]);
+  const markable = game.entries.filter((entry) => entry.state !== 'expired');
+  if (markable.length === 0) return 'none';
+  const marks = markable.map((entry) => state.marks[entry.id]);
   if (marks.some((mark) => mark === 'fail')) return 'fail';
   if (marks.every((mark) => mark === 'pass')) return 'done';
   if (marks.some(Boolean)) return 'part';
@@ -200,12 +202,15 @@ function renderDetail() {
   const game = DATA.games.find((item) => item.slug === current);
   if (!game) { host.append(el('div', { className: 'empty', textContent: 'Pick a game on the left.' })); return; }
 
-  host.append(el('h2', { textContent: game.name + '  ·  /codes/' + game.slug + '/' }));
+  const age = game.lastCheckedAt
+    ? '  ·  last checked ' + game.lastCheckedAt.slice(0, 10) + ', target ' + game.recheckTargetDays + 'd'
+    : '  ·  never checked';
+  host.append(el('h2', { textContent: game.name + '  ·  /codes/' + game.slug + '/' + age }));
 
   const bar = el('div', { className: 'bar' });
   bar.append(el('button', {
-    className: 'act pri', textContent: 'All ' + game.entries.length + ' redeemed',
-    onclick: () => { for (const entry of game.entries) state.marks[entry.id] = 'pass'; save(); render(); },
+    className: 'act pri', textContent: 'All ' + game.entries.filter((e) => e.state !== 'expired').length + ' redeemed',
+    onclick: () => { for (const entry of game.entries) if (entry.state !== 'expired') state.marks[entry.id] = 'pass'; save(); render(); },
   }));
   bar.append(el('button', {
     className: 'act', textContent: 'Clear this game',
@@ -237,18 +242,25 @@ function renderDetail() {
   for (const entry of game.entries) {
     const status = state.marks[entry.id];
     const row = el('div', { className: 'code' + (status ? ' ' + status : '') });
+    const standing = entry.state === 'verified'
+      ? 'recorded verified' + (entry.lastCheckedAt ? ' on ' + entry.lastCheckedAt.slice(0, 10) : '')
+      : entry.state === 'expired' ? 'retired as expired' : 'never checked';
     row.append(el('div', { className: 'txt' }, [
       el('div', { className: 'str', textContent: entry.code }),
       el('div', { className: 'meta', textContent: entry.reward + '  ·  ' + entry.source }),
-      el('div', { className: 'id', textContent: entry.id }),
+      el('div', { className: 'id', textContent: entry.id + '  ·  ' + standing }),
     ]));
-    const seg = el('div', { className: 'seg' });
-    const yes = el('button', { className: 'y', textContent: 'Redeemed', onclick: () => mark(entry.id, 'pass') });
-    const no = el('button', { className: 'n', textContent: 'Failed', onclick: () => mark(entry.id, 'fail') });
-    yes.setAttribute('aria-pressed', String(status === 'pass'));
-    no.setAttribute('aria-pressed', String(status === 'fail'));
-    seg.append(yes, no);
-    row.append(seg);
+    if (entry.state === 'expired') {
+      row.append(el('div', { className: 'meta', textContent: 'retired — not markable' }));
+    } else {
+      const seg = el('div', { className: 'seg' });
+      const yes = el('button', { className: 'y', textContent: 'Redeemed', onclick: () => mark(entry.id, 'pass') });
+      const no = el('button', { className: 'n', textContent: 'Failed', onclick: () => mark(entry.id, 'fail') });
+      yes.setAttribute('aria-pressed', String(status === 'pass'));
+      no.setAttribute('aria-pressed', String(status === 'fail'));
+      seg.append(yes, no);
+      row.append(seg);
+    }
     host.append(row);
   }
 }
@@ -324,7 +336,9 @@ function buildLog() {
     const failures = [];
     for (const slug of slugs) {
       const game = DATA.games.find((item) => item.slug === slug);
-      const marks = game.entries.map((entry) => ({ entry, mark: state.marks[entry.id] }));
+      const marks = game.entries
+        .filter((entry) => entry.state !== 'expired')
+        .map((entry) => ({ entry, mark: state.marks[entry.id] }));
       if (marks.some((row) => !row.mark)) {
         warnings.push(game.name + ' has ' + marks.filter((row) => !row.mark).length + ' code(s) not marked - left out.');
         continue;
