@@ -5,91 +5,37 @@
   },
   "sessions": [
     {
-      "startedAt": "2026-08-26T16:59:00Z",
+      "startedAt": "2026-09-02T06:55:00Z",
       "checkedBy": "paul-a",
       "method": "redeemed",
       "result": "accepted",
       "games": [
-        "anime-card-clash",
-        "blade-ball",
-        "ninja-time",
-        "dress-to-impress",
-        "type-soul"
+        "spongebob-tower-defense"
       ]
     },
     {
-      "startedAt": "2026-08-27T22:00:00Z",
+      "startedAt": "2026-08-31T16:00:00Z",
       "checkedBy": "paul-a",
       "method": "redeemed",
       "result": "accepted",
       "games": [
-        "99-nights-in-the-forest",
-        "anime-last-stand",
-        "anime-vanguards",
-        "kaizen"
+        "anime-apocalypse",
+        "anime-eternal",
+        "azure-latch"
       ]
     },
     {
-      "startedAt": "2026-08-25T18:01:00Z",
+      "startedAt": "2026-09-01T15:33:00Z",
       "checkedBy": "paul-a",
       "method": "redeemed",
       "result": "accepted",
       "games": [
-        "sols-rng",
-        "dandys-world",
-        "dragon-soul",
-        "king-legacy",
-        "restaurant-tycoon-3",
-        "rivals",
-        "untitled-boxing-game"
-      ]
-    },
-    {
-      "startedAt": "2026-08-25T00:11:00Z",
-      "checkedBy": "paul-a",
-      "method": "redeemed",
-      "result": "accepted",
-      "games": [
-        "shindo-life",
-        "basketball-zero",
-        "blue-lock-rivals",
-        "clover-retribution",
-        "fisch",
-        "grow-a-garden",
-        "jujutsu-zero"
-      ]
-    },
-    {
-      "startedAt": "2026-08-26T21:14:00Z",
-      "checkedBy": "paul-a",
-      "method": "redeemed",
-      "result": "accepted",
-      "games": [
-        "flashpoint",
-        "racket-rivals",
-        "pixel-blade",
-        "fruit-battlegrounds",
-        "plants-vs-brainrots",
-        "volleyball-legends",
-        "weak-legacy-2"
-      ]
-    },
-    {
-      "startedAt": "2026-08-28T16:01:00Z",
-      "checkedBy": "paul-a",
-      "method": "redeemed",
-      "result": "accepted",
-      "games": [
-        "anime-guardians",
-        "bizarre-lineage",
-        "sailor-piece",
-        "devil-hunters",
-        "playground-basketball",
-        "hunty-zombies",
-        "universal-tower-defense",
-        "soccer-zero",
-        "steal-a-brainrot",
-        "tennis-zero"
+        "anime-ranger-x",
+        "driving-empire",
+        "anime-final-quest",
+        "the-forge",
+        "jujutsu-infinite",
+        "da-hood"
       ]
     }
   ]
