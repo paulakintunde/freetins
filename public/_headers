@@ -31,6 +31,16 @@
 /api/*
   Cache-Control: no-store
 
+# The sitemap stylesheet. `X-Content-Type-Options: nosniff` is set for every path
+# above, so the browser takes the declared type and refuses to guess: served as
+# anything but XSL the stylesheet is dropped silently and the sitemap renders as raw
+# markup, with no console error to say why. `text/xsl` is the type every browser
+# that implements XSLT accepts, and the one WordPress served this file under for
+# the whole of the site's previous life.
+/main-sitemap.xsl
+  Content-Type: text/xsl; charset=utf-8
+  Cache-Control: public, max-age=3600
+
 # --- Staging hostnames: never indexable ------------------------------------
 # `robots.txt` is one file served on every hostname, so it cannot say "index the
 # custom domain, ignore the build host". The header can, because these rules match

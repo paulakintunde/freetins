@@ -73,8 +73,28 @@ const alertsAvailable = operations.services.alerts.enabled
   && Boolean(operations.services.alerts.subscriptionEndpoint);
 const submissionsAvailable = operations.services.submissions.enabled
   && Boolean(operations.services.submissions.endpoint);
-const sitemap = readdirSync(outputRoot)
-  .filter((name) => /^sitemap-\d+\.xml$/.test(name))
+/*
+ * The section files, `sitemap-codes-0.xml` and its siblings, written by the sitemap
+ * integration's `chunks` option. `sitemap-index.xml` is deliberately not among them:
+ * its `<loc>` elements name sitemap files rather than pages, so reading it would
+ * inflate the entry count this script reports and put nine non-page URLs into the
+ * text every check below matches against.
+ *
+ * An empty list is a failure rather than an empty string. Every sitemap check here
+ * asks whether some URL appears in this text, so losing the files would not make the
+ * checks complain about the sitemap — it would make them report all 128 indexable
+ * pages as missing from it, which reads as a content fault and is not one.
+ */
+const sitemapFiles = readdirSync(outputRoot).filter((name) =>
+  /^sitemap-[a-z0-9]+-\d+\.xml$/.test(name),
+);
+if (sitemapFiles.length === 0) {
+  console.error(
+    'No section sitemaps in dist/. Expected sitemap-<section>-<n>.xml from the `chunks` option in astro.config.mjs; without them every sitemap check below is vacuous.',
+  );
+  process.exit(1);
+}
+const sitemap = sitemapFiles
   .map((name) => readFileSync(join(outputRoot, name), 'utf8'))
   .join('\n');
 

@@ -68,6 +68,10 @@
 # The build emits /sitemap-index.xml and robots.txt points there, but tools and
 # the Search Console "add sitemap" default still try the conventional path.
 /sitemap.xml                                                       /sitemap-index.xml                 301
+# Yoast wrote the index at the underscored path for the whole WordPress era, so
+# that is the URL in the old Search Console submission and in every third-party
+# crawl of the site. It answers 404 today.
+/sitemap_index.xml                                                 /sitemap-index.xml                 301
 
 # --- WordPress category archives --------------------------------------------
 # Archive pages, not content. Mapped to the closest equivalent surface.

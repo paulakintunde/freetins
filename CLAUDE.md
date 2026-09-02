@@ -87,6 +87,16 @@ says what each proves.
   serving every page from the Function, silently and with nothing misconfigured, so
   `pnpm check:routes` reads it back every run and fails on disagreement in either
   direction.
+- The sitemap is one file per section — `sitemap-codes-0.xml` and its siblings —
+  listed in `sitemap-index.xml`, which is the file `robots.txt` names and the only
+  one to submit. Search Console reports submitted-against-indexed per file, so the
+  split is what makes "which section is losing pages" a readable number. The section
+  list is `SECTION_HUBS` in `astro.config.mjs` and is named nowhere else: it also
+  dates each hub from the newest page beneath it. Those prefixes must stay mutually
+  exclusive, because every chunk's callback runs over every URL and the results are
+  concatenated — nest one section under another and its pages are advertised twice.
+  Legacy sitemap paths are redirects, never second copies: `/sitemap.xml` and Yoast's
+  `/sitemap_index.xml` both 301 to the index.
 - Hearts never mint a star and never touch the index gate.
 - Nothing in `sponsorships`, `products` or advertising may influence a badge, a
   state or an order.

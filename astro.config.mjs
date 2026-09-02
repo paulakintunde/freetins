@@ -176,6 +176,16 @@ const writeIfChanged = (target, contents) => {
 };
 
 /**
+ * The seven sections that have a hub page, and the child prefix each hub indexes.
+ *
+ * Two things read this: the `<lastmod>` derivation below, which dates a hub from the
+ * newest page beneath it, and `sitemapChunks`, which gives each section its own
+ * sitemap file. Adding a section here is therefore the whole change — it gets a hub
+ * date and a sitemap of its own without either being named a second time.
+ */
+const SECTION_HUBS = ['/codes/', '/cheats/', '/answers/', '/guides/', '/daily/', '/blog/', '/gear/'];
+
+/**
  * `<lastmod>`, read back from the page the build actually wrote.
  *
  * The sitemap advertised 104 URLs and no `<lastmod>` at all, on a site whose whole
@@ -289,15 +299,12 @@ const recordedLastmod = () => {
     return pagePaths;
   };
 
-  /** The hubs, and the child prefix each one indexes. */
-  const HUBS = ['/codes/', '/cheats/', '/answers/', '/guides/', '/daily/', '/blog/', '/gear/'];
-
   const derivedFor = (pathname) => {
     if (pathname === '/') {
       // The homepage lists the whole catalogue, so its date is the newest anywhere.
       return newestUnder((p) => p !== '/');
     }
-    if (HUBS.includes(pathname)) {
+    if (SECTION_HUBS.includes(pathname)) {
       return newestUnder((p) => p.startsWith(pathname) && p !== pathname);
     }
     if (pathname === '/games/') {
@@ -342,6 +349,37 @@ const recordedLastmod = () => {
 };
 
 const sitemapLastmod = recordedLastmod();
+
+/**
+ * One sitemap file per section, in place of one file holding every URL.
+ *
+ * Search Console reports submitted-against-indexed per sitemap file, never per
+ * directory. One file therefore answers `128 submitted, 119 indexed` and stops
+ * there: the nine that did not make it are unattributable, and the number leads
+ * nowhere. Split, the same report names the section that is losing pages, which is
+ * the only shape of that number worth having on a site whose open question is which
+ * sections get indexed.
+ *
+ * The prefixes are `SECTION_HUBS` plus `/author/`, which has profiles but no hub.
+ * Anything matching no prefix — the homepage, the policy pages, `/games/` — falls to
+ * the integration's own leftover chunk, which it names `pages`.
+ *
+ * The prefixes must stay mutually exclusive. The integration runs every chunk's
+ * callback over every URL and concatenates the results, so a URL matching two
+ * prefixes would be advertised in two files rather than assigned to the first.
+ * Prefix matching on a flat section list gives that for free; nesting a section
+ * under another would not.
+ *
+ * This changes no URL. The index keeps its name and its place in `robots.txt`, so
+ * there is nothing to resubmit — Search Console rereads the index and picks the
+ * section files up from it.
+ */
+const sitemapChunks = Object.fromEntries(
+  [...SECTION_HUBS, '/author/'].map((prefix) => [
+    prefix.replaceAll('/', ''),
+    (item) => (new URL(item.url).pathname.startsWith(prefix) ? item : undefined),
+  ]),
+);
 
 /**
  * `rel` on every external link markdown renders.
@@ -594,6 +632,16 @@ export default defineConfig({
        */
       filter: (page) => !excludedFromSitemap.has(new URL(page).pathname),
       serialize: sitemapLastmod.serialize,
+      chunks: sitemapChunks,
+      /*
+       * The stylesheet is a browser-only affordance: it turns each file into a
+       * readable table for whoever opens one, and a crawler never runs it. It is
+       * referenced from the index and from every section file, so it must stay at
+       * this path — `public/main-sitemap.xsl`, with the content type pinned in
+       * `public/_headers` because the site sends `X-Content-Type-Options: nosniff`
+       * and a stylesheet served as anything but XSL is dropped without a word.
+       */
+      xslURL: '/main-sitemap.xsl',
     }),
     sitemapLastmod.integration,
     freePlanRouteManifest(),
