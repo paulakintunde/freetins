@@ -3,6 +3,7 @@ import { Picture } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import Button from '../ui/Button.astro';
 import EditorialArticle from './EditorialArticle.astro';
+import AdSlot from '../ui/AdSlot.astro';
 import { articleArtwork, requireArticleArtwork } from '../../data/article-images';
 import { editorialArticles, getArticleByPath } from '../../data/articles';
 import { listAllDatasetPages, listDatasetPages, type DatasetPageSummary, type DatasetSection } from '../../lib/datasetPages';
@@ -242,11 +243,22 @@ const stats = (() => {
   }
 })();
 
+/*
+ * The privacy summary has to name whoever is actually in the request path, and
+ * advertising is one boolean away from being in it
+ * (src/content/operations.json, services.advertising). Deriving the sentence is
+ * what keeps this card and the privacy page it summarises from disagreeing the
+ * day the flag flips.
+ */
+const sharingLine = operations.services.advertising.enabled
+  ? `Cloudflare delivers and secures the site. ${operations.services.advertising.provider} serves the ad blocks once a reader allows advertising, and no other optional provider is configured in the current operational record.`
+  : 'Cloudflare delivers and secures the site. No optional analytics, advertising or alert-delivery provider is configured in the current operational record.';
+
 const legalCopy: Record<string, Array<[string, string]>> = {
   privacy: [
     ['What we collect', 'The published site does not currently collect alert subscriptions or code submissions. If you email us, we receive the information you choose to send. Cloudflare processes the technical request data needed to deliver and secure the site.'],
     ['How it is used', 'Information sent by email is used to answer the message, investigate a correction or review a source.'],
-    ['Who we share data with', 'Cloudflare delivers and secures the site. No optional analytics, advertising or alert-delivery provider is configured in the current operational record.'],
+    ['Who we share data with', sharingLine],
     ['Your choices', 'Cookie choices can be reopened from the footer. You can ask us to delete information you submitted.'],
   ],
   affiliate: [
@@ -724,6 +736,19 @@ const routeSchemaNodes = [
 
     {definition.kind === 'guide' && (
       <section class="page-section content-boundary"><div class="data-empty"><strong>This guide is configured but not published</strong><p>The route is preserved for editorial work and stays out of the index. It moves into the published Guides index only after the full article and its sources are added to the editorial data.</p></div></section>
+    )}
+
+    {/*
+     * The 53 code pages are what the site is for and carried no ad block at all
+     * until this one. It is directly under the table because that is where the
+     * reader's task finishes — they came for the codes, they have them, and the
+     * prose below explains how to redeem them. The artwork still separates the
+     * record from the writing about the record; it now does so one block later.
+     */}
+    {definition.kind === 'codes' && (
+      <section class="page-section content-boundary">
+        <AdSlot placement="codes-inline" />
+      </section>
     )}
 
     {/*

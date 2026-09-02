@@ -29,6 +29,7 @@ import { canonicalUrl, webPageId } from '../../lib/pageGraph';
 import { fitTitle } from '../../lib/pageTitle';
 import { splitAtArtAnchor } from '../../lib/articleArtSlot';
 import ArticleArt from '../ArticleArt.astro';
+import AdSlot from '../ui/AdSlot.astro';
 
 interface EntryData {
   title: string;
@@ -267,6 +268,15 @@ const schemaNodes = [
             </>
           )}
 
+          {/*
+           * The in-article block, below the prose and above the questions. It is
+           * deliberately not at the top of the body: the artwork above already
+           * argues that a reader who lands here should meet the byline and the
+           * answer before anything else, and an ad in front of them would undo
+           * that for the sake of one impression.
+           */}
+          <AdSlot placement="article-mid" />
+
           {data.faq.length > 0 && (
             <section id="frequently-asked-questions" class="article-section">
               <h2>Frequently asked questions</h2>
@@ -298,6 +308,8 @@ const schemaNodes = [
               ))}
             </div>
           </section>
+
+          <AdSlot placement="article-end" />
 
           <PreferredSource />
         </div>

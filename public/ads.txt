@@ -1,0 +1,6 @@
+# Authorized Digital Sellers for freetins.com (IAB Tech Lab ads.txt).
+# One line per authorised seller. Google reads this file at the root of the
+# domain, so it must stay at /ads.txt and must be served as text/plain.
+# The publisher id here is the same one src/content/operations.json records as
+# services.advertising.publisherId; if one changes, change both.
+google.com, pub-6309018820960389, DIRECT, f08c47fec0942fa0

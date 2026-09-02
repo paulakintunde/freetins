@@ -1,9 +1,10 @@
 ---
 import { Picture } from 'astro:assets';
+import AdSlot from '../components/ui/AdSlot.astro';
 import Button from '../components/ui/Button.astro';
 import { dailyGames, homeTiles, pulse, publishedGameCatalogue } from '../data/home';
 import { homeHeroArtwork, partnerArtwork } from '../data/home-images';
-import { getActiveSponsorships, operations } from '../data/operations';
+import { getActiveSponsorships } from '../data/operations';
 import { gameArtwork } from '../data/site-images';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
@@ -217,29 +218,22 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
     </div>
   </section>
 
-  {operations.services.advertising.enabled && (
-  <section class="page-section native-section content-boundary" data-ad-slot="FT-NATIVE-HOME">
-    <div class="native-card">
-      <div class="native-media">
-        <Picture
-          src={partnerArtwork}
-          alt=""
-          formats={['avif']}
-          fallbackFormat="webp"
-          widths={[120, 240, 480]}
-          sizes="120px"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-      <div>
-        <span>Sponsored</span>
-        <h2>{operations.services.advertising.provider}</h2>
-        <p>A paid placement. It never changes a code's state, a badge, or the order of anything on this site.</p>
-      </div>
-    </div>
+  {/*
+    * The home ad block. This was a mock native card that printed the ad
+    * provider's own name as a sponsored headline, which read as an advertisement
+    * for AdSense rather than a place to put one. It is a real unit now, and it is
+    * below the discovery grid rather than above it because nothing paid comes
+    * before the codes a reader arrived for.
+    *
+    * It sits inside the page's content boundary like every section above it. A
+    * fixed-size unit would have had to break the 32px gutter to fit a 300px
+    * creative on a 360px phone; a responsive one takes the width it is given, so
+    * the block can line up with the grid above instead of being the one thing on
+    * the page whose edges do not.
+    */}
+  <section class="page-section content-boundary">
+    <AdSlot placement="home-feed" />
   </section>
-  )}
 </BaseLayout>
 
 <style>
@@ -272,9 +266,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
   .tile-art :global(picture),
   .tile-art :global(img),
   .sponsored-media :global(picture),
-  .sponsored-media :global(img),
-  .native-media :global(picture),
-  .native-media :global(img) {
+  .sponsored-media :global(img) {
     display: block;
     width: 100%;
     height: 100%;
@@ -282,8 +274,7 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
 
   .hero-art :global(img),
   .tile-art :global(img),
-  .sponsored-media :global(img),
-  .native-media :global(img) {
+  .sponsored-media :global(img) {
     object-fit: cover;
   }
 
@@ -699,52 +690,6 @@ function requireArtwork<T>(artworks: Record<string, T>, name: string): T {
     border-bottom: 1px solid var(--border-subtle);
     color: var(--text-primary);
     font-weight: 600;
-  }
-
-  .native-section {
-    padding-top: clamp(28px, 4vw, 40px);
-  }
-
-  .native-card {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 18px;
-    border: 1px solid var(--border-subtle);
-    background: var(--surface-raised);
-    padding: 20px;
-  }
-
-  .native-media {
-    position: relative;
-    width: 120px;
-    height: 88px;
-    flex: none;
-    background: var(--surface-card);
-  }
-
-  .native-card > div:last-child {
-    min-width: 180px;
-    flex: 1;
-  }
-
-  .native-card > div:last-child > span {
-    color: var(--text-caption);
-    font: 700 var(--fs-caption) / 1.4 var(--font-core);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  .native-card h2 {
-    margin: 7px 0 0;
-    color: var(--text-primary);
-    font: 600 16px / 1.35 var(--font-core);
-  }
-
-  .native-card p {
-    margin: 5px 0 0;
-    color: var(--text-tertiary);
-    font: 400 13px / 1.42 var(--font-core);
   }
 
   @media (max-width: 767px) {

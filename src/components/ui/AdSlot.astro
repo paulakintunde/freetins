@@ -1,0 +1,150 @@
+---
+import { adPlacement, adsensePublisherId } from '../../data/advertising';
+
+interface Props {
+  /**
+   * The block's name in `services.advertising.placements`. A name with no
+   * placement behind it renders nothing at all, which is what lets a template
+   * declare every block it wants while the operational record decides which of
+   * them exist (src/data/advertising.ts).
+   */
+  placement: string;
+}
+
+/**
+ * The markup each AdSense type needs, copied from the snippets the dashboard
+ * issues for these four units. A unit created as one type and rendered with
+ * another type's attributes is not a wrong ad, it is a dead one: it renders,
+ * never fills, and says nothing about why.
+ *
+ * `data-full-width-responsive` is the one attribute deliberately not as issued.
+ * The dashboard snippet sets it to `true`, which lets a responsive unit take the
+ * full width of the phone screen rather than the width of the column it is in —
+ * on an article body, 20px of overflow past each side of the text. That is the
+ * one behaviour this whole component exists to prevent, and the alternative to
+ * turning it off is clipping the overflow, which hides pixels an advertiser paid
+ * for. Set it back to `true` and remove the horizontal clamp below together, or
+ * not at all.
+ */
+const FORMAT_ATTRIBUTES = {
+  display: {
+    style: 'display:block',
+    'data-ad-format': 'auto',
+    'data-full-width-responsive': 'false',
+  },
+  'in-article': {
+    style: 'display:block;text-align:center',
+    'data-ad-layout': 'in-article',
+    'data-ad-format': 'fluid',
+  },
+  multiplex: {
+    style: 'display:block',
+    'data-ad-format': 'autorelaxed',
+  },
+} as const;
+
+const placement = adPlacement(Astro.props.placement);
+const formatAttributes = placement ? FORMAT_ATTRIBUTES[placement.format] : null;
+---
+
+{placement && formatAttributes && adsensePublisherId && (
+  /*
+   * A plain div, not an <aside>: an ad is not a complementary landmark, and
+   * adding one per block would put "Advertisement" into landmark navigation
+   * between the article and its sources. `data-nosnippet` keeps the label and
+   * whatever the network writes here out of a search snippet.
+   *
+   * The block ships hidden and src/scripts/ads.ts reveals it at the moment it
+   * pushes a unit — after consent, and never before. Hidden is the honest resting
+   * state: a reader who declined advertising, or has not answered yet, gets the
+   * page they would have got if the block were not in the template, rather than a
+   * labelled empty rectangle reserving space for something that is never coming.
+   */
+  <div
+    class="ad-slot"
+    data-nosnippet
+    data-ad-placement={placement.id}
+    style={`--ad-reserve-mobile:${placement.reserve.mobile}px;--ad-reserve-desktop:${placement.reserve.desktop}px`}
+    hidden
+  >
+    <span class="ad-slot-label">Advertisement</span>
+    <div class="ad-slot-box">
+      <ins
+        class="adsbygoogle"
+        data-ad-client={adsensePublisherId}
+        data-ad-slot={placement.adUnitId}
+        {...formatAttributes}
+      />
+    </div>
+  </div>
+)}
+
+<style>
+  .ad-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    max-width: 100%;
+    margin: clamp(26px, 4vw, 40px) auto;
+  }
+
+  /*
+   * `[hidden]` in the user-agent sheet loses to the `display: flex` above, so the
+   * attribute the script toggles has to be honoured here or an unconsented block
+   * would render anyway.
+   */
+  .ad-slot[hidden] {
+    display: none;
+  }
+
+  /*
+   * AdSense marks a unit it had no ad for. Without this the block stays as a
+   * labelled empty rectangle in the middle of the prose for as long as the reader
+   * is on the page — and with a multiplex unit's reserve, a tall one.
+   */
+  .ad-slot:has(ins[data-ad-status='unfilled']) {
+    display: none;
+  }
+
+  .ad-slot-label {
+    color: var(--text-caption);
+    font: 600 var(--fs-caption) / 1 var(--font-core);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /*
+   * The reserved box. Every unit here is responsive or fluid, so it decides its
+   * own height and the block holds a floor open rather than a fixed size: enough
+   * for the creative these positions usually get, so the article does not jump
+   * under a reader mid-sentence, and free to grow past it rather than cut a paid
+   * creative off at a number typed in a JSON file.
+   *
+   * Width is the half that is absolute. `overflow-x: clip` rather than `hidden`
+   * because `hidden` on one axis forces the other to scroll, which would put a
+   * scrollbar on the ad; `clip` leaves the height alone and still guarantees that
+   * nothing served here can reach past the column and scroll the page sideways.
+   */
+  .ad-slot-box {
+    width: 100%;
+    max-width: 100%;
+    min-height: var(--ad-reserve-mobile);
+    overflow-x: clip;
+  }
+
+  @media (min-width: 768px) {
+    .ad-slot-box {
+      min-height: var(--ad-reserve-desktop);
+    }
+  }
+
+  /*
+   * The iframe AdSense swaps in carries none of this component's scoping
+   * attributes, so it has to be reached globally.
+   */
+  .ad-slot-box :global(iframe),
+  .ad-slot-box :global(ins.adsbygoogle) {
+    max-width: 100%;
+  }
+</style>

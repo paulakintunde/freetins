@@ -5871,10 +5871,16 @@
       "enabled": true
     },
     "advertising": {
-      "enabled": false,
-      "provider": null,
-      "privacyPolicyUrl": null,
-      "placementIds": []
+      "enabled": true,
+      "provider": "Google AdSense",
+      "privacyPolicyUrl": "https://policies.google.com/technologies/partner-sites",
+      "publisherId": "ca-pub-6309018820960389",
+      "placements": [
+        { "id": "home-feed", "adUnitId": "2805824365", "format": "display", "reserve": { "mobile": 110, "desktop": 250 } },
+        { "id": "codes-inline", "adUnitId": "5130886170", "format": "display", "reserve": { "mobile": 260, "desktop": 260 } },
+        { "id": "article-mid", "adUnitId": "7483435970", "format": "in-article", "reserve": { "mobile": 260, "desktop": 260 } },
+        { "id": "article-end", "adUnitId": "1464822534", "format": "multiplex", "reserve": { "mobile": 420, "desktop": 320 } }
+      ]
     }
   },
   "verificationEvents": [

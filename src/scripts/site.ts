@@ -1,6 +1,7 @@
 import './element-index';
-
-type ConsentState = Record<string, boolean>;
+import { syncAdSlots } from './ads';
+import { CONSENT_COOKIE, readConsentCookie } from './consent';
+import type { ConsentState } from './consent';
 
 declare global {
   interface Window {
@@ -9,7 +10,6 @@ declare global {
 }
 
 const COPY_RESET_MS = 1600;
-const CONSENT_COOKIE = 'ft_consent=';
 const controller = new AbortController();
 
 window.__freetinsController?.abort();
@@ -79,18 +79,6 @@ const consentElements = () => {
       banner?.querySelectorAll<HTMLButtonElement>('[data-purpose]') ?? [],
     ),
   };
-};
-
-const readConsentCookie = (): ConsentState | null => {
-  const entry = document.cookie.split('; ').find((cookie) => cookie.startsWith(CONSENT_COOKIE));
-  if (!entry) return null;
-
-  try {
-    const parsed: unknown = JSON.parse(decodeURIComponent(entry.slice(CONSENT_COOKIE.length)));
-    return parsed && typeof parsed === 'object' ? parsed as ConsentState : null;
-  } catch {
-    return null;
-  }
 };
 
 const setConsentButtonState = (button: HTMLButtonElement, enabled: boolean) => {
@@ -194,6 +182,11 @@ const copyCode = async (button: HTMLButtonElement) => {
 const syncPageState = () => {
   closeDrawer(false);
   syncConsent();
+  /*
+   * After syncConsent, because a client-side navigation brings new ad blocks with
+   * it and the stored choice is what decides whether any of them may be filled.
+   */
+  syncAdSlots();
 };
 
 document.addEventListener('click', (event) => {
@@ -294,6 +287,12 @@ document.addEventListener('astro:before-swap', () => {
 
 document.addEventListener('astro:page-load', syncPageState, { signal: controller.signal });
 window.addEventListener('freetins:consent-open', openConsentManager, { signal: controller.signal });
+/*
+ * saveConsentChoices writes the cookie and then fires this, so by the time the ad
+ * loader reads the choice it is already stored. Accepting fills the blocks on the
+ * page the reader is looking at; withdrawing takes them off it.
+ */
+window.addEventListener('freetins:consent-change', syncAdSlots, { signal: controller.signal });
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', syncPageState, { once: true, signal: controller.signal });

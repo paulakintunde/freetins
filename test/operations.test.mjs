@@ -109,7 +109,50 @@ test('incomplete service activation is rejected', () => {
 
   assert.throws(() => validateOperations(data), /Enabled alerts service needs at least one channel/);
   assert.throws(() => validateOperations(data), /Enabled submissions service needs an HTTPS endpoint/);
-  assert.throws(() => validateOperations(data), /Enabled advertising needs a provider/);
+  // Advertising is already complete in the record, so this one is checked by
+  // emptying the inventory instead: a block with no ad unit behind it is a hole
+  // in the page.
+  data.services.advertising.placements = [];
+  assert.throws(() => validateOperations(data), /Enabled advertising needs at least one placement/);
+});
+
+test('an advertising publisher id is checked even while advertising is off', () => {
+  // It is rendered as the AdSense verification tag before there is anything to
+  // serve, so a malformed one fails at the one moment nothing else would notice.
+  const data = freshData();
+  data.services.advertising.publisherId = 'pub-6309018820960389';
+  assert.throws(() => validateOperations(data), /publisherId must look like ca-pub-/);
+});
+
+test('an ad block must name a real format and hold a real height open', () => {
+  const broken = freshData();
+  broken.services.advertising.enabled = true;
+  broken.services.advertising.placements = [
+    { id: 'home-feed', adUnitId: '1234567890', format: 'display', reserve: { mobile: 250, desktop: 250 } },
+    { id: 'home-feed', adUnitId: 'FT-HOME', format: 'in-feed', reserve: { mobile: 0, desktop: 250 } },
+  ];
+  assert.throws(() => validateOperations(broken), /home-feed is declared twice/);
+  assert.throws(() => validateOperations(broken), /numeric AdSense adUnitId/);
+  assert.throws(() => validateOperations(broken), /unknown format/);
+  assert.throws(() => validateOperations(broken), /positive integer reserve/);
+
+  // A reserve missing outright reads the same way as a zero one. Both would let
+  // the creative's arrival move the article under a reader mid-sentence.
+  const bare = freshData();
+  bare.services.advertising.enabled = true;
+  bare.services.advertising.placements = [
+    { id: 'home-feed', adUnitId: '1234567890', format: 'display' },
+  ];
+  assert.throws(() => validateOperations(bare), /positive integer reserve/);
+
+  const good = freshData();
+  good.services.advertising.enabled = true;
+  good.services.advertising.placements = [
+    { id: 'home-feed', adUnitId: '1234567890', format: 'display', reserve: { mobile: 110, desktop: 250 } },
+    { id: 'article-mid', adUnitId: '1234567891', format: 'in-article', reserve: { mobile: 260, desktop: 260 } },
+    { id: 'article-end', adUnitId: '1234567892', format: 'multiplex', reserve: { mobile: 420, desktop: 320 } },
+  ];
+  assert.doesNotThrow(() => validateOperations(good));
 });
 
 test('the submissions service is required and fails closed', () => {

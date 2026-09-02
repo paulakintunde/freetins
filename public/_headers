@@ -9,7 +9,31 @@
   # `<script src>` with a `data-cf-beacon` attribute, so allowing the origin is enough,
   # and an inline allowance would reopen the whole class of injection this header exists
   # to close. If a future analytics vendor needs inline execution, it needs a nonce.
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; upgrade-insecure-requests
+  #
+  # The Google origins are AdSense (src/content/operations.json,
+  # services.advertising; docs/ADVERTISING.md). They are listed whether or not
+  # advertising is switched on, because the alternative is the failure this file
+  # already describes twice: a header quietly blocking the thing an operator just
+  # turned on, with the console the only place that says so. They are not a
+  # licence to run — src/scripts/ads.ts requests nothing without consent, and a
+  # page with no ad block requests nothing at all. pnpm check:routes fails the
+  # build if advertising is enabled and these origins are missing.
+  #   script-src   pagead2 / tpc / adservice / partner / googleads / tagservices
+  #                — the loader and the scripts it pulls in
+  #   frame-src    googleads.g.doubleclick.net, tpc, www.google.com — every
+  #                creative is drawn in a cross-origin iframe from one of these,
+  #                which is also why this list can stay short: the creative's own
+  #                subresources are governed by that frame, not by this page
+  #   connect-src  the ad request itself and the ad-traffic-quality pings
+  #   img-src      widened to `https:` — AdSense writes creative images and
+  #                measurement pixels into this document, from hosts no list can
+  #                enumerate. Images are the one class where that trade is worth
+  #                making; script-src stays enumerated
+  # `'unsafe-inline'` is still NOT in script-src, for the reason given above. Some
+  # ad formats want it; if a unit reports a CSP violation rather than an empty
+  # inventory, that is the first thing to check and a nonce is the answer, not a
+  # blanket allowance.
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' https://static.cloudflareinsights.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://adservice.google.com https://partner.googleadservices.com https://googleads.g.doubleclick.net https://www.googletagservices.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://cloudflareinsights.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; upgrade-insecure-requests
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY

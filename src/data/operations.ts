@@ -224,7 +224,67 @@ export interface ServiceConfiguration {
    * cheaper mistake of the two.
    */
   reports: { enabled: boolean };
-  advertising: { enabled: boolean; provider: string | null; privacyPolicyUrl: string | null; placementIds: string[] };
+  /**
+   * Display advertising. Google AdSense is the configured provider; the
+   * publisher id it issues is the same string `public/ads.txt` authorises, and
+   * `docs/ADVERTISING.md` is the operator's copy of this.
+   *
+   * `publisherId` is read whether or not `enabled` is true, because it feeds the
+   * `google-adsense-account` verification tag and that tag has to be on the page
+   * before AdSense will approve the site — before there is anything to serve. It
+   * is a name, not a request: no script, no cookie, no metered call.
+   *
+   * `enabled` gates the ad blocks themselves, and `placements` is the inventory.
+   * Every unit on this site is responsive or fluid, so none of them has a size:
+   * the article column is 780px on a desktop and 280px on a phone, and a single
+   * fixed size is either wasted on one or clipped on the other. What a placement
+   * records instead is its `format` — which decides the markup AdSense needs —
+   * and the height the block reserves before the creative arrives.
+   *
+   * An empty `placements` list with `enabled` true is a validation error rather
+   * than a silent no-op: it would mean advertising is on and every block is a
+   * hole.
+   */
+  advertising: {
+    enabled: boolean;
+    provider: string | null;
+    privacyPolicyUrl: string | null;
+    publisherId: string | null;
+    placements: AdPlacement[];
+  };
+}
+
+/**
+ * The AdSense ad types this site uses, named for the markup each one needs:
+ *
+ * - `display`     responsive display. `data-ad-format="auto"`. Sizes itself to
+ *                 the column it is in, which is what lets one unit serve a
+ *                 336x280 on a phone and a 728x90 on a desktop.
+ * - `in-article`  `data-ad-layout="in-article"` with `data-ad-format="fluid"`.
+ * - `multiplex`   `data-ad-format="autorelaxed"`, the recommendation grid.
+ *
+ * In-feed is absent deliberately: it earns its keep between the items of a
+ * repeating list and this site has no ad block inside one. Adding it means a
+ * `layoutKey` here as well, because AdSense generates one per in-feed unit.
+ */
+export type AdFormat = 'display' | 'in-article' | 'multiplex';
+
+/**
+ * One ad block. `id` is the site's own name for the position, quoted by the
+ * `AdSlot` component; `adUnitId` is the digits AdSense calls `data-ad-slot`.
+ *
+ * `reserve` is the height the block holds open before the creative lands, in
+ * CSS pixels, at the two widths the site's layout actually changes at. It is a
+ * floor and not a clamp: a fluid unit decides its own height, and cutting one
+ * off at a number typed here would both hide paid-for pixels and breach the
+ * AdSense terms. Horizontal containment is the part that is absolute — a block
+ * is never wider than the column it sits in.
+ */
+export interface AdPlacement {
+  id: string;
+  adUnitId: string;
+  format: AdFormat;
+  reserve: { mobile: number; desktop: number };
 }
 
 export interface VerificationEvent {
@@ -598,11 +658,50 @@ export const validateOperations = (candidate: OperationalData) => {
   if (typeof candidate.services.reports?.enabled !== 'boolean') {
     errors.push('services.reports.enabled must be a boolean');
   }
-  if (candidate.services.advertising.enabled) {
-    if (!candidate.services.advertising.provider || !candidate.services.advertising.privacyPolicyUrl || !isHttpsUrl(candidate.services.advertising.privacyPolicyUrl)) {
+  const advertising = candidate.services.advertising;
+  /*
+   * The publisher id is checked whenever one is present, enabled or not. It is
+   * rendered as the AdSense verification tag before advertising is switched on,
+   * so a malformed one fails silently at exactly the moment nothing else would
+   * notice: the site never gets approved and no block was expected to fill.
+   */
+  if (advertising.publisherId !== null && !/^ca-pub-\d{16}$/.test(advertising.publisherId)) {
+    errors.push('services.advertising.publisherId must look like ca-pub- followed by 16 digits');
+  }
+  if (advertising.enabled) {
+    if (!advertising.provider || !advertising.privacyPolicyUrl || !isHttpsUrl(advertising.privacyPolicyUrl)) {
       errors.push('Enabled advertising needs a provider and HTTPS privacyPolicyUrl');
     }
-    if (candidate.services.advertising.placementIds.length === 0) errors.push('Enabled advertising needs at least one placementId');
+    if (!advertising.publisherId) errors.push('Enabled advertising needs a publisherId');
+    if (advertising.placements.length === 0) errors.push('Enabled advertising needs at least one placement');
+    const placementIds = new Set();
+    for (const placement of advertising.placements) {
+      if (!placement.id?.trim()) errors.push('An advertising placement needs an id');
+      else if (placementIds.has(placement.id)) errors.push(`Advertising placement ${placement.id} is declared twice`);
+      else placementIds.add(placement.id);
+      if (!/^\d+$/.test(String(placement.adUnitId))) {
+        errors.push(`Advertising placement ${placement.id} needs a numeric AdSense adUnitId`);
+      }
+      /*
+       * The format decides the markup, and AdSense reads a unit created as one
+       * type through the attributes of another as a broken unit rather than a
+       * wrong one: it renders and never fills, with nothing on the page to say
+       * why. Checking the spelling here is the only place it is cheap.
+       */
+      if (!['display', 'in-article', 'multiplex'].includes(placement.format)) {
+        errors.push(`Advertising placement ${placement.id} has an unknown format`);
+      }
+      /*
+       * A block holds its height open before the network answers. Zero would
+       * reserve nothing and let the creative's arrival move the article under a
+       * reader who is mid-sentence, which is the failure this record exists to
+       * prevent.
+       */
+      const reserve = placement.reserve;
+      if (!Number.isInteger(reserve?.mobile) || reserve.mobile <= 0 || !Number.isInteger(reserve?.desktop) || reserve.desktop <= 0) {
+        errors.push(`Advertising placement ${placement.id} needs a positive integer reserve for mobile and desktop`);
+      }
+    }
   }
 
   const entryIds = new Set([

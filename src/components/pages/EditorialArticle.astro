@@ -17,6 +17,7 @@ import { canonicalUrl, webPageId } from '../../lib/pageGraph';
 import { faqAnswerText } from '../../lib/faqAnswer';
 import { sectionArtIndex, splitAtArtAnchor } from '../../lib/articleArtSlot';
 import ArticleArt from '../ArticleArt.astro';
+import AdSlot from '../ui/AdSlot.astro';
 
 interface Props {
   article: EditorialArticleData;
@@ -34,6 +35,19 @@ const Content = renderedContent?.Content;
 const markdownHeadings = (renderedContent?.headings ?? []).filter((heading) => heading.depth === 2);
 // The byline follows the section, so a page cannot ship crediting the wrong desk.
 const author = getSectionAuthor(article.section);
+
+/*
+ * Sections that carry no advertising: the privacy policy, the terms, the DMCA
+ * notice, the disclosure, contact, about, how-we-verify and resources.
+ *
+ * These are the pages a reader opens to decide whether to trust the site,
+ * including the one that describes the advertising itself. Selling space on them
+ * is the cheapest possible contradiction of what they say, and it earns close to
+ * nothing — they are eight pages of the site's hundred and thirty-two, and none
+ * of them is a page anyone arrives on from a search for a code.
+ */
+const AD_FREE_SECTIONS: ReadonlyArray<string> = ['legal', 'about', 'resources'];
+const showAds = !AD_FREE_SECTIONS.includes(article.section);
 /*
  * Curated links first, then the game page this article covers, then other pages
  * in the same section. siblingArticlesFor skips anything already linked above.
@@ -342,6 +356,15 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
          */}
         {articleArt && !artSplit && artSectionIndex === null && <ArticleArt art={articleArt} />}
 
+        {/*
+         * The in-article block, below the prose and above the questions. It is
+         * deliberately not at the top of the body: the artwork above already
+         * argues that a reader who lands here should meet the byline and the
+         * answer before anything else, and an ad in front of them would undo
+         * that for the sake of one impression.
+         */}
+        {showAds && <AdSlot placement="article-mid" />}
+
         {article.faq && article.faq.length > 0 && (
           <section id="frequently-asked-questions" class="article-section faq-section">
             <h2>Frequently asked questions</h2>
@@ -369,6 +392,8 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
             </div>
           </section>
         )}
+
+        {showAds && <AdSlot placement="article-end" />}
 
         <PreferredSource />
       </div>

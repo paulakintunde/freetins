@@ -39,6 +39,53 @@ const workerManifest = existsSync(workerManifestPath)
   ? JSON.parse(readFileSync(workerManifestPath, 'utf8'))
   : { include: [], exclude: [] };
 
+/*
+ * Advertising has three files that have to agree and no way to notice when they
+ * stop: `public/ads.txt` names the publisher to Google, `src/content/operations.json`
+ * names it to the build, and the CSP in `public/_headers` decides whether the
+ * loader may run at all. Each disagreement fails silently and differently — an
+ * unauthorised inventory, a verification tag for the wrong account, an ad block
+ * that renders and never fills with only a console violation to say why — so the
+ * agreement is checked here rather than remembered.
+ */
+const advertising = operations.services.advertising;
+const emittedHeadersPath = join(outputRoot, '_headers');
+const cspLine = (existsSync(emittedHeadersPath) ? readFileSync(emittedHeadersPath, 'utf8') : '')
+  .split('\n')
+  .find((line) => line.trim().startsWith('Content-Security-Policy:')) ?? '';
+/*
+ * Per directive, not per policy. An origin in `connect-src` says nothing about
+ * whether the loader may execute or the creative's frame may open, and a
+ * substring search over the whole policy would read one as the other — which is
+ * exactly the false pass this check was written to rule out.
+ */
+const cspDirectives = new Map(
+  cspLine
+    .replace(/^\s*Content-Security-Policy:\s*/, '')
+    .split(';')
+    .map((directive) => directive.trim().split(/\s+/))
+    .filter(([name]) => name)
+    .map(([name, ...sources]) => [name, sources]),
+);
+const adCspGaps = advertising.enabled
+  ? [
+    ['script-src', 'https://pagead2.googlesyndication.com'],
+    ['script-src', 'https://tpc.googlesyndication.com'],
+    ['frame-src', 'https://googleads.g.doubleclick.net'],
+    ['frame-src', 'https://tpc.googlesyndication.com'],
+    ['connect-src', 'https://pagead2.googlesyndication.com'],
+  ].filter(([directive, origin]) => !(cspDirectives.get(directive) ?? []).includes(origin))
+  : [];
+/*
+ * The seller line, not the publisher id: ads.txt writes `pub-…` where the
+ * operational record and the verification tag write `ca-pub-…`, and the two
+ * spellings are the same account.
+ */
+const adsTxtSeller = advertising.publisherId?.replace(/^ca-/, '') ?? null;
+const adsTxtPath = join(outputRoot, 'ads.txt');
+const adsTxtGap = Boolean(adsTxtSeller)
+  && (!existsSync(adsTxtPath) || !readFileSync(adsTxtPath, 'utf8').includes(adsTxtSeller));
+
 const missing = new Map();
 const prototypeLeaks = [];
 const noindexSitemapLeaks = [];
@@ -543,9 +590,20 @@ if (inactiveSubmissionLinks.length > 0) {
   for (const item of inactiveSubmissionLinks.slice(0, 12)) console.error(`- ${relative(outputRoot, item.file)} -> ${item.href}`);
 }
 
+if (adCspGaps.length > 0) {
+  console.error('Advertising is enabled and the Content-Security-Policy in public/_headers does not allow AdSense. Every block would render and none would fill:');
+  for (const [directive, origin] of adCspGaps) console.error(`- ${directive} does not allow ${origin}`);
+}
+
+if (adsTxtGap) {
+  console.error(`public/ads.txt does not authorise ${adsTxtSeller}, the publisher id in src/content/operations.json. Google reads ads.txt to decide whether the inventory is legitimate, so the two have to name one account.`);
+}
+
 if (
   prototypeLeaks.length > 0
   || missing.size > 0
+  || adCspGaps.length > 0
+  || adsTxtGap
   || invalidOnDemandRoutes.length > 0
   || manifestDisagrees
   || noindexSitemapLeaks.length > 0
