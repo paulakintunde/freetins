@@ -21,4 +21,18 @@ Disallow: /_server-islands
 # spending budget to be told no and not spending it.
 Disallow: /search
 
+# `?s=` was WordPress's search parameter and this site has no use for it. It is
+# blocked because the old site was hit with query-injection spam: thousands of
+# requests carrying keyword-stuffed Chinese text and a promoted domain, which
+# WordPress echoed back into the page as "Search results for: <spam>" and Google
+# indexed as content on this domain.
+#
+# The vulnerability itself is already gone. `/?s=<anything>` now returns the plain
+# homepage, canonical to `/`, with the parameter ignored and nothing echoed - a
+# static build has nowhere to put injected text. What survives is the crawl: those
+# URLs are still in Google's index from the WordPress era and it keeps re-checking
+# them, which spends budget on a page it already has while 120 real URLs sit at
+# "discovered, not indexed".
+Disallow: /*?s=
+
 Sitemap: https://www.freetins.com/sitemap-index.xml
