@@ -1,5 +1,24 @@
+# Everything a reader can reach is open to every crawler, including every AI
+# crawler. Nothing here is a quality judgement; each rule below names a URL space
+# that answers nothing useful and costs crawl budget that the real pages need.
+
 User-agent: *
 Allow: /
 Disallow: /internal/
+
+# Astro's own endpoints. No page on the site links to either - `<Picture>` emits
+# prerendered /_astro/ assets - but they are on-demand routes, so a crawler that
+# finds one reaches the Function. `/_image/` answers a request with no valid
+# transform by throwing, which Search Console records as a server error against
+# the site. It is framework plumbing and there is nothing to index behind it.
+Disallow: /_image
+Disallow: /_server-islands
+
+# Site search. `/search/` accepts any `?q=` and answers 200 for all of it, so it
+# is an unbounded URL space that resolves to the same noindex page every time.
+# The pages carry `noindex, follow` and always will; blocking them here stops the
+# crawl before it starts rather than after, which is the difference between
+# spending budget to be told no and not spending it.
+Disallow: /search
 
 Sitemap: https://www.freetins.com/sitemap-index.xml
