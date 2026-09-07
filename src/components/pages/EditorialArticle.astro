@@ -15,6 +15,7 @@ import { gamePageForArticle, siblingArticlesFor } from '../../data/interlinks';
 import { defaultSocialImage, organizationId } from '../../data/site';
 import { canonicalUrl, webPageId } from '../../lib/pageGraph';
 import { faqAnswerText } from '../../lib/faqAnswer';
+import { editorialDates } from '../../lib/editorialDates';
 import { sectionArtIndex, splitAtArtAnchor } from '../../lib/articleArtSlot';
 import ArticleArt from '../ArticleArt.astro';
 import AdSlot from '../ui/AdSlot.astro';
@@ -24,6 +25,7 @@ interface Props {
 }
 
 const { article } = Astro.props;
+const dates = editorialDates(article);
 const contentEntry = article.contentSlug
   ? (await getCollection('articles')).find((entry) => entry.id === article.contentSlug)
   : undefined;
@@ -129,8 +131,7 @@ const elementSlug = (name: string) => name.toLowerCase()
 const elementLetter = (name: string) => name.charAt(0).toUpperCase();
 /** Who wrote it and when: true of the page whether or not it holds an Article. */
 const provenance = {
-  datePublished: article.publishedAt,
-  dateModified: article.reviewedAt,
+  ...dates.schema,
   author: { '@id': authorPersonId(author, Astro.site) },
   publisher: { '@id': organizationId },
 };
@@ -216,7 +217,9 @@ const linkAttributes = (link: ArticleLink) => link.href.startsWith('http')
       <h1>{article.heading}</h1>
       <p class="lede">{article.description}</p>
       <div class="article-meta">
-        <span>{article.reviewLabel}</span>
+        {dates.publicationLabel && <span>{dates.publicationLabel}</span>}
+        {dates.updateLabel && <span>{dates.updateLabel}</span>}
+        {dates.reviewLabel && <span>{dates.reviewLabel}</span>}
         <span class="byline">
           By <a href={author.path}>{author.name}</a>
           <span class="byline-role">{author.role}</span>

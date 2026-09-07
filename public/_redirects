@@ -79,6 +79,7 @@
 /featured/                                                         /                                  301
 /news-updates/                                                     /blog/                             301
 /uncategorized/                                                    /                                  301
+/coding-learn-computing-programming/                              /what-is-coding-learn-computing-programming/ 301
 
 # --- WordPress archive surfaces: DO NOT redirect these -----------------------
 # /category/*, /tag/*, /feed/ and paginated /page/<n>/ are crawl artefacts from the
@@ -103,30 +104,7 @@
 # `test/gone.test.mjs` asserts no catch-all comes back under these prefixes without
 # that decision being revisited, and that none is redirected wholesale.
 
-# --- Deliberate removals: DO NOT redirect these -----------------------------
-# 15 URLs with no relationship to game help. They are removed on purpose and must
-# keep returning a genuine 404. Redirecting them to a hub would be a soft-404
-# pattern: sending Rainmeter-skin or APK-sideloading traffic to a game-codes page
-# helps nobody and dilutes the site's topical focus.
-#
-# They return 410 Gone, not 404, so crawlers drop them immediately instead of
-# retrying a 404 for months. `_redirects` cannot express 410 — Cloudflare Pages
-# only supports 301/302/303/307/308 and 200 rewrites here — so each path is a
-# server-rendered route under `src/pages/`. The list and its rationale live in
-# `src/data/gone.ts`; `test/gone.test.mjs` asserts none of them is also redirected.
-#
-#   /amd-ryzen-rainmeter-skin-setup/
-#   /cowan-clock-for-rainmeter/
-#   /jarvis-iron-man-a-blue-rainmeter-skin-theme-inspiration/
-#   /jarvis-shield-interface-rainmeter-skin-installation/
-#   /kurugin-rainmeter-skin/
-#   /monstercat-visualizer-rainmeter-realtime-audio-visualizer/
-#   /visbubble-round-visualizer-for-rainmeter-skin/
-#   /blackmart-alpha-apk-latest-version-blackmarket-apk/
-#   /tech-guides/ios-emulators-windows/
-#   /tech-guides/iphone-secret-codes/
-#   /alternative-websites-like-craigslist-jobs-furniture-apartments-cars/
-#   /ambigram-generator-examples/
-#   /download-jw-player-videos-high-quality/
-#   /adblock-vs-adblock-plus-chrome-android-firefox-safari/
-#   /what-is-coding-learn-computing-programming/
+# --- Named removal: DO NOT redirect -----------------------------------------
+# `/category/how-to/` remains a deliberate 410. All 15 legacy articles have been
+# restored, with the shorter historical coding slug redirected to its canonical
+# article in one hop.

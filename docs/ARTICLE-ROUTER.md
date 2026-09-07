@@ -140,9 +140,18 @@ guides | resources | cheats | daily | legal | about | blog), optional `gameSlug`
 optional `schemaType` (Article | CollectionPage | WebPage — the last two are page
 types, so they become the `@type` of the page's one WebPage node rather than a
 second node beside it), `title`, `heading`,
-`description`, `eyebrow`, `author`, `authorPath`, `publishedAt`, `quickAnswer`,
+`description`, `eyebrow`, `author`, `authorPath`, `quickAnswer`,
 `sections[]` (may be empty when the body is markdown), optional `faq[]` of
 `{question, answer}`, `sources[]` and `related[]` of `{label, href, description?}`.
+Publication dates: optional `publishedAt` for a known exact date, or `publishedYear`
+for a known year with unknown month and day. `publicationEvidence` records the
+historical source. A year alone produces a visible publication label, not an
+invented exact date in structured data or RSS. `modifiedAt` records the actual
+posting date of a substantive revision and supplies the Updated label, modification
+metadata, and revised feed date. It is independent of product review and is never
+set from a routine build clock. An explicit `modifiedAt` takes precedence over the
+legacy review-date fallback. See `src/lib/editorialDates.ts`.
+
 Legal pages only: `effectiveAt`, a fact an author can know. Not part of the object,
 and ignored if supplied (reported to the editor queue): `reviewedAt`, `reviewLabel` — <!-- retired-vocabulary: allow, names the fields only to say they are not typed -->
 a review is an event, made from the control page or break-glass in the ledger file. The page never receives a star and never shows

@@ -73,9 +73,14 @@ export interface EditorialArticle {
   eyebrow: string;
   author: string;
   authorPath: string;
-  publishedAt: string;
-  reviewedAt: string;
-  reviewLabel: string;
+  publishedAt?: string;
+  /** Historical publication precision, used when the month and day are unknown. */
+  publishedYear?: number;
+  publicationEvidence?: string;
+  /** Actual posting date of a substantive revision, independent of product review. */
+  modifiedAt?: string;
+  reviewedAt?: string;
+  reviewLabel?: string;
   quickAnswer: string;
   sections: ArticleSection[];
   faq?: ArticleFaq[];
