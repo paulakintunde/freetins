@@ -118,8 +118,8 @@ const staticRoutes: RouteDefinition[] = [
     noindex: true,
   },
   {
-    path: '/blog/', routeId: 'updates', kind: 'updates', title: fitTitle({ stem: 'How game codes and rewards actually work' }), heading: 'Blog',
-    description: 'Longer pages on how codes and rewards actually work, each built from a dataset where every row carries its own evidence and state.',
+    path: '/blog/', routeId: 'updates', kind: 'updates', title: fitTitle({ stem: 'Blog: game help and desktop customization' }), heading: 'Blog',
+    description: 'Practical articles on game rewards and desktop customization, with original sources, setup examples and clear limitations.',
   },
   {
     path: '/games/', routeId: 'az', kind: 'az', title: fitTitle({ stem: 'All games A-Z', count: publishedPageCount > 0 ? `every one of the ${publishedPageCount} we list` : null }), heading: 'All games A-Z',

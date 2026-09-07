@@ -19,6 +19,18 @@ reviewer checks that no script can.
 Later steps add: the companion Worker's typecheck and tests (Step 2a), and the
 serve-and-fetch pass above (Step 2c).
 
+## Editorial publication precision
+
+`test/editorial-dates.test.mjs` covers year-only publication without a fabricated
+day, actual revised posting dates without a review claim, unchanged legacy date
+behavior, separation from later product reviews, conflicting or invalid dates, and
+timezone-stable display. The shared renderer and RSS consume the same helper;
+sitemap lastmod continues to read the emitted modification metadata.
+
+Run with `node --test test/editorial-dates.test.mjs`. If Astro telemetry cannot write
+its user config in a restricted environment, set `ASTRO_TELEMETRY_DISABLED=1` for
+the validation process. This changes no site behavior.
+
 ## What a reviewer checks
 
 - **Documentation is in the same diff as the code it describes.** If the PR retires

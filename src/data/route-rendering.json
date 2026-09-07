@@ -3,46 +3,14 @@
   "workerRoutePatterns": [
     "/_image/",
     "/_server-islands/*",
-    "/adblock-vs-adblock-plus-chrome-android-firefox-safari/",
-    "/alternative-websites-like-craigslist-jobs-furniture-apartments-cars/",
-    "/ambigram-generator-examples/",
-    "/amd-ryzen-rainmeter-skin-setup/",
     "/api/*",
-    "/blackmart-alpha-apk-latest-version-blackmarket-apk/",
-    "/category/how-to/",
-    "/coding-learn-computing-programming/",
-    "/cowan-clock-for-rainmeter/",
-    "/download-jw-player-videos-high-quality/",
-    "/jarvis-iron-man-a-blue-rainmeter-skin-theme-inspiration/",
-    "/jarvis-shield-interface-rainmeter-skin-installation/",
-    "/kurugin-rainmeter-skin/",
-    "/monstercat-visualizer-rainmeter-realtime-audio-visualizer/",
-    "/tech-guides/ios-emulators-windows/",
-    "/tech-guides/iphone-secret-codes/",
-    "/visbubble-round-visualizer-for-rainmeter-skin/",
-    "/what-is-coding-learn-computing-programming/"
+    "/category/how-to/"
   ],
   "onDemandRoutePaths": [
     "/_image/",
-    "/adblock-vs-adblock-plus-chrome-android-firefox-safari/",
-    "/alternative-websites-like-craigslist-jobs-furniture-apartments-cars/",
-    "/ambigram-generator-examples/",
-    "/amd-ryzen-rainmeter-skin-setup/",
     "/api/checker-status.json",
     "/api/code-report.json",
-    "/blackmart-alpha-apk-latest-version-blackmarket-apk/",
-    "/category/how-to/",
-    "/coding-learn-computing-programming/",
-    "/cowan-clock-for-rainmeter/",
-    "/download-jw-player-videos-high-quality/",
-    "/jarvis-iron-man-a-blue-rainmeter-skin-theme-inspiration/",
-    "/jarvis-shield-interface-rainmeter-skin-installation/",
-    "/kurugin-rainmeter-skin/",
-    "/monstercat-visualizer-rainmeter-realtime-audio-visualizer/",
-    "/tech-guides/ios-emulators-windows/",
-    "/tech-guides/iphone-secret-codes/",
-    "/visbubble-round-visualizer-for-rainmeter-skin/",
-    "/what-is-coding-learn-computing-programming/"
+    "/category/how-to/"
   ],
   "onDemandRoutePrefixes": [
     "/_server-islands/"

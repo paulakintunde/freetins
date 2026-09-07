@@ -7,6 +7,8 @@ import { defineConfig } from 'astro/config';
 import { datasetBackedPaths } from './src/data/datasetRoutes.ts';
 import { goneRoutes } from './src/data/gone.ts';
 import { routeDefinitions } from './src/data/routes.ts';
+import { editorialArticles } from './src/data/articles/index.ts';
+import { belongsToSitemapSection } from './src/lib/sitemapSection.ts';
 
 /*
  * A dataset page takes its path over from the route table via `getStaticPaths`, so
@@ -184,6 +186,9 @@ const writeIfChanged = (target, contents) => {
  * date and a sitemap of its own without either being named a second time.
  */
 const SECTION_HUBS = ['/codes/', '/cheats/', '/answers/', '/guides/', '/daily/', '/blog/', '/gear/'];
+const editorialSections = new Map(editorialArticles
+  .filter((article) => SECTION_HUBS.includes(`/${article.section}/`))
+  .map((article) => [article.path, `/${article.section}/`]));
 
 /**
  * `<lastmod>`, read back from the page the build actually wrote.
@@ -305,7 +310,7 @@ const recordedLastmod = () => {
       return newestUnder((p) => p !== '/');
     }
     if (SECTION_HUBS.includes(pathname)) {
-      return newestUnder((p) => p.startsWith(pathname) && p !== pathname);
+      return newestUnder((p) => belongsToSitemapSection(p, pathname, editorialSections) && p !== pathname);
     }
     if (pathname === '/games/') {
       return newestUnder((p) => p.startsWith('/codes/') && p !== '/codes/');
@@ -377,7 +382,7 @@ const sitemapLastmod = recordedLastmod();
 const sitemapChunks = Object.fromEntries(
   [...SECTION_HUBS, '/author/'].map((prefix) => [
     prefix.replaceAll('/', ''),
-    (item) => (new URL(item.url).pathname.startsWith(prefix) ? item : undefined),
+    (item) => (belongsToSitemapSection(new URL(item.url).pathname, prefix, editorialSections) ? item : undefined),
   ]),
 );
 

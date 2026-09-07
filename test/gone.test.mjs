@@ -38,10 +38,9 @@ test('no removed URL is also redirected', () => {
 });
 
 test('the removal list matches the count the migration review recorded', () => {
-  // 15 from the migration review, plus /coding-learn-computing-programming/ — the
-  // slug WordPress served the same article at before its title changed — and
-  // /category/how-to/, the one archive listing Google is actually holding.
-  assert.equal(goneRoutes.length, 17);
+  // All 15 legacy articles are restored. The duplicate coding slug redirects to
+  // its canonical article, leaving only the named archive leaf deliberately gone.
+  assert.equal(goneRoutes.length, 1);
   assert.equal(new Set(goneRoutes).size, goneRoutes.length, 'duplicate entry in goneRoutes');
   for (const route of goneRoutes) {
     assert.ok(route.startsWith('/') && route.endsWith('/'), `${route} is not a trailing-slash path`);

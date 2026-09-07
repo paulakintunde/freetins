@@ -949,7 +949,20 @@ const routeSchemaNodes = [
       </section>
     )}
 
-    {definition.kind === 'updates' && (
+    {definition.path === '/blog/' && (
+      <section class="page-section content-boundary">
+        <h2>Desktop customization</h2>
+        <div class="card-grid article-card-grid">
+          {editorialArticles.filter((item) => item.section === 'blog').map((item) => (
+            <a class="media-card" href={item.path}>
+              <div class="card-copy"><h3>{item.heading}</h3><p>{item.description}</p></div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {definition.kind === 'updates' && definition.path !== '/blog/' && (
       <section class="page-section content-boundary">{timelineEntries.length ? <div class="timeline">{timelineEntries.map((item) => <article><time datetime={item.publishedAt}>{formatAbsoluteTimestamp(item.publishedAt)}</time><span>{item.version}</span><div><h2>{item.title}</h2><p>{item.summary}</p><a href={item.sourceUrl} rel="noopener">Source</a></div></article>)}</div> : <div class="data-empty"><strong>No timeline entry is published</strong><p>The timeline remains configured. An entry appears only with a version, summary, absolute publication time and source URL.</p></div>}</section>
     )}
 

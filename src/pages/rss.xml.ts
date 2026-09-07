@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import { editorialArticles } from '../data/articles';
 import { listAllDatasetPages } from '../lib/datasetPages';
 import { siteOrigin } from '../data/site';
+import { editorialDates } from '../lib/editorialDates';
 
 export const prerender = true;
 
@@ -24,7 +25,8 @@ export const prerender = true;
  * ## Dates
  *
  * `pubDate` is the publication fact each source already holds - `publishedAt` for an
- * editorial article, the dataset's own `checkedAt` for a dataset page. Neither is
+ * editorial article (or its actual revised posting date), the dataset's own
+ * `checkedAt` for a dataset page. A historical year alone creates no feed date. Neither is
  * the build clock, and neither asserts that a check happened, so this adds no new
  * claim to the ones the pages already make (docs/adr/0003).
  */
@@ -56,7 +58,7 @@ export const GET: APIRoute = async () => {
         path: article.path,
         title: article.heading,
         description: article.description,
-        at: article.publishedAt,
+        at: editorialDates(article).feedDate ?? '',
       })),
     ...datasetPages.map((page) => ({
       path: page.path,

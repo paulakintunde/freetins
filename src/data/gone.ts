@@ -1,11 +1,13 @@
 /**
  * URLs from the old WordPress site that are removed on purpose.
  *
- * These 15 pages have no relationship to game help — Rainmeter desktop skins, an
+ * The original removal group included Rainmeter desktop skins, an
  * APK sideloading guide, iOS emulators for Windows, iPhone secret codes, Craigslist
  * alternatives, an ambigram generator, a JW Player downloader, an adblock comparison
  * and "what is coding". Several carry download-safety or copyright risk. Dropping
- * them is the point of the migration, not an oversight.
+ * them was the original migration decision. The owner has since commissioned
+ * restoration as blog articles. All fifteen articles are restored. The sole entry
+ * below is a named WordPress archive leaf, not an authored article.
  *
  * They must NOT be redirected. Sending Rainmeter-skin traffic to a game-codes hub is
  * a soft-404 pattern: it helps nobody and dilutes the site's topical focus.
@@ -58,27 +60,6 @@ export const retiredArchivePrefixes: string[] = [
 ];
 
 export const goneRoutes: string[] = [
-  '/amd-ryzen-rainmeter-skin-setup/',
-  '/cowan-clock-for-rainmeter/',
-  '/jarvis-iron-man-a-blue-rainmeter-skin-theme-inspiration/',
-  '/jarvis-shield-interface-rainmeter-skin-installation/',
-  '/kurugin-rainmeter-skin/',
-  '/monstercat-visualizer-rainmeter-realtime-audio-visualizer/',
-  '/visbubble-round-visualizer-for-rainmeter-skin/',
-  '/blackmart-alpha-apk-latest-version-blackmarket-apk/',
-  '/tech-guides/ios-emulators-windows/',
-  '/tech-guides/iphone-secret-codes/',
-  '/alternative-websites-like-craigslist-jobs-furniture-apartments-cars/',
-  '/ambigram-generator-examples/',
-  '/download-jw-player-videos-high-quality/',
-  '/adblock-vs-adblock-plus-chrome-android-firefox-safari/',
-  '/what-is-coding-learn-computing-programming/',
-  /*
-   * The same article under the slug WordPress served it at before the title
-   * changed. Google still lists this one and it answers 404, so it was retiring at
-   * 404 timing while its twin two lines up retired at 410 timing.
-   */
-  '/coding-learn-computing-programming/',
   /*
    * The one archive listing that earns a route. The reasoning at
    * retiredArchivePrefixes rules out a catch-all under /category/, because a
