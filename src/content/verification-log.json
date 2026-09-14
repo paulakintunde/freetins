@@ -5,37 +5,109 @@
   },
   "sessions": [
     {
-      "startedAt": "2026-09-02T06:55:00Z",
+      "startedAt": "2026-09-07T14:47:00Z",
       "checkedBy": "paul-a",
       "method": "redeemed",
       "result": "accepted",
       "games": [
+        "anime-card-clash",
+        "99-nights-in-the-forest",
+        "anime-guardians",
+        "anime-last-stand",
+        "anime-vanguards",
+        "anime-apocalypse",
+        "anime-eternal",
+        "anime-final-quest"
+      ]
+    },
+    {
+      "startedAt": "2026-09-02T16:04:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted",
+      "games": [
+        "basketball-zero",
+        "bizarre-lineage",
+        "blade-ball",
+        "devil-hunters",
+        "blue-lock-rivals",
+        "clover-retribution",
+        "dandys-world",
+        "dragon-soul",
+        "dress-to-impress",
+        "azure-latch",
+        "da-hood"
+      ]
+    },
+    {
+      "startedAt": "2026-09-03T19:01:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted",
+      "games": [
+        "flashpoint",
+        "hunty-zombies",
+        "kaizen",
+        "fisch",
+        "fruit-battlegrounds",
+        "grow-a-garden",
+        "jujutsu-zero",
+        "king-legacy",
+        "driving-empire",
+        "jujutsu-infinite"
+      ]
+    },
+    {
+      "startedAt": "2026-09-04T16:08:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted",
+      "games": [
+        "playground-basketball",
+        "racket-rivals",
+        "pixel-blade",
+        "ninja-time",
+        "plants-vs-brainrots"
+      ]
+    },
+    {
+      "startedAt": "2026-09-13T15:50:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted",
+      "games": [
+        "sailor-piece",
+        "restaurant-tycoon-3",
+        "rivals",
+        "anime-ranger-x"
+      ]
+    },
+    {
+      "startedAt": "2026-09-07T17:45:00Z",
+      "checkedBy": "paul-a",
+      "method": "redeemed",
+      "result": "accepted",
+      "games": [
+        "sols-rng",
+        "shindo-life",
+        "soccer-zero",
+        "steal-a-brainrot",
         "spongebob-tower-defense"
       ]
     },
     {
-      "startedAt": "2026-08-31T16:00:00Z",
+      "startedAt": "2026-09-13T21:08:00Z",
       "checkedBy": "paul-a",
       "method": "redeemed",
       "result": "accepted",
       "games": [
-        "anime-apocalypse",
-        "anime-eternal",
-        "azure-latch"
-      ]
-    },
-    {
-      "startedAt": "2026-09-01T15:33:00Z",
-      "checkedBy": "paul-a",
-      "method": "redeemed",
-      "result": "accepted",
-      "games": [
-        "anime-ranger-x",
-        "driving-empire",
-        "anime-final-quest",
-        "the-forge",
-        "jujutsu-infinite",
-        "da-hood"
+        "universal-tower-defense",
+        "tennis-zero",
+        "type-soul",
+        "untitled-boxing-game",
+        "volleyball-legends",
+        "weak-legacy-2",
+        "the-forge"
       ]
     }
   ]
