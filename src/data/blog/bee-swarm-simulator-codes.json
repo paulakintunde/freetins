@@ -1,0 +1,227 @@
+{
+  "subject": "Bee Swarm Simulator",
+  "slug": "bee-swarm-simulator-codes",
+  "entity_id": "1537690962",
+  "entity_url": "https://www.roblox.com/games/1537690962/",
+  "developer": "Onett",
+  "permalink": "/blog/bee-swarm-simulator-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/1537690962/",
+      "note": "Publisher's game listing or official product page."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Bee Swarm Simulator: listed rewards and source context",
+      "columns": [
+        "Code",
+        "Reward",
+        "Context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "fourtunate",
+      "cells": {
+        "Code": "fourtunate",
+        "Reward": "1 Marshmallow Bee; 4 each of Strawberries, Sunflower Seeds, Blueberries, Pineapples, Micro-Converters, Field Dice, Gumdrops, Jelly Beans and Stingers",
+        "Context": "Reported bundle"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "15MMembers",
+      "cells": {
+        "Code": "15MMembers",
+        "Reward": "1 Marshmallow Bee; 1 Red Balloon; 15 each of Gumdrops, Sunflower Seeds, Strawberries, Pineapples, Blueberries and Bitterberries",
+        "Context": "Read any club requirement in game"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "38217",
+      "cells": {
+        "Code": "38217",
+        "Reward": "5 Tickets",
+        "Context": "Source places this in both its current list and archive"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "BeesBuzz123",
+      "cells": {
+        "Code": "BeesBuzz123",
+        "Reward": "1 Cloud Vial; 5 Bitterberries; 10 Gumdrops",
+        "Context": "Reported bundle"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Bopmaster",
+      "cells": {
+        "Code": "Bopmaster",
+        "Reward": "5 Tickets",
+        "Context": "Reported ticket reward"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Connoisseur",
+      "cells": {
+        "Code": "Connoisseur",
+        "Reward": "5 Tickets",
+        "Context": "Reported ticket reward"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Crawlers",
+      "cells": {
+        "Code": "Crawlers",
+        "Reward": "5 Tickets",
+        "Context": "Reported ticket reward"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Roof",
+      "cells": {
+        "Code": "Roof",
+        "Reward": "5 Tickets",
+        "Context": "Reported ticket reward"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Nectar",
+      "cells": {
+        "Code": "Nectar",
+        "Reward": "5,000 Honey",
+        "Context": "Reported Honey reward"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Wax",
+      "cells": {
+        "Code": "Wax",
+        "Reward": "5,000 Honey; 5 Tickets",
+        "Context": "Reported mixed reward"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "ClubBean",
+      "cells": {
+        "Code": "ClubBean",
+        "Reward": "Field boosts; exact bundle not established here",
+        "Context": "Bee Swarm Simulator Club membership required"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "ClubConverters",
+      "cells": {
+        "Code": "ClubConverters",
+        "Reward": "10 Micro-Converters",
+        "Context": "Bee Swarm Simulator Club membership required"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "unverified_summary": "PCGamesN places 38217 in both its current list and archive. ClubBean's source description does not establish a complete quantified boost bundle. The table preserves both limitations rather than assigning a guessed outcome or amount.",
+  "next_change": {
+    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
+    "watch": "https://www.roblox.com/games/1537690962/"
+  }
+}

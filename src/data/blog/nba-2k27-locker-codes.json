@@ -1,0 +1,193 @@
+{
+  "subject": "NBA 2K27",
+  "slug": "nba-2k27-locker-codes",
+  "entity_id": "https://nba.2k.com/2k27/",
+  "entity_url": "https://nba.2k.com/2k27/",
+  "developer": "Visual Concepts / 2K",
+  "permalink": "/blog/nba-2k27-locker-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://nba.2k.com/2k27/",
+      "note": "Publisher game page."
+    },
+    {
+      "type": "help_centre",
+      "url": "https://support.nba2k.com/hc/en-us/articles/41883933826707-NBA-2K-How-to-Redeem-a-Locker-Code",
+      "note": "Publisher explains time, volume and console limits; its navigation is not specific to NBA 2K27."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "NBA 2K27 code claims and reported limits",
+      "columns": [
+        "Code",
+        "Reward",
+        "Limit or context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "PLAYER-XP-GAME-CHANGERS",
+      "cells": {
+        "Code": "PLAYER-XP-GAME-CHANGERS",
+        "Reward": "Option pack: choose 5 Player XP Game Changers",
+        "Limit or context": "No publisher deadline recovered; does not promise five player cards."
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gamedaily.com/games/nba-2k27-player-xp-game-changers-locker-code"
+        }
+      ],
+      "notes": "No publisher deadline recovered; does not promise five player cards."
+    },
+    {
+      "table": "codes",
+      "name": "MYTEAM-TRAINING-HUB",
+      "cells": {
+        "Code": "MYTEAM-TRAINING-HUB",
+        "Reward": "Series 1 Deluxe Pack",
+        "Limit or context": "No publisher deadline recovered."
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/games/nba-2k/nba-2k27-locker-codes/"
+        }
+      ],
+      "notes": "No publisher deadline recovered."
+    },
+    {
+      "table": "codes",
+      "name": "BALL-OVER-EVERYTHING-1199-8820",
+      "cells": {
+        "Code": "BALL-OVER-EVERYTHING-1199-8820",
+        "Reward": "100,000 VC",
+        "Limit or context": "Historical, reported exhausted by GamesRadar; global cap 20 redemptions."
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/games/nba-2k/nba-2k27-locker-codes/"
+        }
+      ],
+      "notes": "Historical, reported exhausted by GamesRadar; global cap 20 redemptions."
+    },
+    {
+      "table": "codes",
+      "name": "BALL-OVER-EVERYTHING-1341-2340",
+      "cells": {
+        "Code": "BALL-OVER-EVERYTHING-1341-2340",
+        "Reward": "25,000 VC",
+        "Limit or context": "Historical, reported exhausted by GamesRadar; global cap 50 redemptions."
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/games/nba-2k/nba-2k27-locker-codes/"
+        }
+      ],
+      "notes": "Historical, reported exhausted by GamesRadar; global cap 50 redemptions."
+    },
+    {
+      "table": "codes",
+      "name": "BALL-OVER-EVERYTHING-1559-7166",
+      "cells": {
+        "Code": "BALL-OVER-EVERYTHING-1559-7166",
+        "Reward": "50,000 VC",
+        "Limit or context": "Historical, reported exhausted by GamesRadar; global cap 50 redemptions."
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/games/nba-2k/nba-2k27-locker-codes/"
+        }
+      ],
+      "notes": "Historical, reported exhausted by GamesRadar; global cap 50 redemptions."
+    },
+    {
+      "table": "codes",
+      "name": "BALL-OVER-EVERYTHING-4016-4455",
+      "cells": {
+        "Code": "BALL-OVER-EVERYTHING-4016-4455",
+        "Reward": "50,000 VC",
+        "Limit or context": "Historical, reported exhausted by GamesRadar; global cap 50 redemptions."
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/games/nba-2k/nba-2k27-locker-codes/"
+        }
+      ],
+      "notes": "Historical, reported exhausted by GamesRadar; global cap 50 redemptions."
+    },
+    {
+      "table": "codes",
+      "name": "BALL-OVER-EVERYTHING-5048-4928",
+      "cells": {
+        "Code": "BALL-OVER-EVERYTHING-5048-4928",
+        "Reward": "100,000 VC",
+        "Limit or context": "Historical, reported exhausted by GamesRadar; global cap 50 redemptions."
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/games/nba-2k/nba-2k27-locker-codes/"
+        }
+      ],
+      "notes": "Historical, reported exhausted by GamesRadar; global cap 50 redemptions."
+    },
+    {
+      "table": "codes",
+      "name": "BALL-OVER-EVERYTHING-5055-1795",
+      "cells": {
+        "Code": "BALL-OVER-EVERYTHING-5055-1795",
+        "Reward": "50,000 VC",
+        "Limit or context": "Historical, reported exhausted by GamesRadar; global cap 50 redemptions."
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/games/nba-2k/nba-2k27-locker-codes/"
+        }
+      ],
+      "notes": "Historical, reported exhausted by GamesRadar; global cap 50 redemptions."
+    },
+    {
+      "table": "codes",
+      "name": "BALL-OVER-EVERYTHING-9614-9414",
+      "cells": {
+        "Code": "BALL-OVER-EVERYTHING-9614-9414",
+        "Reward": "10,000 VC",
+        "Limit or context": "Historical, reported exhausted by GamesRadar; global cap 250 redemptions."
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/games/nba-2k/nba-2k27-locker-codes/"
+        }
+      ],
+      "notes": "Historical, reported exhausted by GamesRadar; global cap 250 redemptions."
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "unverified_summary": "No publisher-stated deadline was recovered for PLAYER-XP-GAME-CHANGERS or MYTEAM-TRAINING-HUB. The MyTEAM X announcement is linked from GameDaily but could not be read directly. Historical VC strings are reported exhausted by GamesRadar and are retained as an archive, not recommended as fresh grants.",
+  "next_change": {
+    "pattern": "Watch the publisher's announcements for specific code terms and new rewards; no fixed code schedule is established.",
+    "watch": "https://nba.2k.com/2k27/"
+  }
+}

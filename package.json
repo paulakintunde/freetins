@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "pnpm run guards && astro build && pnpm check:routes",
+    "build": "node scripts/build-publication.mjs",
     "build:only": "astro build",
     "guards": "pnpm lint && pnpm check:data && pnpm test && pnpm check:content --strict && pnpm check:vocabulary --strict",
     "preview": "pnpm build:only && wrangler pages dev dist",
@@ -20,7 +20,7 @@
     "check:content": "node scripts/check-content.mjs",
     "check:data": "node scripts/check-operational-data.mjs",
     "check:routes": "node scripts/check-routes.mjs",
-    "test": "node --test",
+    "test": "node --test test/*.test.mjs",
     "check:vocabulary": "node scripts/check-vocabulary.mjs",
     "snapshot:states": "node scripts/snapshot-states.mjs",
     "report:cutover": "node scripts/cutover-report.mjs",

@@ -1,0 +1,66 @@
+{
+  "subject": "Steal An Egg",
+  "slug": "steal-an-egg-codes",
+  "entity_id": "107778070777162",
+  "entity_url": "https://www.roblox.com/games/107778070777162/",
+  "developer": "and Collect Rare Pets",
+  "permalink": "/blog/steal-an-egg-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/107778070777162/Steal-An-Egg",
+      "note": "Official game identity and gameplay description."
+    },
+    {
+      "type": "official_group",
+      "url": "https://www.roblox.com/communities/825735094/and-Collect-Rare-Pets",
+      "note": "Publisher community linked by the gift guide."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Public code strings documented for Steal An Egg",
+      "columns": [
+        "Code",
+        "Reward",
+        "Limit or context"
+      ],
+      "kind": "code"
+    },
+    "freebies": {
+      "caption": "Reported gift claim; this is not a redeem code",
+      "columns": [
+        "Offer",
+        "Reward",
+        "Requirements"
+      ],
+      "kind": "fact"
+    }
+  },
+  "rows": [
+    {
+      "table": "freebies",
+      "name": "Yellow gift beside Most Money leaderboard",
+      "cells": {
+        "Offer": "Yellow gift beside Most Money leaderboard",
+        "Reward": "10,000 Speed, reported by BloxInformer",
+        "Requirements": "Like and favorite the game; join and Collect Rare Pets; use Claim"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://bloxinformer.com/wikis/steal-an-egg/codes/"
+        }
+      ],
+      "notes": "Read the in-game prompt for the terms shown to your account."
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "next_change": {
+    "pattern": "Publisher announcements can add rewards or change redemption requirements. No fixed release schedule is established.",
+    "watch": "https://www.roblox.com/games/107778070777162/"
+  },
+  "unverified_summary": "The gift amount and location are reported by BloxInformer, not confirmed by a Freetins in-game claim. The publisher's public listing explains Speed training but does not state the gift terms."
+}

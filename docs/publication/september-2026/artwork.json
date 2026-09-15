@@ -1,0 +1,230 @@
+{
+  "method": "Built-in image_gen",
+  "records": [
+    {
+      "slug": "blox-fruits-codes",
+      "title": "Blox Fruits",
+      "scene": "A block-world pirate adventurer on a sunlit tropical dock, looking at an open reward chest with a glowing hourglass, reset compass and small coins; distant sailing ship and lush islands. No fruit prize implied.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Create one polished original gaming illustration for Blox Fruits. A block-world pirate adventurer on a sunlit tropical dock, looking at an open reward chest with a glowing hourglass, reset compass and small coins; distant sailing ship and lush islands. No fruit prize implied. Style: colorful premium 3D illustrated game key art with tactile toy-like materials, strong readable foreground silhouettes, richly detailed but uncluttered environment, bright natural light. Keep important subjects in the central 1200x630-safe area. Include only a modest, crisp game-title treatment reading \"Blox Fruits\" in the upper-left; no other text, dates, counts, codes, watermarks or invented UI. This is conceptual editorial artwork, not a screenshot or redemption proof.",
+      "hero": "src/assets/articles/blox-fruits-codes-article-art.webp",
+      "social": "public/og/articles/blox-fruits-codes.jpg",
+      "sourceArtifact": "exec-ea3e92e5-3878-4627-8b96-534b4676451c.png"
+    },
+    {
+      "slug": "steal-an-egg-codes",
+      "title": "Steal an Egg",
+      "scene": "A cheerful block-world runner approaches a huge yellow gift on a green circular pad near a simple leaderboard structure; colorful eggs and pet habitats in the background; motion ribbons suggest speed.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: A cheerful block-world runner approaches a huge yellow gift on a green circular pad near a simple leaderboard structure; colorful eggs and pet habitats in the background; motion ribbons suggest speed. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Composition: keep main subject and title within the central 1200x630 safe area for social crop. Text verbatim: \"Steal an Egg\", modest crisp game title upper left only. No other text, dates, counts, codes, watermarks, fake UI or claims of gameplay proof. Original concept illustration.",
+      "hero": "src/assets/articles/steal-an-egg-codes-article-art.webp",
+      "social": "public/og/articles/steal-an-egg-codes.jpg",
+      "sourceArtifact": "exec-80a01ebe-ceb4-4942-80c2-422ddc162aa0.png"
+    },
+    {
+      "slug": "grand-blue-codes",
+      "title": "Grand Blue",
+      "scene": "An original anime pirate navigator beside an open wooden fruit chest and glowing reroll dice, blue sea, early morning port and distant sailing ship, adventurous but calm composition.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: An original anime pirate navigator beside an open wooden fruit chest and glowing reroll dice, blue sea, early morning port and distant sailing ship, adventurous but calm composition. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Composition: keep main subject and title within the central 1200x630 safe area for social crop. Text verbatim: \"Grand Blue\", modest crisp game title upper left only. No other text, dates, counts, codes, watermarks, fake UI or claims of gameplay proof. Original concept illustration.",
+      "hero": "src/assets/articles/grand-blue-codes-article-art.webp",
+      "social": "public/og/articles/grand-blue-codes.jpg",
+      "sourceArtifact": "exec-e33808f0-b68e-4701-9ce4-3a17e91d1837.png"
+    },
+    {
+      "slug": "evomon-codes",
+      "title": "Evomon",
+      "scene": "Original friendly fantasy creatures gathered around EXP fruit, evolution stones, coins and capture spheres in a sunny training meadow. A small fire pup and water creature, visually distinct item silhouettes.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Original friendly fantasy creatures gathered around EXP fruit, evolution stones, coins and capture spheres in a sunny training meadow. A small fire pup and water creature, visually distinct item silhouettes. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Composition: keep main subject and title within the central 1200x630 safe area for social crop. Text verbatim: \"Evomon\", modest crisp game title upper left only. No other text, dates, counts, codes, watermarks, fake UI or claims of gameplay proof. Original concept illustration.",
+      "hero": "src/assets/articles/evomon-codes-article-art.webp",
+      "social": "public/og/articles/evomon-codes.jpg",
+      "sourceArtifact": "exec-d101a034-d282-4fbd-ad1a-12308c246b08.png"
+    },
+    {
+      "slug": "evomon-tier-list",
+      "title": "Evomon",
+      "scene": "A trainer selecting a small diverse creature team for a sunny winding path; fire rock creature in foreground, flying electric bird, water companion and durable plant creature; resource pouch suggests careful training choices. No ranking letters or false stats.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: A trainer selecting a small diverse creature team for a sunny winding path; fire rock creature in foreground, flying electric bird, water companion and durable plant creature; resource pouch suggests careful training choices. No ranking letters or false stats. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Composition: keep main subject and title within the central 1200x630 safe area for social crop. Text verbatim: \"Evomon\", modest crisp game title upper left only. No other text, dates, counts, codes, watermarks, fake UI or claims of gameplay proof. Original concept illustration.",
+      "hero": "src/assets/articles/evomon-tier-list-article-art.webp",
+      "social": "public/og/articles/evomon-tier-list.jpg",
+      "sourceArtifact": "exec-b16510e0-d419-4c4b-9ad9-5d0471170e5a.png"
+    },
+    {
+      "slug": "anime-expeditions-codes",
+      "title": "Anime Expeditions",
+      "scene": "Original anime defenders around a bright violet trait crystal chest at the entrance to a vibrant tower-defense path; green hills, floating tactical markers, warm daylight.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Original anime defenders around a bright violet trait crystal chest at the entrance to a vibrant tower-defense path; green hills, floating tactical markers, warm daylight. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Composition: keep main subject and title inside central 1200x630 safe area for social crop. Text verbatim: \"Anime Expeditions\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/anime-expeditions-codes-article-art.webp",
+      "social": "public/og/articles/anime-expeditions-codes.jpg",
+      "sourceArtifact": "exec-ea838a51-3aec-42c2-a3ee-6416a5f525f8.png"
+    },
+    {
+      "slug": "dungeon-lootr-codes",
+      "title": "Dungeon Lootr",
+      "scene": "Adventurer at a sunlit dungeon threshold examining purple luck potion bottles, faceted aspect gems and a mysterious blessing chest; warm stone arches, readable item silhouettes.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Adventurer at a sunlit dungeon threshold examining purple luck potion bottles, faceted aspect gems and a mysterious blessing chest; warm stone arches, readable item silhouettes. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Composition: keep main subject and title inside central 1200x630 safe area for social crop. Text verbatim: \"Dungeon Lootr\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/dungeon-lootr-codes-article-art.webp",
+      "social": "public/og/articles/dungeon-lootr-codes.jpg",
+      "sourceArtifact": "exec-68b3d6a1-e98d-4b54-a7f5-e6d6da4c558c.png"
+    },
+    {
+      "slug": "adopt-me-codes",
+      "title": "Adopt Me!",
+      "scene": "Friendly pastel pet-adoption plaza with an adorable dog and cat beside a clearly separate frog sticker on a gift envelope; welcoming daylight, toy-like 3D illustration, no code promising a pet.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Friendly pastel pet-adoption plaza with an adorable dog and cat beside a clearly separate frog sticker on a gift envelope; welcoming daylight, toy-like 3D illustration, no code promising a pet. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Composition: keep main subject and title inside central 1200x630 safe area for social crop. Text verbatim: \"Adopt Me!\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/adopt-me-codes-article-art.webp",
+      "social": "public/og/articles/adopt-me-codes.jpg",
+      "sourceArtifact": "exec-f9d99588-96b7-47a9-ad8c-06eff8afbb4f.png"
+    },
+    {
+      "slug": "murder-mystery-2-codes",
+      "title": "Murder Mystery 2",
+      "scene": "Stylized mystery mansion display cabinet of collectible colorful toy-like knives and a pumpkin pet, an old archive drawer and magnifying glass, warm dramatic lighting; no violence or victims.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Stylized mystery mansion display cabinet of collectible colorful toy-like knives and a pumpkin pet, an old archive drawer and magnifying glass, warm dramatic lighting; no violence or victims. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Composition: keep main subject and title inside central 1200x630 safe area for social crop. Text verbatim: \"Murder Mystery 2\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/murder-mystery-2-codes-article-art.webp",
+      "social": "public/og/articles/murder-mystery-2-codes.jpg",
+      "sourceArtifact": "exec-eb0ba4eb-ae88-4624-a070-00ede3f89bc9.png"
+    },
+    {
+      "slug": "doors-codes",
+      "title": "DOORS",
+      "scene": "Moody but readable hotel corridor with a numbered wooden door in background, polished brass knobs, sparkling dust and a glowing revive bottle in foreground; inviting golden light against blue shadows.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Moody but readable hotel corridor with a numbered wooden door in background, polished brass knobs, sparkling dust and a glowing revive bottle in foreground; inviting golden light against blue shadows. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"DOORS\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/doors-codes-article-art.webp",
+      "social": "public/og/articles/doors-codes.jpg",
+      "sourceArtifact": "exec-493c70ed-dd05-49de-adea-ddbd6398994c.png"
+    },
+    {
+      "slug": "fish-it-codes",
+      "title": "Fish It!",
+      "scene": "Block-world angler on a turquoise lagoon dock preparing violet mutation potion bottles beside fishing gear; colorful fish silhouettes under clear water, sunny tropical panorama.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Block-world angler on a turquoise lagoon dock preparing violet mutation potion bottles beside fishing gear; colorful fish silhouettes under clear water, sunny tropical panorama. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Fish It!\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/fish-it-codes-article-art.webp",
+      "social": "public/og/articles/fish-it-codes.jpg",
+      "sourceArtifact": "exec-8f5e3e1f-cc31-4f4a-9153-9894dc4e20b5.png"
+    },
+    {
+      "slug": "catch-a-monster-codes",
+      "title": "Catch a Monster",
+      "scene": "Friendly original monster collector discovering distinct glowing eggs, a fantasy chest and small potion bottles in a bright meadow; dramatic purple and teal egg shells without guaranteed hatch imagery.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Friendly original monster collector discovering distinct glowing eggs, a fantasy chest and small potion bottles in a bright meadow; dramatic purple and teal egg shells without guaranteed hatch imagery. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Catch a Monster\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/catch-a-monster-codes-article-art.webp",
+      "social": "public/og/articles/catch-a-monster-codes.jpg",
+      "sourceArtifact": "exec-7de41b9b-b821-44c7-a81e-3be4cec5a2a5.png"
+    },
+    {
+      "slug": "bee-swarm-simulator-codes",
+      "title": "Bee Swarm Simulator",
+      "scene": "Block-world beekeeper among giant sunflowers with cheerful geometric bees, tickets, honey jar and colorful berry treats; golden sunshine, rich green garden, playful polished render.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Block-world beekeeper among giant sunflowers with cheerful geometric bees, tickets, honey jar and colorful berry treats; golden sunshine, rich green garden, playful polished render. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Bee Swarm Simulator\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/bee-swarm-simulator-codes-article-art.webp",
+      "social": "public/og/articles/bee-swarm-simulator-codes.jpg",
+      "sourceArtifact": "exec-3d242c13-da87-4b30-9972-46b49d7cac7c.png"
+    },
+    {
+      "slug": "re-rangers-x-codes",
+      "title": "Re:Rangers X",
+      "scene": "Original anime ranger team protecting a sunny fantasy village road, trait crystals, summer capsules and blue fragments in foreground, dynamic but uncluttered celebratory composition.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Original anime ranger team protecting a sunny fantasy village road, trait crystals, summer capsules and blue fragments in foreground, dynamic but uncluttered celebratory composition. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Re:Rangers X\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/re-rangers-x-codes-article-art.webp",
+      "social": "public/og/articles/re-rangers-x-codes.jpg",
+      "sourceArtifact": "exec-af4f4369-8543-45aa-aa94-bb1b29b79040.png"
+    },
+    {
+      "slug": "brookhaven-rp-guide",
+      "title": "Brookhaven RP",
+      "scene": "Cheerful block-world town with a modest free family home, roleplay backpack tools, a parked car and boombox; neighborhood park, daylight, welcoming lived-in scene, no mansion giveaways.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Cheerful block-world town with a modest free family home, roleplay backpack tools, a parked car and boombox; neighborhood park, daylight, welcoming lived-in scene, no mansion giveaways. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Brookhaven RP\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/brookhaven-rp-guide-article-art.webp",
+      "social": "public/og/articles/brookhaven-rp-guide.jpg",
+      "sourceArtifact": "exec-d6b92557-7df1-4f58-b409-8d2aa1b0bca0.png"
+    },
+    {
+      "slug": "nba-2k27-locker-codes",
+      "title": "NBA 2K27",
+      "scene": "Original basketball athlete in a bright modern locker room beside an open locker containing stylized player progression cards and training tokens; court visible through doorway, no real player likeness or false VC promise.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Original basketball athlete in a bright modern locker room beside an open locker containing stylized player progression cards and training tokens; court visible through doorway, no real player likeness or false VC promise. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"NBA 2K27\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/nba-2k27-locker-codes-article-art.webp",
+      "social": "public/og/articles/nba-2k27-locker-codes.jpg",
+      "sourceArtifact": "exec-9600b96e-b5f5-4487-bfd8-ddb3699435ce.png"
+    },
+    {
+      "slug": "fortnite-admin-panel-codes",
+      "title": "Fortnite",
+      "scene": "Original colorful battle-royale lobby scene with a friendly sprite, sparkling blue dust, glowing reward envelope and playful arcade-machine transformation; polished gaming key-art style, no fake functional UI.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Original colorful battle-royale lobby scene with a friendly sprite, sparkling blue dust, glowing reward envelope and playful arcade-machine transformation; polished gaming key-art style, no fake functional UI. Style: polished 3D toy-like game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Fortnite\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/fortnite-admin-panel-codes-article-art.webp",
+      "social": "public/og/articles/fortnite-admin-panel-codes.jpg",
+      "sourceArtifact": "exec-2e280da9-3cdf-4910-809c-6401847ba968.png"
+    },
+    {
+      "slug": "pokemon-go-promo-codes",
+      "title": "Pokémon GO",
+      "scene": "Sunny outdoor trainer scene with a phone displaying a symbolic research checklist without readable UI text, berries, capture balls, cap and baseball shirt reward icons; park walkway, playful polished illustration.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Sunny outdoor trainer scene with a phone displaying a symbolic research checklist without readable UI text, berries, capture balls, cap and baseball shirt reward icons; park walkway, playful polished illustration. Style: polished 3D stylized game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Pokémon GO\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/pokemon-go-promo-codes-article-art.webp",
+      "social": "public/og/articles/pokemon-go-promo-codes.jpg",
+      "sourceArtifact": "exec-199c14d7-3d6c-45f0-a190-92b31fc78ddc.png"
+    },
+    {
+      "slug": "genshin-impact-codes",
+      "title": "Genshin Impact",
+      "scene": "Original fantasy traveler beside a sunlit hilltop mailbox, glowing four-point wish gems, golden coins, experience books and food parcels; sweeping anime fantasy landscape, elegant polished rendering.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Original fantasy traveler beside a sunlit hilltop mailbox, glowing four-point wish gems, golden coins, experience books and food parcels; sweeping anime fantasy landscape, elegant polished rendering. Style: polished 3D stylized game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Genshin Impact\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/genshin-impact-codes-article-art.webp",
+      "social": "public/og/articles/genshin-impact-codes.jpg",
+      "sourceArtifact": "exec-64d09477-15f3-4d28-90a1-bda61939aa96.png"
+    },
+    {
+      "slug": "honkai-star-rail-codes",
+      "title": "Honkai: Star Rail",
+      "scene": "Original space traveler receiving a glowing mail parcel on an elegant interstellar train platform; jade-colored gems, a fuel canister and study books, daylight from panoramic cosmic windows.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Original space traveler receiving a glowing mail parcel on an elegant interstellar train platform; jade-colored gems, a fuel canister and study books, daylight from panoramic cosmic windows. Style: polished 3D stylized game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Honkai: Star Rail\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/honkai-star-rail-codes-article-art.webp",
+      "social": "public/og/articles/honkai-star-rail-codes.jpg",
+      "sourceArtifact": "exec-a3ba7d52-5f97-47a3-ac67-24b60cc85320.png"
+    },
+    {
+      "slug": "zenless-zone-zero-codes",
+      "title": "Zenless Zone Zero",
+      "scene": "Original urban anime courier outside a colorful video shop receiving a reward envelope with iridescent geometric tokens, coins and equipment modules; crisp morning city light, stylish playful composition.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Original urban anime courier outside a colorful video shop receiving a reward envelope with iridescent geometric tokens, coins and equipment modules; crisp morning city light, stylish playful composition. Style: polished 3D stylized game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Zenless Zone Zero\", modest crisp title upper left only. No other text, dates, counts, codes, watermarks or fake UI. Original concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/zenless-zone-zero-codes-article-art.webp",
+      "social": "public/og/articles/zenless-zone-zero-codes.jpg",
+      "sourceArtifact": "exec-7013b0ed-7ac5-402e-929a-95da6cd113f4.png"
+    },
+    {
+      "slug": "gta-6-release-date",
+      "title": "GTA VI",
+      "scene": "Original cinematic illustration of a pastel coastal city with palms, a sports car and boxed digital game token beside a download symbol; bright sunset, no dates, prices or claims of actual gameplay screenshot.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Original cinematic illustration of a pastel coastal city with palms, a sports car and boxed digital game token beside a download symbol; bright sunset, no dates, prices or claims of actual gameplay screenshot. Style: polished stylized 3D game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"GTA VI\", modest crisp title upper left only. No other text, dates, prices, counts, codes, watermarks or fake UI. Original editorial concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/gta-6-release-date-article-art.webp",
+      "social": "public/og/articles/gta-6-release-date.jpg",
+      "sourceArtifact": "exec-a4755035-703d-4414-be5b-54d063691562.png"
+    },
+    {
+      "slug": "gta-6-cheat-codes",
+      "title": "GTA VI",
+      "scene": "Original pastel coastal boulevard scene with a game controller and a closed mystery notebook in foreground, question-mark symbol on its cover; sunset palms and distant sports car, no invented code text.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Original pastel coastal boulevard scene with a game controller and a closed mystery notebook in foreground, question-mark symbol on its cover; sunset palms and distant sports car, no invented code text. Style: polished stylized 3D game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"GTA VI\", modest crisp title upper left only. No other text, dates, prices, counts, codes, watermarks or fake UI. Original editorial concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/gta-6-cheat-codes-article-art.webp",
+      "social": "public/og/articles/gta-6-cheat-codes.jpg",
+      "sourceArtifact": "exec-5619a74b-0788-4aae-8065-da1095374c4b.png"
+    },
+    {
+      "slug": "roblox-innovation-awards-2026-free-ugc",
+      "title": "Roblox Innovation Awards",
+      "scene": "Bright block-world award ceremony stage with audience avatars and four symbolic crystal accessory silhouettes: crown, shield, torch and pair of ducks; celebratory blue and gold lighting, no claim button or fake reward confirmation.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Bright block-world award ceremony stage with audience avatars and four symbolic crystal accessory silhouettes: crown, shield, torch and pair of ducks; celebratory blue and gold lighting, no claim button or fake reward confirmation. Style: polished stylized 3D game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Roblox Innovation Awards\", modest crisp title upper left only. No other text, dates, prices, counts, codes, watermarks or fake UI. Original editorial concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/roblox-innovation-awards-2026-free-ugc-article-art.webp",
+      "social": "public/og/articles/roblox-innovation-awards-2026-free-ugc.jpg",
+      "sourceArtifact": "exec-5ac09e2e-6091-4d6b-8d50-2955d3547f2e.png"
+    },
+    {
+      "slug": "why-roblox-games-skip-codes",
+      "title": "Roblox Rewards",
+      "scene": "Three connected block-world scenes: yellow gift claim beside eggs, an event stage with collectible creatures, and a thriving vegetable garden; a player follows a winding path through different reward activities, bright daylight.",
+      "prompt": "Use case: stylized-concept. Asset type: Freetins gaming article hero, landscape 1536x1024. Scene: Three connected block-world scenes: yellow gift claim beside eggs, an event stage with collectible creatures, and a thriving vegetable garden; a player follows a winding path through different reward activities, bright daylight. Style: polished stylized 3D game key art, vivid colors, readable silhouettes, high quality lighting and depth. Text verbatim: \"Roblox Rewards\", modest crisp title upper left only. No other text, dates, prices, counts, codes, watermarks or fake UI. Original editorial concept illustration, not gameplay proof.",
+      "hero": "src/assets/articles/why-roblox-games-skip-codes-article-art.webp",
+      "social": "public/og/articles/why-roblox-games-skip-codes.jpg",
+      "sourceArtifact": "exec-2e50cae3-e442-4cd2-bf7d-c17aa3429433.png"
+    }
+  ]
+}

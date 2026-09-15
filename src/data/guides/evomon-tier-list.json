@@ -1,0 +1,163 @@
+{
+  "subject": "Evomon",
+  "slug": "evomon-tier-list",
+  "entity_id": "134381727982611",
+  "entity_url": "https://www.roblox.com/games/134381727982611/",
+  "developer": "Evomon Devs",
+  "permalink": "/guides/evomon-tier-list/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/134381727982611/",
+      "note": "Publisher's game listing or official product page."
+    }
+  ],
+  "tables": {
+    "training": {
+      "caption": "Editorial training priorities for a developing roster",
+      "columns": [
+        "Evomon line",
+        "Priority",
+        "Use case"
+      ],
+      "kind": "fact"
+    }
+  },
+  "rows": [
+    {
+      "table": "training",
+      "name": "Lavite / Lavarock",
+      "cells": {
+        "Evomon line": "Lavite / Lavarock",
+        "Priority": "A: first carry candidate",
+        "Use case": "Reported early Fire/Rock evolution; avoid duplicating a role already covered"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Pummpaw / Pummash",
+      "cells": {
+        "Evomon line": "Pummpaw / Pummash",
+        "Priority": "A: first carry candidate",
+        "Use case": "Reported Fighting cleanup option; choose if that role helps your team"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Blazpup",
+      "cells": {
+        "Evomon line": "Blazpup",
+        "Priority": "B: starter investment",
+        "Use case": "Reported straightforward Fire starter; reassess before expensive long-term spending"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Bubblade",
+      "cells": {
+        "Evomon line": "Bubblade",
+        "Priority": "B: coverage investment",
+        "Use case": "Water option when the team needs different coverage"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Graycrene / Sundercrene",
+      "cells": {
+        "Evomon line": "Graycrene / Sundercrene",
+        "Priority": "B: coverage investment",
+        "Use case": "Flying damage option; compare against existing attackers"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Arcub / Arcapex",
+      "cells": {
+        "Evomon line": "Arcub / Arcapex",
+        "Priority": "C: conditional target",
+        "Use case": "Reported boss-linked Electric line; obtain access before planning around it"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Wispuff / Wisphex",
+      "cells": {
+        "Evomon line": "Wispuff / Wisphex",
+        "Priority": "C: conditional target",
+        "Use case": "Status-oriented line; more useful when its role fits the team"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Tarro / Tarragon",
+      "cells": {
+        "Evomon line": "Tarro / Tarragon",
+        "Priority": "C: conditional target",
+        "Use case": "Durable Grass/Dragon option; assess matchups and investment cost"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "unverified_summary": "The source's graphic and written tiers disagree for some creatures. These are Freetins editorial training priorities, not copied competitive tiers or results from a Freetins battle test. Creature roles and evolution names are reported by the source; exact balance values and acquisition rates have not been established here.",
+  "next_change": {
+    "pattern": "Reassess training priorities when the publisher changes moves, balance, acquisition routes or evolution costs.",
+    "watch": "https://www.roblox.com/games/134381727982611/"
+  }
+}

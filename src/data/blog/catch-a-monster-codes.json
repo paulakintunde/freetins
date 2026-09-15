@@ -1,0 +1,114 @@
+{
+  "subject": "Catch a Monster",
+  "slug": "catch-a-monster-codes",
+  "entity_id": "98664161516921",
+  "entity_url": "https://www.roblox.com/games/98664161516921/",
+  "developer": "LDS II",
+  "permalink": "/blog/catch-a-monster-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/98664161516921/",
+      "note": "Publisher's game listing or official product page."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Catch a Monster: listed rewards and source context",
+      "columns": [
+        "Code",
+        "Reward",
+        "Context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "bigopus",
+      "cells": {
+        "Code": "bigopus",
+        "Reward": "1 Nightmare Bloodcore Egg",
+        "Context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/catch-a-monster-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "oblivion",
+      "cells": {
+        "Code": "oblivion",
+        "Reward": "1 Mythical Chest",
+        "Context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/catch-a-monster-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "abyssal",
+      "cells": {
+        "Code": "abyssal",
+        "Reward": "1 Breather Pod Egg",
+        "Context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/catch-a-monster-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "xp",
+      "cells": {
+        "Code": "xp",
+        "Reward": "3 Small XP Potions",
+        "Context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/catch-a-monster-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "coin",
+      "cells": {
+        "Code": "coin",
+        "Reward": "3 Small Coin Potions",
+        "Context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/catch-a-monster-codes/"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "next_change": {
+    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
+    "watch": "https://www.roblox.com/games/98664161516921/"
+  }
+}

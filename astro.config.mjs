@@ -10,13 +10,16 @@ import { routeDefinitions } from './src/data/routes.ts';
 import { editorialArticles } from './src/data/articles/index.ts';
 import { belongsToSitemapSection } from './src/lib/sitemapSection.ts';
 
+// Resolve source files beside this config, including isolated release builds.
+const configRoot = fileURLToPath(new URL('.', import.meta.url));
+
 /*
  * A dataset page takes its path over from the route table via `getStaticPaths`, so
  * where the two disagree the dataset page is the one that renders and the route
  * entry describes a page nobody serves. Its `noindex` must not keep the live page
  * out of the sitemap.
  */
-const datasetOwned = new Set(datasetBackedPaths());
+const datasetOwned = new Set(datasetBackedPaths(configRoot));
 
 /**
  * The sitemap integration enumerates every route the build emits, including the
@@ -424,14 +427,14 @@ const dailyNofollowUrls = () => {
   const urls = new Set();
   let files;
   try {
-    files = readdirSync(join(process.cwd(), 'src', 'data', 'daily'));
+    files = readdirSync(join(configRoot, 'src', 'data', 'daily'));
   } catch {
     return urls;
   }
 
   for (const file of files) {
     if (!file.endsWith('.json')) continue;
-    const dataset = JSON.parse(readFileSync(join(process.cwd(), 'src', 'data', 'daily', file), 'utf8'));
+    const dataset = JSON.parse(readFileSync(join(configRoot, 'src', 'data', 'daily', file), 'utf8'));
     for (const row of dataset.rows ?? []) {
       for (const cell of Object.values(row.cells ?? {})) {
         for (const match of String(cell).matchAll(/https?:\/\/[^\s)\]]+/g)) urls.add(match[0]);
@@ -597,6 +600,7 @@ const freePlanRouteManifest = () => {
 };
 
 export default defineConfig({
+  cacheDir: process.env.FREETINS_ASSET_CACHE ?? './node_modules/.astro',
   site: 'https://www.freetins.com',
   output: 'static',
   trailingSlash: 'always',

@@ -1,0 +1,114 @@
+{
+  "subject": "Zenless Zone Zero",
+  "slug": "zenless-zone-zero-codes",
+  "entity_id": "https://zenless.hoyoverse.com/redemption",
+  "entity_url": "https://zenless.hoyoverse.com/redemption",
+  "developer": "HoYoverse",
+  "permalink": "/blog/zenless-zone-zero-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://zenless.hoyoverse.com/redemption",
+      "note": "Publisher's game listing or official product page."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Zenless Zone Zero: listed rewards and source context",
+      "columns": [
+        "Code",
+        "Reward",
+        "Context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "ZZZMEIJI",
+      "cells": {
+        "Code": "ZZZMEIJI",
+        "Reward": "30,000 Denny; 3 Senior Investigator Logs; 3 W-Engine Energy Modules",
+        "Context": "No publisher deadline recovered"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "ZZZ2YEAR",
+      "cells": {
+        "Code": "ZZZ2YEAR",
+        "Reward": "50 Polychrome",
+        "Context": "No publisher deadline recovered"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "ZZZ31REMIELLE",
+      "cells": {
+        "Code": "ZZZ31REMIELLE",
+        "Reward": "60 Polychrome; 6,666 Denny",
+        "Context": "No publisher deadline recovered"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "ZENLESSGIFT",
+      "cells": {
+        "Code": "ZENLESSGIFT",
+        "Reward": "50 Polychrome; 2 Official Investigator Logs; 3 W-Engine Power Supplies; 1 Bangboo Algorithm Module",
+        "Context": "Prior claim may prevent another grant"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "FLINTWORKS",
+      "cells": {
+        "Code": "FLINTWORKS",
+        "Reward": "300 Polychrome; 30,000 Denny; 2 Senior Investigator Logs; 3 W-Engine Energy Modules",
+        "Context": "Historical livestream promotion, archived by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "next_change": {
+    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
+    "watch": "https://zenless.hoyoverse.com/redemption"
+  }
+}

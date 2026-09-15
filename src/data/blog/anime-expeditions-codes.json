@@ -1,0 +1,151 @@
+{
+  "subject": "Anime Expeditions",
+  "slug": "anime-expeditions-codes",
+  "entity_id": "84515722934860",
+  "entity_url": "https://www.roblox.com/games/84515722934860/",
+  "developer": "Expeditions Entertainment",
+  "permalink": "/blog/anime-expeditions-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/84515722934860/",
+      "note": "Publisher's game listing or official product page."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Anime Expeditions: listed rewards and source context",
+      "columns": [
+        "Code",
+        "Reward",
+        "Context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "restartsorry!",
+      "cells": {
+        "Code": "restartsorry!",
+        "Reward": "25 Trait Crystals",
+        "Context": "Reported in the newer Beebom list"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/anime-expeditions-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "fastrestart!",
+      "cells": {
+        "Code": "fastrestart!",
+        "Reward": "25 Trait Crystals",
+        "Context": "Historical: Beebom places this in its archive"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/anime-expeditions-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/anime-expeditions-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "EvolutionsFix",
+      "cells": {
+        "Code": "EvolutionsFix",
+        "Reward": "25 Trait Crystals",
+        "Context": "Historical: Beebom places this in its archive"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/anime-expeditions-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/anime-expeditions-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "8thCompany",
+      "cells": {
+        "Code": "8thCompany",
+        "Reward": "50 Stat Rerolls; 25 Trait Rerolls",
+        "Context": "Historical; bundle reported by Pro Game Guides"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/anime-expeditions-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/anime-expeditions-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "250klikes",
+      "cells": {
+        "Code": "250klikes",
+        "Reward": "1,000 Sand Dollars; 25 Equipment Rerolls; 25 Trait Rerolls",
+        "Context": "Historical; bundle reported by Pro Game Guides"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/anime-expeditions-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/anime-expeditions-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Eclipse",
+      "cells": {
+        "Code": "Eclipse",
+        "Reward": "25 Trait Rerolls; 50 Equipment Rerolls",
+        "Context": "Historical; bundle reported by Pro Game Guides"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/anime-expeditions-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/anime-expeditions-codes/"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "unverified_summary": "Beebom calls the new reward Trait Crystals while Pro Game Guides describes rerolls. Older bundle amounts are preserved from Pro Game Guides; the sources do not establish successful redemption on a Freetins account.",
+  "next_change": {
+    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
+    "watch": "https://www.roblox.com/games/84515722934860/"
+  }
+}

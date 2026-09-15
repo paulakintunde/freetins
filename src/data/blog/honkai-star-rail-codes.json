@@ -1,0 +1,162 @@
+{
+  "subject": "Honkai: Star Rail",
+  "slug": "honkai-star-rail-codes",
+  "entity_id": "https://hsr.hoyoverse.com/gift",
+  "entity_url": "https://hsr.hoyoverse.com/gift",
+  "developer": "HoYoverse",
+  "permalink": "/blog/honkai-star-rail-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://hsr.hoyoverse.com/gift",
+      "note": "Publisher's game listing or official product page."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Honkai: Star Rail: listed rewards and source context",
+      "columns": [
+        "Code",
+        "Reward",
+        "Context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "SunsweptRobin",
+      "cells": {
+        "Code": "SunsweptRobin",
+        "Reward": "3 Traveler's Guides; 2 Classic SoulGlads",
+        "Context": "No publisher deadline recovered"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "OMEGA",
+      "cells": {
+        "Code": "OMEGA",
+        "Reward": "60 Stellar Jade; 1 Fuel",
+        "Context": "No publisher deadline recovered"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "CREATIONNYMPH",
+      "cells": {
+        "Code": "CREATIONNYMPH",
+        "Reward": "60 Stellar Jade; 1 Fuel",
+        "Context": "No publisher deadline recovered"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "FAREWELL",
+      "cells": {
+        "Code": "FAREWELL",
+        "Reward": "60 Stellar Jade; 1 Fuel",
+        "Context": "No publisher deadline recovered"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "IFYOUAREREADINGTHIS",
+      "cells": {
+        "Code": "IFYOUAREREADINGTHIS",
+        "Reward": "60 Stellar Jade; 1 Fuel",
+        "Context": "No publisher deadline recovered"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "4TKSX77Y58QK",
+      "cells": {
+        "Code": "4TKSX77Y58QK",
+        "Reward": "30 Stellar Jade; 3 Traveler's Guides; 5 Condensed Aether; 4 Lost Gold Fragments; 20,000 Credits",
+        "Context": "No publisher deadline recovered"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "5S6ZHRWTDNJB",
+      "cells": {
+        "Code": "5S6ZHRWTDNJB",
+        "Reward": "60 Stellar Jade",
+        "Context": "No publisher deadline recovered"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "STARRAILGIFT",
+      "cells": {
+        "Code": "STARRAILGIFT",
+        "Reward": "50 Stellar Jade; 10,000 Credits; 2 Traveler's Guides; 5 Bottled Soda",
+        "Context": "Prior claim may prevent another grant"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "next_change": {
+    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
+    "watch": "https://hsr.hoyoverse.com/gift"
+  }
+}

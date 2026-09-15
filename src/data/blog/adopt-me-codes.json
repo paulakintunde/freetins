@@ -1,0 +1,51 @@
+{
+  "subject": "Adopt Me!",
+  "slug": "adopt-me-codes",
+  "entity_id": "920587237",
+  "entity_url": "https://www.roblox.com/games/920587237/",
+  "developer": "Uplift Games",
+  "permalink": "/blog/adopt-me-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/920587237/",
+      "note": "Publisher's game listing or official product page."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Adopt Me!: listed rewards and source context",
+      "columns": [
+        "Code",
+        "Reward",
+        "Context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "PROUDFROG",
+      "cells": {
+        "Code": "PROUDFROG",
+        "Reward": "Proud Frog Sticker",
+        "Context": "Historical event code; community reports closure on June 19, 2026. Not a pet."
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/roblox-adopt-me-codes/"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "unverified_summary": "Beebom still lists PROUDFROG, while the Proud Frog Sticker community reference reports that redemption closed. Its live page could not be opened beyond the search result. The exact claim outcome is unresolved here; no current free-pet code is established.",
+  "next_change": {
+    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
+    "watch": "https://www.roblox.com/games/920587237/"
+  }
+}

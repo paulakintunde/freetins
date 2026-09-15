@@ -14,7 +14,7 @@ const gameSources = import.meta.glob<ImageMetadata>('../assets/games/*-codes-art
   eager: true,
   import: 'default',
 });
-const sharedGameSources = import.meta.glob<ImageMetadata>('../assets/articles/steal-a-brainrot-codes-article-art.webp', {
+const sharedGameSources = import.meta.glob<ImageMetadata>('../assets/articles/*-article-art.webp', {
   eager: true,
   import: 'default',
 });
@@ -116,10 +116,12 @@ const gameAlts: Record<string, string> = {
 };
 
 const gameImageOverrides: Record<string, string> = {
+  'anime-ranger-x': 're-rangers-x-codes-article-art.webp', // september-rangers-art
   'steal-a-brainrot': 'steal-a-brainrot-codes-article-art.webp',
 };
 
 const gameSocialOverrides: Record<string, string> = {
+  'anime-ranger-x': '/og/articles/re-rangers-x-codes.jpg', // september-rangers-art
   'anime-vanguards': '/og/games/anime-vanguards-v2.jpg',
   'plants-vs-brainrots': '/og/games/plants-vs-brainrots-v2.jpg',
   'steal-a-brainrot': '/og/articles/steal-a-brainrot-codes.jpg',

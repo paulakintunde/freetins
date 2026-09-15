@@ -1,0 +1,159 @@
+{
+  "subject": "Fish It",
+  "slug": "fish-it-codes",
+  "entity_id": "121864768012064",
+  "entity_url": "https://www.roblox.com/games/121864768012064/",
+  "developer": "Fish Atelier",
+  "permalink": "/blog/fish-it-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/121864768012064/",
+      "note": "Publisher's game listing or official product page."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Fish It: listed rewards and source context",
+      "columns": [
+        "Code",
+        "Reward",
+        "Context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "ELEMENTAL26",
+      "cells": {
+        "Code": "ELEMENTAL26",
+        "Reward": "2 Mutation II Potions",
+        "Context": "PGG reports level 10 requirement; newer than Beebom list"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/fish-it-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/fish-it-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "MERDEKA",
+      "cells": {
+        "Code": "MERDEKA",
+        "Reward": "2 Mutation II Potions",
+        "Context": "Beebom lists this bundle; check the game's level requirement"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/fish-it-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "CONTRA",
+      "cells": {
+        "Code": "CONTRA",
+        "Reward": "2 Mutation II Potions",
+        "Context": "Beebom lists this bundle; check the game's level requirement"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/fish-it-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "POTIONSSS",
+      "cells": {
+        "Code": "POTIONSSS",
+        "Reward": "2 Mutation II Potions",
+        "Context": "Beebom lists this bundle; check the game's level requirement"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/fish-it-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "MUTATION2",
+      "cells": {
+        "Code": "MUTATION2",
+        "Reward": "2 Mutation II Potions",
+        "Context": "Beebom lists this bundle; check the game's level requirement"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/fish-it-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "YEEHAW",
+      "cells": {
+        "Code": "YEEHAW",
+        "Reward": "Cowboy Hat Halo",
+        "Context": "Historical according to Beebom; PGG still lists it"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/fish-it-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/fish-it-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "EASTER2026",
+      "cells": {
+        "Code": "EASTER2026",
+        "Reward": "Potion rewards; exact bundle not established",
+        "Context": "Historical according to Beebom"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/fish-it-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/fish-it-codes/"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "unverified_summary": "Pro Game Guides lists ELEMENTAL26 and many older strings as current, while Beebom's shorter list archives several of those older entries. ELEMENTAL26's amount and level gate come from PGG. The archive reports for YEEHAW and EASTER2026 are preserved without asserting an editor retirement.",
+  "next_change": {
+    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
+    "watch": "https://www.roblox.com/games/121864768012064/"
+  }
+}

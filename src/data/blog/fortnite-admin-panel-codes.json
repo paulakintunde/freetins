@@ -1,0 +1,482 @@
+{
+  "subject": "Fortnite",
+  "slug": "fortnite-admin-panel-codes",
+  "entity_id": "https://www.fortnite.com/news/fortnite-override-break-the-rules-change-the-game",
+  "entity_url": "https://www.fortnite.com/news/fortnite-override-break-the-rules-change-the-game",
+  "developer": "Epic Games",
+  "permalink": "/blog/fortnite-admin-panel-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.fortnite.com/news/fortnite-override-break-the-rules-change-the-game",
+      "note": "Publisher's game listing or official product page."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Fortnite: listed rewards and source context",
+      "columns": [
+        "Code",
+        "Reward",
+        "Context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "DustInTheWind",
+      "cells": {
+        "Code": "DustInTheWind",
+        "Reward": "5,000 Sprite Dust",
+        "Context": "Resource"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "NOPROLLAMA",
+      "cells": {
+        "Code": "NOPROLLAMA",
+        "Reward": "Shapeless Ascendance and The Search For a Secret Weapon Loading Screens; Llama Supply Drop Gizmo",
+        "Context": "Cosmetics and item"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "WhereIsTheDustyTree",
+      "cells": {
+        "Code": "WhereIsTheDustyTree",
+        "Reward": "5,000 Sprite Dust",
+        "Context": "Resource"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "InsertCoinToContinue",
+      "cells": {
+        "Code": "InsertCoinToContinue",
+        "Reward": "Arcade Machine lobby transformation",
+        "Context": "Temporary lobby effect"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "BRB",
+      "cells": {
+        "Code": "BRB",
+        "Reward": "Toilet lobby transformation",
+        "Context": "Temporary lobby effect"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "YourThoughtsAreMine",
+      "cells": {
+        "Code": "YourThoughtsAreMine",
+        "Reward": "5,000 Sprite Dust; Void Master Geno outfit style",
+        "Context": "Requires Geno Story quest completion"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "JonesyIsGolden",
+      "cells": {
+        "Code": "JonesyIsGolden",
+        "Reward": "Golden Jonesy Sprite",
+        "Context": "Sprite"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "GatherAndCraft",
+      "cells": {
+        "Code": "GatherAndCraft",
+        "Reward": "Cheat Master Bush Sprite",
+        "Context": "Complete first part of Wrixel/Ziggy quest"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "H0p0nVC",
+      "cells": {
+        "Code": "H0p0nVC",
+        "Reward": "2,000 Sprite Dust",
+        "Context": "Preserve zero characters"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Play4All",
+      "cells": {
+        "Code": "Play4All",
+        "Reward": "Cheat Master Jonesy Sprite",
+        "Context": "Sprite"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "GottaGoFast",
+      "cells": {
+        "Code": "GottaGoFast",
+        "Reward": "Cheat Master Sonic Sprite",
+        "Context": "Sprite"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "IWannaFlyHigh",
+      "cells": {
+        "Code": "IWannaFlyHigh",
+        "Reward": "Cheat Master Tails Sprite",
+        "Context": "Sprite"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "8BitBlast",
+      "cells": {
+        "Code": "8BitBlast",
+        "Reward": "Cheat Master 8-Bit Sprite",
+        "Context": "Sprite"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "BORN2PLAY",
+      "cells": {
+        "Code": "BORN2PLAY",
+        "Reward": "Cheat Master Adventure Sprite",
+        "Context": "Sprite"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "OverrideXP",
+      "cells": {
+        "Code": "OverrideXP",
+        "Reward": "40,000 XP",
+        "Context": "XP reward"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Magilume",
+      "cells": {
+        "Code": "Magilume",
+        "Reward": "2,000 Sprite Dust",
+        "Context": "Resource"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Perlimpinpin",
+      "cells": {
+        "Code": "Perlimpinpin",
+        "Reward": "2,000 Sprite Dust",
+        "Context": "Resource"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Chispambo",
+      "cells": {
+        "Code": "Chispambo",
+        "Reward": "2,000 Sprite Dust",
+        "Context": "Resource"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Abgestaubt",
+      "cells": {
+        "Code": "Abgestaubt",
+        "Reward": "2,000 Sprite Dust",
+        "Context": "Resource"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "O2OVERRIDE",
+      "cells": {
+        "Code": "O2OVERRIDE",
+        "Reward": "5 Portable Extractors; 1 Llama Supply Drop",
+        "Context": "Items"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "PerfectOrder",
+      "cells": {
+        "Code": "PerfectOrder",
+        "Reward": "4 Spicy Tacos",
+        "Context": "Items"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "TakeYourHeart",
+      "cells": {
+        "Code": "TakeYourHeart",
+        "Reward": "2 Extraction Accelerators",
+        "Context": "Items"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "SurviveTheNight",
+      "cells": {
+        "Code": "SurviveTheNight",
+        "Reward": "2 Cheat Code Locators",
+        "Context": "Items"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "FindItChat",
+      "cells": {
+        "Code": "FindItChat",
+        "Reward": "2 Cheat Code Locators",
+        "Context": "Items"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "REACHYOURIMPOSSIBLE",
+      "cells": {
+        "Code": "REACHYOURIMPOSSIBLE",
+        "Reward": "Block Party Loading Screen",
+        "Context": "Cosmetic"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "BeMoreAlien",
+      "cells": {
+        "Code": "BeMoreAlien",
+        "Reward": "Override Ready Loading Screen",
+        "Context": "Cosmetic"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "LetsBlockAndRoll",
+      "cells": {
+        "Code": "LetsBlockAndRoll",
+        "Reward": "Tetris block transformation",
+        "Context": "Temporary lobby effect"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "DontBlockMe",
+      "cells": {
+        "Code": "DontBlockMe",
+        "Reward": "Tetris block transformation",
+        "Context": "Temporary lobby effect"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/fortnite/fortnite-admin-panel-codes/"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "next_change": {
+    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
+    "watch": "https://www.fortnite.com/news/fortnite-override-break-the-rules-change-the-game"
+  }
+}

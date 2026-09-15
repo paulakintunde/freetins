@@ -1,0 +1,115 @@
+{
+  "subject": "Dungeon Lootr",
+  "slug": "dungeon-lootr-codes",
+  "entity_id": "106484206883664",
+  "entity_url": "https://www.roblox.com/games/106484206883664/",
+  "developer": "ClickBytes",
+  "permalink": "/blog/dungeon-lootr-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/106484206883664/",
+      "note": "Publisher's game listing or official product page."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Dungeon Lootr: listed rewards and source context",
+      "columns": [
+        "Code",
+        "Reward",
+        "Context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "20MVISIT",
+      "cells": {
+        "Code": "20MVISIT",
+        "Reward": "3 Luck Potions III",
+        "Context": "Beebom spelling; Nerd's Chalk prints 20mvisit"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/dungeon-lootr-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "45KLIKE",
+      "cells": {
+        "Code": "45KLIKE",
+        "Reward": "3 Random GM Blessings",
+        "Context": "Beebom bundle; other reports also mention Coins"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/dungeon-lootr-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "JACKAL",
+      "cells": {
+        "Code": "JACKAL",
+        "Reward": "3 Random GM Blessings",
+        "Context": "Beebom bundle; other reports also mention Coins"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/dungeon-lootr-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "SILVERINE",
+      "cells": {
+        "Code": "SILVERINE",
+        "Reward": "Special rewards; exact bundle unresolved",
+        "Context": "Nerd's Chalk reports Coins and Stones without amounts"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/dungeon-lootr-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "TOURNAMENT",
+      "cells": {
+        "Code": "TOURNAMENT",
+        "Reward": "5 Aspect Gems and Coins; Coin amount unresolved",
+        "Context": "Beebom bundle; Nerd's Chalk instead mentions scrolls"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://beebom.com/dungeon-lootr-codes/"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "unverified_summary": "Published sources differ on 20MVISIT capitalization and on the 45KLIKE, JACKAL, SILVERINE and TOURNAMENT bundles. Unknown quantities are left explicit; no full reward bundle has been inferred from another code.",
+  "next_change": {
+    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
+    "watch": "https://www.roblox.com/games/106484206883664/"
+  }
+}

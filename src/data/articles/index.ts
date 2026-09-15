@@ -15,10 +15,12 @@ import { gearExpansionArticles } from './gear-expansion';
 import { rainmeterRestorationArticles } from './rainmeter-restoration';
 import { platformRestorationArticles } from './platform-restoration';
 import type { EditorialArticle } from './types';
+import { septemberExpansionArticles } from './september-expansion';
 
 export type { ArticleLink, EditorialArticle } from './types';
 
 export const editorialArticles: EditorialArticle[] = [
+  ...septemberExpansionArticles,
   clearVision3Article,
   gta5RadioStationsArticle,
   legoJurassicWorldArticle,

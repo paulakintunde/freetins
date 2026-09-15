@@ -8,14 +8,14 @@ focus_keyword: "re rangers x codes"
 
 The current experience is branded **Re:Rangers X**. It follows the earlier Anime Rangers X release, which is why players and search results still use both names. This page covers the relaunched experience at the official link above; it does not mix codes from the retired build into the table.
 
-The rows are **listed, awaiting editor verification**. They record the bundles reported by the source, and Freetins has not redeemed them on accounts at each required level. The source gives a range for delaRXy2 rather than a settled Trait Reroll amount; NewPortals!? and NewLobby are also flagged by the source for checking.
+The four rows are **listed, awaiting editor verification**. They overlap across current sources, but Freetins has not redeemed them on accounts at each required level.
 
 ## How to redeem Re:Rangers X codes
 
 1. Join the **B:S ARX Team** Roblox community and like the experience if prompted.
 2. Launch Re:Rangers X from the official Roblox page.
 3. Reach at least level 5.
-4. Select **Code** or **Codes** in the lobby controls. Sources disagree on which side of the screen carries the button.
+4. Select **Code** on the left side of the screen.
 5. Paste the string exactly and submit it.
 
 Level 5 only opens the base route. `SummerPart2` needs level 15, while `MonkeyKing` needs level 20.
@@ -25,14 +25,6 @@ Level 5 only opens the base route. `SummerPart2` needs level 15, while `MonkeyKi
 `BeachTime` and `2ndBossEvent??` are reported with a level 5 gate. `SummerPart2` raises that requirement to level 15. `MonkeyKing` is the strictest of this group at level 20.
 
 The rewards span Trait Rerolls, Soul Fragments, Stat Boosters, event currency and named event items. A Trait Reroll changes a roll opportunity; it does not guarantee the trait you want.
-
-## Additional listed bundles
-
-`SummerPart1` and `DemonKingReturns` carry higher level gates, while `delaRXy`, `Capsules?!?`, `SummerTime` and `CATCHINGUP` are reported with the base gate. Read the requirement attached to the exact entry rather than assuming every summer code has the same limit.
-
-The source reports a Trait Reroll range for `delaRXy2`. That uncertainty is retained in the reward text instead of choosing the larger value. A claim response and inventory change would be needed to settle the amount.
-
-The list uses [Roblox Den](https://robloxden.com/game-codes/rerangers-x) for these added reward reports. Its labels describe its own source state, not a Freetins redemption test. [Pro Game Guides](https://progameguides.com/roblox/anime-rangers-x-codes/) places CATCHINGUP in its historical list, so current acceptance is unresolved.
 
 ## Why a code may fail
 

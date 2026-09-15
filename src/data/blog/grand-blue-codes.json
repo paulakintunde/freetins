@@ -1,0 +1,260 @@
+{
+  "subject": "Grand Blue",
+  "slug": "grand-blue-codes",
+  "entity_id": "18335956021",
+  "entity_url": "https://www.roblox.com/games/18335956021/",
+  "developer": "Eternal Pose",
+  "permalink": "/blog/grand-blue-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/18335956021/",
+      "note": "Publisher's game page; establishes the game identity, not successful redemption of every listed code."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Listed Grand Blue codes and reported rewards",
+      "columns": [
+        "Code",
+        "Reward",
+        "Limit or context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "LuckOfTheSea",
+      "cells": {
+        "Code": "LuckOfTheSea",
+        "Reward": "2 Fruit Chests; 10 Race Rerolls; 5 Trait Rerolls",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "StarShower",
+      "cells": {
+        "Code": "StarShower",
+        "Reward": "15 Trait Rerolls; 10 Race Rerolls; 1 Fruit Chest",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "OmegaCode",
+      "cells": {
+        "Code": "OmegaCode",
+        "Reward": "15 Trait Rerolls; 1,000 Celestial Shards; 5 Race Rerolls",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "RollWithIt",
+      "cells": {
+        "Code": "RollWithIt",
+        "Reward": "15 Trait Rerolls; 5 Race Rerolls",
+        "Limit or context": "PGG reward; community wiki reports a different bundle."
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ],
+      "notes": "PGG reward; community wiki reports a different bundle."
+    },
+    {
+      "table": "codes",
+      "name": "PocketOfStars",
+      "cells": {
+        "Code": "PocketOfStars",
+        "Reward": "15 Trait Rerolls; 5 Race Rerolls",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "GrandBlueCode",
+      "cells": {
+        "Code": "GrandBlueCode",
+        "Reward": "1,250 Celestial Shards; 1 Fruit Chest; 15 Trait Rerolls",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "CelestialBlessing",
+      "cells": {
+        "Code": "CelestialBlessing",
+        "Reward": "3,000 Celestial Shards",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "FruitBasket",
+      "cells": {
+        "Code": "FruitBasket",
+        "Reward": "1 Fruit Chest; 10 Trait Rerolls; 5 Race Rerolls",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "NewYouNewCrew",
+      "cells": {
+        "Code": "NewYouNewCrew",
+        "Reward": "20 Trait Rerolls; 5 Race Rerolls; 1 Fruit Chest",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "HappySunday",
+      "cells": {
+        "Code": "HappySunday",
+        "Reward": "1 Fruit Chest; 15 Trait Rerolls; 5 Race Rerolls",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "10KCCU",
+      "cells": {
+        "Code": "10KCCU",
+        "Reward": "2,000 Celestial Shards",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "SorryForBreakingGame",
+      "cells": {
+        "Code": "SorryForBreakingGame",
+        "Reward": "20 Trait Rerolls; 10 Race Rerolls",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "TwitterGoalReached",
+      "cells": {
+        "Code": "TwitterGoalReached",
+        "Reward": "1 Fruit Chest; 20 Trait Rerolls; 5 Race Rerolls",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Release!",
+      "cells": {
+        "Code": "Release!",
+        "Reward": "10 Trait Rerolls; 5 Race Rerolls",
+        "Limit or context": "No publisher deadline located"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "next_change": {
+    "pattern": "Publisher announcements can add rewards or change redemption requirements. No fixed release schedule is established.",
+    "watch": "https://www.roblox.com/games/18335956021/"
+  },
+  "unverified_summary": "RollWithIt has conflicting reward bundles in Pro Game Guides and the community Grand Blue wiki. The table attributes the PGG bundle; the discrepancy requires an in-game redemption result."
+}

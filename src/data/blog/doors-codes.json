@@ -1,0 +1,531 @@
+{
+  "subject": "DOORS",
+  "slug": "doors-codes",
+  "entity_id": "6516141723",
+  "entity_url": "https://www.roblox.com/games/6516141723/",
+  "developer": "LSPLASH",
+  "permalink": "/blog/doors-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://www.roblox.com/games/6516141723/",
+      "note": "Publisher's game listing or official product page."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "DOORS: listed rewards and source context",
+      "columns": [
+        "Code",
+        "Reward",
+        "Context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "NO_DATA",
+      "cells": {
+        "Code": "NO_DATA",
+        "Reward": "5 Knobs",
+        "Context": "Pocket Tactics amount; PGG reports 50"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "8BITRYAN",
+      "cells": {
+        "Code": "8BITRYAN",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "cells": {
+        "Code": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "BIJUU MIKE",
+      "cells": {
+        "Code": "BIJUU MIKE",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "DANTDM",
+      "cells": {
+        "Code": "DANTDM",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "FIND THE TROLLFACES",
+      "cells": {
+        "Code": "FIND THE TROLLFACES",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "ISHOWSPEED",
+      "cells": {
+        "Code": "ISHOWSPEED",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "KREEKCRAFT",
+      "cells": {
+        "Code": "KREEKCRAFT",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "KUBZ SCOUTS",
+      "cells": {
+        "Code": "KUBZ SCOUTS",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "LORE",
+      "cells": {
+        "Code": "LORE",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "PENGUINZ0",
+      "cells": {
+        "Code": "PENGUINZ0",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "RAGDOLL MAYHEM",
+      "cells": {
+        "Code": "RAGDOLL MAYHEM",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "RAGDOLL UNIVERSE",
+      "cells": {
+        "Code": "RAGDOLL UNIVERSE",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "THINKNOODLES",
+      "cells": {
+        "Code": "THINKNOODLES",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "W",
+      "cells": {
+        "Code": "W",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "XQC",
+      "cells": {
+        "Code": "XQC",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "41",
+      "cells": {
+        "Code": "41",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "54",
+      "cells": {
+        "Code": "54",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "67",
+      "cells": {
+        "Code": "67",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "FE4R_RBX",
+      "cells": {
+        "Code": "FE4R_RBX",
+        "Reward": "5 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "VOCAB HAVOC",
+      "cells": {
+        "Code": "VOCAB HAVOC",
+        "Reward": "1 Stardust",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "JUMP OVER THE BRICK",
+      "cells": {
+        "Code": "JUMP OVER THE BRICK",
+        "Reward": "1 Stardust",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "RAGDOLL COMBAT",
+      "cells": {
+        "Code": "RAGDOLL COMBAT",
+        "Reward": "1 Stardust",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "PATHSWAP",
+      "cells": {
+        "Code": "PATHSWAP",
+        "Reward": "1 Stardust",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "CHEDDAR BALLS",
+      "cells": {
+        "Code": "CHEDDAR BALLS",
+        "Reward": "1 Knob",
+        "Context": "Preserve spaces and punctuation"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "/E FREE",
+      "cells": {
+        "Code": "/E FREE",
+        "Reward": "1 Knob",
+        "Context": "Preserve spaces and punctuation"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "777",
+      "cells": {
+        "Code": "777",
+        "Reward": "7 Stardust; 777 Knobs; 1 Revive",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "LAZYDEVS",
+      "cells": {
+        "Code": "LAZYDEVS",
+        "Reward": "50 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "CRUSADERS",
+      "cells": {
+        "Code": "CRUSADERS",
+        "Reward": "5 Stardust",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "3rd",
+      "cells": {
+        "Code": "3rd",
+        "Reward": "33 Knobs",
+        "Context": "Reported by Pocket Tactics"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "SCREECHSUCKS",
+      "cells": {
+        "Code": "SCREECHSUCKS",
+        "Reward": "50 Knobs",
+        "Context": "Pocket Tactics amount; PGG reports 25"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/roblox/doors-codes"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "unverified_summary": "Pocket Tactics and Pro Game Guides disagree on the NO_DATA and SCREECHSUCKS Knob amounts. PGG also retains older milestone strings that Pocket Tactics archives. The table attributes the newer Pocket Tactics list without claiming those amounts were redeemed by Freetins.",
+  "next_change": {
+    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
+    "watch": "https://www.roblox.com/games/6516141723/"
+  }
+}

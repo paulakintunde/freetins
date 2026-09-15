@@ -1,0 +1,149 @@
+{
+  "subject": "Pokémon GO",
+  "slug": "pokemon-go-promo-codes",
+  "entity_id": "https://store.pokemongo.com/offer-redemption",
+  "entity_url": "https://store.pokemongo.com/offer-redemption",
+  "developer": "Niantic",
+  "permalink": "/blog/pokemon-go-promo-codes/",
+  "official_sources": [
+    {
+      "type": "official_page",
+      "url": "https://store.pokemongo.com/offer-redemption",
+      "note": "Official Web Store offer redemption."
+    },
+    {
+      "type": "official_news",
+      "url": "https://pokemongo.com/news/lego-pokemon-go-2026",
+      "note": "LEGO research, regional alternatives and completion deadline."
+    },
+    {
+      "type": "official_news",
+      "url": "https://pokemongo.com/news/mlb-2026",
+      "note": "MLB T-shirt string and redemption closing date."
+    }
+  ],
+  "tables": {
+    "codes": {
+      "caption": "Pokémon GO: listed rewards and source context",
+      "columns": [
+        "Code",
+        "Reward",
+        "Context"
+      ],
+      "kind": "code"
+    }
+  },
+  "rows": [
+    {
+      "table": "codes",
+      "name": "LEGOxPOKEMONGOxCAP",
+      "cells": {
+        "Code": "LEGOxPOKEMONGOxCAP",
+        "Reward": "Bonus Timed Research for a LEGO Pokémon Cap or regional alternative",
+        "Context": "Publisher: finish tasks and claim rewards by September 30, 2026, 11:59 pm local time"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://pokemongo.com/news/lego-pokemon-go-2026"
+        },
+        {
+          "tier": 2,
+          "url": "https://leekduck.com/promo-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "MLBxPOKEMONGO2026",
+      "cells": {
+        "Code": "MLBxPOKEMONGO2026",
+        "Reward": "MLB-branded avatar T-shirt",
+        "Context": "Publisher: redeem through September 30, 2026; exact code cutoff time not stated"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://pokemongo.com/news/mlb-2026"
+        },
+        {
+          "tier": 2,
+          "url": "https://leekduck.com/promo-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "LEGOxPOKEMONGOxBERRIES",
+      "cells": {
+        "Code": "LEGOxPOKEMONGOxBERRIES",
+        "Reward": "5 Razz Berries; 10 Poké Balls; 5 Pinap Berries; 5 Nanab Berries",
+        "Context": "Leek Duck report; code expiry not established"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://leekduck.com/promo-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "FENDIxFRGMTxPOKEMON",
+      "cells": {
+        "Code": "FENDIxFRGMTxPOKEMON",
+        "Reward": "FENDI x FRGMT x POKÉMON avatar hoodie",
+        "Context": "Leek Duck reports acceptance beyond the originally announced January 4, 2025 end"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://leekduck.com/promo-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "SANFRANCISCO2026",
+      "cells": {
+        "Code": "SANFRANCISCO2026",
+        "Reward": "2026 Worlds Tee (Green)",
+        "Context": "Historical: Leek Duck reports end September 11, 2026, 20:00 UTC"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://leekduck.com/promo-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "MEGACOMMUNITY",
+      "cells": {
+        "Code": "MEGACOMMUNITY",
+        "Reward": "1 Premium Battle Pass; 10 Ultra Balls",
+        "Context": "Historical: Leek Duck reports end September 7, 2026"
+      },
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://leekduck.com/promo-codes/"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "fakes": [],
+  "unverified_summary": "Leek Duck reports FENDI code acceptance beyond the originally stated deadline; no Freetins claim resolves that discrepancy. The LEGO research completion deadline is established by the publisher, but it should not be silently reused as an exact redemption cutoff for every LEGO code.",
+  "next_change": {
+    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
+    "watch": "https://store.pokemongo.com/offer-redemption"
+  }
+}
