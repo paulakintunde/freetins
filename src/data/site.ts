@@ -65,6 +65,32 @@ export const edgeAnalytics = {
   purpose: 'Audience measurement (cookieless)',
 } as const;
 
+/**
+ * Plausible Analytics, loaded by this build rather than injected at the edge.
+ *
+ * Plausible's install snippet is an external loader plus an inline stub that queues
+ * calls until the loader arrives. `script-src` does not allow inline execution (see
+ * `public/_headers`), so the stub lives in `public/js/plausible-init.js` and is served
+ * from `'self'`; pasting the snippet verbatim would leave the queue undefined and the
+ * loader measuring nothing, with only a console violation to say so. Two origins are
+ * opened in the CSP for it: `plausible.io` in `script-src` for the loader and in
+ * `connect-src` for the event POST. `pnpm check:routes` fails if either is missing
+ * while this is enabled.
+ *
+ * Like Cloudflare Web Analytics it is cookieless — no cookie, no browser storage, no
+ * cross-site identifier, and a daily-rotating salted hash in place of the IP address —
+ * so it is named in the consent panel and the privacy page rather than gated behind a
+ * toggle. Set `enabled` to `false` to remove the scripts, the vendor row and the
+ * privacy wording together, and drop the CSP origins at the same time.
+ */
+export const plausibleAnalytics = {
+  enabled: true,
+  vendor: 'Plausible Analytics',
+  purpose: 'Audience measurement (cookieless)',
+  scriptSrc: 'https://plausible.io/js/pa-2FgItUttxalq7MgjBYrpQ.js',
+  initSrc: '/js/plausible-init.js',
+} as const;
+
 /** Stable JSON-LD node identifiers, referenced by `@id` across every page graph. */
 /**
  * The picture a page falls back to when it has no artwork of its own.
@@ -237,6 +263,9 @@ export const consentVendors = [
   { name: 'Cloudflare', purpose: 'Delivery' },
   ...(edgeAnalytics.enabled
     ? [{ name: edgeAnalytics.vendor, purpose: edgeAnalytics.purpose }]
+    : []),
+  ...(plausibleAnalytics.enabled
+    ? [{ name: plausibleAnalytics.vendor, purpose: plausibleAnalytics.purpose }]
     : []),
   ...(operations.services.advertising.enabled && operations.services.advertising.provider
     ? [{ name: operations.services.advertising.provider, purpose: 'Advertising' }]

@@ -12,6 +12,7 @@ import {
   defaultSocialImageAlt,
   googleSiteVerification,
   organizationId,
+  plausibleAnalytics,
   siteOrigin,
   websiteId,
 } from '../data/site';
@@ -152,6 +153,14 @@ const schema = {
       * `src/content/operations.json` records (src/data/advertising.ts).
       */}
     {adsensePublisherId && <meta name="google-adsense-account" content={adsensePublisherId} />}
+    {/*
+      * Privacy-friendly analytics by Plausible. The queue stub is a same-origin file
+      * rather than Plausible's inline snippet, because script-src allows no inline
+      * script. Both are head elements that ClientRouter keeps across navigations, so
+      * the stub runs once and the loader tracks in-site navigations itself.
+      */}
+    {plausibleAnalytics.enabled && <script is:inline src={plausibleAnalytics.initSrc}></script>}
+    {plausibleAnalytics.enabled && <script is:inline async src={plausibleAnalytics.scriptSrc}></script>}
     {emitCanonical && <link rel="canonical" href={canonical} />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

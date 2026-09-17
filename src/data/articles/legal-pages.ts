@@ -1,4 +1,5 @@
 import { advertisingEnabled } from '../advertising';
+import { plausibleAnalytics } from '../site';
 import type { EditorialArticle } from './types';
 
 /**
@@ -16,8 +17,21 @@ const advertisingSummary = advertisingEnabled
   : 'Freetins currently does not run account registration, comments, a contact form or advertising scripts in this repository.';
 
 const advertisingScriptClause = advertisingEnabled
-  ? 'The advertising control in that panel is the switch itself: Google AdSense is requested only after you allow it, and while you have not, no request is made to Google at all. This repository loads no analytics script of its own.'
-  : 'This repository loads no advertising script and no analytics script of its own.';
+  ? 'The advertising control in that panel is the switch itself: Google AdSense is requested only after you allow it, and while you have not, no request is made to Google at all.'
+  : 'This repository loads no advertising script.';
+
+/**
+ * Plausible is loaded by this build, so unlike the edge beacon it is a script this
+ * repository chooses to run. The wording derives from the same flag that emits the
+ * script tags, for the reason given above for advertising.
+ */
+const analyticsScriptClause = plausibleAnalytics.enabled
+  ? 'The one analytics script this site loads itself is Plausible Analytics, which is cookieless and is named in the consent panel rather than offered as a toggle.'
+  : 'This repository loads no analytics script of its own.';
+
+const analyticsSummary = plausibleAnalytics.enabled
+  ? 'Cloudflare Web Analytics and Plausible Analytics count page views'
+  : 'Cloudflare Web Analytics counts page views';
 
 const advertisingProviderClause = advertisingEnabled
   ? 'Google AdSense is named in the consent panel and, once you allow advertising, receives ad requests and processes them under its own privacy policy. If an alert or affiliate service is activated later, or if measurement is ever changed to a vendor that identifies visitors, this policy and the consent configuration must be updated before data is sent to it.'
@@ -73,10 +87,11 @@ export const contactArticle: EditorialArticle = {
 export const privacyArticle: EditorialArticle = {
   ...page,
   path: '/privacy/', routeId: 'privacy', section: 'legal',
+  modifiedAt: '2026-09-16', reviewedAt: '2026-09-16', reviewLabel: 'Effective 16 September 2026',
   title: 'Privacy Policy | Freetins', heading: 'Privacy policy',
   description: 'What Freetins stores, how Cloudflare delivers the site, how consent choices work and how to request access, correction or deletion.',
   eyebrow: 'Legal',
-  quickAnswer: `This build stores a consent preference cookie and a temporary service-notice choice. Cloudflare processes ordinary network data to deliver and secure the site, and counts page views through Cloudflare Web Analytics without setting a cookie or a cross-site identifier. ${advertisingSummary}`,
+  quickAnswer: `This build stores a consent preference cookie and a temporary service-notice choice. Cloudflare processes ordinary network data to deliver and secure the site, and ${analyticsSummary} without setting a cookie or a cross-site identifier. ${advertisingSummary}`,
   sections: [
     { id: 'scope', heading: 'Scope', paragraphs: ['This policy applies to www.freetins.com and explains the limited information handled when a reader visits the site or emails the editorial desk. The site can be read without creating an account.'] },
     { id: 'data', heading: 'Information handled', table: { caption: 'Current data handling', columns: ['Data', 'Why it is used', 'Where it is handled'], rows: [
@@ -84,11 +99,16 @@ export const privacyArticle: EditorialArticle = {
       ['Service-notice dismissal', 'Hide a dismissed service notice for the current tab session', 'Browser session storage'],
       ['Network and security data', 'Deliver pages, prevent abuse and troubleshoot requests', 'Cloudflare and ordinary hosting logs'],
       ['Page view, referrer, page timing', 'Count how many people reach each page and how fast it loaded', 'Cloudflare Web Analytics — no cookie, no cross-site identifier, no visitor profile'],
+      ...(plausibleAnalytics.enabled ? [[
+        'Page address, referrer, browser, operating system, device type, and country, region and city',
+        'Count visits and see which pages and sources readers arrive from',
+        'Plausible Analytics — no cookie, no browser storage, no cross-site identifier; the IP address is used only to derive a daily-rotating hash and is not stored',
+      ]] : []),
       ['Email correspondence', 'Reply to corrections, questions or notices', 'The Freetins email service'],
     ] } },
     { id: 'code-reports', heading: 'Reader reports on codes', paragraphs: ['Where reader reports are switched on, code rows include a thumbs up and thumbs down so readers can say whether a code worked. Where they are switched off, which is how the site is configured today, no report control appears on any page. Submitting a report sends only the code identifier and the verdict.', 'Your IP address is not stored. To stop one person reporting the same code repeatedly, the address is combined with a server-side secret and a value that rotates daily, then hashed one way; the record that is kept holds the day, the code identifier, the verdict and that hash, and it expires on its own. The original address cannot be recovered from it, and it cannot be used to follow a reader between codes beyond the rotation window.', 'One report is stored per reader, per code, per day, and no count of them is displayed on the site. They are read to prioritise which codes an editor re-checks and are never used to build a profile of a visitor.'] },
-    { id: 'cookies', heading: 'Cookies and consent choices', paragraphs: [`Strictly necessary browser storage supports the preference and service-notice features described above. The consent panel includes controls for analytics, advertising and personalization so those services can be introduced only after the appropriate choice. ${advertisingScriptClause}`, 'Cloudflare Web Analytics is the one exception, and it is listed in the consent panel as a named vendor rather than an optional toggle. It is added to each page by Cloudflare at delivery time rather than by this site, so a switch here could not stop it. It sets no cookie, writes nothing to browser storage, uses no cross-site identifier and builds no profile of a visitor. Reopen Cookie choices in the footer to update the stored preference.'] },
-    { id: 'providers', heading: 'Service providers', paragraphs: ['Cloudflare delivers and secures the site and may process IP addresses, request metadata and security signals under its privacy policy. Cloudflare Web Analytics, described above, is part of the same relationship and processes page requests to produce aggregate traffic counts.', advertisingProviderClause] },
+    { id: 'cookies', heading: 'Cookies and consent choices', paragraphs: [`Strictly necessary browser storage supports the preference and service-notice features described above. The consent panel includes controls for analytics, advertising and personalization so those services can be introduced only after the appropriate choice. ${advertisingScriptClause} ${analyticsScriptClause}`, 'Cloudflare Web Analytics is listed in the consent panel as a named vendor rather than an optional toggle. It is added to each page by Cloudflare at delivery time rather than by this site, so a switch here could not stop it. It sets no cookie, writes nothing to browser storage, uses no cross-site identifier and builds no profile of a visitor.', ...(plausibleAnalytics.enabled ? ['Plausible Analytics is listed the same way. It sets no cookie and writes nothing to browser storage. To tell one visit from another it combines the IP address and browser user agent with the site domain and a salt that is deleted every 24 hours, then hashes the result; the address itself is not stored, and the hash cannot link a visitor across days or across websites. It builds no profile of a visitor and its data is not shared or sold.'] : []), 'Reopen Cookie choices in the footer to update the stored preference.'] },
+    { id: 'providers', heading: 'Service providers', paragraphs: ['Cloudflare delivers and secures the site and may process IP addresses, request metadata and security signals under its privacy policy. Cloudflare Web Analytics, described above, is part of the same relationship and processes page requests to produce aggregate traffic counts.', ...(plausibleAnalytics.enabled ? ['Plausible, a company incorporated in Estonia, provides Plausible Analytics and processes and stores page-view events within the EU to produce aggregate traffic counts, under its data policy.'] : []), advertisingProviderClause] },
     { id: 'email-retention', heading: 'Email and retention', paragraphs: ['Messages sent to support@freetins.com are used to answer the request, maintain a correction record or process a legal notice. They are retained only as long as reasonably needed for that purpose, security, dispute handling or applicable legal obligations. Do not include passwords, payment details or unnecessary sensitive information.'] },
     { id: 'rights', heading: 'Your privacy choices and rights', bullets: ['Reopen Cookie choices from the footer.', 'Ask what personal information Freetins holds about you.', 'Ask for inaccurate information to be corrected.', 'Ask for deletion where no legal or security reason requires retention.', 'Object to or restrict processing where applicable.', 'Contact the relevant privacy regulator if you believe a request was not handled properly.'] },
     { id: 'children', heading: 'Children', paragraphs: ['Freetins is a general-audience gaming reference and is not directed to children under 13. We do not knowingly collect personal information from children. Email support@freetins.com if you believe a child has provided information that should be removed.'] },
@@ -96,6 +116,7 @@ export const privacyArticle: EditorialArticle = {
   ],
   sources: [
     { label: 'Cloudflare privacy policy', href: 'https://www.cloudflare.com/privacypolicy/', description: 'How Cloudflare handles network, log and service data.' },
+    ...(plausibleAnalytics.enabled ? [{ label: 'Plausible data policy', href: 'https://plausible.io/data-policy', description: 'What Plausible Analytics collects and how visitor hashes are formed.' }] : []),
   ],
   related: [{ label: 'Contact Freetins', href: '/contact/', description: 'Editorial and privacy contact information.' }],
 };

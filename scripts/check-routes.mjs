@@ -77,6 +77,22 @@ const adCspGaps = advertising.enabled
   ].filter(([directive, origin]) => !(cspDirectives.get(directive) ?? []).includes(origin))
   : [];
 /*
+ * Plausible Analytics is read from what the build emitted rather than from
+ * src/data/site.ts, which reads import.meta.env and does not load under node.
+ * The loader in the home page head is the flag as the reader receives it; if it is
+ * there and the CSP does not allow it, the loader or its event POST is blocked and
+ * the dashboard stays empty with only a console violation to say why.
+ */
+const homeHtmlPath = join(outputRoot, 'index.html');
+const plausibleEmitted = existsSync(homeHtmlPath)
+  && /<script[^>]+src="https:\/\/plausible\.io\/js\//.test(readFileSync(homeHtmlPath, 'utf8'));
+const plausibleCspGaps = plausibleEmitted
+  ? [
+    ['script-src', 'https://plausible.io'],
+    ['connect-src', 'https://plausible.io'],
+  ].filter(([directive, origin]) => !(cspDirectives.get(directive) ?? []).includes(origin))
+  : [];
+/*
  * The seller line, not the publisher id: ads.txt writes `pub-…` where the
  * operational record and the verification tag write `ca-pub-…`, and the two
  * spellings are the same account.
@@ -595,6 +611,11 @@ if (adCspGaps.length > 0) {
   for (const [directive, origin] of adCspGaps) console.error(`- ${directive} does not allow ${origin}`);
 }
 
+if (plausibleCspGaps.length > 0) {
+  console.error('Plausible Analytics is loaded and the Content-Security-Policy in public/_headers does not allow it. No page view would be recorded:');
+  for (const [directive, origin] of plausibleCspGaps) console.error(`- ${directive} does not allow ${origin}`);
+}
+
 if (adsTxtGap) {
   console.error(`public/ads.txt does not authorise ${adsTxtSeller}, the publisher id in src/content/operations.json. Google reads ads.txt to decide whether the inventory is legitimate, so the two have to name one account.`);
 }
@@ -603,6 +624,7 @@ if (
   prototypeLeaks.length > 0
   || missing.size > 0
   || adCspGaps.length > 0
+  || plausibleCspGaps.length > 0
   || adsTxtGap
   || invalidOnDemandRoutes.length > 0
   || manifestDisagrees

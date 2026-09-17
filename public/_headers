@@ -10,6 +10,13 @@
   # and an inline allowance would reopen the whole class of injection this header exists
   # to close. If a future analytics vendor needs inline execution, it needs a nonce.
   #
+  # Plausible Analytics (plausibleAnalytics in src/data/site.ts) is loaded by this
+  # build. Its queue stub is served from `'self'` (public/js/plausible-init.js)
+  # rather than inline, so one origin in two directives is enough:
+  #   script-src   plausible.io  — serves the `pa-….js` loader
+  #   connect-src  plausible.io  — receives the `/api/event` POST
+  # pnpm check:routes fails the build if Plausible is enabled and either is missing.
+  #
   # The Google origins are AdSense (src/content/operations.json,
   # services.advertising; docs/ADVERTISING.md). They are listed whether or not
   # advertising is switched on, because the alternative is the failure this file
@@ -33,7 +40,7 @@
   # ad formats want it; if a unit reports a CSP violation rather than an empty
   # inventory, that is the first thing to check and a nonce is the answer, not a
   # blanket allowance.
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' https://static.cloudflareinsights.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://adservice.google.com https://partner.googleadservices.com https://googleads.g.doubleclick.net https://www.googletagservices.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://cloudflareinsights.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' https://static.cloudflareinsights.com https://plausible.io https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://adservice.google.com https://partner.googleadservices.com https://googleads.g.doubleclick.net https://www.googletagservices.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://cloudflareinsights.com https://plausible.io https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; upgrade-insecure-requests
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
