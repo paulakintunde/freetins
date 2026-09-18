@@ -9,13 +9,17 @@
       "commit": "63ae2c7cb17e5e490d4c0a8f852ad8767f01484e",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/3afbf11d-5d56-4e67-b2fd-f437e8a53ec3",
       "publishedAt": "2026-09-18T17:50:00Z"
+    },
+    {
+      "slug": "nba-2k27-locker-codes",
+      "path": "/blog/nba-2k27-locker-codes/",
+      "slot": "2026-09-18T22:30:00.000Z",
+      "startedAt": "2026-09-18T22:36:29.733Z",
+      "transport": "github",
+      "commit": "e2b3fa25c86ae3d75405c180c67d6fe06f471c29",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/37f6791e-8e6b-4b7a-88a2-2f902b776095",
+      "publishedAt": "2026-09-18T22:50:57Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "nba-2k27-locker-codes",
-    "path": "/blog/nba-2k27-locker-codes/",
-    "slot": "2026-09-18T22:30:00.000Z",
-    "startedAt": "2026-09-18T22:36:29.733Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
