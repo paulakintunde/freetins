@@ -1,10 +1,15 @@
 {
-  "releases": [],
-  "pendingDeployment": {
-    "slug": "blox-fruits-codes",
-    "path": "/blog/blox-fruits-codes/",
-    "slot": "2026-09-18T17:30:00.000Z",
-    "startedAt": "2026-09-18T17:32:26.307Z",
-    "transport": "github"
-  }
+  "releases": [
+    {
+      "slug": "blox-fruits-codes",
+      "path": "/blog/blox-fruits-codes/",
+      "slot": "2026-09-18T17:30:00.000Z",
+      "startedAt": "2026-09-18T17:32:26.307Z",
+      "transport": "github",
+      "commit": "63ae2c7cb17e5e490d4c0a8f852ad8767f01484e",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/3afbf11d-5d56-4e67-b2fd-f437e8a53ec3",
+      "publishedAt": "2026-09-18T17:50:00Z"
+    }
+  ],
+  "pendingDeployment": null
 }
