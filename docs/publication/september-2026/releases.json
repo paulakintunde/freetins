@@ -1,4 +1,10 @@
 {
   "releases": [],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "blox-fruits-codes",
+    "path": "/blog/blox-fruits-codes/",
+    "slot": "2026-09-18T17:30:00.000Z",
+    "startedAt": "2026-09-18T17:32:26.307Z",
+    "transport": "github"
+  }
 }

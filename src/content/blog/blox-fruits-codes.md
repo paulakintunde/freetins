@@ -18,24 +18,24 @@ faq:
   - q: "Do Blox Fruits codes give free fruits?"
     a: "The listed rewards are EXP time, stat refunds, small Beli amounts and a title. None of those descriptions promises a fruit. A code name mentioning fruit does not establish its reward; use the reward column and the source beside the entry before expecting a particular item."
   - q: "Can I stack EXP codes?"
-    a: "Reported EXP rewards extend the boost timer rather than multiplying the multiplier again. Plan to redeem while you can use that time, and inspect the timer after each accepted entry. A longer timer is the useful result; it does not mean each enemy must give a different multiplier."
+    a: "Reported EXP rewards extend the boost timer instead of increasing the multiplier. Redeem them when you have time to play, then check the timer after each successful redemption. A longer timer is the expected result. It does not mean every enemy will give a different multiplier."
   - q: "Why did a cash code give almost nothing?"
     a: "Some Blox Fruits cash rewards are novelty amounts, including the entries whose Beli value is tiny or zero. That can be the intended reward rather than a failed claim. Compare the exact code with its listed amount before assuming the game owes a larger currency grant."
   - q: "What does a stat refund code do?"
     a: "A stat refund lets you reconsider how your character's points are allocated. It does not award a rare fruit or add a permanent bonus to every stat. Decide on the build you want, redeem the relevant entry, then inspect the game's allocation controls before spending the points."
   - q: "Are all codes in this list verified?"
-    a: "No row is starred yet. Each listing records a source and a reported reward, while the star requires an editor's recorded test. LIGHTNINGABUSE also has conflicting availability reports. Read the evidence and the game's own response instead of treating a long list as proof of successful redemption."
+    a: "No. Freetins has not recorded a successful test for any row yet. Each listing shows where the code and reward were reported. Several entries also have conflicting availability or duration reports. Check the evidence and the message shown by the game instead of treating a long list as proof that every code works."
 ---
 
-Blox Fruits codes offer EXP boosts, stat refunds, small Beli rewards and a title. The table records {{totalCount}} code claims with their reported rewards; no row is starred yet. Choose a reward that fits your next session, then use the game's redemption menu and read its response.
+Blox Fruits codes can offer EXP boosts, stat refunds, small Beli rewards and a title. This page lists {{totalCount}} reported codes and explains what each one may give. Choose a useful reward, enter the code carefully, then read the message shown by the game.
 
-Blox Fruits is not a separate fruit simulator or a Roblox avatar promotion. This page covers {{developer}}'s experience, identified by Roblox place {{entityId}}.
+The official Roblox listing identifies this as the Blox Fruits experience by {{developer}}, with place number {{entityId}}. It is not a general Roblox promotion or one of the similarly named fruit games.
 
 ## Every listed code and its reward
 
 {{table:codes}}
 
-The small Beli entries are intentional novelty rewards. A cash code is not a fruit chest, and an EXP boost does not promise a particular fruit. Treat an unfamiliar claim of a guaranteed rare fruit separately from the rewards documented here.
+The tiny Beli amounts are joke rewards rather than errors. None of the listed EXP or cash codes promises a fruit. If another page promises a guaranteed rare fruit, check its source before entering the code or sharing any account information.
 
 ## How to redeem in Blox Fruits
 
@@ -54,9 +54,9 @@ Keep stat refunds for a deliberate build change. Decide which weapon or ability 
 
 ## If a code is rejected
 
-Check the exact spelling and your account's previous redemptions. A copied space, an already-used reward and a withdrawn code can all prevent a new grant. Record the message shown by the game; an outlet's inclusion alone does not establish which explanation applies.
+Check the spelling and whether you have already used the code. An extra space, a previous redemption or a withdrawn code can all stop it from working. The message shown by the game is more useful than a website simply including the code in a list.
 
-LIGHTNINGABUSE is retained with a visible conflict because the source lists disagree. The rest of the table is a record of reported rewards, not a statement that Freetins redeemed those codes on your platform.
+The sources disagree about three codes and four boost durations. Those differences are shown below instead of choosing the more generous claim. The rest of the table records reported rewards and does not claim that Freetins redeemed them in the current game build.
 
 ## More reward guides
 
@@ -67,6 +67,8 @@ LIGHTNINGABUSE is retained with a visible conflict because the source lists disa
 ## What we could not verify
 
 {{unverifiedSummary}}
+
+{{disagreements}}
 
 ## Publisher sources
 
