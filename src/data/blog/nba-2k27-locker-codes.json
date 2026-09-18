@@ -5,6 +5,8 @@
   "entity_url": "https://nba.2k.com/2k27/",
   "developer": "Visual Concepts / 2K",
   "permalink": "/blog/nba-2k27-locker-codes/",
+  "checked_at": "2026-09-18T22:31:08Z",
+  "content_changed_at": "2026-09-18T22:31:08Z",
   "official_sources": [
     {
       "type": "official_page",
@@ -35,16 +37,20 @@
       "cells": {
         "Code": "PLAYER-XP-GAME-CHANGERS",
         "Reward": "Option pack: choose 5 Player XP Game Changers",
-        "Limit or context": "No publisher deadline recovered; does not promise five player cards."
+        "Limit or context": "Reported expired by GamesRadar on September 15; publisher deadline not recovered."
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
           "url": "https://gamedaily.com/games/nba-2k27-player-xp-game-changers-locker-code"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.gamesradar.com/games/nba-2k/nba-2k27-locker-codes/"
         }
       ],
-      "notes": "No publisher deadline recovered; does not promise five player cards."
+      "notes": "GameDaily reported the reward on September 7. GamesRadar listed the code as expired in its September 15 update. No publisher deadline or editor redemption was recovered."
     },
     {
       "table": "codes",
@@ -52,7 +58,7 @@
       "cells": {
         "Code": "MYTEAM-TRAINING-HUB",
         "Reward": "Series 1 Deluxe Pack",
-        "Limit or context": "No publisher deadline recovered."
+        "Limit or context": "Listed active by GamesRadar on September 15; publisher deadline not recovered."
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -61,7 +67,7 @@
           "url": "https://www.gamesradar.com/games/nba-2k/nba-2k27-locker-codes/"
         }
       ],
-      "notes": "No publisher deadline recovered."
+      "notes": "GamesRadar listed the code as active on September 15. No publisher deadline or editor redemption was recovered."
     },
     {
       "table": "codes",
@@ -185,7 +191,7 @@
   ],
   "disagreements": [],
   "fakes": [],
-  "unverified_summary": "No publisher-stated deadline was recovered for PLAYER-XP-GAME-CHANGERS or MYTEAM-TRAINING-HUB. The MyTEAM X announcement is linked from GameDaily but could not be read directly. Historical VC strings are reported exhausted by GamesRadar and are retained as an archive, not recommended as fresh grants.",
+  "unverified_summary": "No publisher-stated deadline was recovered for PLAYER-XP-GAME-CHANGERS or MYTEAM-TRAINING-HUB, and neither code was redeemed by our editor. GamesRadar listed PLAYER-XP-GAME-CHANGERS as expired and MYTEAM-TRAINING-HUB as active in its September 15 update. The MyTEAM X announcement linked by GameDaily could not be read directly. Historical VC strings are reported exhausted by GamesRadar and are kept only as an archive.",
   "next_change": {
     "pattern": "Watch the publisher's announcements for specific code terms and new rewards; no fixed code schedule is established.",
     "watch": "https://nba.2k.com/2k27/"

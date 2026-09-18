@@ -11,5 +11,11 @@
       "publishedAt": "2026-09-18T17:50:00Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "nba-2k27-locker-codes",
+    "path": "/blog/nba-2k27-locker-codes/",
+    "slot": "2026-09-18T22:30:00.000Z",
+    "startedAt": "2026-09-18T22:36:29.733Z",
+    "transport": "github"
+  }
 }

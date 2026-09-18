@@ -16,7 +16,7 @@ faq:
   - q: "Do NBA 2K27 locker codes expire after a week?"
     a: "There is no universal weekly expiry rule. NBA 2K Support distinguishes unrestricted, time-limited and volume-limited offers. A particular announcement may set a deadline, while another code can run out when its global redemption allowance is used. Unknown deadlines should remain unknown rather than being calculated from publication dates."
   - q: "Where is the NBA 2K27 Locker Codes menu?"
-    a: "The game-specific GamesRadar walkthrough places Locker Codes inside MyTEAM's Market menu. General NBA 2K support material describes a Community Hub route in other interfaces. Follow the label in your installed game, enter the complete string with hyphens and read the result before moving to another entry."
+    a: "GamesRadar's NBA 2K27 guide places Locker Codes inside MyTEAM's Market menu. The general NBA 2K support page describes a Community Hub route that may appear in other versions. Follow the Locker Codes label in your game, enter every character and hyphen, and read the result before trying another code."
   - q: "Does PLAYER-XP-GAME-CHANGERS give player cards?"
     a: "The reported reward is a choice of Player XP Game Changers, which are progression items associated with your cards. That is different from receiving new player cards. Check the option pack and its contents rather than interpreting the word player in the code as a guaranteed card reward."
   - q: "Why is a large VC code listed as historical?"
@@ -27,7 +27,7 @@ faq:
     a: "A listed code may grant an unopened pack or a Player XP item instead of VC. Inspect the stated reward and the relevant inventory category first. If the game accepted the code but the expected content is absent, preserve the message and follow the publisher's troubleshooting guidance."
 ---
 
-NBA 2K27 locker codes can grant MyTEAM packs, Player XP items or limited VC rewards. The table records {{totalCount}} claims and separates unknown deadlines from reported exhausted drops; no row is starred yet. A code does not automatically last a week, so read its specific limit before relying on it.
+NBA 2K27 locker codes can grant MyTEAM packs, Player XP items or limited VC rewards. The table tracks {{totalCount}} reported codes, including offers with unknown deadlines and older drops that have run out. Our editor has not redeemed them, so no row has a verification star. Check each limit before relying on a code.
 
 NBA 2K27 is not NBA 2K26 or NBA 2K Mobile. This guide concerns the game identified by {{entityId}} and its own Locker Codes menu.
 
@@ -35,9 +35,9 @@ NBA 2K27 is not NBA 2K26 or NBA 2K Mobile. This guide concerns the game identifi
 
 {{table:codes}}
 
-PLAYER-XP-GAME-CHANGERS is reported to offer a choice of Player XP Game Changers. Those are progression items for cards, not a promise of new player cards. [GameDaily's report](https://gamedaily.com/games/nba-2k27-player-xp-game-changers-locker-code) links the MyTEAM announcement behind that distinction.
+PLAYER-XP-GAME-CHANGERS was reported to offer a choice of Player XP Game Changers. Those are progression items for cards, not a promise of new player cards. [GameDaily's September 7 report](https://gamedaily.com/games/nba-2k27-player-xp-game-changers-locker-code) explains the reward, while [GamesRadar moved the code to its expired list on September 15](https://www.gamesradar.com/games/nba-2k/nba-2k27-locker-codes/).
 
-The BALL-OVER-EVERYTHING entries are an archive of limited drops. Their visible context matters more than the size of the advertised VC reward: a globally exhausted code cannot become available again merely because you have never used it.
+The BALL-OVER-EVERYTHING entries are an archive of limited drops. Check the context beside each reward before trying one. A code that has reached its global redemption cap will not work simply because you have never used it.
 
 ## How to redeem in NBA 2K27
 
@@ -52,13 +52,13 @@ The BALL-OVER-EVERYTHING entries are an archive of limited drops. Their visible 
 
 The publisher's support guide distinguishes unrestricted codes, time-limited codes and volume-limited codes. A volume-limited drop can run out before any stated closing time. Conversely, the absence of a deadline in an outlet article does not establish that a code is permanent.
 
-This page leaves unrecovered deadlines unknown. It does not estimate an expiry by adding a week to an announcement date. The exact publisher terms, when available, should determine whether the offer has a closing time or a global redemption allowance.
+When we cannot find a publisher deadline, the table says so. We do not estimate an expiry by adding a week to an announcement date. The publisher's terms should determine whether an offer has a closing time or a global redemption allowance.
 
 ## Accepted code, missing reward
 
 Check for an unopened pack before assuming an accepted code failed. A pack can require another action to reveal its contents. Player XP items also belong to a different reward category from VC, so an unchanged VC balance may be expected.
 
-Preserve the code and error message if you encounter a problem. The support guide advises keeping hyphens and checking similar-looking characters. Its limits on compensation mean a failed or exhausted promotional claim should not be treated as a guaranteed replacement reward.
+Save the code and error message if you encounter a problem. The support guide advises keeping every hyphen and checking similar-looking characters. It also says support generally cannot replace content when a connection times out during redemption or when a limited offer has ended.
 
 ## What we could not verify
 
