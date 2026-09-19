@@ -41,5 +41,11 @@
       "publishedAt": "2026-09-19T17:53:26Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "evomon-codes",
+    "path": "/blog/evomon-codes/",
+    "slot": "2026-09-19T22:30:00.000Z",
+    "startedAt": "2026-09-19T22:37:59.144Z",
+    "transport": "github"
+  }
 }

@@ -19,15 +19,15 @@ faq:
     a: "EXP Fruits are training supplies for your creatures, rather than capture balls or evolution stones. Decide which teammate you actually want to develop before spending them. A code granting EXP items does not guarantee a particular evolution, so check the creature's own requirements separately from its experience progress."
   - q: "Does a code guarantee a rare Evomon?"
     a: "The table records the items each code is reported to grant. Capture balls, Summon Tickets and training supplies are not a promise of a particular creature. If the game presents a random outcome, read its displayed terms and odds rather than assuming the code name guarantees a rare result."
-  - q: "Why are there different spellings of the likes code?"
-    a: "The sources differ: the publisher listing includes the k, while a Pro Game Guides entry omits it, and GamesRadar uses different capitalization. The dataset records the discrepancy rather than pretending the spellings are interchangeable. Consult the publisher announcement and preserve the exact string when entering it."
+  - q: "Why do some Evomon codes have different spellings?"
+    a: "The sources disagree on 12klikeS and 10KCCU_. The publisher and other guides print different characters or capitalization. The table keeps the GamesRadar versions and records the alternatives instead of treating them as interchangeable. Copy carefully and rely on the game's response to learn which version your server accepts."
   - q: "Are previous codes necessarily expired?"
     a: "No. The publisher's use of previous describes when a string was announced relative to other entries, but does not explicitly state a redemption deadline. This page does not turn that wording into a retired label. The game's response or a recorded editor test supplies the missing outcome."
   - q: "Should I spend every reroll potion immediately?"
     a: "It is sensible to understand your creature's existing properties before replacing them. The reward list distinguishes Trait, Nature and Talent Vector potions, so do not assume they alter the same thing. Read the relevant control, decide which result you want to improve, and keep useful properties when possible."
 ---
 
-Evomon codes supply EXP Fruits, capture balls, evolution materials, reroll potions and Coins. This table records {{totalCount}} sourced reward claims; no row is starred yet. Redeem through Settings, then check your inventory before feeding or spending anything, because the rewards support different parts of building a team.
+Evomon codes can provide EXP Fruits, capture balls, evolution materials, reroll potions and Coins. This page records {{totalCount}} sourced reward claims, but Freetins has not redeemed them in game. Use Settings to enter a string, then check the response and your inventory before spending anything.
 
 Evomon is not Pokémon or another Roblox monster-catching experience. This page covers {{developer}}'s game at Roblox place {{entityId}}, with its own creatures, items and redemption field.
 
@@ -35,7 +35,7 @@ Evomon is not Pokémon or another Roblox monster-catching experience. This page 
 
 {{table:codes}}
 
-The [GamesRadar list](https://www.gamesradar.com/games/rpg/evomon-codes/) includes the Wmidseason currency bundle alongside capture and training supplies. [Pro Game Guides](https://progameguides.com/roblox/evomon-codes/) records additional entries. Inclusion records the source claim; it does not establish that an omitted code has ended or that an included one will be accepted.
+The [GamesRadar list](https://www.gamesradar.com/games/rpg/evomon-codes/) includes the Wmidseason currency bundle alongside capture and training supplies. [SuperCheats](https://www.supercheats.com/evomon-codes) also reports Wmidseason and SEASON2GO, while other current guides disagree about some rewards, spellings and availability. Inclusion records a source claim; it does not establish that an omitted code has ended or that an included one will be accepted.
 
 ## Redeem from Settings
 
@@ -44,7 +44,7 @@ The [GamesRadar list](https://www.gamesradar.com/games/rpg/evomon-codes/) includ
 3. Find the code field near the bottom of that panel.
 4. Paste the string, press OK or the displayed redemption control, and inspect the response.
 
-Keep underscores, hyphens and capitalization intact. The spelling caveat beside the likes code is especially relevant: a missing letter is a different string, while the publisher and outlet also differ on letter case. An exact publisher announcement is stronger evidence than a silently corrected copy.
+Keep underscores, hyphens and capitalization intact. The spelling caveats beside 12klikeS and 10KCCU_ matter because other sources print different characters. Copy one reported version at a time and let the game's response settle which string your server accepts.
 
 ## Use the right material for the right job
 
@@ -58,11 +58,13 @@ Reroll potions also have distinct labels. A Trait Reroll Potion, Nature Reroll P
 
 First read the redemption message, then check the inventory category corresponding to the reward. Currency, consumable items and summon resources need not appear in the same place. An accepted code followed by an unchanged Coin balance can still have awarded a non-currency item.
 
-Do not infer an expiry from the phrase previous codes on the Roblox description. That wording establishes publication history, not a successful or failed redemption. A recorded in-game result is needed to resolve the entry's outcome.
+Do not infer an expiry from the phrase previous codes on the Roblox description. That wording establishes publication history, not a successful or failed redemption. The official listing also says the next code is planned at 400,000 likes, but it does not name the reward or a release date.
 
 ## What we could not verify
 
 {{unverifiedSummary}}
+
+{{disagreements}}
 
 ## More reward help
 

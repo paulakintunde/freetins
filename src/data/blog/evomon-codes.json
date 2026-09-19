@@ -5,6 +5,8 @@
   "entity_url": "https://www.roblox.com/games/134381727982611/",
   "developer": "Evomon Devs",
   "permalink": "/blog/evomon-codes/",
+  "checked_at": "2026-09-19T22:31:01Z",
+  "content_changed_at": "2026-09-19T22:31:01Z",
   "official_sources": [
     {
       "type": "official_page",
@@ -30,13 +32,85 @@
       "cells": {
         "Code": "Wmidseason",
         "Reward": "10 Legacy Coins; 10 Apex Medals",
-        "Limit or context": "No publisher deadline located"
+        "Limit or context": "Recent sources disagree on its reward; the table uses the matching GamesRadar, Roblox Den and SuperCheats report"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
           "url": "https://www.gamesradar.com/games/rpg/evomon-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://robloxden.com/game-codes/evomon"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.supercheats.com/evomon-codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "SEASON2GO",
+      "cells": {
+        "Code": "SEASON2GO",
+        "Reward": "10 Legacy Coins; 10 Apex Medals",
+        "Limit or context": "Most recent guides list it as active; Game.Guide places it in its expired table"
+      },
+      "added_at": "2026-09-19T22:31:01Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pocketgamer.com/roblox/evomon-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.supercheats.com/evomon-codes"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.game.guide/roblox-codes/evomon"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "FORGROUP",
+      "cells": {
+        "Code": "FORGROUP",
+        "Reward": "5 Medium EXP Fruits",
+        "Limit or context": "Reported by Roblox Den and Game.Guide; not present in the publisher description"
+      },
+      "added_at": "2026-09-19T22:31:01Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://robloxden.com/game-codes/evomon"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.game.guide/roblox-codes/evomon"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "YTBgift",
+      "cells": {
+        "Code": "YTBgift",
+        "Reward": "2,000 Coins",
+        "Limit or context": "Roblox Den lists it as active; Game.Guide lists it as expired"
+      },
+      "added_at": "2026-09-19T22:31:01Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://robloxden.com/game-codes/evomon"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.game.guide/roblox-codes/evomon"
         }
       ]
     },
@@ -142,7 +216,7 @@
       "cells": {
         "Code": "12klikeS",
         "Reward": "5 Medium EXP Fruits",
-        "Limit or context": "GamesRadar spelling; publisher listing uses 12klikes."
+        "Limit or context": "GamesRadar uses 12klikeS, the publisher uses 12klikes, and two guides omit the k"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -159,7 +233,7 @@
       "cells": {
         "Code": "10KCCU_",
         "Reward": "4,000 Coins",
-        "Limit or context": "No publisher deadline located"
+        "Limit or context": "GamesRadar uses 10KCCU_; Pro Game Guides and Destructoid use 10XCCU_"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -365,9 +439,34 @@
       "notes": "Listed by Pro Game Guides; omitted from GamesRadar's shorter list."
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "Wmidseason",
+      "source_a": "GamesRadar, Roblox Den and SuperCheats report 10 Legacy Coins and 10 Apex Medals",
+      "source_b": "AllThingsHow and Bloxodes report 5 Summon Tickets and 3 Trait Reroll Potions",
+      "confirmed": "No Freetins redemption is recorded, so the table uses the three matching reports and keeps the conflict visible"
+    },
+    {
+      "item": "SEASON2GO",
+      "source_a": "Pocket Gamer, Pocket Tactics and SuperCheats list it as active",
+      "source_b": "Game.Guide places it in its expired table",
+      "confirmed": "No Freetins redemption is recorded, so its availability remains disputed"
+    },
+    {
+      "item": "YTBgift",
+      "source_a": "Roblox Den lists it as active",
+      "source_b": "Game.Guide lists it as expired",
+      "confirmed": "No Freetins redemption is recorded, so its availability remains disputed"
+    },
+    {
+      "item": "12klikeS and 10KCCU_",
+      "source_a": "GamesRadar prints 12klikeS and 10KCCU_",
+      "source_b": "The publisher prints 12klikes, while Pro Game Guides and Destructoid print 12likeS and 10XCCU_",
+      "confirmed": "The table keeps the GamesRadar strings and identifies the alternative spellings because no Freetins redemption settled them"
+    }
+  ],
   "fakes": [],
-  "unverified_summary": "The official listing prints 12klikes, GamesRadar prints 12klikeS, and Pro Game Guides omits the k in its version. This table keeps the GamesRadar string and flags the publisher spelling. The listing calls several strings previous codes without stating whether they still redeem.",
+  "unverified_summary": "The publisher description calls eight strings previous codes and promises another code at 400,000 likes, but it does not publish a deadline or a complete current list. Recent guides disagree on the Wmidseason reward, the availability of SEASON2GO and YTBgift, and two exact spellings. No Freetins redemption is recorded, so these differences remain attributed rather than presented as confirmed results.",
   "next_change": {
     "pattern": "Watch the publisher's announcements for specific code terms and new rewards; no fixed code schedule is established.",
     "watch": "https://www.roblox.com/games/134381727982611/"
