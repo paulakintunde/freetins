@@ -19,13 +19,17 @@
       "commit": "e2b3fa25c86ae3d75405c180c67d6fe06f471c29",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/37f6791e-8e6b-4b7a-88a2-2f902b776095",
       "publishedAt": "2026-09-18T22:50:57Z"
+    },
+    {
+      "slug": "steal-an-egg-codes",
+      "path": "/blog/steal-an-egg-codes/",
+      "slot": "2026-09-19T03:30:00.000Z",
+      "startedAt": "2026-09-19T03:35:57.269Z",
+      "transport": "github",
+      "commit": "dcdc804cb39136b292145347fc297e97d671fa59",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/6a90413f-c012-45bd-822e-7e1ee8022d6d",
+      "publishedAt": "2026-09-19T03:51:00Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "steal-an-egg-codes",
-    "path": "/blog/steal-an-egg-codes/",
-    "slot": "2026-09-19T03:30:00.000Z",
-    "startedAt": "2026-09-19T03:35:57.269Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
