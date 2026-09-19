@@ -10,7 +10,7 @@ secondary_keywords:
   - "grand blue redeem codes"
   - "grand blue code not working"
   - "grand blue free gifts"
-description: "Grand Blue codes offer rerolls, Fruit Chests and Celestial Shards. Use Customize Character to redeem the listed strings."
+description: "Grand Blue codes offer rerolls, Fruit Chests and Celestial Coins. Use Customize Character to redeem the listed strings."
 author: "Paul A"
 faq:
   - q: "Where is Grand Blue's code menu?"
@@ -19,15 +19,15 @@ faq:
     a: "A reward described as a Fruit Chest establishes the container, not its eventual contents. The listed code does not promise a particular rare fruit unless its publisher explicitly says so. Check the chest's own description and any displayed odds before planning a build around the reward."
   - q: "Are Race Rerolls and Trait Rerolls interchangeable?"
     a: "They are listed as separate resources, so treat them as separate balances and read the control you are about to use. A code may award both in the same bundle. Redeeming that bundle does not mean you have to spend either resource immediately or replace a result you like."
-  - q: "Why does RollWithIt show a caveat?"
-    a: "The reward reports disagree. Pro Game Guides lists a smaller reroll bundle than a community wiki, so the table identifies which account it records. A Freetins in-game test has not resolved the difference. Read the game's redemption confirmation before relying on either reported amount."
+  - q: "Why do some codes show a caveat?"
+    a: "Current guides disagree about the rewards for StarShower and OmegaCode and about whether GrandBlueCode is still active. An older report also differs on RollWithIt. No Freetins redemption has settled those conflicts, so the table names the sources instead of presenting one report as an in-game result."
   - q: "Does punctuation matter when copying a code?"
     a: "Preserve the code exactly as listed, including punctuation and capitalization, and remove only spaces accidentally added around it. That avoids a preventable mismatch without assuming the field ignores case. Release! is an example where dropping the final punctuation would change the string being submitted."
   - q: "When will Grand Blue get another code?"
     a: "There is no established release timetable in the sources reviewed. Follow the official game's linked publisher channels for an actual announcement, reward description and instructions. A milestone or an update can explain a code name, but it does not guarantee the timing or contents of another release."
 ---
 
-Grand Blue codes offer Trait Rerolls, Race Rerolls, Fruit Chests and Celestial Shards through the character customization menu. This list records {{totalCount}} reward claims with their sources; no row is starred yet. Read each bundle before redeeming, especially where reports disagree about what the same string gives.
+Grand Blue codes can provide Trait Rerolls, Race Rerolls, Fruit Chests and Celestial Coins through the character customization menu. Pro Game Guides and Destructoid currently agree on five listed codes, but Freetins has not redeemed them in game. The table also keeps older codes so you can check a string you found elsewhere.
 
 Grand Blue is not the diving manga or an unrelated pirate simulator. The Roblox RPG covered here is {{developer}}'s experience at place {{entityId}}.
 
@@ -35,7 +35,7 @@ Grand Blue is not the diving manga or an unrelated pirate simulator. The Roblox 
 
 {{table:codes}}
 
-A Fruit Chest and a reroll are different resources. The table does not promise which fruit a chest will contain or which trait a reroll will produce. Save resources for a choice you understand rather than interpreting a bundle as a guaranteed build.
+A Fruit Chest and a reroll are different resources. The table does not promise which fruit a chest will contain or which trait a reroll will produce. Check the label before spending a reroll, because using one can replace a result you already like.
 
 ## Redeem from Customize Character
 
@@ -44,7 +44,7 @@ A Fruit Chest and a reroll are different resources. The table does not promise w
 3. Locate the Enter Code field and paste the string as written.
 4. Select Redeem and inspect the confirmation and your resource totals.
 
-[Pro Game Guides' redemption walkthrough](https://progameguides.com/roblox/grand-blue-codes/) places the field in customization, before normal play. If you are already exploring, return to the appropriate menu instead of searching chat for a command. Preserve punctuation, including the mark at the end of Release!.
+[Pro Game Guides' redemption walkthrough](https://progameguides.com/roblox/grand-blue-codes/) places the field in customization, before normal play. If you are already exploring, return to the title menu instead of searching chat for a command. Preserve punctuation, including the mark at the end of Release!.
 
 ## Choose the resource before spending it
 
@@ -65,6 +65,8 @@ Use the [Platform-wide Roblox reward strings](/blog/roblox-promo-codes/) for ava
 ## What we could not verify
 
 {{unverifiedSummary}}
+
+{{disagreements}}
 
 ## Publisher sources
 

@@ -31,5 +31,11 @@
       "publishedAt": "2026-09-19T03:51:00Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "grand-blue-codes",
+    "path": "/blog/grand-blue-codes/",
+    "slot": "2026-09-19T17:30:00.000Z",
+    "startedAt": "2026-09-19T17:38:39.724Z",
+    "transport": "github"
+  }
 }

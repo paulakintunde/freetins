@@ -5,6 +5,8 @@
   "entity_url": "https://www.roblox.com/games/18335956021/",
   "developer": "Eternal Pose",
   "permalink": "/blog/grand-blue-codes/",
+  "checked_at": "2026-09-19T17:31:26Z",
+  "content_changed_at": "2026-09-19T17:31:26Z",
   "official_sources": [
     {
       "type": "official_page",
@@ -26,17 +28,61 @@
   "rows": [
     {
       "table": "codes",
+      "name": "DevilsBounty",
+      "cells": {
+        "Code": "DevilsBounty",
+        "Reward": "30 Trait Rerolls; 3 Race Rerolls",
+        "Limit or context": "Listed active by Pro Game Guides and Destructoid; no publisher deadline located"
+      },
+      "added_at": "2026-09-19T17:31:26Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.destructoid.com/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "AnchorsUp",
+      "cells": {
+        "Code": "AnchorsUp",
+        "Reward": "15 Trait Rerolls; 13 Race Rerolls; 1 Fruit Chest",
+        "Limit or context": "Listed active by Pro Game Guides and Destructoid; no publisher deadline located"
+      },
+      "added_at": "2026-09-19T17:31:26Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.destructoid.com/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
       "name": "LuckOfTheSea",
       "cells": {
         "Code": "LuckOfTheSea",
         "Reward": "2 Fruit Chests; 10 Race Rerolls; 5 Trait Rerolls",
-        "Limit or context": "No publisher deadline located"
+        "Limit or context": "Listed active by Pro Game Guides and Destructoid; no publisher deadline located"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
           "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.destructoid.com/grand-blue-codes/"
         }
       ]
     },
@@ -46,13 +92,21 @@
       "cells": {
         "Code": "StarShower",
         "Reward": "15 Trait Rerolls; 10 Race Rerolls; 1 Fruit Chest",
-        "Limit or context": "No publisher deadline located"
+        "Limit or context": "Listed active by Pro Game Guides and Destructoid; Pocket Tactics reports a smaller bundle"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
           "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.destructoid.com/grand-blue-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/grand-blue-codes"
         }
       ]
     },
@@ -61,14 +115,22 @@
       "name": "OmegaCode",
       "cells": {
         "Code": "OmegaCode",
-        "Reward": "15 Trait Rerolls; 1,000 Celestial Shards; 5 Race Rerolls",
-        "Limit or context": "No publisher deadline located"
+        "Reward": "15 Trait Rerolls; 15 Race Rerolls; 1,000 Celestial Coins; 1 Fruit Chest",
+        "Limit or context": "Listed active by Pro Game Guides and Destructoid; Pocket Tactics reports 5 Race Rerolls and no chest"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
           "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.destructoid.com/grand-blue-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/grand-blue-codes"
         }
       ]
     },
@@ -78,13 +140,17 @@
       "cells": {
         "Code": "RollWithIt",
         "Reward": "15 Trait Rerolls; 5 Race Rerolls",
-        "Limit or context": "PGG reward; community wiki reports a different bundle."
+        "Limit or context": "Listed inactive by Pro Game Guides and Destructoid; an earlier community wiki report gave a different bundle"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
           "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.destructoid.com/grand-blue-codes/"
         }
       ],
       "notes": "PGG reward; community wiki reports a different bundle."
@@ -95,7 +161,7 @@
       "cells": {
         "Code": "PocketOfStars",
         "Reward": "15 Trait Rerolls; 5 Race Rerolls",
-        "Limit or context": "No publisher deadline located"
+        "Limit or context": "Listed inactive by Pro Game Guides and Destructoid"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -110,14 +176,22 @@
       "name": "GrandBlueCode",
       "cells": {
         "Code": "GrandBlueCode",
-        "Reward": "1,250 Celestial Shards; 1 Fruit Chest; 15 Trait Rerolls",
-        "Limit or context": "No publisher deadline located"
+        "Reward": "1,250 Celestial Coins; 1 Fruit Chest; 15 Trait Rerolls",
+        "Limit or context": "Pocket Tactics lists it as active; Pro Game Guides and Destructoid list it as inactive"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
           "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.destructoid.com/grand-blue-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/grand-blue-codes"
         }
       ]
     },
@@ -126,8 +200,8 @@
       "name": "CelestialBlessing",
       "cells": {
         "Code": "CelestialBlessing",
-        "Reward": "3,000 Celestial Shards",
-        "Limit or context": "No publisher deadline located"
+        "Reward": "3,000 Celestial Coins",
+        "Limit or context": "Listed inactive by Pro Game Guides and Destructoid"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -143,7 +217,7 @@
       "cells": {
         "Code": "FruitBasket",
         "Reward": "1 Fruit Chest; 10 Trait Rerolls; 5 Race Rerolls",
-        "Limit or context": "No publisher deadline located"
+        "Limit or context": "Listed inactive by Pro Game Guides and Destructoid"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -159,7 +233,7 @@
       "cells": {
         "Code": "NewYouNewCrew",
         "Reward": "20 Trait Rerolls; 5 Race Rerolls; 1 Fruit Chest",
-        "Limit or context": "No publisher deadline located"
+        "Limit or context": "Listed inactive by Pro Game Guides and Destructoid"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -175,7 +249,7 @@
       "cells": {
         "Code": "HappySunday",
         "Reward": "1 Fruit Chest; 15 Trait Rerolls; 5 Race Rerolls",
-        "Limit or context": "No publisher deadline located"
+        "Limit or context": "Listed inactive by Pro Game Guides and Destructoid"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -190,8 +264,8 @@
       "name": "10KCCU",
       "cells": {
         "Code": "10KCCU",
-        "Reward": "2,000 Celestial Shards",
-        "Limit or context": "No publisher deadline located"
+        "Reward": "2,000 Celestial Coins",
+        "Limit or context": "Listed inactive by Pro Game Guides and Destructoid"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -207,7 +281,7 @@
       "cells": {
         "Code": "SorryForBreakingGame",
         "Reward": "20 Trait Rerolls; 10 Race Rerolls",
-        "Limit or context": "No publisher deadline located"
+        "Limit or context": "Listed inactive by Pro Game Guides and Destructoid"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -223,7 +297,7 @@
       "cells": {
         "Code": "TwitterGoalReached",
         "Reward": "1 Fruit Chest; 20 Trait Rerolls; 5 Race Rerolls",
-        "Limit or context": "No publisher deadline located"
+        "Limit or context": "Listed inactive by Pro Game Guides and Destructoid"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -235,11 +309,31 @@
     },
     {
       "table": "codes",
+      "name": "WorldBossBroke",
+      "cells": {
+        "Code": "WorldBossBroke",
+        "Reward": "1 World Boss Chest",
+        "Limit or context": "Listed inactive by Pro Game Guides and Destructoid"
+      },
+      "added_at": "2026-09-19T17:31:26Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/grand-blue-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.destructoid.com/grand-blue-codes/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
       "name": "Release!",
       "cells": {
         "Code": "Release!",
         "Reward": "10 Trait Rerolls; 5 Race Rerolls",
-        "Limit or context": "No publisher deadline located"
+        "Limit or context": "Listed inactive by Pro Game Guides and Destructoid"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -250,11 +344,36 @@
       ]
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "StarShower",
+      "source_a": "Pro Game Guides and Destructoid report 15 Trait Rerolls, 10 Race Rerolls and 1 Fruit Chest",
+      "source_b": "Pocket Tactics reports 5 Race Rerolls and 1 Fruit Chest",
+      "confirmed": "No Freetins redemption is recorded, so the table uses the matching reports from Pro Game Guides and Destructoid while keeping the conflict visible"
+    },
+    {
+      "item": "OmegaCode",
+      "source_a": "Pro Game Guides and Destructoid report 15 Trait Rerolls, 15 Race Rerolls, 1,000 Celestial Coins and 1 Fruit Chest",
+      "source_b": "Pocket Tactics reports 15 Trait Rerolls, 5 Race Rerolls and 1,000 Celestial Coins, with no chest",
+      "confirmed": "No Freetins redemption is recorded, so the table uses the matching reports from Pro Game Guides and Destructoid while keeping the conflict visible"
+    },
+    {
+      "item": "GrandBlueCode",
+      "source_a": "Pocket Tactics lists it as active on September 15",
+      "source_b": "Pro Game Guides and Destructoid list it as inactive on September 17 and September 19",
+      "confirmed": "No Freetins redemption is recorded, so its availability remains disputed"
+    },
+    {
+      "item": "RollWithIt",
+      "source_a": "Pro Game Guides reported 15 Trait Rerolls and 5 Race Rerolls",
+      "source_b": "An earlier community wiki report gave a different bundle",
+      "confirmed": "Current Pro Game Guides and Destructoid lists both place the code among inactive entries; no Freetins redemption settled the older reward conflict"
+    }
+  ],
   "fakes": [],
   "next_change": {
     "pattern": "Publisher announcements can add rewards or change redemption requirements. No fixed release schedule is established.",
     "watch": "https://www.roblox.com/games/18335956021/"
   },
-  "unverified_summary": "RollWithIt has conflicting reward bundles in Pro Game Guides and the community Grand Blue wiki. The table attributes the PGG bundle; the discrepancy requires an in-game redemption result."
+  "unverified_summary": "Pro Game Guides and Destructoid agree on five currently listed codes, but Pocket Tactics reports smaller bundles for StarShower and OmegaCode and still lists GrandBlueCode as active. An older community wiki report also disagreed about RollWithIt. No Freetins redemption is recorded, so these differences remain attributed rather than presented as confirmed results."
 }
