@@ -61,5 +61,11 @@
       "publishedAt": "2026-09-21T17:48:53Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "fortnite-admin-panel-codes",
+    "path": "/blog/fortnite-admin-panel-codes/",
+    "slot": "2026-09-21T22:30:00.000Z",
+    "startedAt": "2026-09-21T22:43:42.309Z",
+    "transport": "github"
+  }
 }

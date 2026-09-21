@@ -27,19 +27,19 @@ faq:
     a: "The reward may be XP, Sprite Dust, a gameplay item or a temporary lobby effect rather than a permanent cosmetic. Compare the exact row with the appropriate balance or display. If the expected category still shows no result, preserve the submission message and any quest requirement for a useful report."
 ---
 
-Fortnite Admin Panel codes can grant Sprite Dust, XP, cosmetics and temporary lobby transformations. This table records {{totalCount}} sourced claims, including quest requirements; no row is starred yet. Open the Battle Royale lobby's Admin Panel and distinguish an account reward from a playful effect that only changes the lobby.
+Fortnite Admin Panel codes can grant Sprite Dust, XP, cosmetics, gameplay items and temporary lobby effects. The table records {{totalCount}} sourced claims and their quest requirements. No row is starred because Freetins has not recorded a successful redemption. Enter a code through the Battle Royale lobby's Admin Panel and check its reward category.
 
-Fortnite's Admin Panel is not an external account tool or an island code. Epic describes the official Override systems at {{entityId}}, including Lobby Hacks and separate in-match mechanics.
+Fortnite's Admin Panel is an official part of the Override season. It is not an island code, a product key or one of the directional Cheat Codes found during matches. [Epic's Override announcement]({{entityId}}) describes Lobby Hacks alongside the season's other systems.
 
 ## Listed Admin Panel codes and reward categories
 
 {{table:codes}}
 
-The bundles and quest gates are reported by [Pro Game Guides](https://progameguides.com/fortnite/fortnite-admin-panel-codes/). Keep the category beside each string in view. A temporary transformation is not a permanent outfit, and a Sprite is not automatically a wearable skin.
+The original set and quest gates were reported by [Pro Game Guides](https://progameguides.com/fortnite/fortnite-admin-panel-codes/). [Nintendo Life](https://www.nintendolife.com/guides/fortnite-lobby-hack-codes-admin-panel) reported the September 17 additions, while [VICE](https://www.vice.com/en/article/fortnite-mastery-monday-september-21-admin-panel-code-rewards/) reported the two September 21 codes. Keep the category beside each string in view. A temporary transformation is not a permanent outfit, and a Sprite is not automatically a wearable skin.
 
 ## Redeem from the Battle Royale lobby
 
-1. Launch Fortnite and select the appropriate Battle Royale lobby.
+1. Launch Fortnite and enter a Battle Royale lobby.
 2. Open the Admin Panel using the prompted control on the right.
 3. Paste a listed string into the field.
 4. Select Submit and inspect the reward or lobby effect.
@@ -50,7 +50,7 @@ Use this in-game control rather than the Epic account redemption page for ordina
 
 YourThoughtsAreMine is reported with a Geno Story quest requirement. GatherAndCraft is linked to the opening portion of the Wrixel/Ziggy quest. A code can therefore require progress before its associated reward becomes available to your account.
 
-Read the game's message and the quest log together. Repeatedly submitting the same string does not complete the prerequisite, and another player's successful claim does not establish that your character has reached the same stage.
+Read the game's message and the quest log together. Repeatedly submitting the same string does not complete the prerequisite. Another player's result also does not show that your account has reached the same quest stage.
 
 ## Know what Sprite Dust buys
 
@@ -60,9 +60,13 @@ Inspect the game's own balance and effect descriptions before spending. A code r
 
 ## When nothing permanent appears
 
-For an arcade, toilet or block transformation, look at the lobby effect rather than searching the Locker for a newly owned outfit. For XP or Dust, inspect the corresponding balance. A category mismatch can make a successful code look like a missing grant.
+For an arcade, toilet or block transformation, look at the lobby effect rather than searching the Locker for a newly owned outfit. For XP or Dust, inspect the corresponding balance. Looking in the wrong place can make a reported reward seem missing.
 
-Preserve digits, capitalization and punctuation when copying. In particular, similar-looking letters and numbers can change a code. A precise error message is more useful than an assumption that every rejected string has expired.
+Preserve digits, capitalization and punctuation when copying. Similar-looking letters and numbers can change a code. A precise error message is more useful than assuming every rejected string has expired. Some players reported an unresponsive Submit button on Xbox after the September 17 update, so a button that does nothing may be a platform issue rather than a verdict on the code.
+
+## What we could not verify
+
+{{unverifiedSummary}}
 
 ## Related guides
 
