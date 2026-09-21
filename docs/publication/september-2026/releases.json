@@ -39,13 +39,17 @@
       "commit": "5352e442f2230601986fedff2400857e0f53a2e9",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/91e993f4-75c6-4930-ba9b-e01a65b55349",
       "publishedAt": "2026-09-19T17:53:26Z"
+    },
+    {
+      "slug": "evomon-codes",
+      "path": "/blog/evomon-codes/",
+      "slot": "2026-09-19T22:30:00.000Z",
+      "startedAt": "2026-09-19T22:37:59.144Z",
+      "transport": "github",
+      "commit": "cc571f8ab46c9dd1a8709477574a733225c38ab5",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/8903435f-de81-4d68-baa3-a121e6cacb7d",
+      "publishedAt": "2026-09-21T07:41:02Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "evomon-codes",
-    "path": "/blog/evomon-codes/",
-    "slot": "2026-09-19T22:30:00.000Z",
-    "startedAt": "2026-09-19T22:37:59.144Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
