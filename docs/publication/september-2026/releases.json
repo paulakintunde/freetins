@@ -51,5 +51,11 @@
       "publishedAt": "2026-09-21T07:41:02Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "roblox-innovation-awards-2026-free-ugc",
+    "path": "/blog/roblox-innovation-awards-2026-free-ugc/",
+    "slot": "2026-09-21T17:30:00.000Z",
+    "startedAt": "2026-09-21T17:38:55.477Z",
+    "transport": "github"
+  }
 }

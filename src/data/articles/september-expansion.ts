@@ -134,8 +134,16 @@ export const septemberExpansionArticles: EditorialArticle[] = [
     "sections": [],
     "sources": [
       {
+        "label": "Roblox 2026 Innovation Awards recap",
+        "href": "https://about.roblox.com/en-nz/newsroom/2026/09/2026-roblox-innovation-awards"
+      },
+      {
         "label": "The Block official experience",
         "href": "https://www.roblox.com/games/95047916580305/The-Block"
+      },
+      {
+        "label": "Roblox catalog listings",
+        "href": "https://www.roblox.com/catalog?Category=1&CreatorName=Roblox&IncludeNotForSale=&SortType=3&salesTypeFilter=1"
       },
       {
         "label": "RIA26 reward guide",
