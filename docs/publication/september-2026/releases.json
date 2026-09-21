@@ -59,13 +59,17 @@
       "commit": "b8ac7bbc445e1e7c0fde63644f467905a804b112",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/9d08ce3b-6bff-4a4f-b7ef-cd0bf6633703",
       "publishedAt": "2026-09-21T17:48:53Z"
+    },
+    {
+      "slug": "fortnite-admin-panel-codes",
+      "path": "/blog/fortnite-admin-panel-codes/",
+      "slot": "2026-09-21T22:30:00.000Z",
+      "startedAt": "2026-09-21T22:43:42.309Z",
+      "transport": "github",
+      "commit": "b36b23567cc18de63ce7a5c345b899262679174b",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/536bda38-a45e-411d-b4c6-fe17fa2a0fc0",
+      "publishedAt": "2026-09-21T22:52:53Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "fortnite-admin-panel-codes",
-    "path": "/blog/fortnite-admin-panel-codes/",
-    "slot": "2026-09-21T22:30:00.000Z",
-    "startedAt": "2026-09-21T22:43:42.309Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
