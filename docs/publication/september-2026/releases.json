@@ -49,13 +49,17 @@
       "commit": "cc571f8ab46c9dd1a8709477574a733225c38ab5",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/8903435f-de81-4d68-baa3-a121e6cacb7d",
       "publishedAt": "2026-09-21T07:41:02Z"
+    },
+    {
+      "slug": "roblox-innovation-awards-2026-free-ugc",
+      "path": "/blog/roblox-innovation-awards-2026-free-ugc/",
+      "slot": "2026-09-21T17:30:00.000Z",
+      "startedAt": "2026-09-21T17:38:55.477Z",
+      "transport": "github",
+      "commit": "b8ac7bbc445e1e7c0fde63644f467905a804b112",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/9d08ce3b-6bff-4a4f-b7ef-cd0bf6633703",
+      "publishedAt": "2026-09-21T17:48:53Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "roblox-innovation-awards-2026-free-ugc",
-    "path": "/blog/roblox-innovation-awards-2026-free-ugc/",
-    "slot": "2026-09-21T17:30:00.000Z",
-    "startedAt": "2026-09-21T17:38:55.477Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
