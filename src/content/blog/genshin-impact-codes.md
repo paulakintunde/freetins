@@ -35,7 +35,7 @@ Genshin Impact is not Honkai: Star Rail or Zenless Zone Zero. Its redemption ser
 
 {{table:codes}}
 
-[Pocket Tactics](https://www.pockettactics.com/genshin-impact/codes) supplies the reward bundles. [All Things How's version preview](https://allthings.how/genshin-impact-version-7-1-release-date-and-new-5-star-characters/) reports a separate closing time for the livestream entries. Their presence in a general code list is not evidence of an unlimited claim window.
+[Pocket Tactics](https://www.pockettactics.com/genshin-impact/codes) supplies the main reward bundles and now places the Version 7.1 livestream codes in its expired list. [GameWith Japan](https://gamewith.jp/genshin/article/show/231856) reports two newer strings and links them to the official redemption form. [All Things How](https://allthings.how/genshin-impact-7-1-livestream-codes-and-release-date/) attributes the livestream cutoff to the notice shown during the broadcast. The expired entries remain in the table so readers can identify them rather than mistake an old list for a current offer.
 
 ## Redeem on the official website
 
@@ -57,7 +57,7 @@ Do not stop at the website's success message. The delivery step is the in-game m
 
 Primogems, Mora and experience books serve different purposes. An accepted material bundle may leave the Primogem balance unchanged, which is expected when no Primogems are listed. Read the individual reward before deciding that a claim failed.
 
-An enduring-looking gift string is not a promise of repeated rewards. Prior redemption and the offer's own terms can limit another claim. For livestream promotions, check the announcement's cutoff rather than assuming the code lasts until the associated game update arrives.
+A familiar gift string is not a promise of repeated rewards. Prior redemption and the offer's own terms can limit another claim. For livestream promotions, check the announcement's cutoff rather than assuming the code lasts until the associated game update arrives.
 
 ## What we could not verify
 

@@ -94,15 +94,20 @@
       "cells": {
         "Code": "GENSHINGIFT",
         "Reward": "50 Primogems; 3 Hero's Wit",
-        "Context": "Source describes intermittent availability; not a recurring refill"
+        "Context": "Sources disagree on the reward bundle; Pocket Tactics describes periodic availability"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
           "url": "https://www.pockettactics.com/genshin-impact/codes"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamewith.jp/genshin/article/show/231856"
         }
-      ]
+      ],
+      "notes": "Pocket Tactics reports 50 Primogems and 3 Hero's Wit. GameWith Japan reports 60 Primogems and 5 Adventurer's Experience."
     },
     {
       "table": "codes",
@@ -110,7 +115,7 @@
       "cells": {
         "Code": "Rekviem",
         "Reward": "100 Primogems; 10 Mystic Enhancement Ore",
-        "Context": "Livestream promotion; All Things How reports deadline September 15, 2026, 12:00 am ET"
+        "Context": "Version 7.1 livestream code; reported expired"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -120,9 +125,11 @@
         },
         {
           "tier": 2,
-          "url": "https://allthings.how/genshin-impact-version-7-1-release-date-and-new-5-star-characters/"
+          "url": "https://allthings.how/genshin-impact-7-1-livestream-codes-and-release-date/"
         }
-      ]
+      ],
+      "status": "expired",
+      "ended_at": "2026-09-15T04:00:00Z"
     },
     {
       "table": "codes",
@@ -130,7 +137,7 @@
       "cells": {
         "Code": "Vesna0923",
         "Reward": "100 Primogems; 5 Hero's Wit",
-        "Context": "Same reported livestream deadline; publisher cutoff not independently recovered"
+        "Context": "Version 7.1 livestream code; reported expired"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -140,9 +147,11 @@
         },
         {
           "tier": 2,
-          "url": "https://allthings.how/genshin-impact-version-7-1-release-date-and-new-5-star-characters/"
+          "url": "https://allthings.how/genshin-impact-7-1-livestream-codes-and-release-date/"
         }
-      ]
+      ],
+      "status": "expired",
+      "ended_at": "2026-09-15T04:00:00Z"
     },
     {
       "table": "codes",
@@ -150,7 +159,7 @@
       "cells": {
         "Code": "PrimaDonna",
         "Reward": "100 Primogems; 50,000 Mora",
-        "Context": "Same reported livestream deadline; publisher cutoff not independently recovered"
+        "Context": "Version 7.1 livestream code; reported expired"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -160,14 +169,85 @@
         },
         {
           "tier": 2,
-          "url": "https://allthings.how/genshin-impact-version-7-1-release-date-and-new-5-star-characters/"
+          "url": "https://allthings.how/genshin-impact-7-1-livestream-codes-and-release-date/"
+        }
+      ],
+      "status": "expired",
+      "ended_at": "2026-09-15T04:00:00Z"
+    },
+    {
+      "table": "codes",
+      "name": "Y6JYMKV6JKSL",
+      "cells": {
+        "Code": "Y6JYMKV6JKSL",
+        "Reward": "60 Primogems; 5 Adventurer's Experience",
+        "Context": "Current in two source lists; no publisher deadline recovered"
+      },
+      "added_at": "2026-09-22T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/genshin-impact/codes"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamewith.jp/genshin/article/show/231856"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "GS71XYNSYJ",
+      "cells": {
+        "Code": "GS71XYNSYJ",
+        "Reward": "30,000 Mora; 3 Hero's Wit; 5 Mystic Enhancement Ore",
+        "Context": "Reported by GameWith Japan; no publisher deadline recovered"
+      },
+      "added_at": "2026-09-22T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://gamewith.jp/genshin/article/show/231856"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "DUGODWKRHAKDNJ",
+      "cells": {
+        "Code": "DUGODWKRHAKDNJ",
+        "Reward": "30 Primogems; 10,000 Mora; 3 Hero's Wit; 3 Mystic Enhancement Ore",
+        "Context": "Availability disputed between current source lists"
+      },
+      "added_at": "2026-09-22T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/genshin-impact/codes"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamewith.jp/genshin/article/show/231856"
         }
       ]
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "DUGODWKRHAKDNJ availability",
+      "source_a": "GameWith Japan lists it among codes currently available",
+      "source_b": "Pocket Tactics places it in its expired list",
+      "confirmed": "No Freetins redemption is recorded, so the row remains a reported claim with disputed availability."
+    },
+    {
+      "item": "GENSHINGIFT reward bundle",
+      "source_a": "Pocket Tactics reports 50 Primogems and 3 Hero's Wit",
+      "source_b": "GameWith Japan reports 60 Primogems and 5 Adventurer's Experience",
+      "confirmed": "No Freetins redemption is recorded. The table retains the Pocket Tactics bundle and leaves the conflict open."
+    }
+  ],
   "fakes": [],
-  "unverified_summary": "The HoYoverse redemption page returned a JavaScript shell, so no account-level claim was attempted. Livestream deadline information comes from All Things How rather than a directly recovered publisher cutoff; it is a reported limit, not an automatically assigned row state.",
+  "unverified_summary": "The HoYoverse redemption page requires an account session, so Freetins did not attempt a claim. Current sources disagree about DUGODWKRHAKDNJ availability and the GENSHINGIFT reward bundle. The table preserves both conflicts and marks the three Version 7.1 livestream codes expired from their directly attributed cutoff.",
   "next_change": {
     "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
     "watch": "https://genshin.hoyoverse.com/en/gift"

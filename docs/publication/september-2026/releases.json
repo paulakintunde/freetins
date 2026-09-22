@@ -71,5 +71,11 @@
       "publishedAt": "2026-09-21T22:52:53Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "genshin-impact-codes",
+    "path": "/blog/genshin-impact-codes/",
+    "slot": "2026-09-22T17:30:00.000Z",
+    "startedAt": "2026-09-22T17:39:16.356Z",
+    "transport": "github"
+  }
 }
