@@ -79,13 +79,17 @@
       "commit": "b9acba6c598bb3b40773e07c3a797d747d165510",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/f0bc3cab-80c2-4b39-a93e-b1ff6a9b87ef",
       "publishedAt": "2026-09-22T17:52:20Z"
+    },
+    {
+      "slug": "pokemon-go-promo-codes",
+      "path": "/blog/pokemon-go-promo-codes/",
+      "slot": "2026-09-22T22:30:00.000Z",
+      "startedAt": "2026-09-22T22:45:35.973Z",
+      "transport": "github",
+      "commit": "e5d4afe6281e17f4388a74ea68c0b781f981f55d",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/c3680393-649d-4e3e-85a1-a155c0362cfa",
+      "publishedAt": "2026-09-22T22:54:54Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "pokemon-go-promo-codes",
-    "path": "/blog/pokemon-go-promo-codes/",
-    "slot": "2026-09-22T22:30:00.000Z",
-    "startedAt": "2026-09-22T22:45:35.973Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
