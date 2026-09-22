@@ -3,7 +3,7 @@
   "slug": "pokemon-go-promo-codes",
   "entity_id": "https://store.pokemongo.com/offer-redemption",
   "entity_url": "https://store.pokemongo.com/offer-redemption",
-  "developer": "Niantic",
+  "developer": "Scopely",
   "permalink": "/blog/pokemon-go-promo-codes/",
   "official_sources": [
     {
@@ -20,6 +20,16 @@
       "type": "official_news",
       "url": "https://pokemongo.com/news/mlb-2026",
       "note": "MLB T-shirt string and redemption closing date."
+    },
+    {
+      "type": "official_news",
+      "url": "https://pokemongo.com/es-MX/news/pokemon-horizons-celebration-event-2026",
+      "note": "Pokémon Horizons Timed Research code and local completion deadline."
+    },
+    {
+      "type": "official_news",
+      "url": "https://pokemongo.com/news/FENDIxFRGMTxPOKEMON?hl=en",
+      "note": "Original FENDI hoodie code and announced availability window."
     }
   ],
   "tables": {
@@ -34,6 +44,26 @@
     }
   },
   "rows": [
+    {
+      "table": "codes",
+      "name": "0004POKEMONGO",
+      "cells": {
+        "Code": "0004POKEMONGO",
+        "Reward": "Pokémon Horizons Timed Research for Charmander wearing Friede's goggles; 35 Poké Balls; 5 Razz Berries; 10,000 XP; 5,000 Stardust",
+        "Context": "Official deadline: complete tasks and claim rewards by September 22, 2026, 8:00 pm local time; exact quantities reported by Leek Duck"
+      },
+      "added_at": "2026-09-22T22:30:00Z",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://pokemongo.com/es-MX/news/pokemon-horizons-celebration-event-2026"
+        },
+        {
+          "tier": 2,
+          "url": "https://leekduck.com/promo-codes/"
+        }
+      ]
+    },
     {
       "table": "codes",
       "name": "LEGOxPOKEMONGOxCAP",
@@ -139,9 +169,16 @@
       ]
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "FENDIxFRGMTxPOKEMON availability",
+      "source_a": "The official announcement says the promo code was available through January 4, 2025",
+      "source_b": "Leek Duck still lists the code and says it appears to work after that date",
+      "confirmed": "No Freetins redemption is recorded, so the row preserves the conflict without treating either claim as an account check."
+    }
+  ],
   "fakes": [],
-  "unverified_summary": "Leek Duck reports FENDI code acceptance beyond the originally stated deadline; no Freetins claim resolves that discrepancy. The LEGO research completion deadline is established by the publisher, but it should not be silently reused as an exact redemption cutoff for every LEGO code.",
+  "unverified_summary": "Freetins did not redeem any listed code. The official Pokémon Horizons announcement establishes the 8:00 p.m. local research deadline, while Leek Duck supplies the exact reward quantities. Leek Duck also reports FENDI code acceptance beyond the official January 4, 2025 end date; no Freetins claim resolves that discrepancy. The LEGO research completion deadline should not be reused as an exact redemption cutoff for every LEGO code.",
   "next_change": {
     "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
     "watch": "https://store.pokemongo.com/offer-redemption"

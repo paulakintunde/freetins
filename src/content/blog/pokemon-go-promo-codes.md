@@ -25,6 +25,8 @@ faq:
     a: "Leek Duck reports that the hoodie string has been accepted beyond its originally announced end date. A Freetins redemption test has not resolved that discrepancy. The entry records both the historical limit and the later report instead of assuming that either an old deadline or a community sighting is definitive."
   - q: "Are code expiry and research expiry the same thing?"
     a: "They can be separate conditions. A code may unlock research, while the research requires tasks and rewards to be completed and claimed by another stated cutoff. Use the publisher's wording for the particular offer rather than applying one date or time to every code and activity in the same event."
+  - q: "When does the Pokémon Horizons research end?"
+    a: "The official event announcement says the tasks must be completed and the rewards claimed by September 22, 2026, at 8:00 p.m. local time. The code unlocks the Timed Research; entering it does not remove that completion deadline or guarantee enough time to finish every task."
 ---
 
 Pokémon GO promo codes offer avatar items, supplies and Timed Research through the Web Store. The table records {{totalCount}} claims with their distinct limits; no row is starred yet. Redeeming research is only the first step: complete its tasks and collect the rewards before the research's own deadline.
@@ -35,7 +37,13 @@ Pokémon GO is not Pokémon TCG Pocket or a main-series Pokémon game. Its offic
 
 {{table:codes}}
 
-The [publisher's MLB announcement](https://pokemongo.com/news/mlb-2026) establishes the T-shirt code and closing date. The [LEGO announcement](https://pokemongo.com/news/lego-pokemon-go-2026) establishes the cap research and its completion requirement. [Leek Duck](https://leekduck.com/promo-codes/) supplies the additional code reports and historical context.
+The [official Pokémon Horizons announcement](https://pokemongo.com/es-MX/news/pokemon-horizons-celebration-event-2026) establishes the new Timed Research code and its local deadline. The [publisher's MLB announcement](https://pokemongo.com/news/mlb-2026) establishes the T-shirt code and closing date. The [LEGO announcement](https://pokemongo.com/news/lego-pokemon-go-2026) establishes the cap research and its completion requirement. [Leek Duck](https://leekduck.com/promo-codes/) supplies reward details, additional code reports and historical context.
+
+## Finish the Pokémon Horizons research before the cutoff
+
+The 0004POKEMONGO offer unlocks Timed Research tied to the Pokémon Horizons celebration. The official announcement says the tasks must be completed and their rewards claimed by September 22, 2026, at 8:00 p.m. local time. Entering the code close to that cutoff may leave too little time to finish the research.
+
+The official announcement promises an encounter with Charmander wearing Friede's goggles, Poké Balls and more. Leek Duck reports the full bundle as 35 Poké Balls, 5 Razz Berries, 10,000 XP, 5,000 Stardust and the Charmander encounter. Freetins did not redeem the code, so the table attributes those exact quantities to Leek Duck rather than presenting them as an account check.
 
 ## Redeem through the Web Store
 
@@ -61,7 +69,7 @@ The publisher states a closing date for the T-shirt string without giving the ex
 
 ## Handle older and disputed strings honestly
 
-The FENDI entry has a conflict between the original window and a later community report of acceptance. The Worlds Tee and Mega Finale entries are historical reports. Those contexts help identify the offers without implying they all remain fresh.
+The [official FENDI announcement](https://pokemongo.com/news/FENDIxFRGMTxPOKEMON?hl=en) gave the hoodie code a January 4, 2025 end date, while Leek Duck still lists it as apparently working. The Worlds Tee and Mega Finale entries are historical reports. Those contexts help identify the offers without implying they all remain fresh.
 
 A supply code should be checked against the relevant inventory, while an avatar reward belongs in customization and a research code belongs in the research view. Look in the right place before interpreting an unchanged item count as a failed claim.
 

@@ -81,5 +81,11 @@
       "publishedAt": "2026-09-22T17:52:20Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "pokemon-go-promo-codes",
+    "path": "/blog/pokemon-go-promo-codes/",
+    "slot": "2026-09-22T22:30:00.000Z",
+    "startedAt": "2026-09-22T22:45:35.973Z",
+    "transport": "github"
+  }
 }
