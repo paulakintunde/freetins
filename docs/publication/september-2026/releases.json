@@ -69,13 +69,17 @@
       "commit": "b36b23567cc18de63ce7a5c345b899262679174b",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/536bda38-a45e-411d-b4c6-fe17fa2a0fc0",
       "publishedAt": "2026-09-21T22:52:53Z"
+    },
+    {
+      "slug": "genshin-impact-codes",
+      "path": "/blog/genshin-impact-codes/",
+      "slot": "2026-09-22T17:30:00.000Z",
+      "startedAt": "2026-09-22T17:39:16.356Z",
+      "transport": "github",
+      "commit": "b9acba6c598bb3b40773e07c3a797d747d165510",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/f0bc3cab-80c2-4b39-a93e-b1ff6a9b87ef",
+      "publishedAt": "2026-09-22T17:52:20Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "genshin-impact-codes",
-    "path": "/blog/genshin-impact-codes/",
-    "slot": "2026-09-22T17:30:00.000Z",
-    "startedAt": "2026-09-22T17:39:16.356Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
