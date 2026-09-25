@@ -99,13 +99,17 @@
       "commit": "f34cfcffba36251ed3ae29f4ce7d61bc9bc0c1c2",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/087aff16-6ed9-4f39-8e5a-8f6161f232bb",
       "publishedAt": "2026-09-25T17:55:32Z"
+    },
+    {
+      "slug": "zenless-zone-zero-codes",
+      "path": "/blog/zenless-zone-zero-codes/",
+      "slot": "2026-09-25T22:30:00.000Z",
+      "startedAt": "2026-09-25T22:37:45.998Z",
+      "transport": "github",
+      "commit": "881d2e872d2c5f16103db5f732edc6022cc8ff7d",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/90f20ad2-e954-461e-bab6-c499c655a5ad",
+      "publishedAt": "2026-09-25T22:47:17Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "zenless-zone-zero-codes",
-    "path": "/blog/zenless-zone-zero-codes/",
-    "slot": "2026-09-25T22:30:00.000Z",
-    "startedAt": "2026-09-25T22:37:45.998Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
