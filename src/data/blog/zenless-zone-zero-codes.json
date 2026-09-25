@@ -30,15 +30,21 @@
       "cells": {
         "Code": "ZZZMEIJI",
         "Reward": "30,000 Denny; 3 Senior Investigator Logs; 3 W-Engine Energy Modules",
-        "Context": "No publisher deadline recovered"
+        "Context": "Reported expired; cutoff attributed as September 8, 2026"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
           "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamingchill.com/Zenless-Zone-Zero-codes/"
         }
-      ]
+      ],
+      "status": "expired",
+      "ended_at": "2026-09-08T14:59:59Z"
     },
     {
       "table": "codes",
@@ -46,7 +52,7 @@
       "cells": {
         "Code": "ZZZ2YEAR",
         "Reward": "50 Polychrome",
-        "Context": "No publisher deadline recovered"
+        "Context": "Reported expired; exact cutoff not recovered"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -54,7 +60,8 @@
           "tier": 2,
           "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
         }
-      ]
+      ],
+      "status": "expired"
     },
     {
       "table": "codes",
@@ -62,7 +69,7 @@
       "cells": {
         "Code": "ZZZ31REMIELLE",
         "Reward": "60 Polychrome; 6,666 Denny",
-        "Context": "No publisher deadline recovered"
+        "Context": "Reported expired; exact cutoff not recovered"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -70,7 +77,8 @@
           "tier": 2,
           "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
         }
-      ]
+      ],
+      "status": "expired"
     },
     {
       "table": "codes",
@@ -94,19 +102,86 @@
       "cells": {
         "Code": "FLINTWORKS",
         "Reward": "300 Polychrome; 30,000 Denny; 2 Senior Investigator Logs; 3 W-Engine Energy Modules",
-        "Context": "Historical livestream promotion, archived by Pocket Tactics"
+        "Context": "Version 3.2 livestream code; expired August 30, 2026"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
           "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
+        },
+        {
+          "tier": 2,
+          "url": "https://gamedaily.com/games/zenless-zone-zero-3-2-special-program"
+        }
+      ],
+      "status": "expired",
+      "ended_at": "2026-08-30T15:59:00Z"
+    },
+    {
+      "table": "codes",
+      "name": "ZZZVOID32",
+      "cells": {
+        "Code": "ZZZVOID32",
+        "Reward": "20 Polychrome; 2,222 Denny",
+        "Context": "Reported current for Version 3.2; exact cutoff not recovered"
+      },
+      "added_at": "2026-09-25T22:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.hoyolab.com/creatorCollection/10030326"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "ZZZINK32",
+      "cells": {
+        "Code": "ZZZINK32",
+        "Reward": "20 Polychrome; 2,222 Denny",
+        "Context": "Reported current for Version 3.2; exact cutoff not recovered"
+      },
+      "added_at": "2026-09-25T22:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.hoyolab.com/creatorCollection/10030326"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "ZZZGRIND32",
+      "cells": {
+        "Code": "ZZZGRIND32",
+        "Reward": "20 Polychrome; 2,222 Denny",
+        "Context": "Reported current for Version 3.2; exact cutoff not recovered"
+      },
+      "added_at": "2026-09-25T22:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/zenless-zone-zero/codes"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.hoyolab.com/creatorCollection/10030326"
         }
       ]
     }
   ],
   "disagreements": [],
   "fakes": [],
+  "unverified_summary": "The HoYoverse redemption page requires an account session, so Freetins did not attempt a claim. Pocket Tactics and a HoYoLAB creator collection both report ZZZVOID32, ZZZINK32 and ZZZGRIND32 as current, but no exact publisher cutoff was recovered for them. Pocket Tactics archives the four older promotions; exact end times were recovered only for ZZZMEIJI and FLINTWORKS.",
   "next_change": {
     "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
     "watch": "https://zenless.hoyoverse.com/redemption"

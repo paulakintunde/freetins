@@ -27,7 +27,7 @@ faq:
     a: "No interchangeable use is established by the reward list. Their exact names identify distinct materials, so inspect the relevant inventory and upgrade control before spending them. A generic description such as free XP can hide the difference between character materials, W-Engine materials and the particular quantity actually granted."
 ---
 
-Zenless Zone Zero redeem codes offer Polychrome, Denny and character or equipment materials. This table records {{totalCount}} source claims, with livestream history identified separately; no row is starred yet. Meet the game's progression requirement, redeem through its official portal or menu, then collect the delivered items from in-game mail.
+Zenless Zone Zero redeem codes offer Polychrome, Denny and character or equipment materials. This table records {{totalCount}} sourced claims and separates current reports from expired promotions; no row is starred yet. Meet the game's progression requirement, redeem through its official portal or menu, then collect the delivered items from in-game mail.
 
 Zenless Zone Zero is not Genshin Impact or Honkai: Star Rail. Its redemption page is {{entityId}}, and its code rewards belong to the selected ZZZ account and server.
 
@@ -35,7 +35,9 @@ Zenless Zone Zero is not Genshin Impact or Honkai: Star Rail. Its redemption pag
 
 {{table:codes}}
 
-[Pocket Tactics' guide](https://www.pockettactics.com/zenless-zone-zero/codes) supplies these bundles and places FLINTWORKS in its livestream archive. A large historical Polychrome reward should not be presented as a fresh offer merely because the string remains searchable.
+[Pocket Tactics' guide](https://www.pockettactics.com/zenless-zone-zero/codes) lists ZZZVOID32, ZZZINK32, ZZZGRIND32 and ZENLESSGIFT as current. A [HoYoLAB creator collection](https://www.hoyolab.com/creatorCollection/10030326) also reports the three Version 3.2 strings and says they last through the version, but it does not supply an exact UTC cutoff. The table therefore leaves that deadline unknown.
+
+Pocket Tactics now archives ZZZMEIJI, ZZZ2YEAR, ZZZ31REMIELLE and FLINTWORKS. [GameDaily's Version 3.2 recap](https://gamedaily.com/games/zenless-zone-zero-3-2-special-program) directly attributes FLINTWORKS and its August 30, 2026 cutoff to the special program. These expired rows remain visible so an old code list is easier to recognize.
 
 ## Unlock the redemption route
 
@@ -63,6 +65,10 @@ Treat a code as an addition to your resource plan, not a promise of an Agent or 
 A familiar gift string may already have been claimed on the relevant character. Read the response before retrying or assuming capitalization is the cause. Preserve the exact text and remove only accidental spaces.
 
 Short livestream promotions can close independently of the associated update. The historical context is kept visible here, while unrecovered deadlines remain unknown. The publisher's specific announcement is the right place to establish a new offer's limit.
+
+## What we could not verify
+
+{{unverifiedSummary}}
 
 ## Related guides
 
