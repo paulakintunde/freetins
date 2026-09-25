@@ -35,7 +35,9 @@ Honkai: Star Rail is not Honkai Impact or Genshin Impact. Its code portal is {{e
 
 {{table:codes}}
 
-[Pocket Tactics' guide](https://www.pockettactics.com/honkai-star-rail/codes) records the bundles above. Some entries grant Fuel with Stellar Jade; others focus on experience or consumables. The item names matter because an accepted code need not affect every balance in your account.
+[Pocket Tactics' guide](https://www.pockettactics.com/honkai-star-rail/codes) supplies the main current list. A [HoYoLAB creator report](https://www.hoyolab.com/article/46765148) also lists WAVEFLAIRSTYLE and WA4AV2F24PYX, which Pocket Tactics omits. Their availability therefore remains disputed, and neither row represents a Freetins redemption.
+
+The official [Honkai: Star Rail Telegram announcement](https://telegram.me/s/honkaistarrailofficial?after=3846) published three Version 4.6 livestream codes with a September 21, 2026 cutoff. Those entries remain in the table as expired records. Sources also disagree on whether MALSV2F247FP offered 100 or 50 Stellar Jade, so the table keeps the more widely reported 100 Jade bundle while describing the conflict below.
 
 ## Redeem on the web
 
@@ -64,6 +66,10 @@ Choose where to spend the resources after claiming them. A code can contribute t
 Copy the string carefully, including any digits that resemble letters. Read whether the response concerns eligibility, a prior claim or an unavailable offer. The usual gift code appearing in another guide is not proof that an account can claim it again.
 
 No deadline is inferred from the age of an announcement. When a source does not establish a publisher cutoff, the table leaves it unrecovered instead of attaching a made-up countdown.
+
+## What we could not verify
+
+{{unverifiedSummary}}
 
 ## Related guides
 

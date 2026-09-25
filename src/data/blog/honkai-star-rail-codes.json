@@ -10,6 +10,11 @@
       "type": "official_page",
       "url": "https://hsr.hoyoverse.com/gift",
       "note": "Publisher's game listing or official product page."
+    },
+    {
+      "type": "official_channel",
+      "url": "https://telegram.me/s/honkaistarrailofficial?after=3846",
+      "note": "Official Honkai: Star Rail channel announcement for the Version 4.6 livestream codes and cutoff."
     }
   ],
   "tables": {
@@ -151,10 +156,134 @@
           "url": "https://www.pockettactics.com/honkai-star-rail/codes"
         }
       ]
+    },
+    {
+      "table": "codes",
+      "name": "WAVEFLAIRSTYLE",
+      "cells": {
+        "Code": "WAVEFLAIRSTYLE",
+        "Reward": "3 Traveler's Guides; 2 Speeding Jet Surfboards",
+        "Context": "Availability disputed between current source lists"
+      },
+      "added_at": "2026-09-25T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.hoyolab.com/article/46765148"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "WA4AV2F24PYX",
+      "cells": {
+        "Code": "WA4AV2F24PYX",
+        "Reward": "50 Stellar Jade; 10,000 Credits",
+        "Context": "Availability disputed between current source lists"
+      },
+      "added_at": "2026-09-25T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://www.hoyolab.com/article/46765148"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "KA5SV3FJM7WX",
+      "cells": {
+        "Code": "KA5SV3FJM7WX",
+        "Reward": "100 Stellar Jade; 50,000 Credits",
+        "Context": "Version 4.6 livestream code; expired September 21, 2026"
+      },
+      "added_at": "2026-09-25T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://telegram.me/s/honkaistarrailofficial?after=3846"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ],
+      "status": "expired",
+      "ended_at": "2026-09-21T15:59:00Z"
+    },
+    {
+      "table": "codes",
+      "name": "7S4AD2X35NE3",
+      "cells": {
+        "Code": "7S4AD2X35NE3",
+        "Reward": "100 Stellar Jade; 5 Traveler's Guides",
+        "Context": "Version 4.6 livestream code; expired September 21, 2026"
+      },
+      "added_at": "2026-09-25T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://telegram.me/s/honkaistarrailofficial?after=3846"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        }
+      ],
+      "status": "expired",
+      "ended_at": "2026-09-21T15:59:00Z"
+    },
+    {
+      "table": "codes",
+      "name": "MALSV2F247FP",
+      "cells": {
+        "Code": "MALSV2F247FP",
+        "Reward": "100 Stellar Jade; 4 Refined Aether",
+        "Context": "Version 4.6 livestream code; expired; reward amount disputed"
+      },
+      "added_at": "2026-09-25T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 1,
+          "url": "https://telegram.me/s/honkaistarrailofficial?after=3846"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.pockettactics.com/honkai-star-rail/codes"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.hoyolab.com/article/46765148"
+        }
+      ],
+      "status": "expired",
+      "ended_at": "2026-09-21T15:59:00Z"
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "WAVEFLAIRSTYLE and WA4AV2F24PYX availability",
+      "source_a": "A HoYoLAB creator report lists both strings as redeemable",
+      "source_b": "Pocket Tactics omits both strings from its current list",
+      "confirmed": "No Freetins redemption is recorded, so both rows remain reported claims with disputed availability."
+    },
+    {
+      "item": "MALSV2F247FP Stellar Jade amount",
+      "source_a": "Pocket Tactics reports 100 Stellar Jade and 4 Refined Aether",
+      "source_b": "A HoYoLAB creator report lists 50 Stellar Jade and 4 Refined Aether",
+      "confirmed": "No Freetins redemption is recorded. The table retains the Pocket Tactics amount and leaves the conflict open."
+    }
+  ],
   "fakes": [],
+  "unverified_summary": "The HoYoverse gift page requires an account session, so Freetins did not attempt a claim. A HoYoLAB creator report lists WAVEFLAIRSTYLE and WA4AV2F24PYX, while Pocket Tactics omits both from its current list. Sources also disagree on whether MALSV2F247FP offered 100 or 50 Stellar Jade. The table preserves those conflicts and marks the three Version 4.6 livestream codes expired from the publisher channel's stated cutoff.",
   "next_change": {
     "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
     "watch": "https://hsr.hoyoverse.com/gift"

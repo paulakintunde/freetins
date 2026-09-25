@@ -91,5 +91,11 @@
       "publishedAt": "2026-09-22T22:54:54Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "honkai-star-rail-codes",
+    "path": "/blog/honkai-star-rail-codes/",
+    "slot": "2026-09-25T17:30:00.000Z",
+    "startedAt": "2026-09-25T17:42:26.873Z",
+    "transport": "github"
+  }
 }
