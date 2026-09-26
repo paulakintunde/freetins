@@ -109,13 +109,17 @@
       "commit": "881d2e872d2c5f16103db5f732edc6022cc8ff7d",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/90f20ad2-e954-461e-bab6-c499c655a5ad",
       "publishedAt": "2026-09-25T22:47:17Z"
+    },
+    {
+      "slug": "evomon-tier-list",
+      "path": "/guides/evomon-tier-list/",
+      "slot": "2026-09-26T17:30:00.000Z",
+      "startedAt": "2026-09-26T17:40:35.808Z",
+      "transport": "github",
+      "commit": "ac7803f817d4fd40e8c2adb102eb0dc6a286204a",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/f6f5fd80-adff-4b24-b102-f087590c06ea",
+      "publishedAt": "2026-09-26T17:51:27Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "evomon-tier-list",
-    "path": "/guides/evomon-tier-list/",
-    "slot": "2026-09-26T17:30:00.000Z",
-    "startedAt": "2026-09-26T17:40:35.808Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
