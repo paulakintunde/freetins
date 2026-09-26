@@ -2,19 +2,19 @@
   "subject": "Evomon",
   "slug": "evomon-tier-list",
   "entity_id": "134381727982611",
-  "entity_url": "https://www.roblox.com/games/134381727982611/",
+  "entity_url": "https://www.roblox.com/games/134381727982611/Evomon",
   "developer": "Evomon Devs",
   "permalink": "/guides/evomon-tier-list/",
   "official_sources": [
     {
       "type": "official_page",
-      "url": "https://www.roblox.com/games/134381727982611/",
-      "note": "Publisher's game listing or official product page."
+      "url": "https://www.roblox.com/games/134381727982611/Evomon",
+      "note": "Official Roblox experience page, currently labeled Evomon [S3 TRADE]."
     }
   ],
   "tables": {
     "training": {
-      "caption": "Editorial training priorities for a developing roster",
+      "caption": "Season 3 training priorities refreshed September 26, 2026",
       "columns": [
         "Evomon line",
         "Priority",
@@ -26,13 +26,13 @@
   "rows": [
     {
       "table": "training",
-      "name": "Lavite / Lavarock",
+      "name": "Glowy / Glowres / Goliath",
       "cells": {
-        "Evomon line": "Lavite / Lavarock",
-        "Priority": "A: first carry candidate",
-        "Use case": "Reported early Fire/Rock evolution; avoid duplicating a role already covered"
+        "Evomon line": "Glowy / Glowres / Goliath",
+        "Priority": "S: current meta anchor",
+        "Use case": "Raid and World Boss tank with Ground and Light coverage; protect it from Grass"
       },
-      "added_at": "2026-09-14T08:00:00Z",
+      "added_at": "2026-09-26T17:31:17Z",
       "evidence": [
         {
           "tier": 2,
@@ -42,13 +42,13 @@
     },
     {
       "table": "training",
-      "name": "Pummpaw / Pummash",
+      "name": "Magma / Magmaxor",
       "cells": {
-        "Evomon line": "Pummpaw / Pummash",
-        "Priority": "A: first carry candidate",
-        "Use case": "Reported Fighting cleanup option; choose if that role helps your team"
+        "Evomon line": "Magma / Magmaxor",
+        "Priority": "S: current meta attacker",
+        "Use case": "Bulky Fire and Fighting special damage for Raids and the World Boss"
       },
-      "added_at": "2026-09-14T08:00:00Z",
+      "added_at": "2026-09-26T17:31:17Z",
       "evidence": [
         {
           "tier": 2,
@@ -58,77 +58,13 @@
     },
     {
       "table": "training",
-      "name": "Blazpup",
+      "name": "Celesthorn",
       "cells": {
-        "Evomon line": "Blazpup",
-        "Priority": "B: starter investment",
-        "Use case": "Reported straightforward Fire starter; reassess before expensive long-term spending"
+        "Evomon line": "Celesthorn",
+        "Priority": "S: access dependent",
+        "Use case": "Fast Psychic pressure for PvP; source identifies it as a Season Pass creature"
       },
-      "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
-        }
-      ]
-    },
-    {
-      "table": "training",
-      "name": "Bubblade",
-      "cells": {
-        "Evomon line": "Bubblade",
-        "Priority": "B: coverage investment",
-        "Use case": "Water option when the team needs different coverage"
-      },
-      "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
-        }
-      ]
-    },
-    {
-      "table": "training",
-      "name": "Graycrene / Sundercrene",
-      "cells": {
-        "Evomon line": "Graycrene / Sundercrene",
-        "Priority": "B: coverage investment",
-        "Use case": "Flying damage option; compare against existing attackers"
-      },
-      "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
-        }
-      ]
-    },
-    {
-      "table": "training",
-      "name": "Arcub / Arcapex",
-      "cells": {
-        "Evomon line": "Arcub / Arcapex",
-        "Priority": "C: conditional target",
-        "Use case": "Reported boss-linked Electric line; obtain access before planning around it"
-      },
-      "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
-        }
-      ]
-    },
-    {
-      "table": "training",
-      "name": "Wispuff / Wisphex",
-      "cells": {
-        "Evomon line": "Wispuff / Wisphex",
-        "Priority": "C: conditional target",
-        "Use case": "Status-oriented line; more useful when its role fits the team"
-      },
-      "added_at": "2026-09-14T08:00:00Z",
+      "added_at": "2026-09-26T17:31:17Z",
       "evidence": [
         {
           "tier": 2,
@@ -141,10 +77,106 @@
       "name": "Tarro / Tarragon",
       "cells": {
         "Evomon line": "Tarro / Tarragon",
-        "Priority": "C: conditional target",
-        "Use case": "Durable Grass/Dragon option; assess matchups and investment cost"
+        "Priority": "S: flexible anchor",
+        "Use case": "Grass and Dragon generalist for endgame, Raids and broad progression"
       },
-      "added_at": "2026-09-14T08:00:00Z",
+      "added_at": "2026-09-26T17:31:17Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Arcub / Arcapex",
+      "cells": {
+        "Evomon line": "Arcub / Arcapex",
+        "Priority": "S: burst investment",
+        "Use case": "Fast Electric damage for PvP and PvE; avoid Ground and Rock counters"
+      },
+      "added_at": "2026-09-26T17:31:17Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Lavite / Lavarock",
+      "cells": {
+        "Evomon line": "Lavite / Lavarock",
+        "Priority": "S: practical long term carry",
+        "Use case": "Fire and Rock pressure for bosses, PvP and Burn teams; included in the source's budget core"
+      },
+      "added_at": "2026-09-26T17:31:17Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Wispuff / Wispshade / Wisphex",
+      "cells": {
+        "Evomon line": "Wispuff / Wispshade / Wisphex",
+        "Priority": "S: status investment",
+        "Use case": "Poison and Psychic disruption across PvP, Raids, bosses and progression"
+      },
+      "added_at": "2026-09-26T17:31:17Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Pummpaw / Pummash",
+      "cells": {
+        "Evomon line": "Pummpaw / Pummash",
+        "Priority": "A: accessible carry",
+        "Use case": "Physical Fighting finisher for progression and PvP; included in the source's budget core"
+      },
+      "added_at": "2026-09-26T17:31:17Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Graycrene / Sundercrene",
+      "cells": {
+        "Evomon line": "Graycrene / Sundercrene",
+        "Priority": "A: strong specialist",
+        "Use case": "Fast Flying carry for farming and priority attacks; rotate out against common counters"
+      },
+      "added_at": "2026-09-26T17:31:17Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://progameguides.com/roblox/roblox-evomon-tier-list/"
+        }
+      ]
+    },
+    {
+      "table": "training",
+      "name": "Blazpup",
+      "cells": {
+        "Evomon line": "Blazpup",
+        "Priority": "Starter: smooth opening",
+        "Use case": "Safe early Fire starter; useful for progress without requiring a permanent team slot"
+      },
+      "added_at": "2026-09-26T17:31:17Z",
       "evidence": [
         {
           "tier": 2,
@@ -153,11 +185,18 @@
       ]
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "Current season label in the source",
+      "source_a": "The source title and September 25 update identify the ranking as Season 3 and describe the current Raid, World Boss, level cap and trading changes.",
+      "source_b": "The source's introductory summary still calls it the ultimate Season 2 tier list.",
+      "confirmed": "Freetins follows the dated Season 3 update and the official Roblox title, Evomon [S3 TRADE], while preserving this wording conflict."
+    }
+  ],
   "fakes": [],
-  "unverified_summary": "The source's graphic and written tiers disagree for some creatures. These are Freetins editorial training priorities, not copied competitive tiers or results from a Freetins battle test. Creature roles and evolution names are reported by the source; exact balance values and acquisition rates have not been established here.",
+  "unverified_summary": "Freetins did not battle-test every creature or independently verify the source's exact stat, skill and usage claims. The source combines several modes into one overall tier list and leaves Cragmar unranked because its full current combat data was not verified. Its title and dated update say Season 3, while its introductory summary still says Season 2; this page follows the newer dated update and the official game's S3 TRADE label.",
   "next_change": {
-    "pattern": "Reassess training priorities when the publisher changes moves, balance, acquisition routes or evolution costs.",
-    "watch": "https://www.roblox.com/games/134381727982611/"
+    "pattern": "Reassess the list after balance changes, a new Raid or World Boss, or the announced October 15 midseason creature update.",
+    "watch": "https://www.roblox.com/games/134381727982611/Evomon"
   }
 }
