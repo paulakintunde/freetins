@@ -2,19 +2,19 @@
   "subject": "Anime Expeditions",
   "slug": "anime-expeditions-codes",
   "entity_id": "84515722934860",
-  "entity_url": "https://www.roblox.com/games/84515722934860/",
+  "entity_url": "https://www.roblox.com/games/84515722934860/Anime-Expeditions",
   "developer": "Expeditions Entertainment",
   "permalink": "/blog/anime-expeditions-codes/",
   "official_sources": [
     {
       "type": "official_page",
-      "url": "https://www.roblox.com/games/84515722934860/",
-      "note": "Publisher's game listing or official product page."
+      "url": "https://www.roblox.com/games/84515722934860/Anime-Expeditions",
+      "note": "Official Roblox experience page by Expeditions Entertainment."
     }
   ],
   "tables": {
     "codes": {
-      "caption": "Anime Expeditions: listed rewards and source context",
+      "caption": "Anime Expeditions: current reports and expired code history",
       "columns": [
         "Code",
         "Reward",
@@ -26,12 +26,69 @@
   "rows": [
     {
       "table": "codes",
+      "name": "Clash!",
+      "cells": {
+        "Code": "Clash!",
+        "Reward": "500 Defense Credit; 50 Trait Crystals",
+        "Context": "Reported current by Pro Game Guides and Pocket Tactics"
+      },
+      "added_at": "2026-10-13T22:32:57Z",
+      "evidence": [
+        { "tier": 2, "url": "https://progameguides.com/roblox/anime-expeditions-codes/" },
+        { "tier": 2, "url": "https://www.pockettactics.com/anime-expeditions-codes" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Brothers",
+      "cells": {
+        "Code": "Brothers",
+        "Reward": "20 Equipment Rerolls; 10 Stat Rerolls; 10 Equipment Locks",
+        "Context": "Reported current by Pro Game Guides and Pocket Tactics"
+      },
+      "added_at": "2026-10-13T22:32:57Z",
+      "evidence": [
+        { "tier": 2, "url": "https://progameguides.com/roblox/anime-expeditions-codes/" },
+        { "tier": 2, "url": "https://www.pockettactics.com/anime-expeditions-codes" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "HollowWorld",
+      "cells": {
+        "Code": "HollowWorld",
+        "Reward": "50 Trait Crystals",
+        "Context": "Reported current by Pro Game Guides and Pocket Tactics"
+      },
+      "added_at": "2026-10-13T22:32:57Z",
+      "evidence": [
+        { "tier": 2, "url": "https://progameguides.com/roblox/anime-expeditions-codes/" },
+        { "tier": 2, "url": "https://www.pockettactics.com/anime-expeditions-codes" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "sorrysmalldelay",
+      "cells": {
+        "Code": "sorrysmalldelay",
+        "Reward": "200 Trait Crystals reported by Pro Game Guides",
+        "Context": "Reported current; Pocket Tactics calls the reward 200 rerolls"
+      },
+      "added_at": "2026-10-13T22:32:57Z",
+      "evidence": [
+        { "tier": 2, "url": "https://progameguides.com/roblox/anime-expeditions-codes/" },
+        { "tier": 2, "url": "https://www.pockettactics.com/anime-expeditions-codes" }
+      ]
+    },
+    {
+      "table": "codes",
       "name": "restartsorry!",
       "cells": {
         "Code": "restartsorry!",
-        "Reward": "25 Trait Crystals",
-        "Context": "Reported in the newer Beebom list"
+        "Reward": "25 Trait Crystals in Beebom; 25 rerolls in Pro Game Guides",
+        "Context": "Expired; source reward wording differs"
       },
+      "status": "expired",
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
@@ -43,6 +100,7 @@
     {
       "table": "codes",
       "name": "fastrestart!",
+      "status": "expired",
       "cells": {
         "Code": "fastrestart!",
         "Reward": "25 Trait Crystals",
@@ -63,6 +121,7 @@
     {
       "table": "codes",
       "name": "EvolutionsFix",
+      "status": "expired",
       "cells": {
         "Code": "EvolutionsFix",
         "Reward": "25 Trait Crystals",
@@ -83,10 +142,11 @@
     {
       "table": "codes",
       "name": "8thCompany",
+      "status": "expired",
       "cells": {
         "Code": "8thCompany",
-        "Reward": "50 Stat Rerolls; 25 Trait Rerolls",
-        "Context": "Historical; bundle reported by Pro Game Guides"
+        "Reward": "50 Stat Rerolls; 25 Trait Crystals",
+        "Context": "Expired; bundle reported by Pro Game Guides"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -103,10 +163,11 @@
     {
       "table": "codes",
       "name": "250klikes",
+      "status": "expired",
       "cells": {
         "Code": "250klikes",
-        "Reward": "1,000 Sand Dollars; 25 Equipment Rerolls; 25 Trait Rerolls",
-        "Context": "Historical; bundle reported by Pro Game Guides"
+        "Reward": "1,000 Sand Dollars; 25 Equipment Rerolls; 25 Trait Crystals",
+        "Context": "Expired; bundle reported by Pro Game Guides"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -123,10 +184,11 @@
     {
       "table": "codes",
       "name": "Eclipse",
+      "status": "expired",
       "cells": {
         "Code": "Eclipse",
-        "Reward": "25 Trait Rerolls; 50 Equipment Rerolls",
-        "Context": "Historical; bundle reported by Pro Game Guides"
+        "Reward": "25 Trait Crystals; 50 Equipment Rerolls",
+        "Context": "Expired; bundle reported by Pro Game Guides"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -141,11 +203,24 @@
       ]
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "sorrysmalldelay reward label",
+      "source_a": "Pro Game Guides reports 200 Trait Crystals.",
+      "source_b": "Pocket Tactics reports 200 rerolls.",
+      "confirmed": "Both sources list the code as current, but Freetins did not redeem it and does not resolve the reward wording."
+    },
+    {
+      "item": "restartsorry! expired reward label",
+      "source_a": "Beebom reported 25 Trait Crystals.",
+      "source_b": "Pro Game Guides now archives it as 25 rerolls.",
+      "confirmed": "The code is kept as expired with both descriptions visible."
+    }
+  ],
   "fakes": [],
-  "unverified_summary": "Beebom calls the new reward Trait Crystals while Pro Game Guides describes rerolls. Older bundle amounts are preserved from Pro Game Guides; the sources do not establish successful redemption on a Freetins account.",
+  "unverified_summary": "Pro Game Guides and Pocket Tactics both report Clash!, Brothers, HollowWorld and sorrysmalldelay as current, but Freetins did not redeem them. The sources disagree on whether sorrysmalldelay grants 200 Trait Crystals or 200 rerolls. Beebom and Pro Game Guides also use different reward wording for the expired restartsorry! code.",
   "next_change": {
     "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
-    "watch": "https://www.roblox.com/games/84515722934860/"
+    "watch": "https://www.roblox.com/games/84515722934860/Anime-Expeditions"
   }
 }
