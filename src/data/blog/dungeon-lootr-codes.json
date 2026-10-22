@@ -2,19 +2,19 @@
   "subject": "Dungeon Lootr",
   "slug": "dungeon-lootr-codes",
   "entity_id": "106484206883664",
-  "entity_url": "https://www.roblox.com/games/106484206883664/",
+  "entity_url": "https://www.roblox.com/games/106484206883664/Dungeon-Lootr",
   "developer": "ClickBytes",
   "permalink": "/blog/dungeon-lootr-codes/",
   "official_sources": [
     {
       "type": "official_page",
-      "url": "https://www.roblox.com/games/106484206883664/",
-      "note": "Publisher's game listing or official product page."
+      "url": "https://www.roblox.com/games/106484206883664/Dungeon-Lootr",
+      "note": "Official Roblox experience page by ClickBytes."
     }
   ],
   "tables": {
     "codes": {
-      "caption": "Dungeon Lootr: listed rewards and source context",
+      "caption": "Dungeon Lootr: current reports and disputed older codes",
       "columns": [
         "Code",
         "Reward",
@@ -25,12 +25,108 @@
   },
   "rows": [
     {
+      "table": "codes", "name": "UPDATE3.5",
+      "cells": { "Code": "UPDATE3.5", "Reward": "25 Lucky Spins; 3 Aspect Gems; 5 Affix Seals; 10 Reforge Stone Bundles", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "HOLLOWREALM",
+      "cells": { "Code": "HOLLOWREALM", "Reward": "20 Lucky Spins; 3 Perfect Reforge Stones; 3 Spirit Prisms", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "VASTO",
+      "cells": { "Code": "VASTO", "Reward": "15 Lucky Spins; 3 Aspect Gems; 5 Exotic Ingots; 10 Mystery Boxes", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "OKAMI",
+      "cells": { "Code": "OKAMI", "Reward": "200 Expedition Points; 1 Revive Sigil; 5 Reforge Stones", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "EXPEDITION",
+      "cells": { "Code": "EXPEDITION", "Reward": "15 Exotic Ingots; 10 GM Blessing III; 50 Mystery Boxes; 5,000 Stars", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "SLIME",
+      "cells": { "Code": "SLIME", "Reward": "50 Lucky Spins; 5 Perfect Reforge Stones; 5 Spirit Prisms", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "UPDATE3",
+      "cells": { "Code": "UPDATE3", "Reward": "50 Lucky Spins; 10 Affix Seals; 20 Reforge Stone Bundles", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "SorryForDelay",
+      "cells": { "Code": "SorryForDelay", "Reward": "15 Perfect Reforge Stones; 15 Spirit Prisms; 15 Exotic Ingots", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "SLAYER",
+      "cells": { "Code": "SLAYER", "Reward": "6 Aspect Gems; 30 Lucky Spins; 4 Exotic Ingots; 2 Perfect Reforge Stones", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "UPDATE2_5",
+      "cells": { "Code": "UPDATE2_5", "Reward": "4 Aspect Gems; 25 or 30 Lucky Spins; 3 or 4 Exotic Ingots; 3 Perfect Reforge Stones", "Context": "Current sources disagree on the Lucky Spin and Exotic Ingot amounts" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "HAWK",
+      "cells": { "Code": "HAWK", "Reward": "5 Aspect Gems; 20 Lucky Spins; 2 Exotic Ingots; 4 Perfect Reforge Stones", "Context": "Pocket Tactics and GamesRadar report current; Roblox Den marks Check" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "PAYLOAD",
+      "cells": { "Code": "PAYLOAD", "Reward": "250 Payload Currency; 5 Reforge Stones", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "TORUS",
+      "cells": { "Code": "TORUS", "Reward": "5 Exotic Ingots; 10 Reforge Stones", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "UPDATE2",
+      "cells": { "Code": "UPDATE2", "Reward": "300 Payload Currency; 10 Reforge Stones; 2 Aspect Gems", "Context": "Reported current by Pocket Tactics, GamesRadar and Roblox Den" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "NECROMANCER",
+      "cells": { "Code": "NECROMANCER", "Reward": "20 or 30 Normal Spins; 10 Lucky Spins", "Context": "Pocket Tactics and Roblox Den report 30 Normal Spins; GamesRadar reports 20" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
+      "table": "codes", "name": "MOONWITCH",
+      "cells": { "Code": "MOONWITCH", "Reward": "20 or 30 Normal Spins; 10 Lucky Spins", "Context": "Pocket Tactics and Roblox Den report 30 Normal Spins; GamesRadar reports 20" },
+      "added_at": "2026-10-22T22:46:11Z",
+      "evidence": [{ "tier": 2, "url": "https://www.pockettactics.com/dungeon-lootr-codes" }, { "tier": 2, "url": "https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/" }]
+    },
+    {
       "table": "codes",
       "name": "20MVISIT",
       "cells": {
         "Code": "20MVISIT",
-        "Reward": "3 Luck Potions III",
-        "Context": "Beebom spelling; Nerd's Chalk prints 20mvisit"
+        "Reward": "3 Luck Potions III; 50,000 Coins",
+        "Context": "GamesRadar and Roblox Den report current; Pocket Tactics reports expired"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -45,8 +141,8 @@
       "name": "45KLIKE",
       "cells": {
         "Code": "45KLIKE",
-        "Reward": "3 Random GM Blessings",
-        "Context": "Beebom bundle; other reports also mention Coins"
+        "Reward": "3 Random GM Blessings; 25,000 Coins",
+        "Context": "GamesRadar and Roblox Den report current; Pocket Tactics reports expired"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -61,8 +157,8 @@
       "name": "JACKAL",
       "cells": {
         "Code": "JACKAL",
-        "Reward": "3 Random GM Blessings",
-        "Context": "Beebom bundle; other reports also mention Coins"
+        "Reward": "2 Random GM Blessings; 10,000 Coins",
+        "Context": "GamesRadar and Roblox Den report current; Pocket Tactics reports expired"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -77,8 +173,8 @@
       "name": "SILVERINE",
       "cells": {
         "Code": "SILVERINE",
-        "Reward": "Special rewards; exact bundle unresolved",
-        "Context": "Nerd's Chalk reports Coins and Stones without amounts"
+        "Reward": "5 Exotic Ingots; 10 Reforge Stones; 10,000 Coins",
+        "Context": "GamesRadar and Roblox Den report current; Pocket Tactics reports expired"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -93,8 +189,8 @@
       "name": "TOURNAMENT",
       "cells": {
         "Code": "TOURNAMENT",
-        "Reward": "5 Aspect Gems and Coins; Coin amount unresolved",
-        "Context": "Beebom bundle; Nerd's Chalk instead mentions scrolls"
+        "Reward": "5 Aspect Gems; 10 Protection Scrolls; 25,000 Coins",
+        "Context": "GamesRadar and Roblox Den report current; Pocket Tactics reports expired"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
@@ -105,11 +201,30 @@
       ]
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "Older code status",
+      "source_a": "GamesRadar and Roblox Den report 20MVISIT, 45KLIKE, JACKAL, SILVERINE and TOURNAMENT as current.",
+      "source_b": "Pocket Tactics lists the same five codes as expired.",
+      "confirmed": "Freetins did not redeem the codes, so their status remains a source disagreement."
+    },
+    {
+      "item": "UPDATE2_5 reward amounts",
+      "source_a": "Pocket Tactics and Roblox Den report 25 Lucky Spins and 3 Exotic Ingots.",
+      "source_b": "GamesRadar reports 30 Lucky Spins and 4 Exotic Ingots.",
+      "confirmed": "The shared parts are 4 Aspect Gems and 3 Perfect Reforge Stones; the other amounts are unresolved."
+    },
+    {
+      "item": "MOONWITCH and NECROMANCER Normal Spins",
+      "source_a": "Pocket Tactics and Roblox Den report 30 Normal Spins for each code.",
+      "source_b": "GamesRadar reports 20 Normal Spins for each code.",
+      "confirmed": "All three sources report 10 Lucky Spins; Freetins did not resolve the Normal Spin amount in game."
+    }
+  ],
   "fakes": [],
-  "unverified_summary": "Published sources differ on 20MVISIT capitalization and on the 45KLIKE, JACKAL, SILVERINE and TOURNAMENT bundles. Unknown quantities are left explicit; no full reward bundle has been inferred from another code.",
+  "unverified_summary": "Freetins did not redeem these codes. Current guides disagree on the status of five older strings and on some UPDATE2_5, MOONWITCH and NECROMANCER reward amounts. The table preserves each unresolved difference instead of selecting an unsupported value.",
   "next_change": {
     "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
-    "watch": "https://www.roblox.com/games/106484206883664/"
+    "watch": "https://www.roblox.com/games/106484206883664/Dungeon-Lootr"
   }
 }

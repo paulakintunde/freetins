@@ -10,7 +10,7 @@ secondary_keywords:
   - "dungeon lootr redeem codes"
   - "dungeon lootr code not working"
   - "dungeon lootr free items"
-description: "Dungeon Lootr codes offer Luck Potions, blessings and other loot. Join ClickBytes, open More, and compare the reported bundles."
+description: "Dungeon Lootr codes can grant spins, gems, stones and other supplies. Join ClickBytes, open More, and compare current source reports."
 author: "Paul A"
 faq:
   - q: "Do I have to join a group for Dungeon Lootr codes?"
@@ -21,13 +21,13 @@ faq:
     a: "The reports do not establish a precise shared bundle. Beebom calls it a special reward, while Nerd's Chalk describes Coins and Stones without amounts. The table preserves that uncertainty. Read the game's grant and your inventory change rather than assuming the quantity of a different compensation code applies."
   - q: "Does a Luck Potion guarantee rare loot?"
     a: "The listed reward is a Luck Potion, not a guaranteed rare item. Read its in-game description to understand its effect and duration before using it. Plan the farming session around the consumable, and distinguish a code being accepted from a particular random drop appearing during the run."
-  - q: "Why is the spelling of 20MVISIT flagged?"
-    a: "Beebom prints the code in uppercase while Nerd's Chalk uses a lowercase suffix. The table identifies the spelling it records rather than assuming the redemption field ignores case. Preserve the source string and check a publisher announcement or the actual game response when resolving the difference."
+  - q: "Are Dungeon Lootr codes case sensitive?"
+    a: "Current guides warn that the redemption field is case sensitive. Copy each string exactly, including underscores and mixed capitalization such as SorryForDelay. A correct spelling cannot restore an expired code, so also read the game's response before trying the same string again."
   - q: "Why does TOURNAMENT have an incomplete reward amount?"
     a: "Beebom reports Aspect Gems and Coins without a Coin quantity, while another guide describes scrolls and other rewards. Filling the gap from another code would invent a bundle. The table instead records what each source establishes and leaves the missing amount for an in-game result to resolve."
 ---
 
-Dungeon Lootr codes offer Luck Potions, blessings and other supplies, but some published bundles disagree. The table records {{totalCount}} claims and identifies unknown amounts; no row is starred yet. Join the developer's Roblox community before opening the code menu, then use the game's result to confirm what was granted.
+Dungeon Lootr codes can provide spins, gems, stones, ingots and other supplies. The table records {{totalCount}} source claims, including a current set reported by multiple guides and older entries whose status is disputed. No row is starred because Freetins did not redeem these codes on an account.
 
 Dungeon Lootr is not Dungeon Quest or Dungeon Heroes. This page covers {{developer}}'s experience at Roblox place {{entityId}}, so a code from another dungeon game belongs in its own redemption system.
 
@@ -35,7 +35,7 @@ Dungeon Lootr is not Dungeon Quest or Dungeon Heroes. This page covers {{develop
 
 {{table:codes}}
 
-The entries follow [Beebom's code list](https://beebom.com/dungeon-lootr-codes/). [Nerd's Chalk](https://nerdschalk.com/dungeon-lootr-codes/) differs on capitalization and several reward descriptions. An unspecified bundle remains unspecified here; similar-looking compensation codes are not evidence for filling in a missing quantity.
+[Pocket Tactics](https://www.pockettactics.com/dungeon-lootr-codes) and [GamesRadar](https://www.gamesradar.com/games/rpg/dungeon-lootr-codes/) agree on sixteen current strings. [Roblox Den](https://robloxden.com/game-codes/dungeon-lootr) reports the same set plus several older codes, while Pocket Tactics marks five of those older strings expired. The table keeps that disagreement visible instead of presenting one source's status as settled fact.
 
 ## Join ClickBytes, then open Codes
 
@@ -56,7 +56,7 @@ A Random GM Blessing should also be read as a random reward. The word random in 
 
 Record the code response and the inventory change. That is more useful than assuming the largest amount on a search result must be correct. If the reward is a chest or another container, distinguish the container grant from the items obtained by opening it.
 
-For SILVERINE and TOURNAMENT, the public reports do not agree enough to give a single complete bundle without a caveat. Those limits are kept beside the code so you can decide whether a claim is worth trying without being promised invented quantities.
+For UPDATE2_5, MOONWITCH and NECROMANCER, current guides disagree on some spin quantities. Older codes including SILVERINE and TOURNAMENT also have conflicting status reports. Those differences stay beside the relevant code so you can decide whether a claim is worth trying without being promised a made-up result.
 
 ## What we could not verify
 
