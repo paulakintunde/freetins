@@ -129,13 +129,17 @@
       "commit": "8c8d0d09cc9fc0109f574f2577082ee174360339",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/c66bfdc4-5e05-4827-9977-55328328f2e0",
       "publishedAt": "2026-10-13T22:45:09Z"
+    },
+    {
+      "slug": "dungeon-lootr-codes",
+      "path": "/blog/dungeon-lootr-codes/",
+      "slot": "2026-10-22T22:30:00.000Z",
+      "startedAt": "2026-10-22T22:52:10.726Z",
+      "transport": "github",
+      "commit": "4275bd1d2b66313fd9ed7d70b1594e86ca67c7f1",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/21047878-d935-47c8-97db-1c8b74437c37",
+      "publishedAt": "2026-10-22T23:01:20Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "dungeon-lootr-codes",
-    "path": "/blog/dungeon-lootr-codes/",
-    "slot": "2026-10-22T22:30:00.000Z",
-    "startedAt": "2026-10-22T22:52:10.726Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
