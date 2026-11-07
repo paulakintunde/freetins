@@ -2,19 +2,19 @@
   "subject": "Catch a Monster",
   "slug": "catch-a-monster-codes",
   "entity_id": "98664161516921",
-  "entity_url": "https://www.roblox.com/games/98664161516921/",
+  "entity_url": "https://www.roblox.com/games/98664161516921/Catch-a-Monster",
   "developer": "LDS II",
   "permalink": "/blog/catch-a-monster-codes/",
   "official_sources": [
     {
       "type": "official_page",
-      "url": "https://www.roblox.com/games/98664161516921/",
-      "note": "Publisher's game listing or official product page."
+      "url": "https://www.roblox.com/games/98664161516921/Catch-a-Monster",
+      "note": "Official Roblox experience page by LDS II. A current crawl labels the experience unavailable."
     }
   ],
   "tables": {
     "codes": {
-      "caption": "Catch a Monster: listed rewards and source context",
+      "caption": "Catch a Monster: current reports and source disagreements",
       "columns": [
         "Code",
         "Reward",
@@ -26,49 +26,61 @@
   "rows": [
     {
       "table": "codes",
-      "name": "bigopus",
+      "name": "BIGOPUS",
       "cells": {
-        "Code": "bigopus",
+        "Code": "BIGOPUS",
         "Reward": "1 Nightmare Bloodcore Egg",
-        "Context": "No publisher deadline located"
+        "Context": "Roblox Den reports Active; TheTechBasket reports confirmed"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
-          "url": "https://progameguides.com/roblox/catch-a-monster-codes/"
+          "url": "https://robloxden.com/game-codes/catch-a-monster"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.thetechbasket.com/catch-a-monster-codes/"
         }
       ]
     },
     {
       "table": "codes",
-      "name": "oblivion",
+      "name": "OBLIVION",
       "cells": {
-        "Code": "oblivion",
+        "Code": "OBLIVION",
         "Reward": "1 Mythical Chest",
-        "Context": "No publisher deadline located"
+        "Context": "Destructoid reports Working; Roblox Den reports Expired"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
-          "url": "https://progameguides.com/roblox/catch-a-monster-codes/"
+          "url": "https://www.destructoid.com/catch-a-monster-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://robloxden.com/game-codes/catch-a-monster"
         }
       ]
     },
     {
       "table": "codes",
-      "name": "abyssal",
+      "name": "ABYSSAL",
       "cells": {
-        "Code": "abyssal",
+        "Code": "ABYSSAL",
         "Reward": "1 Breather Pod Egg",
-        "Context": "No publisher deadline located"
+        "Context": "Destructoid reports Working; Roblox Den reports Expired"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
-          "url": "https://progameguides.com/roblox/catch-a-monster-codes/"
+          "url": "https://www.destructoid.com/catch-a-monster-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://robloxden.com/game-codes/catch-a-monster"
         }
       ]
     },
@@ -78,13 +90,17 @@
       "cells": {
         "Code": "xp",
         "Reward": "3 Small XP Potions",
-        "Context": "No publisher deadline located"
+        "Context": "Roblox Den reports Active; TheTechBasket reports confirmed"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
-          "url": "https://progameguides.com/roblox/catch-a-monster-codes/"
+          "url": "https://robloxden.com/game-codes/catch-a-monster"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.thetechbasket.com/catch-a-monster-codes/"
         }
       ]
     },
@@ -93,22 +109,146 @@
       "name": "coin",
       "cells": {
         "Code": "coin",
-        "Reward": "3 Small Coin Potions",
-        "Context": "No publisher deadline located"
+        "Reward": "3 Middle Coin Potions or 3 Small Coin Potions",
+        "Context": "Sources disagree on potion size; Roblox Den and TheTechBasket support the code"
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
-          "url": "https://progameguides.com/roblox/catch-a-monster-codes/"
+          "url": "https://robloxden.com/game-codes/catch-a-monster"
+        },
+        {
+          "tier": 2,
+          "url": "https://codedrop.gg/catch-a-monster-codes"
         }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "HALLOWEEN2",
+      "cells": { "Code": "HALLOWEEN2", "Reward": "1 Pumpkin Egg", "Context": "Roblox Den reports Active; TheTechBasket reports unconfirmed" },
+      "added_at": "2026-11-07T22:34:23Z",
+      "evidence": [
+        { "tier": 2, "url": "https://robloxden.com/game-codes/catch-a-monster" },
+        { "tier": 2, "url": "https://www.thetechbasket.com/catch-a-monster-codes/" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "lunaron",
+      "cells": { "Code": "lunaron", "Reward": "5 Halloween Chests", "Context": "Roblox Den reports Active; TheTechBasket reports unconfirmed" },
+      "added_at": "2026-11-07T22:34:23Z",
+      "evidence": [
+        { "tier": 2, "url": "https://robloxden.com/game-codes/catch-a-monster" },
+        { "tier": 2, "url": "https://www.thetechbasket.com/catch-a-monster-codes/" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "Gravitas",
+      "cells": { "Code": "Gravitas", "Reward": "5,000 Pumpkin Candies", "Context": "Roblox Den reports Active; TheTechBasket reports unconfirmed" },
+      "added_at": "2026-11-07T22:34:23Z",
+      "evidence": [
+        { "tier": 2, "url": "https://robloxden.com/game-codes/catch-a-monster" },
+        { "tier": 2, "url": "https://www.thetechbasket.com/catch-a-monster-codes/" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "HALLOWEEN",
+      "cells": { "Code": "HALLOWEEN", "Reward": "1 Wizard Egg", "Context": "Roblox Den reports Active; TheTechBasket reports unconfirmed" },
+      "added_at": "2026-11-07T22:34:23Z",
+      "evidence": [
+        { "tier": 2, "url": "https://robloxden.com/game-codes/catch-a-monster" },
+        { "tier": 2, "url": "https://www.thetechbasket.com/catch-a-monster-codes/" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "STOWERBUG",
+      "cells": { "Code": "STOWERBUG", "Reward": "Task Points and 2,000 Tower Gems", "Context": "Roblox Den reports Active; TheTechBasket reports confirmed" },
+      "added_at": "2026-11-07T22:34:23Z",
+      "evidence": [
+        { "tier": 2, "url": "https://robloxden.com/game-codes/catch-a-monster" },
+        { "tier": 2, "url": "https://www.thetechbasket.com/catch-a-monster-codes/" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "COILRIFT",
+      "cells": { "Code": "COILRIFT", "Reward": "1 Mythical Chest", "Context": "Roblox Den reports Active; TheTechBasket reports confirmed" },
+      "added_at": "2026-11-07T22:34:23Z",
+      "evidence": [
+        { "tier": 2, "url": "https://robloxden.com/game-codes/catch-a-monster" },
+        { "tier": 2, "url": "https://www.thetechbasket.com/catch-a-monster-codes/" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "STELLAWOLF",
+      "cells": { "Code": "STELLAWOLF", "Reward": "Task Points", "Context": "Roblox Den reports Active; TheTechBasket reports confirmed" },
+      "added_at": "2026-11-07T22:34:23Z",
+      "evidence": [
+        { "tier": 2, "url": "https://robloxden.com/game-codes/catch-a-monster" },
+        { "tier": 2, "url": "https://www.thetechbasket.com/catch-a-monster-codes/" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "cam",
+      "cells": { "Code": "cam", "Reward": "3 Small XP Potions and 3 Small Coin Potions", "Context": "Roblox Den reports Active; CodeDrop reports unconfirmed" },
+      "added_at": "2026-11-07T22:34:23Z",
+      "evidence": [
+        { "tier": 2, "url": "https://robloxden.com/game-codes/catch-a-monster" },
+        { "tier": 2, "url": "https://codedrop.gg/catch-a-monster-codes" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "rainimp",
+      "cells": { "Code": "rainimp", "Reward": "1 Spritesprout Egg", "Context": "Destructoid reports Working; Roblox Den reports Check" },
+      "added_at": "2026-11-07T22:34:23Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.destructoid.com/catch-a-monster-codes/" },
+        { "tier": 2, "url": "https://robloxden.com/game-codes/catch-a-monster" }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "WORLDBOSS",
+      "cells": { "Code": "WORLDBOSS", "Reward": "1 Copter Egg", "Context": "Destructoid reports Working; Roblox Den reports Check" },
+      "added_at": "2026-11-07T22:34:23Z",
+      "evidence": [
+        { "tier": 2, "url": "https://www.destructoid.com/catch-a-monster-codes/" },
+        { "tier": 2, "url": "https://robloxden.com/game-codes/catch-a-monster" }
       ]
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "Overall working-code status",
+      "source_a": "Roblox Den reports multiple codes as Active, while TheTechBasket says six are confirmed and a larger group is unconfirmed.",
+      "source_b": "CodeDrop reports no confirmed working codes and keeps its listed strings in an unconfirmed group.",
+      "confirmed": "Freetins did not redeem any code, so the table reports source positions without selecting a universal working list."
+    },
+    {
+      "item": "OBLIVION and ABYSSAL status",
+      "source_a": "Destructoid lists both codes as working on November 2, 2026.",
+      "source_b": "Roblox Den lists both codes as expired in its November 7, 2026 check.",
+      "confirmed": "The reward descriptions agree, but current availability remains unresolved."
+    },
+    {
+      "item": "coin reward size",
+      "source_a": "Roblox Den reports 3 Middle Coin Potions.",
+      "source_b": "CodeDrop reports 3 Small Coin Potions.",
+      "confirmed": "The code and potion count agree; the potion size remains unresolved."
+    }
+  ],
   "fakes": [],
+  "unverified_summary": "Freetins did not redeem these codes. Current sources disagree on the overall working list, on OBLIVION and ABYSSAL, and on the potion size for coin. The table preserves those differences and does not convert source labels into a Freetins verification claim.",
   "next_change": {
-    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
-    "watch": "https://www.roblox.com/games/98664161516921/"
+    "pattern": "Publisher announcements and event closures can change rewards and availability. No fixed code-release schedule is established.",
+    "watch": "https://www.roblox.com/games/98664161516921/Catch-a-Monster"
   }
 }

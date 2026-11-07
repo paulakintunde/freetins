@@ -141,5 +141,11 @@
       "publishedAt": "2026-10-22T23:01:20Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "catch-a-monster-codes",
+    "path": "/blog/catch-a-monster-codes/",
+    "slot": "2026-11-07T22:30:00.000Z",
+    "startedAt": "2026-11-07T22:46:09.576Z",
+    "transport": "github"
+  }
 }
