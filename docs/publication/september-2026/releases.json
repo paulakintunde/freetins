@@ -151,5 +151,11 @@
       "publishedAt": "2026-11-07T22:57:24Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "doors-codes",
+    "path": "/blog/doors-codes/",
+    "slot": "2026-11-08T17:30:00.000Z",
+    "startedAt": "2026-11-08T17:43:54.195Z",
+    "transport": "github"
+  }
 }

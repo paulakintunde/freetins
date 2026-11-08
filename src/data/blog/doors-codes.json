@@ -26,17 +26,101 @@
   "rows": [
     {
       "table": "codes",
-      "name": "NO_DATA",
+      "name": "PROTOCOL",
       "cells": {
-        "Code": "NO_DATA",
-        "Reward": "5 Knobs",
-        "Context": "Pocket Tactics amount; PGG reports 50"
+        "Code": "PROTOCOL",
+        "Reward": "20 Stardust",
+        "Context": "Current on Roblox Den and RBX Radar on Nov. 8"
       },
-      "added_at": "2026-09-14T08:00:00Z",
+      "added_at": "2026-11-08T17:30:00Z",
       "evidence": [
         {
           "tier": 2,
-          "url": "https://www.pockettactics.com/roblox/doors-codes"
+          "url": "https://robloxden.com/game-codes/doors"
+        },
+        {
+          "tier": 2,
+          "url": "https://rbxradar.com/codes/doors"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "ACCESS GRANTED",
+      "cells": {
+        "Code": "ACCESS GRANTED",
+        "Reward": "150 Knobs",
+        "Context": "Current on Roblox Den and Dexerto on Nov. 8"
+      },
+      "added_at": "2026-11-08T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://robloxden.com/game-codes/doors"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.dexerto.com/roblox/roblox-doors-codes-3236329/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "ACCESS DENIED",
+      "cells": {
+        "Code": "ACCESS DENIED",
+        "Reward": "150 Knobs",
+        "Context": "Current on Roblox Den and Dexerto on Nov. 8"
+      },
+      "added_at": "2026-11-08T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://robloxden.com/game-codes/doors"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.dexerto.com/roblox/roblox-doors-codes-3236329/"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "REPRESSED",
+      "cells": {
+        "Code": "REPRESSED",
+        "Reward": "10 Stardust",
+        "Context": "Current on Roblox Den and RBX Radar on Nov. 8"
+      },
+      "added_at": "2026-11-08T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://robloxden.com/game-codes/doors"
+        },
+        {
+          "tier": 2,
+          "url": "https://rbxradar.com/codes/doors"
+        }
+      ]
+    },
+    {
+      "table": "codes",
+      "name": "L",
+      "cells": {
+        "Code": "L",
+        "Reward": "No item reported",
+        "Context": "Joke code; Roblox Den says active and Dexerto says no reward"
+      },
+      "added_at": "2026-11-08T17:30:00Z",
+      "evidence": [
+        {
+          "tier": 2,
+          "url": "https://robloxden.com/game-codes/doors"
+        },
+        {
+          "tier": 2,
+          "url": "https://www.dexerto.com/roblox/roblox-doors-codes-3236329/"
         }
       ]
     },
@@ -330,22 +414,6 @@
     },
     {
       "table": "codes",
-      "name": "FE4R_RBX",
-      "cells": {
-        "Code": "FE4R_RBX",
-        "Reward": "5 Knobs",
-        "Context": "Reported by Pocket Tactics"
-      },
-      "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pockettactics.com/roblox/doors-codes"
-        }
-      ]
-    },
-    {
-      "table": "codes",
       "name": "VOCAB HAVOC",
       "cells": {
         "Code": "VOCAB HAVOC",
@@ -442,22 +510,6 @@
     },
     {
       "table": "codes",
-      "name": "777",
-      "cells": {
-        "Code": "777",
-        "Reward": "7 Stardust; 777 Knobs; 1 Revive",
-        "Context": "Reported by Pocket Tactics"
-      },
-      "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pockettactics.com/roblox/doors-codes"
-        }
-      ]
-    },
-    {
-      "table": "codes",
       "name": "LAZYDEVS",
       "cells": {
         "Code": "LAZYDEVS",
@@ -509,21 +561,44 @@
       "name": "SCREECHSUCKS",
       "cells": {
         "Code": "SCREECHSUCKS",
-        "Reward": "50 Knobs",
-        "Context": "Pocket Tactics amount; PGG reports 25"
+        "Reward": "25 Knobs",
+        "Context": "Roblox Den and RBX Radar amount; older coverage reported 50"
       },
-      "added_at": "2026-09-14T08:00:00Z",
+      "added_at": "2026-11-08T17:30:00Z",
       "evidence": [
         {
           "tier": 2,
-          "url": "https://www.pockettactics.com/roblox/doors-codes"
+          "url": "https://robloxden.com/game-codes/doors"
+        },
+        {
+          "tier": 2,
+          "url": "https://rbxradar.com/codes/doors"
         }
       ]
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "Current active set",
+      "source_a": "Roblox Den labels a broad set active and two more entries as needing a check.",
+      "source_b": "RBX Radar publishes a 16-code consensus list and places several other strings in a may-be-expired section.",
+      "confirmed": "Freetins did not redeem the codes. This table keeps Roblox Den's active entries, excludes its check-only entries, and preserves the disagreement here."
+    },
+    {
+      "item": "NO_DATA status and reward",
+      "source_a": "SuperCheats lists NO_DATA as active for 50 Knobs.",
+      "source_b": "Roblox Den marks NO_DATA expired for 5 Knobs, while RBX Radar says its status is disputed.",
+      "confirmed": "Freetins did not redeem NO_DATA, so it is omitted from the current table rather than presented as confirmed."
+    },
+    {
+      "item": "SCREECHSUCKS reward",
+      "source_a": "Roblox Den and RBX Radar currently report 25 Knobs.",
+      "source_b": "Older coverage reported 50 Knobs, and SuperCheats displays the amount as unresolved.",
+      "confirmed": "The table uses the current 25-Knob agreement without claiming a Freetins redemption."
+    }
+  ],
   "fakes": [],
-  "unverified_summary": "Pocket Tactics and Pro Game Guides disagree on the NO_DATA and SCREECHSUCKS Knob amounts. PGG also retains older milestone strings that Pocket Tactics archives. The table attributes the newer Pocket Tactics list without claiming those amounts were redeemed by Freetins.",
+  "unverified_summary": "Freetins did not redeem these entries. Roblox Den, SuperCheats, Dexerto and RBX Radar disagree on the size of the active set, and NO_DATA has conflicting status and reward reports. The table excludes entries that Roblox Den labels expired or check-only, while keeping the remaining rows as sourced claims rather than first-hand confirmations.",
   "next_change": {
     "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
     "watch": "https://www.roblox.com/games/6516141723/"
