@@ -6,222 +6,107 @@
   "developer": "Onett",
   "permalink": "/blog/bee-swarm-simulator-codes/",
   "official_sources": [
-    {
-      "type": "official_page",
-      "url": "https://www.roblox.com/games/1537690962/",
-      "note": "Publisher's game listing or official product page."
-    }
+    {"type": "official_page", "url": "https://www.roblox.com/games/1537690962/", "note": "Official Roblox experience page by Onett."},
+    {"type": "official_community", "url": "https://www.roblox.com/groups/3982592/", "note": "Official Bee Swarm Simulator Club community used for group-gated redemptions."}
   ],
   "tables": {
-    "codes": {
-      "caption": "Bee Swarm Simulator: listed rewards and source context",
-      "columns": [
-        "Code",
-        "Reward",
-        "Context"
-      ],
-      "kind": "code"
-    }
+    "codes": {"caption": "Bee Swarm Simulator: current code reports and source context", "columns": ["Code", "Reward", "Context"], "kind": "code"}
   },
   "rows": [
     {
-      "table": "codes",
-      "name": "fourtunate",
-      "cells": {
-        "Code": "fourtunate",
-        "Reward": "1 Marshmallow Bee; 4 each of Strawberries, Sunflower Seeds, Blueberries, Pineapples, Micro-Converters, Field Dice, Gumdrops, Jelly Beans and Stingers",
-        "Context": "Reported bundle"
-      },
+      "table": "codes", "name": "FOURtunate",
+      "cells": {"Code": "FOURtunate", "Reward": "1 Marshmallow Bee; 4 each of Strawberries, Sunflower Seeds, Blueberries, Pineapples, Micro-Converters, Field Dice, Gumdrops, Jelly Beans and Stingers", "Context": "Reported current by GamesRadar and Dexerto; official group required"},
       "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}, {"tier": 2, "url": "https://www.dexerto.com/roblox/roblox-bee-swarm-simulator-codes-1664631/"}]
     },
     {
-      "table": "codes",
-      "name": "15MMembers",
-      "cells": {
-        "Code": "15MMembers",
-        "Reward": "1 Marshmallow Bee; 1 Red Balloon; 15 each of Gumdrops, Sunflower Seeds, Strawberries, Pineapples, Blueberries and Bitterberries",
-        "Context": "Read any club requirement in game"
-      },
+      "table": "codes", "name": "15MMembers",
+      "cells": {"Code": "15MMembers", "Reward": "1 Marshmallow Bee; 1 Red Balloon; 15 each of Gumdrops, Sunflower Seeds, Strawberries, Pineapples, Blueberries and Bitterberries; Bamboo, Rose and Coconut field boosts and winds", "Context": "Reported current by GamesRadar and Dexerto; official group required"},
       "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}, {"tier": 2, "url": "https://www.dexerto.com/roblox/roblox-bee-swarm-simulator-codes-1664631/"}]
     },
     {
-      "table": "codes",
-      "name": "38217",
-      "cells": {
-        "Code": "38217",
-        "Reward": "5 Tickets",
-        "Context": "Source places this in both its current list and archive"
-      },
-      "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "table": "codes", "name": "ThreeBeeVee",
+      "cells": {"Code": "ThreeBeeVee", "Reward": "1 Marshmallow Bee; 1 Loaded Dice; Mountain Top Field code, 3 boosts and 13 winds", "Context": "Reported current by GamesRadar; absent from some current trackers"},
+      "added_at": "2026-11-10T22:30:48Z",
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}]
     },
     {
-      "table": "codes",
-      "name": "BeesBuzz123",
-      "cells": {
-        "Code": "BeesBuzz123",
-        "Reward": "1 Cloud Vial; 5 Bitterberries; 10 Gumdrops",
-        "Context": "Reported bundle"
-      },
+      "table": "codes", "name": "38217",
+      "cells": {"Code": "38217", "Reward": "5 Tickets", "Context": "Reported current by GamesRadar and Dexerto"},
       "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}, {"tier": 2, "url": "https://www.dexerto.com/roblox/roblox-bee-swarm-simulator-codes-1664631/"}]
     },
     {
-      "table": "codes",
-      "name": "Bopmaster",
-      "cells": {
-        "Code": "Bopmaster",
-        "Reward": "5 Tickets",
-        "Context": "Reported ticket reward"
-      },
+      "table": "codes", "name": "BeesBuzz123",
+      "cells": {"Code": "BeesBuzz123", "Reward": "1 Cloud Vial; 5 Bitterberries; 10 Gumdrops", "Context": "Reported current by GamesRadar and Dexerto"},
       "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}, {"tier": 2, "url": "https://www.dexerto.com/roblox/roblox-bee-swarm-simulator-codes-1664631/"}]
     },
     {
-      "table": "codes",
-      "name": "Connoisseur",
-      "cells": {
-        "Code": "Connoisseur",
-        "Reward": "5 Tickets",
-        "Context": "Reported ticket reward"
-      },
-      "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "table": "codes", "name": "GumdropsForScience",
+      "cells": {"Code": "GumdropsForScience", "Reward": "15 Gumdrops", "Context": "Reported current by GamesRadar"},
+      "added_at": "2026-11-10T22:30:48Z",
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}]
     },
     {
-      "table": "codes",
-      "name": "Crawlers",
-      "cells": {
-        "Code": "Crawlers",
-        "Reward": "5 Tickets",
-        "Context": "Reported ticket reward"
-      },
+      "table": "codes", "name": "ClubBean",
+      "cells": {"Code": "ClubBean", "Reward": "1 Magic Bean; 2 Pineapple Patch boosts", "Context": "Reported current by GamesRadar; official group required"},
       "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}]
     },
     {
-      "table": "codes",
-      "name": "Roof",
-      "cells": {
-        "Code": "Roof",
-        "Reward": "5 Tickets",
-        "Context": "Reported ticket reward"
-      },
+      "table": "codes", "name": "BopMaster",
+      "cells": {"Code": "BopMaster", "Reward": "5 Tickets", "Context": "Reported current by GamesRadar and Dexerto"},
       "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}, {"tier": 2, "url": "https://www.dexerto.com/roblox/roblox-bee-swarm-simulator-codes-1664631/"}]
     },
     {
-      "table": "codes",
-      "name": "Nectar",
-      "cells": {
-        "Code": "Nectar",
-        "Reward": "5,000 Honey",
-        "Context": "Reported Honey reward"
-      },
+      "table": "codes", "name": "Connoisseur",
+      "cells": {"Code": "Connoisseur", "Reward": "5 Tickets", "Context": "Reported current by GamesRadar; Dexerto archives the plural Connoisseurs spelling"},
       "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}, {"tier": 2, "url": "https://www.dexerto.com/roblox/roblox-bee-swarm-simulator-codes-1664631/"}]
     },
     {
-      "table": "codes",
-      "name": "Wax",
-      "cells": {
-        "Code": "Wax",
-        "Reward": "5,000 Honey; 5 Tickets",
-        "Context": "Reported mixed reward"
-      },
+      "table": "codes", "name": "Crawlers",
+      "cells": {"Code": "Crawlers", "Reward": "5 Tickets", "Context": "Reported current by GamesRadar and Dexerto"},
       "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}, {"tier": 2, "url": "https://www.dexerto.com/roblox/roblox-bee-swarm-simulator-codes-1664631/"}]
     },
     {
-      "table": "codes",
-      "name": "ClubBean",
-      "cells": {
-        "Code": "ClubBean",
-        "Reward": "Field boosts; exact bundle not established here",
-        "Context": "Bee Swarm Simulator Club membership required"
-      },
+      "table": "codes", "name": "Roof",
+      "cells": {"Code": "Roof", "Reward": "5 Tickets", "Context": "Reported current by GamesRadar"},
       "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}]
     },
     {
-      "table": "codes",
-      "name": "ClubConverters",
-      "cells": {
-        "Code": "ClubConverters",
-        "Reward": "10 Micro-Converters",
-        "Context": "Bee Swarm Simulator Club membership required"
-      },
+      "table": "codes", "name": "Nectar",
+      "cells": {"Code": "Nectar", "Reward": "5,000 Honey", "Context": "Reported current by GamesRadar"},
       "added_at": "2026-09-14T08:00:00Z",
-      "evidence": [
-        {
-          "tier": 2,
-          "url": "https://www.pcgamesn.com/bee-swarm-simulator/codes"
-        }
-      ]
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}]
+    },
+    {
+      "table": "codes", "name": "Wax",
+      "cells": {"Code": "Wax", "Reward": "5,000 Honey; 5 Tickets", "Context": "Reported current by GamesRadar"},
+      "added_at": "2026-09-14T08:00:00Z",
+      "evidence": [{"tier": 2, "url": "https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/"}]
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "Current code count",
+      "source_a": "GamesRadar lists 13 current codes on November 3, 2026.",
+      "source_b": "Dexerto reports 13 current codes on November 9, 2026, but its visible list and archive differ from other trackers.",
+      "confirmed": "Freetins did not redeem the codes. The table preserves current editorial reports without treating any reported count as an in-game confirmation."
+    },
+    {
+      "item": "ThreeBeeVee",
+      "source_a": "GamesRadar lists ThreeBeeVee as current.",
+      "source_b": "Several other trackers reviewed on November 10 omit it from their current lists.",
+      "confirmed": "The code remains visible with the disagreement noted; Freetins did not redeem it."
+    }
+  ],
   "fakes": [],
-  "unverified_summary": "PCGamesN places 38217 in both its current list and archive. ClubBean's source description does not establish a complete quantified boost bundle. The table preserves both limitations rather than assigning a guessed outcome or amount.",
-  "next_change": {
-    "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
-    "watch": "https://www.roblox.com/games/1537690962/"
-  }
+  "unverified_summary": "GamesRadar and Dexerto support most of the listed codes, but current trackers disagree on the total and on entries such as ThreeBeeVee. Freetins did not redeem these codes. The table preserves the disagreement and reports source claims without presenting them as recorded in-game outcomes.",
+  "next_change": {"pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.", "watch": "https://www.roblox.com/games/1537690962/"}
 }

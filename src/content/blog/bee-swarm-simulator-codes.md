@@ -20,14 +20,14 @@ faq:
   - q: "Should I redeem all boost codes before choosing a field?"
     a: "It is better to prepare the field, equipment and session first when a reward activates a timed effect. Check the game's effect display after claiming rather than assuming every boost has identical timing. Consumables that enter your inventory can require a separate action, so distinguish the two reward types."
   - q: "Do these codes give a guaranteed Mythic Bee?"
-    a: "The recorded rewards are Tickets, Honey, named consumables and boosts. None of those descriptions establishes a guaranteed Mythic Bee. Read the exact item bundle and any game's own outcome terms before spending it, rather than treating a code guide or a dramatic headline as a promised hatch."
-  - q: "Why is 38217 marked with a source conflict?"
-    a: "PCGamesN places the string in both its current list and its archive. That internal contradiction prevents the page from treating either placement as decisive. The reward claim remains visible with its caveat, while a recorded in-game response is needed to establish the result for a tested account."
+    a: "The reported rewards are Tickets, Honey, named consumables and boosts. None of those descriptions establishes a guaranteed Mythic Bee. Read the exact item bundle and the game's own outcome terms before spending it, rather than treating a code guide or a dramatic headline as a promised hatch."
+  - q: "Why do current sources report different code totals?"
+    a: "Current trackers disagree on whether some entries still work. This page keeps the codes supported by two recent editorial lists, identifies the disagreement and does not claim that Freetins redeemed them. An in-game response on your account remains the most useful result."
   - q: "What should I inspect after a successful redemption?"
     a: "Check the balance or inventory category corresponding to the listed reward, then look for any active effect. A mixed bundle can affect several places at once. If the result differs from the table, record the exact code message and the missing item rather than checking only your Honey balance."
 ---
 
-Bee Swarm Simulator codes can grant Tickets, Honey, consumables and field boosts. This table records {{totalCount}} sourced claims, including club-gated entries; no row is starred yet. Read the reward before claiming it and prepare your equipment first if the grant starts an effect you will want to use immediately.
+Bee Swarm Simulator codes can grant Tickets, Honey, consumables and field boosts. This table records {{totalCount}} current claims from recent editorial trackers, including club-gated entries. Freetins did not redeem them, so no row is marked as checked in game. Prepare your equipment before claiming a timed boost.
 
 Bee Swarm Simulator is not another bee-themed Roblox game. This page follows Onett's experience at place {{entityId}} and its official Bee Swarm Simulator Club community.
 
@@ -35,7 +35,7 @@ Bee Swarm Simulator is not another bee-themed Roblox game. This page follows One
 
 {{table:codes}}
 
-[PCGamesN's code guide](https://www.pcgamesn.com/bee-swarm-simulator/codes) is the source for these bundles. Large mixed rewards are kept as item lists so a Ticket grant is not mistaken for a bee hatch. Where the source does not give a complete boost bundle, the table says so.
+[GamesRadar's code guide](https://www.gamesradar.com/games/simulation/bee-swarm-simulator-codes/) and [Dexerto's current tracker](https://www.dexerto.com/roblox/roblox-bee-swarm-simulator-codes-1664631/) support the listed bundles. Large mixed rewards are kept as item lists so a Ticket grant is not mistaken for a bee hatch. The sources do not agree on every active entry, and the table does not turn those reports into a Freetins redemption claim.
 
 ## Redeem from the settings cog
 
@@ -60,7 +60,7 @@ Use the reward where it fits your hive's needs rather than spending everything s
 
 ## If an entry gives an unexpected result
 
-Read the code response and compare the relevant balance or effect. The source itself contradicts its placement of 38217, so a fresh redemption result is needed to resolve that entry. Report the exact message instead of treating the contradiction as proof of either outcome.
+Read the code response and compare the relevant balance or effect. Current trackers report different active-code totals, so a fresh redemption result is needed to resolve an entry on your account. Report the exact message instead of treating one source's list as proof of the in-game outcome.
 
 ## What we could not verify
 
