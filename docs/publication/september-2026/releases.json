@@ -161,5 +161,11 @@
       "publishedAt": "2026-11-08T17:56:02Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "fish-it-codes",
+    "path": "/blog/fish-it-codes/",
+    "slot": "2026-11-10T17:30:00.000Z",
+    "startedAt": "2026-11-10T18:00:36.149Z",
+    "transport": "github"
+  }
 }
