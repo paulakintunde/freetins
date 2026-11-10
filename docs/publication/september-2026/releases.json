@@ -159,13 +159,17 @@
       "commit": "b37dfc484d5ffbf7440b6afb787b30f25cc20d8d",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/4dae65fb-5289-41e2-8d7c-9aad49420c34",
       "publishedAt": "2026-11-08T17:56:02Z"
+    },
+    {
+      "slug": "fish-it-codes",
+      "path": "/blog/fish-it-codes/",
+      "slot": "2026-11-10T17:30:00.000Z",
+      "startedAt": "2026-11-10T18:00:36.149Z",
+      "transport": "github",
+      "commit": "8367e050144345b2f90a053e716871fdbeb27939",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/d9a77a13-d190-4464-9708-5524484375b0",
+      "publishedAt": "2026-11-10T18:17:14Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "fish-it-codes",
-    "path": "/blog/fish-it-codes/",
-    "slot": "2026-11-10T17:30:00.000Z",
-    "startedAt": "2026-11-10T18:00:36.149Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
