@@ -169,13 +169,17 @@
       "commit": "8367e050144345b2f90a053e716871fdbeb27939",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/d9a77a13-d190-4464-9708-5524484375b0",
       "publishedAt": "2026-11-10T18:17:14Z"
+    },
+    {
+      "slug": "bee-swarm-simulator-codes",
+      "path": "/blog/bee-swarm-simulator-codes/",
+      "slot": "2026-11-10T22:30:00.000Z",
+      "startedAt": "2026-11-10T22:44:04.775Z",
+      "transport": "github",
+      "commit": "5ae7e785c946c6b34c4e17be446b4dca0cbee83c",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/8f877ee4-35d6-42bd-915f-5ca0c3a763ba",
+      "publishedAt": "2026-11-10T22:59:14Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "bee-swarm-simulator-codes",
-    "path": "/blog/bee-swarm-simulator-codes/",
-    "slot": "2026-11-10T22:30:00.000Z",
-    "startedAt": "2026-11-10T22:44:04.775Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
