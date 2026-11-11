@@ -14,7 +14,7 @@ description: "Adopt Me has used event codes, but a sticker code is not a free-pe
 author: "Paul A"
 faq:
   - q: "Does Adopt Me have codes at all?"
-    a: "Yes, the publisher has documented event codes delivered through login pop-ups and redeemed at a Redemption Kiosk. That historical evidence does not establish a current code or a permanent release schedule. Each promotion needs its own string, reward and terms rather than a blanket claim that codes always exist."
+    a: "Yes. Uplift's Codes FAQ says free Promo Codes are redeemed at the Code Redemption Kiosk in the Trade License Hub. It also says the kiosk accepts a code only while one is active. That official process does not establish that any specific string currently works, so each promotion still needs its own evidence."
   - q: "Does PROUDFROG give a free pet?"
     a: "The reported reward is a Proud Frog Sticker, not a pet. The source lists also disagree about whether its redemption window remains available. Read that context before trying it, and do not interpret a frog-themed item name as a promise that a Frog pet will enter your inventory."
   - q: "Can I still claim the old free Wren gift?"
@@ -27,7 +27,7 @@ faq:
     a: "Check the publisher's announcement and the matching prompt inside the correct game. Identify the required action and any stated window or eligibility rule. An old article remaining online does not establish that a reward has reopened, and a different player's inventory does not prove a present claim route."
 ---
 
-Adopt Me has used event redemption codes, but that does not establish a current free-pet code. The table records a reported sticker promotion with its historical caveat; no row is starred yet. Separate a code reward from ordinary pet gameplay, limited event gifts and offers that demand your account credentials.
+Adopt Me has a real promo code kiosk, but current sources disagree about whether PROUDFROG still works. The table records the sticker reward and source conflict. Freetins did not redeem it, and the code is not a free-pet offer. Use the kiosk response, not a generator or third-party login.
 
 Adopt Me! is not every Roblox pet-trading experience. This page follows Uplift Games' game at place {{entityId}} and the announcements published through its official website.
 
@@ -35,11 +35,11 @@ Adopt Me! is not every Roblox pet-trading experience. This page follows Uplift G
 
 {{table:codes}}
 
-[Beebom's code list](https://beebom.com/roblox-adopt-me-codes/) names the Proud Frog Sticker. The [community item's search listing](https://adoptme.fandom.com/wiki/Proud_Frog_Sticker) describes a closed redemption window. Treat the entry as a documented promotion with an unresolved source conflict, not a promise that submitting it will grant a pet.
+[GamesRadar's current tracker](https://www.gamesradar.com/games/simulation/adopt-me-codes/) reports PROUDFROG as working, while [BloxDesk's current tracker](https://getbloxdesk.com/adopt-me/codes/) reports no active public code. Both identify the reward as a Proud Frog Sticker. Treat the entry as an unresolved source conflict, not a promise that submitting it will grant a pet.
 
 ## Adopt Me has had genuine code events
 
-The [official Wagon and Trading Servers announcement](https://www.playadopt.me/news/wagon-and-trading-servers) describes codes delivered through login pop-ups and redeemed at a Redemption Kiosk. It also describes a separate Wren login gift tied to that update day. This is historical evidence that codes and free event pets have existed.
+The [official Codes FAQ](https://upliftgames.zendesk.com/hc/en-us/articles/39222371930132-Codes-FAQ) says free Promo Codes are redeemed at the Code Redemption Kiosk in the Trade License Hub. It also says the kiosk accepts a Promo Code only while one is active. The [official Wagon and Trading Servers announcement](https://www.playadopt.me/news/wagon-and-trading-servers) documents an earlier code event and a separate Wren login gift.
 
 It is not an invitation to claim that old Wren offer again. The publisher attached it to a particular event and eligibility group. A guide that removes those conditions changes the meaning of the offer.
 

@@ -181,5 +181,11 @@
       "publishedAt": "2026-11-10T22:59:14Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "adopt-me-codes",
+    "path": "/blog/adopt-me-codes/",
+    "slot": "2026-11-11T22:30:00.000Z",
+    "startedAt": "2026-11-11T22:36:20.264Z",
+    "transport": "github"
+  }
 }

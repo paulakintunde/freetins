@@ -9,17 +9,18 @@
     {
       "type": "official_page",
       "url": "https://www.roblox.com/games/920587237/",
-      "note": "Publisher's game listing or official product page."
+      "note": "Official Roblox experience page by Uplift Games."
+    },
+    {
+      "type": "publisher_support",
+      "url": "https://upliftgames.zendesk.com/hc/en-us/articles/39222371930132-Codes-FAQ",
+      "note": "Uplift Games FAQ for Promo Codes, merchandise codes and the in-game kiosk."
     }
   ],
   "tables": {
     "codes": {
-      "caption": "Adopt Me!: listed rewards and source context",
-      "columns": [
-        "Code",
-        "Reward",
-        "Context"
-      ],
+      "caption": "Adopt Me!: reported code and current source conflict",
+      "columns": ["Code", "Reward", "Context"],
       "kind": "code"
     }
   },
@@ -30,20 +31,31 @@
       "cells": {
         "Code": "PROUDFROG",
         "Reward": "Proud Frog Sticker",
-        "Context": "Historical event code; community reports closure on June 19, 2026. Not a pet."
+        "Context": "Current trackers disagree; Freetins did not redeem it. Not a pet."
       },
       "added_at": "2026-09-14T08:00:00Z",
       "evidence": [
         {
           "tier": 2,
-          "url": "https://beebom.com/roblox-adopt-me-codes/"
+          "url": "https://www.gamesradar.com/games/simulation/adopt-me-codes/"
+        },
+        {
+          "tier": 2,
+          "url": "https://getbloxdesk.com/adopt-me/codes/"
         }
       ]
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "PROUDFROG availability",
+      "source_a": "GamesRadar reported PROUDFROG as working after a November 3, 2026 check.",
+      "source_b": "BloxDesk reported no active public code after a November 10, 2026 check and placed PROUDFROG in its expired list.",
+      "confirmed": "Both sources identify the reward as a Proud Frog Sticker. Freetins did not redeem the code and does not resolve the availability conflict."
+    }
+  ],
   "fakes": [],
-  "unverified_summary": "Beebom still lists PROUDFROG, while the Proud Frog Sticker community reference reports that redemption closed. Its live page could not be opened beyond the search result. The exact claim outcome is unresolved here; no current free-pet code is established.",
+  "unverified_summary": "Current trackers disagree about whether PROUDFROG still works. GamesRadar reports it as active, while BloxDesk reports no active public code. Both describe a Proud Frog Sticker, not a pet. Freetins did not redeem the code, so the kiosk response remains unrecorded here.",
   "next_change": {
     "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",
     "watch": "https://www.roblox.com/games/920587237/"
