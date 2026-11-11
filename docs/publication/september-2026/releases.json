@@ -179,13 +179,17 @@
       "commit": "5ae7e785c946c6b34c4e17be446b4dca0cbee83c",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/8f877ee4-35d6-42bd-915f-5ca0c3a763ba",
       "publishedAt": "2026-11-10T22:59:14Z"
+    },
+    {
+      "slug": "adopt-me-codes",
+      "path": "/blog/adopt-me-codes/",
+      "slot": "2026-11-11T22:30:00.000Z",
+      "startedAt": "2026-11-11T22:36:20.264Z",
+      "transport": "github",
+      "commit": "3f8789b19a0f556f998e55ec5755990370746173",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/8f8047d4-ff52-4a12-9854-be8d3078cbb6",
+      "publishedAt": "2026-11-11T22:46:44Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "adopt-me-codes",
-    "path": "/blog/adopt-me-codes/",
-    "slot": "2026-11-11T22:30:00.000Z",
-    "startedAt": "2026-11-11T22:36:20.264Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
