@@ -9,7 +9,7 @@
     {
       "type": "official_page",
       "url": "https://www.roblox.com/games/142823291/",
-      "note": "Publisher's game listing or official product page."
+      "note": "Official Roblox experience page by Nikilis."
     }
   ],
   "tables": {
@@ -297,7 +297,21 @@
       ]
     }
   ],
-  "disagreements": [],
+  "disagreements": [
+    {
+      "item": "Current code availability",
+      "source_a": "BloxDesk, RBX Radar and Pocket Tactics report no current working public code.",
+      "source_b": "Game.Guide and RBX Codes mark several historical strings as active.",
+      "confirmed": "Freetins did not redeem any string and does not resolve the current-status conflict."
+    },
+    {
+      "item": "2015",
+      "source_a": "Game.Guide lists 2015 as active on November 12, 2026.",
+      "source_b": "BloxDesk and Pocket Tactics report no current codes.",
+      "confirmed": "The table keeps 2015 as a historical claim; Freetins did not redeem it."
+    }
+  ],
+  "unverified_summary": "Current trackers disagree about whether any historical Murder Mystery 2 code works. Several report no active public codes, while others relabel some old strings as active. Freetins did not redeem the codes, so the archive preserves the source conflict without claiming a current reward.",
   "fakes": [],
   "next_change": {
     "pattern": "Publisher announcements can change rewards and requirements. No fixed code-release schedule is established.",

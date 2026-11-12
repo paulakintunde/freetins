@@ -191,5 +191,11 @@
       "publishedAt": "2026-11-11T22:46:44Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "murder-mystery-2-codes",
+    "path": "/blog/murder-mystery-2-codes/",
+    "slot": "2026-11-12T17:30:00.000Z",
+    "startedAt": "2026-11-12T17:45:32.619Z",
+    "transport": "github"
+  }
 }

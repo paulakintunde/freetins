@@ -14,7 +14,7 @@ description: "Murder Mystery 2 has no current code confirmed here. Identify hist
 author: "Paul A"
 faq:
   - q: "Are there new Murder Mystery 2 codes to redeem?"
-    a: "The sources used for this page do not establish a current redeemable code. The table is explicitly historical and identifies the rewards associated with older promotions. That does not prevent the publisher from announcing another code, but a new claim needs an actual source and redemption instructions."
+    a: "Current trackers disagree about whether any old code works. Several report no active public codes, while others relabel some historical strings as active. Freetins did not redeem any of them, so the table preserves the conflict without presenting a code as checked in game."
   - q: "Where is the Murder Mystery 2 code box?"
     a: "The historical route described by the source is Inventory, then Enter Code near the bottom and Redeem. Your current interface may differ or omit that control. A missing box does not justify using an external script; wait for the publisher's instructions if a new promotion is announced."
   - q: "Can old codes unlock a free Godly weapon?"
@@ -27,7 +27,7 @@ faq:
     a: "A publisher announcement or a traceable report identifying the exact string, reward and redemption route would support a new listing. The listing would still be separate from an editor's recorded test. A refreshed page title, an old screenshot or a copied archive does not establish a new reward window."
 ---
 
-Murder Mystery 2 has no current redeem code established by the sources used here. The table preserves {{totalCount}} historical code claims and their reported knife or pet rewards; no row is starred yet. Use it to identify an old promotion, not as a promise of a new free weapon.
+Murder Mystery 2 trackers disagree about whether any old code works. The table preserves {{totalCount}} historical code claims and their reported knife or pet rewards. Freetins did not redeem them, so no row is marked as checked in game. Use this archive to identify an old promotion, not as a promise of a new weapon.
 
 Murder Mystery 2 is not a clone using the same murder-mystery theme. This page follows Nikilis's game at Roblox place {{entityId}}, whose official listing is linked under Publisher sources.
 
@@ -35,7 +35,7 @@ Murder Mystery 2 is not a clone using the same murder-mystery theme. This page f
 
 {{table:codes}}
 
-[Pro Game Guides' report](https://progameguides.com/roblox/roblox-murder-mystery-2-codes/) says there are no new redeemable codes and places the strings above in its archive. An old knife appearing in another player's inventory does not prove that its original code has reopened.
+[BloxDesk's current tracker](https://getbloxdesk.com/murder-mystery-2/codes/) and [Pocket Tactics](https://www.pockettactics.com/murder-mystery-2/codes) report no current code, while [Game.Guide](https://www.game.guide/roblox-codes/murder-mystery-2) marks several historical strings as active. The table preserves the archive and disagreement without presenting any row as a Freetins redemption.
 
 ## Where the historical code field was
 
@@ -58,6 +58,10 @@ An unsupported free Godly claim also needs its own evidence. None of the histori
 ## What would change this answer
 
 An actual publisher announcement with a redeemable string would justify adding a new claim and its evidence. A copied archive or another site's current label alone is not enough to call the outcome tested. The page can list a claim while its editor verification remains pending.
+
+## What we could not verify
+
+{{unverifiedSummary}}
 
 ## Related guides
 
