@@ -189,13 +189,17 @@
       "commit": "3f8789b19a0f556f998e55ec5755990370746173",
       "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/8f8047d4-ff52-4a12-9854-be8d3078cbb6",
       "publishedAt": "2026-11-11T22:46:44Z"
+    },
+    {
+      "slug": "murder-mystery-2-codes",
+      "path": "/blog/murder-mystery-2-codes/",
+      "slot": "2026-11-12T17:30:00.000Z",
+      "startedAt": "2026-11-12T17:45:32.619Z",
+      "transport": "github",
+      "commit": "6333e77c3210a3b05f939b91acdf2fca6e756c03",
+      "deploymentUrl": "https://dash.cloudflare.com/?to=/aadae7a9110f9b540840f71aa211945f/pages/view/freetins/2e51de9d-9f28-4613-a8ed-9f9054c68a19",
+      "publishedAt": "2026-11-12T17:58:31Z"
     }
   ],
-  "pendingDeployment": {
-    "slug": "murder-mystery-2-codes",
-    "path": "/blog/murder-mystery-2-codes/",
-    "slot": "2026-11-12T17:30:00.000Z",
-    "startedAt": "2026-11-12T17:45:32.619Z",
-    "transport": "github"
-  }
+  "pendingDeployment": null
 }
