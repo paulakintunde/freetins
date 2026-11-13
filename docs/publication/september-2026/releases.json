@@ -201,5 +201,11 @@
       "publishedAt": "2026-11-12T17:58:31Z"
     }
   ],
-  "pendingDeployment": null
+  "pendingDeployment": {
+    "slug": "re-rangers-x-codes",
+    "path": "/codes/anime-ranger-x/",
+    "slot": "2026-11-13T17:30:00.000Z",
+    "startedAt": "2026-11-13T17:37:47.559Z",
+    "transport": "github"
+  }
 }
